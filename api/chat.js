@@ -1,14 +1,35 @@
 // Ask the PM · POST /api/chat
 // Body: { messages: [{ role: 'user'|'assistant', content: '...' }], channel?: 'dashboard'|'whatsapp'|'discord' }
 // Header: x-pm-key: <PM_PASSWORD> (only needed if PM_PASSWORD is set in Vercel)
-// Returns: { reply, usage: { input, output, cost_usd }, tools_used: [...] }
+// Returns: { reply, usage: { input, output, cost_usd }, tools_used: [...], model }
+// Tip: start a message with "deep:" to force the stronger model.
 import { TOOL_DEFS, runTool, todayIST, DS, loadMemory, memoryBlock } from '../lib/tools.js';
 import { notion } from '../lib/notion.js';
 
-const MODEL = process.env.PM_MODEL || 'claude-sonnet-5';
+// Two models: Haiku (cheap) for everyday lookups, Sonnet (stronger) for questions that need thinking.
+const MODELS = {
+  Haiku: { id: process.env.PM_MODEL_FAST || 'claude-haiku-4-5-20251001', price: { input: 1, output: 5, cacheWrite: 1.25, cacheRead: 0.1 } },
+  Sonnet: { id: process.env.PM_MODEL_SMART || 'claude-sonnet-5', price: { input: 3, output: 15, cacheWrite: 3.75, cacheRead: 0.3 } },
+};
 // USD per million tokens. Check console.anthropic.com pricing and adjust if needed.
-const PRICE = { input: 3, output: 15, cacheWrite: 3.75, cacheRead: 0.3 };
 const MAX_TURNS = 8;
+
+// Small talk gets an instant free reply, no AI call at all
+const SMALL_TALK = [
+  { re: /^(hi+|hey+|hello+|yo|hii+|good (morning|afternoon|evening)|gm)\b[\s!.]*$/i, reply: 'Hey! Ask me about deals, money, the video pipeline or the team.' },
+  { re: /^(thanks?|thank you|thx|ty|cool|great|nice|perfect|awesome|ok+|okay+|k|got it|done|👍|🙏)[\s!.]*$/i, reply: '👍' },
+  { re: /^(bye|good ?night|gn|see you|cya)[\s!.]*$/i, reply: 'Talk soon.' },
+];
+
+// Send to Sonnet only when the question needs reasoning, writing or several steps
+function pickModel(question) {
+  const q = question.toLowerCase();
+  if (/^(deep|think|sonnet)\s*:/.test(q)) return 'Sonnet';
+  const heavy = /\b(why|analy[sz]e|analysis|compare|comparison|trend|forecast|predict|plan|strategy|strateg|should (we|i)|recommend|suggest|advice|advise|improve|summar(y|ise|ize)|brief|report|review|draft|write|email|message to|explain|breakdown|insight|what if|priorit)/;
+  const questionMarks = (question.match(/\?/g) || []).length;
+  if (heavy.test(q) || question.length > 220 || questionMarks >= 2) return 'Sonnet';
+  return 'Haiku';
+}
 
 const SYSTEM = `You are the NOOCAP PM, the AI project manager for NOOCAP Media, an AI content agency in Mumbai run by Harsh Koli (COO) and Pratham (CEO).
 You answer questions from Harsh and Pratham about the whole agency using your tools, which read live Notion data.
@@ -44,7 +65,7 @@ function checkAuth(req) {
   return got.length === want.length && got === want;
 }
 
-async function callClaude(messages, channel, memoryText) {
+async function callClaude(messages, channel, memoryText, modelId) {
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
@@ -54,7 +75,7 @@ async function callClaude(messages, channel, memoryText) {
       ...(process.env.ANTHROPIC_WORKSPACE_ID ? { 'anthropic-workspace-id': process.env.ANTHROPIC_WORKSPACE_ID.trim() } : {}),
     },
     body: JSON.stringify({
-      model: MODEL,
+      model: modelId,
       max_tokens: 1500,
       system: [
         { type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } },
@@ -72,7 +93,7 @@ async function callClaude(messages, channel, memoryText) {
   return res.json();
 }
 
-async function logChat({ question, reply, usage, cost, channel, tools, error }) {
+async function logChat({ question, reply, usage, cost, channel, tools, error, model = 'Sonnet' }) {
   try {
     const rt = (s) => [{ type: 'text', text: { content: String(s).slice(0, 1900) } }];
     await notion('POST', '/pages', {
@@ -83,7 +104,7 @@ async function logChat({ question, reply, usage, cost, channel, tools, error }) 
         Area: { select: { name: 'System' } },
         Outcome: { select: { name: error ? 'Error' : 'AI used' } },
         Source: { select: { name: channel === 'whatsapp' ? 'WhatsApp' : channel === 'discord' ? 'Discord' : 'Dashboard chat' } },
-        Model: { select: { name: 'Sonnet' } },
+        Model: { select: { name: model } },
         'Tokens In': { number: usage.input + usage.cacheWrite + usage.cacheRead },
         'Tokens Out': { number: usage.output },
         'Cost USD': { number: cost },
@@ -110,6 +131,12 @@ export default async function handler(req, res) {
   if (!history.length || history[history.length - 1].role !== 'user') return res.status(400).json({ error: 'Send at least one user message' });
   const question = history[history.length - 1].content;
 
+  const small = SMALL_TALK.find((t) => t.re.test(question.trim()));
+  if (small) return res.status(200).json({ reply: small.reply, usage: { input: 0, output: 0, cost_usd: 0 }, tools_used: [], model: 'none' });
+
+  const modelName = pickModel(question);
+  const model = MODELS[modelName];
+
   const usage = { input: 0, output: 0, cacheWrite: 0, cacheRead: 0 };
   const toolsUsed = [];
   const messages = [...history];
@@ -122,7 +149,7 @@ export default async function handler(req, res) {
   }
   try {
     for (let turn = 0; turn < MAX_TURNS; turn++) {
-      const out = await callClaude(messages, channel, memoryText);
+      const out = await callClaude(messages, channel, memoryText, model.id);
       const u = out.usage || {};
       usage.input += u.input_tokens || 0;
       usage.output += u.output_tokens || 0;
@@ -144,11 +171,12 @@ export default async function handler(req, res) {
     if (!reply) reply = 'I ran out of steps before finishing that one. Try asking a narrower question.';
   } catch (e) {
     const cost = 0;
-    await logChat({ question, reply: '', usage, cost, channel, tools: toolsUsed, error: e.message });
+    await logChat({ question, reply: '', usage, cost, channel, tools: toolsUsed, error: e.message, model: modelName });
     return res.status(502).json({ error: e.message });
   }
 
-  const cost = Math.round(((usage.input * PRICE.input + usage.output * PRICE.output + usage.cacheWrite * PRICE.cacheWrite + usage.cacheRead * PRICE.cacheRead) / 1e6) * 10000) / 10000;
-  await logChat({ question, reply, usage, cost, channel, tools: toolsUsed });
-  return res.status(200).json({ reply, usage: { input: usage.input + usage.cacheWrite + usage.cacheRead, output: usage.output, cost_usd: cost }, tools_used: [...new Set(toolsUsed)] });
+  const P = model.price;
+  const cost = Math.round(((usage.input * P.input + usage.output * P.output + usage.cacheWrite * P.cacheWrite + usage.cacheRead * P.cacheRead) / 1e6) * 10000) / 10000;
+  await logChat({ question, reply, usage, cost, channel, tools: toolsUsed, model: modelName });
+  return res.status(200).json({ reply, usage: { input: usage.input + usage.cacheWrite + usage.cacheRead, output: usage.output, cost_usd: cost }, tools_used: [...new Set(toolsUsed)], model: modelName });
 }
