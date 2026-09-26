@@ -2,7 +2,7 @@
 // Body: { messages: [{ role: 'user'|'assistant', content: '...' }], channel?: 'dashboard'|'whatsapp'|'discord' }
 // Header: x-pm-key: <PM_PASSWORD> (only needed if PM_PASSWORD is set in Vercel)
 // Returns: { reply, usage: { input, output, cost_usd }, tools_used: [...] }
-import { TOOL_DEFS, runTool, todayIST, DS } from '../lib/tools.js';
+import { TOOL_DEFS, runTool, todayIST, DS, loadMemory, memoryBlock } from '../lib/tools.js';
 import { notion } from '../lib/notion.js';
 
 const MODEL = process.env.PM_MODEL || 'claude-sonnet-5';
@@ -26,7 +26,15 @@ How to answer:
 - If data is missing or a tool errors, say that plainly and say where in Notion it should be filled in.
 - Money is in USD unless the data says otherwise. Dates are in India time (IST).
 - Be brief and direct, like a sharp ops manager messaging the founder. Lead with the answer, then the few details that matter. Use short bullet lists for several items and bold only the key numbers.
-- You can only read. You cannot send emails, change Notion or message anyone yet. If asked to act, say what should be done and by whom.
+- You can only read agency data. You cannot send emails, change deals or videos, or message anyone yet. If asked to act, say what should be done and by whom. The one thing you can write is your own memory.
+
+Memory and learning:
+- The PM MEMORY list is what Harsh and Pratham have taught you. Treat it as true and follow it in every answer. It explains how to read the data, but for current numbers and statuses the live tools win.
+- Keep learning. Whenever the user says "remember", corrects you, or tells you a lasting fact, rule, definition or preference about the agency or how you should answer, call remember with one clear self-contained sentence, then confirm in a few words like "Saved to memory (MEM-4)".
+- If you got something wrong and the user corrects it, save the correction so you never repeat the mistake.
+- If a new fact replaces an older memory, call forget on the old one first. If the user says forget something, call forget.
+- Do not save one-off questions, today's figures or statuses (those live in Notion), or your own assumptions. Only save what the user actually told you.
+- If asked what you remember, list the PM MEMORY items with their ids.
 - Writing style rules, always: never stack three parallel items for rhythm, never use "it's not X, it's Y" contrasts, and never write chains of short choppy fragments. Write in flowing sentences joined with and, but, so, which, because.`;
 
 function checkAuth(req) {
@@ -36,7 +44,7 @@ function checkAuth(req) {
   return got.length === want.length && got === want;
 }
 
-async function callClaude(messages, channel) {
+async function callClaude(messages, channel, memoryText) {
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
@@ -49,6 +57,7 @@ async function callClaude(messages, channel) {
       max_tokens: 1500,
       system: [
         { type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } },
+        { type: 'text', text: memoryText, cache_control: { type: 'ephemeral' } },
         { type: 'text', text: `Today is ${todayIST()} (IST). Channel: ${channel}.${channel === 'whatsapp' ? ' Keep it short and use WhatsApp formatting: *bold*, no markdown headers or tables.' : ''}` },
       ],
       tools: TOOL_DEFS.map((t, i) => (i === TOOL_DEFS.length - 1 ? { ...t, cache_control: { type: 'ephemeral' } } : t)),
@@ -104,9 +113,15 @@ export default async function handler(req, res) {
   const toolsUsed = [];
   const messages = [...history];
   let reply = '';
+  let memoryText;
+  try {
+    memoryText = memoryBlock(await loadMemory());
+  } catch (e) {
+    memoryText = 'PM MEMORY could not be loaded right now (' + String(e.message).slice(0, 120) + '). Answer without it and do not claim to remember anything.';
+  }
   try {
     for (let turn = 0; turn < MAX_TURNS; turn++) {
-      const out = await callClaude(messages, channel);
+      const out = await callClaude(messages, channel, memoryText);
       const u = out.usage || {};
       usage.input += u.input_tokens || 0;
       usage.output += u.output_tokens || 0;
@@ -120,7 +135,7 @@ export default async function handler(req, res) {
       }
       const results = await Promise.all(calls.map(async (c) => {
         toolsUsed.push(c.name);
-        const data = await runTool(c.name, c.input);
+        const data = await runTool(c.name, c.input, { channel });
         return { type: 'tool_result', tool_use_id: c.id, content: JSON.stringify(data).slice(0, 60000) };
       }));
       messages.push({ role: 'user', content: results });
