@@ -1,6 +1,6 @@
 // Ask the PM · POST /api/chat
 // Body: { messages: [{ role: 'user'|'assistant', content: '...' }], channel?: 'dashboard'|'whatsapp'|'discord' }
-// Header: x-pm-key: <PM_PASSWORD>
+// Header: x-pm-key: <PM_PASSWORD> (only needed if PM_PASSWORD is set in Vercel)
 // Returns: { reply, usage: { input, output, cost_usd }, tools_used: [...] }
 import { TOOL_DEFS, runTool, todayIST, DS } from '../lib/tools.js';
 import { notion } from '../lib/notion.js';
@@ -31,7 +31,7 @@ How to answer:
 
 function checkAuth(req) {
   const want = process.env.PM_PASSWORD;
-  if (!want) return false;
+  if (!want) return true; // no password set in Vercel = open chat
   const got = req.headers['x-pm-key'] || '';
   return got.length === want.length && got === want;
 }
