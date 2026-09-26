@@ -70,6 +70,24 @@
   .change .btns { display: flex; gap: 8px; }
   .change .btns button { padding: 8px 14px; }
   .change .state { font-size: 13px; color: var(--muted); }
+  .appr { position: fixed; top: 0; right: 0; bottom: 0; width: 560px; max-width: 100vw; background: var(--panel); border-left: 1px solid var(--line); transform: translateX(100%); transition: transform .2s ease; z-index: 20; display: flex; flex-direction: column; }
+  .appr.open { transform: none; }
+  .appr h2 { font: 600 15px 'Space Grotesk', sans-serif; margin: 0; padding: 16px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
+  .appr .list { overflow-y: auto; flex: 1; padding: 12px; }
+  .mail { border: 1px solid var(--line); border-radius: 12px; padding: 12px; margin-bottom: 12px; background: var(--panel2); }
+  .mail .top { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+  .kind { font: 600 11px 'IBM Plex Mono', monospace; padding: 2px 8px; border-radius: 999px; background: rgba(94,234,212,.12); color: var(--accent); }
+  .kind.failed { background: rgba(248,113,113,.12); color: var(--err); }
+  .mail .who { font-weight: 600; }
+  .mail .why { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
+  .mail label { display: block; font: 500 11px 'IBM Plex Mono', monospace; color: var(--muted); margin: 6px 0 3px; }
+  .mail input, .mail textarea { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font: inherit; font-size: 14px; }
+  .mail textarea { min-height: 170px; resize: vertical; line-height: 1.5; }
+  .mail .att { font-size: 13px; color: var(--warn); margin-top: 6px; }
+  .mail .btns { display: flex; gap: 8px; margin-top: 10px; }
+  .mail .btns button { padding: 8px 14px; }
+  .mail .state { font-size: 13px; margin-top: 8px; }
+  .badge { background: var(--warn); color: #111; border-radius: 999px; padding: 0 7px; font-size: 11px; margin-left: 4px; }
   .empty { color: var(--muted); font-size: 13px; padding: 12px; }
   @media (max-width: 600px) { .item .del { opacity: 1; } }
   @media (max-width: 600px) { header .sub { display: none; } .bubble { max-width: 94%; } }
@@ -81,7 +99,8 @@
   <div class="dot"></div>
   <div class="logo">NOOCAP <span>PM</span></div>
   <div class="sub">Ask anything about deals, money, videos and the team</div>
-  <button class="ghost" id="clear" type="button">New chat</button>
+  <button class="ghost" id="apprBtn" type="button" style="margin-left:auto">📬 Approvals <span class="badge" id="apprCount" hidden>0</span></button>
+  <button class="ghost" id="clear" type="button" style="margin-left:0">New chat</button>
 </header>
 <main id="scroll"><div class="wrap" id="log">
   <div class="intro" id="intro">
@@ -99,6 +118,10 @@
 <aside class="side" id="side">
   <h2>Chats <button class="ghost" id="newBtn" type="button">+ New</button></h2>
   <div class="list" id="list"><div class="empty">Loading…</div></div>
+</aside>
+<aside class="appr" id="appr">
+  <h2>Emails waiting for approval <button class="ghost" id="apprClose" type="button">Close</button></h2>
+  <div class="list" id="apprList"><div class="empty">Loading…</div></div>
 </aside>
 <div class="gate" id="gate">
   <form id="gateForm">
@@ -310,7 +333,71 @@
   $('clear').onclick = newChat;
   $('newBtn').onclick = newChat;
   $('histBtn').onclick = openSide;
-  $('shade').onclick = closeSide;
+  $('shade').onclick = () => { closeSide(); closeAppr(); };
+  // ---------- Approvals ----------
+  let drafts = [];
+  async function loadApprovals() {
+    try {
+      const res = await fetch('/api/outbox', { headers: headers() });
+      if (res.status === 401) return needPassword();
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
+      drafts = data.drafts || [];
+      const n = drafts.filter((d) => d.status === 'Draft').length;
+      $('apprCount').hidden = !n; $('apprCount').textContent = n;
+      renderApprovals();
+    } catch (e) {
+      $('apprList').innerHTML = '<div class="empty err">Could not load approvals: ' + esc(e.message) + '</div>';
+    }
+  }
+  function renderApprovals() {
+    const list = $('apprList');
+    if (!drafts.length) { list.innerHTML = '<div class="empty">Nothing waiting. The PM will put emails here when a script is ready, a brand goes quiet, a video is posted or an invoice comes in.</div>'; return; }
+    list.innerHTML = '';
+    for (const d of drafts) {
+      const el = document.createElement('div');
+      el.className = 'mail';
+      el.innerHTML = '<div class="top"><span class="kind' + (d.status === 'Failed' ? ' failed' : '') + '">' + esc(d.kind || 'Email') + (d.status === 'Failed' ? ' · failed' : '') + '</span><span class="who">' + esc((d.brand || '') + (d.creator ? ' × ' + d.creator : '')) + '</span></div>' +
+        (d.why ? '<div class="why">' + esc(d.why) + '</div>' : '') +
+        (d.error ? '<div class="why err">Last error: ' + esc(d.error) + '</div>' : '') +
+        '<label>To</label><input class="to" value="' + esc(d.to) + '" placeholder="brand@company.com">' +
+        '<label>Cc</label><input class="cc" value="' + esc(d.cc) + '">' +
+        '<label>Subject</label><input class="subj" value="' + esc(d.subject) + '">' +
+        '<label>Message</label><textarea class="body">' + esc(d.body) + '</textarea>' +
+        (d.attach && d.attach !== 'None' ? '<div class="att">📎 ' + (d.attach === 'Script PDF' ? 'Script PDF made from the video page when you send' : 'Invoice from the deal') + '</div>' : '') +
+        (d.replyTo ? '<div class="why">Goes as a reply in the existing email thread.</div>' : '') +
+        '<div class="btns"><button type="button" class="send">Send</button><button type="button" class="ghost save">Save</button><button type="button" class="ghost rej">Reject</button></div><div class="state"></div>';
+      const val = () => ({ id: d.id, to: el.querySelector('.to').value, cc: el.querySelector('.cc').value, subject: el.querySelector('.subj').value, body: el.querySelector('.body').value });
+      const act = async (action, label) => {
+        const st = el.querySelector('.state');
+        el.querySelectorAll('button').forEach((b) => b.disabled = true);
+        st.textContent = label; st.className = 'state';
+        try {
+          const res = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ ...val(), action }) });
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
+          if (action === 'save') { st.textContent = 'Saved.'; el.querySelectorAll('button').forEach((b) => b.disabled = false); return; }
+          st.textContent = action === 'send' ? '✅ Sent to ' + data.to + (data.attachment ? ' with ' + data.attachment : '') : 'Rejected.';
+          setTimeout(loadApprovals, 1200);
+        } catch (e) {
+          st.textContent = '⚠️ ' + e.message; st.className = 'state err';
+          el.querySelectorAll('button').forEach((b) => b.disabled = false);
+        }
+      };
+      el.querySelector('.send').onclick = () => act('send', 'Sending…');
+      el.querySelector('.save').onclick = () => act('save', 'Saving…');
+      el.querySelector('.rej').onclick = () => act('reject', 'Rejecting…');
+      list.appendChild(el);
+    }
+  }
+  function openAppr() { $('appr').classList.add('open'); $('shade').classList.add('open'); loadApprovals(); }
+  function closeAppr() { $('appr').classList.remove('open'); $('shade').classList.remove('open'); }
+  $('apprBtn').onclick = openAppr;
+  $('apprClose').onclick = closeAppr;
+  loadApprovals();
+  setInterval(loadApprovals, 60000);
+  if (location.hash === '#approvals') openAppr();
+
   if (chatId) openChat(chatId);
 </script>
 </body>
