@@ -4,7 +4,8 @@
 // Returns: { reply, usage: { input, output, cost_usd }, tools_used: [...], model }
 // Tip: start a message with "deep:" to force the stronger model.
 import { TOOL_DEFS, runTool, todayIST, DS, loadMemory, memoryBlock } from '../lib/tools.js';
-import { notion } from '../lib/notion.js';
+import { notion, clearCache } from '../lib/notion.js';
+import { proposeUpdate, executeProposal, PROPOSE_TOOL } from '../lib/actions.js';
 import { saveChat } from '../lib/chats.js';
 import { checkAuth } from '../lib/auth.js';
 
@@ -15,6 +16,7 @@ const MODELS = {
 };
 // USD per million tokens. Check console.anthropic.com pricing and adjust if needed.
 const MAX_TURNS = 8;
+const ALL_TOOLS = [...TOOL_DEFS, PROPOSE_TOOL];
 
 // Small talk gets an instant free reply, no AI call at all
 const SMALL_TALK = [
@@ -51,7 +53,8 @@ How to answer:
 - Money is in USD unless the data says otherwise. Dates are in India time (IST).
 - Be brief and direct, like a sharp ops manager messaging the founder. Lead with the answer, then the few details that matter. Use short bullet lists for several items and bold only the key numbers.
 - Never offer menus or options. Do not list things the user could ask, do not suggest next questions, and do not end with offers like "want me to…" or "let me know if…". Answer what was asked and stop. If a request is unclear, make the most sensible reading and answer that.
-- You can only read agency data. You cannot send emails, change deals or videos, or message anyone yet. If asked to act, say what should be done and by whom. The one thing you can write is your own memory.
+- You can change Notion with propose_update: video status, editor and post date on creator boards, Video Intake rows, brand deal fields, and sponsor revenue Paid / Cut Collected. Every change waits for the user to tap Confirm, so after proposing say in one short line what will change and never claim it is done. If several items match, ask which one in one line. Do not propose changes the user did not ask for.
+- You cannot send emails or message anyone yet. If asked, say so plainly.
 
 Memory and learning:
 - The PM MEMORY list is what Harsh and Pratham have taught you. Treat it as true and follow it in every answer. It explains how to read the data, but for current numbers and statuses the live tools win.
@@ -79,7 +82,7 @@ async function callClaude(messages, channel, memoryText, modelId) {
         { type: 'text', text: memoryText, cache_control: { type: 'ephemeral' } },
         { type: 'text', text: `Today is ${todayIST()} (IST). Channel: ${channel}.${channel === 'whatsapp' ? ' Keep it short and use WhatsApp formatting: *bold*, no markdown headers or tables.' : ''}` },
       ],
-      tools: TOOL_DEFS.map((t, i) => (i === TOOL_DEFS.length - 1 ? { ...t, cache_control: { type: 'ephemeral' } } : t)),
+      tools: ALL_TOOLS.map((t, i) => (i === ALL_TOOLS.length - 1 ? { ...t, cache_control: { type: 'ephemeral' } } : t)),
       messages,
     }),
   });
@@ -114,6 +117,27 @@ async function logChat({ question, reply, usage, cost, channel, tools, error, mo
   }
 }
 
+async function logAction({ reply, outcome, channel }) {
+  try {
+    const rt = (s) => [{ type: 'text', text: { content: String(s).slice(0, 1900) } }];
+    await notion('POST', '/pages', {
+      parent: { type: 'data_source_id', data_source_id: DS.agentLog },
+      properties: {
+        Event: { title: rt((outcome === 'Changed' ? 'Changed in Notion: ' : outcome === 'Skipped' ? 'Change cancelled' : 'Change failed: ') + reply.replace(/^✅ Done:\n- /, '').slice(0, 80)) },
+        Time: { date: { start: new Date().toISOString() } },
+        Area: { select: { name: 'System' } },
+        Outcome: { select: { name: outcome } },
+        Source: { select: { name: channel === 'whatsapp' ? 'WhatsApp' : channel === 'discord' ? 'Discord' : 'Dashboard chat' } },
+        Model: { select: { name: 'None' } },
+        'Approved By': { select: { name: 'Harsh' } },
+        Details: { rich_text: rt(reply) },
+      },
+    });
+  } catch (e) {
+    console.error('AGENT LOG write failed', e.message);
+  }
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
   if (!checkAuth(req)) return res.status(401).json({ error: 'Wrong or missing password' });
@@ -125,8 +149,36 @@ export default async function handler(req, res) {
     .filter((m) => (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string' && m.content.trim());
   const history = thread.slice(-12).map((m) => ({ role: m.role, content: m.content.slice(0, 4000) }));
   while (history.length && history[0].role !== 'user') history.shift();
-  if (!history.length || history[history.length - 1].role !== 'user') return res.status(400).json({ error: 'Send at least one user message' });
-  const question = history[history.length - 1].content;
+  const question = history.length ? history[history.length - 1].content : '';
+  if (!body.confirm && !body.cancel && (!history.length || history[history.length - 1].role !== 'user')) return res.status(400).json({ error: 'Send at least one user message' });
+
+  // Confirm or cancel a proposed change (no AI call)
+  if (body.confirm || body.cancel) {
+    let reply;
+    let outcome = 'Changed';
+    if (body.cancel) {
+      reply = 'Cancelled. Nothing was changed.';
+      outcome = 'Skipped';
+    } else {
+      try {
+        const result = await executeProposal(body.confirm);
+        clearCache();
+        reply = result.done.length ? '✅ Done:\n' + result.summary.split('\n').map((l) => '- ' + l).join('\n') : '';
+        if (result.failed.length) {
+          outcome = 'Error';
+          reply += (reply ? '\n\n' : '') + '⚠️ Could not change:\n' + result.failed.map((f) => `- ${f.title}: ${f.error}`).join('\n');
+        }
+      } catch (e) {
+        outcome = 'Error';
+        reply = '⚠️ ' + e.message;
+      }
+    }
+    const [savedId] = await Promise.all([
+      saveChat({ chatId, channel, messages: [...thread, { role: 'assistant', content: reply, meta: body.cancel ? 'cancelled' : 'change', at: new Date().toISOString() }] }).catch(() => chatId),
+      logAction({ reply, outcome, channel }),
+    ]);
+    return res.status(200).json({ reply, meta: body.cancel ? 'cancelled' : 'change', usage: { input: 0, output: 0, cost_usd: 0 }, tools_used: [], model: 'none', chatId: savedId });
+  }
 
   const small = SMALL_TALK.find((t) => t.re.test(question.trim()));
   if (small) {
@@ -139,6 +191,7 @@ export default async function handler(req, res) {
 
   const usage = { input: 0, output: 0, cacheWrite: 0, cacheRead: 0 };
   const toolsUsed = [];
+  const pending = [];
   const messages = [...history];
   let reply = '';
   let memoryText;
@@ -163,7 +216,16 @@ export default async function handler(req, res) {
       }
       const results = await Promise.all(calls.map(async (c) => {
         toolsUsed.push(c.name);
-        const data = await runTool(c.name, c.input, { channel });
+        let data;
+        if (c.name === 'propose_update') {
+          try { data = await proposeUpdate(c.input || {}); } catch (e) { data = { error: String(e.message).slice(0, 300) }; }
+          if (data.proposal) {
+            pending.push(data.proposal);
+            data = { proposed_change: data.proposal.summary, note_for_you: data.note_for_you };
+          }
+        } else {
+          data = await runTool(c.name, c.input, { channel });
+        }
         return { type: 'tool_result', tool_use_id: c.id, content: JSON.stringify(data).slice(0, 60000) };
       }));
       messages.push({ role: 'user', content: results });
@@ -180,8 +242,8 @@ export default async function handler(req, res) {
   const uniqueTools = [...new Set(toolsUsed)];
   const meta = [modelName, uniqueTools.length ? 'read ' + uniqueTools.join(', ') : '', '$' + cost.toFixed(4) + ' (≈₹' + (cost * 88).toFixed(2) + ')'].filter(Boolean).join(' · ');
   const [savedId] = await Promise.all([
-    saveChat({ chatId, channel, messages: [...thread, { role: 'assistant', content: reply, meta, at: new Date().toISOString() }] }).catch((e) => { console.error('chat save failed', e.message); return chatId; }),
+    saveChat({ chatId, channel, messages: [...thread, { role: 'assistant', content: reply, meta, at: new Date().toISOString(), pending }] }).catch((e) => { console.error('chat save failed', e.message); return chatId; }),
     logChat({ question, reply, usage, cost, channel, tools: toolsUsed, model: modelName }),
   ]);
-  return res.status(200).json({ reply, meta, usage: { input: usage.input + usage.cacheWrite + usage.cacheRead, output: usage.output, cost_usd: cost }, tools_used: uniqueTools, model: modelName, chatId: savedId });
+  return res.status(200).json({ reply, meta, usage: { input: usage.input + usage.cacheWrite + usage.cacheRead, output: usage.output, cost_usd: cost }, tools_used: uniqueTools, model: modelName, chatId: savedId, pending });
 }
