@@ -1,0 +1,6 @@
+{
+  "name": "noocap-pm",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" }
+}
