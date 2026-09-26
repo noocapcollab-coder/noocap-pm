@@ -100,7 +100,7 @@
   let history = [];
   let busy = false;
 
-  if (!key) $('gate').classList.add('show');
+  // The password box only appears if a PM_PASSWORD is set in Vercel and the server asks for it.
   $('gateForm').onsubmit = (e) => {
     e.preventDefault();
     key = $('pw').value.trim();
