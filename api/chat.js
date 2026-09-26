@@ -5,7 +5,40 @@
 // Tip: start a message with "deep:" to force the stronger model.
 import { TOOL_DEFS, runTool, todayIST, DS, loadMemory, memoryBlock } from '../lib/tools.js';
 import { notion, clearCache } from '../lib/notion.js';
-import { proposeUpdate, executeProposal, PROPOSE_TOOL } from '../lib/actions.js';
+import { proposeUpdate, proposeCreate, executeProposal, PROPOSE_TOOL, CREATE_TOOL } from '../lib/actions.js';
+import { createDraft } from '../lib/outbox.js';
+import { openDeals } from '../lib/briefs.js';
+
+const DRAFT_TOOL = {
+  name: 'draft_email',
+  description: 'Put an email to a brand into the Approvals tab (PM OUTBOX). You write the subject and body; it is only sent after Harsh taps Send in Approvals. Use for any email the user wants sent to a brand about a deal. attach "Script PDF" makes a PDF of the script from the linked video page; "Invoice" attaches the deal\'s Invoice File.',
+  input_schema: {
+    type: 'object',
+    properties: {
+      brand: { type: 'string', description: 'Brand name of the deal' },
+      creator: { type: 'string' },
+      kind: { type: 'string', enum: ['Script', 'Follow-up', 'Posted links', 'Invoice', 'Payment chase', 'Reply', 'Other'] },
+      subject: { type: 'string' },
+      body: { type: 'string', description: 'Full email body with greeting and sign-off "Best,\\nHarsh\\nNOOCAP Media"' },
+      attach: { type: 'string', enum: ['None', 'Script PDF', 'Invoice'] },
+      to: { type: 'string', description: 'Only if different from the deal\'s Brand Email' },
+    },
+    required: ['brand', 'kind', 'subject', 'body'],
+  },
+};
+
+async function draftFromChat(input) {
+  const deals = await openDeals();
+  const b = String(input.brand || '').toLowerCase();
+  let hits = deals.filter((d) => d.brand.toLowerCase().includes(b));
+  if (input.creator) hits = hits.filter((d) => String(d.creator || '').toLowerCase().startsWith(String(input.creator).toLowerCase().slice(0, 4)));
+  if (!hits.length) return { error: `No open deal found for "${input.brand}".` };
+  if (hits.length > 1) return { needs_choice: true, matches: hits.map((d) => `${d.brand} × ${d.creator}`) };
+  const deal = hits[0];
+  const r = await createDraft({ kind: input.kind, deal, subject: input.subject, body: input.body, to: input.to, attach: input.attach || 'None', video: deal.linkedVideo, why: 'Drafted from chat', notify: false });
+  if (r.skipped) return { error: 'A draft of this kind for this deal is already waiting in Approvals. Edit that one instead.' };
+  return { drafted: true, to: input.to || deal.brandEmail || '(no brand email on the deal, add it in Approvals)', note_for_you: 'Tell the user it is waiting in the Approvals tab (📬 at the top). It is NOT sent.' };
+}
 import { saveChat } from '../lib/chats.js';
 import { checkAuth } from '../lib/auth.js';
 
@@ -16,7 +49,7 @@ const MODELS = {
 };
 // USD per million tokens. Check console.anthropic.com pricing and adjust if needed.
 const MAX_TURNS = 8;
-const ALL_TOOLS = [...TOOL_DEFS, PROPOSE_TOOL];
+const ALL_TOOLS = [...TOOL_DEFS, DRAFT_TOOL, CREATE_TOOL, PROPOSE_TOOL];
 
 // Small talk gets an instant free reply, no AI call at all
 const SMALL_TALK = [
@@ -53,8 +86,9 @@ How to answer:
 - Money is in USD unless the data says otherwise. Dates are in India time (IST).
 - Be brief and direct, like a sharp ops manager messaging the founder. Lead with the answer, then the few details that matter. Use short bullet lists for several items and bold only the key numbers.
 - Never offer menus or options. Do not list things the user could ask, do not suggest next questions, and do not end with offers like "want me to…" or "let me know if…". Answer what was asked and stop. If a request is unclear, make the most sensible reading and answer that.
+- You can add new videos with propose_create (title plus a brief you are given or write yourself, and fields like post date or type). When you write a brief, make it practical for the scriptwriter and editor: the hook, the key points, the call to action, and any sponsor must-mentions, and show the whole brief in your reply.
 - You can change Notion with propose_update: video status, editor and post date on creator boards, Video Intake rows, brand deal fields, and sponsor revenue Paid / Cut Collected. Every change waits for the user to tap Confirm, so after proposing say in one short line what will change and never claim it is done. If several items match, ask which one in one line. Do not propose changes the user did not ask for.
-- You cannot send emails or message anyone yet. If asked, say so plainly.
+- Emails to brands: write them with draft_email. They wait in the Approvals tab until Harsh taps Send, so never say an email was sent. The system also drafts follow-ups, script emails, posted links, invoices and payment reminders on its own.
 
 Memory and learning:
 - The PM MEMORY list is what Harsh and Pratham have taught you. Treat it as true and follow it in every answer. It explains how to read the data, but for current numbers and statuses the live tools win.
@@ -217,12 +251,14 @@ export default async function handler(req, res) {
       const results = await Promise.all(calls.map(async (c) => {
         toolsUsed.push(c.name);
         let data;
-        if (c.name === 'propose_update') {
-          try { data = await proposeUpdate(c.input || {}); } catch (e) { data = { error: String(e.message).slice(0, 300) }; }
+        if (c.name === 'propose_update' || c.name === 'propose_create') {
+          try { data = await (c.name === 'propose_create' ? proposeCreate : proposeUpdate)(c.input || {}); } catch (e) { data = { error: String(e.message).slice(0, 300) }; }
           if (data.proposal) {
             pending.push(data.proposal);
             data = { proposed_change: data.proposal.summary, note_for_you: data.note_for_you };
           }
+        } else if (c.name === 'draft_email') {
+          try { data = await draftFromChat(c.input || {}); } catch (e) { data = { error: String(e.message).slice(0, 300) }; }
         } else {
           data = await runTool(c.name, c.input, { channel });
         }
