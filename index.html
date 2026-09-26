@@ -51,11 +51,33 @@
   .gate form { flex-direction: column; width: 100%; max-width: 340px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
   .gate input { background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: inherit; }
   .gate button { padding: 12px; }
+  .side { position: fixed; top: 0; left: 0; bottom: 0; width: 320px; max-width: 86vw; background: var(--panel); border-right: 1px solid var(--line); transform: translateX(-100%); transition: transform .2s ease; z-index: 20; display: flex; flex-direction: column; }
+  .side.open { transform: none; }
+  .side h2 { font: 600 15px 'Space Grotesk', sans-serif; margin: 0; padding: 16px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
+  .side .list { overflow-y: auto; flex: 1; padding: 8px; }
+  .item { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 10px; cursor: pointer; }
+  .item:hover, .item.active { background: var(--panel2); }
+  .item .t { flex: 1; min-width: 0; }
+  .item .t div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 14px; }
+  .item .t small { color: var(--muted); font-size: 11px; }
+  .item .del { background: none; color: var(--muted); padding: 2px 6px; font-size: 16px; opacity: 0; }
+  .item:hover .del { opacity: 1; }
+  .shade { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 15; display: none; }
+  .shade.open { display: block; }
+  .change { margin-top: 10px; border: 1px solid var(--warn); border-radius: 10px; padding: 10px 12px; background: rgba(251,191,36,.06); }
+  .change .lbl { font: 600 11px 'IBM Plex Mono', monospace; color: var(--warn); letter-spacing: .06em; margin-bottom: 6px; }
+  .change ul { margin: 0 0 10px; }
+  .change .btns { display: flex; gap: 8px; }
+  .change .btns button { padding: 8px 14px; }
+  .change .state { font-size: 13px; color: var(--muted); }
+  .empty { color: var(--muted); font-size: 13px; padding: 12px; }
+  @media (max-width: 600px) { .item .del { opacity: 1; } }
   @media (max-width: 600px) { header .sub { display: none; } .bubble { max-width: 94%; } }
 </style>
 </head>
 <body>
 <header>
+  <button class="ghost" id="histBtn" type="button" style="margin-left:0">☰ Chats</button>
   <div class="dot"></div>
   <div class="logo">NOOCAP <span>PM</span></div>
   <div class="sub">Ask anything about deals, money, videos and the team</div>
@@ -64,16 +86,7 @@
 <main id="scroll"><div class="wrap" id="log">
   <div class="intro" id="intro">
     <h1>What do you want to know?</h1>
-    <p>Reads live Notion: brand deals, sponsor revenue, creator boards and team activity.</p>
-    <div class="chips">
-      <button class="chip" type="button">How much cut are we owed across all creators?</button>
-      <button class="chip" type="button">Which brand deals need a follow-up today?</button>
-      <button class="chip" type="button">Any invoices overdue?</button>
-      <button class="chip" type="button">What did each editor submit this week?</button>
-      <button class="chip" type="button">Which videos are past their post date?</button>
-      <button class="chip" type="button">How many scripts did Shreya send for approval this week?</button>
-      <button class="chip" type="button">What do you remember?</button>
-    </div>
+    <p>Reads live Notion: brand deals, sponsor revenue, creator boards and team activity. Every chat is saved.</p>
   </div>
 </div></main>
 <footer>
@@ -82,6 +95,11 @@
     <button id="send" type="submit">Ask</button>
   </form>
 </footer>
+<div class="shade" id="shade"></div>
+<aside class="side" id="side">
+  <h2>Chats <button class="ghost" id="newBtn" type="button">+ New</button></h2>
+  <div class="list" id="list"><div class="empty">Loading…</div></div>
+</aside>
 <div class="gate" id="gate">
   <form id="gateForm">
     <div class="logo" style="margin-bottom:6px">NOOCAP <span>PM</span></div>
@@ -99,7 +117,10 @@
   };
   let key = store.get('pmKey') || '';
   let history = [];
+  let chatId = store.get('pmChat') || null;
   let busy = false;
+  const introHTML = $('intro').outerHTML;
+  const headers = () => ({ 'content-type': 'application/json', 'x-pm-key': key });
 
   // The password box only appears if a PM_PASSWORD is set in Vercel and the server asks for it.
   $('gateForm').onsubmit = (e) => {
@@ -108,10 +129,16 @@
     if (!key) return;
     store.set('pmKey', key);
     $('gate').classList.remove('show');
+    loadList();
     $('q').focus();
   };
+  function needPassword() {
+    store.del('pmKey'); key = '';
+    $('gateErr').textContent = 'Password needed.';
+    $('gate').classList.add('show');
+  }
 
-  function esc(s) { return s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
   function inline(s) {
     return esc(s)
       .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
@@ -121,7 +148,7 @@
   }
   function md(text) {
     const out = []; let list = null;
-    for (const raw of text.split('\n')) {
+    for (const raw of String(text).split('\n')) {
       const line = raw.trimEnd();
       const li = line.match(/^\s*(?:[-*•]|\d+\.)\s+(.*)$/);
       if (li) { if (!list) { list = []; } list.push('<li>' + inline(li[1]) + '</li>'); continue; }
@@ -134,40 +161,139 @@
     return out.join('');
   }
 
-  function add(role, html, meta) {
+  function changeCard(msg) {
+    const box = document.createElement('div');
+    box.className = 'change';
+    const items = msg.pending.map((p) => p.summary.split('\n').map((l) => '<li>' + esc(l) + '</li>').join('')).join('');
+    box.innerHTML = '<div class="lbl">CHANGE IN NOTION</div><ul>' + items + '</ul>' +
+      (msg.resolved ? '<div class="state">' + (msg.resolved === 'confirmed' ? 'Confirmed' : 'Cancelled') + '</div>'
+        : '<div class="btns"><button type="button" class="ok">Confirm</button><button type="button" class="ghost no">Cancel</button></div>');
+    if (!msg.resolved) {
+      box.querySelector('.ok').onclick = () => decide(msg, 'confirmed', box);
+      box.querySelector('.no').onclick = () => decide(msg, 'cancelled', box);
+    }
+    return box;
+  }
+
+  function add(role, html, meta, msg) {
     $('intro')?.remove();
     const row = document.createElement('div');
     row.className = 'msg ' + role;
-    row.innerHTML = '<div class="bubble">' + html + (meta ? '<div class="meta">' + meta + '</div>' : '') + '</div>';
+    row.innerHTML = '<div class="bubble">' + html + (meta ? '<div class="meta">' + esc(meta) + '</div>' : '') + '</div>';
+    if (msg && msg.pending && msg.pending.length) row.querySelector('.bubble').appendChild(changeCard(msg));
     $('log').appendChild(row);
     $('scroll').scrollTop = $('scroll').scrollHeight;
     return row;
+  }
+  function render() {
+    $('log').innerHTML = history.length ? '' : introHTML;
+    for (const m of history) add(m.role, m.role === 'user' ? esc(m.content).replace(/\n/g, '<br>') : md(m.content), m.meta, m);
+  }
+
+  function ago(iso) {
+    const s = (Date.now() - new Date(iso)) / 1000;
+    if (s < 60) return 'just now';
+    if (s < 3600) return Math.floor(s / 60) + 'm ago';
+    if (s < 86400) return Math.floor(s / 3600) + 'h ago';
+    return new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+  }
+  async function loadList() {
+    try {
+      const res = await fetch('/api/chats', { headers: headers() });
+      if (res.status === 401) return needPassword();
+      const data = await res.json();
+      const chats = data.chats || [];
+      $('list').innerHTML = chats.length ? '' : '<div class="empty">No saved chats yet.</div>';
+      for (const c of chats) {
+        const el = document.createElement('div');
+        el.className = 'item' + (c.id === chatId ? ' active' : '');
+        el.innerHTML = '<div class="t"><div>' + esc(c.title) + '</div><small>' + ago(c.updated) + ' · ' + c.count + ' msgs' + (c.channel !== 'Dashboard chat' ? ' · ' + esc(c.channel) : '') + '</small></div><button class="del" title="Delete">×</button>';
+        el.onclick = () => openChat(c.id);
+        el.querySelector('.del').onclick = async (e) => {
+          e.stopPropagation();
+          el.remove();
+          await fetch('/api/chats?id=' + c.id, { method: 'DELETE', headers: headers() });
+          if (c.id === chatId) newChat();
+        };
+        $('list').appendChild(el);
+      }
+    } catch (e) {
+      $('list').innerHTML = '<div class="empty err">Could not load chats: ' + esc(e.message) + '</div>';
+    }
+  }
+  async function openChat(id) {
+    closeSide();
+    $('log').innerHTML = '<p class="thinking" style="text-align:center">Loading chat…</p>';
+    try {
+      const res = await fetch('/api/chats?id=' + id, { headers: headers() });
+      if (res.status === 401) return needPassword();
+      if (!res.ok) throw new Error('Chat not found');
+      const data = await res.json();
+      chatId = data.id; store.set('pmChat', chatId);
+      history = data.messages || [];
+      render();
+    } catch (e) {
+      newChat();
+    }
+  }
+  function newChat() {
+    chatId = null; store.del('pmChat');
+    history = [];
+    render(); closeSide(); $('q').focus();
+  }
+  function openSide() { $('side').classList.add('open'); $('shade').classList.add('open'); loadList(); }
+  function closeSide() { $('side').classList.remove('open'); $('shade').classList.remove('open'); }
+
+  async function decide(msg, choice, box) {
+    if (busy) return;
+    busy = true;
+    box.querySelector('.btns').innerHTML = '<span class="state">' + (choice === 'confirmed' ? 'Saving to Notion…' : 'Cancelling…') + '</span>';
+    msg.resolved = choice;
+    try {
+      const body = { chatId, channel: 'dashboard', messages: history };
+      if (choice === 'confirmed') body.confirm = msg.pending.map((p) => p.token)[0]; else body.cancel = true;
+      let replies = [];
+      const tokens = choice === 'confirmed' ? msg.pending.map((p) => p.token) : [null];
+      for (const t of tokens) {
+        const res = await fetch('/api/chat', { method: 'POST', headers: headers(), body: JSON.stringify({ ...body, ...(t ? { confirm: t } : {}) }) });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error || ('Error ' + res.status));
+        if (data.chatId) { chatId = data.chatId; store.set('pmChat', chatId); }
+        replies.push(data.reply);
+        const m = { role: 'assistant', content: data.reply, meta: data.meta, at: new Date().toISOString() };
+        history.push(m);
+        add('assistant', md(data.reply), data.meta === 'change' ? 'saved to Notion' : '');
+      }
+      box.querySelector('.btns, .state') && (box.lastElementChild.outerHTML = '<div class="state">' + (choice === 'confirmed' ? 'Confirmed' : 'Cancelled') + '</div>');
+    } catch (e) {
+      msg.resolved = undefined;
+      add('assistant', '<span class="err">Something broke: ' + esc(e.message) + '</span>');
+      box.replaceWith(changeCard(msg));
+    } finally {
+      busy = false;
+    }
   }
 
   async function ask(text) {
     if (busy || !text.trim()) return;
     busy = true; $('send').disabled = true;
-    history.push({ role: 'user', content: text });
+    history.push({ role: 'user', content: text, at: new Date().toISOString() });
     add('user', esc(text).replace(/\n/g, '<br>'));
     const wait = add('assistant', '<span class="thinking">Checking Notion…</span>');
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',
-        headers: { 'content-type': 'application/json', 'x-pm-key': key },
-        body: JSON.stringify({ messages: history, channel: 'dashboard' }),
+        headers: headers(),
+        body: JSON.stringify({ messages: history, chatId, channel: 'dashboard' }),
       });
       const data = await res.json().catch(() => ({}));
       wait.remove();
-      if (res.status === 401) {
-        history.pop(); store.del('pmKey'); key = '';
-        $('gateErr').textContent = 'Wrong password, try again.';
-        $('gate').classList.add('show');
-        return;
-      }
+      if (res.status === 401) { history.pop(); needPassword(); return; }
       if (!res.ok) throw new Error(data.error || ('Error ' + res.status));
-      history.push({ role: 'assistant', content: data.reply });
-      const meta = (data.tools_used?.length ? 'read ' + data.tools_used.join(', ') + ' · ' : '') + '$' + (data.usage?.cost_usd ?? 0).toFixed(4);
-      add('assistant', md(data.reply), meta);
+      const msg = { role: 'assistant', content: data.reply, meta: data.meta, at: new Date().toISOString(), pending: data.pending || [] };
+      history.push(msg);
+      if (data.chatId) { chatId = data.chatId; store.set('pmChat', chatId); }
+      add('assistant', md(data.reply), data.meta, msg);
     } catch (e) {
       wait.remove();
       history.pop();
@@ -181,8 +307,11 @@
   $('q').addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); $('ask').requestSubmit(); } });
   function autosize() { const q = $('q'); q.style.height = 'auto'; q.style.height = Math.min(q.scrollHeight, 160) + 'px'; }
   $('q').addEventListener('input', autosize);
-  document.querySelectorAll('.chip').forEach((c) => c.onclick = () => ask(c.textContent));
-  $('clear').onclick = () => { history = []; location.reload(); };
+  $('clear').onclick = newChat;
+  $('newBtn').onclick = newChat;
+  $('histBtn').onclick = openSide;
+  $('shade').onclick = closeSide;
+  if (chatId) openChat(chatId);
 </script>
 </body>
 </html>
