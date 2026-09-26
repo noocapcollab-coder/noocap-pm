@@ -5,6 +5,8 @@
 // Tip: start a message with "deep:" to force the stronger model.
 import { TOOL_DEFS, runTool, todayIST, DS, loadMemory, memoryBlock } from '../lib/tools.js';
 import { notion } from '../lib/notion.js';
+import { saveChat } from '../lib/chats.js';
+import { checkAuth } from '../lib/auth.js';
 
 // Two models: Haiku (cheap) for everyday lookups, Sonnet (stronger) for questions that need thinking.
 const MODELS = {
@@ -16,7 +18,7 @@ const MAX_TURNS = 8;
 
 // Small talk gets an instant free reply, no AI call at all
 const SMALL_TALK = [
-  { re: /^(hi+|hey+|hello+|yo|hii+|good (morning|afternoon|evening)|gm)\b[\s!.]*$/i, reply: 'Hey! Ask me about deals, money, the video pipeline or the team.' },
+  { re: /^(hi+|hey+|hello+|yo|hii+|good (morning|afternoon|evening)|gm)\b[\s!.]*$/i, reply: 'Hey 👋' },
   { re: /^(thanks?|thank you|thx|ty|cool|great|nice|perfect|awesome|ok+|okay+|k|got it|done|👍|🙏)[\s!.]*$/i, reply: '👍' },
   { re: /^(bye|good ?night|gn|see you|cya)[\s!.]*$/i, reply: 'Talk soon.' },
 ];
@@ -47,6 +49,7 @@ How to answer:
 - If data is missing or a tool errors, say that plainly and say where in Notion it should be filled in.
 - Money is in USD unless the data says otherwise. Dates are in India time (IST).
 - Be brief and direct, like a sharp ops manager messaging the founder. Lead with the answer, then the few details that matter. Use short bullet lists for several items and bold only the key numbers.
+- Never offer menus or options. Do not list things the user could ask, do not suggest next questions, and do not end with offers like "want me to…" or "let me know if…". Answer what was asked and stop. If a request is unclear, make the most sensible reading and answer that.
 - You can only read agency data. You cannot send emails, change deals or videos, or message anyone yet. If asked to act, say what should be done and by whom. The one thing you can write is your own memory.
 
 Memory and learning:
@@ -57,13 +60,6 @@ Memory and learning:
 - Do not save one-off questions, today's figures or statuses (those live in Notion), or your own assumptions. Only save what the user actually told you.
 - If asked what you remember, list the PM MEMORY items with their ids.
 - Writing style rules, always: never stack three parallel items for rhythm, never use "it's not X, it's Y" contrasts, and never write chains of short choppy fragments. Write in flowing sentences joined with and, but, so, which, because.`;
-
-function checkAuth(req) {
-  const want = process.env.PM_PASSWORD;
-  if (!want) return true; // no password set in Vercel = open chat
-  const got = req.headers['x-pm-key'] || '';
-  return got.length === want.length && got === want;
-}
 
 async function callClaude(messages, channel, memoryText, modelId) {
   const res = await fetch('https://api.anthropic.com/v1/messages', {
@@ -123,16 +119,19 @@ export default async function handler(req, res) {
 
   const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
   const channel = ['whatsapp', 'discord'].includes(body.channel) ? body.channel : 'dashboard';
-  const history = (Array.isArray(body.messages) ? body.messages : [])
-    .filter((m) => (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string' && m.content.trim())
-    .slice(-12)
-    .map((m) => ({ role: m.role, content: m.content.slice(0, 4000) }));
+  const chatId = typeof body.chatId === 'string' && /^[0-9a-f-]{32,36}$/i.test(body.chatId) ? body.chatId : null;
+  const thread = (Array.isArray(body.messages) ? body.messages : [])
+    .filter((m) => (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string' && m.content.trim());
+  const history = thread.slice(-12).map((m) => ({ role: m.role, content: m.content.slice(0, 4000) }));
   while (history.length && history[0].role !== 'user') history.shift();
   if (!history.length || history[history.length - 1].role !== 'user') return res.status(400).json({ error: 'Send at least one user message' });
   const question = history[history.length - 1].content;
 
   const small = SMALL_TALK.find((t) => t.re.test(question.trim()));
-  if (small) return res.status(200).json({ reply: small.reply, usage: { input: 0, output: 0, cost_usd: 0 }, tools_used: [], model: 'none' });
+  if (small) {
+    const savedId = await saveChat({ chatId, channel, messages: [...thread, { role: 'assistant', content: small.reply, meta: 'free', at: new Date().toISOString() }] }).catch(() => chatId);
+    return res.status(200).json({ reply: small.reply, meta: 'free', usage: { input: 0, output: 0, cost_usd: 0 }, tools_used: [], model: 'none', chatId: savedId });
+  }
 
   const modelName = pickModel(question);
   const model = MODELS[modelName];
@@ -177,6 +176,11 @@ export default async function handler(req, res) {
 
   const P = model.price;
   const cost = Math.round(((usage.input * P.input + usage.output * P.output + usage.cacheWrite * P.cacheWrite + usage.cacheRead * P.cacheRead) / 1e6) * 10000) / 10000;
-  await logChat({ question, reply, usage, cost, channel, tools: toolsUsed, model: modelName });
-  return res.status(200).json({ reply, usage: { input: usage.input + usage.cacheWrite + usage.cacheRead, output: usage.output, cost_usd: cost }, tools_used: [...new Set(toolsUsed)], model: modelName });
+  const uniqueTools = [...new Set(toolsUsed)];
+  const meta = [modelName, uniqueTools.length ? 'read ' + uniqueTools.join(', ') : '', '$' + cost.toFixed(4) + ' (≈₹' + (cost * 88).toFixed(2) + ')'].filter(Boolean).join(' · ');
+  const [savedId] = await Promise.all([
+    saveChat({ chatId, channel, messages: [...thread, { role: 'assistant', content: reply, meta, at: new Date().toISOString() }] }).catch((e) => { console.error('chat save failed', e.message); return chatId; }),
+    logChat({ question, reply, usage, cost, channel, tools: toolsUsed, model: modelName }),
+  ]);
+  return res.status(200).json({ reply, meta, usage: { input: usage.input + usage.cacheWrite + usage.cacheRead, output: usage.output, cost_usd: cost }, tools_used: uniqueTools, model: modelName, chatId: savedId });
 }
