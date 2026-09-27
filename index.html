@@ -475,6 +475,7 @@
     const todayLate = d.schedule.days[0].items.filter((v) => v.stage !== 'Ready' && v.stage !== 'Posted');
     for (const v of todayLate.slice(0, 4)) out.push({ ic: '!', cls: '', t: `${v.creator}: ${v.title}`, s: `Posts today, still in ${v.stage}${v.editor ? ' · ' + v.editor : ''}`, url: v.url });
     for (const v of d.schedule.overdue.slice(0, 4)) out.push({ ic: '!', cls: 'red', t: `${v.creator}: ${v.title}`, s: `${v.days_late}d past post date · ${v.stage}`, url: v.url });
+    for (const u of (d.deals.unplaced || []).slice(0, 5)) out.push({ ic: '✉', cls: 'red', t: `Unplaced email: ${u.event}`, s: `${u.creator ? u.creator + ' · ' : ''}the PM couldn't match it to a deal`, url: u.url });
     for (const a of d.deals.attention.slice(0, 5)) out.push({ ic: '$', cls: '', t: `${a.brand} × ${a.creator || '?'}`, s: `${a.why} · ${a.stage}`, url: a.url });
     $('attN').textContent = out.length || '';
     $('attention').innerHTML = out.length ? out.map((a) => {
