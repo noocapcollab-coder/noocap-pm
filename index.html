@@ -2,134 +2,346 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0d10">
 <title>NOOCAP PM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0b0d10; --panel: #12151a; --panel2: #171b21; --line: #232932; --text: #e7eaee; --muted: #8a93a0;
-    --accent: #5eead4; --accent-ink: #062b26; --warn: #fbbf24; --err: #f87171;
+    --bg: #0b0d10; --panel: #111419; --panel2: #161a20; --panel3: #1c212a; --line: #222831; --line2: #2c333e;
+    --text: #e8ebef; --muted: #8b94a1; --dim: #5d6673;
+    --accent: #5eead4; --accent-ink: #062b26; --accent-soft: rgba(94,234,212,.10);
+    --warn: #fbbf24; --warn-soft: rgba(251,191,36,.10); --err: #f87171; --err-soft: rgba(248,113,113,.10); --ok: #4ade80;
+    --s1: #1d4d47; --s2: #25706a; --s3: #33968c; --s4: #4dbdb0; --s5: #8eeee0;
+    --r: 14px; --tabbar: 0px;
   }
   * { box-sizing: border-box; }
   html, body { height: 100%; margin: 0; }
-  body { background: var(--bg); color: var(--text); font: 15px/1.55 'IBM Plex Sans', system-ui, sans-serif; display: flex; flex-direction: column; }
-  header { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--line); background: var(--panel); }
-  .logo { font: 700 16px 'Space Grotesk', sans-serif; letter-spacing: .04em; }
+  body { background: var(--bg); color: var(--text); font: 15px/1.5 'IBM Plex Sans', system-ui, sans-serif; display: flex; flex-direction: column; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+
+  /* ---------- header ---------- */
+  header { display: flex; align-items: center; gap: 16px; padding: 0 20px; height: 58px; border-bottom: 1px solid var(--line); background: var(--panel); flex-shrink: 0; }
+  .logo { display: flex; align-items: center; gap: 10px; font: 700 16px 'Space Grotesk', sans-serif; letter-spacing: .04em; white-space: nowrap; }
   .logo span { color: var(--accent); }
   .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
-  header .sub { color: var(--muted); font-size: 13px; }
-  header button { margin-left: auto; }
-  main { flex: 1; overflow-y: auto; padding: 24px 16px 8px; }
-  .wrap { max-width: 820px; margin: 0 auto; }
-  .msg { display: flex; margin: 0 0 18px; }
-  .msg.user { justify-content: flex-end; }
-  .bubble { max-width: 88%; padding: 12px 16px; border-radius: 14px; background: var(--panel2); border: 1px solid var(--line); overflow-wrap: anywhere; }
-  .msg.user .bubble { background: var(--accent); color: var(--accent-ink); border-color: transparent; font-weight: 500; }
-  .bubble p { margin: 0 0 8px; } .bubble p:last-child { margin: 0; }
-  .bubble ul { margin: 4px 0 8px; padding-left: 20px; } .bubble li { margin: 2px 0; }
-  .bubble code { font: 13px 'IBM Plex Mono', monospace; background: #0b0d10; padding: 1px 5px; border-radius: 4px; }
-  .bubble a { color: var(--accent); }
-  .meta { font: 11px 'IBM Plex Mono', monospace; color: var(--muted); margin-top: 8px; }
+  nav.tabs { display: flex; gap: 4px; margin-left: 24px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 4px; }
+  nav.tabs button { background: none; border: 0; color: var(--muted); padding: 7px 16px; border-radius: 9px; font: 600 13px 'Space Grotesk', sans-serif; letter-spacing: .02em; display: flex; align-items: center; gap: 6px; }
+  nav.tabs button:hover { color: var(--text); }
+  nav.tabs button.on { background: var(--panel3); color: var(--text); }
+  .badge { background: var(--warn); color: #111; border-radius: 999px; padding: 0 7px; font: 600 11px 'IBM Plex Mono', monospace; line-height: 18px; min-width: 18px; text-align: center; }
+  .badge[hidden] { display: none; }
+  .hstat { margin-left: auto; color: var(--dim); font: 12px 'IBM Plex Mono', monospace; display: flex; align-items: center; gap: 10px; }
+  .iconbtn { background: none; border: 1px solid var(--line); color: var(--muted); border-radius: 10px; padding: 6px 10px; font-size: 13px; }
+  .iconbtn:hover { color: var(--text); border-color: var(--line2); }
+
+  /* bottom tab bar (phone) */
+  .tabbar { display: none; }
+
+  .view { flex: 1; min-height: 0; display: none; }
+  .view.on { display: flex; }
+
+  /* ---------- HQ ---------- */
+  #hq { overflow-y: auto; }
+  .hq { width: 100%; max-width: 1320px; margin: 0 auto; padding: 22px 22px 40px; }
+  .hq-top { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+  .hq-top h1 { font: 600 22px 'Space Grotesk', sans-serif; margin: 0; }
+  .hq-top .when { color: var(--muted); font-size: 13px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; text-align: left; color: inherit; display: flex; flex-direction: column; justify-content: flex-start; }
+  button.kpi:hover { border-color: var(--line2); background: var(--panel2); }
+  .kpi .l { color: var(--muted); font-size: 12px; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+  .kpi .v { font: 600 28px/1.1 'Space Grotesk', sans-serif; font-variant-numeric: tabular-nums; }
+  .kpi .s { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .kpi.bad .v { color: var(--err); } .kpi.bad { border-color: rgba(248,113,113,.35); }
+  .kpi.warn .v { color: var(--warn); }
+  .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 16px 18px; min-width: 0; }
+  .card h2 { font: 600 14px 'Space Grotesk', sans-serif; letter-spacing: .02em; margin: 0 0 12px; display: flex; align-items: center; gap: 8px; }
+  .card h2 .n { color: var(--muted); font: 500 12px 'IBM Plex Mono', monospace; }
+  .card h2 .r { margin-left: auto; color: var(--muted); font: 500 12px 'IBM Plex Sans', sans-serif; }
+  .c7 { grid-column: span 7; } .c5 { grid-column: span 5; } .c6 { grid-column: span 6; } .c12 { grid-column: span 12; } .c4 { grid-column: span 4; } .c8 { grid-column: span 8; }
+  .empty { color: var(--muted); font-size: 13px; padding: 8px 0; }
   .err { color: var(--err); }
-  .thinking { color: var(--muted); font-style: italic; }
-  .intro { text-align: center; padding: 40px 0 20px; }
+
+  /* schedule */
+  .daytabs { display: flex; gap: 6px; overflow-x: auto; margin-bottom: 12px; scrollbar-width: none; }
+  .daytabs::-webkit-scrollbar { display: none; }
+  .daytab { background: var(--panel2); border: 1px solid var(--line); color: var(--muted); border-radius: 10px; padding: 6px 10px; font-size: 12px; white-space: nowrap; display: flex; gap: 6px; align-items: center; }
+  .daytab b { color: var(--text); font-weight: 600; }
+  .daytab.on { border-color: var(--accent); color: var(--text); background: var(--accent-soft); }
+  .daytab.late { border-color: rgba(248,113,113,.45); }
+  .daytab.late.on { background: var(--err-soft); border-color: var(--err); }
+  .rows { display: flex; flex-direction: column; }
+  .row { display: flex; gap: 12px; align-items: center; padding: 9px 6px; border-top: 1px solid var(--line); font-size: 14px; }
+  .row .main { flex: 1; min-width: 0; }
+  .row .sub { color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 1px; }
+  .row:first-child { border-top: 0; }
+  a.row:hover { background: var(--panel2); border-radius: 8px; }
+    .row .ttl { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .row .ttl { font-weight: 500; }
+  .pill { font: 500 11px 'IBM Plex Mono', monospace; padding: 2px 8px; border-radius: 999px; white-space: nowrap; border: 1px solid var(--line2); color: var(--muted); }
+  .pill.ready { color: var(--ok); border-color: rgba(74,222,128,.35); }
+  .pill.late { color: var(--err); border-color: rgba(248,113,113,.4); }
+  .pill.spon { color: var(--warn); border-color: rgba(251,191,36,.35); margin-left: 6px; font-size: 10px; padding: 1px 6px; vertical-align: 1px; }
+
+  /* pipeline bars */
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+  .bars { display: flex; flex-direction: column; gap: 9px; }
+  .bar { display: grid; grid-template-columns: 84px 1fr 34px; gap: 10px; align-items: center; font-size: 13px; }
+  .bar .nm { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bar .tot { text-align: right; font: 500 12px 'IBM Plex Mono', monospace; color: var(--muted); }
+  .track { display: flex; gap: 2px; height: 16px; }
+  .seg { height: 100%; min-width: 4px; position: relative; }
+  .seg:first-child { border-radius: 4px 0 0 4px; } .seg:last-child { border-radius: 0 4px 4px 0; } .seg:only-child { border-radius: 4px; }
+  .tip { position: fixed; pointer-events: none; background: var(--panel3); border: 1px solid var(--line2); border-radius: 8px; padding: 6px 10px; font-size: 12px; z-index: 50; display: none; white-space: nowrap; }
+
+  /* tables */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: var(--muted); font-weight: 500; font-size: 12px; padding: 0 8px 8px; border-bottom: 1px solid var(--line); }
+  td { padding: 9px 8px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: 0; }
+  th.num, td.num { text-align: right; }
+  td.nm { font-weight: 500; }
+  .tscroll { overflow-x: auto; }
+
+  /* attention + activity */
+  .att { display: flex; gap: 10px; padding: 10px 2px; border-top: 1px solid var(--line); font-size: 14px; align-items: flex-start; }
+  .att:first-child { border-top: 0; }
+  .att .ic { width: 22px; height: 22px; border-radius: 7px; display: grid; place-items: center; flex-shrink: 0; font-size: 12px; background: var(--warn-soft); color: var(--warn); }
+  .att .ic.red { background: var(--err-soft); color: var(--err); }
+  .att .ic.teal { background: var(--accent-soft); color: var(--accent); }
+  .att .b { min-width: 0; flex: 1; }
+  .att .b div { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .att .b small { color: var(--muted); font-size: 12px; }
+  .att .t { color: var(--dim); font: 11px 'IBM Plex Mono', monospace; white-space: nowrap; }
+  .stagechips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .sc { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 6px 10px; font-size: 12px; color: var(--muted); }
+  .sc b { color: var(--text); font: 600 14px 'Space Grotesk', sans-serif; margin-right: 4px; }
+  .money-head { display: flex; gap: 22px; flex-wrap: wrap; margin-bottom: 12px; }
+  .money-head div small { display: block; color: var(--muted); font-size: 12px; }
+  .money-head div b { font: 600 20px 'Space Grotesk', sans-serif; font-variant-numeric: tabular-nums; }
+  .skel { background: linear-gradient(90deg, var(--panel2), var(--panel3), var(--panel2)); background-size: 200% 100%; animation: sh 1.2s infinite; border-radius: 8px; height: 14px; margin: 8px 0; }
+  @keyframes sh { to { background-position: -200% 0; } }
+
+  /* ---------- Chat ---------- */
+  #chat { flex-direction: column; }
+  .chatbar { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-bottom: 1px solid var(--line); }
+  .chatbar .ttl { color: var(--muted); font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+  main#scroll { flex: 1; overflow-y: auto; padding: 24px 16px 8px; }
+  .wrap { max-width: 800px; margin: 0 auto; }
+  .msg { display: flex; margin: 0 0 18px; gap: 10px; }
+  .msg.user { justify-content: flex-end; }
+  .av { width: 28px; height: 28px; border-radius: 9px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font: 700 11px 'Space Grotesk', sans-serif; flex-shrink: 0; margin-top: 2px; }
+  .bubble { max-width: 86%; padding: 12px 16px; border-radius: 16px; background: var(--panel2); border: 1px solid var(--line); overflow-wrap: anywhere; }
+  .msg.assistant .bubble { border-top-left-radius: 6px; }
+  .msg.user .bubble { background: var(--accent); color: var(--accent-ink); border-color: transparent; font-weight: 500; border-top-right-radius: 6px; }
+  .bubble p { margin: 0 0 8px; } .bubble p:last-child { margin: 0; }
+  .bubble ul, .bubble ol { margin: 4px 0 8px; padding-left: 20px; } .bubble li { margin: 3px 0; }
+  .bubble code { font: 13px 'IBM Plex Mono', monospace; background: var(--bg); padding: 1px 5px; border-radius: 4px; }
+  .bubble a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .bubble table { margin: 6px 0 10px; font-size: 13px; }
+  .bubble th { padding: 0 8px 6px; } .bubble td { padding: 6px 8px; }
+  .bubble .tscroll { max-width: 100%; }
+  .meta { font: 11px 'IBM Plex Mono', monospace; color: var(--dim); margin-top: 8px; }
+  .thinking { color: var(--muted); display: inline-flex; gap: 4px; align-items: center; }
+  .thinking i { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: bl 1s infinite; }
+  .thinking i:nth-child(2) { animation-delay: .15s; } .thinking i:nth-child(3) { animation-delay: .3s; }
+  @keyframes bl { 50% { opacity: .2; } }
+  .intro { text-align: center; padding: 48px 0 16px; }
   .intro h1 { font: 600 26px 'Space Grotesk', sans-serif; margin: 0 0 6px; }
-  .intro p { color: var(--muted); margin: 0 0 22px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-  .chip { background: var(--panel2); border: 1px solid var(--line); color: var(--text); border-radius: 999px; padding: 8px 14px; font: inherit; font-size: 13px; cursor: pointer; }
+  .intro p { color: var(--muted); margin: 0; }
+  footer.ask { padding: 10px 16px 16px; border-top: 1px solid var(--line); background: var(--panel); }
+  .quick { max-width: 800px; margin: 0 auto 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .quick::-webkit-scrollbar { display: none; }
+  .chip { background: var(--panel2); border: 1px solid var(--line); color: var(--text); border-radius: 999px; padding: 7px 13px; font-size: 13px; white-space: nowrap; }
   .chip:hover { border-color: var(--accent); }
-  footer { padding: 12px 16px 16px; border-top: 1px solid var(--line); background: var(--panel); }
-  form { max-width: 820px; margin: 0 auto; display: flex; gap: 10px; }
-  textarea { flex: 1; resize: none; min-height: 46px; max-height: 160px; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font: inherit; outline: none; }
+  form#ask { max-width: 800px; margin: 0 auto; display: flex; gap: 10px; align-items: flex-end; }
+  textarea { flex: 1; resize: none; min-height: 48px; max-height: 160px; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 14px; padding: 13px 14px; font: inherit; outline: none; }
   textarea:focus { border-color: var(--accent); }
-  button { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 12px; padding: 0 18px; font: 600 14px 'Space Grotesk', sans-serif; cursor: pointer; }
-  button.ghost { background: transparent; color: var(--muted); border: 1px solid var(--line); padding: 6px 12px; font-size: 12px; }
-  button:disabled { opacity: .5; cursor: default; }
-  .gate { position: fixed; inset: 0; background: var(--bg); display: none; align-items: center; justify-content: center; padding: 16px; }
-  .gate.show { display: flex; }
-  .gate form { flex-direction: column; width: 100%; max-width: 340px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
-  .gate input { background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: inherit; }
-  .gate button { padding: 12px; }
-  .side { position: fixed; top: 0; left: 0; bottom: 0; width: 320px; max-width: 86vw; background: var(--panel); border-right: 1px solid var(--line); transform: translateX(-100%); transition: transform .2s ease; z-index: 20; display: flex; flex-direction: column; }
+  .btn { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 12px; padding: 0 18px; height: 48px; font: 600 14px 'Space Grotesk', sans-serif; }
+  .btn.sm { height: 36px; padding: 0 14px; font-size: 13px; border-radius: 10px; }
+  .btn.ghost { background: transparent; color: var(--muted); border: 1px solid var(--line); }
+  .btn.ghost:hover { color: var(--text); border-color: var(--line2); }
+  .btn.danger { background: transparent; color: var(--err); border: 1px solid rgba(248,113,113,.35); }
+  .btn:disabled { opacity: .5; cursor: default; }
+  .change { margin-top: 10px; border: 1px solid rgba(251,191,36,.5); border-radius: 12px; padding: 10px 12px; background: var(--warn-soft); }
+  .change .lbl { font: 600 11px 'IBM Plex Mono', monospace; color: var(--warn); letter-spacing: .06em; margin-bottom: 6px; }
+  .change ul { margin: 0 0 10px; }
+  .change .btns { display: flex; gap: 8px; }
+  .change .state { font-size: 13px; color: var(--muted); }
+
+  /* chats drawer */
+  .shade { position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 30; display: none; }
+  .shade.open { display: block; }
+  .side { position: fixed; top: 0; left: 0; bottom: 0; width: 320px; max-width: 86vw; background: var(--panel); border-right: 1px solid var(--line); transform: translateX(-100%); transition: transform .2s ease; z-index: 40; display: flex; flex-direction: column; }
   .side.open { transform: none; }
-  .side h2 { font: 600 15px 'Space Grotesk', sans-serif; margin: 0; padding: 16px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
+  .side h3 { font: 600 15px 'Space Grotesk', sans-serif; margin: 0; padding: 16px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
   .side .list { overflow-y: auto; flex: 1; padding: 8px; }
   .item { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 10px; cursor: pointer; }
   .item:hover, .item.active { background: var(--panel2); }
   .item .t { flex: 1; min-width: 0; }
   .item .t div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 14px; }
   .item .t small { color: var(--muted); font-size: 11px; }
-  .item .del { background: none; color: var(--muted); padding: 2px 6px; font-size: 16px; opacity: 0; }
+  .item .del { background: none; border: 0; color: var(--muted); padding: 2px 6px; font-size: 16px; opacity: 0; }
   .item:hover .del { opacity: 1; }
-  .shade { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 15; display: none; }
-  .shade.open { display: block; }
-  .change { margin-top: 10px; border: 1px solid var(--warn); border-radius: 10px; padding: 10px 12px; background: rgba(251,191,36,.06); }
-  .change .lbl { font: 600 11px 'IBM Plex Mono', monospace; color: var(--warn); letter-spacing: .06em; margin-bottom: 6px; }
-  .change ul { margin: 0 0 10px; }
-  .change .btns { display: flex; gap: 8px; }
-  .change .btns button { padding: 8px 14px; }
-  .change .state { font-size: 13px; color: var(--muted); }
-  .appr { position: fixed; top: 0; right: 0; bottom: 0; width: 560px; max-width: 100vw; background: var(--panel); border-left: 1px solid var(--line); transform: translateX(100%); transition: transform .2s ease; z-index: 20; display: flex; flex-direction: column; }
-  .appr.open { transform: none; }
-  .appr h2 { font: 600 15px 'Space Grotesk', sans-serif; margin: 0; padding: 16px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
-  .appr .list { overflow-y: auto; flex: 1; padding: 12px; }
-  .mail { border: 1px solid var(--line); border-radius: 12px; padding: 12px; margin-bottom: 12px; background: var(--panel2); }
-  .mail .top { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
-  .kind { font: 600 11px 'IBM Plex Mono', monospace; padding: 2px 8px; border-radius: 999px; background: rgba(94,234,212,.12); color: var(--accent); }
-  .kind.failed { background: rgba(248,113,113,.12); color: var(--err); }
-  .mail .who { font-weight: 600; }
-  .mail .why { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
-  .mail label { display: block; font: 500 11px 'IBM Plex Mono', monospace; color: var(--muted); margin: 6px 0 3px; }
-  .mail input, .mail textarea { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font: inherit; font-size: 14px; }
-  .mail textarea { min-height: 170px; resize: vertical; line-height: 1.5; }
-  .mail .att { font-size: 13px; color: var(--warn); margin-top: 6px; }
-  .mail .btns { display: flex; gap: 8px; margin-top: 10px; }
-  .mail .btns button { padding: 8px 14px; }
-  .mail .state { font-size: 13px; margin-top: 8px; }
-  .badge { background: var(--warn); color: #111; border-radius: 999px; padding: 0 7px; font-size: 11px; margin-left: 4px; }
-  .empty { color: var(--muted); font-size: 13px; padding: 12px; }
-  @media (max-width: 600px) { .item .del { opacity: 1; } }
-  @media (max-width: 600px) { header .sub { display: none; } .bubble { max-width: 94%; } }
+
+  /* ---------- Approvals ---------- */
+  #approvals { overflow: hidden; }
+  .ap { display: grid; grid-template-columns: 360px 1fr; width: 100%; max-width: 1320px; margin: 0 auto; min-height: 0; }
+  .ap-list { border-right: 1px solid var(--line); overflow-y: auto; padding: 16px 12px; }
+  .ap-list h2 { font: 600 14px 'Space Grotesk', sans-serif; margin: 4px 8px 12px; display: flex; align-items: center; gap: 8px; }
+  .ap-item { display: block; width: 100%; text-align: left; background: none; border: 1px solid transparent; color: inherit; border-radius: 12px; padding: 12px; margin-bottom: 6px; }
+  .ap-item:hover { background: var(--panel2); }
+  .ap-item.on { background: var(--panel2); border-color: var(--line2); }
+  .ap-item .top { display: flex; gap: 8px; align-items: center; margin-bottom: 4px; }
+  .ap-item .who { font-weight: 600; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ap-item .subj { color: var(--muted); font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ap-item .age { margin-left: auto; color: var(--dim); font: 11px 'IBM Plex Mono', monospace; }
+  .kind { font: 600 10px 'IBM Plex Mono', monospace; padding: 2px 7px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
+  .kind.failed { background: var(--err-soft); color: var(--err); }
+  .ap-edit { overflow-y: auto; padding: 22px 28px 40px; }
+  .ap-edit .head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap; }
+  .ap-edit .head h2 { font: 600 20px 'Space Grotesk', sans-serif; margin: 0; }
+  .ap-edit .why { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+  .field { display: grid; grid-template-columns: 72px 1fr; align-items: center; border-bottom: 1px solid var(--line); }
+  .field label { color: var(--muted); font-size: 13px; }
+  .field input { background: transparent; border: 0; color: var(--text); padding: 12px 0; font: inherit; outline: none; width: 100%; }
+  .ap-edit textarea.body { width: 100%; min-height: 320px; margin-top: 14px; border-radius: 12px; line-height: 1.6; background: var(--panel); }
+  .attach { display: inline-flex; gap: 8px; align-items: center; margin-top: 12px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; font-size: 13px; color: var(--muted); }
+  .ap-actions { display: flex; gap: 8px; margin-top: 16px; align-items: center; flex-wrap: wrap; }
+  .ap-actions .state { font-size: 13px; color: var(--muted); margin-left: 6px; }
+  .back { display: none; }
+  .ap-none { display: grid; place-items: center; height: 100%; color: var(--muted); text-align: center; padding: 24px; }
+  .ap-none b { display: block; color: var(--text); font: 600 18px 'Space Grotesk', sans-serif; margin-bottom: 6px; }
+
+  .gate { position: fixed; inset: 0; background: var(--bg); display: none; align-items: center; justify-content: center; padding: 16px; z-index: 60; }
+  .gate.show { display: flex; }
+  .gate form { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 340px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+  .gate input { background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: inherit; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 1100px) {
+    .c7, .c5, .c6, .c4, .c8 { grid-column: span 12; }
+  }
+  @media (max-width: 760px) {
+    :root { --tabbar: 64px; }
+    header { padding: 0 16px; height: 54px; }
+    nav.tabs { display: none; }
+    .tabbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; height: calc(var(--tabbar) + env(safe-area-inset-bottom)); padding-bottom: env(safe-area-inset-bottom); background: var(--panel); border-top: 1px solid var(--line); z-index: 25; }
+    .tabbar button { flex: 1; background: none; border: 0; color: var(--muted); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font: 600 11px 'Space Grotesk', sans-serif; position: relative; }
+    .tabbar button .i { font-size: 18px; line-height: 1; }
+    .tabbar button.on { color: var(--accent); }
+    .tabbar .badge { position: absolute; top: 8px; left: calc(50% + 6px); }
+    body { padding-bottom: calc(var(--tabbar) + env(safe-area-inset-bottom)); }
+    .hq { padding: 16px 14px 28px; }
+    .kpis { grid-template-columns: repeat(2, 1fr); }
+    .kpi .v { font-size: 24px; }
+    .card { padding: 14px; }
+    .quick { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+    .bubble th, .bubble td { white-space: nowrap; }
+    .bar { grid-template-columns: 70px 1fr 28px; }
+    .hstat .upd { display: none; }
+    .chatbar { padding: 8px 12px; }
+    main#scroll { padding: 16px 12px 8px; }
+    .bubble { max-width: 92%; }
+    .av { display: none; }
+    footer.ask { padding: 8px 12px 10px; }
+    .item .del { opacity: 1; }
+    .ap { grid-template-columns: 1fr; }
+    .ap-list { border-right: 0; }
+    .ap.editing .ap-list { display: none; }
+    .ap:not(.editing) .ap-edit { display: none; }
+    .ap-edit { padding: 14px 16px 30px; }
+    .back { display: inline-flex; }
+    .ap-edit textarea.body { min-height: 260px; }
+  }
 </style>
 </head>
 <body>
 <header>
-  <button class="ghost" id="histBtn" type="button" style="margin-left:0">☰ Chats</button>
-  <div class="dot"></div>
-  <div class="logo">NOOCAP <span>PM</span></div>
-  <button class="ghost" id="apprBtn" type="button" style="margin-left:auto">📬 Approvals <span class="badge" id="apprCount" hidden>0</span></button>
-  <button class="ghost" id="clear" type="button" style="margin-left:0">New chat</button>
+  <div class="logo"><div class="dot"></div>NOOCAP <span>PM</span></div>
+  <nav class="tabs" id="tabs">
+    <button data-v="hq" type="button">HQ</button>
+    <button data-v="chat" type="button">Chat</button>
+    <button data-v="approvals" type="button">Approvals <span class="badge" data-count hidden>0</span></button>
+  </nav>
+  <div class="hstat"><span class="upd" id="upd"></span><button class="iconbtn" id="refresh" type="button" title="Refresh">↻</button></div>
 </header>
-<main id="scroll"><div class="wrap" id="log">
-  <div class="intro" id="intro">
-    <h1>What do you want to know?</h1>
-    <p>Reads live Notion: brand deals, sponsor revenue, creator boards and team activity. Every chat is saved.</p>
+
+<!-- ============ HQ ============ -->
+<section class="view" id="hq"><div class="hq">
+  <div class="hq-top"><h1 id="hello">Agency HQ</h1><span class="when" id="today"></span></div>
+  <div class="kpis" id="kpis">
+    <div class="kpi"><div class="skel"></div><div class="skel" style="width:50%"></div></div>
+    <div class="kpi"><div class="skel"></div><div class="skel" style="width:50%"></div></div>
+    <div class="kpi"><div class="skel"></div><div class="skel" style="width:50%"></div></div>
+    <div class="kpi"><div class="skel"></div><div class="skel" style="width:50%"></div></div>
   </div>
-</div></main>
-<footer>
-  <form id="ask">
-    <textarea id="q" rows="1" placeholder="Ask the PM…" autocomplete="off"></textarea>
-    <button id="send" type="submit">Ask</button>
-  </form>
-</footer>
+  <div class="grid">
+    <div class="card c7" id="schedCard"><h2>Posting schedule</h2><div class="daytabs" id="daytabs"></div><div class="rows" id="sched"><div class="skel"></div><div class="skel"></div></div></div>
+    <div class="card c5"><h2>Needs attention <span class="n" id="attN"></span></h2><div id="attention"><div class="skel"></div><div class="skel"></div></div></div>
+    <div class="card c7"><h2>Pipeline by creator <span class="r" id="pipeTot"></span></h2><div class="legend" id="legend"></div><div class="bars" id="bars"><div class="skel"></div></div></div>
+    <div class="card c5"><h2>Brand deals <span class="n" id="dealsN"></span></h2><div class="stagechips" id="dealStages"></div><div id="invoices"></div></div>
+    <div class="card c7"><h2>Editors <span class="r">live load · last 7 days</span></h2><div class="tscroll" id="editors"><div class="skel"></div></div></div>
+    <div class="card c5"><h2>Sponsor money <span class="r" id="moneyMonth"></span></h2><div id="money"><div class="skel"></div></div></div>
+    <div class="card c12"><h2>What the PM did <span class="r" id="aiCost"></span></h2><div id="activity"><div class="skel"></div></div></div>
+  </div>
+  <div class="err" id="hqErr" style="margin-top:14px;font-size:13px"></div>
+</div></section>
+
+<!-- ============ Chat ============ -->
+<section class="view" id="chat">
+  <div class="chatbar">
+    <button class="iconbtn" id="histBtn" type="button">☰ Chats</button>
+    <div class="ttl" id="chatTitle">New chat</div>
+    <button class="iconbtn" id="clear" type="button">＋ New</button>
+  </div>
+  <main id="scroll"><div class="wrap" id="log">
+    <div class="intro" id="intro"><h1>What do you want to know?</h1><p>Reads live Notion. Every chat is saved.</p></div>
+  </div></main>
+  <footer class="ask">
+    <div class="quick" id="quick"></div>
+    <form id="ask">
+      <textarea id="q" rows="1" placeholder="Ask the PM…" autocomplete="off"></textarea>
+      <button class="btn" id="send" type="submit">Ask</button>
+    </form>
+  </footer>
+</section>
+
+<!-- ============ Approvals ============ -->
+<section class="view" id="approvals">
+  <div class="ap" id="ap">
+    <div class="ap-list"><h2>Waiting for you <span class="badge" data-count hidden>0</span></h2><div id="apList"><div class="skel"></div><div class="skel"></div></div></div>
+    <div class="ap-edit" id="apEdit"></div>
+  </div>
+</section>
+
+<nav class="tabbar" id="tabbar">
+  <button data-v="hq" type="button"><span class="i">◎</span>HQ</button>
+  <button data-v="chat" type="button"><span class="i">✦</span>Chat</button>
+  <button data-v="approvals" type="button"><span class="i">✉</span>Approvals<span class="badge" data-count hidden>0</span></button>
+</nav>
+
 <div class="shade" id="shade"></div>
 <aside class="side" id="side">
-  <h2>Chats <button class="ghost" id="newBtn" type="button">+ New</button></h2>
+  <h3>Chats <button class="iconbtn" id="newBtn" type="button">＋ New</button></h3>
   <div class="list" id="list"><div class="empty">Loading…</div></div>
 </aside>
-<aside class="appr" id="appr">
-  <h2>Emails waiting for approval <button class="ghost" id="apprClose" type="button">Close</button></h2>
-  <div class="list" id="apprList"><div class="empty">Loading…</div></div>
-</aside>
+<div class="tip" id="tip"></div>
 <div class="gate" id="gate">
   <form id="gateForm">
-    <div class="logo" style="margin-bottom:6px">NOOCAP <span>PM</span></div>
+    <div class="logo"><div class="dot"></div>NOOCAP <span>PM</span></div>
     <input id="pw" type="password" placeholder="Password" autocomplete="current-password">
-    <button type="submit">Enter</button>
+    <button class="btn" type="submit">Enter</button>
     <div class="err" id="gateErr" style="font-size:13px"></div>
   </form>
 </div>
+
 <script>
   const $ = (id) => document.getElementById(id);
   const store = {
@@ -138,29 +350,203 @@
     del(k) { try { localStorage.removeItem(k); } catch {} },
   };
   let key = store.get('pmKey') || '';
-  let history = [];
+  const headers = () => ({ 'content-type': 'application/json', 'x-pm-key': key });
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const usd = (n) => '$' + Math.round(n || 0).toLocaleString('en-US');
+
+  // ---------- password (only if PM_PASSWORD is set in Vercel) ----------
+  $('gateForm').onsubmit = (e) => {
+    e.preventDefault();
+    key = $('pw').value.trim(); if (!key) return;
+    store.set('pmKey', key); $('gate').classList.remove('show');
+    boot();
+  };
+  function needPassword() { store.del('pmKey'); key = ''; $('gateErr').textContent = 'Password needed.'; $('gate').classList.add('show'); }
+
+  // ---------- tabs ----------
+  let view = 'hq';
+  function show(v) {
+    if (!['hq', 'chat', 'approvals'].includes(v)) v = 'hq';
+    view = v;
+    document.querySelectorAll('.view').forEach((el) => el.classList.toggle('on', el.id === v));
+    document.querySelectorAll('[data-v]').forEach((b) => b.classList.toggle('on', b.dataset.v === v));
+    if (location.hash !== '#' + v) history.replaceState(null, '', '#' + v);
+    if (v === 'approvals') loadApprovals();
+    if (v === 'hq' && !hqData) loadHQ();
+    if (v === 'chat') setTimeout(() => $('q').focus(), 50);
+  }
+  document.querySelectorAll('[data-v]').forEach((b) => b.onclick = () => show(b.dataset.v));
+  window.addEventListener('hashchange', () => show(location.hash.slice(1)));
+  $('refresh').onclick = () => { if (view === 'approvals') loadApprovals(); else loadHQ(true); };
+
+  // =====================================================================
+  // HQ
+  // =====================================================================
+  let hqData = null, selDay = null;
+  const STAGE_COLOR = { Scripting: 'var(--s1)', Filming: 'var(--s2)', Editing: 'var(--s3)', Review: 'var(--s4)', Ready: 'var(--s5)' };
+  const dayName = (d, today) => {
+    if (d === today) return 'Today';
+    const t = new Date(today + 'T00:00:00Z'); const x = new Date(d + 'T00:00:00Z');
+    const diff = Math.round((x - t) / 864e5);
+    if (diff === 1) return 'Tomorrow';
+    return x.toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', timeZone: 'UTC' });
+  };
+  const since = (iso) => {
+    const s = (Date.now() - new Date(iso)) / 1000;
+    if (s < 60) return 'just now'; if (s < 3600) return Math.floor(s / 60) + 'm ago';
+    if (s < 86400) return Math.floor(s / 3600) + 'h ago';
+    return new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+  };
+
+  async function loadHQ(fresh) {
+    try {
+      const res = await fetch('/api/hq' + (fresh ? '?fresh=1' : ''), { headers: headers() });
+      if (res.status === 401) return needPassword();
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
+      hqData = data; renderHQ();
+      $('hqErr').textContent = data.errors?.length ? 'Some data could not load: ' + data.errors.join(' · ') : '';
+    } catch (e) {
+      $('hqErr').textContent = 'Could not load HQ: ' + e.message;
+    }
+  }
+
+  function kpi(label, value, sub, cls, go) {
+    const tag = go ? 'button' : 'div';
+    return `<${tag} class="kpi ${cls || ''}" ${go ? `type="button" data-go="${go}"` : ''}><div class="l">${label}</div><div class="v">${value}</div>${sub ? `<div class="s">${sub}</div>` : ''}</${tag}>`;
+  }
+
+  function renderHQ() {
+    const d = hqData, k = d.kpis;
+    const date = new Date(d.today + 'T00:00:00Z');
+    const hr = new Date(Date.now() + 5.5 * 36e5).getUTCHours();
+    $('hello').textContent = hr < 12 ? 'Good morning' : hr < 17 ? 'Good afternoon' : 'Good evening';
+    $('today').textContent = date.toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
+    $('upd').textContent = 'updated ' + since(d.generated_at);
+
+    const notReady = k.posting_today - k.ready_today;
+    $('kpis').innerHTML = [
+      kpi('Posting today', k.posting_today, k.posting_today ? (notReady ? `${notReady} not ready yet` : 'all ready') : 'nothing scheduled', notReady > 0 ? 'warn' : '', 'sched'),
+      kpi('Past post date', k.overdue, k.overdue ? 'not posted yet' : 'all on time', k.overdue ? 'bad' : '', 'late'),
+      kpi('In edit', k.in_edit, `${k.in_review} in review`, ''),
+      kpi('Ready to post', k.ready, 'ready + to post', ''),
+      kpi('Delivered', k.delivered_today, `${k.delivered_week} this week`, ''),
+      kpi('Emails to approve', k.approvals, k.approvals ? 'tap to review' : 'inbox clear', k.approvals ? 'warn' : '', 'approvals'),
+      kpi('Open deals', k.open_deals, '', '', 'deals'),
+      kpi('Sponsor revenue', usd(k.month_gross_usd), `${usd(k.month_cut_usd)} NOOCAP cut`, ''),
+    ].join('');
+    $('kpis').querySelectorAll('[data-go]').forEach((b) => b.onclick = () => {
+      const g = b.dataset.go;
+      if (g === 'approvals') return show('approvals');
+      if (g === 'late') { selDay = 'late'; renderSchedule(); }
+      if (g === 'sched') { selDay = d.today; renderSchedule(); }
+      (g === 'deals' ? $('dealStages') : $('schedCard')).scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    if (!selDay) selDay = d.schedule.overdue.length && !d.schedule.days[0].items.length ? 'late' : d.today;
+    renderSchedule();
+    renderAttention();
+    renderPipeline();
+    renderDeals();
+    renderEditors();
+    renderMoney();
+    renderActivity();
+  }
+
+  function renderSchedule() {
+    const d = hqData, s = d.schedule;
+    const tabs = [];
+    if (s.overdue.length) tabs.push(`<button type="button" class="daytab late ${selDay === 'late' ? 'on' : ''}" data-d="late">Late <b>${s.overdue.length}</b></button>`);
+    for (const day of s.days) tabs.push(`<button type="button" class="daytab ${selDay === day.date ? 'on' : ''}" data-d="${day.date}">${dayName(day.date, d.today)} <b>${day.items.length}</b></button>`);
+    $('daytabs').innerHTML = tabs.join('');
+    $('daytabs').querySelectorAll('.daytab').forEach((b) => b.onclick = () => { selDay = b.dataset.d; renderSchedule(); });
+    const items = selDay === 'late' ? s.overdue : (s.days.find((x) => x.date === selDay)?.items || []);
+    if (!items.length) { $('sched').innerHTML = '<div class="empty">Nothing scheduled for this day.</div>'; return; }
+    $('sched').innerHTML = items.map((v) => {
+      const done = v.stage === 'Ready' || v.stage === 'Posted';
+      const pill = v.days_late ? `<span class="pill late">${v.days_late}d late · ${esc(v.stage)}</span>` : `<span class="pill ${done ? 'ready' : ''}">${v.stage === 'Posted' ? '✓ posted' : done ? '✓ ready' : esc(v.stage)}</span>`;
+      return `<a class="row" href="${esc(v.url)}" target="_blank" rel="noopener"><span class="main"><div class="ttl">${esc(v.title)}${v.sponsor ? '<span class="pill spon">SPONSOR</span>' : ''}</div><div class="sub">${esc([v.creator, v.editor, v.days_late ? v.date : null].filter(Boolean).join(' · '))}</div></span>${pill}</a>`;
+    }).join('');
+  }
+
+  function renderAttention() {
+    const d = hqData; const out = [];
+    if (d.kpis.approvals) out.push({ ic: '✉', cls: 'teal', t: `${d.kpis.approvals} email${d.kpis.approvals > 1 ? 's' : ''} waiting for your approval`, s: 'Scripts, follow-ups, links or invoices ready to send', go: 'approvals' });
+    const todayLate = d.schedule.days[0].items.filter((v) => v.stage !== 'Ready' && v.stage !== 'Posted');
+    for (const v of todayLate.slice(0, 4)) out.push({ ic: '!', cls: '', t: `${v.creator}: ${v.title}`, s: `Posts today, still in ${v.stage}${v.editor ? ' · ' + v.editor : ''}`, url: v.url });
+    for (const v of d.schedule.overdue.slice(0, 4)) out.push({ ic: '!', cls: 'red', t: `${v.creator}: ${v.title}`, s: `${v.days_late}d past post date · ${v.stage}`, url: v.url });
+    for (const a of d.deals.attention.slice(0, 5)) out.push({ ic: '$', cls: '', t: `${a.brand} × ${a.creator || '?'}`, s: `${a.why} · ${a.stage}`, url: a.url });
+    $('attN').textContent = out.length || '';
+    $('attention').innerHTML = out.length ? out.map((a) => {
+      const inner = `<span class="ic ${a.cls}">${a.ic}</span><span class="b"><div>${esc(a.t)}</div><small>${esc(a.s)}</small></span>`;
+      return a.go ? `<a class="att" href="#${a.go}">${inner}</a>` : `<a class="att" href="${esc(a.url)}" target="_blank" rel="noopener">${inner}</a>`;
+    }).join('') : '<div class="empty">All clear. Nothing needs you right now.</div>';
+  }
+
+  function renderPipeline() {
+    const p = hqData.pipeline;
+    $('legend').innerHTML = p.stages.map((s) => `<span><i style="background:${STAGE_COLOR[s]}"></i>${s} ${p.totals[s]}</span>`).join('');
+    const max = Math.max(1, ...p.creators.map((c) => c.total));
+    $('pipeTot').textContent = p.creators.reduce((n, c) => n + c.total, 0) + ' live videos';
+    $('bars').innerHTML = p.creators.length ? p.creators.map((c) => `<div class="bar"><span class="nm">${esc(c.creator)}</span><div class="track" style="width:${(c.total / max) * 100}%">${p.stages.filter((s) => c[s]).map((s) => `<div class="seg" style="flex:${c[s]};background:${STAGE_COLOR[s]}" data-tip="${esc(c.creator)} · ${s}: ${c[s]}"></div>`).join('')}</div><span class="tot">${c.total}</span></div>`).join('') : '<div class="empty">No live videos.</div>';
+    const tip = $('tip');
+    $('bars').querySelectorAll('.seg').forEach((el) => {
+      el.onmousemove = (e) => { tip.textContent = el.dataset.tip; tip.style.display = 'block'; tip.style.left = e.clientX + 12 + 'px'; tip.style.top = e.clientY - 34 + 'px'; };
+      el.onmouseleave = () => { tip.style.display = 'none'; };
+    });
+  }
+
+  function renderDeals() {
+    const dl = hqData.deals;
+    const order = ['Negotiating', 'Price Agreed', 'Signed', 'Brief Received', 'Script Sent', 'Script Approved', 'Filming', 'Submitted', 'Posted', 'Invoiced'];
+    const stages = Object.entries(dl.by_stage).sort((a, b) => (order.indexOf(a[0]) + 1 || 99) - (order.indexOf(b[0]) + 1 || 99));
+    $('dealsN').textContent = stages.reduce((n, [, v]) => n + v.deals, 0) || '';
+    $('dealStages').innerHTML = stages.length ? stages.map(([s, v]) => `<span class="sc"><b>${v.deals}</b>${esc(s)}</span>`).join('') : '<div class="empty">No open deals.</div>';
+    $('invoices').innerHTML = dl.overdue_invoices.length
+      ? '<table><tr><th>Overdue invoice</th><th class="num">Amount</th><th class="num">Late</th></tr>' + dl.overdue_invoices.map((i) => `<tr><td class="nm">${esc(i.brand)} <span style="color:var(--muted)">× ${esc(i.creator || '?')}</span></td><td class="num">${i.amount != null ? usd(i.amount) : '—'}</td><td class="num" style="color:var(--err)">${i.days_overdue}d</td></tr>`).join('') + '</table>'
+      : '<div class="empty">No overdue invoices.</div>';
+  }
+
+  function renderEditors() {
+    const e = hqData.editors;
+    $('editors').innerHTML = e.length ? '<table><tr><th>Editor</th><th class="num">Editing</th><th class="num">In review</th><th class="num">Today</th><th class="num">7 days</th><th class="num">Changes</th><th class="num">Avg edit</th></tr>' +
+      e.map((r) => `<tr><td class="nm">${esc(r.editor)}</td><td class="num">${r.editing}</td><td class="num">${r.review}</td><td class="num">${r.delivered_today || '—'}</td><td class="num"><b>${r.delivered_week}</b></td><td class="num">${r.changes_week || '—'}</td><td class="num">${r.avg_edit_hours != null ? r.avg_edit_hours + 'h' : '—'}</td></tr>`).join('') + '</table>'
+      : '<div class="empty">No editor activity yet.</div>';
+  }
+
+  function renderMoney() {
+    const m = hqData.money, t = m.totals || {};
+    $('moneyMonth').textContent = new Date(m.month + '-01T00:00:00Z').toLocaleDateString('en-IN', { month: 'long', timeZone: 'UTC' });
+    $('money').innerHTML = `<div class="money-head"><div><small>Gross</small><b>${usd(t.gross_usd)}</b></div><div><small>Unpaid</small><b style="color:${t.unpaid_usd ? 'var(--warn)' : 'inherit'}">${usd(t.unpaid_usd)}</b></div><div><small>NOOCAP cut</small><b>${usd(t.noocap_cut_usd)}</b></div></div>` +
+      (m.creators.length ? '<table><tr><th>Creator</th><th class="num">Videos</th><th class="num">Gross</th><th class="num">Cut</th></tr>' + m.creators.map((c) => `<tr><td class="nm">${esc(c.creator)}</td><td class="num">${c.videos}</td><td class="num">${usd(c.gross_usd)}</td><td class="num">${usd(c.noocap_cut_usd)}</td></tr>`).join('') + '</table>' : '<div class="empty">No sponsor revenue logged this month yet.</div>');
+  }
+
+  function renderActivity() {
+    const a = hqData.activity;
+    $('aiCost').textContent = `AI cost this week $${(hqData.kpis.ai_cost_week_usd || 0).toFixed(2)} · ≈₹${Math.round((hqData.kpis.ai_cost_week_usd || 0) * 88)}`;
+    const icon = (r) => /brief/i.test(r.event) ? ['📋', 'teal'] : /brief|morning/i.test(r.area || '') ? ['☀', 'teal'] : r.outcome === 'Error' ? ['!', 'red'] : r.outcome === 'Needs approval' ? ['?', ''] : r.outcome === 'Skipped' ? ['–', 'teal'] : ['✓', 'teal'];
+    $('activity').innerHTML = a.length ? a.map((r) => { const [i, c] = icon(r); return `<div class="att"><span class="ic ${c}">${i}</span><span class="b"><div>${esc(r.event)}</div><small>${esc([r.area, r.outcome, r.creator].filter(Boolean).join(' · '))}</small></span><span class="t">${r.time ? since(r.time) : ''}</span></div>`; }).join('') : '<div class="empty">No activity this week.</div>';
+  }
+
+  // =====================================================================
+  // CHAT
+  // =====================================================================
+  let chatHistory = [];
   let chatId = store.get('pmChat') || null;
   let busy = false;
   const introHTML = $('intro').outerHTML;
-  const headers = () => ({ 'content-type': 'application/json', 'x-pm-key': key });
+  const QUICK = [
+    "What's posting today and is it ready?",
+    "What's past its post date?",
+    'Who is editing what right now?',
+    "Yesterday's editor output",
+    'Which brands owe us money?',
+    'Deals waiting on a brand reply',
+    'NOOCAP cut this month by creator',
+  ];
+  $('quick').innerHTML = QUICK.map((q) => `<button type="button" class="chip">${esc(q)}</button>`).join('');
+  $('quick').querySelectorAll('.chip').forEach((b) => b.onclick = () => ask(b.textContent));
 
-  // The password box only appears if a PM_PASSWORD is set in Vercel and the server asks for it.
-  $('gateForm').onsubmit = (e) => {
-    e.preventDefault();
-    key = $('pw').value.trim();
-    if (!key) return;
-    store.set('pmKey', key);
-    $('gate').classList.remove('show');
-    loadList();
-    $('q').focus();
-  };
-  function needPassword() {
-    store.del('pmKey'); key = '';
-    $('gateErr').textContent = 'Password needed.';
-    $('gate').classList.add('show');
-  }
-
-  function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
   function inline(s) {
     return esc(s)
       .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
@@ -169,17 +555,26 @@
       .replace(/(^|[\s(])(https?:\/\/[^\s)<]+)/g, '$1<a href="$2" target="_blank" rel="noopener">link</a>');
   }
   function md(text) {
-    const out = []; let list = null;
+    const out = []; let list = null, ordered = false, table = null;
+    const flushList = () => { if (list) { out.push((ordered ? '<ol>' : '<ul>') + list.join('') + (ordered ? '</ol>' : '</ul>')); list = null; } };
+    const flushTable = () => {
+      if (!table) return;
+      const rows = table.filter((r) => !/^\s*\|?\s*:?-{2,}/.test(r)).map((r) => r.replace(/^\s*\||\|\s*$/g, '').split('|').map((c) => c.trim()));
+      if (rows.length) out.push('<div class="tscroll"><table><tr>' + rows[0].map((c) => '<th>' + inline(c) + '</th>').join('') + '</tr>' + rows.slice(1).map((r) => '<tr>' + r.map((c) => '<td>' + inline(c) + '</td>').join('') + '</tr>').join('') + '</table></div>');
+      table = null;
+    };
     for (const raw of String(text).split('\n')) {
       const line = raw.trimEnd();
-      const li = line.match(/^\s*(?:[-*•]|\d+\.)\s+(.*)$/);
-      if (li) { if (!list) { list = []; } list.push('<li>' + inline(li[1]) + '</li>'); continue; }
-      if (list) { out.push('<ul>' + list.join('') + '</ul>'); list = null; }
+      if (/^\s*\|.*\|\s*$/.test(line)) { flushList(); (table ||= []).push(line); continue; }
+      flushTable();
+      const li = line.match(/^\s*([-*•]|\d+\.)\s+(.*)$/);
+      if (li) { const o = /\d/.test(li[1]); if (list && o !== ordered) flushList(); if (!list) { list = []; ordered = o; } list.push('<li>' + inline(li[2]) + '</li>'); continue; }
+      flushList();
       if (!line.trim()) continue;
       const h = line.match(/^#{1,4}\s+(.*)$/);
       out.push('<p>' + (h ? '<b>' + inline(h[1]) + '</b>' : inline(line)) + '</p>');
     }
-    if (list) out.push('<ul>' + list.join('') + '</ul>');
+    flushList(); flushTable();
     return out.join('');
   }
 
@@ -189,36 +584,30 @@
     const items = msg.pending.map((p) => p.summary.split('\n').map((l) => '<li>' + esc(l) + '</li>').join('')).join('');
     box.innerHTML = '<div class="lbl">CHANGE IN NOTION</div><ul>' + items + '</ul>' +
       (msg.resolved ? '<div class="state">' + (msg.resolved === 'confirmed' ? 'Confirmed' : 'Cancelled') + '</div>'
-        : '<div class="btns"><button type="button" class="ok">Confirm</button><button type="button" class="ghost no">Cancel</button></div>');
+        : '<div class="btns"><button type="button" class="btn sm ok">Confirm</button><button type="button" class="btn sm ghost no">Cancel</button></div>');
     if (!msg.resolved) {
       box.querySelector('.ok').onclick = () => decide(msg, 'confirmed', box);
       box.querySelector('.no').onclick = () => decide(msg, 'cancelled', box);
     }
     return box;
   }
-
   function add(role, html, meta, msg) {
     $('intro')?.remove();
     const row = document.createElement('div');
     row.className = 'msg ' + role;
-    row.innerHTML = '<div class="bubble">' + html + (meta ? '<div class="meta">' + esc(meta) + '</div>' : '') + '</div>';
+    row.innerHTML = (role === 'assistant' ? '<div class="av">PM</div>' : '') + '<div class="bubble">' + html + (meta ? '<div class="meta">' + esc(meta) + '</div>' : '') + '</div>';
     if (msg && msg.pending && msg.pending.length) row.querySelector('.bubble').appendChild(changeCard(msg));
     $('log').appendChild(row);
     $('scroll').scrollTop = $('scroll').scrollHeight;
     return row;
   }
-  function render() {
-    $('log').innerHTML = history.length ? '' : introHTML;
-    for (const m of history) add(m.role, m.role === 'user' ? esc(m.content).replace(/\n/g, '<br>') : md(m.content), m.meta, m);
+  function renderChat() {
+    $('log').innerHTML = chatHistory.length ? '' : introHTML;
+    for (const m of chatHistory) add(m.role, m.role === 'user' ? esc(m.content).replace(/\n/g, '<br>') : md(m.content), m.meta, m);
+    const first = chatHistory.find((m) => m.role === 'user');
+    $('chatTitle').textContent = first ? first.content.slice(0, 80) : 'New chat';
   }
 
-  function ago(iso) {
-    const s = (Date.now() - new Date(iso)) / 1000;
-    if (s < 60) return 'just now';
-    if (s < 3600) return Math.floor(s / 60) + 'm ago';
-    if (s < 86400) return Math.floor(s / 3600) + 'h ago';
-    return new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
-  }
   async function loadList() {
     try {
       const res = await fetch('/api/chats', { headers: headers() });
@@ -229,40 +618,31 @@
       for (const c of chats) {
         const el = document.createElement('div');
         el.className = 'item' + (c.id === chatId ? ' active' : '');
-        el.innerHTML = '<div class="t"><div>' + esc(c.title) + '</div><small>' + ago(c.updated) + ' · ' + c.count + ' msgs' + (c.channel !== 'Dashboard chat' ? ' · ' + esc(c.channel) : '') + '</small></div><button class="del" title="Delete">×</button>';
+        el.innerHTML = '<div class="t"><div>' + esc(c.title) + '</div><small>' + since(c.updated) + ' · ' + c.count + ' msgs' + (c.channel && c.channel !== 'Dashboard chat' ? ' · ' + esc(c.channel) : '') + '</small></div><button class="del" title="Delete">×</button>';
         el.onclick = () => openChat(c.id);
         el.querySelector('.del').onclick = async (e) => {
-          e.stopPropagation();
-          el.remove();
+          e.stopPropagation(); el.remove();
           await fetch('/api/chats?id=' + c.id, { method: 'DELETE', headers: headers() });
           if (c.id === chatId) newChat();
         };
         $('list').appendChild(el);
       }
-    } catch (e) {
-      $('list').innerHTML = '<div class="empty err">Could not load chats: ' + esc(e.message) + '</div>';
-    }
+    } catch (e) { $('list').innerHTML = '<div class="empty err">Could not load chats: ' + esc(e.message) + '</div>'; }
   }
   async function openChat(id) {
     closeSide();
-    $('log').innerHTML = '<p class="thinking" style="text-align:center">Loading chat…</p>';
+    $('log').innerHTML = '<p class="empty" style="text-align:center">Loading chat…</p>';
     try {
       const res = await fetch('/api/chats?id=' + id, { headers: headers() });
       if (res.status === 401) return needPassword();
       if (!res.ok) throw new Error('Chat not found');
       const data = await res.json();
       chatId = data.id; store.set('pmChat', chatId);
-      history = data.messages || [];
-      render();
-    } catch (e) {
-      newChat();
-    }
+      chatHistory = data.messages || [];
+      renderChat();
+    } catch { newChat(); }
   }
-  function newChat() {
-    chatId = null; store.del('pmChat');
-    history = [];
-    render(); closeSide(); $('q').focus();
-  }
+  function newChat() { chatId = null; store.del('pmChat'); chatHistory = []; renderChat(); closeSide(); if (view === 'chat') $('q').focus(); }
   function openSide() { $('side').classList.add('open'); $('shade').classList.add('open'); loadList(); }
   function closeSide() { $('side').classList.remove('open'); $('shade').classList.remove('open'); }
 
@@ -272,69 +652,63 @@
     box.querySelector('.btns').innerHTML = '<span class="state">' + (choice === 'confirmed' ? 'Saving to Notion…' : 'Cancelling…') + '</span>';
     msg.resolved = choice;
     try {
-      const body = { chatId, channel: 'dashboard', messages: history };
-      if (choice === 'confirmed') body.confirm = msg.pending.map((p) => p.token)[0]; else body.cancel = true;
-      let replies = [];
+      const body = { chatId, channel: 'dashboard', messages: chatHistory };
       const tokens = choice === 'confirmed' ? msg.pending.map((p) => p.token) : [null];
       for (const t of tokens) {
-        const res = await fetch('/api/chat', { method: 'POST', headers: headers(), body: JSON.stringify({ ...body, ...(t ? { confirm: t } : {}) }) });
+        const res = await fetch('/api/chat', { method: 'POST', headers: headers(), body: JSON.stringify({ ...body, ...(t ? { confirm: t } : { cancel: true }) }) });
         const data = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(data.error || ('Error ' + res.status));
         if (data.chatId) { chatId = data.chatId; store.set('pmChat', chatId); }
-        replies.push(data.reply);
-        const m = { role: 'assistant', content: data.reply, meta: data.meta, at: new Date().toISOString() };
-        history.push(m);
+        chatHistory.push({ role: 'assistant', content: data.reply, meta: data.meta, at: new Date().toISOString() });
         add('assistant', md(data.reply), data.meta === 'change' ? 'saved to Notion' : '');
       }
-      box.querySelector('.btns, .state') && (box.lastElementChild.outerHTML = '<div class="state">' + (choice === 'confirmed' ? 'Confirmed' : 'Cancelled') + '</div>');
+      box.lastElementChild.outerHTML = '<div class="state">' + (choice === 'confirmed' ? 'Confirmed' : 'Cancelled') + '</div>';
+      if (choice === 'confirmed') hqData = null;
     } catch (e) {
       msg.resolved = undefined;
       add('assistant', '<span class="err">Something broke: ' + esc(e.message) + '</span>');
       box.replaceWith(changeCard(msg));
-    } finally {
-      busy = false;
-    }
+    } finally { busy = false; }
   }
 
   async function ask(text) {
     if (busy || !text.trim()) return;
+    if (view !== 'chat') show('chat');
     busy = true; $('send').disabled = true;
-    history.push({ role: 'user', content: text, at: new Date().toISOString() });
+    chatHistory.push({ role: 'user', content: text, at: new Date().toISOString() });
     add('user', esc(text).replace(/\n/g, '<br>'));
-    const wait = add('assistant', '<span class="thinking">Checking Notion…</span>');
+    if (chatHistory.filter((m) => m.role === 'user').length === 1) $('chatTitle').textContent = text.slice(0, 80);
+    const wait = add('assistant', '<span class="thinking"><i></i><i></i><i></i></span>');
     try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: headers(),
-        body: JSON.stringify({ messages: history, chatId, channel: 'dashboard' }),
-      });
+      const res = await fetch('/api/chat', { method: 'POST', headers: headers(), body: JSON.stringify({ messages: chatHistory, chatId, channel: 'dashboard' }) });
       const data = await res.json().catch(() => ({}));
       wait.remove();
-      if (res.status === 401) { history.pop(); needPassword(); return; }
+      if (res.status === 401) { chatHistory.pop(); needPassword(); return; }
       if (!res.ok) throw new Error(data.error || ('Error ' + res.status));
       const msg = { role: 'assistant', content: data.reply, meta: data.meta, at: new Date().toISOString(), pending: data.pending || [] };
-      history.push(msg);
+      chatHistory.push(msg);
       if (data.chatId) { chatId = data.chatId; store.set('pmChat', chatId); }
       add('assistant', md(data.reply), data.meta, msg);
     } catch (e) {
-      wait.remove();
-      history.pop();
+      wait.remove(); chatHistory.pop();
       add('assistant', '<span class="err">Something broke: ' + esc(e.message) + '</span>');
-    } finally {
-      busy = false; $('send').disabled = false; $('q').focus();
-    }
+    } finally { busy = false; $('send').disabled = false; $('q').focus(); }
   }
 
   $('ask').onsubmit = (e) => { e.preventDefault(); const t = $('q').value; $('q').value = ''; autosize(); ask(t); };
-  $('q').addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); $('ask').requestSubmit(); } });
+  $('q').addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.shiftKey && !('ontouchstart' in window)) { e.preventDefault(); $('ask').requestSubmit(); } });
   function autosize() { const q = $('q'); q.style.height = 'auto'; q.style.height = Math.min(q.scrollHeight, 160) + 'px'; }
   $('q').addEventListener('input', autosize);
   $('clear').onclick = newChat;
   $('newBtn').onclick = newChat;
   $('histBtn').onclick = openSide;
-  $('shade').onclick = () => { closeSide(); closeAppr(); };
-  // ---------- Approvals ----------
-  let drafts = [];
+  $('shade').onclick = closeSide;
+
+  // =====================================================================
+  // APPROVALS
+  // =====================================================================
+  let drafts = [], selDraft = null;
+  function setCount(n) { document.querySelectorAll('[data-count]').forEach((b) => { b.hidden = !n; b.textContent = n; }); }
   async function loadApprovals() {
     try {
       const res = await fetch('/api/outbox', { headers: headers() });
@@ -342,62 +716,76 @@
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
       drafts = data.drafts || [];
-      const n = drafts.filter((d) => d.status === 'Draft').length;
-      $('apprCount').hidden = !n; $('apprCount').textContent = n;
-      renderApprovals();
+      setCount(drafts.filter((d) => d.status === 'Draft').length);
+      if (view === 'approvals') renderApprovals();
     } catch (e) {
-      $('apprList').innerHTML = '<div class="empty err">Could not load approvals: ' + esc(e.message) + '</div>';
+      $('apList').innerHTML = '<div class="empty err">Could not load approvals: ' + esc(e.message) + '</div>';
     }
   }
   function renderApprovals() {
-    const list = $('apprList');
-    if (!drafts.length) { list.innerHTML = '<div class="empty">Nothing waiting. The PM will put emails here when a script is ready, a brand goes quiet, a video is posted or an invoice comes in.</div>'; return; }
-    list.innerHTML = '';
-    for (const d of drafts) {
-      const el = document.createElement('div');
-      el.className = 'mail';
-      el.innerHTML = '<div class="top"><span class="kind' + (d.status === 'Failed' ? ' failed' : '') + '">' + esc(d.kind || 'Email') + (d.status === 'Failed' ? ' · failed' : '') + '</span><span class="who">' + esc((d.brand || '') + (d.creator ? ' × ' + d.creator : '')) + '</span></div>' +
-        (d.why ? '<div class="why">' + esc(d.why) + '</div>' : '') +
-        (d.error ? '<div class="why err">Last error: ' + esc(d.error) + '</div>' : '') +
-        '<label>To</label><input class="to" value="' + esc(d.to) + '" placeholder="brand@company.com">' +
-        '<label>Cc</label><input class="cc" value="' + esc(d.cc) + '">' +
-        '<label>Subject</label><input class="subj" value="' + esc(d.subject) + '">' +
-        '<label>Message</label><textarea class="body">' + esc(d.body) + '</textarea>' +
-        (d.attach && d.attach !== 'None' ? '<div class="att">📎 ' + (d.attach === 'Script PDF' ? 'Script PDF made from the video page when you send' : 'Invoice from the deal') + '</div>' : '') +
-        (d.replyTo ? '<div class="why">Goes as a reply in the existing email thread.</div>' : '') +
-        '<div class="btns"><button type="button" class="send">Send</button><button type="button" class="ghost save">Save</button><button type="button" class="ghost rej">Reject</button></div><div class="state"></div>';
-      const val = () => ({ id: d.id, to: el.querySelector('.to').value, cc: el.querySelector('.cc').value, subject: el.querySelector('.subj').value, body: el.querySelector('.body').value });
-      const act = async (action, label) => {
-        const st = el.querySelector('.state');
-        el.querySelectorAll('button').forEach((b) => b.disabled = true);
-        st.textContent = label; st.className = 'state';
-        try {
-          const res = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ ...val(), action }) });
-          const data = await res.json().catch(() => ({}));
-          if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
-          if (action === 'save') { st.textContent = 'Saved.'; el.querySelectorAll('button').forEach((b) => b.disabled = false); return; }
-          st.textContent = action === 'send' ? '✅ Sent to ' + data.to + (data.attachment ? ' with ' + data.attachment : '') : 'Rejected.';
-          setTimeout(loadApprovals, 1200);
-        } catch (e) {
-          st.textContent = '⚠️ ' + e.message; st.className = 'state err';
-          el.querySelectorAll('button').forEach((b) => b.disabled = false);
-        }
-      };
-      el.querySelector('.send').onclick = () => act('send', 'Sending…');
-      el.querySelector('.save').onclick = () => act('save', 'Saving…');
-      el.querySelector('.rej').onclick = () => act('reject', 'Rejecting…');
-      list.appendChild(el);
+    const list = $('apList');
+    if (!drafts.length) {
+      list.innerHTML = '<div class="empty" style="padding:8px">Nothing waiting.</div>';
+      $('apEdit').innerHTML = '<div class="ap-none"><div><b>Inbox clear</b>The PM puts emails here when a script is ready, a brand goes quiet, a video is posted or an invoice comes in.</div></div>';
+      $('ap').classList.remove('editing');
+      return;
     }
+    if (selDraft && !drafts.find((d) => d.id === selDraft)) selDraft = null;
+    if (!selDraft && window.innerWidth > 760) selDraft = drafts[0].id;
+    list.innerHTML = drafts.map((d) => `<button type="button" class="ap-item ${d.id === selDraft ? 'on' : ''}" data-id="${d.id}"><div class="top"><span class="kind ${d.status === 'Failed' ? 'failed' : ''}">${esc(d.kind || 'Email')}${d.status === 'Failed' ? ' · failed' : ''}</span><span class="age">${d.created ? since(d.created) : ''}</span></div><div class="who">${esc((d.brand || 'Brand') + (d.creator ? ' × ' + d.creator : ''))}</div><div class="subj">${esc(d.subject || '(no subject)')}</div></button>`).join('');
+    list.querySelectorAll('.ap-item').forEach((b) => b.onclick = () => { selDraft = b.dataset.id; renderApprovals(); });
+    renderEditor();
   }
-  function openAppr() { $('appr').classList.add('open'); $('shade').classList.add('open'); loadApprovals(); }
-  function closeAppr() { $('appr').classList.remove('open'); $('shade').classList.remove('open'); }
-  $('apprBtn').onclick = openAppr;
-  $('apprClose').onclick = closeAppr;
-  loadApprovals();
-  setInterval(loadApprovals, 60000);
-  if (location.hash === '#approvals') openAppr();
+  function renderEditor() {
+    const d = drafts.find((x) => x.id === selDraft);
+    $('ap').classList.toggle('editing', !!d);
+    if (!d) { $('apEdit').innerHTML = ''; return; }
+    const att = d.attach && d.attach !== 'None' ? `<div class="attach">📎 ${d.attach === 'Script PDF' ? 'Script PDF, made from the video page when you send' : 'Invoice from the deal'}</div>` : '';
+    $('apEdit').innerHTML = `
+      <button type="button" class="iconbtn back" id="apBack" style="margin-bottom:12px">← All emails</button>
+      <div class="head"><span class="kind ${d.status === 'Failed' ? 'failed' : ''}">${esc(d.kind || 'Email')}</span><h2>${esc((d.brand || 'Brand') + (d.creator ? ' × ' + d.creator : ''))}</h2></div>
+      ${d.why ? `<div class="why">${esc(d.why)}</div>` : ''}
+      ${d.error ? `<div class="why err">Last error: ${esc(d.error)}</div>` : ''}
+      <div class="field"><label>To</label><input id="fTo" value="${esc(d.to)}" placeholder="brand@company.com"></div>
+      <div class="field"><label>Cc</label><input id="fCc" value="${esc(d.cc)}"></div>
+      <div class="field"><label>Subject</label><input id="fSubj" value="${esc(d.subject)}"></div>
+      <textarea class="body" id="fBody">${esc(d.body)}</textarea>
+      ${att}
+      ${d.replyTo ? '<div class="why" style="margin:10px 0 0">Goes out as a reply in the existing email thread.</div>' : ''}
+      <div class="ap-actions"><button type="button" class="btn sm" id="aSend">Send</button><button type="button" class="btn sm ghost" id="aSave">Save</button><button type="button" class="btn sm danger" id="aRej">Reject</button><span class="state" id="aState"></span></div>`;
+    $('apBack').onclick = () => { selDraft = null; renderApprovals(); };
+    const val = () => ({ id: d.id, to: $('fTo').value, cc: $('fCc').value, subject: $('fSubj').value, body: $('fBody').value });
+    const btns = () => $('apEdit').querySelectorAll('.ap-actions button');
+    const act = async (action, label) => {
+      const st = $('aState');
+      btns().forEach((b) => b.disabled = true); st.textContent = label; st.className = 'state';
+      try {
+        const res = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ ...val(), action }) });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
+        if (action === 'save') { Object.assign(d, val()); st.textContent = 'Saved.'; btns().forEach((b) => b.disabled = false); return; }
+        st.textContent = action === 'send' ? '✅ Sent to ' + data.to + (data.attachment ? ' with ' + data.attachment : '') : 'Rejected.';
+        setTimeout(() => { selDraft = null; hqData = null; loadApprovals(); }, 1200);
+      } catch (e) {
+        st.textContent = '⚠️ ' + e.message; st.className = 'state err';
+        btns().forEach((b) => b.disabled = false);
+      }
+    };
+    $('aSend').onclick = () => act('send', 'Sending…');
+    $('aSave').onclick = () => act('save', 'Saving…');
+    $('aRej').onclick = () => act('reject', 'Rejecting…');
+  }
 
-  if (chatId) openChat(chatId);
+  // ---------- start ----------
+  function boot() {
+    show(location.hash.slice(1) || 'hq');
+    loadHQ();
+    loadApprovals();
+    if (chatId) openChat(chatId);
+  }
+  setInterval(() => { if (document.visibilityState === 'visible') { if (view === 'hq') loadHQ(); loadApprovals(); } }, 60000);
+  setInterval(() => { if (hqData) $('upd').textContent = 'updated ' + since(hqData.generated_at); }, 20000);
+  boot();
 </script>
 </body>
 </html>
