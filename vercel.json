@@ -1,8 +1,19 @@
 {
   "functions": {
-    "api/chat.js": { "maxDuration": 60 },
-    "api/inbox.js": { "maxDuration": 120 },
-    "api/tick.js": { "maxDuration": 180 },
-    "api/outbox.js": { "maxDuration": 60 }
+    "api/chat.js": {
+      "maxDuration": 60
+    },
+    "api/inbox.js": {
+      "maxDuration": 120
+    },
+    "api/tick.js": {
+      "maxDuration": 180
+    },
+    "api/outbox.js": {
+      "maxDuration": 60
+    },
+    "api/hq.js": {
+      "maxDuration": 60
+    }
   }
 }
