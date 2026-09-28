@@ -311,6 +311,7 @@
     <div class="kpi"><div class="skel"></div><div class="skel" style="width:50%"></div></div>
   </div>
   <div class="grid">
+    <div class="card c12" id="chaseCard"><h2>Money to chase <span class="r" id="chaseSum"></span></h2><div class="daytabs" id="chaseTabs"></div><div class="rows" id="chase"><div class="skel"></div></div></div>
     <div class="card c7" id="schedCard"><h2>Posting schedule</h2><div class="daytabs" id="daytabs"></div><div class="rows" id="sched"><div class="skel"></div><div class="skel"></div></div></div>
     <div class="card c5"><h2>Needs attention <span class="n" id="attN"></span></h2><div id="attention"><div class="skel"></div><div class="skel"></div></div></div>
     <div class="card c7"><h2>Pipeline by creator <span class="r" id="pipeTot"></span></h2><div class="legend" id="legend"></div><div class="bars" id="bars"><div class="skel"></div></div></div>
@@ -473,7 +474,7 @@
       kpi('Ready to post', k.ready, 'ready + to post', ''),
       kpi('Delivered', k.delivered_today, `${k.delivered_week} this week`, ''),
       kpi('Emails to approve', k.approvals, k.approvals ? 'tap to review' : 'inbox clear', k.approvals ? 'warn' : '', 'approvals'),
-      kpi('Open deals', k.open_deals, '', '', 'deals'),
+      kpi('Money to chase', usd(chaseOwed()), chaseCount() ? `${chaseCount()} items waiting` : 'nothing waiting', chaseCount() ? 'warn' : '', 'chase'),
       kpi('Sponsor revenue', usd(k.month_gross_usd), `${usd(k.month_cut_usd)} NOOCAP cut`, ''),
     ].join('');
     $('kpis').querySelectorAll('[data-go]').forEach((b) => b.onclick = () => {
@@ -481,17 +482,45 @@
       if (g === 'approvals') return show('approvals');
       if (g === 'late') { selDay = 'late'; renderSchedule(); }
       if (g === 'sched') { selDay = d.today; renderSchedule(); }
-      (g === 'deals' ? $('dealStages') : $('schedCard')).scrollIntoView({ behavior: 'smooth', block: 'center' });
+      (g === 'chase' ? $('chaseCard') : g === 'deals' ? $('dealStages') : $('schedCard')).scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
     if (!selDay) selDay = d.schedule.overdue.length && !d.schedule.days[0].items.length ? 'late' : d.today;
     renderSchedule();
+    renderChase();
     renderAttention();
     renderPipeline();
     renderDeals();
     renderEditors();
     renderMoney();
     renderActivity();
+  }
+
+  // ---- money to chase ----
+  const CHASE_TABS = [
+    ['needs_invoice', '🧾 Invoice not sent', 'Posted sponsor videos. Ask the creator to invoice, then set Invoice Sent.'],
+    ['awaiting_payment', '⏳ Waiting for payment', 'Invoiced but not paid yet.'],
+    ['quiet', '🤐 Brand quiet', 'We wrote last and the brand has not replied for 3+ days.'],
+    ['reply_needed', '✉️ We owe a reply', 'The brand wrote last.'],
+    ['cut_pending', '🏦 Cut to collect', 'Brand paid, NOOCAP cut not collected yet.'],
+  ];
+  let chaseTab = null;
+  const chaseList = (k) => (hqData.chase && hqData.chase[k]) || [];
+  const chaseCount = () => chaseList('needs_invoice').length + chaseList('awaiting_payment').length + chaseList('quiet').length + chaseList('reply_needed').length;
+  const chaseOwed = () => (hqData.chase?.totals?.awaiting_usd || 0) + (hqData.chase?.totals?.needs_invoice_usd || 0);
+  function renderChase() {
+    const c = hqData.chase || {};
+    if (!chaseTab) chaseTab = (CHASE_TABS.find(([k]) => chaseList(k).length) || CHASE_TABS[0])[0];
+    $('chaseSum').textContent = `${usd(c.totals?.awaiting_usd || 0)} waiting for payment · ${usd(c.totals?.cut_pending_usd || 0)} cut to collect`;
+    $('chaseTabs').innerHTML = CHASE_TABS.map(([k, label]) => `<button type="button" class="daytab ${k === 'needs_invoice' || k === 'awaiting_payment' ? 'late' : ''} ${chaseTab === k ? 'on' : ''}" data-k="${k}">${label} <b>${chaseList(k).length}</b></button>`).join('');
+    $('chaseTabs').querySelectorAll('.daytab').forEach((b) => b.onclick = () => { chaseTab = b.dataset.k; renderChase(); });
+    const [, , hint] = CHASE_TABS.find(([k]) => k === chaseTab);
+    const items = chaseList(chaseTab);
+    const right = (x) => chaseTab === 'needs_invoice' ? `posted ${x.days}d ago` : chaseTab === 'awaiting_payment' ? (x.invoiced ? `invoiced ${x.days}d ago` : `unpaid ${x.days}d`) : chaseTab === 'cut_pending' ? (x.days != null ? `paid ${x.days}d ago` : 'paid') : `${x.days}d · ${esc(x.stage || '')}`;
+    const hot = (x) => (chaseTab === 'awaiting_payment' && x.days >= 14) || (chaseTab === 'needs_invoice' && x.days >= 3) || (chaseTab === 'quiet' && x.days >= 7);
+    $('chase').innerHTML = `<div style="margin:2px 0 6px;color:var(--muted);font-size:12px">${esc(hint)}</div>` + (items.length ? items.map((x) =>
+      `<a class="row" href="${esc(x.url)}" target="_blank" rel="noopener"><span class="main"><div class="ttl">${esc(x.brand)} <span style="color:var(--muted)">× ${esc(x.creator)}</span></div><div class="sub">${esc([x.video && x.video !== x.brand ? x.video : null, x.amount ? usd(x.amount) : (chaseTab === 'needs_invoice' || chaseTab === 'awaiting_payment' ? 'amount missing' : null)].filter(Boolean).join(' · '))}</div></span><span class="pill ${hot(x) ? 'late' : ''}">${right(x)}</span></a>`).join('')
+      : '<div class="empty">Nothing here. 👌</div>');
   }
 
   function renderSchedule() {
