@@ -47,7 +47,7 @@
   /* ---------- HQ ---------- */
   #hq { overflow-y: auto; }
   .hq { width: 100%; max-width: 1320px; margin: 0 auto; padding: 22px 22px 40px; }
-  .hq-top { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+  .hq-top { display: flex; align-items: baseline; gap: 4px 12px; margin-bottom: 16px; flex-wrap: wrap; }
   .hq-top h1 { font: 600 22px 'Space Grotesk', sans-serif; margin: 0; }
   .hq-top .when { color: var(--muted); font-size: 13px; }
   .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 16px; }
@@ -127,6 +127,33 @@
   .money-head div b { font: 600 20px 'Space Grotesk', sans-serif; font-variant-numeric: tabular-nums; }
   .skel { background: linear-gradient(90deg, var(--panel2), var(--panel3), var(--panel2)); background-size: 200% 100%; animation: sh 1.2s infinite; border-radius: 8px; height: 14px; margin: 8px 0; }
   @keyframes sh { to { background-position: -200% 0; } }
+
+  /* ---------- Flow ---------- */
+  #flow { overflow-y: auto; }
+  .lane { display: flex; gap: 0; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+  .step { flex: 1 0 104px; min-width: 104px; background: var(--panel2); border: 1px solid var(--line); border-radius: 12px; padding: 12px 12px 10px; position: relative; }
+  .arrow { flex: 0 0 18px; display: grid; place-items: center; color: var(--dim); font-size: 13px; }
+  .step .sl { color: var(--muted); font-size: 12px; display: flex; justify-content: space-between; gap: 6px; }
+  .step .sl small { color: var(--dim); font: 10px 'IBM Plex Mono', monospace; }
+  .step .sv { font: 600 26px/1.15 'Space Grotesk', sans-serif; margin: 6px 0 4px; font-variant-numeric: tabular-nums; }
+  .step .ss { font-size: 11px; color: var(--muted); min-height: 16px; }
+  .step .ss .bad { color: var(--err); } .step .ss .sp { color: var(--warn); }
+  .step .sc2 { margin-top: 8px; display: flex; flex-direction: column; gap: 2px; font-size: 11px; color: var(--dim); }
+  .step .sc2 span { display: flex; justify-content: space-between; }
+  .step.hot { border-color: rgba(248,113,113,.4); }
+  .step.done { background: rgba(74,222,128,.05); border-color: rgba(74,222,128,.25); }
+  .step.money .sv { color: var(--ok); }
+  .job { display: grid; grid-template-columns: 14px 1fr auto; gap: 12px; align-items: center; padding: 10px 2px; border-top: 1px solid var(--line); }
+  .job:first-child { border-top: 0; }
+  .job .d { width: 10px; height: 10px; border-radius: 50%; background: var(--dim); }
+  .job .d.ok { background: var(--ok); box-shadow: 0 0 8px rgba(74,222,128,.5); } .job .d.warn { background: var(--warn); } .job .d.error { background: var(--err); box-shadow: 0 0 8px rgba(248,113,113,.5); }
+  .job .n { font-size: 14px; font-weight: 500; } .job .w { color: var(--muted); font-size: 12px; }
+  .job .m { text-align: right; font: 11px 'IBM Plex Mono', monospace; color: var(--muted); white-space: nowrap; }
+  .job .m b { color: var(--err); font-weight: 500; }
+  .subh { font: 600 11px 'IBM Plex Mono', monospace; color: var(--dim); letter-spacing: .08em; margin: 14px 0 4px; }
+  .results { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .res { background: var(--panel2); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+  .res .l { color: var(--muted); font-size: 12px; } .res .v { font: 600 22px 'Space Grotesk', sans-serif; margin-top: 4px; font-variant-numeric: tabular-nums; } .res .s { color: var(--dim); font-size: 11px; margin-top: 2px; }
 
   /* ---------- Chat ---------- */
   #chat { flex-direction: column; }
@@ -267,6 +294,7 @@
   <div class="logo"><div class="dot"></div>NOOCAP <span>PM</span></div>
   <nav class="tabs" id="tabs">
     <button data-v="hq" type="button">HQ</button>
+    <button data-v="flow" type="button">Flow</button>
     <button data-v="chat" type="button">Chat</button>
     <button data-v="approvals" type="button">Approvals <span class="badge" data-count hidden>0</span></button>
   </nav>
@@ -295,6 +323,17 @@
 </div></section>
 
 <!-- ============ Chat ============ -->
+<section class="view" id="flow"><div class="hq">
+  <div class="hq-top"><h1>Agency flow</h1><span class="when">every video and deal, the automations moving them, and what came out</span></div>
+  <div class="card" style="margin-bottom:16px"><h2>Video journey <span class="r" id="fvLive"></span></h2><div class="lane" id="fvLane"><div class="skel"></div></div></div>
+  <div class="card" style="margin-bottom:16px"><h2>Brand deal journey <span class="r" id="fdNote"></span></h2><div class="lane" id="fdLane"><div class="skel"></div></div></div>
+  <div class="grid">
+    <div class="card c7"><h2>Automations <span class="r">health · last 7 days</span></h2><div id="fJobs"><div class="skel"></div><div class="skel"></div></div></div>
+    <div class="card c5"><h2>Results <span class="r">last 7 days · this month</span></h2><div class="results" id="fRes"><div class="skel"></div></div></div>
+  </div>
+  <div class="err" id="flowErr" style="margin-top:14px;font-size:13px"></div>
+</div></section>
+
 <section class="view" id="chat">
   <div class="chatbar">
     <button class="iconbtn" id="histBtn" type="button">☰ Chats</button>
@@ -323,6 +362,7 @@
 
 <nav class="tabbar" id="tabbar">
   <button data-v="hq" type="button"><span class="i">◎</span>HQ</button>
+  <button data-v="flow" type="button"><span class="i">⇢</span>Flow</button>
   <button data-v="chat" type="button"><span class="i">✦</span>Chat</button>
   <button data-v="approvals" type="button"><span class="i">✉</span>Approvals<span class="badge" data-count hidden>0</span></button>
 </nav>
@@ -366,18 +406,19 @@
   // ---------- tabs ----------
   let view = 'hq';
   function show(v) {
-    if (!['hq', 'chat', 'approvals'].includes(v)) v = 'hq';
+    if (!['hq', 'flow', 'chat', 'approvals'].includes(v)) v = 'hq';
     view = v;
     document.querySelectorAll('.view').forEach((el) => el.classList.toggle('on', el.id === v));
     document.querySelectorAll('[data-v]').forEach((b) => b.classList.toggle('on', b.dataset.v === v));
     if (location.hash !== '#' + v) history.replaceState(null, '', '#' + v);
     if (v === 'approvals') loadApprovals();
     if (v === 'hq' && !hqData) loadHQ();
+    if (v === 'flow' && !flowData) loadFlow();
     if (v === 'chat') setTimeout(() => $('q').focus(), 50);
   }
   document.querySelectorAll('[data-v]').forEach((b) => b.onclick = () => show(b.dataset.v));
   window.addEventListener('hashchange', () => show(location.hash.slice(1)));
-  $('refresh').onclick = () => { if (view === 'approvals') loadApprovals(); else loadHQ(true); };
+  $('refresh').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else loadHQ(true); };
 
   // =====================================================================
   // HQ
@@ -527,6 +568,51 @@
     $('aiCost').textContent = `AI cost this week $${(hqData.kpis.ai_cost_week_usd || 0).toFixed(2)} · ≈₹${Math.round((hqData.kpis.ai_cost_week_usd || 0) * 88)}`;
     const icon = (r) => /brief/i.test(r.event) ? ['📋', 'teal'] : /brief|morning/i.test(r.area || '') ? ['☀', 'teal'] : r.outcome === 'Error' ? ['!', 'red'] : r.outcome === 'Needs approval' ? ['?', ''] : r.outcome === 'Skipped' ? ['–', 'teal'] : ['✓', 'teal'];
     $('activity').innerHTML = a.length ? a.map((r) => { const [i, c] = icon(r); return `<div class="att"><span class="ic ${c}">${i}</span><span class="b"><div>${esc(r.event)}</div><small>${esc([r.area, r.outcome, r.creator].filter(Boolean).join(' · '))}</small></span><span class="t">${r.time ? since(r.time) : ''}</span></div>`; }).join('') : '<div class="empty">No activity this week.</div>';
+  }
+
+  // =====================================================================
+  // FLOW
+  // =====================================================================
+  let flowData = null;
+  async function loadFlow(fresh) {
+    try {
+      const res = await fetch('/api/flow' + (fresh ? '?fresh=1' : ''), { headers: headers() });
+      if (res.status === 401) return needPassword();
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
+      flowData = data; renderFlow();
+      $('upd').textContent = 'updated ' + since(data.generated_at);
+      $('flowErr').textContent = data.errors?.length ? 'Some data could not load: ' + data.errors.join(' · ') : '';
+    } catch (e) { $('flowErr').textContent = 'Could not load Flow: ' + e.message; }
+  }
+  const lane = (steps) => steps.map((st, i) => (i ? '<div class="arrow">→</div>' : '') + st).join('');
+  function renderFlow() {
+    const f = flowData;
+    $('fvLive').textContent = f.video.live + ' live videos';
+    $('fvLane').innerHTML = lane(f.video.steps.map((s) => {
+      const sub = [s.late ? `<span class="bad">${s.late} late</span>` : '', s.sponsor ? `<span class="sp">${s.sponsor} sponsor</span>` : ''].filter(Boolean).join(' · ');
+      return `<div class="step ${s.key === 'posted' ? 'done' : s.late ? 'hot' : ''}"><div class="sl">${esc(s.label)}<small>${esc(s.hint)}</small></div><div class="sv">${s.count}</div><div class="ss">${sub}</div><div class="sc2">${s.creators.map(([c, n]) => `<span>${esc(c)}<b>${n}</b></span>`).join('')}</div></div>`;
+    }));
+    $('fdNote').textContent = f.deals.no_stage ? `${f.deals.no_stage} deal${f.deals.no_stage > 1 ? 's' : ''} with no stage set` : '';
+    $('fdLane').innerHTML = lane(f.deals.steps.map((s) => `<div class="step ${s.label === 'Paid' ? 'done money' : ''}"><div class="sl">${esc(s.label)}</div><div class="sv">${s.count}</div><div class="ss">${s.value_usd ? usd(s.value_usd) : ''}</div></div>`));
+    const job = (j) => `<div class="job"><span class="d ${j.health}"></span><div><div class="n">${esc(j.name)}</div><div class="w">${esc(j.what || (j.last_status ? 'last run ' + j.last_status : 'no runs yet'))}</div></div><div class="m">${j.last_run ? since(j.last_run) : '—'}<br>${j.runs_7d ?? j.runs_24h} runs${j.errors_7d || j.errors_24h ? ` · <b>${j.errors_7d || j.errors_24h} failed</b>` : ''}</div></div>`;
+    const n8n = f.automations.n8n;
+    $('fJobs').innerHTML = '<div class="subh" style="margin-top:0">THE PM</div>' + f.automations.pm.map(job).join('') +
+      '<div class="subh">N8N WORKFLOWS · LAST 24H</div>' + (n8n.connected
+        ? (n8n.workflows.length ? n8n.workflows.map((w) => job({ ...w, what: null, runs_7d: w.runs_24h, errors_7d: w.errors_24h })).join('') : '<div class="empty">No active workflows.</div>')
+        : '<div class="empty">Add N8N_BASE_URL and N8N_API_KEY in Vercel to see every n8n workflow here.</div>');
+    const r = f.results;
+    const res = (l, v, s) => `<div class="res"><div class="l">${l}</div><div class="v">${v}</div>${s ? `<div class="s">${s}</div>` : ''}</div>`;
+    $('fRes').innerHTML = [
+      res('Videos posted', r.posted_week, 'last 7 days'),
+      res('Edits delivered', r.delivered_week, `${r.changes_week} change requests`),
+      res('Briefs filed by PM', r.briefs_filed_week, 'last 7 days'),
+      res('Emails sent', r.emails_sent_week, `${r.emails_waiting} waiting for you`),
+      res('Sponsor revenue', usd(r.month_gross_usd), `${usd(r.month_paid_usd)} paid · ${usd(r.month_unpaid_usd)} unpaid`),
+      res('NOOCAP cut', usd(r.month_cut_usd), 'this month'),
+      res('PM actions', r.pm_actions_week, 'emails read, drafts, folders'),
+      res('AI cost', '$' + (r.ai_cost_week_usd || 0).toFixed(2), '≈₹' + Math.round((r.ai_cost_week_usd || 0) * 88) + ' last 7 days'),
+    ].join('');
   }
 
   // =====================================================================
@@ -784,7 +870,7 @@
     loadApprovals();
     if (chatId) openChat(chatId);
   }
-  setInterval(() => { if (document.visibilityState === 'visible') { if (view === 'hq') loadHQ(); loadApprovals(); } }, 60000);
+  setInterval(() => { if (document.visibilityState === 'visible') { if (view === 'hq') loadHQ(); if (view === 'flow') loadFlow(); loadApprovals(); } }, 60000);
   setInterval(() => { if (hqData) $('upd').textContent = 'updated ' + since(hqData.generated_at); }, 20000);
   boot();
 </script>
