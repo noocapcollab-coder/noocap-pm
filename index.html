@@ -155,6 +155,41 @@
   .res { background: var(--panel2); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
   .res .l { color: var(--muted); font-size: 12px; } .res .v { font: 600 22px 'Space Grotesk', sans-serif; margin-top: 4px; font-variant-numeric: tabular-nums; } .res .s { color: var(--dim); font-size: 11px; margin-top: 2px; }
 
+  /* ---------- Deals board ---------- */
+  #deals { overflow-y: auto; }
+  .dboard { display: grid; grid-template-columns: repeat(6, minmax(200px, 1fr)); gap: 10px; align-items: start; }
+  .dcol { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 10px 10px; min-width: 0; }
+  .dcol h3 { margin: 0 2px; font: 600 13px 'Space Grotesk', sans-serif; display: flex; align-items: center; gap: 8px; }
+  .dcol h3 .cnt { margin-left: auto; font: 500 12px 'IBM Plex Mono', monospace; color: var(--muted); background: var(--panel3); border-radius: 999px; padding: 0 8px; }
+  .dcol h3 .cnt.hot { background: var(--warn); color: #111; }
+  .dcol .hint { color: var(--dim); font-size: 11px; margin: 2px 2px 10px; min-height: 16px; }
+  .dcards { display: flex; flex-direction: column; gap: 8px; }
+  .dcard { display: block; width: 100%; text-align: left; background: var(--panel2); border: 1px solid var(--line); border-radius: 11px; padding: 10px 11px; color: inherit; }
+  .dcard:hover { border-color: var(--line2); background: var(--panel3); }
+  .dcard.has-draft { border-left: 3px solid var(--accent); }
+  .dcard .b { font-weight: 600; font-size: 14px; overflow-wrap: anywhere; }
+  .dcard .b span { color: var(--muted); font-weight: 400; }
+  .dcard .sub { color: var(--muted); font-size: 12px; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .dcard .foot { display: flex; align-items: center; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+  .tag { font: 500 11px 'IBM Plex Mono', monospace; border-radius: 6px; padding: 1px 7px; background: var(--panel3); color: var(--muted); white-space: nowrap; }
+  .tag.go { background: var(--accent-soft); color: var(--accent); }
+  .tag.warn { background: var(--warn-soft); color: var(--warn); }
+  .tag.bad { background: var(--err-soft); color: var(--err); }
+  .dcard .amt { margin-left: auto; font: 500 12px 'IBM Plex Mono', monospace; color: var(--text); }
+  .dcard .chk { font: 500 10px 'IBM Plex Mono', monospace; color: var(--warn); }
+  .dempty { color: var(--dim); font-size: 12px; text-align: center; padding: 14px 4px; border: 1px dashed var(--line); border-radius: 10px; }
+  .dchips { display: none; }
+  @media (max-width: 1250px) { .dboard { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 760px) {
+    .dchips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -14px 12px; padding: 0 14px; }
+    .dchips button { flex-shrink: 0; background: var(--panel); border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 6px 12px; font: 600 12px 'Space Grotesk', sans-serif; }
+    .dchips button b { font: 500 11px 'IBM Plex Mono', monospace; margin-left: 4px; }
+    .dchips button.on { background: var(--panel3); color: var(--text); border-color: var(--line2); }
+    .dboard { grid-template-columns: 1fr; }
+    .dcol { display: none; }
+    .dcol.on { display: block; }
+  }
+
   /* ---------- Chat ---------- */
   #chat { flex-direction: column; }
   .chatbar { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-bottom: 1px solid var(--line); }
@@ -294,6 +329,7 @@
   <div class="logo"><div class="dot"></div>NOOCAP <span>PM</span></div>
   <nav class="tabs" id="tabs">
     <button data-v="hq" type="button">HQ</button>
+    <button data-v="deals" type="button">Deals <span class="badge" id="dealsBadge" hidden>0</span></button>
     <button data-v="flow" type="button">Flow</button>
     <button data-v="chat" type="button">Chat</button>
     <button data-v="approvals" type="button">Approvals <span class="badge" data-count hidden>0</span></button>
@@ -311,7 +347,6 @@
     <div class="kpi"><div class="skel"></div><div class="skel" style="width:50%"></div></div>
   </div>
   <div class="grid">
-    <div class="card c12" id="chaseCard"><h2>Money to chase <span class="r" id="chaseSum"></span></h2><div class="daytabs" id="chaseTabs"></div><div class="rows" id="chase"><div class="skel"></div></div></div>
     <div class="card c7" id="schedCard"><h2>Posting schedule</h2><div class="daytabs" id="daytabs"></div><div class="rows" id="sched"><div class="skel"></div><div class="skel"></div></div></div>
     <div class="card c5"><h2>Needs attention <span class="n" id="attN"></span></h2><div id="attention"><div class="skel"></div><div class="skel"></div></div></div>
     <div class="card c7"><h2>Pipeline by creator <span class="r" id="pipeTot"></span></h2><div class="legend" id="legend"></div><div class="bars" id="bars"><div class="skel"></div></div></div>
@@ -321,6 +356,14 @@
     <div class="card c12"><h2>What the PM did <span class="r" id="aiCost"></span></h2><div id="activity"><div class="skel"></div></div></div>
   </div>
   <div class="err" id="hqErr" style="margin-top:14px;font-size:13px"></div>
+</div></section>
+
+<!-- ============ Deals ============ -->
+<section class="view" id="deals"><div class="hq">
+  <div class="hq-top"><h1>Brand deals</h1><span class="when" id="dealsWhen">every open deal, in the column of what happens next</span></div>
+  <div class="dchips" id="dchips"></div>
+  <div class="dboard" id="dboard"><div class="dcol on"><div class="skel"></div><div class="skel"></div></div></div>
+  <div class="err" id="dealsErr" style="margin-top:14px;font-size:13px"></div>
 </div></section>
 
 <!-- ============ Chat ============ -->
@@ -363,6 +406,7 @@
 
 <nav class="tabbar" id="tabbar">
   <button data-v="hq" type="button"><span class="i">◎</span>HQ</button>
+  <button data-v="deals" type="button"><span class="i">▦</span>Deals</button>
   <button data-v="flow" type="button"><span class="i">⇢</span>Flow</button>
   <button data-v="chat" type="button"><span class="i">✦</span>Chat</button>
   <button data-v="approvals" type="button"><span class="i">✉</span>Approvals<span class="badge" data-count hidden>0</span></button>
@@ -407,13 +451,14 @@
   // ---------- tabs ----------
   let view = 'hq';
   function show(v) {
-    if (!['hq', 'flow', 'chat', 'approvals'].includes(v)) v = 'hq';
+    if (!['hq', 'deals', 'flow', 'chat', 'approvals'].includes(v)) v = 'hq';
     view = v;
     document.querySelectorAll('.view').forEach((el) => el.classList.toggle('on', el.id === v));
     document.querySelectorAll('[data-v]').forEach((b) => b.classList.toggle('on', b.dataset.v === v));
     if (location.hash !== '#' + v) history.replaceState(null, '', '#' + v);
     if (v === 'approvals') loadApprovals();
-    if (v === 'hq' && !hqData) loadHQ();
+    if ((v === 'hq' || v === 'deals') && !hqData) loadHQ();
+    if (v === 'deals' && hqData) renderBoard();
     if (v === 'flow' && !flowData) loadFlow();
     if (v === 'chat') setTimeout(() => $('q').focus(), 50);
   }
@@ -480,14 +525,15 @@
     $('kpis').querySelectorAll('[data-go]').forEach((b) => b.onclick = () => {
       const g = b.dataset.go;
       if (g === 'approvals') return show('approvals');
+      if (g === 'chase') { boardCol = 'money'; return show('deals'); }
       if (g === 'late') { selDay = 'late'; renderSchedule(); }
       if (g === 'sched') { selDay = d.today; renderSchedule(); }
-      (g === 'chase' ? $('chaseCard') : g === 'deals' ? $('dealStages') : $('schedCard')).scrollIntoView({ behavior: 'smooth', block: 'center' });
+      (g === 'deals' ? $('dealStages') : $('schedCard')).scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
     if (!selDay) selDay = d.schedule.overdue.length && !d.schedule.days[0].items.length ? 'late' : d.today;
     renderSchedule();
-    renderChase();
+    renderBoard();
     renderAttention();
     renderPipeline();
     renderDeals();
@@ -496,33 +542,40 @@
     renderActivity();
   }
 
+  // ---- deals board ----
+  let boardCol = null;
+  function renderBoard() {
+    const b = hqData && hqData.board;
+    if (!b) return;
+    const cols = b.columns || [];
+    const needsYou = (cols.find((c) => c.key === 'reply')?.items.length || 0) + (cols.find((c) => c.key === 'promised')?.items.length || 0);
+    const bd = $('dealsBadge'); bd.hidden = !needsYou; bd.textContent = needsYou;
+    $('dealsWhen').textContent = `${b.total} open item${b.total === 1 ? '' : 's'} · updated ${since(hqData.generated_at)}`;
+    $('dealsErr').textContent = b.error ? 'Board error: ' + b.error : '';
+    if (!boardCol || !cols.find((c) => c.key === boardCol)) boardCol = (cols.find((c) => c.items.length) || cols[0] || {}).key;
+    $('dchips').innerHTML = cols.map((c) => `<button type="button" class="${c.key === boardCol ? 'on' : ''}" data-k="${c.key}">${esc(c.title)}<b>${c.items.length}</b></button>`).join('');
+    $('dchips').querySelectorAll('button').forEach((x) => x.onclick = () => { boardCol = x.dataset.k; renderBoard(); });
+    const hot = (k) => ['reply', 'promised'].includes(k);
+    const card = (x) => `<${x.draft || x.url ? 'button' : 'div'} type="button" class="dcard ${x.draft ? 'has-draft' : ''}" data-draft="${esc(x.draft || '')}" data-url="${esc(x.url || '')}">
+        <div class="b">${esc(x.brand)} <span>× ${esc(x.creator)}</span></div>
+        ${x.sub ? `<div class="sub">${esc(x.sub)}</div>` : ''}
+        <div class="foot"><span class="tag ${x.tone || ''}">${esc(x.tag || '')}</span>${x.needsCheck ? '<span class="chk">check stage</span>' : ''}${x.amount ? `<span class="amt">${usd(x.amount)}</span>` : ''}</div>
+      </${x.draft || x.url ? 'button' : 'div'}>`;
+    $('dboard').innerHTML = cols.map((c) => `<div class="dcol ${c.key === boardCol ? 'on' : ''}">
+        <h3>${esc(c.title)}<span class="cnt ${hot(c.key) && c.items.length ? 'hot' : ''}">${c.items.length}</span></h3>
+        <div class="hint">${esc(c.hint || '')}</div>
+        <div class="dcards">${c.items.length ? c.items.map(card).join('') : '<div class="dempty">Nothing here</div>'}</div>
+      </div>`).join('');
+    $('dboard').querySelectorAll('.dcard').forEach((el) => el.onclick = () => {
+      if (el.dataset.draft) { selDraft = el.dataset.draft; return show('approvals'); }
+      if (el.dataset.url) window.open(el.dataset.url, '_blank', 'noopener');
+    });
+  }
+
   // ---- money to chase ----
-  const CHASE_TABS = [
-    ['needs_invoice', '🧾 Invoice not sent', 'Posted sponsor videos. Ask the creator to invoice, then set Invoice Sent.'],
-    ['awaiting_payment', '⏳ Waiting for payment', 'Invoiced but not paid yet.'],
-    ['quiet', '🤐 Brand quiet', 'We wrote last and the brand has not replied for 3+ days.'],
-    ['reply_needed', '✉️ We owe a reply', 'The brand wrote last.'],
-    ['cut_pending', '🏦 Cut to collect', 'Brand paid, NOOCAP cut not collected yet.'],
-  ];
-  let chaseTab = null;
   const chaseList = (k) => (hqData.chase && hqData.chase[k]) || [];
   const chaseCount = () => chaseList('needs_invoice').length + chaseList('awaiting_payment').length + chaseList('quiet').length + chaseList('reply_needed').length;
   const chaseOwed = () => (hqData.chase?.totals?.awaiting_usd || 0) + (hqData.chase?.totals?.needs_invoice_usd || 0);
-  function renderChase() {
-    const c = hqData.chase || {};
-    if (!chaseTab) chaseTab = (CHASE_TABS.find(([k]) => chaseList(k).length) || CHASE_TABS[0])[0];
-    $('chaseSum').textContent = `${usd(c.totals?.awaiting_usd || 0)} waiting for payment · ${usd(c.totals?.cut_pending_usd || 0)} cut to collect`;
-    $('chaseTabs').innerHTML = CHASE_TABS.map(([k, label]) => `<button type="button" class="daytab ${k === 'needs_invoice' || k === 'awaiting_payment' ? 'late' : ''} ${chaseTab === k ? 'on' : ''}" data-k="${k}">${label} <b>${chaseList(k).length}</b></button>`).join('');
-    $('chaseTabs').querySelectorAll('.daytab').forEach((b) => b.onclick = () => { chaseTab = b.dataset.k; renderChase(); });
-    const [, , hint] = CHASE_TABS.find(([k]) => k === chaseTab);
-    const items = chaseList(chaseTab);
-    const right = (x) => chaseTab === 'needs_invoice' ? `posted ${x.days}d ago` : chaseTab === 'awaiting_payment' ? (x.invoiced ? `invoiced ${x.days}d ago` : `unpaid ${x.days}d`) : chaseTab === 'cut_pending' ? (x.days != null ? `paid ${x.days}d ago` : 'paid') : `${x.days}d · ${esc(x.stage || '')}`;
-    const hot = (x) => (chaseTab === 'awaiting_payment' && x.days >= 14) || (chaseTab === 'needs_invoice' && x.days >= 3) || (chaseTab === 'quiet' && x.days >= 7);
-    $('chase').innerHTML = `<div style="margin:2px 0 6px;color:var(--muted);font-size:12px">${esc(hint)}</div>` + (items.length ? items.map((x) =>
-      `<a class="row" href="${esc(x.url)}" target="_blank" rel="noopener"><span class="main"><div class="ttl">${esc(x.brand)} <span style="color:var(--muted)">× ${esc(x.creator)}</span></div><div class="sub">${esc([x.video && x.video !== x.brand ? x.video : null, x.amount ? usd(x.amount) : (chaseTab === 'needs_invoice' || chaseTab === 'awaiting_payment' ? 'amount missing' : null)].filter(Boolean).join(' · '))}</div></span><span class="pill ${hot(x) ? 'late' : ''}">${right(x)}</span></a>`).join('')
-      : '<div class="empty">Nothing here. 👌</div>');
-  }
-
   function renderSchedule() {
     const d = hqData, s = d.schedule;
     const tabs = [];
@@ -899,7 +952,7 @@
     loadApprovals();
     if (chatId) openChat(chatId);
   }
-  setInterval(() => { if (document.visibilityState === 'visible') { if (view === 'hq') loadHQ(); if (view === 'flow') loadFlow(); loadApprovals(); } }, 60000);
+  setInterval(() => { if (document.visibilityState === 'visible') { if (view === 'hq' || view === 'deals') loadHQ(); if (view === 'flow') loadFlow(); loadApprovals(); } }, 60000);
   setInterval(() => { if (hqData) $('upd').textContent = 'updated ' + since(hqData.generated_at); }, 20000);
   boot();
 </script>
