@@ -179,6 +179,12 @@
   .dcard .chk { font: 500 10px 'IBM Plex Mono', monospace; color: var(--warn); }
   .dempty { color: var(--dim); font-size: 12px; text-align: center; padding: 14px 4px; border: 1px dashed var(--line); border-radius: 10px; }
   .dchips { display: none; }
+  .cfilter { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 14px; }
+  .cfilter button { background: var(--panel); border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 5px 12px; font: 600 12px 'Space Grotesk', sans-serif; }
+  .cfilter button b { font: 500 11px 'IBM Plex Mono', monospace; margin-left: 5px; color: var(--dim); }
+  .cfilter button.on { background: var(--accent-soft); color: var(--accent); border-color: rgba(94,234,212,.35); }
+  .cfilter button.on b { color: var(--accent); }
+  .cfilter button:hover { color: var(--text); }
   @media (max-width: 1250px) { .dboard { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
   @media (max-width: 1000px) { .dboard { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   @media (max-width: 760px) {
@@ -362,6 +368,7 @@
 <!-- ============ Deals ============ -->
 <section class="view" id="deals"><div class="hq">
   <div class="hq-top"><h1>Brand deals</h1><span class="when" id="dealsWhen">every open deal, in the column of what happens next</span></div>
+  <div class="cfilter" id="cfilter"></div>
   <div class="dchips" id="dchips"></div>
   <div class="dboard" id="dboard"><div class="dcol on"><div class="skel"></div><div class="skel"></div></div></div>
   <div class="err" id="dealsErr" style="margin-top:14px;font-size:13px"></div>
@@ -544,14 +551,24 @@
   }
 
   // ---- deals board ----
-  let boardCol = null;
+  let boardCol = null, boardCreator = 'All';
   function renderBoard() {
     const b = hqData && hqData.board;
     if (!b) return;
-    const cols = b.columns || [];
-    const needsYou = (cols.find((c) => c.key === 'reply')?.items.length || 0) + (cols.find((c) => c.key === 'promised')?.items.length || 0);
+    const all = b.columns || [];
+    // Creator filter: counts per creator across every column, then narrow the columns to that creator
+    const counts = {};
+    for (const c of all) for (const x of c.items) if (x.creator && x.creator !== '?') counts[x.creator] = (counts[x.creator] || 0) + 1;
+    const names = Object.keys(counts).sort((a, z) => counts[z] - counts[a] || a.localeCompare(z));
+    if (boardCreator !== 'All' && !counts[boardCreator]) boardCreator = 'All';
+    const total = all.reduce((n, c) => n + c.items.length, 0);
+    $('cfilter').innerHTML = [['All', total], ...names.map((n) => [n, counts[n]])].map(([n, k]) => `<button type="button" class="${n === boardCreator ? 'on' : ''}" data-c="${esc(n)}">${esc(n)}<b>${k}</b></button>`).join('');
+    $('cfilter').querySelectorAll('button').forEach((x) => x.onclick = () => { boardCreator = x.dataset.c; renderBoard(); });
+    const cols = boardCreator === 'All' ? all : all.map((c) => ({ ...c, items: c.items.filter((x) => x.creator === boardCreator) }));
+    const needsYou = (all.find((c) => c.key === 'reply')?.items.length || 0) + (all.find((c) => c.key === 'promised')?.items.length || 0);
     const bd = $('dealsBadge'); bd.hidden = !needsYou; bd.textContent = needsYou;
-    $('dealsWhen').textContent = `${b.total} open item${b.total === 1 ? '' : 's'} · updated ${since(hqData.generated_at)}`;
+    const shown = cols.reduce((n, c) => n + c.items.length, 0);
+    $('dealsWhen').textContent = `${shown} open item${shown === 1 ? '' : 's'}${boardCreator === 'All' ? '' : ' for ' + boardCreator} · updated ${since(hqData.generated_at)}`;
     $('dealsErr').textContent = b.error ? 'Board error: ' + b.error : '';
     if (!boardCol || !cols.find((c) => c.key === boardCol)) boardCol = (cols.find((c) => c.items.length) || cols[0] || {}).key;
     $('dchips').innerHTML = cols.map((c) => `<button type="button" class="${c.key === boardCol ? 'on' : ''}" data-k="${c.key}">${esc(c.title)}<b>${c.items.length}</b></button>`).join('');
