@@ -1,6 +1,7 @@
 // Approvals for emails to brands.
 // GET  /api/outbox                          -> drafts waiting (and failed sends)
 // POST /api/outbox { id, action: 'send' | 'save' | 'reject', subject?, body?, to?, cc? }
+// POST /api/outbox { action: 'script-changes', brand, creator, feedback } -> re-send brand script notes to the script writer on Discord
 // POST /api/outbox { lead, action: 'lead-approve', price? } | { lead, action: 'lead-decline' }  -> Harsh's call on a below-floor offer
 import { listDrafts, saveDraft, rejectDraft, approveAndSend } from '../lib/outbox.js';
 import { checkAuth } from '../lib/auth.js';
@@ -13,6 +14,10 @@ export default async function handler(req, res) {
     if (req.method !== 'POST') return res.status(405).json({ error: 'GET or POST' });
     const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
     const { id, action, subject, body: text, to, cc } = body;
+    if (action === 'script-changes') {
+      const I = await import('../lib/inbox.js');
+      return res.status(200).json(await I.resendScriptChanges({ brand: body.brand, creator: body.creator, feedback: body.feedback, addNote: body.addNote !== false }));
+    }
     if (action === 'lead-approve' || action === 'lead-decline') {
       if (!body.lead) return res.status(400).json({ error: 'lead required' });
       const L = await import('../lib/leads.js');
