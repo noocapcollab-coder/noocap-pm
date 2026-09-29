@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0b0d10">
+<meta name="theme-color" content="#0d0e11">
 <title>NOOCAP PM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0b0d10; --panel: #111419; --panel2: #161a20; --panel3: #1c212a; --line: #222831; --line2: #2c333e;
-    --text: #e8ebef; --muted: #8b94a1; --dim: #5d6673;
-    --accent: #5eead4; --accent-ink: #062b26; --accent-soft: rgba(94,234,212,.10);
-    --warn: #fbbf24; --warn-soft: rgba(251,191,36,.10); --err: #f87171; --err-soft: rgba(248,113,113,.10); --ok: #4ade80;
+    --bg: #0d0e11; --nav: #101216; --panel: #14161b; --panel2: #1a1d23; --panel3: #1c1f25; --line: #23262d; --line2: #2d3139; --line3: #1f2228;
+    --text: #e9e7e2; --muted: #9ea2ab; --dim: #6b7079; --soft: #c9ccd2;
+    --accent: #3dd6b0; --accent-ink: #062b22; --accent-soft: rgba(61,214,176,.13);
+    --warn: #f5b86a; --warn-soft: rgba(242,163,58,.14); --err: #ff8e82; --err-soft: rgba(240,106,92,.15); --ok: #7fe0c0;
+    --info: #a9c1ff; --info-soft: rgba(120,150,255,.15); --ai: #d4b5ff; --ai-soft: rgba(170,120,255,.15);
     --s1: #1d4d47; --s2: #25706a; --s3: #33968c; --s4: #4dbdb0; --s5: #8eeee0;
     --r: 14px; --tabbar: 0px;
   }
@@ -313,12 +314,118 @@
   .gate form { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 340px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
   .gate input { background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: inherit; }
 
+  /* ---------- sidebar shell (HQ design) ---------- */
+  body { flex-direction: row; }
+  .appcol { flex: 1; min-width: 0; display: flex; flex-direction: column; height: 100%; }
+  .snav { width: 232px; flex-shrink: 0; padding: 28px 18px; border-right: 1px solid var(--line); background: var(--nav); display: flex; flex-direction: column; gap: 26px; overflow-y: auto; }
+  .snav .brand { padding: 0 10px; }
+  .snav .brand b { display: block; font: 700 20px 'Space Grotesk', sans-serif; letter-spacing: .04em; }
+  .snav .brand small { color: var(--muted); font-size: 13px; }
+  .snav .grp { display: flex; flex-direction: column; gap: 4px; }
+  .snav .lbl { font: 600 11px 'IBM Plex Sans', sans-serif; letter-spacing: .06em; color: var(--dim); padding: 0 12px 4px; text-transform: uppercase; }
+  .snav button { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 12px; border-radius: 8px; border: 0; background: none; color: #b9bcc4; font: 400 14px 'IBM Plex Sans', sans-serif; text-align: left; }
+  .snav button:hover { color: var(--text); background: rgba(255,255,255,.03); }
+  .snav button.on { background: var(--panel3); color: var(--text); font-weight: 600; }
+  .snav button svg { flex-shrink: 0; }
+  .snav button .badge { margin-left: auto; }
+  .snav .live { margin-top: auto; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); display: flex; flex-direction: column; gap: 8px; }
+  .snav .live .h { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; }
+  .snav .live .h i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .snav .live .h i.off { background: var(--warn); }
+  .snav .live .t { font-size: 12px; color: var(--muted); line-height: 1.55; }
+  .snav .live .iconbtn { align-self: flex-start; font-size: 12px; padding: 4px 10px; }
+  @media (min-width: 761px) { body > .appcol > header { display: none; } }
+
+  /* ---------- Overview ---------- */
+  #overview { overflow-y: auto; }
+  .ov { width: 100%; max-width: 1340px; margin: 0 auto; padding: 28px 36px 44px; display: flex; flex-direction: column; gap: 20px; }
+  .ov-head { display: flex; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+  .ov-head .k { font: 13px 'IBM Plex Mono', monospace; color: var(--muted); }
+  .ov-head h1 { margin: 2px 0 0; font: 600 30px 'Space Grotesk', sans-serif; }
+  .ov-head .acts { margin-left: auto; display: flex; gap: 10px; }
+  .obtn { min-height: 44px; padding: 0 18px; border-radius: 8px; border: 1px solid var(--line2); background: transparent; color: var(--text); font-size: 14px; display: inline-flex; align-items: center; }
+  .obtn:hover { border-color: #3a3f49; }
+  .obtn.pri { border: 0; background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+  .obtn.pri.quiet { background: var(--panel3); color: var(--muted); }
+  .ov-row1 { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 20px; }
+  .ov-brief { border: 1px solid rgba(170,120,255,.35); border-radius: 12px; background: rgba(170,120,255,.07); padding: 20px 22px; display: flex; flex-direction: column; gap: 10px; }
+  .ov-brief .t { display: flex; gap: 10px; align-items: center; }
+  .ov-brief .t b { font-size: 11px; font-weight: 600; letter-spacing: .05em; color: var(--ai); }
+  .ov-brief .t span { margin-left: auto; font-size: 12px; color: var(--muted); }
+  .ov-brief p { margin: 0; font-size: 16px; line-height: 1.6; }
+  .ocard { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+  .ocard h2 { margin: 0; font: 600 17px 'Space Grotesk', sans-serif; display: flex; align-items: center; gap: 10px; }
+  .ocard h2 small { font: 400 12px 'IBM Plex Sans', sans-serif; color: var(--muted); }
+  .ocard h2 .more { margin-left: auto; font: 400 13px 'IBM Plex Sans', sans-serif; color: var(--muted); background: none; border: 0; padding: 0; }
+  .ocard h2 .more:hover { color: var(--text); }
+  .mline { display: flex; justify-content: space-between; font-size: 13px; }
+  .mline span { color: #b9bcc4; } .mline b { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .ostats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+  .ostat { padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); display: flex; flex-direction: column; gap: 6px; text-align: left; color: inherit; min-width: 0; }
+  button.ostat:hover { border-color: var(--line2); background: #171a1f; }
+  .ostat .l { font-size: 12px; color: var(--muted); }
+  .ostat .v { font: 600 28px/1.1 'Space Grotesk', sans-serif; font-variant-numeric: tabular-nums; }
+  .ostat .s { font-size: 12px; color: #8a8e97; overflow: hidden; text-overflow: ellipsis; }
+  .ov-2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+  .ov-3 { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, .9fr); gap: 20px; }
+  .pbar { display: grid; grid-template-columns: 96px minmax(0, 1fr) 40px; gap: 12px; align-items: center; font-size: 13px; }
+  .pbar span:first-child { color: var(--soft); }
+  .pbar .tr { height: 14px; border-radius: 4px; background: var(--panel3); overflow: hidden; }
+  .pbar .tr div { height: 14px; border-radius: 4px; min-width: 3px; }
+  .pbar .n { font: 12px 'IBM Plex Mono', monospace; text-align: right; }
+  .ofoot { font-size: 12px; color: var(--muted); padding-top: 8px; border-top: 1px solid var(--line3); }
+  .cgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px; }
+  .crow { display: grid; grid-template-columns: 10px 84px minmax(0, 1fr) 44px; gap: 10px; align-items: center; padding: 9px 0; border-top: 1px solid var(--line3); font-size: 13px; }
+  .crow i { width: 8px; height: 8px; border-radius: 50%; }
+  .crow b { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .crow .tr { height: 6px; border-radius: 3px; background: var(--panel3); overflow: hidden; }
+  .crow .tr div { height: 6px; background: #6f7582; }
+  .crow .n { font: 12px 'IBM Plex Mono', monospace; color: var(--soft); text-align: right; }
+  .need { display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; border-radius: 10px; background: var(--panel2); }
+  .need .k { display: flex; align-items: center; gap: 8px; }
+  .chip { font-size: 11px; font-weight: 600; letter-spacing: .04em; padding: 3px 7px; border-radius: 6px; }
+  .need .k small { font-size: 12px; color: var(--muted); }
+  .need .ti { font-size: 13px; font-weight: 500; line-height: 1.4; }
+  .need .ti small { display: block; color: var(--muted); font-weight: 400; margin-top: 2px; }
+  .need .bt { display: flex; gap: 8px; }
+  .need .bt button { min-height: 34px; padding: 0 12px; border-radius: 8px; font-size: 12px; border: 1px solid var(--line2); background: transparent; color: var(--text); }
+  .need .bt button.pri { border: 0; background: var(--text); color: var(--bg); font-weight: 600; }
+  .post { display: flex; flex-direction: column; gap: 4px; padding: 9px 0; border-top: 1px solid var(--line3); }
+  .post:hover .tt { color: var(--text); }
+  .post .top { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+  .post .top b { font-weight: 600; } .post .top .tm { font: 12px 'IBM Plex Mono', monospace; color: var(--muted); }
+  .post .top .st { margin-left: auto; font-size: 12px; font-weight: 500; padding: 3px 8px; border-radius: 999px; white-space: nowrap; }
+  .post .tt { font-size: 12px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .agbox { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .agbox div { padding: 10px 12px; border-radius: 10px; background: var(--panel2); }
+  .agbox small { font-size: 12px; color: var(--muted); display: block; } .agbox b { font: 600 20px 'Space Grotesk', sans-serif; }
+  .feed { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 10px; padding: 8px 0; border-top: 1px solid var(--line3); }
+  .feed span:first-child { font: 12px 'IBM Plex Mono', monospace; color: #8a8e97; }
+  .feed span:last-child { font-size: 12px; line-height: 1.45; color: var(--soft); overflow-wrap: anywhere; }
+  .ov .skel { margin: 4px 0; }
+
   /* ---------- responsive ---------- */
+  @media (max-width: 1240px) {
+    .ostats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .ov-3 { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .ov-3 > :first-child { grid-column: 1 / -1; }
+  }
   @media (max-width: 1100px) {
     .c7, .c5, .c6, .c4, .c8 { grid-column: span 12; }
+    .ov-row1, .ov-2 { grid-template-columns: minmax(0, 1fr); }
   }
   @media (max-width: 760px) {
     :root { --tabbar: 64px; }
+    body { flex-direction: column; }
+    .snav { display: none; }
+    .ov { padding: 18px 16px 28px; gap: 16px; }
+    .ov-head h1 { font-size: 24px; }
+    .ov-head .acts { margin-left: 0; width: 100%; }
+    .ov-head .acts .obtn { flex: 1; justify-content: center; padding: 0 10px; white-space: nowrap; font-size: 13px; }
+    .ostats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ov-3 { grid-template-columns: minmax(0, 1fr); }
+    .cgrid { grid-template-columns: minmax(0, 1fr); }
+    .ov-brief p { font-size: 15px; }
     header { padding: 0 16px; height: 54px; }
     nav.tabs { display: none; }
     .tabbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; height: calc(var(--tabbar) + env(safe-area-inset-bottom)); padding-bottom: env(safe-area-inset-bottom); background: var(--panel); border-top: 1px solid var(--line); z-index: 25; }
@@ -352,6 +459,26 @@
 </style>
 </head>
 <body>
+<aside class="snav" aria-label="HQ sections">
+  <div class="brand"><b>NOOCAP</b><small>Agency HQ</small></div>
+  <div class="grp">
+    <button data-v="overview" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Overview</button>
+    <button data-v="deals" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M9 7V5h6v2"/></svg>Brand deals <span class="badge" id="dealsBadge2" hidden>0</span></button>
+    <button data-v="approvals" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Approvals <span class="badge" data-count hidden>0</span></button>
+  </div>
+  <div class="grp">
+    <div class="lbl">More</div>
+    <button data-v="hq" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Schedule &amp; team</button>
+    <button data-v="flow" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 12h4l6-5M11 12l6 5"/></svg>Flow</button>
+    <button data-v="chat" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.4l-1.8-4.9L5 9.7l5.2-1.8z"/><path d="M18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8z"/></svg>Ask the PM</button>
+  </div>
+  <div class="live">
+    <div class="h"><i id="liveDot"></i><span id="liveH">PM agent</span></div>
+    <div class="t" id="liveT">Loading…</div>
+    <button class="iconbtn" id="refresh" type="button" title="Refresh">↻ Refresh</button>
+  </div>
+</aside>
+<div class="appcol">
 <header>
   <div class="logo"><div class="dot"></div>NOOCAP <span>PM</span></div>
   <nav class="tabs" id="tabs">
@@ -361,8 +488,31 @@
     <button data-v="chat" type="button">Chat</button>
     <button data-v="approvals" type="button">Approvals <span class="badge" data-count hidden>0</span></button>
   </nav>
-  <div class="hstat"><span class="upd" id="upd"></span><button class="iconbtn" id="refresh" type="button" title="Refresh">↻</button></div>
+  <div class="hstat"><span class="upd" id="upd"></span><button class="iconbtn" id="refreshM" type="button" title="Refresh">↻</button></div>
 </header>
+
+<!-- ============ Overview (HQ design) ============ -->
+<section class="view" id="overview"><div class="ov">
+  <div class="ov-head">
+    <div><div class="k" id="ovWhen"></div><h1>Agency overview</h1></div>
+    <div class="acts"><button class="obtn" type="button" data-go="chat">Ask the PM</button><button class="obtn pri" type="button" id="ovAppr" data-go="approvals">Approvals</button></div>
+  </div>
+  <div class="ov-row1">
+    <section class="ov-brief" aria-label="PM brief"><div class="t"><b id="ovBriefH">PM BRIEF</b><span>written from live Notion data</span></div><p id="ovBrief"><span class="skel"></span><span class="skel"></span></p></section>
+    <section class="ocard" aria-label="Money this month"><h2 id="ovMoneyH">Money</h2><div id="ovMoney" style="display:flex;flex-direction:column;gap:9px"><div class="skel"></div><div class="skel"></div></div></section>
+  </div>
+  <section class="ostats" id="ovStats" aria-label="This week at a glance"></section>
+  <div class="ov-2">
+    <section class="ocard" aria-label="Production pipeline"><h2>Production pipeline <small>all creators · from Notion</small></h2><div id="ovPipe" style="display:flex;flex-direction:column;gap:12px"><div class="skel"></div></div><div class="ofoot" id="ovPipeFoot"></div></section>
+    <section class="ocard" aria-label="Creators this week"><h2>Creators this week <button class="more" type="button" data-go="hq">Schedule →</button></h2><div class="cgrid" id="ovCreators"><div class="skel"></div></div><div class="ofoot">Dot = health (on track, watch, behind) · bar = posted vs scheduled this week</div></section>
+  </div>
+  <div class="ov-3">
+    <section class="ocard" aria-label="Needs you"><h2>Needs you <small id="ovNeedN"></small></h2><div id="ovNeeds" style="display:flex;flex-direction:column;gap:10px"><div class="skel"></div></div></section>
+    <section class="ocard" aria-label="Today's posts" style="gap:6px"><h2>Today's posts <small id="ovPostsN"></small></h2><div id="ovPosts"><div class="skel"></div></div></section>
+    <section class="ocard" aria-label="AI agent now"><h2>AI agent now <small id="ovLive" style="color:var(--ok)"></small></h2><div class="agbox" id="ovAgBox"></div><div id="ovFeed"></div><button class="more" type="button" data-go="flow" style="margin-top:auto;align-self:flex-start;background:none;border:0;color:var(--muted);font-size:13px;padding:0">Full activity →</button></section>
+  </div>
+  <div class="err" id="ovErr" style="font-size:13px"></div>
+</div></section>
 
 <!-- ============ HQ ============ -->
 <section class="view" id="hq"><div class="hq">
@@ -434,13 +584,15 @@
 </section>
 
 <nav class="tabbar" id="tabbar">
-  <button data-v="hq" type="button"><span class="i">◎</span>HQ</button>
+  <button data-v="overview" type="button"><span class="i">◎</span>Home</button>
+  <button data-v="hq" type="button"><span class="i">▤</span>Schedule</button>
   <button data-v="deals" type="button"><span class="i">▦</span>Deals</button>
   <button data-v="flow" type="button"><span class="i">⇢</span>Flow</button>
   <button data-v="chat" type="button"><span class="i">✦</span>Chat</button>
   <button data-v="approvals" type="button"><span class="i">✉</span>Approvals<span class="badge" data-count hidden>0</span></button>
 </nav>
 
+</div>
 <div class="shade" id="shade"></div>
 <aside class="side" id="side">
   <h3>Chats <button class="iconbtn" id="newBtn" type="button">＋ New</button></h3>
@@ -478,22 +630,24 @@
   function needPassword() { store.del('pmKey'); key = ''; $('gateErr').textContent = 'Password needed.'; $('gate').classList.add('show'); }
 
   // ---------- tabs ----------
-  let view = 'hq';
+  let view = 'overview';
   function show(v) {
-    if (!['hq', 'deals', 'flow', 'chat', 'approvals'].includes(v)) v = 'hq';
+    if (!['overview', 'hq', 'deals', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
     view = v;
     document.querySelectorAll('.view').forEach((el) => el.classList.toggle('on', el.id === v));
     document.querySelectorAll('[data-v]').forEach((b) => b.classList.toggle('on', b.dataset.v === v));
     if (location.hash !== '#' + v) history.replaceState(null, '', '#' + v);
     if (v === 'approvals') loadApprovals();
-    if ((v === 'hq' || v === 'deals') && !hqData) loadHQ();
+    if ((v === 'overview' || v === 'hq' || v === 'deals') && !hqData) loadHQ();
+    const sc = document.querySelector('.view.on'); if (sc) sc.scrollTop = 0;
     if (v === 'deals' && hqData) renderBoard();
     if (v === 'flow' && !flowData) loadFlow();
     if (v === 'chat') setTimeout(() => $('q').focus(), 50);
   }
   document.querySelectorAll('[data-v]').forEach((b) => b.onclick = () => show(b.dataset.v));
   window.addEventListener('hashchange', () => show(location.hash.slice(1)));
-  $('refresh').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else loadHQ(true); };
+  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else loadHQ(true); };
+  document.querySelectorAll('.ov [data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
 
   // =====================================================================
   // HQ
@@ -520,10 +674,10 @@
       if (res.status === 401) return needPassword();
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
-      hqData = data; renderHQ(); loadCosts();
+      hqData = data; renderHQ(); renderOverview(); loadCosts();
       $('hqErr').textContent = data.errors?.length ? 'Some data could not load: ' + data.errors.join(' · ') : '';
     } catch (e) {
-      $('hqErr').textContent = 'Could not load HQ: ' + e.message;
+      $('hqErr').textContent = $('ovErr').textContent = 'Could not load HQ: ' + e.message;
     }
   }
 
@@ -551,7 +705,7 @@
     const d = hqData, k = d.kpis;
     const date = new Date(d.today + 'T00:00:00Z');
     const hr = new Date(Date.now() + 5.5 * 36e5).getUTCHours();
-    $('hello').textContent = hr < 12 ? 'Good morning' : hr < 17 ? 'Good afternoon' : 'Good evening';
+    $('hello').textContent = 'Schedule & team';
     $('today').textContent = date.toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
     $('upd').textContent = 'updated ' + since(d.generated_at);
 
@@ -586,6 +740,120 @@
     renderActivity();
   }
 
+  // =====================================================================
+  // OVERVIEW (the HQ design). Everything is worked out from /api/hq, no AI.
+  // =====================================================================
+  const TONE = { ok: ['var(--ok)', 'var(--accent-soft)'], warn: ['var(--warn)', 'var(--warn-soft)'], bad: ['var(--err)', 'var(--err-soft)'], info: ['var(--info)', 'var(--info-soft)'], ai: ['var(--ai)', 'var(--ai-soft)'], mute: ['#b4b7be', 'rgba(255,255,255,.06)'] };
+  const toneStyle = (k) => `color:${TONE[k][0]};background:${TONE[k][1]}`;
+  const stageLabel = (v) => /change/i.test(v.status || '') ? 'Changes' : v.stage;
+  const andList = (xs) => xs.length < 2 ? xs.join('') : xs.slice(0, -1).join(', ') + ' and ' + xs[xs.length - 1];
+  const plural = (n, one, many) => `${n} ${n === 1 ? one : (many || one + 's')}`;
+  const istHM = (iso) => new Date(Date.parse(iso) + 5.5 * 36e5).toISOString().slice(11, 16);
+  const weekNo = (d) => { const t = new Date(d + 'T00:00:00Z'); t.setUTCDate(t.getUTCDate() + 4 - (t.getUTCDay() || 7)); const y = new Date(Date.UTC(t.getUTCFullYear(), 0, 1)); return Math.ceil(((t - y) / 864e5 + 1) / 7); };
+
+  function renderLive() {
+    const a = hqData?.overview?.agent; if (!a) return;
+    const mins = a.last_event ? (Date.now() - Date.parse(a.last_event)) / 60e3 : null;
+    const quiet = mins == null || mins > 180;
+    $('liveDot').className = quiet ? 'off' : '';
+    $('liveH').textContent = quiet ? 'PM agent quiet' : 'PM agent live';
+    $('liveT').innerHTML = `Last event ${a.last_event ? since(a.last_event) : 'none this week'}<br>${plural(a.events_week, 'event')} this week<br>Data ${since(hqData.generated_at)}`;
+    $('ovLive').textContent = quiet ? '' : '● live';
+  }
+
+  function needsList() {
+    const d = hqData, out = [];
+    const ap = d.kpis.approvals;
+    if (ap) out.push({ kind: 'APPROVE', tone: 'ai', area: 'Approvals', t: `${plural(ap, 'email')} drafted by the PM, waiting for your yes`, pri: 'Review', go: 'approvals' });
+    for (const x of (d.leads?.approvals || [])) out.push({ kind: 'DECIDE', tone: 'bad', area: 'Brand deals', t: `${x.brand} × ${x.creator} wants to go ahead at ${usd(x.approval || 0)}`, s: 'Below the floor, so it needs your approve or decline', pri: 'Decide', go: 'deals' });
+    const todayOpen = d.schedule.days[0].items.filter((v) => v.stage !== 'Ready' && v.stage !== 'Posted');
+    for (const v of todayOpen.slice(0, 3)) out.push({ kind: 'AT RISK', tone: 'bad', area: 'Production', t: `${v.creator}: ${v.title}`, s: `Posts today, still in ${stageLabel(v)}${v.editor ? ' with ' + v.editor : ''}`, pri: 'Open card', url: v.url });
+    for (const u of (d.deals.unplaced || []).slice(0, 3)) out.push({ kind: 'UNPLACED', tone: 'warn', area: 'Inbox', t: u.event, s: `${u.creator ? u.creator + ' · ' : ''}the PM couldn't match it to a deal`, pri: 'Open', url: u.url });
+    for (const a of d.deals.attention.slice(0, 4)) out.push({ kind: /needs your check/.test(a.why) ? 'CHECK' : /invoice/.test(a.why) ? 'INVOICE' : 'CHASE', tone: /invoice/.test(a.why) ? 'bad' : 'info', area: 'Brand deals', t: `${a.brand} × ${a.creator || '?'}`, s: `${a.why} · ${a.stage}`, pri: 'Open deal', url: a.url });
+    for (const v of d.schedule.overdue.slice(0, 3)) out.push({ kind: 'LATE', tone: 'warn', area: 'Production', t: `${v.creator}: ${v.title}`, s: `${v.days_late}d past its post date · ${v.stage}`, pri: 'Open card', url: v.url });
+    return out;
+  }
+
+  function briefText() {
+    const d = hqData, o = d.overview, k = d.kpis, parts = [];
+    const tp = o.today_posts, safe = tp.filter((v) => v.stage === 'Ready' || v.stage === 'Posted').length;
+    let a = o.week.planned ? `${o.week.posted} of the ${o.week.planned} videos scheduled this week ${o.week.posted === 1 ? 'is' : 'are'} posted` : 'Nothing has a post date this week yet';
+    if (tp.length) a += safe === tp.length ? `, and all ${plural(tp.length, 'post')} for today are ready or already live.` : `, and ${safe} of today's ${tp.length} posts are ready or live.`;
+    else a += ', and nothing is scheduled to post today.';
+    parts.push(a);
+    const risky = tp.filter((v) => v.stage !== 'Ready' && v.stage !== 'Posted');
+    if (risky.length) {
+      const r = risky[0];
+      parts.push(risky.length === 1 ? `The one real risk is ${r.creator}'s${r.time ? ' ' + r.time : ''} video, which is still in ${stageLabel(r)}${r.editor ? ' with ' + r.editor : ''}.` : `The risk is today's ${risky.length} posts that aren't ready, starting with ${r.creator}'s video in ${stageLabel(r)}${r.editor ? ' with ' + r.editor : ''}.`);
+    }
+    if (d.schedule.overdue.length) parts.push(`${plural(d.schedule.overdue.length, 'card is', 'cards are')} past their post date without being marked posted.`);
+    const m = o.money, money = [];
+    if (m.overdue_count) money.push(`${plural(m.overdue_count, 'invoice is', 'invoices are')} overdue${m.overdue_usd ? ' (' + usd(m.overdue_usd) + ')' : ''}`);
+    if (k.approvals) money.push(`${plural(k.approvals, 'email is', 'emails are')} waiting in Approvals`);
+    if (money.length) parts.push(money.join(' and ').replace(/^./, (c) => c.toUpperCase()) + '.');
+    if (o.unscripted_next7) parts.push(`${plural(o.unscripted_next7, 'video')} posting in the next 7 days ${o.unscripted_next7 === 1 ? 'still needs' : 'still need'} a script${o.unscripted_names.length ? ', mostly for ' + andList(o.unscripted_names) : ''}.`);
+    return parts.join(' ');
+  }
+
+  function renderOverview() {
+    const d = hqData, o = d.overview; if (!o) { $('ovErr').textContent = 'lib/hq.js is the old version: upload the new one to see the Overview.'; return; }
+    const k = d.kpis;
+    const now = new Date(Date.now() + 5.5 * 36e5);
+    const day = new Date(d.today + 'T00:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' });
+    $('ovWhen').textContent = `${day} · ${now.toISOString().slice(11, 16)} IST · week ${weekNo(d.today)}`;
+    const ap = $('ovAppr'); ap.textContent = k.approvals ? `${k.approvals} waiting for approval` : 'Approvals clear'; ap.classList.toggle('quiet', !k.approvals);
+    $('ovBriefH').textContent = `PM BRIEF · UPDATED ${istHM(d.generated_at)}`;
+    $('ovBrief').textContent = briefText();
+
+    const m = o.money, mon = new Date(d.money.month + '-01T00:00:00Z').toLocaleDateString('en-GB', { month: 'long', timeZone: 'UTC' });
+    $('ovMoneyH').textContent = 'Money · ' + mon;
+    $('ovMoney').innerHTML = [
+      ['Brand revenue booked', usd(m.gross), ''],
+      ['Paid', usd(m.paid), 'var(--ok)'],
+      [m.overdue_count ? `Overdue · ${plural(m.overdue_count, 'invoice')}` : 'Overdue invoices', m.overdue_count ? usd(m.overdue_usd) : 'none', m.overdue_count ? 'var(--err)' : ''],
+      ['Still unpaid', usd(m.unpaid), m.unpaid ? 'var(--warn)' : ''],
+      ['NOOCAP commission', usd(m.cut), ''],
+    ].map(([l, v, c]) => `<div class="mline"><span>${l}</span><b${c ? ` style="color:${c}"` : ''}>${v}</b></div>`).join('');
+
+    const tp = o.today_posts, risky = tp.filter((v) => v.stage !== 'Ready' && v.stage !== 'Posted');
+    const pct = o.week.planned ? Math.round(o.week.posted / o.week.planned * 100) : 0;
+    const daysLeft = Math.max(0, Math.round((new Date(o.week.end) - new Date(d.today)) / 864e5));
+    const stat = (l, v, sub, color, go) => `<${go ? 'button type="button" data-go="' + go + '"' : 'div'} class="ostat"><div class="l">${l}</div><div class="v"${color ? ` style="color:${color}"` : ''}>${v}</div><div class="s">${esc(sub)}</div></${go ? 'button' : 'div'}>`;
+    $('ovStats').innerHTML = [
+      stat('Posted this week', `${o.week.posted}/${o.week.planned}`, o.week.planned ? `${pct}% of schedule · ${plural(daysLeft, 'day')} left` : 'no post dates this week', '', 'hq'),
+      stat('In production', o.in_production, 'script → ready', '', 'hq'),
+      stat('At risk today', risky.length, risky.length ? `${risky[0].creator} still in ${stageLabel(risky[0])}` : tp.length ? 'all of today is safe' : 'nothing posts today', risky.length ? 'var(--err)' : '', 'hq'),
+      stat('Need a script', o.unscripted_next7, o.unscripted_next7 ? 'posting in the next 7 days' : 'every slot this week has one', o.unscripted_next7 ? 'var(--warn)' : ''),
+      stat('Active brand deals', o.deals_open, `${o.deals_waiting_brand} waiting on the brand`, '', 'deals'),
+      stat('Delivered today', k.delivered_today, `${k.delivered_week} edits this week`, '', 'hq'),
+    ].join('');
+    $('ovStats').querySelectorAll('[data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
+
+    const pt = d.pipeline.totals;
+    const rows = [['Scripting', pt.Scripting, '#6f7582'], ['Filming', pt.Filming, '#7896ff'], ['Editing', pt.Editing, '#aa78ff'], ['Review', pt.Review, '#aa78ff'], ['Ready', pt.Ready, '#3dd6b0'], ['Posted (wk)', o.posted_week_all, '#3dd6b0']];
+    const max = Math.max(1, ...rows.map((r) => r[1] || 0));
+    $('ovPipe').innerHTML = rows.map(([l, n, c]) => `<div class="pbar"><span>${l}</span><div class="tr"><div style="width:${Math.round((n || 0) / max * 100)}%;background:${c}"></div></div><span class="n">${n || 0}</span></div>`).join('');
+    $('ovPipeFoot').textContent = `${plural(d.schedule.overdue.length, 'card')} past post date · ${pt.Ready || 0} ready and waiting to post`;
+
+    const dots = { ok: '#3dd6b0', warn: '#f2a33a', bad: '#f06a5c' };
+    $('ovCreators').innerHTML = o.creators.length ? o.creators.slice(0, 12).map((c) => `<div class="crow" title="${esc(c.name)}: ${c.posted} of ${c.planned} posted this week${c.late ? ', ' + c.late + ' late' : ''}"><i style="background:${dots[c.health]}"></i><b>${esc(c.name)}</b><div class="tr"><div style="width:${c.planned ? Math.round(c.posted / c.planned * 100) : 0}%"></div></div><span class="n">${c.posted}/${c.planned}</span></div>`).join('') : '<div class="empty">No creator videos this week.</div>';
+
+    const needs = needsList();
+    $('ovNeedN').textContent = needs.length ? needs.length : '';
+    $('ovNeeds').innerHTML = needs.length ? needs.slice(0, 4).map((n, i) => `<div class="need"><div class="k"><span class="chip" style="${toneStyle(n.tone)}">${n.kind}</span><small>${n.area}</small></div><div class="ti">${esc(n.t)}${n.s ? `<small>${esc(n.s)}</small>` : ''}</div><div class="bt"><button type="button" class="pri" data-i="${i}">${n.pri}</button></div></div>`).join('') + (needs.length > 4 ? `<div class="empty">+${needs.length - 4} more on Schedule &amp; team and Brand deals</div>` : '') : '<div class="empty">All clear. Nothing needs you right now.</div>';
+    $('ovNeeds').querySelectorAll('button[data-i]').forEach((b) => b.onclick = () => { const n = needs[+b.dataset.i]; if (n.go) show(n.go); else if (n.url) window.open(n.url, '_blank', 'noopener'); });
+
+    const st = (v) => v.stage === 'Posted' ? ['Posted', 'ok'] : v.stage === 'Ready' ? ['Ready', 'ok'] : v.stage === 'Review' ? [stageLabel(v) === 'Changes' ? 'Changes' : 'In review', 'warn'] : ['At risk · ' + v.stage, 'bad'];
+    $('ovPostsN').textContent = tp.length ? `${tp.length - risky.length} of ${tp.length} safe` : '';
+    $('ovPosts').innerHTML = tp.length ? tp.map((v) => { const [label, tone] = st(v); return `<a class="post" href="${esc(v.url)}" target="_blank" rel="noopener"><div class="top"><b>${esc(v.creator)}</b>${v.time ? `<span class="tm">${v.time}</span>` : ''}<span class="st" style="${toneStyle(tone)}">${label}</span></div><div class="tt">${esc(v.title)}${v.sponsor ? ' · sponsor' : ''}${v.editor ? ' · ' + esc(v.editor) : ''}</div></a>`; }).join('') : '<div class="empty">Nothing scheduled to post today.</div>';
+
+    const a = o.agent;
+    $('ovAgBox').innerHTML = `<div><small>Events · 7 days</small><b>${a.events_week}</b></div><div><small>AI spend · 7 days</small><b>$${Number(a.cost_week || 0).toFixed(2)}</b></div>`;
+    $('ovFeed').innerHTML = (d.activity || []).slice(0, 5).map((r) => `<div class="feed"><span>${r.time ? istHM(r.time) : ''}</span><span>${esc(r.event)}</span></div>`).join('') || '<div class="empty">No activity this week.</div>';
+    renderLive();
+    $('ovErr').textContent = d.errors?.length ? 'Some data could not load: ' + d.errors.join(' · ') : '';
+  }
+
   // ---- deals board ----
   let boardCol = null, boardCreator = 'All';
   function renderBoard() {
@@ -603,7 +871,7 @@
     const cols = boardCreator === 'All' ? all : all.map((c) => ({ ...c, items: c.items.filter((x) => x.creator === boardCreator) }));
     renderLeads();
     const needsYou = (all.find((c) => c.key === 'reply')?.items.length || 0) + (all.find((c) => c.key === 'promised')?.items.length || 0);
-    const bd = $('dealsBadge'); bd.hidden = !needsYou; bd.textContent = needsYou;
+    for (const bd of [$('dealsBadge'), $('dealsBadge2')]) { bd.hidden = !needsYou; bd.textContent = needsYou; }
     const shown = cols.reduce((n, c) => n + c.items.length, 0);
     $('dealsWhen').textContent = `${shown} open item${shown === 1 ? '' : 's'}${boardCreator === 'All' ? '' : ' for ' + boardCreator} · updated ${since(hqData.generated_at)}`;
     $('dealsErr').textContent = b.error ? 'Board error: ' + b.error : '';
@@ -1044,13 +1312,13 @@
 
   // ---------- start ----------
   function boot() {
-    show(location.hash.slice(1) || 'hq');
+    show(location.hash.slice(1) || 'overview');
     loadHQ();
     loadApprovals();
     if (chatId) openChat(chatId);
   }
-  setInterval(() => { if (document.visibilityState === 'visible') { if (view === 'hq' || view === 'deals') loadHQ(); if (view === 'flow') loadFlow(); loadApprovals(); } }, 60000);
-  setInterval(() => { if (hqData) $('upd').textContent = 'updated ' + since(hqData.generated_at); }, 20000);
+  setInterval(() => { if (document.visibilityState === 'visible') { if (view === 'overview' || view === 'hq' || view === 'deals') loadHQ(); if (view === 'flow') loadFlow(); loadApprovals(); } }, 60000);
+  setInterval(() => { if (hqData) { $('upd').textContent = 'updated ' + since(hqData.generated_at); renderLive(); } }, 20000);
   boot();
 </script>
 </body>
