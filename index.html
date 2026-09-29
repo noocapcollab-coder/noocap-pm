@@ -294,6 +294,9 @@
   .ap-edit .head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap; }
   .ap-edit .head h2 { font: 600 20px 'Space Grotesk', sans-serif; margin: 0; }
   .ap-edit .why { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+  .theirs { background: var(--panel2); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 10px; padding: 10px 14px; margin: 0 0 16px; }
+  .theirs summary { cursor: pointer; font: 600 12px 'IBM Plex Sans', sans-serif; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+  .theirs pre { white-space: pre-wrap; word-break: break-word; font: 400 14px/1.55 'IBM Plex Sans', sans-serif; color: var(--text); margin: 8px 0 0; max-height: 280px; overflow: auto; }
   .field { display: grid; grid-template-columns: 72px 1fr; align-items: center; border-bottom: 1px solid var(--line); }
   .field label { color: var(--muted); font-size: 13px; }
   .field input { background: transparent; border: 0; color: var(--text); padding: 12px 0; font: inherit; outline: none; width: 100%; }
@@ -1008,6 +1011,7 @@
       ${d.why ? `<div class="why">${esc(d.why.replace(/\s*\[(from|price):[^\]]+\]/g, ''))}</div>` : ''}
       ${d.sendFrom === 'Chris' ? '<div class="why" style="color:var(--accent)">Sends from Chris\'s collab inbox, in the brand\'s thread.</div>' : ''}
       ${d.error ? `<div class="why err">Last error: ${esc(d.error)}</div>` : ''}
+      ${d.context ? `<details class="theirs" open><summary>Latest message in the thread</summary><pre>${esc(d.context)}</pre></details>` : ''}
       <div class="field"><label>To</label><input id="fTo" value="${esc(d.to)}" placeholder="brand@company.com"></div>
       <div class="field"><label>Cc</label><input id="fCc" value="${esc(d.cc)}"></div>
       <div class="field"><label>Subject</label><input id="fSubj" value="${esc(d.subject)}"></div>
