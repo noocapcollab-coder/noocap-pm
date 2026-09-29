@@ -169,7 +169,7 @@
   .dcard.has-draft { border-left: 3px solid var(--accent); }
   .dcard .b { font-weight: 600; font-size: 14px; overflow-wrap: anywhere; }
   .dcard .b span { color: var(--muted); font-weight: 400; }
-  .dcard .sub { color: var(--muted); font-size: 12px; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .dcard .sub { color: var(--muted); font-size: 12px; margin-top: 2px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow-wrap: anywhere; }
   .dcard .foot { display: flex; align-items: center; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
   .tag { font: 500 11px 'IBM Plex Mono', monospace; border-radius: 6px; padding: 1px 7px; background: var(--panel3); color: var(--muted); white-space: nowrap; }
   .tag.go { background: var(--accent-soft); color: var(--accent); }
@@ -559,7 +559,7 @@
     const card = (x) => `<${x.draft || x.url ? 'button' : 'div'} type="button" class="dcard ${x.draft ? 'has-draft' : ''}" data-draft="${esc(x.draft || '')}" data-url="${esc(x.url || '')}">
         <div class="b">${esc(x.brand)} <span>× ${esc(x.creator)}</span></div>
         ${x.sub ? `<div class="sub">${esc(x.sub)}</div>` : ''}
-        <div class="foot"><span class="tag ${x.tone || ''}">${esc(x.tag || '')}</span>${x.needsCheck ? '<span class="chk">check stage</span>' : ''}${x.amount ? `<span class="amt">${usd(x.amount)}</span>` : ''}</div>
+        <div class="foot"><span class="tag ${x.tone || ''}">${esc(x.tag || '')}</span>${x.amount ? `<span class="amt">${usd(x.amount)}</span>` : ''}</div>
       </${x.draft || x.url ? 'button' : 'div'}>`;
     $('dboard').innerHTML = cols.map((c) => `<div class="dcol ${c.key === boardCol ? 'on' : ''}">
         <h3>${esc(c.title)}<span class="cnt ${hot(c.key) && c.items.length ? 'hot' : ''}">${c.items.length}</span></h3>
