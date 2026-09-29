@@ -17,6 +17,9 @@
     },
     "api/flow.js": {
       "maxDuration": 60
+    },
+    "api/leads.js": {
+      "maxDuration": 120
     }
   }
 }
