@@ -913,7 +913,7 @@
     $('apEdit').innerHTML = `
       <button type="button" class="iconbtn back" id="apBack" style="margin-bottom:12px">← All emails</button>
       <div class="head"><span class="kind ${d.status === 'Failed' ? 'failed' : ''}">${esc(d.kind || 'Email')}</span><h2>${esc((d.brand || 'Brand') + (d.creator ? ' × ' + d.creator : ''))}</h2></div>
-      ${d.why ? `<div class="why">${esc(d.why)}</div>` : ''}
+      ${d.why ? `<div class="why">${esc(d.why.replace(/\s*\[from:[^\]]+\]/, ''))}</div>` : ''}
       ${d.error ? `<div class="why err">Last error: ${esc(d.error)}</div>` : ''}
       <div class="field"><label>To</label><input id="fTo" value="${esc(d.to)}" placeholder="brand@company.com"></div>
       <div class="field"><label>Cc</label><input id="fCc" value="${esc(d.cc)}"></div>
