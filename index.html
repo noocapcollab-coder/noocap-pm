@@ -530,6 +530,14 @@
   .ru-live { display: inline-flex; align-items: center; gap: 6px; font: 12px 'IBM Plex Mono', monospace; color: var(--muted); }
   .ru-live i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: pulse 1.6s infinite; }
   .ru-live.off i { background: var(--warn); animation: none; }
+  .ru-wf { white-space: nowrap; display: grid; grid-template-columns: 10px minmax(0, 1.2fr) 140px 90px minmax(0, 2fr); gap: 12px; align-items: center; padding: 8px 0; border-top: 1px solid var(--line3); font-size: 13px; cursor: pointer; }
+  .ru-wf:hover b { text-decoration: underline; }
+  .ru-wf i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); } .ru-wf i.bad { background: var(--err); } .ru-wf i.idle { background: var(--dim); }
+  .ru-wf b { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ru-wf span { font: 12px 'IBM Plex Mono', monospace; color: var(--muted); }
+  .ru-wf .e { font-family: 'IBM Plex Sans', sans-serif; color: var(--err); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  @media (max-width: 760px) { .ru-wf { grid-template-columns: 10px minmax(0, 1fr) 70px; } .ru-wf span:nth-of-type(2), .ru-wf .e { display: none; } }
+  #runs .ov > * { flex-shrink: 0; }
   .ru-list { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); overflow: hidden; }
   .ru-row { display: grid; grid-template-columns: 84px 86px 82px 64px minmax(0, 1fr); gap: 12px; align-items: center; padding: 10px 16px; border-top: 1px solid var(--line3); font-size: 13px; cursor: pointer; }
   .ru-row:first-child { border-top: 0; }
@@ -689,6 +697,7 @@
     <div><div class="k"><span class="ru-live" id="ruLive"><i></i><span id="ruLiveT">connecting…</span></span></div><h1>Automation runs</h1></div>
   </div>
   <section class="ru-jobs" id="ruJobs"><div class="ru-job"><div class="skel"></div></div><div class="ru-job"><div class="skel"></div></div><div class="ru-job"><div class="skel"></div></div><div class="ru-job"><div class="skel"></div></div></section>
+  <section class="ocard" id="ruN8n" style="gap:6px"></section>
   <div class="rv-tools"><div class="cfilter" id="ruF"></div><span class="ru-live" id="ruCount" style="margin-left:auto"></span></div>
   <div class="ru-list" id="ruList"><div style="padding:16px"><div class="skel"></div><div class="skel"></div></div></div>
   <div class="err" id="ruErr" style="font-size:13px"></div>
@@ -1060,10 +1069,16 @@
       </button>`;
     }).join('');
     $('ruJobs').querySelectorAll('[data-job]').forEach((b) => b.onclick = () => { ruJob = ruJob === b.dataset.job ? 'All' : b.dataset.job; renderRuns(); });
+    // n8n: every workflow's executions, straight from n8n
+    const N = ru.n8n || {};
+    $('ruN8n').innerHTML = `<h2>n8n workflows <small>${N.connected ? `every execution from n8n · last 24h${N.error ? ` · <span style="color:var(--err)">${esc(N.error)}</span>` : ''}` : 'not connected'}</small></h2>` + (!N.connected
+      ? `<div class="empty">This page already logs everything that reaches the PM (heartbeat, inbox, leads, sends). To also see every n8n workflow run, including ones that fail before reaching the PM, add <b>N8N_BASE_URL</b> (your Railway n8n address) and <b>N8N_API_KEY</b> (n8n → Settings → n8n API → Create an API key) in Vercel, then redeploy.</div>`
+      : (N.workflows || []).length ? N.workflows.map((w) => `<div class="ru-wf" data-wf="${esc(w.name)}"><i class="${w.last?.status === 'Failed' ? 'bad' : w.runs ? '' : 'idle'}"></i><b>${esc(w.name)}</b><span>${w.runs} runs · <span style="color:${w.failed ? 'var(--err)' : 'inherit'}">${w.failed} failed</span></span><span>${w.last ? `<span data-ago="${esc(w.last.at)}">${ago(w.last.at)}</span>` : ''}</span><span class="e" title="${esc(w.last_fail?.error || '')}">${w.last_fail ? `✗ ${istHM(w.last_fail.at)} ${esc(w.last_fail.error || '')}` : ''}</span></div>`).join('') : '<div class="empty">No n8n executions in the last 24 hours.</div>');
+    $('ruN8n').querySelectorAll('[data-wf]').forEach((el) => el.onclick = () => { ruJob = 'wf:' + el.dataset.wf; renderRuns(); });
     const nFail = (ru.runs || []).filter((r) => ['Failed', 'Stuck', 'Partial'].includes(r.status)).length;
-    $('ruF').innerHTML = [['All', ru.runs.length], ['Problems', nFail], ...RU_JOBS.map(([n]) => [n, (ru.runs || []).filter((r) => r.job === n).length])].map(([k, n]) => `<button type="button" class="${k === ruJob ? 'on' : ''}" data-f="${k}">${k}<b>${n}</b></button>`).join('');
+    $('ruF').innerHTML = [['All', ru.runs.length], ['Problems', nFail], ...RU_JOBS.map(([n]) => [n, (ru.runs || []).filter((r) => r.job === n).length]), ...(N.connected ? [['n8n', (ru.runs || []).filter((r) => r.job === 'n8n').length]] : []), ...(ruJob.startsWith('wf:') ? [[ruJob, (ru.runs || []).filter((r) => r.workflow === ruJob.slice(3)).length]] : [])].map(([k, n]) => `<button type="button" class="${k === ruJob ? 'on' : ''}" data-f="${esc(k)}">${esc(k.startsWith('wf:') ? k.slice(3) : k)}<b>${n}</b></button>`).join('');
     $('ruF').querySelectorAll('button').forEach((b) => b.onclick = () => { ruJob = b.dataset.f; renderRuns(); });
-    const rows = (ru.runs || []).filter((r) => ruJob === 'All' || (ruJob === 'Problems' ? ['Failed', 'Stuck', 'Partial'].includes(r.status) : r.job === ruJob));
+    const rows = (ru.runs || []).filter((r) => ruJob === 'All' || (ruJob === 'Problems' ? ['Failed', 'Stuck', 'Partial'].includes(r.status) : ruJob.startsWith('wf:') ? r.workflow === ruJob.slice(3) : r.job === ruJob));
     $('ruCount').textContent = `${ru.total_24h} runs in 24h${ru.total_24h > ru.runs.length ? ` · newest ${ru.runs.length} shown` : ''}`;
     const today = istDay(new Date().toISOString());
     const steps = (txt) => { const xs = String(txt || '').split('\n').filter(Boolean).map((l) => { const m = l.match(/^([✓✗])\s*(.+?) · (\d+)ms(?: · (.*))?$/); return m ? { ok: m[1] === '✓', name: m[2], ms: +m[3], note: m[4] || '' } : { ok: true, name: l, ms: 0 }; });
@@ -1073,7 +1088,7 @@
       const first = String(r.errors || '').split('\n')[0];
       const open = ruOpen.has(r.id);
       return `<div class="ru-row" data-id="${esc(r.id)}"><span class="tm">${istHMS(r.started)}<small>${istDay(r.started) === today ? `<span data-ago="${esc(r.started)}">${ago(r.started)}</span>` : istDay(r.started).slice(5)}</small></span><span class="ru-st ${esc(r.status)}">${r.status === 'Running' ? 'Running…' : esc(r.status)}</span><span class="jb">${esc(r.job)}</span><span class="ms">${r.status === 'Running' ? `<span data-ago="${esc(r.started)}">${ago(r.started)}</span>` : dur(r.ms)}</span><span class="wh"><b>${esc(r.title)}</b>${first ? `<span class="bad">✗ ${esc(first)}</span>` : `<span>${esc(String(r.did || '').split('\n').join(' · '))}</span>`}</span></div>
-        ${open ? `<div class="ru-det"><div><h4>What it did</h4><pre>${esc(r.did || (r.status === 'Running' ? 'Still running…' : r.status === 'Stuck' ? 'Never finished. The run was cut off (timeout or crash) before it could log anything.' : '—'))}</pre>${r.errors ? `<h4>Errors</h4><pre class="bad">${esc(r.errors)}</pre>` : ''}</div><div><h4>Steps</h4>${steps(r.steps) || '<pre>—</pre>'}<h4>Details</h4><pre>Started ${istDay(r.started)} ${istHMS(r.started)} IST${r.ms != null ? ` · took ${dur(r.ms)}` : ''}${r.trigger ? ` · via ${esc(r.trigger)}` : ''}</pre><a class="more" href="${esc(r.url)}" target="_blank" rel="noopener" style="color:var(--muted);font-size:12px">Open in Notion →</a></div></div>` : ''}`;
+        ${open ? `<div class="ru-det"><div><h4>What it did</h4><pre>${esc(r.did || (r.status === 'Running' ? 'Still running…' : r.status === 'Stuck' ? 'Never finished. The run was cut off (timeout or crash) before it could log anything.' : '—'))}</pre>${r.errors ? `<h4>Errors</h4><pre class="bad">${esc(r.errors)}</pre>` : ''}</div><div><h4>Steps</h4>${steps(r.steps) || '<pre>—</pre>'}<h4>Details</h4><pre>Started ${istDay(r.started)} ${istHMS(r.started)} IST${r.ms != null ? ` · took ${dur(r.ms)}` : ''}${r.trigger ? ` · via ${esc(r.trigger)}` : ''}</pre><a class="more" href="${esc(r.url)}" target="_blank" rel="noopener" style="color:var(--muted);font-size:12px">${r.job === 'n8n' ? 'Open in n8n →' : 'Open in Notion →'}</a></div></div>` : ''}`;
     }).join('') : `<div class="empty" style="padding:16px">${ruJob === 'Problems' ? 'No failures in the last 24 hours.' : 'No runs logged yet.'}</div>`;
     $('ruList').querySelectorAll('.ru-row').forEach((el) => el.onclick = () => { const id = el.dataset.id; ruOpen.has(id) ? ruOpen.delete(id) : ruOpen.add(id); renderRuns(); });
   }
