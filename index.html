@@ -323,6 +323,27 @@
   .lrow .cr { color: var(--muted); }
   .lrow .nx { color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   @media (max-width: 760px) { .lrow { grid-template-columns: 56px auto minmax(0, 1fr); } .lrow .cr, .lrow .nx { display: none; } }
+  .acard { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-bottom: 14px; }
+  .acard h2 { margin: 0 0 8px; font: 600 17px 'Space Grotesk', sans-serif; display: flex; gap: 10px; align-items: baseline; }
+  .acard h2 small, .acard summary small { color: var(--muted); font: 400 12px 'IBM Plex Sans', sans-serif; }
+  .acard h2 .more { margin-left: auto; background: none; border: 0; color: var(--accent); font: 500 13px 'IBM Plex Sans', sans-serif; padding: 0; }
+  .arow { display: grid; grid-template-columns: 112px minmax(140px, 220px) minmax(0, 1fr) 76px auto; gap: 12px; align-items: center; padding: 8px 0; border-top: 1px solid var(--line3); font-size: 13px; }
+  .arow .chip { justify-self: start; }
+  .arow .who, .rrow .who { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted); }
+  .arow .who b, .rrow .who b { color: var(--text); font-weight: 600; }
+  .arow .why { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .arow .amt, .rrow .amt { font: 500 12px 'IBM Plex Mono', monospace; text-align: right; }
+  .arow .acts { display: flex; gap: 6px; }
+  .fold > summary { cursor: pointer; list-style: none; display: flex; gap: 10px; align-items: baseline; font: 600 15px 'Space Grotesk', sans-serif; }
+  .fold > summary::-webkit-details-marker { display: none; }
+  .fold > summary::before { content: '▸'; color: var(--muted); } .fold[open] > summary::before { content: '▾'; }
+  .grp { margin-top: 10px; } .grp > summary { cursor: pointer; font-size: 13px; color: var(--soft); padding: 4px 0; }
+  .grp > summary span { color: var(--muted); font: 12px 'IBM Plex Mono', monospace; margin-left: 4px; }
+  .rrow { display: grid; grid-template-columns: minmax(0, 1fr) auto 76px; gap: 12px; align-items: center; width: 100%; text-align: left; background: none; border: 0; border-top: 1px solid var(--line3); padding: 8px 2px; color: inherit; font-size: 13px; }
+  .fold .rrow:has(.tm) { grid-template-columns: 64px minmax(0, 1fr) auto; }
+  .rrow .tm { font: 12px 'IBM Plex Mono', monospace; color: var(--muted); }
+  .rrow:hover { background: var(--panel2); }
+  @media (max-width: 760px) { .arow { grid-template-columns: auto minmax(0, 1fr) auto; } .arow .why, .arow .amt { display: none; } .arow .acts { grid-column: 1 / -1; } }
   /* ---------- sidebar shell (HQ design) ---------- */
   body { flex-direction: row; }
   .appcol { flex: 1; min-width: 0; display: flex; flex-direction: column; height: 100%; }
@@ -392,7 +413,7 @@
   .crow .n { font: 12px 'IBM Plex Mono', monospace; color: var(--soft); text-align: right; }
   .need { display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; border-radius: 10px; background: var(--panel2); }
   .need .k { display: flex; align-items: center; gap: 8px; }
-  .chip { font-size: 11px; font-weight: 600; letter-spacing: .04em; padding: 3px 7px; border-radius: 6px; }
+  .ov .chip, .acard .chip { font-size: 11px; font-weight: 600; letter-spacing: .04em; padding: 3px 7px; border-radius: 6px; border: 0; }
   .need .k small { font-size: 12px; color: var(--muted); }
   .need .ti { font-size: 13px; font-weight: 500; line-height: 1.4; }
   .need .ti small { display: block; color: var(--muted); font-weight: 400; margin-top: 2px; }
@@ -413,6 +434,28 @@
   .feed span:last-child { font-size: 12px; line-height: 1.45; color: var(--soft); overflow-wrap: anywhere; }
   .ov .skel { margin: 4px 0; }
 
+  /* ---------- match the HQ design: pills, filter chips, buttons ---------- */
+  .tag { font: 500 12px 'IBM Plex Sans', sans-serif; border-radius: 999px; padding: 3px 9px; background: rgba(255,255,255,.06); color: #b4b7be; }
+  .tag.go { background: rgba(61,214,176,.13); color: #7fe0c0; }
+  .tag.warn { background: rgba(242,163,58,.14); color: #f5b86a; }
+  .tag.bad { background: rgba(240,106,92,.15); color: #ff8e82; }
+  .tag.muted { background: rgba(255,255,255,.06); color: #b4b7be; }
+  .kind { font: 600 11px 'IBM Plex Sans', sans-serif; padding: 3px 8px; border-radius: 6px; background: rgba(170,120,255,.15); color: #d4b5ff; letter-spacing: .04em; }
+  .kind.failed { background: rgba(240,106,92,.15); color: #ff8e82; }
+  .cfilter { gap: 6px; }
+  .cfilter button { min-height: 34px; padding: 0 14px; background: transparent; border: 1px solid #2d3139; color: #b9bcc4; font: 400 13px 'IBM Plex Sans', sans-serif; }
+  .cfilter button b { color: inherit; opacity: .6; font: 500 12px 'IBM Plex Mono', monospace; }
+  .cfilter button.on { background: #e9e7e2; border-color: #e9e7e2; color: #0d0e11; }
+  .cfilter button.on b { color: inherit; }
+  .btn { border-radius: 8px; height: 44px; font: 600 14px 'IBM Plex Sans', sans-serif; }
+  .btn.sm { height: 34px; border-radius: 8px; font-size: 12px; padding: 0 12px; }
+  .btn.ghost { color: #e9e7e2; border-color: #2d3139; }
+  .btn.danger { border-color: rgba(240,106,92,.4); color: #ff8e82; }
+  .arow .btn:not(.ghost), .need .bt button.pri { background: #e9e7e2; color: #0d0e11; }
+  .sc { border-radius: 999px; background: transparent; border-color: #2d3139; }
+  .badge { color: #0d0e11; }
+  header .logo span { color: var(--muted); font-weight: 500; }
+  header .dot { box-shadow: none; }
   /* ---------- responsive ---------- */
   @media (max-width: 1240px) {
     .ostats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -489,7 +532,7 @@
 </aside>
 <div class="appcol">
 <header>
-  <div class="logo"><div class="dot"></div>NOOCAP <span>PM</span></div>
+  <div class="logo"><div class="dot"></div>NOOCAP <span>Agency HQ</span></div>
   <nav class="tabs" id="tabs">
     <button data-v="hq" type="button">HQ</button>
     <button data-v="deals" type="button">Deals <span class="badge" id="dealsBadge" hidden>0</span></button>
@@ -865,80 +908,88 @@
     $('ovErr').textContent = d.errors?.length ? 'Some data could not load: ' + d.errors.join(' · ') : '';
   }
 
-  // ---- deals board ----
+  // ---- Brand deals: one action list (what needs Harsh) + everything the PM is running on its own, folded ----
   let boardCol = null, boardCreator = 'All';
+  const shortWhy = (t, n = 70) => { const s = String(t || '').replace(/^Needs you:\s*/i, '').replace(/\s+/g, ' ').trim(); return s.length > n ? s.slice(0, n - 1) + '…' : s; };
   function renderBoard() {
     const b = hqData && hqData.board;
     if (!b) return;
+    const L = hqData.leads || {};
     const all = b.columns || [];
-    // Creator filter: counts per creator across every column, then narrow the columns to that creator
+    const liveLeads = (L.columns || []).flatMap((c) => c.items.map((x) => ({ ...x, col: c.key, colTitle: c.title })));
+    // Creator filter over deals and live leads together
     const counts = {};
     for (const c of all) for (const x of c.items) if (x.creator && x.creator !== '?') counts[x.creator] = (counts[x.creator] || 0) + 1;
+    for (const x of liveLeads) if (x.creator && x.creator !== '?') counts[x.creator] = (counts[x.creator] || 0) + 1;
     const names = Object.keys(counts).sort((a, z) => counts[z] - counts[a] || a.localeCompare(z));
     if (boardCreator !== 'All' && !counts[boardCreator]) boardCreator = 'All';
-    const total = all.reduce((n, c) => n + c.items.length, 0);
+    const total = Object.values(counts).reduce((n, k) => n + k, 0);
     $('cfilter').innerHTML = [['All', total], ...names.map((n) => [n, counts[n]])].map(([n, k]) => `<button type="button" class="${n === boardCreator ? 'on' : ''}" data-c="${esc(n)}">${esc(n)}<b>${k}</b></button>`).join('');
     $('cfilter').querySelectorAll('button').forEach((x) => x.onclick = () => { boardCreator = x.dataset.c; renderBoard(); });
-    const cols = boardCreator === 'All' ? all : all.map((c) => ({ ...c, items: c.items.filter((x) => x.creator === boardCreator) }));
-    renderLeads();
-    const needsYou = (all.find((c) => c.key === 'reply')?.items.length || 0) + (all.find((c) => c.key === 'promised')?.items.length || 0);
-    for (const bd of [$('dealsBadge'), $('dealsBadge2')]) { bd.hidden = !needsYou; bd.textContent = needsYou; }
-    const shown = cols.reduce((n, c) => n + c.items.length, 0);
-    $('dealsWhen').textContent = `${shown} open item${shown === 1 ? '' : 's'}${boardCreator === 'All' ? '' : ' for ' + boardCreator} · updated ${since(hqData.generated_at)}`;
-    $('dealsErr').textContent = b.error ? 'Board error: ' + b.error : '';
-    if (!boardCol || !cols.find((c) => c.key === boardCol)) boardCol = (cols.find((c) => c.items.length) || cols[0] || {}).key;
-    $('dchips').innerHTML = cols.map((c) => `<button type="button" class="${c.key === boardCol ? 'on' : ''}" data-k="${c.key}">${esc(c.title)}<b>${c.items.length}</b></button>`).join('');
-    $('dchips').querySelectorAll('button').forEach((x) => x.onclick = () => { boardCol = x.dataset.k; renderBoard(); });
-    const hot = (k) => ['reply', 'promised'].includes(k);
-    const card = (x) => `<${x.draft || x.url ? 'button' : 'div'} type="button" class="dcard ${x.draft ? 'has-draft' : ''}" data-draft="${esc(x.draft || '')}" data-url="${esc(x.url || '')}">
-        <div class="b">${esc(x.brand)} <span>× ${esc(x.creator)}</span></div>
-        ${x.sub ? `<div class="sub">${esc(x.sub)}</div>` : ''}
-        <div class="foot"><span class="tag ${x.tone || ''}">${esc(x.tag || '')}</span>${x.amount ? `<span class="amt">${usd(x.amount)}</span>` : ''}</div>
-      </${x.draft || x.url ? 'button' : 'div'}>`;
-    $('dboard').innerHTML = cols.map((c) => `<div class="dcol ${c.key === boardCol ? 'on' : ''}">
-        <h3>${esc(c.title)}<span class="cnt ${hot(c.key) && c.items.length ? 'hot' : ''}">${c.items.length}</span></h3>
-        <div class="hint">${esc(c.hint || '')}</div>
-        <div class="dcards">${c.items.length ? c.items.map(card).join('') : '<div class="dempty">Nothing here</div>'}</div>
-      </div>`).join('');
-    $('dboard').querySelectorAll('.dcard').forEach((el) => el.onclick = () => {
-      if (el.dataset.draft) { selDraft = el.dataset.draft; return show('approvals'); }
-      if (el.dataset.url) window.open(el.dataset.url, '_blank', 'noopener');
-    });
-  }
+    const mine = (xs) => boardCreator === 'All' ? xs : xs.filter((x) => x.creator === boardCreator);
+    const cols = all.map((c) => ({ ...c, items: mine(c.items) }));
+    const leads = mine(liveLeads);
+    const appr = mine(L.approvals || []);
 
-  // ---- leads from creator inboxes (watch-only) ----
-  function renderLeads() {
-    const L = hqData && hqData.leads;
-    if (!L || !(L.columns || []).length) { $('leadsWrap').innerHTML = ''; return; }
-    const pick = (xs) => boardCreator === 'All' ? xs : xs.filter((x) => x.creator === boardCreator);
-    const cols = L.columns.map((c) => ({ ...c, items: pick(c.items) }));
-    const n = cols.reduce((k, c) => k + c.items.length, 0);
-    const card = (x) => `<button type="button" class="lcard" data-url="${esc(x.url)}"><div class="b">${esc(x.brand)} <span>× ${esc(x.creator)}</span></div>${x.offer ? `<div class="s">${esc(x.offer)}</div>` : ''}<div class="f">${x.weOwe ? `<span class="tag warn">we owe a reply${x.days ? ' · ' + x.days + 'd' : ''}</span>` : x.days != null ? `<span class="tag ${x.days >= 3 && x.status !== 'Locked' ? 'warn' : ''}">${x.days >= 3 && x.status !== 'Locked' ? `quiet ${x.days}d · follow up` : `${x.days}d since our reply`}</span>` : ''}${x.budget ? `<span class="amt" style="margin-left:auto;font:500 12px 'IBM Plex Mono',monospace">${usd(x.budget)}</span>` : ''}</div></button>`;
-    const appr = pick(L.approvals || []);
-    const apprHtml = appr.map((x) => `<div class="lappr" data-id="${esc(x.id)}"><div class="t"><b>${esc(x.brand)} × ${esc(x.creator)}</b> is insisting on <b>${usd(x.approval || 0)}</b>${x.what ? ' for ' + esc(x.what) : ''}<small>Our ask ${x.ask ? usd(x.ask) : '?'} · below the lowest we go on our own, so it needs your yes or no</small></div><div class="acts"><button type="button" class="btn sm" data-act="ok">Approve ${usd(x.approval || 0)}</button><button type="button" class="btn sm ghost" data-act="other">Other amount</button><button type="button" class="btn sm danger" data-act="no">Decline</button></div></div>`).join('');
-    const rec = pick(L.recent || []);
-    const recTone = (x) => x.status === 'Lost' || x.status === 'Gone cold' ? '' : x.status === 'New offer' || /^Needs you/i.test(x.next || '') ? 'warn' : '';
-    const recHtml = rec.length ? `<div class="lrecent"><h4>New brand emails · last 48h <span>${rec.length}</span></h4>${rec.map((x) => `<button type="button" class="lrow" data-url="${esc(x.url)}"><span class="tm">${since(x.at)}</span><b>${esc(x.brand)}</b><span class="cr">× ${esc(x.creator)}</span><span class="tag ${recTone(x)}">${esc(x.status)}</span><span class="nx">${esc(String(x.next || '').replace(/^Needs you:\s*/i, 'Needs you: '))}</span></button>`).join('')}</div>` : '';
-    $('leadsWrap').innerHTML = recHtml + `<div class="leads"><h2>Before the deal · creator inboxes <small>${n} lead${n === 1 ? '' : 's'}${L.cold ? ` · ${L.cold} gone cold (quiet ${L.coldDays || 10}+ days)` : ''} · emails wait in Approvals</small></h2>
-      ${apprHtml}
-      <div class="lgrid">${cols.map((c) => `<div class="lcol"><h4>${esc(c.title)}<span>${c.items.length}</span></h4>${c.items.slice(0, 6).map(card).join('') || '<div class="dempty">Nothing here</div>'}${c.items.length > 6 ? `<div class="dempty">+${c.items.length - 6} more in Notion</div>` : ''}</div>`).join('')}</div></div>`;
-    $('leadsWrap').querySelectorAll('.lrow').forEach((el) => el.onclick = () => el.dataset.url && window.open(el.dataset.url, '_blank', 'noopener'));
-    $('leadsWrap').querySelectorAll('.lcard').forEach((el) => el.onclick = () => el.dataset.url && window.open(el.dataset.url, '_blank', 'noopener'));
-    $('leadsWrap').querySelectorAll('.lappr button').forEach((b) => b.onclick = async () => {
-      const box = b.closest('.lappr'), x = appr.find((a) => a.id === box.dataset.id);
+    // ---------- what needs you ----------
+    const act = []; // { kind, tone, brand, creator, why, amount, btn, draft, url }
+    const isYours = (c, x) => x.draft || ['reply', 'promised', 'cut'].includes(c.key) || (c.key === 'money' ? /invoice to send/i.test(x.tag || '') : x.tone === 'bad');
+    const running = [];
+    for (const c of cols) for (const x of c.items) {
+      if (isYours(c, x)) act.push({ kind: x.draft ? 'DRAFT READY' : { reply: 'REPLY', promised: 'SEND', cut: 'COLLECT CUT', money: 'SEND INVOICE' }[c.key] || 'CHECK', tone: x.draft ? 'ai' : c.key === 'cut' || c.key === 'money' ? 'warn' : x.tone === 'bad' ? 'bad' : 'info', brand: x.brand, creator: x.creator, why: x.draft ? `${c.title.toLowerCase()} · review and send` : x.tag, amount: x.amount, btn: x.draft ? 'Review' : 'Open', draft: x.draft, url: x.url });
+      else running.push({ group: c.title, brand: x.brand, creator: x.creator, tag: x.tag, tone: x.tone, amount: x.amount, url: x.url });
+    }
+    for (const x of leads) {
+      const needs = x.status === 'New offer' || /^Needs you/i.test(x.next || '');
+      if (needs) act.push({ kind: x.status === 'New offer' ? 'NEW OFFER' : 'YOUR CALL', tone: 'warn', brand: x.brand, creator: x.creator, why: shortWhy(x.next) || 'the PM left the reply to you', amount: x.budget || x.ask, btn: 'Open', url: x.url });
+      else running.push({ group: { neg: 'Leads · negotiating', wait: 'Leads · PM following up', locked: 'Leads · handed over' }[x.col] || 'Leads', brand: x.brand, creator: x.creator, tag: x.weOwe ? 'brand replied' : x.days != null ? `${x.days}d quiet` : x.status, tone: '', amount: x.budget || x.ask, url: x.url });
+    }
+    const apprCount = drafts.filter((d) => d.status === 'Draft' && (boardCreator === 'All' || d.creator === boardCreator)).length;
+    const row = (a, i) => `<div class="arow"><span class="chip" style="${toneStyle(a.tone)}">${a.kind}</span><span class="who"><b>${esc(a.brand)}</b> × ${esc(a.creator)}</span><span class="why" title="${esc(a.why || '')}">${esc(a.why || '')}</span><span class="amt">${a.amount ? usd(a.amount) : ''}</span><button type="button" class="btn sm ${a.draft ? '' : 'ghost'}" data-i="${i}">${a.btn}</button></div>`;
+    const apprHtml = appr.map((x) => `<div class="arow lappr" data-id="${esc(x.id)}"><span class="chip" style="${toneStyle('bad')}">DECIDE</span><span class="who"><b>${esc(x.brand)}</b> × ${esc(x.creator)}</span><span class="why">wants ${usd(x.approval || 0)}, below our floor (our ask ${x.ask ? usd(x.ask) : '?'})</span><span class="amt">${usd(x.approval || 0)}</span><span class="acts"><button type="button" class="btn sm" data-act="ok">Approve</button><button type="button" class="btn sm ghost" data-act="other">Other</button><button type="button" class="btn sm danger" data-act="no">Decline</button></span></div>`).join('');
+    const nAct = act.length + appr.length;
+    for (const bd of [$('dealsBadge'), $('dealsBadge2')]) { bd.hidden = !nAct; bd.textContent = nAct; }
+    $('dealsWhen').textContent = `${nAct} need${nAct === 1 ? 's' : ''} you · ${running.length} running on their own${boardCreator === 'All' ? '' : ' · ' + boardCreator} · updated ${since(hqData.generated_at)}`;
+    $('dealsErr').textContent = b.error ? 'Board error: ' + b.error : '';
+
+    // ---------- running on its own, grouped and folded ----------
+    const groups = {};
+    for (const r of running) (groups[r.group] ||= []).push(r);
+    const order = ['Script to send', 'Video to share', 'Waiting on brand', 'Payment from brand', 'Leads · negotiating', 'Leads · PM following up', 'Leads · handed over'];
+    const gkeys = Object.keys(groups).sort((a, z) => (order.indexOf(a) + 1 || 99) - (order.indexOf(z) + 1 || 99));
+    const rrow = (r) => `<button type="button" class="rrow" data-url="${esc(r.url || '')}"><span class="who"><b>${esc(r.brand)}</b> × ${esc(r.creator)}</span><span class="tag ${r.tone || ''}">${esc(r.tag || '')}</span><span class="amt">${r.amount ? usd(r.amount) : ''}</span></button>`;
+    const rec = mine(L.recent || []);
+
+    $('leadsWrap').innerHTML = `
+      <section class="acard"><h2>Needs you <small>${nAct || 'nothing right now'}</small>${apprCount ? `<button type="button" class="more" id="toAppr">${apprCount} email${apprCount === 1 ? '' : 's'} in Approvals →</button>` : ''}</h2>
+        ${nAct ? apprHtml + act.map(row).join('') : '<div class="empty">All clear. The PM is handling everything below.</div>'}
+      </section>
+      <details class="acard fold"><summary><b>Running on its own</b> <small>${running.length} · the PM follows these up, nothing for you to do</small></summary>
+        ${gkeys.map((g) => `<details class="grp"><summary>${esc(g)} <span>${groups[g].length}</span></summary>${groups[g].map(rrow).join('')}</details>`).join('') || '<div class="empty">Nothing running.</div>'}
+        ${L.cold ? `<div class="empty">${L.cold} leads gone quiet for ${L.coldDays || 10}+ days are hidden.</div>` : ''}
+      </details>
+      ${rec.length ? `<details class="acard fold"><summary><b>New brand emails · last 48h</b> <small>${rec.length}</small></summary>${rec.map((x) => `<button type="button" class="rrow" data-url="${esc(x.url)}"><span class="tm">${since(x.at)}</span><span class="who"><b>${esc(x.brand)}</b> × ${esc(x.creator)}</span><span class="tag">${esc(x.status)}</span></button>`).join('')}</details>` : ''}`;
+    $('dchips').innerHTML = ''; $('dboard').innerHTML = '';
+    const wrap = $('leadsWrap');
+    wrap.querySelectorAll('.arow button[data-i]').forEach((el) => el.onclick = () => { const a = act[+el.dataset.i]; if (a.draft) { selDraft = a.draft; return show('approvals'); } if (a.url) window.open(a.url, '_blank', 'noopener'); });
+    wrap.querySelectorAll('.rrow').forEach((el) => el.onclick = () => el.dataset.url && window.open(el.dataset.url, '_blank', 'noopener'));
+    if ($('toAppr')) $('toAppr').onclick = () => show('approvals');
+    wrap.querySelectorAll('.lappr button').forEach((btn) => btn.onclick = async () => {
+      const box = btn.closest('.lappr'), x = appr.find((a) => a.id === box.dataset.id);
       let price = x.approval, action = 'lead-approve';
-      if (b.dataset.act === 'other') { const v = prompt(`Approve ${x.brand} at what amount (USD)?`, String(x.approval || '')); price = Number(String(v || '').replace(/[^0-9.]/g, '')); if (!price) return; }
-      if (b.dataset.act === 'no') action = 'lead-decline';
+      if (btn.dataset.act === 'other') { const v = prompt(`Approve ${x.brand} at what amount (USD)?`, String(x.approval || '')); price = Number(String(v || '').replace(/[^0-9.]/g, '')); if (!price) return; }
+      if (btn.dataset.act === 'no') action = 'lead-decline';
       box.querySelectorAll('button').forEach((e) => e.disabled = true);
       try {
         const res = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ lead: x.id, action, price }) });
         const j = await res.json();
         if (!res.ok) throw new Error(j.error || 'Failed');
-        box.innerHTML = `<div class="t">${action === 'lead-decline' ? `Decline email for <b>${esc(x.brand)}</b>` : `Close email for <b>${esc(x.brand)}</b> at <b>${usd(price)}</b>`} is waiting in Approvals.</div>`;
+        box.innerHTML = `<span class="why">${action === 'lead-decline' ? `Decline email for <b>${esc(x.brand)}</b>` : `Close email for <b>${esc(x.brand)}</b> at <b>${usd(price)}</b>`} is waiting in Approvals.</span>`;
         loadApprovals(); setTimeout(() => loadHQ(true), 1500);
       } catch (e) { alert(e.message); box.querySelectorAll('button').forEach((el) => el.disabled = false); }
     });
   }
+  function renderLeads() { /* folded into renderBoard */ }
 
   // ---- money to chase ----
   const chaseList = (k) => (hqData.chase && hqData.chase[k]) || [];
