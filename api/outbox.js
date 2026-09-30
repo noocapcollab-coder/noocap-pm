@@ -1,6 +1,7 @@
 // Approvals for emails to brands.
 // GET  /api/outbox                          -> drafts waiting (and failed sends)
 // POST /api/outbox { id, action: 'send' | 'save' | 'reject', subject?, body?, to?, cc? }
+// POST /api/outbox { id, action: 'send-brief' } -> file the brand message on this draft as a brief for the script writer
 // POST /api/outbox { action: 'script-changes', brand, creator, feedback } -> re-send brand script notes to the script writer on Discord
 // POST /api/outbox { lead, action: 'lead-approve', price? } | { lead, action: 'lead-decline' }  -> Harsh's call on a below-floor offer
 import { listDrafts, saveDraft, rejectDraft, approveAndSend } from '../lib/outbox.js';
@@ -24,6 +25,13 @@ export default async function handler(req, res) {
       return res.status(200).json(action === 'lead-approve' ? await L.approveLead(body.lead, body.price) : await L.declineLead(body.lead));
     }
     if (!id) return res.status(400).json({ error: 'id required' });
+    if (action === 'send-brief') {
+      // File the brand message on this draft as a brief: video card + Discord ping to the script writer
+      const { readDraftById } = await import('../lib/outbox.js');
+      const d = await readDraftById(id);
+      const B = await import('../lib/briefs.js');
+      return res.status(200).json(await B.briefFromText({ text: d.context, subject: d.subject, dealId: d.dealId, threadId: d.threadId, creator: d.creator }));
+    }
     if (action === 'reject') { await rejectDraft(id); return res.status(200).json({ ok: true }); }
     if (action === 'save') { await saveDraft(id, { subject, body: text, to, cc }); return res.status(200).json({ ok: true }); }
     if (action === 'send') return res.status(200).json(await approveAndSend(id, { subject, body: text, to, cc }));
