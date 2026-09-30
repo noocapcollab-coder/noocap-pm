@@ -314,6 +314,15 @@
   .gate form { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 340px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
   .gate input { background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: inherit; }
 
+  .lrecent { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; margin-bottom: 14px; }
+  .lrecent h4 { margin: 0 0 8px; font: 600 13px 'Space Grotesk', sans-serif; display: flex; gap: 8px; align-items: center; }
+  .lrecent h4 span { color: var(--muted); font: 500 12px 'IBM Plex Mono', monospace; }
+  .lrow { display: grid; grid-template-columns: 64px auto auto auto minmax(0, 1fr); gap: 10px; align-items: center; width: 100%; text-align: left; background: none; border: 0; border-top: 1px solid var(--line3); padding: 8px 2px; color: inherit; font-size: 13px; }
+  .lrow:hover { background: var(--panel2); }
+  .lrow .tm { font: 12px 'IBM Plex Mono', monospace; color: var(--muted); }
+  .lrow .cr { color: var(--muted); }
+  .lrow .nx { color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  @media (max-width: 760px) { .lrow { grid-template-columns: 56px auto minmax(0, 1fr); } .lrow .cr, .lrow .nx { display: none; } }
   /* ---------- sidebar shell (HQ design) ---------- */
   body { flex-direction: row; }
   .appcol { flex: 1; min-width: 0; display: flex; flex-direction: column; height: 100%; }
@@ -768,6 +777,8 @@
     for (const x of (d.leads?.approvals || [])) out.push({ kind: 'DECIDE', tone: 'bad', area: 'Brand deals', t: `${x.brand} × ${x.creator} wants to go ahead at ${usd(x.approval || 0)}`, s: 'Below the floor, so it needs your approve or decline', pri: 'Decide', go: 'deals' });
     const todayOpen = d.schedule.days[0].items.filter((v) => v.stage !== 'Ready' && v.stage !== 'Posted');
     for (const v of todayOpen.slice(0, 3)) out.push({ kind: 'AT RISK', tone: 'bad', area: 'Production', t: `${v.creator}: ${v.title}`, s: `Posts today, still in ${stageLabel(v)}${v.editor ? ' with ' + v.editor : ''}`, pri: 'Open card', url: v.url });
+    const fresh = (d.leads?.recent || []).filter((x) => x.status === 'New offer' || /^Needs you/i.test(x.next || ''));
+    if (fresh.length) out.push({ kind: 'NEW EMAIL', tone: 'warn', area: 'Creator inboxes', t: `${plural(fresh.length, 'new brand email')} need${fresh.length === 1 ? 's' : ''} your call: ${fresh.slice(0, 3).map((x) => x.brand).join(', ')}`, s: 'The PM read them but left the reply to you', pri: 'Open', go: 'deals' });
     for (const u of (d.deals.unplaced || []).slice(0, 3)) out.push({ kind: 'UNPLACED', tone: 'warn', area: 'Inbox', t: u.event, s: `${u.creator ? u.creator + ' · ' : ''}the PM couldn't match it to a deal`, pri: 'Open', url: u.url });
     for (const a of d.deals.attention.slice(0, 4)) out.push({ kind: /needs your check/.test(a.why) ? 'CHECK' : /invoice/.test(a.why) ? 'INVOICE' : 'CHASE', tone: /invoice/.test(a.why) ? 'bad' : 'info', area: 'Brand deals', t: `${a.brand} × ${a.creator || '?'}`, s: `${a.why} · ${a.stage}`, pri: 'Open deal', url: a.url });
     for (const v of d.schedule.overdue.slice(0, 3)) out.push({ kind: 'LATE', tone: 'warn', area: 'Production', t: `${v.creator}: ${v.title}`, s: `${v.days_late}d past its post date · ${v.stage}`, pri: 'Open card', url: v.url });
@@ -905,9 +916,13 @@
     const card = (x) => `<button type="button" class="lcard" data-url="${esc(x.url)}"><div class="b">${esc(x.brand)} <span>× ${esc(x.creator)}</span></div>${x.offer ? `<div class="s">${esc(x.offer)}</div>` : ''}<div class="f">${x.weOwe ? `<span class="tag warn">we owe a reply${x.days ? ' · ' + x.days + 'd' : ''}</span>` : x.days != null ? `<span class="tag ${x.days >= 3 && x.status !== 'Locked' ? 'warn' : ''}">${x.days >= 3 && x.status !== 'Locked' ? `quiet ${x.days}d · follow up` : `${x.days}d since our reply`}</span>` : ''}${x.budget ? `<span class="amt" style="margin-left:auto;font:500 12px 'IBM Plex Mono',monospace">${usd(x.budget)}</span>` : ''}</div></button>`;
     const appr = pick(L.approvals || []);
     const apprHtml = appr.map((x) => `<div class="lappr" data-id="${esc(x.id)}"><div class="t"><b>${esc(x.brand)} × ${esc(x.creator)}</b> is insisting on <b>${usd(x.approval || 0)}</b>${x.what ? ' for ' + esc(x.what) : ''}<small>Our ask ${x.ask ? usd(x.ask) : '?'} · below the lowest we go on our own, so it needs your yes or no</small></div><div class="acts"><button type="button" class="btn sm" data-act="ok">Approve ${usd(x.approval || 0)}</button><button type="button" class="btn sm ghost" data-act="other">Other amount</button><button type="button" class="btn sm danger" data-act="no">Decline</button></div></div>`).join('');
-    $('leadsWrap').innerHTML = `<div class="leads"><h2>Before the deal · creator inboxes <small>${n} lead${n === 1 ? '' : 's'}${L.cold ? ` · ${L.cold} gone cold (quiet ${L.coldDays || 10}+ days)` : ''} · emails wait in Approvals</small></h2>
+    const rec = pick(L.recent || []);
+    const recTone = (x) => x.status === 'Lost' || x.status === 'Gone cold' ? '' : x.status === 'New offer' || /^Needs you/i.test(x.next || '') ? 'warn' : '';
+    const recHtml = rec.length ? `<div class="lrecent"><h4>New brand emails · last 48h <span>${rec.length}</span></h4>${rec.map((x) => `<button type="button" class="lrow" data-url="${esc(x.url)}"><span class="tm">${since(x.at)}</span><b>${esc(x.brand)}</b><span class="cr">× ${esc(x.creator)}</span><span class="tag ${recTone(x)}">${esc(x.status)}</span><span class="nx">${esc(String(x.next || '').replace(/^Needs you:\s*/i, 'Needs you: '))}</span></button>`).join('')}</div>` : '';
+    $('leadsWrap').innerHTML = recHtml + `<div class="leads"><h2>Before the deal · creator inboxes <small>${n} lead${n === 1 ? '' : 's'}${L.cold ? ` · ${L.cold} gone cold (quiet ${L.coldDays || 10}+ days)` : ''} · emails wait in Approvals</small></h2>
       ${apprHtml}
       <div class="lgrid">${cols.map((c) => `<div class="lcol"><h4>${esc(c.title)}<span>${c.items.length}</span></h4>${c.items.slice(0, 6).map(card).join('') || '<div class="dempty">Nothing here</div>'}${c.items.length > 6 ? `<div class="dempty">+${c.items.length - 6} more in Notion</div>` : ''}</div>`).join('')}</div></div>`;
+    $('leadsWrap').querySelectorAll('.lrow').forEach((el) => el.onclick = () => el.dataset.url && window.open(el.dataset.url, '_blank', 'noopener'));
     $('leadsWrap').querySelectorAll('.lcard').forEach((el) => el.onclick = () => el.dataset.url && window.open(el.dataset.url, '_blank', 'noopener'));
     $('leadsWrap').querySelectorAll('.lappr button').forEach((b) => b.onclick = async () => {
       const box = b.closest('.lappr'), x = appr.find((a) => a.id === box.dataset.id);
