@@ -7,6 +7,7 @@ import { hookAllowed, HOOK_ERROR } from '../lib/hook.js';
 import { notion } from '../lib/notion.js';
 import { DS } from '../lib/tools.js';
 import { discord } from '../lib/briefs.js';
+import { startRun, emailSummary } from '../lib/runs.js';
 
 const MAX_TRIES = 3;
 const rt = (s) => [{ type: 'text', text: { content: String(s || '').slice(0, 1900) } }];
@@ -40,13 +41,17 @@ export default async function handler(req, res) {
   const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
   const emails = Array.isArray(body.emails) ? body.emails : [body];
   const results = [];
-  for (const email of emails.slice(0, 20)) {
+  const batch = emails.slice(0, 20);
+  const run = await startRun('Inbox', batch.length === 1 ? (batch[0].subject || '(no subject)') + (batch[0].from ? ' · ' + String(batch[0].from).replace(/<.*>/, '').trim() : '') : `${batch.length} emails`);
+  for (const email of batch) {
     try {
       results.push({ subject: email.subject, ...(await handleInboxEmail(email)) });
     } catch (e) {
       const msg = String(e.message || e).slice(0, 300);
       results.push({ subject: email.subject, action: await recordError(email, msg), error: msg });
     }
+    run.mark(String(email.subject || '(no subject)').slice(0, 60));
   }
+  await run.finish(emailSummary(results));
   return res.status(200).json({ results });
 }
