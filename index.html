@@ -513,6 +513,49 @@
   @media (max-width: 1100px) { .rv-cols { grid-template-columns: minmax(0, 1fr); } }
   @media (max-width: 1240px) { .rv-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   @media (max-width: 760px) { .rv-up .urow { grid-template-columns: 84px minmax(0, 1fr) 72px; } .rv-up .urow .tag, .rv-up .urow .c { display: none; } .rv-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rv-hero { grid-template-columns: minmax(0, 1fr); } .rv-tools input[type=search] { max-width: none; } }
+  /* ---------- Runs ---------- */
+  #runs { overflow-y: auto; }
+  .ru-jobs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .ru-job { padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); display: flex; flex-direction: column; gap: 6px; text-align: left; color: inherit; min-width: 0; }
+  .ru-job:hover { border-color: var(--line2); }
+  .ru-job.on { border-color: var(--accent); }
+  .ru-job .h { display: flex; align-items: center; gap: 8px; font: 600 15px 'Space Grotesk', sans-serif; }
+  .ru-job .h i { width: 8px; height: 8px; border-radius: 50%; background: var(--dim); flex-shrink: 0; }
+  .ru-job .h i.ok { background: var(--accent); } .ru-job .h i.warn { background: var(--warn); } .ru-job .h i.bad { background: var(--err); } .ru-job .h i.run { background: #ffd166; animation: pulse 1s infinite; }
+  .ru-job .h small { margin-left: auto; font: 12px 'IBM Plex Mono', monospace; color: var(--muted); font-weight: 400; }
+  .ru-job .l { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .ru-job .l b { color: var(--soft); font-weight: 500; }
+  .ru-job .l.bad { color: var(--err); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  @keyframes pulse { 50% { opacity: .35; } }
+  .ru-live { display: inline-flex; align-items: center; gap: 6px; font: 12px 'IBM Plex Mono', monospace; color: var(--muted); }
+  .ru-live i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: pulse 1.6s infinite; }
+  .ru-live.off i { background: var(--warn); animation: none; }
+  .ru-list { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); overflow: hidden; }
+  .ru-row { display: grid; grid-template-columns: 84px 86px 82px 64px minmax(0, 1fr); gap: 12px; align-items: center; padding: 10px 16px; border-top: 1px solid var(--line3); font-size: 13px; cursor: pointer; }
+  .ru-row:first-child { border-top: 0; }
+  .ru-row:hover { background: #171a1f; }
+  .ru-row .tm { font: 12px 'IBM Plex Mono', monospace; color: var(--soft); }
+  .ru-row .tm small { display: block; color: var(--dim); font-size: 11px; }
+  .ru-row .jb { font: 500 12px 'IBM Plex Sans', sans-serif; color: var(--muted); }
+  .ru-row .ms { font: 12px 'IBM Plex Mono', monospace; color: var(--muted); text-align: right; }
+  .ru-row .wh { min-width: 0; }
+  .ru-row .wh b { display: block; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ru-row .wh span { display: block; font-size: 12px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ru-row .wh span.bad { color: var(--err); }
+  .ru-st { font: 600 11px 'IBM Plex Sans', sans-serif; letter-spacing: .04em; padding: 3px 8px; border-radius: 6px; text-align: center; text-transform: uppercase; }
+  .ru-st.OK { background: rgba(61,214,176,.13); color: #7fe0c0; } .ru-st.Partial { background: rgba(242,163,58,.14); color: #f5b86a; }
+  .ru-st.Failed, .ru-st.Stuck { background: rgba(240,106,92,.15); color: #ff8e82; } .ru-st.Running { background: rgba(255,209,102,.14); color: #ffd166; } .ru-st.Skipped { background: rgba(255,255,255,.06); color: #b4b7be; }
+  .ru-det { padding: 4px 16px 16px 112px; border-top: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; font-size: 12px; background: #121419; }
+  .ru-det h4 { margin: 10px 0 6px; font: 600 11px 'IBM Plex Sans', sans-serif; letter-spacing: .06em; color: var(--dim); text-transform: uppercase; }
+  .ru-det pre { margin: 0; white-space: pre-wrap; font: 12px/1.6 'IBM Plex Mono', monospace; color: var(--soft); overflow-wrap: anywhere; }
+  .ru-det pre.bad { color: var(--err); }
+  .ru-step { display: grid; grid-template-columns: 14px minmax(0, 1fr) 64px; gap: 8px; align-items: center; padding: 3px 0; font-family: 'IBM Plex Mono', monospace; }
+  .ru-step .bar { grid-column: 2 / 4; height: 3px; border-radius: 2px; background: var(--panel3); margin-top: -2px; }
+  .ru-step .bar div { height: 3px; border-radius: 2px; background: var(--s3); }
+  .ru-step.x { color: var(--err); } .ru-step.x .bar div { background: var(--err); }
+  .ru-step span:last-child { text-align: right; color: var(--muted); }
+  @media (max-width: 1100px) { .ru-jobs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ru-det { padding-left: 16px; grid-template-columns: minmax(0, 1fr); gap: 0; } }
+  @media (max-width: 760px) { .ru-row { grid-template-columns: 64px 70px minmax(0, 1fr); } .ru-row .jb, .ru-row .ms { display: none; } }
   /* ---------- responsive ---------- */
   @media (max-width: 1240px) {
     .ostats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -579,6 +622,7 @@
   <div class="grp">
     <div class="lbl">More</div>
     <button data-v="hq" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Schedule &amp; team</button>
+    <button data-v="runs" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>Automation runs</button>
     <button data-v="flow" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 12h4l6-5M11 12l6 5"/></svg>Flow</button>
     <button data-v="chat" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.4l-1.8-4.9L5 9.7l5.2-1.8z"/><path d="M18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8z"/></svg>Ask the PM</button>
   </div>
@@ -639,6 +683,17 @@
   <div class="err" id="rvErr" style="font-size:13px"></div>
 </div></section>
 
+<!-- ============ Runs ============ -->
+<section class="view" id="runs"><div class="ov">
+  <div class="ov-head">
+    <div><div class="k"><span class="ru-live" id="ruLive"><i></i><span id="ruLiveT">connecting…</span></span></div><h1>Automation runs</h1></div>
+  </div>
+  <section class="ru-jobs" id="ruJobs"><div class="ru-job"><div class="skel"></div></div><div class="ru-job"><div class="skel"></div></div><div class="ru-job"><div class="skel"></div></div><div class="ru-job"><div class="skel"></div></div></section>
+  <div class="rv-tools"><div class="cfilter" id="ruF"></div><span class="ru-live" id="ruCount" style="margin-left:auto"></span></div>
+  <div class="ru-list" id="ruList"><div style="padding:16px"><div class="skel"></div><div class="skel"></div></div></div>
+  <div class="err" id="ruErr" style="font-size:13px"></div>
+</div></section>
+
 <!-- ============ HQ ============ -->
 <section class="view" id="hq"><div class="hq">
   <div class="hq-top"><h1 id="hello">Agency HQ</h1><span class="when" id="today"></span></div>
@@ -676,7 +731,7 @@
   <div class="card" style="margin-bottom:16px"><h2>Video journey <span class="r" id="fvLive"></span></h2><div class="lane" id="fvLane"><div class="skel"></div></div></div>
   <div class="card" style="margin-bottom:16px"><h2>Brand deal journey <span class="r" id="fdNote"></span></h2><div class="lane" id="fdLane"><div class="skel"></div></div></div>
   <div class="grid">
-    <div class="card c7"><h2>Automations <span class="r">health · last 7 days</span></h2><div id="fJobs"><div class="skel"></div><div class="skel"></div></div></div>
+    <div class="card c7"><h2>Automations <span class="r">health · last 7 days · <a href="#runs" style="color:var(--accent)">every run, live →</a></span></h2><div id="fJobs"><div class="skel"></div><div class="skel"></div></div></div>
     <div class="card c5"><h2>Results <span class="r">last 7 days · this month</span></h2><div class="results" id="fRes"><div class="skel"></div></div></div>
   </div>
   <div class="err" id="flowErr" style="margin-top:14px;font-size:13px"></div>
@@ -758,7 +813,7 @@
   // ---------- tabs ----------
   let view = 'overview';
   function show(v) {
-    if (!['overview', 'hq', 'deals', 'revenue', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
+    if (!['overview', 'hq', 'deals', 'revenue', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
     view = v;
     document.querySelectorAll('.view').forEach((el) => el.classList.toggle('on', el.id === v));
     document.querySelectorAll('[data-v]').forEach((b) => b.classList.toggle('on', b.dataset.v === v));
@@ -769,11 +824,12 @@
     if (v === 'deals' && hqData) renderBoard();
     if (v === 'flow' && !flowData) loadFlow();
     if (v === 'revenue') rv ? renderRevenue() : loadRevenue();
+    if (v === 'runs') startRuns(); else stopRuns();
     if (v === 'chat') setTimeout(() => $('q').focus(), 50);
   }
   document.querySelectorAll('[data-v]').forEach((b) => b.onclick = () => show(b.dataset.v));
   window.addEventListener('hashchange', () => show(location.hash.slice(1)));
-  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else loadHQ(true); };
+  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else if (view === 'runs') loadRuns(); else loadHQ(true); };
   document.querySelectorAll('.ov [data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
 
   // =====================================================================
@@ -957,6 +1013,70 @@
   }
   $('rvQ').oninput = () => { rvQ = $('rvQ').value; renderRevenue(); };
   $('rvCyc').onchange = () => { rvCycle = $('rvCyc').value; renderRevenue(); };
+
+  // =====================================================================
+  // Runs: every automation run, live (polls every 5s while the page is open)
+  // =====================================================================
+  let ru = null, ruJob = 'All', ruOpen = new Set(), ruTimer = null, ruLastOk = 0, ruBusy = false;
+  const RU_JOBS = [['Heartbeat', 'Deals, follow-ups, drive, money, brief · every tick'], ['Inbox', 'noocapcollab emails'], ['Leads', "Chris's collab inbox"], ['Send', 'Emails you approve']];
+  const istHMS = (iso) => new Date(Date.parse(iso) + 5.5 * 36e5).toISOString().slice(11, 19);
+  const istDay = (iso) => new Date(Date.parse(iso) + 5.5 * 36e5).toISOString().slice(0, 10);
+  const dur = (ms) => ms == null ? '' : ms < 1000 ? ms + 'ms' : ms < 60000 ? (ms / 1000).toFixed(1) + 's' : Math.floor(ms / 60000) + 'm ' + Math.round(ms % 60000 / 1000) + 's';
+  const ago = (iso) => { const s = Math.max(0, Math.round((Date.now() - Date.parse(iso)) / 1000)); return s < 60 ? s + 's ago' : s < 3600 ? Math.floor(s / 60) + 'm ' + (s % 60) + 's ago' : Math.floor(s / 3600) + 'h ' + Math.floor(s % 3600 / 60) + 'm ago'; };
+  async function loadRuns() {
+    if (ruBusy) return; ruBusy = true;
+    try {
+      const r = await fetch('/api/runs', { headers: headers() });
+      if (r.status === 401) { ruBusy = false; stopRuns(); return needPassword(); }
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error || 'Could not load runs');
+      ru = j; ruLastOk = Date.now(); $('ruErr').textContent = ''; renderRuns();
+    } catch (e) { $('ruErr').textContent = e.message; }
+    ruBusy = false; ruTick();
+  }
+  function startRuns() { if (!ruTimer) { loadRuns(); ruTimer = setInterval(() => { if (document.visibilityState === 'visible') loadRuns(); }, 5000); } }
+  function stopRuns() { clearInterval(ruTimer); ruTimer = null; }
+  // Relative times tick every second between fetches
+  function ruTick() {
+    const stale = !ruLastOk || Date.now() - ruLastOk > 20000;
+    $('ruLive').classList.toggle('off', stale);
+    $('ruLiveT').textContent = ruLastOk ? `${stale ? 'reconnecting · ' : 'live · '}checked ${ago(new Date(ruLastOk).toISOString())}` : 'connecting…';
+    document.querySelectorAll('#runs [data-ago]').forEach((el) => el.textContent = ago(el.dataset.ago));
+  }
+  setInterval(() => { if (view === 'runs') ruTick(); }, 1000);
+  function renderRuns() {
+    if (!ru) return;
+    const byJob = Object.fromEntries((ru.jobs || []).map((j) => [j.job, j]));
+    const running = (job) => (ru.runs || []).some((r) => r.job === job && r.status === 'Running');
+    $('ruJobs').innerHTML = RU_JOBS.map(([name, what]) => {
+      const j = byJob[name];
+      const bad = j && (j.last?.status === 'Failed' || j.last?.status === 'Stuck'), warn = j && (j.failed || j.partial || j.stuck);
+      const dot = running(name) ? 'run' : !j ? '' : bad ? 'bad' : warn ? 'warn' : 'ok';
+      return `<button type="button" class="ru-job ${ruJob === name ? 'on' : ''}" data-job="${name}"><div class="h"><i class="${dot}"></i>${name}<small>${j?.last ? `<span data-ago="${esc(j.last.at)}">${ago(j.last.at)}</span>` : 'no runs'}</small></div>
+        <div class="l">${esc(what)}</div>
+        ${j ? `<div class="l"><b>${j.runs}</b> runs · <b style="color:${j.failed + j.stuck ? 'var(--err)' : 'inherit'}">${j.failed + j.stuck}</b> failed · <b>${j.partial}</b> partial · avg <b>${dur(j.avg_ms)}</b> <span style="color:var(--dim)">· 24h</span></div>
+        <div class="l">last: <span class="ru-st ${esc(j.last.status)}" style="padding:1px 6px">${esc(j.last.status)}</span> ${dur(j.last.ms)}</div>
+        ${j.last_fail ? `<div class="l bad" title="${esc(j.last_fail.error)}">✗ ${istHM(j.last_fail.at)} ${esc(j.last_fail.error)}</div>` : '<div class="l">no failures in 24h</div>'}` : '<div class="l">Nothing logged in the last 24h. Runs appear here after the next deploy.</div>'}
+      </button>`;
+    }).join('');
+    $('ruJobs').querySelectorAll('[data-job]').forEach((b) => b.onclick = () => { ruJob = ruJob === b.dataset.job ? 'All' : b.dataset.job; renderRuns(); });
+    const nFail = (ru.runs || []).filter((r) => ['Failed', 'Stuck', 'Partial'].includes(r.status)).length;
+    $('ruF').innerHTML = [['All', ru.runs.length], ['Problems', nFail], ...RU_JOBS.map(([n]) => [n, (ru.runs || []).filter((r) => r.job === n).length])].map(([k, n]) => `<button type="button" class="${k === ruJob ? 'on' : ''}" data-f="${k}">${k}<b>${n}</b></button>`).join('');
+    $('ruF').querySelectorAll('button').forEach((b) => b.onclick = () => { ruJob = b.dataset.f; renderRuns(); });
+    const rows = (ru.runs || []).filter((r) => ruJob === 'All' || (ruJob === 'Problems' ? ['Failed', 'Stuck', 'Partial'].includes(r.status) : r.job === ruJob));
+    $('ruCount').textContent = `${ru.total_24h} runs in 24h${ru.total_24h > ru.runs.length ? ` · newest ${ru.runs.length} shown` : ''}`;
+    const today = istDay(new Date().toISOString());
+    const steps = (txt) => { const xs = String(txt || '').split('\n').filter(Boolean).map((l) => { const m = l.match(/^([✓✗])\s*(.+?) · (\d+)ms(?: · (.*))?$/); return m ? { ok: m[1] === '✓', name: m[2], ms: +m[3], note: m[4] || '' } : { ok: true, name: l, ms: 0 }; });
+      const max = Math.max(1, ...xs.map((x) => x.ms));
+      return xs.map((x) => `<div class="ru-step ${x.ok ? '' : 'x'}"><span>${x.ok ? '✓' : '✗'}</span><span>${esc(x.name)}${x.note ? ` <span style="color:var(--err)">· ${esc(x.note)}</span>` : ''}</span><span>${dur(x.ms)}</span><div class="bar"><div style="width:${Math.max(2, x.ms / max * 100)}%"></div></div></div>`).join(''); };
+    $('ruList').innerHTML = rows.length ? rows.map((r) => {
+      const first = String(r.errors || '').split('\n')[0];
+      const open = ruOpen.has(r.id);
+      return `<div class="ru-row" data-id="${esc(r.id)}"><span class="tm">${istHMS(r.started)}<small>${istDay(r.started) === today ? `<span data-ago="${esc(r.started)}">${ago(r.started)}</span>` : istDay(r.started).slice(5)}</small></span><span class="ru-st ${esc(r.status)}">${r.status === 'Running' ? 'Running…' : esc(r.status)}</span><span class="jb">${esc(r.job)}</span><span class="ms">${r.status === 'Running' ? `<span data-ago="${esc(r.started)}">${ago(r.started)}</span>` : dur(r.ms)}</span><span class="wh"><b>${esc(r.title)}</b>${first ? `<span class="bad">✗ ${esc(first)}</span>` : `<span>${esc(String(r.did || '').split('\n').join(' · '))}</span>`}</span></div>
+        ${open ? `<div class="ru-det"><div><h4>What it did</h4><pre>${esc(r.did || (r.status === 'Running' ? 'Still running…' : r.status === 'Stuck' ? 'Never finished. The run was cut off (timeout or crash) before it could log anything.' : '—'))}</pre>${r.errors ? `<h4>Errors</h4><pre class="bad">${esc(r.errors)}</pre>` : ''}</div><div><h4>Steps</h4>${steps(r.steps) || '<pre>—</pre>'}<h4>Details</h4><pre>Started ${istDay(r.started)} ${istHMS(r.started)} IST${r.ms != null ? ` · took ${dur(r.ms)}` : ''}${r.trigger ? ` · via ${esc(r.trigger)}` : ''}</pre><a class="more" href="${esc(r.url)}" target="_blank" rel="noopener" style="color:var(--muted);font-size:12px">Open in Notion →</a></div></div>` : ''}`;
+    }).join('') : `<div class="empty" style="padding:16px">${ruJob === 'Problems' ? 'No failures in the last 24 hours.' : 'No runs logged yet.'}</div>`;
+    $('ruList').querySelectorAll('.ru-row').forEach((el) => el.onclick = () => { const id = el.dataset.id; ruOpen.has(id) ? ruOpen.delete(id) : ruOpen.add(id); renderRuns(); });
+  }
 
   // =====================================================================
   // HQ
@@ -1190,10 +1310,10 @@
 
     // ---------- what needs you ----------
     const act = []; // { kind, tone, brand, creator, why, amount, btn, draft, url }
-    const isYours = (c, x) => x.draft || ['reply', 'promised'].includes(c.key) || (c.key === 'money' ? /invoice to send/i.test(x.tag || '') : x.tone === 'bad');
+    const isYours = (c, x) => x.draft || ['reply', 'promised'].includes(c.key) || (c.key === 'script' && x.tag === 'Script ready') || (c.key === 'money' ? /invoice to send/i.test(x.tag || '') : x.tone === 'bad');
     const running = [];
     for (const c of cols) for (const x of c.items) {
-      if (isYours(c, x)) act.push({ kind: x.draft ? 'DRAFT READY' : { reply: 'REPLY', promised: 'SEND', money: 'SEND INVOICE' }[c.key] || 'CHECK', tone: x.draft ? 'ai' : c.key === 'money' ? 'warn' : x.tone === 'bad' ? 'bad' : 'info', brand: x.brand, creator: x.creator, why: x.draft ? `${c.title.toLowerCase()} · review and send` : x.tag, amount: x.amount, btn: x.draft ? 'Review' : 'Open', draft: x.draft, url: x.url });
+      if (isYours(c, x)) act.push({ kind: x.draft ? 'DRAFT READY' : { reply: 'REPLY', promised: 'SEND', script: 'SEND SCRIPT', money: 'SEND INVOICE' }[c.key] || 'CHECK', tone: x.draft ? 'ai' : c.key === 'money' ? 'warn' : x.tone === 'bad' ? 'bad' : 'info', brand: x.brand, creator: x.creator, why: x.draft ? `${c.title.toLowerCase()} · review and send` : x.tag, amount: x.amount, btn: x.draft ? 'Review' : 'Open', draft: x.draft, url: x.url });
       else running.push({ group: c.title, brand: x.brand, creator: x.creator, tag: x.tag, tone: x.tone, amount: x.amount, url: x.url });
     }
     for (const x of leads) {
