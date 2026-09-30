@@ -5,6 +5,7 @@
 // POST /api/outbox { action: 'script-changes', brand, creator, feedback } -> re-send brand script notes to the script writer on Discord
 // POST /api/outbox { lead, action: 'lead-approve', price? } | { lead, action: 'lead-decline' }  -> Harsh's call on a below-floor offer
 import { listDrafts, saveDraft, rejectDraft, approveAndSend } from '../lib/outbox.js';
+import { withRun } from '../lib/runs.js';
 import { checkAuth } from '../lib/auth.js';
 
 export default async function handler(req, res) {
@@ -34,7 +35,10 @@ export default async function handler(req, res) {
     }
     if (action === 'reject') { await rejectDraft(id); return res.status(200).json({ ok: true }); }
     if (action === 'save') { await saveDraft(id, { subject, body: text, to, cc }); return res.status(200).json({ ok: true }); }
-    if (action === 'send') return res.status(200).json(await approveAndSend(id, { subject, body: text, to, cc }));
+    if (action === 'send') {
+      const out = await withRun('Send', `Send: ${subject || id}`, () => approveAndSend(id, { subject, body: text, to, cc }), { trigger: 'Dashboard', summarize: () => ({ did: [`Sent to ${to || 'brand'}${subject ? ' · ' + subject : ''}`] }) });
+      return res.status(200).json(out);
+    }
     return res.status(400).json({ error: 'action must be send, save or reject' });
   } catch (e) {
     return res.status(502).json({ error: String(e.message || e).slice(0, 300) });
