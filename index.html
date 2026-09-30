@@ -1201,7 +1201,7 @@
     const quiet = mins == null || mins > 180;
     $('liveDot').className = quiet ? 'off' : '';
     $('liveH').textContent = quiet ? 'PM agent quiet' : 'PM agent live';
-    $('liveT').innerHTML = `Last event ${a.last_event ? since(a.last_event) : 'none this week'}<br>${plural(a.events_week, 'event')} this week<br>Data ${since(hqData.generated_at)}`;
+    $('liveT').innerHTML = `Last event ${a.last_event ? since(a.last_event) : 'none this week'}<br>${a.events_capped ? a.events_week + '+ events' : plural(a.events_week, 'event')} this week<br>Data ${since(hqData.generated_at)}`;
     $('ovLive').textContent = quiet ? '' : '● live';
   }
 
@@ -1252,14 +1252,22 @@
     $('ovBrief').textContent = briefText();
 
     const m = o.money, mon = new Date(d.money.month + '-01T00:00:00Z').toLocaleDateString('en-GB', { month: 'long', timeZone: 'UTC' });
-    $('ovMoneyH').textContent = 'Money · ' + mon;
-    $('ovMoney').innerHTML = [
+    const m3 = o.money30 || {};
+    $('ovMoneyH').innerHTML = 'Money <small>last 30 days</small>';
+    $('ovMoney').innerHTML = m3.received != null ? [
+      [`Received · ${plural(m3.received_videos || 0, 'video')}`, usd(m3.received), 'var(--ok)'],
+      ['NOOCAP cut on that', usd(m3.cut), ''],
+      [`Invoiced, awaiting payment${m3.awaiting_n ? ' · ' + m3.awaiting_n : ''}`, usd(m3.awaiting), m3.awaiting ? 'var(--warn)' : ''],
+      [`Posted, invoice not sent${m3.to_invoice_n ? ' · ' + m3.to_invoice_n : ''}`, usd(m3.to_invoice), m3.to_invoice ? 'var(--warn)' : ''],
+      [m.overdue_count ? `Overdue · ${plural(m.overdue_count, 'invoice')}` : 'Overdue invoices', m.overdue_count ? usd(m.overdue_usd) : 'none', m.overdue_count ? 'var(--err)' : ''],
+    ].map(([l, v, c]) => `<div class="mline"><span>${l}</span><b${c ? ` style="color:${c}"` : ''}>${v}</b></div>`).join('') + '<button type="button" class="more" data-go="revenue" style="align-self:flex-start;background:none;border:0;color:var(--muted);font-size:13px;padding:0;margin-top:4px">Revenue →</button>' : [
       ['Brand revenue booked', usd(m.gross), ''],
       ['Paid', usd(m.paid), 'var(--ok)'],
       [m.overdue_count ? `Overdue · ${plural(m.overdue_count, 'invoice')}` : 'Overdue invoices', m.overdue_count ? usd(m.overdue_usd) : 'none', m.overdue_count ? 'var(--err)' : ''],
       ['Still unpaid', usd(m.unpaid), m.unpaid ? 'var(--warn)' : ''],
       ['NOOCAP commission', usd(m.cut), ''],
     ].map(([l, v, c]) => `<div class="mline"><span>${l}</span><b${c ? ` style="color:${c}"` : ''}>${v}</b></div>`).join('');
+    $('ovMoney').querySelectorAll('[data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
 
     const tp = o.today_posts, risky = tp.filter((v) => v.stage !== 'Ready' && v.stage !== 'Posted');
     const pct = o.week.planned ? Math.round(o.week.posted / o.week.planned * 100) : 0;
@@ -1294,7 +1302,7 @@
     $('ovPosts').innerHTML = tp.length ? tp.map((v) => { const [label, tone] = st(v); return `<a class="post" href="${esc(v.url)}" target="_blank" rel="noopener"><div class="top"><b>${esc(v.creator)}</b>${v.time ? `<span class="tm">${v.time}</span>` : ''}<span class="st" style="${toneStyle(tone)}">${label}</span></div><div class="tt">${esc(v.title)}${v.sponsor ? ' · sponsor' : ''}${v.editor ? ' · ' + esc(v.editor) : ''}</div></a>`; }).join('') : '<div class="empty">Nothing scheduled to post today.</div>';
 
     const a = o.agent;
-    $('ovAgBox').innerHTML = `<div><small>Events · 7 days</small><b>${a.events_week}</b></div><div><small>AI spend · 7 days</small><b>$${Number(a.cost_week || 0).toFixed(2)}</b></div>`;
+    $('ovAgBox').innerHTML = `<div><small>Events · 7 days</small><b>${a.events_week}${a.events_capped ? '+' : ''}</b></div><div><small>AI spend · 7 days</small><b>$${Number(a.cost_week || 0).toFixed(2)}</b></div>`;
     $('ovFeed').innerHTML = (d.activity || []).slice(0, 5).map((r) => `<div class="feed"><span>${r.time ? istHM(r.time) : ''}</span><span>${esc(r.event)}</span></div>`).join('') || '<div class="empty">No activity this week.</div>';
     renderLive();
     $('ovErr').textContent = d.errors?.length ? 'Some data could not load: ' + d.errors.join(' · ') : '';
