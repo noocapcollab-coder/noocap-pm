@@ -633,7 +633,7 @@
   <div class="rv-tools">
     <input type="search" id="rvQ" placeholder="Search video, brand or creator" autocomplete="off" aria-label="Search">
     <div class="cfilter" id="rvF"></div>
-    <select id="rvCyc" aria-label="Cycle"></select>
+    <select id="rvCyc" aria-label="Month"></select>
   </div>
   <div id="rvBody"><div class="skel"></div><div class="skel"></div></div>
   <div class="err" id="rvErr" style="font-size:13px"></div>
@@ -795,10 +795,11 @@
   const rvPct = (c) => Number(rv.cuts[c] || 0);
   const rvCut = (v) => v.paid && v.amount ? v.amount * rvPct(v.creator) / 100 : 0;
   const shortDate = (d) => d ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' }) : '';
+  const rvMonth = (v) => (v.paid ? (v.paidDate || v.date) : (v.date || (v.deal && v.deal.expected)) || '').slice(0, 7) || 'none';
   function rvVisible() {
     const q = rvQ.trim().toLowerCase();
     return rv.videos.filter((v) => (rvFilter === 'all' || (rvFilter === 'paid') === v.paid)
-      && (rvCycle === 'all' || v.cycle === rvCycle)
+      && (rvCycle === 'all' || rvMonth(v) === rvCycle)
       && (!q || `${v.title} ${v.brand} ${v.creator}`.toLowerCase().includes(q)));
   }
   const monthEnd = () => { const d = new Date((rv.today || todayISO()) + 'T00:00:00Z'); return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 0)).toISOString().slice(0, 10); };
@@ -820,9 +821,13 @@
   function renderRevenue() {
     if (!rv) return;
     $('rvWhen').textContent = `Sponsor money · from Notion · updated ${since(rv.generated_at)}`;
-    const cycles = [...new Set(rv.videos.map((v) => v.cycle))].sort((a, z) => a === 'No date' ? 1 : z === 'No date' ? -1 : z.localeCompare(a));
-    if (rvCycle !== 'all' && !cycles.includes(rvCycle)) rvCycle = 'all';
-    $('rvCyc').innerHTML = `<option value="all">All cycles</option>` + cycles.map((c) => `<option ${c === rvCycle ? 'selected' : ''}>${esc(c)}</option>`).join('');
+    // Months come from real dates (paid date for paid money, post or expected date otherwise), not the boards' free-typed Month labels
+    const mcount = {};
+    for (const v of rv.videos) { const m = rvMonth(v); mcount[m] = (mcount[m] || 0) + 1; }
+    const months = Object.keys(mcount).sort((a, z) => a === 'none' ? 1 : z === 'none' ? -1 : z.localeCompare(a));
+    if (rvCycle !== 'all' && !mcount[rvCycle]) rvCycle = 'all';
+    const mLabel = (m) => m === 'none' ? 'No date' : new Date(m + '-01T00:00:00Z').toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+    $('rvCyc').innerHTML = `<option value="all">All months · ${rv.videos.length}</option>` + months.map((m) => `<option value="${m}" ${m === rvCycle ? 'selected' : ''}>${mLabel(m)} · ${mcount[m]}</option>`).join('');
     $('rvF').innerHTML = [['all', 'All'], ['unpaid', 'Unpaid'], ['paid', 'Paid']].map(([k, l]) => `<button type="button" class="${k === rvFilter ? 'on' : ''}" data-f="${k}">${l}</button>`).join('');
     $('rvF').querySelectorAll('button').forEach((b) => b.onclick = () => { rvFilter = b.dataset.f; renderRevenue(); });
     const xs = rvVisible(), t = rvTotals(xs);
