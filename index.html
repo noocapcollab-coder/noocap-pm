@@ -456,6 +456,48 @@
   .badge { color: #0d0e11; }
   header .logo span { color: var(--muted); font-weight: 500; }
   header .dot { box-shadow: none; }
+  /* ---------- Revenue ---------- */
+  #revenue { overflow-y: auto; }
+  .rv-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .rv-tools { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .rv-tools input[type=search], .rv-tools select { min-height: 38px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line2); background: var(--panel); color: var(--text); font: 13px 'IBM Plex Sans', sans-serif; }
+  .rv-tools input[type=search] { flex: 1; min-width: 180px; max-width: 320px; }
+  .rv-tools .cfilter { display: flex; }
+  .rv-tools .cfilter button { border-radius: 999px; }
+  .rv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+  .rvc { cursor: pointer; text-align: left; }
+  .rvc:hover { border-color: var(--line2); background: #171a1f; }
+  .rvc h2 { justify-content: space-between; }
+  .rvc .big { font: 600 26px/1.1 'Space Grotesk', sans-serif; font-variant-numeric: tabular-nums; }
+  .rvc .big small { display: block; font: 400 12px 'IBM Plex Sans', sans-serif; color: var(--muted); margin-top: 4px; }
+  .rvc .bar { height: 6px; border-radius: 3px; background: var(--panel3); overflow: hidden; }
+  .rvc .bar div { height: 6px; background: var(--accent); }
+  .cutin { display: inline-flex; align-items: center; gap: 4px; font: 500 12px 'IBM Plex Mono', monospace; color: var(--muted); }
+  .cutin input { width: 52px; min-height: 30px; padding: 0 6px; border-radius: 6px; border: 1px solid var(--line2); background: var(--panel2); color: var(--text); font: 500 13px 'IBM Plex Mono', monospace; text-align: right; }
+  .rv-hero { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .rv-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+  .rvrow { display: flex; flex-direction: column; gap: 8px; padding: 12px 0; border-top: 1px solid var(--line3); }
+  .rvrow .top { display: flex; align-items: center; gap: 8px; font-size: 13px; min-width: 0; }
+  .rvrow .top a { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+  .rvrow .top a:hover { text-decoration: underline; }
+  .rvrow .top .dt { margin-left: auto; font: 12px 'IBM Plex Mono', monospace; color: var(--muted); white-space: nowrap; }
+  .rvrow .ctl { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .rvrow .amt { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--line2); border-radius: 8px; padding: 0 8px; background: var(--panel2); }
+  .rvrow .amt span { color: var(--muted); font: 13px 'IBM Plex Mono', monospace; }
+  .rvrow .amt input { width: 84px; min-height: 34px; border: 0; background: none; color: var(--text); font: 500 14px 'IBM Plex Mono', monospace; outline: none; }
+  .rvrow input[type=date] { min-height: 34px; border: 1px solid var(--line2); border-radius: 8px; background: var(--panel2); color: var(--text); padding: 0 8px; font: 12px 'IBM Plex Mono', monospace; color-scheme: dark; }
+  .rvrow .btn.sm { border: 1px solid var(--line2); background: transparent; color: var(--text); }
+  .rvrow .btn.sm.pri { border: 0; background: #e9e7e2; color: #0d0e11; }
+  .rvrow .btn.sm.use { border-style: dashed; color: var(--ok); border-color: rgba(61,214,176,.4); }
+  .rvrow .btn.sm.on { background: rgba(61,214,176,.13); color: #7fe0c0; border-color: transparent; }
+  .rvrow .btn.sm.x { margin-left: auto; color: var(--dim); border-color: transparent; }
+  .rvrow .btn.sm.x:hover { color: var(--err); }
+  .rvrow.busy { opacity: .55; pointer-events: none; }
+  .rvrow .sub { font-size: 12px; color: var(--muted); }
+  .rv-back { align-self: flex-start; background: none; border: 0; color: var(--muted); padding: 0; font-size: 13px; }
+  .rv-back:hover { color: var(--text); }
+  @media (max-width: 1100px) { .rv-cols { grid-template-columns: minmax(0, 1fr); } }
+  @media (max-width: 760px) { .rv-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rv-hero { grid-template-columns: minmax(0, 1fr); } .rv-tools input[type=search] { max-width: none; } }
   /* ---------- responsive ---------- */
   @media (max-width: 1240px) {
     .ostats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -517,6 +559,7 @@
     <button data-v="overview" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Overview</button>
     <button data-v="deals" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M9 7V5h6v2"/></svg>Brand deals <span class="badge" id="dealsBadge2" hidden>0</span></button>
     <button data-v="approvals" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Approvals <span class="badge" data-count hidden>0</span></button>
+    <button data-v="revenue" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M17 7.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2.2 2.7 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3"/></svg>Revenue</button>
   </div>
   <div class="grp">
     <div class="lbl">More</div>
@@ -564,6 +607,21 @@
     <section class="ocard" aria-label="AI agent now"><h2>AI agent now <small id="ovLive" style="color:var(--ok)"></small></h2><div class="agbox" id="ovAgBox"></div><div id="ovFeed"></div><button class="more" type="button" data-go="flow" style="margin-top:auto;align-self:flex-start;background:none;border:0;color:var(--muted);font-size:13px;padding:0">Full activity →</button></section>
   </div>
   <div class="err" id="ovErr" style="font-size:13px"></div>
+</div></section>
+
+<!-- ============ Revenue ============ -->
+<section class="view" id="revenue"><div class="ov">
+  <div class="ov-head">
+    <div><div class="k" id="rvWhen">Sponsor money · from Notion</div><h1>Client revenue</h1></div>
+  </div>
+  <section class="ostats rv-stats" id="rvStats" aria-label="Revenue totals"><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div></section>
+  <div class="rv-tools">
+    <input type="search" id="rvQ" placeholder="Search video, brand or creator" autocomplete="off" aria-label="Search">
+    <div class="cfilter" id="rvF"></div>
+    <select id="rvCyc" aria-label="Cycle"></select>
+  </div>
+  <div id="rvBody"><div class="skel"></div><div class="skel"></div></div>
+  <div class="err" id="rvErr" style="font-size:13px"></div>
 </div></section>
 
 <!-- ============ HQ ============ -->
@@ -639,6 +697,7 @@
   <button data-v="overview" type="button"><span class="i">◎</span>Home</button>
   <button data-v="hq" type="button"><span class="i">▤</span>Schedule</button>
   <button data-v="deals" type="button"><span class="i">▦</span>Deals</button>
+  <button data-v="revenue" type="button"><span class="i">$</span>Revenue</button>
   <button data-v="flow" type="button"><span class="i">⇢</span>Flow</button>
   <button data-v="chat" type="button"><span class="i">✦</span>Chat</button>
   <button data-v="approvals" type="button"><span class="i">✉</span>Approvals<span class="badge" data-count hidden>0</span></button>
@@ -684,7 +743,7 @@
   // ---------- tabs ----------
   let view = 'overview';
   function show(v) {
-    if (!['overview', 'hq', 'deals', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
+    if (!['overview', 'hq', 'deals', 'revenue', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
     view = v;
     document.querySelectorAll('.view').forEach((el) => el.classList.toggle('on', el.id === v));
     document.querySelectorAll('[data-v]').forEach((b) => b.classList.toggle('on', b.dataset.v === v));
@@ -694,12 +753,163 @@
     const sc = document.querySelector('.view.on'); if (sc) sc.scrollTop = 0;
     if (v === 'deals' && hqData) renderBoard();
     if (v === 'flow' && !flowData) loadFlow();
+    if (v === 'revenue') rv ? renderRevenue() : loadRevenue();
     if (v === 'chat') setTimeout(() => $('q').focus(), 50);
   }
   document.querySelectorAll('[data-v]').forEach((b) => b.onclick = () => show(b.dataset.v));
   window.addEventListener('hashchange', () => show(location.hash.slice(1)));
-  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else loadHQ(true); };
+  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else loadHQ(true); };
   document.querySelectorAll('.ov [data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
+
+  // =====================================================================
+  // Revenue: sponsor videos x Sponsor Video Revenue x Creator Cut (ported from RevenueDashboard)
+  // =====================================================================
+  let rv = null, rvSel = null, rvFilter = 'all', rvQ = '', rvCycle = 'all', rvLoading = false;
+  async function loadRevenue(fresh) {
+    if (rvLoading) return; rvLoading = true;
+    $('rvErr').textContent = '';
+    try {
+      const r = await fetch('/api/revenue' + (fresh ? '?fresh=1' : ''), { headers: headers() });
+      if (r.status === 401) { rvLoading = false; return needPassword(); }
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error || 'Could not load revenue');
+      rv = j; renderRevenue();
+    } catch (e) { $('rvErr').textContent = e.message; if (!rv) $('rvBody').innerHTML = '<div class="empty">Revenue could not load. Hit refresh to try again.</div>'; }
+    rvLoading = false;
+  }
+  const rvPct = (c) => Number(rv.cuts[c] || 0);
+  const rvCut = (v) => v.paid && v.amount ? v.amount * rvPct(v.creator) / 100 : 0;
+  const shortDate = (d) => d ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' }) : '';
+  function rvVisible() {
+    const q = rvQ.trim().toLowerCase();
+    return rv.videos.filter((v) => (rvFilter === 'all' || (rvFilter === 'paid') === v.paid)
+      && (rvCycle === 'all' || v.cycle === rvCycle)
+      && (!q || `${v.title} ${v.brand} ${v.creator}`.toLowerCase().includes(q)));
+  }
+  function rvTotals(xs) {
+    const t = { gross: 0, cut: 0, cutIn: 0, cutOwed: 0, unpaid: 0, unpaidN: 0, noAmt: 0, paidN: 0 };
+    for (const v of xs) {
+      if (v.paid) { t.gross += v.amount || 0; t.paidN++; const c = rvCut(v); t.cut += c; if (v.cutCollected) t.cutIn += c; else t.cutOwed += c; }
+      else { t.unpaidN++; t.unpaid += v.amount || 0; if (!v.amount) t.noAmt++; }
+    }
+    return t;
+  }
+  function renderRevenue() {
+    if (!rv) return;
+    $('rvWhen').textContent = `Sponsor money · from Notion · updated ${since(rv.generated_at)}`;
+    const cycles = [...new Set(rv.videos.map((v) => v.cycle))].sort((a, z) => a === 'No date' ? 1 : z === 'No date' ? -1 : z.localeCompare(a));
+    if (rvCycle !== 'all' && !cycles.includes(rvCycle)) rvCycle = 'all';
+    $('rvCyc').innerHTML = `<option value="all">All cycles</option>` + cycles.map((c) => `<option ${c === rvCycle ? 'selected' : ''}>${esc(c)}</option>`).join('');
+    $('rvF').innerHTML = [['all', 'All'], ['unpaid', 'Unpaid'], ['paid', 'Paid']].map(([k, l]) => `<button type="button" class="${k === rvFilter ? 'on' : ''}" data-f="${k}">${l}</button>`).join('');
+    $('rvF').querySelectorAll('button').forEach((b) => b.onclick = () => { rvFilter = b.dataset.f; renderRevenue(); });
+    const xs = rvVisible(), t = rvTotals(xs);
+    const logged = t.gross + t.unpaid;
+    const stat = (l, v, s, st = '') => `<div class="ostat"><span class="l">${l}</span><span class="v" style="${st}">${v}</span><span class="s">${s}</span></div>`;
+    $('rvStats').innerHTML = stat('Gross received', usd(t.gross), `${plural(t.paidN, 'paid video')}`)
+      + stat('NOOCAP cut', usd(t.cut), `${usd(t.cutIn)} collected · ${usd(t.cutOwed)} owed`, t.cutOwed ? '' : '')
+      + stat('Awaiting payment', usd(t.unpaid), `${plural(t.unpaidN, 'video')}${t.noAmt ? ` · ${t.noAmt} with no amount` : ''}`, t.unpaid ? 'color:var(--warn)' : '')
+      + stat('Collected', logged ? Math.round(t.gross / logged * 100) + '%' : '—', 'of the money logged so far');
+    if (rvSel && !rv.creators.includes(rvSel) && !rv.videos.some((v) => v.creator === rvSel)) rvSel = null;
+    if (rvSel) return renderRvCreator(xs.filter((v) => v.creator === rvSel));
+    // Creator grid
+    const names = [...new Set([...rv.creators, ...rv.videos.map((v) => v.creator)])];
+    const cards = names.map((c) => ({ c, xs: xs.filter((v) => v.creator === c) })).filter((g) => g.xs.length || (!rvQ && rvFilter === 'all' && rvCycle === 'all' && rv.cuts[g.c] != null))
+      .map((g) => ({ ...g, t: rvTotals(g.xs) })).sort((a, z) => z.t.gross - a.t.gross || z.t.unpaid - a.t.unpaid || a.c.localeCompare(z.c));
+    $('rvBody').innerHTML = cards.length ? `<div class="rv-grid">${cards.map(({ c, xs: vs, t: ct }) => {
+      const tot = ct.gross + ct.unpaid;
+      return `<div class="ocard rvc" data-c="${esc(c)}" role="button" tabindex="0"><h2>${esc(c)} <label class="cutin" title="NOOCAP cut %">cut <input type="number" min="0" max="100" step="1" value="${rvPct(c)}" data-cut="${esc(c)}" aria-label="${esc(c)} cut percent">%</label></h2>
+        <div class="big">${usd(ct.gross)}<small>received · ${plural(vs.length, 'sponsor video')}</small></div>
+        <div class="bar"><div style="width:${tot ? Math.round(ct.gross / tot * 100) : 0}%"></div></div>
+        <div class="mline"><span>Awaiting payment</span><b style="color:${ct.unpaid ? 'var(--warn)' : 'inherit'}">${usd(ct.unpaid)}</b></div>
+        <div class="mline"><span>NOOCAP cut${rvPct(c) ? '' : ' (no cut set)'}</span><b>${usd(ct.cut)}${ct.cutOwed ? ` <span style="color:var(--warn);font-weight:500">· ${usd(ct.cutOwed)} owed</span>` : ''}</b></div>
+      </div>`; }).join('')}</div>` : '<div class="empty">No sponsor videos match.</div>';
+    $('rvBody').querySelectorAll('.rvc').forEach((el) => {
+      el.onclick = (e) => { if (e.target.closest('.cutin')) return; rvSel = el.dataset.c; renderRevenue(); $('revenue').scrollTop = 0; };
+      el.onkeydown = (e) => { if (e.key === 'Enter' && !e.target.closest('.cutin')) el.onclick(e); };
+    });
+    bindCutInputs();
+    $('rvErr').textContent = rv.warnings?.length ? rv.warnings.join(' · ') : '';
+  }
+  function bindCutInputs() {
+    $('rvBody').querySelectorAll('input[data-cut]').forEach((inp) => inp.onchange = async () => {
+      const c = inp.dataset.cut, pct = Number(inp.value), old = rv.cuts[c];
+      if (!Number.isFinite(pct) || pct < 0 || pct > 100) { inp.value = rvPct(c); return; }
+      rv.cuts[c] = pct; inp.disabled = true;
+      try { const r = await fetch('/api/revenue', { method: 'POST', headers: headers(), body: JSON.stringify({ action: 'cut', creator: c, pct }) }); const j = await r.json(); if (!r.ok) throw new Error(j.error || 'Failed'); }
+      catch (e) { rv.cuts[c] = old; alert('Cut not saved: ' + e.message); }
+      renderRevenue();
+    });
+  }
+  function renderRvCreator(xs) {
+    const c = rvSel, pct = rvPct(c), t = rvTotals(xs);
+    const unpaid = xs.filter((v) => !v.paid), paid = xs.filter((v) => v.paid).sort((a, z) => String(z.paidDate).localeCompare(String(a.paidDate)));
+    const row = (v) => {
+      const i = rv.videos.indexOf(v);
+      const tag = v.orphan ? '<span class="tag muted">revenue row</span>' : `<span class="tag ${/posted/i.test(v.status) ? 'go' : ''}">${esc(String(v.status).replace(/^\d+-\s*/, ''))}</span>`;
+      const amt = `<label class="amt"><span>$</span><input type="number" min="0" step="50" inputmode="decimal" value="${v.amount ?? ''}" placeholder="amount" data-amt="${i}" aria-label="Amount USD"></label>`;
+      const use = !v.amount && v.suggested ? `<button type="button" class="btn sm use" data-use="${i}">use ${usd(v.suggested)}</button>` : '';
+      const ctl = v.paid
+        ? `${amt}<input type="date" value="${esc(v.paidDate || '')}" data-pd="${i}" aria-label="Paid on">${pct ? `<button type="button" class="btn sm ${v.cutCollected ? 'on' : ''}" data-cc="${i}">${v.cutCollected ? '✓ cut collected' : `collect ${usd(rvCut(v))} cut`}</button>` : ''}<button type="button" class="btn sm" data-unpaid="${i}">Undo paid</button>`
+        : `${amt}${use}<button type="button" class="btn sm pri" data-paid="${i}">Mark paid</button>`;
+      const sub = v.paid ? '' : v.invoiced ? `<div class="sub">invoice sent ${shortDate(v.invoiced)}</div>` : '';
+      return `<div class="rvrow" data-row="${i}"><div class="top"><a href="${esc(v.link || v.revUrl || '#')}" target="_blank" rel="noopener" title="${esc(v.title)}">${esc(v.title)}</a>${tag}<span class="dt">${shortDate(v.date)}</span></div>${sub}<div class="ctl">${ctl}${v.revPageId ? `<button type="button" class="btn sm x" data-del="${i}" title="Remove revenue row">✕</button>` : ''}</div></div>`;
+    };
+    $('rvBody').innerHTML = `<div style="display:flex;flex-direction:column;gap:16px">
+      <button type="button" class="rv-back" id="rvBack">← All creators</button>
+      <div class="ov-head" style="align-items:center"><h1 style="font-size:24px;margin:0">${esc(c)}</h1><label class="cutin" style="margin-left:auto">NOOCAP cut <input type="number" min="0" max="100" step="1" value="${pct}" data-cut="${esc(c)}" aria-label="Cut percent">%</label></div>
+      <div class="rv-hero">
+        <div class="ostat"><span class="l">Gross received</span><span class="v">${usd(t.gross)}</span><span class="s">${plural(t.paidN, 'paid video')}</span></div>
+        <div class="ostat"><span class="l">NOOCAP cut · ${pct}%</span><span class="v">${usd(t.cut)}</span><span class="s">${usd(t.cutIn)} collected · ${usd(t.cutOwed)} owed</span></div>
+        <div class="ostat"><span class="l">${esc(c)} keeps</span><span class="v">${usd(t.gross - t.cut)}</span><span class="s">after the cut</span></div>
+      </div>
+      <div class="rv-cols">
+        <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Awaiting payment <small>${unpaid.length} · ${usd(t.unpaid)}</small></h2>${unpaid.map(row).join('') || '<div class="empty">Nothing waiting.</div>'}</section>
+        <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Paid <small>${paid.length} · ${usd(t.gross)}</small></h2>${paid.map(row).join('') || '<div class="empty">Nothing paid yet.</div>'}</section>
+      </div></div>`;
+    $('rvBack').onclick = () => { rvSel = null; renderRevenue(); };
+    bindCutInputs();
+    const body = $('rvBody'), V = (el, k) => rv.videos[+el.dataset[k]];
+    body.querySelectorAll('[data-amt]').forEach((el) => {
+      el.onkeydown = (e) => { if (e.key === 'Enter') el.blur(); };
+      el.onchange = () => { const v = V(el, 'amt'); const n = el.value === '' ? null : Number(el.value); if (n === v.amount) return; rvSave(v, { amount: n }); };
+    });
+    body.querySelectorAll('[data-use]').forEach((el) => el.onclick = () => { const v = V(el, 'use'); rvSave(v, { amount: v.suggested }); });
+    body.querySelectorAll('[data-paid]').forEach((el) => el.onclick = () => { const v = V(el, 'paid'); const amt = body.querySelector(`[data-amt="${el.dataset.paid}"]`).value; const f = { paid: true, paidDate: todayISO() }; if (!v.amount && amt) f.amount = Number(amt); rvSave(v, f); });
+    body.querySelectorAll('[data-unpaid]').forEach((el) => el.onclick = () => rvSave(V(el, 'unpaid'), { paid: false }));
+    body.querySelectorAll('[data-pd]').forEach((el) => el.onchange = () => el.value && rvSave(V(el, 'pd'), { paidDate: el.value }));
+    body.querySelectorAll('[data-cc]').forEach((el) => el.onclick = () => { const v = V(el, 'cc'); rvSave(v, { cutCollected: !v.cutCollected }); });
+    body.querySelectorAll('[data-del]').forEach((el) => el.onclick = async () => {
+      const v = V(el, 'del');
+      if (!confirm(`Remove the revenue row for "${v.title}"? It goes to Notion trash, and the video card stays.`)) return;
+      el.closest('.rvrow').classList.add('busy');
+      try {
+        const r = await fetch('/api/revenue', { method: 'POST', headers: headers(), body: JSON.stringify({ action: 'delete', revPageId: v.revPageId }) });
+        const j = await r.json(); if (!r.ok) throw new Error(j.error || 'Failed');
+        if (v.orphan) rv.videos.splice(rv.videos.indexOf(v), 1);
+        else Object.assign(v, { revPageId: null, revUrl: null, amount: null, paid: false, paidDate: '', invoiced: '', cutCollected: false });
+      } catch (e) { alert('Not removed: ' + e.message); }
+      renderRevenue();
+    });
+  }
+  const todayISO = () => new Date(Date.now() + 5.5 * 36e5).toISOString().slice(0, 10);
+  async function rvSave(v, fields) {
+    const before = { ...v };
+    Object.assign(v, fields);
+    if (fields.paid === false) v.paidDate = '';
+    const rowEl = document.querySelector(`.rvrow[data-row="${rv.videos.indexOf(v)}"]`); if (rowEl) rowEl.classList.add('busy');
+    const body = { action: 'set', ...fields };
+    if (v.revPageId) body.revPageId = v.revPageId;
+    else Object.assign(body, { link: v.link, title: v.title, creator: v.creator, brand: v.brand, date: v.date });
+    try {
+      const r = await fetch('/api/revenue', { method: 'POST', headers: headers(), body: JSON.stringify(body) });
+      const j = await r.json(); if (!r.ok) throw new Error(j.error || 'Failed');
+      v.revPageId = j.revPageId; v.revUrl = j.revUrl || v.revUrl;
+      if (v.amount) v.suggested = null;
+    } catch (e) { Object.assign(v, before); alert('Not saved: ' + e.message); }
+    renderRevenue();
+  }
+  $('rvQ').oninput = () => { rvQ = $('rvQ').value; renderRevenue(); };
+  $('rvCyc').onchange = () => { rvCycle = $('rvCyc').value; renderRevenue(); };
 
   // =====================================================================
   // HQ
@@ -919,7 +1129,7 @@
     const liveLeads = (L.columns || []).flatMap((c) => c.items.map((x) => ({ ...x, col: c.key, colTitle: c.title })));
     // Creator filter over deals and live leads together
     const counts = {};
-    for (const c of all) for (const x of c.items) if (x.creator && x.creator !== '?') counts[x.creator] = (counts[x.creator] || 0) + 1;
+    for (const c of all) if (c.key !== 'cut') for (const x of c.items) if (x.creator && x.creator !== '?') counts[x.creator] = (counts[x.creator] || 0) + 1;
     for (const x of liveLeads) if (x.creator && x.creator !== '?') counts[x.creator] = (counts[x.creator] || 0) + 1;
     const names = Object.keys(counts).sort((a, z) => counts[z] - counts[a] || a.localeCompare(z));
     if (boardCreator !== 'All' && !counts[boardCreator]) boardCreator = 'All';
@@ -927,16 +1137,16 @@
     $('cfilter').innerHTML = [['All', total], ...names.map((n) => [n, counts[n]])].map(([n, k]) => `<button type="button" class="${n === boardCreator ? 'on' : ''}" data-c="${esc(n)}">${esc(n)}<b>${k}</b></button>`).join('');
     $('cfilter').querySelectorAll('button').forEach((x) => x.onclick = () => { boardCreator = x.dataset.c; renderBoard(); });
     const mine = (xs) => boardCreator === 'All' ? xs : xs.filter((x) => x.creator === boardCreator);
-    const cols = all.map((c) => ({ ...c, items: mine(c.items) }));
+    const cols = all.filter((c) => c.key !== 'cut').map((c) => ({ ...c, items: mine(c.items) })); // cut is internal money, it lives on the Revenue page
     const leads = mine(liveLeads);
     const appr = mine(L.approvals || []);
 
     // ---------- what needs you ----------
     const act = []; // { kind, tone, brand, creator, why, amount, btn, draft, url }
-    const isYours = (c, x) => x.draft || ['reply', 'promised', 'cut'].includes(c.key) || (c.key === 'money' ? /invoice to send/i.test(x.tag || '') : x.tone === 'bad');
+    const isYours = (c, x) => x.draft || ['reply', 'promised'].includes(c.key) || (c.key === 'money' ? /invoice to send/i.test(x.tag || '') : x.tone === 'bad');
     const running = [];
     for (const c of cols) for (const x of c.items) {
-      if (isYours(c, x)) act.push({ kind: x.draft ? 'DRAFT READY' : { reply: 'REPLY', promised: 'SEND', cut: 'COLLECT CUT', money: 'SEND INVOICE' }[c.key] || 'CHECK', tone: x.draft ? 'ai' : c.key === 'cut' || c.key === 'money' ? 'warn' : x.tone === 'bad' ? 'bad' : 'info', brand: x.brand, creator: x.creator, why: x.draft ? `${c.title.toLowerCase()} · review and send` : x.tag, amount: x.amount, btn: x.draft ? 'Review' : 'Open', draft: x.draft, url: x.url });
+      if (isYours(c, x)) act.push({ kind: x.draft ? 'DRAFT READY' : { reply: 'REPLY', promised: 'SEND', money: 'SEND INVOICE' }[c.key] || 'CHECK', tone: x.draft ? 'ai' : c.key === 'money' ? 'warn' : x.tone === 'bad' ? 'bad' : 'info', brand: x.brand, creator: x.creator, why: x.draft ? `${c.title.toLowerCase()} · review and send` : x.tag, amount: x.amount, btn: x.draft ? 'Review' : 'Open', draft: x.draft, url: x.url });
       else running.push({ group: c.title, brand: x.brand, creator: x.creator, tag: x.tag, tone: x.tone, amount: x.amount, url: x.url });
     }
     for (const x of leads) {
