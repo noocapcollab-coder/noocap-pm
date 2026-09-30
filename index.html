@@ -1286,7 +1286,7 @@
       <textarea class="body" id="fBody">${esc(d.body)}</textarea>
       ${att}
       ${d.replyTo ? '<div class="why" style="margin:10px 0 0">Goes out as a reply in the existing email thread.</div>' : ''}
-      <div class="ap-actions"><button type="button" class="btn sm" id="aSend">Send</button><button type="button" class="btn sm ghost" id="aSave">Save</button><button type="button" class="btn sm danger" id="aRej">Reject</button><span class="state" id="aState"></span></div>`;
+      <div class="ap-actions"><button type="button" class="btn sm" id="aSend">Send</button><button type="button" class="btn sm ghost" id="aSave">Save</button><button type="button" class="btn sm danger" id="aRej">Reject</button>${d.context ? '<button type="button" class="btn sm ghost" id="aBrief" title="File the brand message above as a brief: makes the video card and pings the script writer">Send to script writer</button>' : ''}<span class="state" id="aState"></span></div>`;
     $('apBack').onclick = () => { selDraft = null; renderApprovals(); };
     const val = () => ({ id: d.id, to: $('fTo').value, cc: $('fCc').value, subject: $('fSubj').value, body: $('fBody').value });
     const btns = () => $('apEdit').querySelectorAll('.ap-actions button');
@@ -1308,6 +1308,19 @@
     $('aSend').onclick = () => act('send', 'Sending…');
     $('aSave').onclick = () => act('save', 'Saving…');
     $('aRej').onclick = () => act('reject', 'Rejecting…');
+    if ($('aBrief')) $('aBrief').onclick = async () => {
+      const st = $('aState'), b = $('aBrief');
+      if (!confirm(`File the ${d.brand || 'brand'} message as a brief and ping the script writer?`)) return;
+      b.disabled = true; st.textContent = 'Filing the brief…'; st.className = 'state';
+      try {
+        const res = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ id: d.id, action: 'send-brief' }) });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
+        if (data.action === 'needs_help') throw new Error("Couldn't tell which creator this is for. Link the email to a deal first.");
+        st.textContent = '✅ Brief filed and the script writer was pinged. This email is still here to send or reject.';
+        b.textContent = 'Sent to script writer';
+      } catch (e) { st.textContent = '⚠️ ' + e.message; st.className = 'state err'; b.disabled = false; }
+    };
   }
 
   // ---------- start ----------
