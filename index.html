@@ -1256,7 +1256,7 @@
     return t <= Date.now() ? 'sending' : new Date(t).toLocaleTimeString('en-IN', { hour: 'numeric', minute: '2-digit' });
   };
   function setCount(n) { document.querySelectorAll('[data-count]').forEach((b) => { b.hidden = !n; b.textContent = n; }); }
-  async function loadApprovals() {
+  async function loadApprovals(bg) {
     try {
       const res = await fetch('/api/outbox', { headers: headers() });
       if (res.status === 401) return needPassword();
@@ -1264,12 +1264,12 @@
       if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
       drafts = data.drafts || [];
       setCount(drafts.filter((d) => d.status === 'Draft').length);
-      if (view === 'approvals') renderApprovals();
+      if (view === 'approvals') renderApprovals(bg);
     } catch (e) {
       $('apList').innerHTML = '<div class="empty err">Could not load approvals: ' + esc(e.message) + '</div>';
     }
   }
-  function renderApprovals() {
+  function renderApprovals(bg) {
     const list = $('apList');
     if (!drafts.length) {
       list.innerHTML = '<div class="empty" style="padding:8px">Nothing waiting.</div>';
@@ -1281,10 +1281,13 @@
     if (!selDraft && window.innerWidth > 760) selDraft = drafts[0].id;
     list.innerHTML = drafts.map((d) => `<button type="button" class="ap-item ${d.id === selDraft ? 'on' : ''}" data-id="${d.id}"><div class="top"><span class="kind ${d.status === 'Failed' ? 'failed' : ''}">${esc(d.kind || 'Email')}${d.sendFrom === 'Chris' ? ' · Chris inbox' : ''}${d.status === 'Failed' ? ' · failed' : ''}</span><span class="age">${autoAt(d) ? `<span style="color:var(--accent)">auto ${autoAt(d)}</span>` : d.created ? since(d.created) : ''}</span></div><div class="who">${esc((d.brand || 'Brand') + (d.creator ? ' × ' + d.creator : ''))}</div><div class="subj">${esc(d.subject || '(no subject)')}</div></button>`).join('');
     list.querySelectorAll('.ap-item').forEach((b) => b.onclick = () => { selDraft = b.dataset.id; renderApprovals(); });
+    // A background refresh never redraws the email you're looking at, so your edits and cursor stay put
+    if (bg && $('apEdit').dataset.id === selDraft) return;
     renderEditor();
   }
   function renderEditor() {
     const d = drafts.find((x) => x.id === selDraft);
+    $('apEdit').dataset.id = d ? d.id : '';
     $('ap').classList.toggle('editing', !!d);
     if (!d) { $('apEdit').innerHTML = ''; return; }
     const att = d.attach && d.attach !== 'None' ? `<div class="attach">📎 ${d.attach === 'Script PDF' ? 'Script PDF, made from the video page when you send' : 'Invoice from the deal'}</div>` : '';
@@ -1345,7 +1348,7 @@
     loadApprovals();
     if (chatId) openChat(chatId);
   }
-  setInterval(() => { if (document.visibilityState === 'visible') { if (view === 'overview' || view === 'hq' || view === 'deals') loadHQ(); if (view === 'flow') loadFlow(); loadApprovals(); } }, 60000);
+  setInterval(() => { if (document.visibilityState === 'visible') { if (view === 'overview' || view === 'hq' || view === 'deals') loadHQ(); if (view === 'flow') loadFlow(); loadApprovals(true); } }, 60000);
   setInterval(() => { if (hqData) { $('upd').textContent = 'updated ' + since(hqData.generated_at); renderLive(); } }, 20000);
   boot();
 </script>
