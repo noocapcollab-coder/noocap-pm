@@ -458,12 +458,26 @@
   header .dot { box-shadow: none; }
   /* ---------- Revenue ---------- */
   #revenue { overflow-y: auto; }
-  .rv-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .rv-stats { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .rv-up .urow { display: grid; grid-template-columns: 96px minmax(0, 1.3fr) auto 90px 110px; gap: 12px; align-items: center; padding: 9px 0; border-top: 1px solid var(--line3); font-size: 13px; width: 100%; background: none; border-left: 0; border-right: 0; border-bottom: 0; color: inherit; text-align: left; }
+  .rv-up .urow:hover .who b { text-decoration: underline; }
+  .rv-up .urow .dt { white-space: nowrap; font: 12px 'IBM Plex Mono', monospace; color: var(--muted); }
+  .rv-up .urow .dt.late { color: var(--err); }
+  .rv-up .urow .who { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--soft); }
+  .rv-up .urow .who b { color: var(--text); font-weight: 600; }
+  .rv-up .urow .n { font: 500 13px 'IBM Plex Mono', monospace; text-align: right; }
+  .rv-up .urow .c { font: 12px 'IBM Plex Mono', monospace; color: var(--muted); text-align: right; }
+  .rv-up h2 { flex-wrap: wrap; row-gap: 2px; }
+  .rv-up .grp { font: 600 11px 'IBM Plex Sans', sans-serif; letter-spacing: .06em; color: var(--dim); text-transform: uppercase; padding: 12px 0 4px; }
+  .tag.info { background: var(--info-soft); color: var(--info); }
+  .rvrow .amt.fromdeal { border-color: rgba(120,150,255,.35); }
+  .rvrow .amt em { font: normal 11px 'IBM Plex Sans', sans-serif; color: var(--info); white-space: nowrap; }
   .rv-tools { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
   .rv-tools input[type=search], .rv-tools select { min-height: 38px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line2); background: var(--panel); color: var(--text); font: 13px 'IBM Plex Sans', sans-serif; }
   .rv-tools input[type=search] { flex: 1; min-width: 180px; max-width: 320px; }
   .rv-tools .cfilter { display: flex; }
   .rv-tools .cfilter button { border-radius: 999px; }
+  .rv-up + .rv-grid { margin-top: 20px; }
   .rv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
   .rvc { cursor: pointer; text-align: left; }
   .rvc:hover { border-color: var(--line2); background: #171a1f; }
@@ -497,7 +511,8 @@
   .rv-back { align-self: flex-start; background: none; border: 0; color: var(--muted); padding: 0; font-size: 13px; }
   .rv-back:hover { color: var(--text); }
   @media (max-width: 1100px) { .rv-cols { grid-template-columns: minmax(0, 1fr); } }
-  @media (max-width: 760px) { .rv-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rv-hero { grid-template-columns: minmax(0, 1fr); } .rv-tools input[type=search] { max-width: none; } }
+  @media (max-width: 1240px) { .rv-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 760px) { .rv-up .urow { grid-template-columns: 84px minmax(0, 1fr) 72px; } .rv-up .urow .tag, .rv-up .urow .c { display: none; } .rv-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rv-hero { grid-template-columns: minmax(0, 1fr); } .rv-tools input[type=search] { max-width: none; } }
   /* ---------- responsive ---------- */
   @media (max-width: 1240px) {
     .ostats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -786,11 +801,19 @@
       && (rvCycle === 'all' || v.cycle === rvCycle)
       && (!q || `${v.title} ${v.brand} ${v.creator}`.toLowerCase().includes(q)));
   }
+  const monthEnd = () => { const d = new Date((rv.today || todayISO()) + 'T00:00:00Z'); return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 0)).toISOString().slice(0, 10); };
+  const monthName = () => new Date((rv.today || todayISO()) + 'T00:00:00Z').toLocaleDateString('en-GB', { month: 'long', timeZone: 'UTC' });
   function rvTotals(xs) {
-    const t = { gross: 0, cut: 0, cutIn: 0, cutOwed: 0, unpaid: 0, unpaidN: 0, noAmt: 0, paidN: 0 };
+    const t = { gross: 0, cut: 0, cutIn: 0, cutOwed: 0, unpaid: 0, unpaidN: 0, noAmt: 0, paidN: 0, exp: 0, expN: 0, expCut: 0, later: 0, laterN: 0 };
+    const end = monthEnd();
     for (const v of xs) {
       if (v.paid) { t.gross += v.amount || 0; t.paidN++; const c = rvCut(v); t.cut += c; if (v.cutCollected) t.cutIn += c; else t.cutOwed += c; }
-      else { t.unpaidN++; t.unpaid += v.amount || 0; if (!v.amount) t.noAmt++; }
+      else {
+        t.unpaidN++; t.unpaid += v.amount || 0; if (!v.amount) t.noAmt++;
+        const e = v.deal && v.deal.expected;
+        if (e && e <= end) { t.exp += v.amount || 0; t.expN++; t.expCut += (v.amount || 0) * rvPct(v.creator) / 100; }
+        else if (v.deal) { t.later += v.amount || 0; t.laterN++; }
+      }
     }
     return t;
   }
@@ -807,6 +830,7 @@
     const stat = (l, v, s, st = '') => `<div class="ostat"><span class="l">${l}</span><span class="v" style="${st}">${v}</span><span class="s">${s}</span></div>`;
     $('rvStats').innerHTML = stat('Gross received', usd(t.gross), `${plural(t.paidN, 'paid video')}`)
       + stat('NOOCAP cut', usd(t.cut), `${usd(t.cutIn)} collected · ${usd(t.cutOwed)} owed`, t.cutOwed ? '' : '')
+      + stat(`Expected in ${monthName()}`, usd(t.exp), `${plural(t.expN, 'agreed deal')} · ${usd(t.expCut)} NOOCAP cut${t.later ? ` · ${usd(t.later)} later` : ''}`, t.exp ? 'color:var(--accent)' : '')
       + stat('Awaiting payment', usd(t.unpaid), `${plural(t.unpaidN, 'video')}${t.noAmt ? ` · ${t.noAmt} with no amount` : ''}`, t.unpaid ? 'color:var(--warn)' : '')
       + stat('Collected', logged ? Math.round(t.gross / logged * 100) + '%' : '—', 'of the money logged so far');
     if (rvSel && !rv.creators.includes(rvSel) && !rv.videos.some((v) => v.creator === rvSel)) rvSel = null;
@@ -815,14 +839,25 @@
     const names = [...new Set([...rv.creators, ...rv.videos.map((v) => v.creator)])];
     const cards = names.map((c) => ({ c, xs: xs.filter((v) => v.creator === c) })).filter((g) => g.xs.length || (!rvQ && rvFilter === 'all' && rvCycle === 'all' && rv.cuts[g.c] != null))
       .map((g) => ({ ...g, t: rvTotals(g.xs) })).sort((a, z) => z.t.gross - a.t.gross || z.t.unpaid - a.t.unpaid || a.c.localeCompare(z.c));
-    $('rvBody').innerHTML = cards.length ? `<div class="rv-grid">${cards.map(({ c, xs: vs, t: ct }) => {
+    const up = xs.filter((v) => !v.paid && v.deal).sort((a, z) => (a.deal.expected || '9999').localeCompare(z.deal.expected || '9999'));
+    const end = monthEnd(), today = rv.today || todayISO();
+    const urow = (v) => { const e = v.deal.expected; const pct = rvPct(v.creator);
+      return `<button type="button" class="urow" data-open="${esc(v.creator)}"><span class="dt ${e && e < today ? 'late' : ''}">${e ? (e < today ? 'late ' : '') + shortDate(e) : 'no date'}</span><span class="who"><b>${esc(v.deal.brand || v.brand)}</b> × ${esc(v.creator)}</span><span class="tag info">${esc(v.deal.stage)}</span><span class="n">${v.amount ? usd(v.amount) : '—'}</span><span class="c">${pct && v.amount ? usd(v.amount * pct / 100) + ' cut' : 'no cut'}</span></button>`; };
+    const upNow = up.filter((v) => v.deal.expected && v.deal.expected <= end), upLater = up.filter((v) => !(v.deal.expected && v.deal.expected <= end));
+    const upHtml = rvFilter === 'paid' || !up.length ? '' : `<section class="ocard rv-up" style="gap:0"><h2 style="margin-bottom:4px">Coming in from brand deals <small>agreed rates from Brand Deals · pay date is the invoice due date, or about ${21} days after posting</small></h2>
+        ${upNow.length ? `<div class="grp">By end of ${monthName()} · ${usd(upNow.reduce((n, v) => n + (v.amount || 0), 0))}</div>${upNow.map(urow).join('')}` : ''}
+        ${upLater.length ? `<details${upNow.length ? '' : ' open'}><summary class="grp" style="cursor:pointer">Later or no date yet · ${upLater.length} · ${usd(upLater.reduce((n, v) => n + (v.amount || 0), 0))}</summary>${upLater.map(urow).join('')}</details>` : ''}
+      </section>`;
+    $('rvBody').innerHTML = upHtml + (cards.length ? `<div class="rv-grid">${cards.map(({ c, xs: vs, t: ct }) => {
       const tot = ct.gross + ct.unpaid;
       return `<div class="ocard rvc" data-c="${esc(c)}" role="button" tabindex="0"><h2>${esc(c)} <label class="cutin" title="NOOCAP cut %">cut <input type="number" min="0" max="100" step="1" value="${rvPct(c)}" data-cut="${esc(c)}" aria-label="${esc(c)} cut percent">%</label></h2>
         <div class="big">${usd(ct.gross)}<small>received · ${plural(vs.length, 'sponsor video')}</small></div>
         <div class="bar"><div style="width:${tot ? Math.round(ct.gross / tot * 100) : 0}%"></div></div>
+        ${ct.exp ? `<div class="mline"><span>Expected in ${monthName()}</span><b style="color:var(--accent)">${usd(ct.exp)}</b></div>` : ''}
         <div class="mline"><span>Awaiting payment</span><b style="color:${ct.unpaid ? 'var(--warn)' : 'inherit'}">${usd(ct.unpaid)}</b></div>
         <div class="mline"><span>NOOCAP cut${rvPct(c) ? '' : ' (no cut set)'}</span><b>${usd(ct.cut)}${ct.cutOwed ? ` <span style="color:var(--warn);font-weight:500">· ${usd(ct.cutOwed)} owed</span>` : ''}</b></div>
-      </div>`; }).join('')}</div>` : '<div class="empty">No sponsor videos match.</div>';
+      </div>`; }).join('')}</div>` : '<div class="empty">No sponsor videos match.</div>');
+    $('rvBody').querySelectorAll('.urow').forEach((el) => el.onclick = () => { rvSel = el.dataset.open; renderRevenue(); $('revenue').scrollTop = 0; });
     $('rvBody').querySelectorAll('.rvc').forEach((el) => {
       el.onclick = (e) => { if (e.target.closest('.cutin')) return; rvSel = el.dataset.c; renderRevenue(); $('revenue').scrollTop = 0; };
       el.onkeydown = (e) => { if (e.key === 'Enter' && !e.target.closest('.cutin')) el.onclick(e); };
@@ -845,13 +880,15 @@
     const unpaid = xs.filter((v) => !v.paid), paid = xs.filter((v) => v.paid).sort((a, z) => String(z.paidDate).localeCompare(String(a.paidDate)));
     const row = (v) => {
       const i = rv.videos.indexOf(v);
-      const tag = v.orphan ? '<span class="tag muted">revenue row</span>' : `<span class="tag ${/posted/i.test(v.status) ? 'go' : ''}">${esc(String(v.status).replace(/^\d+-\s*/, ''))}</span>`;
-      const amt = `<label class="amt"><span>$</span><input type="number" min="0" step="50" inputmode="decimal" value="${v.amount ?? ''}" placeholder="amount" data-amt="${i}" aria-label="Amount USD"></label>`;
+      const tag = (v.dealOnly ? '<span class="tag muted">no video card yet</span>' : v.orphan ? '<span class="tag muted">revenue row</span>' : `<span class="tag ${/posted/i.test(v.status) ? 'go' : ''}">${esc(String(v.status).replace(/^\d+-\s*/, ''))}</span>`)
+        + (v.deal ? `<a class="tag info" href="${esc(v.deal.url)}" target="_blank" rel="noopener" title="Open the brand deal">deal · ${esc(v.deal.stage)}</a>` : '');
+      const amt = `<label class="amt ${v.amountFrom === 'deal' ? 'fromdeal' : ''}"><span>$</span><input type="number" min="0" step="50" inputmode="decimal" value="${v.amount ?? ''}" placeholder="amount" data-amt="${i}" aria-label="Amount USD">${v.amountFrom === 'deal' ? '<em>from deal</em>' : ''}</label>`;
       const use = !v.amount && v.suggested ? `<button type="button" class="btn sm use" data-use="${i}">use ${usd(v.suggested)}</button>` : '';
       const ctl = v.paid
-        ? `${amt}<input type="date" value="${esc(v.paidDate || '')}" data-pd="${i}" aria-label="Paid on">${pct ? `<button type="button" class="btn sm ${v.cutCollected ? 'on' : ''}" data-cc="${i}">${v.cutCollected ? '✓ cut collected' : `collect ${usd(rvCut(v))} cut`}</button>` : ''}<button type="button" class="btn sm" data-unpaid="${i}">Undo paid</button>`
+        ? `${amt}<input type="date" value="${esc(v.paidDate || '')}" data-pd="${i}" aria-label="Paid on">${pct ? `<button type="button" class="btn sm ${v.cutCollected ? 'on' : ''}" data-cc="${i}">${v.cutCollected ? '✓ cut collected' : `collect ${usd(rvCut(v))} cut`}</button>` : ''}${v.paidFrom === 'deal' ? '<span class="tag info">paid per the deal</span>' : `<button type="button" class="btn sm" data-unpaid="${i}">Undo paid</button>`}`
         : `${amt}${use}<button type="button" class="btn sm pri" data-paid="${i}">Mark paid</button>`;
-      const sub = v.paid ? '' : v.invoiced ? `<div class="sub">invoice sent ${shortDate(v.invoiced)}</div>` : '';
+      const exp = !v.paid && v.deal && v.deal.expected ? `expected ${shortDate(v.deal.expected)}` : '';
+      const sub = v.paid ? '' : [v.invoiced ? `invoice sent ${shortDate(v.invoiced)}` : '', exp].filter(Boolean).length ? `<div class="sub">${[v.invoiced ? `invoice sent ${shortDate(v.invoiced)}` : '', exp].filter(Boolean).join(' · ')}</div>` : '';
       return `<div class="rvrow" data-row="${i}"><div class="top"><a href="${esc(v.link || v.revUrl || '#')}" target="_blank" rel="noopener" title="${esc(v.title)}">${esc(v.title)}</a>${tag}<span class="dt">${shortDate(v.date)}</span></div>${sub}<div class="ctl">${ctl}${v.revPageId ? `<button type="button" class="btn sm x" data-del="${i}" title="Remove revenue row">✕</button>` : ''}</div></div>`;
     };
     $('rvBody').innerHTML = `<div style="display:flex;flex-direction:column;gap:16px">
@@ -898,6 +935,9 @@
     if (fields.paid === false) v.paidDate = '';
     const rowEl = document.querySelector(`.rvrow[data-row="${rv.videos.indexOf(v)}"]`); if (rowEl) rowEl.classList.add('busy');
     const body = { action: 'set', ...fields };
+    // An amount filled from the deal (or a deal marked Paid) is written to the revenue row the first time it's saved
+    if (!('amount' in fields) && v.amount && (v.amountFrom === 'deal' || !v.revPageId)) body.amount = v.amount;
+    if (!('paid' in fields) && v.paidFrom === 'deal') { body.paid = true; body.paidDate = v.paidDate || todayISO(); }
     if (v.revPageId) body.revPageId = v.revPageId;
     else Object.assign(body, { link: v.link, title: v.title, creator: v.creator, brand: v.brand, date: v.date });
     try {
@@ -905,6 +945,8 @@
       const j = await r.json(); if (!r.ok) throw new Error(j.error || 'Failed');
       v.revPageId = j.revPageId; v.revUrl = j.revUrl || v.revUrl;
       if (v.amount) v.suggested = null;
+      if ('amount' in body) v.amountFrom = null;
+      if ('paid' in body) v.paidFrom = null;
     } catch (e) { Object.assign(v, before); alert('Not saved: ' + e.message); }
     renderRevenue();
   }
