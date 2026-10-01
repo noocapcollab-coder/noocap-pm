@@ -63,7 +63,7 @@ const SMALL_TALK = [
 function pickModel(question) {
   const q = question.toLowerCase();
   if (/^(deep|think|sonnet)\s*:/.test(q)) return 'Sonnet';
-  const heavy = /\b(why|analy[sz]e|analysis|compare|comparison|trend|forecast|predict|plan|strategy|strateg|should (we|i)|recommend|suggest|advice|advise|improve|summar(y|ise|ize)|brief|report|review|draft|write|email|message to|explain|breakdown|insight|what if|priorit)/;
+  const heavy = /\b(collect|owe|owed|outstanding|unpaid|payment|invoice|revenue|money|why|analy[sz]e|analysis|compare|comparison|trend|forecast|predict|plan|strategy|strateg|should (we|i)|recommend|suggest|advice|advise|improve|summar(y|ise|ize)|brief|report|review|draft|write|email|message to|explain|breakdown|insight|what if|priorit)/;
   const questionMarks = (question.match(/\?/g) || []).length;
   if (heavy.test(q) || question.length > 220 || questionMarks >= 2) return 'Sonnet';
   return 'Haiku';
@@ -81,6 +81,8 @@ What you know about the agency:
 - NOOCAP earns a percentage cut of each sponsor deal, set per creator in the Creator Cut table.
 
 How to answer:
+- When the question names a creator, every item in your answer must belong to that creator. Check the creator on each row before listing it, and never pad the answer with other creators' deals or with deals that are only in negotiation.
+- For payments to collect, money owed, unpaid or outstanding invoices, call money_to_collect (with the creator if one is named) and answer only from it: list what is invoiced and waiting, then what is posted but not invoiced, with amounts. Contracts or other promised sends are not payments.
 - The AGENCY SNAPSHOT below is the live dashboard: every creator's week and pipeline, today's and upcoming posts, late cards, editors, every brand deal and creator-inbox offer with its next step, Approvals, money, client revenue and automation health. Answer from it first. Call tools only for detail it doesn't hold (a script or brief's text, a deal's full email history, older periods), and never say you have no record of something the snapshot lists.
 - Whenever a question names a brand, call find_brand first: it searches deals, creator-inbox leads, video cards, recent emails and drafts at once and tolerates spelling. Only say you have no record after find_brand finds nothing, and then say which spelling you searched.
 - For "any new brand deals / offers" questions, call both deals (stage Inbound or Negotiating, or recent) and leads.
