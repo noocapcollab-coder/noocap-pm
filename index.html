@@ -295,6 +295,10 @@
   .ap-edit .head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap; }
   .ap-edit .head h2 { font: 600 20px 'Space Grotesk', sans-serif; margin: 0; }
   .ap-edit .why { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+  .bfiles { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+  .bfile { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 9px; border: 1px solid var(--accent); color: var(--accent); background: var(--panel2); font: 500 13px 'IBM Plex Sans', sans-serif; text-decoration: none; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bfile.ghost { border-color: var(--line); color: var(--muted); }
+  .bfile:hover { filter: brightness(1.15); }
   .theirs { background: var(--panel2); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 10px; padding: 10px 14px; margin: 0 0 16px; }
   .theirs summary { cursor: pointer; font: 600 12px 'IBM Plex Sans', sans-serif; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
   .theirs pre { white-space: pre-wrap; word-break: break-word; font: 400 14px/1.55 'IBM Plex Sans', sans-serif; color: var(--text); margin: 8px 0 0; max-height: 280px; overflow: auto; }
@@ -1748,6 +1752,7 @@
       ${d.why ? `<div class="why">${esc(d.why.replace(/\s*\[(from|price):[^\]]+\]/g, ''))}</div>` : ''}
       ${d.sendFrom === 'Chris' ? '<div class="why" style="color:var(--accent)">Sends from Chris\'s collab inbox, in the brand\'s thread.</div>' : ''}
       ${d.error ? `<div class="why err">Last error: ${esc(d.error)}</div>` : ''}
+      ${(d.files || []).length || d.gmail ? `<div class="bfiles">${(d.files || []).map((f) => `<a class="bfile" href="${esc(f.url)}" target="_blank" rel="noopener" download="${esc(f.name)}">⬇ ${esc(f.name)}</a>`).join('')}${d.gmail ? `<a class="bfile ghost" href="${esc(d.gmail)}" target="_blank" rel="noopener">Open thread in Gmail ↗</a>` : ''}</div>` : ''}
       ${d.context ? `<details class="theirs" open><summary>Latest message in the thread</summary><pre>${esc(d.context)}</pre></details>` : ''}
       <div class="field"><label>To</label><input id="fTo" value="${esc(d.to)}" placeholder="brand@company.com"></div>
       <div class="field"><label>Cc</label><input id="fCc" value="${esc(d.cc)}"></div>
