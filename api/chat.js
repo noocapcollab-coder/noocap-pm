@@ -4,6 +4,7 @@
 // Returns: { reply, usage: { input, output, cost_usd }, tools_used: [...], model }
 // Tip: start a message with "deep:" to force the stronger model.
 import { TOOL_DEFS, runTool, todayIST, DS, loadMemory, memoryBlock } from '../lib/tools.js';
+import { buildSnapshot } from '../lib/snapshot.js';
 import { notion, clearCache } from '../lib/notion.js';
 import { proposeUpdate, proposeCreate, executeProposal, PROPOSE_TOOL, CREATE_TOOL } from '../lib/actions.js';
 import { createDraft } from '../lib/outbox.js';
@@ -80,6 +81,9 @@ What you know about the agency:
 - NOOCAP earns a percentage cut of each sponsor deal, set per creator in the Creator Cut table.
 
 How to answer:
+- The AGENCY SNAPSHOT below is the live dashboard: every creator's week and pipeline, today's and upcoming posts, late cards, editors, every brand deal and creator-inbox offer with its next step, Approvals, money, client revenue and automation health. Answer from it first. Call tools only for detail it doesn't hold (a script or brief's text, a deal's full email history, older periods), and never say you have no record of something the snapshot lists.
+- Whenever a question names a brand, call find_brand first: it searches deals, creator-inbox leads, video cards, recent emails and drafts at once and tolerates spelling. Only say you have no record after find_brand finds nothing, and then say which spelling you searched.
+- For "any new brand deals / offers" questions, call both deals (stage Inbound or Negotiating, or recent) and leads.
 - For how many videos were edited or delivered, and editor performance, use editor_output (Video Intake has the full history). Use team_activity only for board status moves and Shreya's scripts. Never say data is missing before checking the right tool.
 - For anything about a posting date ("what's posting today", "this week", "tomorrow"), call pipeline with post_date_from and post_date_to set to those dates and no other filters. Every card with that POST DATE counts, on every creator board, whatever its stage; list each one with its creator, stage and whether it is ready (10- To Post or 11- Ready) or already posted.
 - Always call a tool for facts. Never guess numbers, names, dates or statuses, and never do arithmetic yourself: quote the totals the tools return. If you need a figure the tools do not give, say so.
@@ -100,7 +104,7 @@ Memory and learning:
 - If asked what you remember, list the PM MEMORY items with their ids.
 - Writing style rules, always: never stack three parallel items for rhythm, never use "it's not X, it's Y" contrasts, and never write chains of short choppy fragments. Write in flowing sentences joined with and, but, so, which, because.`;
 
-async function callClaude(messages, channel, memoryText, modelId) {
+async function callClaude(messages, channel, memoryText, modelId, snapshot = '') {
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
@@ -115,6 +119,7 @@ async function callClaude(messages, channel, memoryText, modelId) {
       system: [
         { type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } },
         { type: 'text', text: memoryText, cache_control: { type: 'ephemeral' } },
+        ...(snapshot ? [{ type: 'text', text: snapshot, cache_control: { type: 'ephemeral' } }] : []),
         { type: 'text', text: `Today is ${todayIST()} (IST). Channel: ${channel}.${channel === 'whatsapp' ? ' Keep it short and use WhatsApp formatting: *bold*, no markdown headers or tables.' : ''}` },
       ],
       tools: ALL_TOOLS.map((t, i) => (i === ALL_TOOLS.length - 1 ? { ...t, cache_control: { type: 'ephemeral' } } : t)),
@@ -235,9 +240,11 @@ export default async function handler(req, res) {
   } catch (e) {
     memoryText = 'PM MEMORY could not be loaded right now (' + String(e.message).slice(0, 120) + '). Answer without it and do not claim to remember anything.';
   }
+  // The whole dashboard, so the PM knows every page without picking a tool first
+  const snapshot = await buildSnapshot().catch((e) => `AGENCY SNAPSHOT unavailable right now (${String(e.message).slice(0, 100)}). Use the tools.`);
   try {
     for (let turn = 0; turn < MAX_TURNS; turn++) {
-      const out = await callClaude(messages, channel, memoryText, model.id);
+      const out = await callClaude(messages, channel, memoryText, model.id, snapshot);
       const u = out.usage || {};
       usage.input += u.input_tokens || 0;
       usage.output += u.output_tokens || 0;
