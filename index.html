@@ -1344,7 +1344,8 @@
       else running.push({ group: c.title, brand: x.brand, creator: x.creator, tag: x.tag, tone: x.tone, amount: x.amount, url: x.url });
     }
     for (const x of leads) {
-      const needs = x.status === 'New offer' || /^Needs you/i.test(x.next || '');
+      // Only while the brand wrote last: once we've replied, the question is answered and the PM follows up on its own
+      const needs = x.weOwe && (x.status === 'New offer' || /^Needs you/i.test(x.next || ''));
       // A reply is already written for it: send the person straight to the draft instead of the Notion row
       const dr = drafts.find((d) => d.status === 'Draft' && d.leadId && d.leadId.replace(/-/g, '') === String(x.id || '').replace(/-/g, ''));
       if (needs && dr) act.push({ kind: 'DRAFT READY', tone: 'ai', brand: x.brand, creator: x.creator, why: (shortWhy(x.next) || 'their latest email') + ' · reply drafted, review and send', amount: x.budget || x.ask, btn: 'Review', draft: dr.id, url: x.url });
