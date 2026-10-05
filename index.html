@@ -1345,7 +1345,10 @@
     }
     for (const x of leads) {
       const needs = x.status === 'New offer' || /^Needs you/i.test(x.next || '');
-      if (needs) act.push({ kind: x.status === 'New offer' ? 'NEW OFFER' : 'YOUR CALL', tone: 'warn', brand: x.brand, creator: x.creator, why: shortWhy(x.next) || 'the PM left the reply to you', amount: x.budget || x.ask, btn: 'Open', url: x.url });
+      // A reply is already written for it: send the person straight to the draft instead of the Notion row
+      const dr = drafts.find((d) => d.status === 'Draft' && d.leadId && d.leadId.replace(/-/g, '') === String(x.id || '').replace(/-/g, ''));
+      if (needs && dr) act.push({ kind: 'DRAFT READY', tone: 'ai', brand: x.brand, creator: x.creator, why: (shortWhy(x.next) || 'their latest email') + ' · reply drafted, review and send', amount: x.budget || x.ask, btn: 'Review', draft: dr.id, url: x.url });
+      else if (needs) act.push({ kind: x.status === 'New offer' ? 'NEW OFFER' : 'YOUR CALL', tone: 'warn', brand: x.brand, creator: x.creator, why: (shortWhy(x.next) || 'the PM left the reply to you') + ' · reply being drafted', amount: x.budget || x.ask, btn: 'Open', url: x.url });
       else running.push({ group: { neg: 'Leads · negotiating', wait: 'Leads · PM following up', locked: 'Leads · handed over' }[x.col] || 'Leads', brand: x.brand, creator: x.creator, tag: x.weOwe ? 'brand replied' : x.days != null ? `${x.days}d quiet` : x.status, tone: '', amount: x.budget || x.ask, url: x.url });
     }
     const apprCount = drafts.filter((d) => d.status === 'Draft' && (boardCreator === 'All' || d.creator === boardCreator)).length;
