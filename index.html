@@ -1750,7 +1750,7 @@
     $('apEdit').dataset.id = d ? d.id : '';
     $('ap').classList.toggle('editing', !!d);
     if (!d) { $('apEdit').innerHTML = ''; return; }
-    const att = d.attach && d.attach !== 'None' ? `<div class="attach">📎 ${d.attach === 'Script PDF' ? 'Script PDF, made from the video page when you send' : 'Invoice from the deal'}</div>` : '';
+    const att = d.attach && d.attach !== 'None' ? `<div class="attach">📎 ${d.attach === 'Script PDF' ? 'Script PDF, made from the video page' : 'Invoice from the deal'} <button type="button" class="btn sm ghost" id="aPreview" style="margin-left:10px">View attachment</button><span class="state" id="aPrevState"></span></div>` : '';
     $('apEdit').innerHTML = `
       <button type="button" class="iconbtn back" id="apBack" style="margin-bottom:12px">← All emails</button>
       <div class="head"><span class="kind ${d.status === 'Failed' ? 'failed' : ''}">${esc(d.kind || 'Email')}</span><h2>${esc((d.brand || 'Brand') + (d.creator ? ' × ' + d.creator : ''))}</h2></div>
@@ -1767,6 +1767,17 @@
       ${d.replyTo ? '<div class="why" style="margin:10px 0 0">Goes out as a reply in the existing email thread.</div>' : ''}
       <div class="ap-actions"><button type="button" class="btn sm" id="aSend">Send</button><button type="button" class="btn sm ghost" id="aSave">Save</button><button type="button" class="btn sm danger" id="aRej">Reject</button>${d.context ? '<button type="button" class="btn sm ghost" id="aBrief" title="File the brand message above as a brief: makes the video card and pings the script writer">Send to script writer</button>' : ''}<span class="state" id="aState"></span></div>`;
     $('apBack').onclick = () => { selDraft = null; renderApprovals(); };
+    if ($('aPreview')) $('aPreview').onclick = async () => {
+      // Opens the file exactly as it will go out (the script is rebuilt from the video page right now)
+      const win = window.open('', '_blank'); $('aPrevState').textContent = ' building…';
+      try {
+        const r = await fetch('/api/outbox?preview=' + encodeURIComponent(d.id), { headers: headers() });
+        if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || 'Could not build it');
+        const url = URL.createObjectURL(await r.blob());
+        if (win) win.location = url; else window.open(url, '_blank');
+        $('aPrevState').textContent = '';
+      } catch (e) { if (win) win.close(); $('aPrevState').textContent = ' ' + e.message; }
+    };
     const val = () => ({ id: d.id, to: $('fTo').value, cc: $('fCc').value, subject: $('fSubj').value, body: $('fBody').value });
     const btns = () => $('apEdit').querySelectorAll('.ap-actions button');
     const act = async (action, label) => {
