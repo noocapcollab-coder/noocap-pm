@@ -1,5 +1,6 @@
 // Approvals for emails to brands.
 // GET  /api/outbox                          -> drafts waiting (and failed sends)
+// GET  /api/outbox?preview=<draft id>       -> the attachment (script PDF / invoice) exactly as it will be sent
 // POST /api/outbox { id, action: 'send' | 'save' | 'reject', subject?, body?, to?, cc? }
 // POST /api/outbox { id, action: 'send-brief' } -> file the brand message on this draft as a brief for the script writer
 // POST /api/outbox { action: 'script-changes', brand, creator, feedback } -> re-send brand script notes to the script writer on Discord
@@ -12,6 +13,14 @@ export default async function handler(req, res) {
   if (!checkAuth(req)) return res.status(401).json({ error: 'Wrong or missing password' });
   res.setHeader('Cache-Control', 'no-store');
   try {
+    if (req.method === 'GET' && req.query?.preview) {
+      // The attachment exactly as it will be sent, shown in the browser
+      const { previewAttachment } = await import('../lib/outbox.js');
+      const a = await previewAttachment(String(req.query.preview));
+      res.setHeader('Content-Type', a.mimeType || 'application/pdf');
+      res.setHeader('Content-Disposition', `inline; filename="${String(a.filename || 'attachment.pdf').replace(/"/g, '')}"`);
+      return res.status(200).send(Buffer.from(a.data, 'base64'));
+    }
     if (req.method === 'GET') return res.status(200).json({ drafts: await listDrafts() });
     if (req.method !== 'POST') return res.status(405).json({ error: 'GET or POST' });
     const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
