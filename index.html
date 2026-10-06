@@ -1709,8 +1709,9 @@
   const AUTO_FROM = Date.parse('2026-09-29T14:00:00Z');
   const LEAD_AUTO_FROM = Date.parse('2026-10-03T00:00:00+05:30');
   const autoAt = (d) => {
-    const lead = ['Quote', 'Counter', 'Close deal', 'Lead follow-up'].includes(d.kind);
-    if (!(d.kind === 'Follow-up' || (lead && Date.now() >= LEAD_AUTO_FROM)) || d.status !== 'Draft' || !d.created || Date.parse(d.created) < AUTO_FROM) return '';
+    // Only these send themselves (replies to brands always wait for you), and never one flagged "Needs you"
+    const auto = d.kind === 'Follow-up' || d.kind === 'Script' || (d.kind === 'Lead follow-up' && Date.now() >= LEAD_AUTO_FROM);
+    if (!auto || /^Needs you/i.test(d.why || '') || d.status !== 'Draft' || !d.created || Date.parse(d.created) < AUTO_FROM) return '';
     const t = Date.parse(d.created) + 30 * 60e3;
     return t <= Date.now() ? 'sending' : new Date(t).toLocaleTimeString('en-IN', { hour: 'numeric', minute: '2-digit' });
   };
