@@ -3,7 +3,7 @@
 // then subscribe to the "messages" field.
 import {
   waOn, personByNumber, loadState, saveState, sendText, sendButtons, sendDigest, markRead, validSignature,
-  draftCard, draftButtons, windowOpen,
+  draftCard, draftButtons, windowOpen, sentId,
 } from '../lib/whatsapp.js';
 
 export const config = { api: { bodyParser: false } };
@@ -93,8 +93,12 @@ async function handleMessage(m) {
   await saveState(st); // saved first, so a retry from Meta is recognised
   markRead(m.id).catch(() => {});
 
+  // A swipe-reply to one of our draft cards: whatever they typed is the change to make to that email
+  const quoted = m.context?.id ? st.messages.find((x) => x.wid && x.wid === m.context.id && x.draft) : null;
+
   try {
     if (button) await onButton(st, button);
+    else if (quoted && text) await applyEdit(st, quoted.draft, text);
     else await onText(st, text);
   } catch (e) {
     await say(st, `⚠️ ${String(e.message || e).slice(0, 300)}`).catch(() => {});
@@ -117,6 +121,17 @@ async function onButton(st, id) {
     const { rejectDraft } = await import('../lib/outbox.js');
     await rejectDraft(arg);
     await say(st, '✖️ Rejected. Nothing was sent.');
+    return;
+  }
+  if (action === 'edit') {
+    const { readDraftById } = await import('../lib/outbox.js');
+    const d = await readDraftById(arg);
+    if (d.status !== 'Draft') { await say(st, `This email is already ${String(d.status || 'gone').toLowerCase()}.`); return; }
+    await sendText(st.person.number, `*${d.subject}*\nTo: ${d.to || '⚠️ no address yet'}${d.cc ? '\nCc: ' + d.cc : ''}\n\n${d.body}`);
+    const ask = "✏️ What should change? Tell me in your own words (e.g. \"say the videos stay up for 30 days\") or paste the whole new email. Send *cancel* to leave it as it is.";
+    await sendText(st.person.number, ask);
+    // Saved on the chat itself (the webhook keeps no memory between messages), so the next message is read as the change
+    st.messages.push({ role: 'assistant', content: ask, meta: 'edit-ask', draft: arg, at: new Date().toISOString() });
     return;
   }
   if (action === 'full') {
@@ -144,6 +159,13 @@ async function resolvePending(st, confirm) {
 
 async function onText(st, text) {
   const t = text.trim();
+  // Waiting for the change to a draft: our last message asked for it (after tapping Edit), within the hour
+  const lastOurs = [...st.messages].reverse().find((x) => x.role === 'assistant');
+  if (lastOurs?.meta === 'edit-ask' && lastOurs.draft && Date.now() - Date.parse(lastOurs.at) < 36e5) {
+    if (/^(cancel|stop|never ?mind|leave it)\.?$/i.test(t)) { await say(st, 'OK, the draft is unchanged.'); return; }
+    await applyEdit(st, lastOurs.draft, t);
+    return;
+  }
   if (/^(show me|pending|what'?s pending|digest|inbox|approvals?)\??$/i.test(t)) { await sendDigest(st); return; }
   if (/^(yes|y|confirm|go ahead|do it)\.?!?$/i.test(t) && st.messages.some((x) => x.role === 'assistant' && x.pending?.length && !x.resolved)) { await resolvePending(st, true); return; }
   if (/^(no|cancel|stop|don'?t)\.?!?$/i.test(t) && st.messages.some((x) => x.role === 'assistant' && x.pending?.length && !x.resolved)) { await resolvePending(st, false); return; }
@@ -164,4 +186,35 @@ async function onText(st, text) {
     await sendText(st.person.number, reply);
   }
   st.messages.push({ role: 'assistant', content: reply, meta: r.data.meta || 'wa', at: new Date().toISOString(), ...(pending.length ? { pending } : {}) });
+}
+
+// Change a draft from WhatsApp: a short instruction is applied by the PM, a full pasted email replaces the body.
+// The new version is saved in Approvals and shown again with Send / Edit / Reject, nothing goes out until Send.
+async function applyEdit(st, id, instruction) {
+  const { readDraftById, saveDraft } = await import('../lib/outbox.js');
+  const d = await readDraftById(id);
+  if (d.status !== 'Draft') { await say(st, `That email is already ${String(d.status || 'gone').toLowerCase()}, so I left it.`); return; }
+  const { claude, HAIKU } = await import('../lib/claude.js');
+  const sys = [
+    'You edit an email draft for a creator-management agency. You get the current draft and a message from a teammate.',
+    'If the message is a complete email meant to replace the draft, return it cleaned up. Otherwise apply exactly what they asked, change nothing else, and keep the same greeting and sign-off.',
+    'Never invent prices, dates, usage terms or commitments the teammate did not give. Keep the tone natural and plain, the way a person writes.',
+    'Avoid stacking three parallel items for rhythm, avoid "it\'s not X, it\'s Y" phrasing, and avoid strings of short choppy fragments.',
+    'Return only the email body, with no subject line and no commentary.',
+  ].join(' ');
+  const r = await claude({
+    model: HAIKU, max_tokens: 1500, system: sys,
+    messages: [{ role: 'user', content: `CURRENT DRAFT:\n${d.body}\n\nTEAMMATE'S MESSAGE:\n${instruction}` }],
+  });
+  const body = (r.content || []).map((c) => c.text || '').join('').trim();
+  if (!body) { await say(st, "⚠️ I couldn't rewrite that one. Try saying the change another way, or edit it in Approvals."); return; }
+  await saveDraft(id, { body });
+  try {
+    const { log } = await import('../lib/briefs.js');
+    await log({ event: `Draft edited on WhatsApp: ${d.subject || id}`, outcome: 'Rule', email: { messageId: '' }, details: `By ${st.person.name}: ${instruction}`.slice(0, 1800), area: 'System', source: 'WhatsApp' });
+  } catch { /* the log is best-effort */ }
+  const card = draftCard({ ...d, body });
+  await sendText(st.person.number, `Updated ✏️\n\n${body}`);
+  const sent = await sendButtons(st.person.number, `Send this version to ${d.to || '(no address yet)'}?`, draftButtons(id));
+  st.messages.push({ role: 'assistant', content: card.slice(0, 1500), meta: 'draft', draft: id, wid: sentId(sent), at: new Date().toISOString() });
 }
