@@ -2,7 +2,7 @@
 // Header: x-hook-secret. Body: one email or { emails: [...] }
 // n8n labels an email PM-seen unless the action is 'error', so errors are retried on the next sweep.
 // After 3 failed tries the PM gives up, tells Harsh on Discord, and returns 'gave_up' so the retries stop.
-import { handleLeadEmail } from '../lib/leads.js';
+import { handleLeadEmail, labelPlan } from '../lib/leads.js';
 import { hookAllowed, HOOK_ERROR } from '../lib/hook.js';
 import { notion } from '../lib/notion.js';
 import { DS } from '../lib/tools.js';
@@ -36,8 +36,10 @@ async function recordError(email, err) {
 }
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
+  if (!['POST', 'GET'].includes(req.method)) return res.status(405).json({ error: 'GET or POST' });
   if (!hookAllowed(req)) return res.status(401).json({ error: HOOK_ERROR });
+  // GET /api/leads?labels=1&days=30 -> which Gmail label each lead thread should carry (n8n "PM · Label sync")
+  if (req.method === 'GET') return res.status(200).json(await labelPlan({ days: Math.min(90, Number(req.query?.days) || 30) }));
   const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
   const emails = Array.isArray(body.emails) ? body.emails : [body];
   const results = [];
