@@ -94,12 +94,13 @@ async function handleMessage(m) {
   markRead(m.id).catch(() => {});
 
   // A swipe-reply to one of our draft cards: whatever they typed is the change to make to that email
-  const quoted = m.context?.id ? st.messages.find((x) => x.wid && x.wid === m.context.id && x.draft) : null;
+  const replyTo = m.context?.id ? st.messages.find((x) => x.wid && x.wid === m.context.id) : null;
+  const quoted = replyTo?.draft ? replyTo : null;
 
   try {
     if (button) await onButton(st, button);
     else if (quoted && text) await applyEdit(st, quoted.draft, text);
-    else await onText(st, text);
+    else await onText(st, text, replyTo?.content || '');
   } catch (e) {
     await say(st, `⚠️ ${String(e.message || e).slice(0, 300)}`).catch(() => {});
   }
@@ -157,7 +158,7 @@ async function resolvePending(st, confirm) {
   await say(st, r.data.reply || r.data.error || 'Done.');
 }
 
-async function onText(st, text) {
+async function onText(st, text, quotedText = '') {
   const t = text.trim();
   // Waiting for the change to a draft: our last message asked for it (after tapping Edit), within the hour
   const lastOurs = [...st.messages].reverse().find((x) => x.role === 'assistant');
@@ -169,6 +170,11 @@ async function onText(st, text) {
   if (/^(show me|pending|what'?s pending|digest|inbox|approvals?)\??$/i.test(t)) { await sendDigest(st); return; }
   if (/^(yes|y|confirm|go ahead|do it)\.?!?$/i.test(t) && st.messages.some((x) => x.role === 'assistant' && x.pending?.length && !x.resolved)) { await resolvePending(st, true); return; }
   if (/^(no|cancel|stop|don'?t)\.?!?$/i.test(t) && st.messages.some((x) => x.role === 'assistant' && x.pending?.length && !x.resolved)) { await resolvePending(st, false); return; }
+
+  // "What's the email you drafted?": show the draft itself with its buttons, for the brand they named or the alert they replied to
+  if (/\b(draft(ed)?|e-?mail|mail|reply|wrote|written)\b/i.test(t) && !/\b(draft|write|send|make|create)\s+(a|an|me|new)\b/i.test(t)) {
+    if (await showDrafts(st, `${t}\n${quotedText}`)) return;
+  }
 
   // A question or instruction: the same brain as the dashboard chat, with this chat's recent history
   const history = st.messages
@@ -217,4 +223,22 @@ async function applyEdit(st, id, instruction) {
   await sendText(st.person.number, `Updated ✏️\n\n${body}`);
   const sent = await sendButtons(st.person.number, `Send this version to ${d.to || '(no address yet)'}?`, draftButtons(id));
   st.messages.push({ role: 'assistant', content: card.slice(0, 1500), meta: 'draft', draft: id, wid: sentId(sent), at: new Date().toISOString() });
+}
+
+// Drafts waiting in Approvals whose brand is named in the message (or in the alert they replied to): each one in full,
+// then Send / Edit / Reject. Returns false when nothing matches, so the question goes to the PM brain instead.
+async function showDrafts(st, text) {
+  const { listDrafts } = await import('../lib/outbox.js');
+  const key = (x) => String(x || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const hay = key(text);
+  const drafts = (await listDrafts()).filter((d) => d.status === 'Draft');
+  const hits = drafts.filter((d) => { const b = key(d.brand); return b.length >= 3 && hay.includes(b); });
+  if (!hits.length) return false;
+  for (const d of hits.slice(0, 3)) {
+    await sendText(st.person.number, `*${d.subject}*\nTo: ${d.to || '⚠️ no address yet'}${d.cc ? '\nCc: ' + d.cc : ''}${d.why ? `\n_${String(d.why).replace(/\s*\[[^\]]*\]/g, '').slice(0, 220)}_` : ''}\n\n${d.body}`);
+    const sent = await sendButtons(st.person.number, `${d.brand || 'This'} draft · send it, change it, or drop it?`, draftButtons(d.id));
+    st.messages.push({ role: 'assistant', content: draftCard(d).slice(0, 1500), meta: 'draft', draft: d.id, wid: sentId(sent), at: new Date().toISOString() });
+  }
+  if (hits.length > 3) await say(st, `…and ${hits.length - 3} more for that brand in Approvals.`);
+  return true;
 }
