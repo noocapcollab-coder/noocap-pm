@@ -3,7 +3,7 @@
 // then subscribe to the "messages" field.
 import {
   waOn, personByNumber, loadState, saveState, sendText, sendButtons, sendDigest, markRead, validSignature,
-  draftCard, draftButtons, windowOpen, sentId,
+  draftCard, draftButtons, windowOpen, sentId, catchUp,
 } from '../lib/whatsapp.js';
 
 export const config = { api: { bodyParser: false } };
@@ -89,6 +89,10 @@ async function handleMessage(m) {
   else if (m.type === 'button') button = m.button?.payload || 'DIGEST';
   else text = `(sent a ${m.type})`;
   const label = button ? `[tapped ${m.interactive?.button_reply?.title || m.button?.text || button}]` : text;
+  // The chat had gone quiet for over 24 hours, so alerts in between could not be delivered: after answering,
+  // send what they missed. Measured from the last thing we managed to send them.
+  const wasClosed = !windowOpen(st);
+  const lastSent = [...st.messages].reverse().find((x) => x.role === 'assistant' && x.at)?.at || null;
   st.messages.push({ role: 'user', content: label, wa: m.id, at, ...(button ? { meta: 'button' } : {}) });
   await saveState(st); // saved first, so a retry from Meta is recognised
   markRead(m.id).catch(() => {});
@@ -103,6 +107,9 @@ async function handleMessage(m) {
     else await onText(st, text, replyTo?.content || '');
   } catch (e) {
     await say(st, `⚠️ ${String(e.message || e).slice(0, 300)}`).catch(() => {});
+  }
+  if (wasClosed && lastSent && !(button === 'DIGEST' || /^(show me|pending|digest)/i.test(text.trim()))) {
+    try { await catchUp(st, lastSent); } catch (e) { console.error('WhatsApp catch-up failed', e.message); }
   }
   await saveState(st);
 }
