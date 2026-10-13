@@ -512,6 +512,63 @@
   .rvrow .btn.sm.x:hover { color: var(--err); }
   .rvrow.busy { opacity: .55; pointer-events: none; }
   .rvrow .sub { font-size: 12px; color: var(--muted); }
+  /* Revenue, sponsor-board layout: NOOCAP cut banner, creator cards with avatars, month pills and a payments snapshot */
+  .rv-stats .ostat .v { font: 600 24px/1.1 'Space Grotesk', sans-serif; font-variant-numeric: tabular-nums; }
+  .rv-cutbox { border: 1px solid rgba(120,150,255,.28); border-radius: var(--r); padding: 18px 20px; background: linear-gradient(135deg, rgba(120,150,255,.13), rgba(120,150,255,.04) 60%, var(--panel)); display: flex; flex-direction: column; gap: 12px; }
+  .rv-cutbox .hd { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .rv-cutbox .bdg { display: flex; align-items: center; gap: 10px; font: 600 15px 'Space Grotesk', sans-serif; }
+  .rv-cutbox .bdg .b { width: 26px; height: 26px; border-radius: 7px; background: var(--info); color: #121836; display: grid; place-items: center; font: 700 13px 'Space Grotesk', sans-serif; }
+  .rv-cutbox .big { font: 600 30px/1 'Space Grotesk', sans-serif; color: var(--info); text-align: right; font-variant-numeric: tabular-nums; }
+  .rv-cutbox .cap { font-size: 12px; text-align: right; margin-top: 4px; }
+  .rv-cutbox .cap .got { color: var(--info); } .rv-cutbox .cap .due { color: var(--warn); }
+  .rv-cutbox .split { display: flex; gap: 6px 18px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+  .rv-cutbox .split b { color: var(--text); font: 600 13px 'IBM Plex Mono', monospace; margin-right: 4px; }
+  .rv-tools { margin-top: 2px; }
+  .rv-tools input[type=search] { max-width: none; }
+  .rv-pills { margin: 0; padding: 3px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); gap: 2px; }
+  .rv-pills button { border: 0; background: none; border-radius: 7px; padding: 6px 12px; }
+  .rv-pills button.on { background: var(--panel3); color: var(--text); }
+  .rv-av { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; font: 700 13px 'Space Grotesk', sans-serif; color: #10131a; flex: none; }
+  .rvc2 { border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); padding: 16px; display: flex; flex-direction: column; gap: 14px; cursor: pointer; text-align: left; color: inherit; min-width: 0; }
+  .rvc2:hover, .rvc2:focus-visible { border-color: var(--line2); background: #171a1f; }
+  .rvc2 .ch { display: flex; align-items: center; gap: 12px; }
+  .rvc2 .cn { font: 600 15px 'Space Grotesk', sans-serif; }
+  .rvc2 .cm { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .rvc2 .chev { margin-left: auto; color: var(--dim); font-size: 18px; }
+  .rvc2 .recv { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .rvc2 .recv b { font: 600 26px/1 'Space Grotesk', sans-serif; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .rvc2 .recv span { font-size: 12px; color: var(--muted); }
+  .rvc2 .sub2 { font-size: 12px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; }
+  .rvc2 .sub2 .w { color: var(--warn); }
+  .rvc2 .cutrow { display: flex; align-items: center; justify-content: space-between; gap: 8px; border-top: 1px solid var(--line3); padding-top: 12px; }
+  .rvc2 .cutrow .cv { font: 600 14px 'IBM Plex Mono', monospace; color: var(--info); }
+  .rv-mpills { display: flex; gap: 6px; flex-wrap: wrap; }
+  .rv-mpills button { background: var(--panel); border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 5px 12px; font: 600 12px 'Space Grotesk', sans-serif; }
+  .rv-mpills button.on { background: var(--accent-soft); border-color: rgba(61,214,176,.4); color: var(--accent); }
+  .rv-hero2 { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); flex-wrap: wrap; }
+  .rv-hero2 .rv-av { width: 52px; height: 52px; border-radius: 14px; font-size: 17px; }
+  .rv-hero2 .big { font: 600 32px/1 'Space Grotesk', sans-serif; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .rv-hero2 .cap { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .rv-hero2 .line { font-size: 13px; color: var(--soft); margin-top: 6px; }
+  .rv-hero2 .line b { color: var(--info); } .rv-hero2 .line .net { color: var(--accent); font-weight: 600; }
+  .rv-hero2 .cutin { margin-left: auto; }
+  .rv-snap { border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); padding: 14px 18px; display: flex; flex-direction: column; gap: 10px; }
+  .rv-snap .row1 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+  .rv-snap .row1 b { color: var(--text); } .rv-snap .row1 .cf { color: var(--info); }
+  .rv-snap select { min-height: 34px; padding: 0 10px; border-radius: 8px; border: 1px solid var(--line2); background: var(--panel2); color: var(--text); font: 13px 'IBM Plex Sans', sans-serif; }
+  .rv-snap .sl { display: grid; grid-template-columns: minmax(0, 1fr) auto auto auto; gap: 14px; align-items: center; padding: 7px 0; border-top: 1px solid var(--line3); font-size: 13px; }
+  .rv-snap .sl .t { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .rv-snap .sl .d { color: var(--muted); font: 12px 'IBM Plex Mono', monospace; }
+  .rv-snap .sl .c { color: var(--info); font: 12px 'IBM Plex Mono', monospace; }
+  .rv-snap .sl .a { font: 600 13px 'IBM Plex Mono', monospace; text-align: right; }
+  .rv-cols .colhd { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 6px; }
+  .rv-cols .colhd h2 { margin: 0; display: flex; align-items: center; gap: 8px; }
+  .rv-cols .colhd .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .rv-cols .await .colhd .dot { background: var(--warn); }
+  .rv-cols .colhd .tot { font: 600 18px 'Space Grotesk', sans-serif; font-variant-numeric: tabular-nums; }
+  .rv-cols .paid .colhd .tot { color: var(--accent); } .rv-cols .await .colhd .tot { color: var(--warn); }
+  @media (max-width: 900px) { .rv-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rv-stats .ostat:last-child { grid-column: 1 / -1; } }
+  @media (max-width: 560px) { .rv-snap .sl { grid-template-columns: minmax(0, 1fr) auto; } .rv-snap .sl .d, .rv-snap .sl .c { display: none; } .rv-cutbox .big, .rv-cutbox .cap { text-align: left; } }
   .rv-back { align-self: flex-start; background: none; border: 0; color: var(--muted); padding: 0; font-size: 13px; }
   .rv-back:hover { color: var(--text); }
   @media (max-width: 1100px) { .rv-cols { grid-template-columns: minmax(0, 1fr); } }
@@ -685,11 +742,11 @@
   <div class="ov-head">
     <div><div class="k" id="rvWhen">Sponsor money · from Notion</div><h1>Client revenue</h1></div>
   </div>
-  <section class="ostats rv-stats" id="rvStats" aria-label="Revenue totals"><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div></section>
-  <div class="rv-tools">
-    <input type="search" id="rvQ" placeholder="Search video, brand or creator" autocomplete="off" aria-label="Search">
-    <div class="cfilter" id="rvF"></div>
-    <select id="rvCyc" aria-label="Month"></select>
+  <section class="ostats rv-stats" id="rvStats" aria-label="Revenue totals"><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div></section>
+  <div id="rvCutBox"></div>
+  <div class="rv-tools" id="rvTools">
+    <input type="search" id="rvQ" placeholder="Search creator or video…" autocomplete="off" aria-label="Search">
+    <div class="cfilter rv-pills" id="rvF"></div>
   </div>
   <div id="rvBody"><div class="skel"></div><div class="skel"></div></div>
   <div class="err" id="rvErr" style="font-size:13px"></div>
@@ -887,53 +944,59 @@
     }
     return t;
   }
+  const RV_COLORS = { Brad: '#60a5fa', Chris: '#fbbf24', Lindsay: '#f472b6', Duncan: '#a78bfa', Valeri: '#34d399', Emtech: '#fb7185', Dmytro: '#4ade80', Dymtro: '#4ade80', Jonathan: '#f0abfc', Nicole: '#38bdf8', 'David Iya': '#fdba74' };
+  const rvAv = (c) => `<span class="rv-av" style="background:${RV_COLORS[c] || '#94a3b8'}">${esc(String(c).replace(/[^A-Za-z]/g, '').slice(0, 2).toUpperCase())}</span>`;
+  const mLabel = (m) => m === 'none' ? 'No date' : new Date(m + '-01T00:00:00Z').toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' });
   function renderRevenue() {
     if (!rv) return;
     $('rvWhen').textContent = `Sponsor money · from Notion · updated ${since(rv.generated_at)}`;
-    // Months come from real dates (paid date for paid money, post or expected date otherwise), not the boards' free-typed Month labels
-    const mcount = {};
-    for (const v of rv.videos) { const m = rvMonth(v); mcount[m] = (mcount[m] || 0) + 1; }
-    const months = Object.keys(mcount).sort((a, z) => a === 'none' ? 1 : z === 'none' ? -1 : z.localeCompare(a));
-    if (rvCycle !== 'all' && !mcount[rvCycle]) rvCycle = 'all';
-    const mLabel = (m) => m === 'none' ? 'No date' : new Date(m + '-01T00:00:00Z').toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' });
-    $('rvCyc').innerHTML = `<option value="all">All months · ${rv.videos.length}</option>` + months.map((m) => `<option value="${m}" ${m === rvCycle ? 'selected' : ''}>${mLabel(m)} · ${mcount[m]}</option>`).join('');
     $('rvF').innerHTML = [['all', 'All'], ['unpaid', 'Unpaid'], ['paid', 'Paid']].map(([k, l]) => `<button type="button" class="${k === rvFilter ? 'on' : ''}" data-f="${k}">${l}</button>`).join('');
     $('rvF').querySelectorAll('button').forEach((b) => b.onclick = () => { rvFilter = b.dataset.f; renderRevenue(); });
-    const xs = rvVisible(), t = rvTotals(xs);
+    const all = rv.videos, t = rvTotals(all);
+    // Pipeline = every amount logged but not paid yet; pending deals = the part of it that's an agreed brand deal
+    const deals = all.filter((v) => !v.paid && v.deal && v.amount), dealsAmt = deals.reduce((n, v) => n + v.amount, 0);
     const logged = t.gross + t.unpaid;
-    const stat = (l, v, s, st = '') => `<div class="ostat"><span class="l">${l}</span><span class="v" style="${st}">${v}</span><span class="s">${s}</span></div>`;
-    $('rvStats').innerHTML = stat('Gross received', usd(t.gross), `${plural(t.paidN, 'paid video')}`)
-      + stat('NOOCAP cut', usd(t.cut), `${usd(t.cutIn)} collected · ${usd(t.cutOwed)} owed`, t.cutOwed ? '' : '')
-      + stat(`Expected in ${monthName()}`, usd(t.exp), `${plural(t.expN, 'agreed deal')} · ${usd(t.expCut)} NOOCAP cut${t.later ? ` · ${usd(t.later)} later` : ''}`, t.exp ? 'color:var(--accent)' : '')
-      + stat('Awaiting payment', usd(t.unpaid), `${plural(t.unpaidN, 'video')}${t.noAmt ? ` · ${t.noAmt} with no amount` : ''}`, t.unpaid ? 'color:var(--warn)' : '')
-      + stat('Collected', logged ? Math.round(t.gross / logged * 100) + '%' : '—', 'of the money logged so far');
-    if (rvSel && !rv.creators.includes(rvSel) && !rv.videos.some((v) => v.creator === rvSel)) rvSel = null;
-    if (rvSel) return renderRvCreator(xs.filter((v) => v.creator === rvSel));
-    // Creator grid
-    const names = [...new Set([...rv.creators, ...rv.videos.map((v) => v.creator)])];
-    const cards = names.map((c) => ({ c, xs: xs.filter((v) => v.creator === c) })).filter((g) => g.xs.length || (!rvQ && rvFilter === 'all' && rvCycle === 'all' && rv.cuts[g.c] != null))
-      .map((g) => ({ ...g, t: rvTotals(g.xs) })).sort((a, z) => z.t.gross - a.t.gross || z.t.unpaid - a.t.unpaid || a.c.localeCompare(z.c));
+    const stat = (l, v, sub, st = '') => `<div class="ostat"><span class="l">${l}</span><span class="v" style="${st}">${v}</span><span class="s">${sub}</span></div>`;
+    $('rvStats').innerHTML = stat('Gross received', usd(t.gross), plural(t.paidN, 'paid video'), 'color:var(--accent)')
+      + stat('NOOCAP cut', usd(t.cut), `${usd(t.cutIn)} collected · ${usd(t.cutOwed)} owed`, 'color:var(--info)')
+      + stat('Pipeline', usd(t.unpaid), `${plural(t.unpaidN, 'video')} not paid yet${t.noAmt ? ` · ${t.noAmt} with no amount` : ''}`, 'color:var(--warn)')
+      + stat('Pending deals', usd(dealsAmt), `${plural(deals.length, 'agreed deal')}${t.exp ? ` · ${usd(t.exp)} due in ${monthName()}` : ''}`, 'color:#38bdf8')
+      + stat('Collected', logged ? Math.round(t.gross / logged * 100) + '%' : '—', 'of the money logged so far', 'color:var(--accent)');
+    if (rvSel && !rv.creators.includes(rvSel) && !all.some((v) => v.creator === rvSel)) rvSel = null;
+    $('rvCutBox').style.display = $('rvTools').style.display = rvSel ? 'none' : '';
+    if (rvSel) return renderRvCreator(all.filter((v) => v.creator === rvSel));
+
+    // NOOCAP cut banner: everything we've earned, collected vs still owed, and who it came from
+    const names = [...new Set([...rv.creators, ...all.map((v) => v.creator)])];
+    const per = names.map((c) => ({ c, t: rvTotals(all.filter((v) => v.creator === c)) }));
+    const earners = per.filter((x) => x.t.cut > 0).sort((a, z) => z.t.cut - a.t.cut);
+    $('rvCutBox').innerHTML = `<div class="rv-cutbox"><div class="hd"><div class="bdg"><span class="b">N</span>NOOCAP cut</div>
+      <div><div class="big">${usd(t.cut)}</div><div class="cap"><span class="got">${usd(t.cutIn)} collected</span> · <span class="due">${usd(t.cutOwed)} owed</span></div></div></div>
+      <div class="split">${earners.length ? earners.map((x) => `<span><b>${usd(x.t.cut)}</b>${esc(x.c)}</span>`).join('') : 'No collected revenue yet.'}</div></div>`;
+
+    // Creator cards
+    const xs = rvVisible();
+    const cards = names.map((c) => ({ c, vs: xs.filter((v) => v.creator === c), t: rvTotals(all.filter((v) => v.creator === c)) }))
+      .filter((g) => g.vs.length || (!rvQ && rvFilter === 'all' && rv.cuts[g.c] != null))
+      .sort((a, z) => z.t.gross - a.t.gross || z.t.unpaid - a.t.unpaid || a.c.localeCompare(z.c));
     const up = xs.filter((v) => !v.paid && v.deal).sort((a, z) => (a.deal.expected || '9999').localeCompare(z.deal.expected || '9999'));
     const end = monthEnd(), today = rv.today || todayISO();
     const urow = (v) => { const e = v.deal.expected; const pct = rvPct(v.creator);
       return `<button type="button" class="urow" data-open="${esc(v.creator)}"><span class="dt ${e && e < today ? 'late' : ''}">${e ? (e < today ? 'late ' : '') + shortDate(e) : 'no date'}</span><span class="who"><b>${esc(v.deal.brand || v.brand)}</b> × ${esc(v.creator)}</span><span class="tag info">${esc(v.deal.stage)}</span><span class="n">${v.amount ? usd(v.amount) : '—'}</span><span class="c">${pct && v.amount ? usd(v.amount * pct / 100) + ' cut' : 'no cut'}</span></button>`; };
     const upNow = up.filter((v) => v.deal.expected && v.deal.expected <= end), upLater = up.filter((v) => !(v.deal.expected && v.deal.expected <= end));
-    const upHtml = rvFilter === 'paid' || !up.length ? '' : `<section class="ocard rv-up" style="gap:0"><h2 style="margin-bottom:4px">Coming in from brand deals <small>agreed rates from Brand Deals · pay date is the invoice due date, or about ${21} days after posting</small></h2>
+    const upHtml = rvFilter === 'paid' || !up.length ? '' : `<section class="ocard rv-up" style="gap:0;margin-top:20px"><h2 style="margin-bottom:4px">Coming in from brand deals <small>agreed rates from Brand Deals · pay date is the invoice due date, or about 21 days after posting</small></h2>
         ${upNow.length ? `<div class="grp">By end of ${monthName()} · ${usd(upNow.reduce((n, v) => n + (v.amount || 0), 0))}</div>${upNow.map(urow).join('')}` : ''}
         ${upLater.length ? `<details${upNow.length ? '' : ' open'}><summary class="grp" style="cursor:pointer">Later or no date yet · ${upLater.length} · ${usd(upLater.reduce((n, v) => n + (v.amount || 0), 0))}</summary>${upLater.map(urow).join('')}</details>` : ''}
       </section>`;
-    $('rvBody').innerHTML = upHtml + (cards.length ? `<div class="rv-grid">${cards.map(({ c, xs: vs, t: ct }) => {
-      const tot = ct.gross + ct.unpaid;
-      return `<div class="ocard rvc" data-c="${esc(c)}" role="button" tabindex="0"><h2>${esc(c)} <label class="cutin" title="NOOCAP cut %">cut <input type="number" min="0" max="100" step="1" value="${rvPct(c)}" data-cut="${esc(c)}" aria-label="${esc(c)} cut percent">%</label></h2>
-        <div class="big">${usd(ct.gross)}<small>received · ${plural(vs.length, 'sponsor video')}</small></div>
-        <div class="bar"><div style="width:${tot ? Math.round(ct.gross / tot * 100) : 0}%"></div></div>
-        ${ct.exp ? `<div class="mline"><span>Expected in ${monthName()}</span><b style="color:var(--accent)">${usd(ct.exp)}</b></div>` : ''}
-        <div class="mline"><span>Awaiting payment</span><b style="color:${ct.unpaid ? 'var(--warn)' : 'inherit'}">${usd(ct.unpaid)}</b></div>
-        <div class="mline"><span>NOOCAP cut${rvPct(c) ? '' : ' (no cut set)'}</span><b>${usd(ct.cut)}${ct.cutOwed ? ` <span style="color:var(--warn);font-weight:500">· ${usd(ct.cutOwed)} owed</span>` : ''}</b></div>
-      </div>`; }).join('')}</div>` : '<div class="empty">No sponsor videos match.</div>');
-    $('rvBody').querySelectorAll('.urow').forEach((el) => el.onclick = () => { rvSel = el.dataset.open; renderRevenue(); $('revenue').scrollTop = 0; });
-    $('rvBody').querySelectorAll('.rvc').forEach((el) => {
-      el.onclick = (e) => { if (e.target.closest('.cutin')) return; rvSel = el.dataset.c; renderRevenue(); $('revenue').scrollTop = 0; };
+    $('rvBody').innerHTML = (cards.length ? `<div class="rv-grid">${cards.map(({ c, vs, t: ct }) => `<div class="rvc2" data-c="${esc(c)}" role="button" tabindex="0">
+        <div class="ch">${rvAv(c)}<div><div class="cn">${esc(c)}</div><div class="cm">${plural(vs.length, 'sponsor video')}</div></div><span class="chev" aria-hidden="true">›</span></div>
+        <div class="recv"><b>${usd(ct.gross)}</b><span>gross received</span></div>
+        ${ct.unpaid || ct.cutOwed ? `<div class="sub2">${ct.unpaid ? `<span class="w">${usd(ct.unpaid)} awaiting</span>` : ''}${ct.cutOwed ? `<span>${usd(ct.cutOwed)} cut owed</span>` : ''}</div>` : ''}
+        <div class="cutrow"><label class="cutin" title="NOOCAP cut %">NOOCAP cut <input type="number" min="0" max="100" step="1" value="${rvPct(c)}" data-cut="${esc(c)}" aria-label="${esc(c)} cut percent">%</label><span class="cv">${usd(ct.cut)}</span></div>
+      </div>`).join('')}</div>` : '<div class="empty">No sponsor videos match.</div>') + upHtml;
+    $('rvBody').querySelectorAll('.urow').forEach((el) => el.onclick = () => { rvSel = el.dataset.open; rvCycle = 'all'; renderRevenue(); $('revenue').scrollTop = 0; });
+    $('rvBody').querySelectorAll('.rvc2').forEach((el) => {
+      el.onclick = (e) => { if (e.target.closest('.cutin')) return; rvSel = el.dataset.c; rvCycle = 'all'; renderRevenue(); $('revenue').scrollTop = 0; };
       el.onkeydown = (e) => { if (e.key === 'Enter' && !e.target.closest('.cutin')) el.onclick(e); };
     });
     bindCutInputs();
@@ -949,8 +1012,14 @@
       renderRevenue();
     });
   }
-  function renderRvCreator(xs) {
-    const c = rvSel, pct = rvPct(c), t = rvTotals(xs);
+  let rvSnap = '';
+  function renderRvCreator(mine) {
+    const c = rvSel, pct = rvPct(c);
+    // Month pills from real dates (paid date for paid money, post or expected date otherwise)
+    const mcount = {}; for (const v of mine) { const m = rvMonth(v); mcount[m] = (mcount[m] || 0) + 1; }
+    const months = Object.keys(mcount).sort((a, z) => a === 'none' ? 1 : z === 'none' ? -1 : z.localeCompare(a));
+    if (rvCycle !== 'all' && !mcount[rvCycle]) rvCycle = 'all';
+    const xs = mine.filter((v) => rvCycle === 'all' || rvMonth(v) === rvCycle), t = rvTotals(xs);
     const unpaid = xs.filter((v) => !v.paid), paid = xs.filter((v) => v.paid).sort((a, z) => String(z.paidDate).localeCompare(String(a.paidDate)));
     const row = (v) => {
       const i = rv.videos.indexOf(v);
@@ -965,19 +1034,29 @@
       const sub = v.paid ? '' : [v.invoiced ? `invoice sent ${shortDate(v.invoiced)}` : '', exp].filter(Boolean).length ? `<div class="sub">${[v.invoiced ? `invoice sent ${shortDate(v.invoiced)}` : '', exp].filter(Boolean).join(' · ')}</div>` : '';
       return `<div class="rvrow" data-row="${i}"><div class="top"><a href="${esc(v.link || v.revUrl || '#')}" target="_blank" rel="noopener" title="${esc(v.title)}">${esc(v.title)}</a>${tag}<span class="dt">${shortDate(v.date)}</span></div>${sub}<div class="ctl">${ctl}${v.revPageId ? `<button type="button" class="btn sm x" data-del="${i}" title="Remove revenue row">✕</button>` : ''}</div></div>`;
     };
+    // Payments snapshot: what came in during one month, with the cut on each
+    const payMonths = [...new Set(mine.filter((v) => v.paid && v.paidDate).map((v) => v.paidDate.slice(0, 7)))].sort().reverse();
+    if (!payMonths.includes(rvSnap)) rvSnap = payMonths[0] || '';
+    const snapPaid = mine.filter((v) => v.paid && v.paidDate && v.paidDate.slice(0, 7) === rvSnap).sort((a, z) => z.paidDate.localeCompare(a.paidDate));
+    const snapGross = snapPaid.reduce((n, v) => n + (v.amount || 0), 0), snapCut = snapPaid.reduce((n, v) => n + rvCut(v), 0);
+    const snap = payMonths.length ? `<div class="rv-snap"><div class="row1"><select id="rvSnapSel" aria-label="Payment month">${payMonths.map((m) => `<option value="${m}" ${m === rvSnap ? 'selected' : ''}>${mLabel(m)}</option>`).join('')}</select>
+        <span><b>${snapPaid.length}</b> payment${snapPaid.length === 1 ? '' : 's'} · <b>${usd(snapGross)}</b> received · <span class="cf">${usd(snapCut)} NOOCAP cut</span></span></div>
+        ${snapPaid.map((v) => `<div class="sl"><span class="t" title="${esc(v.title)}">${esc(v.title)}</span><span class="d">${shortDate(v.paidDate)}</span><span class="c">${pct}% · ${usd(rvCut(v))}</span><span class="a">${usd(v.amount || 0)}</span></div>`).join('')}</div>`
+      : '<div class="rv-snap"><div class="row1">No payments received yet.</div></div>';
     $('rvBody').innerHTML = `<div style="display:flex;flex-direction:column;gap:16px">
       <button type="button" class="rv-back" id="rvBack">← All creators</button>
-      <div class="ov-head" style="align-items:center"><h1 style="font-size:24px;margin:0">${esc(c)}</h1><label class="cutin" style="margin-left:auto">NOOCAP cut <input type="number" min="0" max="100" step="1" value="${pct}" data-cut="${esc(c)}" aria-label="Cut percent">%</label></div>
-      <div class="rv-hero">
-        <div class="ostat"><span class="l">Gross received</span><span class="v">${usd(t.gross)}</span><span class="s">${plural(t.paidN, 'paid video')}</span></div>
-        <div class="ostat"><span class="l">NOOCAP cut · ${pct}%</span><span class="v">${usd(t.cut)}</span><span class="s">${usd(t.cutIn)} collected · ${usd(t.cutOwed)} owed</span></div>
-        <div class="ostat"><span class="l">${esc(c)} keeps</span><span class="v">${usd(t.gross - t.cut)}</span><span class="s">after the cut</span></div>
-      </div>
+      ${months.length > 1 ? `<div class="rv-mpills" id="rvMonths"><button type="button" data-m="all" class="${rvCycle === 'all' ? 'on' : ''}">All · ${mine.length}</button>${months.map((m) => `<button type="button" data-m="${m}" class="${m === rvCycle ? 'on' : ''}">${mLabel(m)} · ${mcount[m]}</button>`).join('')}</div>` : ''}
+      <div class="rv-hero2">${rvAv(c)}<div><div class="big">${usd(t.gross)}</div><div class="cap">${esc(c)} · ${rvCycle === 'all' ? 'all time' : mLabel(rvCycle)} · gross received</div>
+        <div class="line">NOOCAP cut <b>${usd(t.cut)}</b> (${pct}%) · ${usd(t.cutIn)} collected, ${usd(t.cutOwed)} owed · creator net <span class="net">${usd(t.gross - t.cut)}</span></div></div>
+        <label class="cutin">NOOCAP cut <input type="number" min="0" max="100" step="1" value="${pct}" data-cut="${esc(c)}" aria-label="Cut percent">%</label></div>
+      ${snap}
       <div class="rv-cols">
-        <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Awaiting payment <small>${unpaid.length} · ${usd(t.unpaid)}</small></h2>${unpaid.map(row).join('') || '<div class="empty">Nothing waiting.</div>'}</section>
-        <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Paid <small>${paid.length} · ${usd(t.gross)}</small></h2>${paid.map(row).join('') || '<div class="empty">Nothing paid yet.</div>'}</section>
+        <section class="ocard paid" style="gap:0"><div class="colhd"><h2><span class="dot"></span>Paid <small>${plural(paid.length, 'video')}</small></h2><span class="tot">${usd(t.gross)}</span></div>${paid.map(row).join('') || '<div class="empty">No payments in this period.</div>'}</section>
+        <section class="ocard await" style="gap:0"><div class="colhd"><h2><span class="dot"></span>Awaiting payment <small>${plural(unpaid.length, 'video')}</small></h2><span class="tot">${usd(t.unpaid)}</span></div>${unpaid.map(row).join('') || '<div class="empty">Nothing outstanding.</div>'}</section>
       </div></div>`;
-    $('rvBack').onclick = () => { rvSel = null; renderRevenue(); };
+    if ($('rvSnapSel')) $('rvSnapSel').onchange = () => { rvSnap = $('rvSnapSel').value; renderRevenue(); };
+    document.querySelectorAll('#rvMonths [data-m]').forEach((b) => b.onclick = () => { rvCycle = b.dataset.m; renderRevenue(); });
+    $('rvBack').onclick = () => { rvSel = null; rvCycle = 'all'; renderRevenue(); };
     bindCutInputs();
     const body = $('rvBody'), V = (el, k) => rv.videos[+el.dataset[k]];
     body.querySelectorAll('[data-amt]').forEach((el) => {
@@ -1025,7 +1104,6 @@
     renderRevenue();
   }
   $('rvQ').oninput = () => { rvQ = $('rvQ').value; renderRevenue(); };
-  $('rvCyc').onchange = () => { rvCycle = $('rvCyc').value; renderRevenue(); };
 
   // =====================================================================
   // Runs: every automation run, live (polls every 5s while the page is open)
