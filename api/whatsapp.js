@@ -3,7 +3,7 @@
 // then subscribe to the "messages" field.
 import {
   waOn, personByNumber, loadState, saveState, sendText, sendButtons, sendDigest, markRead, validSignature,
-  draftCard, draftButtons, windowOpen, sentId, catchUp,
+  draftCard, draftButtons, windowOpen, sentId, catchUp, flushPending,
 } from '../lib/whatsapp.js';
 
 export const config = { api: { bodyParser: false } };
@@ -92,7 +92,7 @@ async function handleMessage(m) {
   // The chat had gone quiet for over 24 hours, so alerts in between could not be delivered: after answering,
   // send what they missed. Measured from the last thing we managed to send them.
   const wasClosed = !windowOpen(st);
-  const lastSent = [...st.messages].reverse().find((x) => x.role === 'assistant' && x.at)?.at || null;
+  const lastSent = [...st.messages].reverse().find((x) => x.role === 'assistant' && x.at && x.meta !== 'pending-doc')?.at || null;
   st.messages.push({ role: 'user', content: label, wa: m.id, at, ...(button ? { meta: 'button' } : {}) });
   await saveState(st); // saved first, so a retry from Meta is recognised
   markRead(m.id).catch(() => {});
@@ -111,6 +111,8 @@ async function handleMessage(m) {
   if (wasClosed && lastSent && !(button === 'DIGEST' || /^(show me|pending|digest)/i.test(text.trim()))) {
     try { await catchUp(st, lastSent); } catch (e) { console.error('WhatsApp catch-up failed', e.message); }
   }
+  // Contracts that arrived while the chat was closed or quiet come through now, file and all
+  try { await flushPending(st); } catch (e) { console.error('WhatsApp pending contracts failed', e.message); }
   await saveState(st);
 }
 
@@ -168,7 +170,7 @@ async function resolvePending(st, confirm) {
 async function onText(st, text, quotedText = '') {
   const t = text.trim();
   // Waiting for the change to a draft: our last message asked for it (after tapping Edit), within the hour
-  const lastOurs = [...st.messages].reverse().find((x) => x.role === 'assistant');
+  const lastOurs = [...st.messages].reverse().find((x) => x.role === 'assistant' && x.meta !== 'pending-doc');
   if (lastOurs?.meta === 'edit-ask' && lastOurs.draft && Date.now() - Date.parse(lastOurs.at) < 36e5) {
     if (/^(cancel|stop|never ?mind|leave it)\.?$/i.test(t)) { await say(st, 'OK, the draft is unchanged.'); return; }
     await applyEdit(st, lastOurs.draft, t);
@@ -185,7 +187,7 @@ async function onText(st, text, quotedText = '') {
 
   // A question or instruction: the same brain as the dashboard chat, with this chat's recent history
   const history = st.messages
-    .filter((x) => !['morning', 'nudge'].includes(x.meta) && x.content)
+    .filter((x) => !['morning', 'nudge', 'pending-doc'].includes(x.meta) && x.content)
     .slice(-14)
     .map((x) => ({ role: x.role, content: x.content }));
   const { ask } = await import('../lib/ask.js');
