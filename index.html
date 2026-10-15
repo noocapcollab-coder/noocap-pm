@@ -523,6 +523,35 @@
   .ed-v a:hover { text-decoration: underline; }
   .ed-v .m { color: var(--muted); font: 12px 'IBM Plex Mono', monospace; }
   @media (max-width: 700px) { .ed-tot { grid-template-columns: 1fr 1fr; } .ed-v { grid-template-columns: minmax(0, 1fr) auto; } .ed-v .m.hide { display: none; } }
+  /* ---------- Leads + Active brands ---------- */
+  #leads, #active { overflow-y: auto; }
+  .ld-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: start; }
+  .ld-col { border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+  .ld-col h2 { font: 600 14px 'Space Grotesk', sans-serif; margin: 0 0 4px; display: flex; gap: 8px; align-items: baseline; }
+  .ld-col h2 small { color: var(--muted); font: 500 12px 'IBM Plex Mono', monospace; }
+  .ld-col .hint { font-size: 12px; color: var(--muted); margin-top: -4px; }
+  .ld-card { display: block; text-align: left; width: 100%; border: 1px solid var(--line3); background: var(--panel2); border-radius: 10px; padding: 10px 12px; color: inherit; }
+  .ld-card:hover { border-color: var(--line2); }
+  .ld-card .t { display: flex; gap: 8px; align-items: baseline; }
+  .ld-card .t b { font-size: 14px; } .ld-card .t span { color: var(--muted); font-size: 12px; }
+  .ld-card .t .d { margin-left: auto; font: 11px 'IBM Plex Mono', monospace; color: var(--dim); white-space: nowrap; }
+  .ld-card .o { font-size: 12px; color: var(--soft); margin-top: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ld-card .n { font-size: 12px; color: var(--muted); margin-top: 3px; }
+  .ld-card .n .dr { color: var(--accent); }
+  .ac-r { display: grid; grid-template-columns: minmax(0, 1.3fr) 170px minmax(0, 1.2fr) 90px; gap: 14px; align-items: center; padding: 12px 0; border-top: 1px solid var(--line3); font-size: 14px; }
+  .ac-r:first-child { border-top: 0; }
+  .ac-r .w { min-width: 0; }
+  .ac-r .w a { font-weight: 600; } .ac-r .w a:hover { text-decoration: underline; }
+  .ac-r .w span { color: var(--muted); }
+  .ac-r .w small { display: block; color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 2px; }
+  .steps { display: flex; gap: 4px; align-items: center; }
+  .steps i { flex: 1; height: 6px; border-radius: 3px; background: var(--panel3); }
+  .steps i.on { background: var(--accent); }
+  .steps i.cur { background: var(--warn); }
+  .ac-r .doing { font-size: 13px; } .ac-r .doing small { display: block; color: var(--muted); font-size: 12px; }
+  .ac-r .pd { font: 12px 'IBM Plex Mono', monospace; text-align: right; color: var(--muted); }
+  .ac-r .pd.late { color: var(--err); }
+  @media (max-width: 900px) { .ld-cols { grid-template-columns: 1fr; } .ac-r { grid-template-columns: minmax(0, 1fr) auto; } .ac-r .steps { grid-column: 1 / -1; order: 3; } }
   /* ---------- Invoices ---------- */
   #billing { overflow-y: auto; }
   .inv-tot { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -705,10 +734,11 @@
   <div class="brand"><b>NOOCAP</b><small>Agency HQ</small></div>
   <div class="grp">
     <button data-v="overview" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Today</button>
-    <button data-v="deals" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M9 7V5h6v2"/></svg>Brand deals <span class="badge" id="dealsBadge2" hidden>0</span></button>
+    <button data-v="leads" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>Leads <span class="badge" id="leadsBadge" hidden>0</span></button>
+    <button data-v="active" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M9 7V5h6v2"/><path d="M8 13l3 3 5-6"/></svg>Active brands <span class="badge" id="activeBadge" hidden>0</span></button>
     <button data-v="approvals" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Approvals <span class="badge" data-count hidden>0</span></button>
-    <button data-v="revenue" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M17 7.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2.2 2.7 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3"/></svg>Revenue</button>
     <button data-v="billing" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12h7M9 16h5"/></svg>Invoices <span class="badge" id="invBadge" hidden>0</span></button>
+    <button data-v="revenue" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M17 7.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2.2 2.7 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3"/></svg>Revenue</button>
   </div>
   <div class="grp">
     <div class="lbl">More</div>
@@ -761,6 +791,22 @@
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Each editor <small>click a row to see their videos</small></h2><div class="tscroll" id="edTable"><div class="skel"></div><div class="skel"></div></div></section>
   <div class="ofoot" style="font-size:12px;color:var(--muted)">Delivered = videos the editor submitted on the handoff form this month. Finished = signed off (To Post) or posted this month. Sent back = times the brand or team asked for changes. Working on now = cards in Editing or Review today.</div>
   <div class="err" id="edErr" style="font-size:13px"></div>
+</div></section>
+
+<!-- ============ Leads ============ -->
+<section class="view" id="leads"><div class="ov">
+  <div class="ov-head"><div><div class="k" id="ldWhen">Brands we're trying to close</div><h1>Leads</h1></div></div>
+  <div id="ldDecide"></div>
+  <div class="ld-cols" id="ldCols"><div class="skel"></div></div>
+  <div class="ofoot" id="ldFoot" style="font-size:12px;color:var(--muted)"></div>
+</div></section>
+
+<!-- ============ Active brands ============ -->
+<section class="view" id="active"><div class="ov">
+  <div class="ov-head"><div><div class="k" id="acWhen">Deals we've won, until they're paid</div><h1>Active brands</h1></div></div>
+  <div class="cfilter rv-pills" id="acF" style="align-self:flex-start"></div>
+  <section class="ocard" style="gap:0"><div id="acList"><div class="skel"></div><div class="skel"></div></div></section>
+  <div class="ofoot" style="font-size:12px;color:var(--muted)">Steps: Brief · Script · Script OK · Filming &amp; editing · Video OK · Posted · Paid. Late = past the post date and not posted yet. Invoices and payments are on the Invoices tab.</div>
 </div></section>
 
 <!-- ============ Invoices ============ -->
@@ -874,7 +920,8 @@
 <nav class="tabbar" id="tabbar">
   <button data-v="overview" type="button"><span class="i">◎</span>Today</button>
   <button data-v="hq" type="button"><span class="i">▤</span>Schedule</button>
-  <button data-v="deals" type="button"><span class="i">▦</span>Deals</button>
+  <button data-v="leads" type="button"><span class="i">⌁</span>Leads</button>
+  <button data-v="active" type="button"><span class="i">▦</span>Active</button>
   <button data-v="revenue" type="button"><span class="i">$</span>Revenue</button>
   <button data-v="billing" type="button"><span class="i">🧾</span>Invoices</button>
   <button data-v="flow" type="button"><span class="i">⇢</span>System</button>
@@ -922,7 +969,8 @@
   // ---------- tabs ----------
   let view = 'overview';
   function show(v) {
-    if (!['overview', 'hq', 'team', 'billing', 'deals', 'revenue', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
+    if (!['overview', 'hq', 'team', 'billing', 'leads', 'active', 'deals', 'revenue', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
+    if (v === 'deals') v = 'leads'; // the old Brand deals board is now Leads + Active brands
     view = v;
     document.querySelectorAll('.view').forEach((el) => el.classList.toggle('on', el.id === v));
     document.querySelectorAll('[data-v]').forEach((b) => b.classList.toggle('on', b.dataset.v === v));
@@ -935,6 +983,8 @@
     if (v === 'revenue') rv ? renderRevenue() : loadRevenue();
     if (v === 'team') { if (!hqData) loadHQ(); loadEditorMonth(); }
     if (v === 'billing') hqData ? renderInvoices() : loadHQ();
+    if (v === 'leads') { hqData ? renderLeadsTab() : loadHQ(); if (!drafts.length) loadApprovals(true); }
+    if (v === 'active') hqData ? renderActive() : loadHQ();
     if (v === 'runs') startRuns(); else stopRuns();
     if (v === 'chat') setTimeout(() => $('q').focus(), 50);
   }
@@ -1220,7 +1270,7 @@
       if (res.status === 401) return needPassword();
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
-      hqData = data; renderHQ(); renderOverview(); loadCosts(); if (view === 'team') renderEditorMonth(); renderInvoices();
+      hqData = data; renderHQ(); renderOverview(); loadCosts(); if (view === 'team') renderEditorMonth(); renderInvoices(); renderLeadsTab(); renderActive();
       $('hqErr').textContent = data.errors?.length ? 'Some data could not load: ' + data.errors.join(' · ') : '';
     } catch (e) {
       $('hqErr').textContent = $('ovErr').textContent = 'Could not load HQ: ' + e.message;
@@ -1316,13 +1366,13 @@
     // 2. Emails waiting for a yes
     if (ap) out.push({ kind: 'APPROVE', tone: 'ai', t: `${plural(ap, 'email')} ready to send`, s: 'Drafted by the PM, waiting for your OK', pri: 'Review', go: 'approvals' });
     // 3. Money decisions
-    for (const x of (d.leads?.approvals || [])) out.push({ kind: 'DECIDE', tone: 'bad', t: `${x.brand} × ${x.creator} offers ${usd(x.approval || 0)}`, s: 'Below our floor: approve or decline', pri: 'Decide', go: 'deals' });
+    for (const x of (d.leads?.approvals || [])) out.push({ kind: 'DECIDE', tone: 'bad', t: `${x.brand} × ${x.creator} offers ${usd(x.approval || 0)}`, s: 'Below our floor: approve or decline', pri: 'Decide', go: 'leads' });
     const m3 = d.overview?.money30 || {};
     if (m3.to_invoice_n) out.push({ kind: 'INVOICE', tone: 'warn', t: `${plural(m3.to_invoice_n, 'posted video')} with no invoice sent (${usd(m3.to_invoice)})`, s: 'Send the invoices so the money starts coming in', pri: 'Invoices', go: 'billing' });
     for (const a of d.deals.attention.filter((a) => /invoice/i.test(a.why)).slice(0, 3)) out.push({ kind: 'INVOICE', tone: 'warn', t: `${a.brand} × ${a.creator || '?'}`, s: a.why, pri: 'Open deal', url: a.url });
     // 4. Brand emails only Harsh can answer
     const fresh = (d.leads?.recent || []).filter((x) => /^Needs you/i.test(x.next || ''));
-    for (const x of fresh.slice(0, 3)) out.push({ kind: 'REPLY', tone: 'warn', t: `${x.brand} × ${x.creator || 'Chris'}`, s: shortWhy(x.next, 90), pri: 'Open', go: 'deals' });
+    for (const x of fresh.slice(0, 3)) out.push({ kind: 'REPLY', tone: 'warn', t: `${x.brand} × ${x.creator || 'Chris'}`, s: shortWhy(x.next, 90), pri: 'Open', go: 'leads' });
     for (const u of (d.deals.unplaced || []).slice(0, 2)) out.push({ kind: 'CHECK', tone: 'info', t: u.event, s: `${u.creator ? u.creator + ' · ' : ''}the PM couldn't tell which deal this belongs to`, pri: 'Open', url: u.url });
     for (const a of d.deals.attention.filter((a) => !/invoice/i.test(a.why)).slice(0, 3)) out.push({ kind: 'CHECK', tone: 'info', t: `${a.brand} × ${a.creator || '?'}`, s: `${a.why} · ${a.stage}`, pri: 'Open deal', url: a.url });
     // 5. Old cards nobody marked posted
@@ -1472,6 +1522,54 @@
     });
   }
 
+  // =====================================================================
+  // Leads: brands we're still trying to close (mostly Chris's inbox). Won deals move to Active brands.
+  // =====================================================================
+  function renderLeadsTab() {
+    const L = hqData?.leads; if (!L || !$('ldCols')) return;
+    const col = (k) => (L.columns || []).find((c) => c.key === k)?.items || [];
+    const appr = L.approvals || [];
+    const draftFor = (x) => drafts.find((d) => d.status === 'Draft' && d.leadId && d.leadId.replace(/-/g, '') === String(x.id || '').replace(/-/g, ''));
+    const lb = $('leadsBadge'); lb.hidden = !appr.length; lb.textContent = appr.length;
+    $('ldWhen').textContent = `Brands we're trying to close · updated ${since(hqData.generated_at)}`;
+    $('ldDecide').innerHTML = appr.length ? `<section class="ocard" style="gap:0;border-color:rgba(251,191,36,.35)"><h2 style="margin-bottom:6px">Needs your OK <small>offers below our floor</small></h2>${appr.map((x) => `<div class="lappr" data-id="${esc(x.id)}"><div class="t"><b>${esc(x.brand)}</b> × ${esc(x.creator)} wants to go ahead at <b>${usd(x.approval || 0)}</b><small>Our ask ${x.ask ? usd(x.ask) : '?'}${x.what ? ' for ' + esc(x.what) : ''}</small></div><div class="acts"><button type="button" class="btn sm" data-act="ok">Approve</button><button type="button" class="btn sm ghost" data-act="other">Other amount</button><button type="button" class="btn sm danger" data-act="no">Decline</button></div></div>`).join('')}</section>` : '';
+    const card = (x) => { const dr = draftFor(x); return `<button type="button" class="ld-card" data-url="${esc(x.url)}" data-draft="${dr ? dr.id : ''}"><div class="t"><b>${esc(x.brand)}</b><span>${esc(x.creator)}</span><span class="d">${x.days != null ? x.days + 'd' : ''}</span></div>${x.offer ? `<div class="o" title="${esc(x.offer)}">${esc(x.offer)}</div>` : ''}<div class="n">${x.ask ? 'Our ask ' + usd(x.ask) + (x.budget ? ' · their budget ' + usd(x.budget) : '') : x.budget ? 'Their budget ' + usd(x.budget) : ''}${dr ? ' · <span class="dr">reply waiting in Approvals</span>' : ''}</div></button>`; };
+    const cols = [['new', 'New offers', 'First email, our quote goes out next'], ['neg', 'Negotiating', 'Price or terms being discussed'], ['wait', 'Waiting on brand', 'We replied last, the PM follows up']];
+    $('ldCols').innerHTML = cols.map(([k, t, h]) => { const xs = col(k); return `<div class="ld-col"><h2>${t} <small>${xs.length}</small></h2><div class="hint">${h}</div>${xs.map(card).join('') || '<div class="empty">None right now.</div>'}</div>`; }).join('');
+    $('ldFoot').textContent = [L.cold ? `${L.cold} gone cold (no reply for ${L.coldDays}+ days)` : '', L.under_min ? `${L.under_min} under the $${L.min_usd} minimum` : '', L.affiliate ? `${L.affiliate} affiliate only` : ''].filter(Boolean).join(' · ') + (L.cold || L.under_min || L.affiliate ? ' are hidden.' : '') + ' Won deals move to Active brands.';
+    $('ldCols').querySelectorAll('.ld-card').forEach((c) => c.onclick = () => { if (c.dataset.draft) { selDraft = c.dataset.draft; apBox = 'all'; show('approvals'); } else window.open(c.dataset.url, '_blank', 'noopener'); });
+    $('ldDecide').querySelectorAll('.lappr button').forEach((btn) => btn.onclick = async () => {
+      const box = btn.closest('.lappr'), x = appr.find((a) => a.id === box.dataset.id);
+      let price = x.approval, action = 'lead-approve';
+      if (btn.dataset.act === 'other') { const v = prompt(`Approve ${x.brand} at what amount (USD)?`, String(x.approval || '')); price = Number(String(v || '').replace(/[^0-9.]/g, '')); if (!price) return; }
+      if (btn.dataset.act === 'no') action = 'lead-decline';
+      box.querySelectorAll('button').forEach((e) => e.disabled = true);
+      try {
+        const res = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ lead: x.id, action, price }) });
+        const j = await res.json(); if (!res.ok) throw new Error(j.error || 'Failed');
+        box.innerHTML = `<div class="t">${action === 'lead-decline' ? `Decline email for <b>${esc(x.brand)}</b>` : `Close email for <b>${esc(x.brand)}</b> at <b>${usd(price)}</b>`} is waiting in Approvals.</div>`;
+        loadApprovals(); setTimeout(() => loadHQ(true), 1500);
+      } catch (e) { alert(e.message); box.querySelectorAll('button').forEach((el) => el.disabled = false); }
+    });
+  }
+
+  // =====================================================================
+  // Active brands: every won deal, where its video is and who has it right now
+  // =====================================================================
+  let acCreator = 'All';
+  function renderActive() {
+    const all = hqData?.active; if (!all || !$('acList')) return;
+    const names = [...new Set(all.map((r) => r.creator))].sort();
+    if (acCreator !== 'All' && !names.includes(acCreator)) acCreator = 'All';
+    const late = all.filter((r) => r.late).length;
+    const ab = $('activeBadge'); ab.hidden = !late; ab.textContent = late;
+    $('acWhen').textContent = `${plural(all.length, 'brand')} in progress${late ? ` · ${late} late` : ''} · updated ${since(hqData.generated_at)}`;
+    $('acF').innerHTML = ['All', ...names].map((c) => `<button type="button" class="${c === acCreator ? 'on' : ''}" data-c="${esc(c)}">${esc(c)}<b>${c === 'All' ? all.length : all.filter((r) => r.creator === c).length}</b></button>`).join('');
+    $('acF').querySelectorAll('button').forEach((b) => b.onclick = () => { acCreator = b.dataset.c; renderActive(); });
+    const xs = all.filter((r) => acCreator === 'All' || r.creator === acCreator);
+    $('acList').innerHTML = xs.length ? xs.map((r) => `<div class="ac-r"><div class="w"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.brand)}</a> <span>× ${esc(r.creator)}</span>${r.next ? `<small title="${esc(r.next)}">Next: ${esc(r.next)}</small>` : ''}</div><div class="steps" title="${esc(r.steps[r.step])}">${r.steps.map((s, i) => `<i class="${i < r.step ? 'on' : i === r.step ? 'cur' : ''}" title="${esc(s)}"></i>`).join('')}</div><div class="doing">${esc(r.doing)}<small>With ${esc(r.who)}${r.video ? ` · <a href="${esc(r.video)}" target="_blank" rel="noopener" style="color:var(--accent)">video card</a>` : ''}</small></div><div class="pd ${r.late ? 'late' : ''}">${r.post ? (r.late ? 'late · ' : 'posts ') + shortDate(r.post) : 'no date'}</div></div>`).join('') : '<div class="empty">No active brands right now.</div>';
+  }
+
   // ---- Brand deals: one action list (what needs Harsh) + everything the PM is running on its own, folded ----
   let boardCol = null, boardCreator = 'All';
   const shortWhy = (t, n = 70) => { const s = String(t || '').replace(/^Needs you:\s*/i, '').replace(/\s+/g, ' ').trim(); return s.length > n ? s.slice(0, n - 1) + '…' : s; };
@@ -1516,7 +1614,7 @@
     const row = (a, i) => `<div class="arow"><span class="chip" style="${toneStyle(a.tone)}">${a.kind}</span><span class="who"><b>${esc(a.brand)}</b> × ${esc(a.creator)}</span><span class="why" title="${esc(a.why || '')}">${esc(a.why || '')}</span><span class="amt">${a.amount ? usd(a.amount) : ''}</span><button type="button" class="btn sm ${a.draft ? '' : 'ghost'}" data-i="${i}">${a.btn}</button></div>`;
     const apprHtml = appr.map((x) => `<div class="arow lappr" data-id="${esc(x.id)}"><span class="chip" style="${toneStyle('bad')}">DECIDE</span><span class="who"><b>${esc(x.brand)}</b> × ${esc(x.creator)}</span><span class="why">wants ${usd(x.approval || 0)}, below our floor (our ask ${x.ask ? usd(x.ask) : '?'})</span><span class="amt">${usd(x.approval || 0)}</span><span class="acts"><button type="button" class="btn sm" data-act="ok">Approve</button><button type="button" class="btn sm ghost" data-act="other">Other</button><button type="button" class="btn sm danger" data-act="no">Decline</button></span></div>`).join('');
     const nAct = act.length + appr.length;
-    for (const bd of [$('dealsBadge'), $('dealsBadge2')]) { bd.hidden = !nAct; bd.textContent = nAct; }
+    for (const bd of [$('dealsBadge'), $('dealsBadge2')]) { if (!bd) continue; bd.hidden = !nAct; bd.textContent = nAct; }
     $('dealsWhen').textContent = `${nAct} need${nAct === 1 ? 's' : ''} you · ${running.length} running on their own${boardCreator === 'All' ? '' : ' · ' + boardCreator} · updated ${since(hqData.generated_at)}`;
     $('dealsErr').textContent = b.error ? 'Board error: ' + b.error : '';
 
