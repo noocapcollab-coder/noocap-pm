@@ -291,12 +291,14 @@
   .ibx { display: inline-flex; align-items: center; gap: 6px; font: 600 11px 'IBM Plex Sans', sans-serif; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
   .ibx::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
   .ibx.chris { background: rgba(251,191,36,.14); color: #fbbf24; }
+  .ibx.lindsay { background: rgba(244,114,182,.14); color: #f472b6; }
   .ibx.noocap { background: var(--accent-soft); color: var(--accent); }
   .ap-item { border-left: 3px solid transparent; }
   .ap-item.chris { border-left-color: rgba(251,191,36,.7); }
   .ap-item.noocap { border-left-color: rgba(61,214,176,.6); }
   .ap-from { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 10px 14px; border-radius: 10px; margin: 2px 0 12px; font-size: 13px; }
   .ap-from.chris { background: rgba(251,191,36,.08); border: 1px solid rgba(251,191,36,.3); }
+  .ap-from.lindsay { background: rgba(244,114,182,.08); border: 1px solid rgba(244,114,182,.3); }
   .ap-from.noocap { background: var(--accent-soft); border: 1px solid rgba(61,214,176,.3); }
   .ap-from b { font-weight: 600; }
   .ap-from span { color: var(--muted); }
@@ -1973,8 +1975,8 @@
   // APPROVALS
   // =====================================================================
   let drafts = [], selDraft = null, apBox = 'all';
-  const INBOX = { chris: { name: "Chris's inbox", addr: 'collab@chriscordero.net' }, noocap: { name: 'NOOCAP inbox', addr: 'noocapcollab@gmail.com' } };
-  const inboxOf = (d) => d.sendFrom === 'Chris' ? 'chris' : 'noocap';
+  const INBOX = { chris: { name: "Chris's inbox", addr: 'collab@chriscordero.net' }, lindsay: { name: "Lindsay's inbox", addr: 'collab@automateaiconsulting.com' }, noocap: { name: 'NOOCAP inbox', addr: 'noocapcollab@gmail.com' } };
+  const inboxOf = (d) => d.sendFrom === 'Chris' ? 'chris' : d.sendFrom === 'Lindsay' ? 'lindsay' : 'noocap';
   const KIND_LABEL = { Quote: 'Price quote', Counter: 'Counter offer', 'Close deal': 'Close the deal', 'Rate hold': 'Our rate', 'Lead follow-up': 'Follow-up', 'Payment chase': 'Payment reminder' };
   const kindLabel = (k) => KIND_LABEL[k] || k || 'Email';
   // Autopilot: follow-up nudges send themselves 30 minutes after they're drafted, unless rejected

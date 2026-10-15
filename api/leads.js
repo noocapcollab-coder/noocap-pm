@@ -39,6 +39,13 @@ export default async function handler(req, res) {
   if (!['POST', 'GET'].includes(req.method)) return res.status(405).json({ error: 'GET or POST' });
   if (!hookAllowed(req)) return res.status(401).json({ error: HOOK_ERROR });
   // GET /api/leads?labels=1&days=30 -> which Gmail label each lead thread should carry (n8n "PM · Label sync")
+  // GET /api/leads?poll=1 -> read the creator inboxes the PM reaches itself over IMAP (Lindsay's), every few minutes
+  if (req.method === 'GET' && req.query?.poll) {
+    const { pollMailboxes } = await import('../lib/mailbox.js');
+    const results = await pollMailboxes({ handle: async (email) => { try { return await handleLeadEmail(email); } catch (e) { const msg = String(e.message || e).slice(0, 300); return { action: await recordError(email, msg), error: msg }; } } });
+    if (results.length) { const run = await startRun('Leads', `${results.length} email${results.length > 1 ? 's' : ''} from creator inboxes`); results.forEach((r) => run.mark(String(r.subject || r.error || '').slice(0, 60))); await run.finish(emailSummary(results)); }
+    return res.status(200).json({ results });
+  }
   if (req.method === 'GET') return res.status(200).json(await labelPlan({ days: Math.min(90, Number(req.query?.days) || 30) }));
   const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
   const emails = Array.isArray(body.emails) ? body.emails : [body];
