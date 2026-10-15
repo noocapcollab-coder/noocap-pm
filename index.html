@@ -460,6 +460,29 @@
   .badge { color: #0d0e11; }
   header .logo span { color: var(--muted); font-weight: 500; }
   header .dot { box-shadow: none; }
+  /* ---------- Today (home) ---------- */
+  .td .ocard h2 { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .td .ocard h2 .more { margin-left: auto; background: none; border: 0; color: var(--muted); font-size: 13px; padding: 0; }
+  .td .num { width: 24px; height: 24px; border-radius: 50%; display: inline-grid; place-items: center; background: var(--panel3); color: var(--soft); font: 600 12px 'IBM Plex Mono', monospace; flex: none; }
+  .td-2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+  .td-row { display: grid; grid-template-columns: 110px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 12px 0; border-top: 1px solid var(--line3); }
+  .td-row:first-child { border-top: 0; }
+  .td-row .ti { font-size: 14px; min-width: 0; }
+  .td-row .ti small { display: block; color: var(--muted); font-size: 12px; margin-top: 3px; }
+  .td-row .chip { justify-self: start; }
+  .td-row button { white-space: nowrap; }
+  .td-more { background: none; border: 0; color: var(--muted); font-size: 13px; padding: 10px 0 0; text-align: left; }
+  .td-week { display: grid; grid-template-columns: minmax(0, 1fr) 90px 44px; gap: 12px; align-items: center; padding: 8px 0; border-top: 1px solid var(--line3); font-size: 14px; }
+  .td-week:first-child { border-top: 0; }
+  .td-week .tr { height: 6px; border-radius: 3px; background: var(--panel3); overflow: hidden; }
+  .td-week .tr div { height: 6px; }
+  .td-week .n { font: 500 13px 'IBM Plex Mono', monospace; text-align: right; color: var(--soft); }
+  .td-week small { color: var(--muted); font-size: 12px; margin-left: 6px; }
+  .td-money { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .td-money div { display: flex; flex-direction: column; gap: 4px; }
+  .td-money span { font-size: 12px; color: var(--muted); }
+  .td-money b { font: 600 22px 'Space Grotesk', sans-serif; font-variant-numeric: tabular-nums; }
+  @media (max-width: 900px) { .td-2 { grid-template-columns: 1fr; } .td-row { grid-template-columns: minmax(0, 1fr) auto; } .td-row .chip { grid-column: 1 / -1; } .td-money { grid-template-columns: 1fr 1fr; } }
   /* ---------- Revenue ---------- */
   #revenue { overflow-y: auto; }
   .rv-stats { grid-template-columns: repeat(5, minmax(0, 1fr)); }
@@ -626,7 +649,7 @@
 <aside class="snav" aria-label="HQ sections">
   <div class="brand"><b>NOOCAP</b><small>Agency HQ</small></div>
   <div class="grp">
-    <button data-v="overview" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Overview</button>
+    <button data-v="overview" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Today</button>
     <button data-v="deals" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M9 7V5h6v2"/></svg>Brand deals <span class="badge" id="dealsBadge2" hidden>0</span></button>
     <button data-v="approvals" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Approvals <span class="badge" data-count hidden>0</span></button>
     <button data-v="revenue" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M17 7.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2.2 2.7 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3"/></svg>Revenue</button>
@@ -634,8 +657,7 @@
   <div class="grp">
     <div class="lbl">More</div>
     <button data-v="hq" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Schedule &amp; team</button>
-    <button data-v="runs" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>Automation runs</button>
-    <button data-v="flow" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 12h4l6-5M11 12l6 5"/></svg>Flow</button>
+    <button data-v="flow" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 12h4l6-5M11 12l6 5"/></svg>System</button>
     <button data-v="chat" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.4l-1.8-4.9L5 9.7l5.2-1.8z"/><path d="M18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8z"/></svg>Ask the PM</button>
   </div>
   <div class="live">
@@ -658,25 +680,17 @@
 </header>
 
 <!-- ============ Overview (HQ design) ============ -->
-<section class="view" id="overview"><div class="ov">
+<section class="view" id="overview"><div class="ov td">
   <div class="ov-head">
-    <div><div class="k" id="ovWhen"></div><h1>Agency overview</h1></div>
+    <div><div class="k" id="ovWhen"></div><h1>Today</h1></div>
     <div class="acts"><button class="obtn" type="button" data-go="chat">Ask the PM</button><button class="obtn pri" type="button" id="ovAppr" data-go="approvals">Approvals</button></div>
   </div>
-  <div class="ov-row1">
-    <section class="ov-brief" aria-label="PM brief"><div class="t"><b id="ovBriefH">PM BRIEF</b><span>written from live Notion data</span></div><p id="ovBrief"><span class="skel"></span><span class="skel"></span></p></section>
-    <section class="ocard" aria-label="Money this month"><h2 id="ovMoneyH">Money</h2><div id="ovMoney" style="display:flex;flex-direction:column;gap:9px"><div class="skel"></div><div class="skel"></div></div></section>
+  <section class="ocard td-now" aria-label="Needs you now"><h2><span class="num">1</span>Needs you now <small id="ovNeedN"></small></h2><div id="ovNeeds"><div class="skel"></div><div class="skel"></div></div></section>
+  <div class="td-2">
+    <section class="ocard" aria-label="Today's posts" style="gap:6px"><h2><span class="num">2</span>Today's posts <small id="ovPostsN"></small></h2><div id="ovPosts"><div class="skel"></div></div></section>
+    <section class="ocard" aria-label="This week"><h2><span class="num">3</span>This week <small id="ovWeekN"></small><button class="more" type="button" data-go="hq">Schedule →</button></h2><div id="ovCreators"><div class="skel"></div></div></section>
   </div>
-  <section class="ostats" id="ovStats" aria-label="This week at a glance"></section>
-  <div class="ov-2">
-    <section class="ocard" aria-label="Production pipeline"><h2>Production pipeline <small>all creators · from Notion</small></h2><div id="ovPipe" style="display:flex;flex-direction:column;gap:12px"><div class="skel"></div></div><div class="ofoot" id="ovPipeFoot"></div></section>
-    <section class="ocard" aria-label="Creators this week"><h2>Creators this week <button class="more" type="button" data-go="hq">Schedule →</button></h2><div class="cgrid" id="ovCreators"><div class="skel"></div></div><div class="ofoot">Dot = health (on track, watch, behind) · bar = posted vs scheduled this week</div></section>
-  </div>
-  <div class="ov-3">
-    <section class="ocard" aria-label="Needs you"><h2>Needs you <small id="ovNeedN"></small></h2><div id="ovNeeds" style="display:flex;flex-direction:column;gap:10px"><div class="skel"></div></div></section>
-    <section class="ocard" aria-label="Today's posts" style="gap:6px"><h2>Today's posts <small id="ovPostsN"></small></h2><div id="ovPosts"><div class="skel"></div></div></section>
-    <section class="ocard" aria-label="AI agent now"><h2>AI agent now <small id="ovLive" style="color:var(--ok)"></small></h2><div class="agbox" id="ovAgBox"></div><div id="ovFeed"></div><button class="more" type="button" data-go="flow" style="margin-top:auto;align-self:flex-start;background:none;border:0;color:var(--muted);font-size:13px;padding:0">Full activity →</button></section>
-  </div>
+  <section class="ocard" aria-label="Money"><h2><span class="num">4</span>Money <small>last 30 days</small><button class="more" type="button" data-go="revenue">Revenue →</button></h2><div class="td-money" id="ovMoney"><div class="skel"></div></div></section>
   <div class="err" id="ovErr" style="font-size:13px"></div>
 </div></section>
 
@@ -740,7 +754,7 @@
 
 <!-- ============ Chat ============ -->
 <section class="view" id="flow"><div class="hq">
-  <div class="hq-top"><h1>Agency flow</h1><span class="when">every video and deal, the automations moving them, and what came out</span></div>
+  <div class="hq-top"><h1>System</h1><span class="when">how videos and deals move, and whether the automations are healthy · <a href="#runs" style="color:var(--accent)">every automation run →</a></span></div>
   <div class="card" style="margin-bottom:16px"><h2>Video journey <span class="r" id="fvLive"></span></h2><div class="lane" id="fvLane"><div class="skel"></div></div></div>
   <div class="card" style="margin-bottom:16px"><h2>Brand deal journey <span class="r" id="fdNote"></span></h2><div class="lane" id="fdLane"><div class="skel"></div></div></div>
   <div class="grid">
@@ -777,11 +791,11 @@
 </section>
 
 <nav class="tabbar" id="tabbar">
-  <button data-v="overview" type="button"><span class="i">◎</span>Home</button>
+  <button data-v="overview" type="button"><span class="i">◎</span>Today</button>
   <button data-v="hq" type="button"><span class="i">▤</span>Schedule</button>
   <button data-v="deals" type="button"><span class="i">▦</span>Deals</button>
   <button data-v="revenue" type="button"><span class="i">$</span>Revenue</button>
-  <button data-v="flow" type="button"><span class="i">⇢</span>Flow</button>
+  <button data-v="flow" type="button"><span class="i">⇢</span>System</button>
   <button data-v="chat" type="button"><span class="i">✦</span>Chat</button>
   <button data-v="approvals" type="button"><span class="i">✉</span>Approvals<span class="badge" data-count hidden>0</span></button>
 </nav>
@@ -1206,21 +1220,30 @@
     $('liveDot').className = quiet ? 'off' : '';
     $('liveH').textContent = quiet ? 'PM agent quiet' : 'PM agent live';
     $('liveT').innerHTML = `Last event ${a.last_event ? since(a.last_event) : 'none this week'}<br>${a.events_capped ? a.events_week + '+ events' : plural(a.events_week, 'event')} this week<br>Data ${since(hqData.generated_at)}`;
-    $('ovLive').textContent = quiet ? '' : '● live';
+    if ($('ovLive')) $('ovLive').textContent = quiet ? '' : '● live';
   }
 
   function needsList() {
     const d = hqData, out = [];
     const ap = d.kpis.approvals;
-    if (ap) out.push({ kind: 'APPROVE', tone: 'ai', area: 'Approvals', t: `${plural(ap, 'email')} drafted by the PM, waiting for your yes`, pri: 'Review', go: 'approvals' });
-    for (const x of (d.leads?.approvals || [])) out.push({ kind: 'DECIDE', tone: 'bad', area: 'Brand deals', t: `${x.brand} × ${x.creator} wants to go ahead at ${usd(x.approval || 0)}`, s: 'Below the floor, so it needs your approve or decline', pri: 'Decide', go: 'deals' });
-    const todayOpen = d.schedule.days[0].items.filter((v) => v.stage !== 'Ready' && v.stage !== 'Posted');
-    for (const v of todayOpen.slice(0, 3)) out.push({ kind: 'AT RISK', tone: 'bad', area: 'Production', t: `${v.creator}: ${v.title}`, s: `Posts today, still in ${stageLabel(v)}${v.editor ? ' with ' + v.editor : ''}`, pri: 'Open card', url: v.url });
-    const fresh = (d.leads?.recent || []).filter((x) => x.status === 'New offer' || /^Needs you/i.test(x.next || ''));
-    if (fresh.length) out.push({ kind: 'NEW EMAIL', tone: 'warn', area: 'Creator inboxes', t: `${plural(fresh.length, 'new brand email')} need${fresh.length === 1 ? 's' : ''} your call: ${fresh.slice(0, 3).map((x) => x.brand).join(', ')}`, s: 'The PM read them but left the reply to you', pri: 'Open', go: 'deals' });
-    for (const u of (d.deals.unplaced || []).slice(0, 3)) out.push({ kind: 'UNPLACED', tone: 'warn', area: 'Inbox', t: u.event, s: `${u.creator ? u.creator + ' · ' : ''}the PM couldn't match it to a deal`, pri: 'Open', url: u.url });
-    for (const a of d.deals.attention.slice(0, 4)) out.push({ kind: /needs your check/.test(a.why) ? 'CHECK' : /invoice/.test(a.why) ? 'INVOICE' : 'CHASE', tone: /invoice/.test(a.why) ? 'bad' : 'info', area: 'Brand deals', t: `${a.brand} × ${a.creator || '?'}`, s: `${a.why} · ${a.stage}`, pri: 'Open deal', url: a.url });
-    for (const v of d.schedule.overdue.slice(0, 3)) out.push({ kind: 'LATE', tone: 'warn', area: 'Production', t: `${v.creator}: ${v.title}`, s: `${v.days_late}d past its post date · ${v.stage}`, pri: 'Open card', url: v.url });
+    const today = d.schedule.days[0].items.filter((v) => v.stage !== 'Ready' && v.stage !== 'Posted');
+    // 1. Today's posts that aren't ready: the only thing that can go wrong today
+    for (const v of today) out.push({ kind: 'POSTS TODAY', tone: 'bad', t: `${v.creator}: ${v.title}`, s: `Still in ${stageLabel(v)}${v.editor ? ' with ' + v.editor : ''}`, pri: 'Open card', url: v.url });
+    // 2. Emails waiting for a yes
+    if (ap) out.push({ kind: 'APPROVE', tone: 'ai', t: `${plural(ap, 'email')} ready to send`, s: 'Drafted by the PM, waiting for your OK', pri: 'Review', go: 'approvals' });
+    // 3. Money decisions
+    for (const x of (d.leads?.approvals || [])) out.push({ kind: 'DECIDE', tone: 'bad', t: `${x.brand} × ${x.creator} offers ${usd(x.approval || 0)}`, s: 'Below our floor: approve or decline', pri: 'Decide', go: 'deals' });
+    const m3 = d.overview?.money30 || {};
+    if (m3.to_invoice_n) out.push({ kind: 'INVOICE', tone: 'warn', t: `${plural(m3.to_invoice_n, 'posted video')} with no invoice sent (${usd(m3.to_invoice)})`, s: 'Send the invoices so the money starts coming in', pri: 'Revenue', go: 'revenue' });
+    for (const a of d.deals.attention.filter((a) => /invoice/i.test(a.why)).slice(0, 3)) out.push({ kind: 'INVOICE', tone: 'warn', t: `${a.brand} × ${a.creator || '?'}`, s: a.why, pri: 'Open deal', url: a.url });
+    // 4. Brand emails only Harsh can answer
+    const fresh = (d.leads?.recent || []).filter((x) => /^Needs you/i.test(x.next || ''));
+    for (const x of fresh.slice(0, 3)) out.push({ kind: 'REPLY', tone: 'warn', t: `${x.brand} × ${x.creator || 'Chris'}`, s: shortWhy(x.next, 90), pri: 'Open', go: 'deals' });
+    for (const u of (d.deals.unplaced || []).slice(0, 2)) out.push({ kind: 'CHECK', tone: 'info', t: u.event, s: `${u.creator ? u.creator + ' · ' : ''}the PM couldn't tell which deal this belongs to`, pri: 'Open', url: u.url });
+    for (const a of d.deals.attention.filter((a) => !/invoice/i.test(a.why)).slice(0, 3)) out.push({ kind: 'CHECK', tone: 'info', t: `${a.brand} × ${a.creator || '?'}`, s: `${a.why} · ${a.stage}`, pri: 'Open deal', url: a.url });
+    // 5. Old cards nobody marked posted
+    const late = d.schedule.overdue || [];
+    if (late.length) out.push({ kind: 'TIDY UP', tone: 'info', t: `${plural(late.length, 'card')} past the post date, not marked posted`, s: late.slice(0, 3).map((v) => `${v.creator}: ${v.title}`).join(' · '), pri: 'Schedule', go: 'hq' });
     return out;
   }
 
@@ -1245,69 +1268,46 @@
     return parts.join(' ');
   }
 
+  let tdAll = false;
   function renderOverview() {
-    const d = hqData, o = d.overview; if (!o) { $('ovErr').textContent = 'lib/hq.js is the old version: upload the new one to see the Overview.'; return; }
+    const d = hqData, o = d.overview; if (!o) { $('ovErr').textContent = 'lib/hq.js is the old version: upload the new one to see this page.'; return; }
     const k = d.kpis;
     const now = new Date(Date.now() + 5.5 * 36e5);
-    const day = new Date(d.today + 'T00:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' });
-    $('ovWhen').textContent = `${day} · ${now.toISOString().slice(11, 16)} IST · week ${weekNo(d.today)}`;
+    const day = new Date(d.today + 'T00:00:00Z').toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
+    $('ovWhen').textContent = `${day} · ${now.toISOString().slice(11, 16)} IST · updated ${since(d.generated_at)}`;
     const ap = $('ovAppr'); ap.textContent = k.approvals ? `${k.approvals} waiting for approval` : 'Approvals clear'; ap.classList.toggle('quiet', !k.approvals);
-    $('ovBriefH').textContent = `PM BRIEF · UPDATED ${istHM(d.generated_at)}`;
-    $('ovBrief').textContent = briefText();
 
-    const m = o.money, mon = new Date(d.money.month + '-01T00:00:00Z').toLocaleDateString('en-GB', { month: 'long', timeZone: 'UTC' });
-    const m3 = o.money30 || {};
-    $('ovMoneyH').innerHTML = 'Money <small>last 30 days</small>';
-    $('ovMoney').innerHTML = m3.received != null ? [
-      [`Received · ${plural(m3.received_videos || 0, 'video')}`, usd(m3.received), 'var(--ok)'],
-      ['NOOCAP cut on that', usd(m3.cut), ''],
-      [`Invoiced, awaiting payment${m3.awaiting_n ? ' · ' + m3.awaiting_n : ''}`, usd(m3.awaiting), m3.awaiting ? 'var(--warn)' : ''],
-      [`Posted, invoice not sent${m3.to_invoice_n ? ' · ' + m3.to_invoice_n : ''}`, usd(m3.to_invoice), m3.to_invoice ? 'var(--warn)' : ''],
-      [m.overdue_count ? `Overdue · ${plural(m.overdue_count, 'invoice')}` : 'Overdue invoices', m.overdue_count ? usd(m.overdue_usd) : 'none', m.overdue_count ? 'var(--err)' : ''],
-    ].map(([l, v, c]) => `<div class="mline"><span>${l}</span><b${c ? ` style="color:${c}"` : ''}>${v}</b></div>`).join('') + '<button type="button" class="more" data-go="revenue" style="align-self:flex-start;background:none;border:0;color:var(--muted);font-size:13px;padding:0;margin-top:4px">Revenue →</button>' : [
-      ['Brand revenue booked', usd(m.gross), ''],
-      ['Paid', usd(m.paid), 'var(--ok)'],
-      [m.overdue_count ? `Overdue · ${plural(m.overdue_count, 'invoice')}` : 'Overdue invoices', m.overdue_count ? usd(m.overdue_usd) : 'none', m.overdue_count ? 'var(--err)' : ''],
-      ['Still unpaid', usd(m.unpaid), m.unpaid ? 'var(--warn)' : ''],
-      ['NOOCAP commission', usd(m.cut), ''],
-    ].map(([l, v, c]) => `<div class="mline"><span>${l}</span><b${c ? ` style="color:${c}"` : ''}>${v}</b></div>`).join('');
-    $('ovMoney').querySelectorAll('[data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
+    // 1. Needs you now
+    const needs = needsList(), shown = tdAll ? needs : needs.slice(0, 7);
+    $('ovNeedN').textContent = needs.length ? plural(needs.length, 'thing') : '';
+    $('ovNeeds').innerHTML = needs.length ? shown.map((n, i) => `<div class="td-row"><span class="chip" style="${toneStyle(n.tone)}">${n.kind}</span><div class="ti">${esc(n.t)}${n.s ? `<small>${esc(n.s)}</small>` : ''}</div><button type="button" class="obtn" data-i="${i}">${n.pri}</button></div>`).join('')
+      + (needs.length > 7 ? `<button type="button" class="td-more" id="tdMore">${tdAll ? 'Show less' : `Show ${needs.length - 7} more`}</button>` : '')
+      : '<div class="empty">All clear. Nothing needs you right now.</div>';
+    $('ovNeeds').querySelectorAll('button[data-i]').forEach((b) => b.onclick = () => { const n = shown[+b.dataset.i]; if (n.go) show(n.go); else if (n.url) window.open(n.url, '_blank', 'noopener'); });
+    if ($('tdMore')) $('tdMore').onclick = () => { tdAll = !tdAll; renderOverview(); };
 
+    // 2. Today's posts
     const tp = o.today_posts, risky = tp.filter((v) => v.stage !== 'Ready' && v.stage !== 'Posted');
-    const pct = o.week.planned ? Math.round(o.week.posted / o.week.planned * 100) : 0;
-    const daysLeft = Math.max(0, Math.round((new Date(o.week.end) - new Date(d.today)) / 864e5));
-    const stat = (l, v, sub, color, go) => `<${go ? 'button type="button" data-go="' + go + '"' : 'div'} class="ostat"><div class="l">${l}</div><div class="v"${color ? ` style="color:${color}"` : ''}>${v}</div><div class="s">${esc(sub)}</div></${go ? 'button' : 'div'}>`;
-    $('ovStats').innerHTML = [
-      stat('Posted this week', `${o.week.posted}/${o.week.planned}`, o.week.planned ? `${pct}% of schedule · ${plural(daysLeft, 'day')} left` : 'no post dates this week', '', 'hq'),
-      stat('In production', o.in_production, 'script → ready', '', 'hq'),
-      stat('At risk today', risky.length, risky.length ? `${risky[0].creator} still in ${stageLabel(risky[0])}` : tp.length ? 'all of today is safe' : 'nothing posts today', risky.length ? 'var(--err)' : '', 'hq'),
-      stat('Need a script', o.unscripted_next7, o.unscripted_next7 ? 'posting in the next 7 days' : 'every slot this week has one', o.unscripted_next7 ? 'var(--warn)' : ''),
-      stat('Active brand deals', o.deals_open, `${o.deals_waiting_brand} waiting on the brand`, '', 'deals'),
-      stat('Delivered today', k.delivered_today, `${k.delivered_week} edits this week`, '', 'hq'),
-    ].join('');
-    $('ovStats').querySelectorAll('[data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
-
-    const pt = d.pipeline.totals;
-    const rows = [['Scripting', pt.Scripting, '#6f7582'], ['Filming', pt.Filming, '#7896ff'], ['Editing', pt.Editing, '#aa78ff'], ['Review', pt.Review, '#aa78ff'], ['Ready', pt.Ready, '#3dd6b0'], ['Posted (wk)', o.posted_week_all, '#3dd6b0']];
-    const max = Math.max(1, ...rows.map((r) => r[1] || 0));
-    $('ovPipe').innerHTML = rows.map(([l, n, c]) => `<div class="pbar"><span>${l}</span><div class="tr"><div style="width:${Math.round((n || 0) / max * 100)}%;background:${c}"></div></div><span class="n">${n || 0}</span></div>`).join('');
-    $('ovPipeFoot').textContent = `${plural(d.schedule.overdue.length, 'card')} past post date · ${pt.Ready || 0} ready and waiting to post`;
-
-    const dots = { ok: '#3dd6b0', warn: '#f2a33a', bad: '#f06a5c' };
-    $('ovCreators').innerHTML = o.creators.length ? o.creators.slice(0, 12).map((c) => `<div class="crow" title="${esc(c.name)}: ${c.posted} of ${c.planned} posted this week${c.late ? ', ' + c.late + ' late' : ''}"><i style="background:${dots[c.health]}"></i><b>${esc(c.name)}</b><div class="tr"><div style="width:${c.planned ? Math.round(c.posted / c.planned * 100) : 0}%"></div></div><span class="n">${c.posted}/${c.planned}</span></div>`).join('') : '<div class="empty">No creator videos this week.</div>';
-
-    const needs = needsList();
-    $('ovNeedN').textContent = needs.length ? needs.length : '';
-    $('ovNeeds').innerHTML = needs.length ? needs.slice(0, 4).map((n, i) => `<div class="need"><div class="k"><span class="chip" style="${toneStyle(n.tone)}">${n.kind}</span><small>${n.area}</small></div><div class="ti">${esc(n.t)}${n.s ? `<small>${esc(n.s)}</small>` : ''}</div><div class="bt"><button type="button" class="pri" data-i="${i}">${n.pri}</button></div></div>`).join('') + (needs.length > 4 ? `<div class="empty">+${needs.length - 4} more on Schedule &amp; team and Brand deals</div>` : '') : '<div class="empty">All clear. Nothing needs you right now.</div>';
-    $('ovNeeds').querySelectorAll('button[data-i]').forEach((b) => b.onclick = () => { const n = needs[+b.dataset.i]; if (n.go) show(n.go); else if (n.url) window.open(n.url, '_blank', 'noopener'); });
-
-    const st = (v) => v.stage === 'Posted' ? ['Posted', 'ok'] : v.stage === 'Ready' ? ['Ready', 'ok'] : v.stage === 'Review' ? [stageLabel(v) === 'Changes' ? 'Changes' : 'In review', 'warn'] : ['At risk · ' + v.stage, 'bad'];
-    $('ovPostsN').textContent = tp.length ? `${tp.length - risky.length} of ${tp.length} safe` : '';
+    const st = (v) => v.stage === 'Posted' ? ['Posted', 'ok'] : v.stage === 'Ready' ? ['Ready', 'ok'] : v.stage === 'Review' ? [stageLabel(v) === 'Changes' ? 'Changes' : 'In review', 'warn'] : ['Not ready · ' + v.stage, 'bad'];
+    $('ovPostsN').textContent = tp.length ? `${tp.length - risky.length} of ${tp.length} ready` : '';
     $('ovPosts').innerHTML = tp.length ? tp.map((v) => { const [label, tone] = st(v); return `<a class="post" href="${esc(v.url)}" target="_blank" rel="noopener"><div class="top"><b>${esc(v.creator)}</b>${v.time ? `<span class="tm">${v.time}</span>` : ''}<span class="st" style="${toneStyle(tone)}">${label}</span></div><div class="tt">${esc(v.title)}${v.sponsor ? ' · sponsor' : ''}${v.editor ? ' · ' + esc(v.editor) : ''}</div></a>`; }).join('') : '<div class="empty">Nothing scheduled to post today.</div>';
 
-    const a = o.agent;
-    $('ovAgBox').innerHTML = `<div><small>Events · 7 days</small><b>${a.events_week}${a.events_capped ? '+' : ''}</b></div><div><small>AI spend · 7 days</small><b>$${Number(a.cost_week || 0).toFixed(2)}</b></div>`;
-    $('ovFeed').innerHTML = (d.activity || []).slice(0, 5).map((r) => `<div class="feed"><span>${r.time ? istHM(r.time) : ''}</span><span>${esc(r.event)}</span></div>`).join('') || '<div class="empty">No activity this week.</div>';
+    // 3. This week, per creator, behind first
+    const colors = { ok: 'var(--accent)', warn: 'var(--warn)', bad: 'var(--err)' };
+    $('ovWeekN').textContent = o.week.planned ? `${o.week.posted} of ${o.week.planned} posted` : '';
+    const cs = [...o.creators].filter((c) => c.planned).sort((a, z) => (a.posted / a.planned) - (z.posted / z.planned));
+    $('ovCreators').innerHTML = cs.length ? cs.map((c) => `<div class="td-week"><span><b>${esc(c.name)}</b>${c.late ? `<small>${c.late} late</small>` : ''}</span><div class="tr"><div style="width:${Math.round(c.posted / c.planned * 100)}%;background:${colors[c.health] || 'var(--accent)'}"></div></div><span class="n">${c.posted}/${c.planned}</span></div>`).join('') : '<div class="empty">Nothing has a post date this week yet.</div>';
+
+    // 4. Money
+    const m = o.money, m3 = o.money30 || {};
+    const owed = (m3.to_invoice || 0) + (m3.awaiting || 0);
+    $('ovMoney').innerHTML = [
+      ['Received', usd(m3.received ?? m.paid), 'var(--accent)'],
+      ['Owed to us', usd(owed), owed ? 'var(--warn)' : ''],
+      [m.overdue_count ? `Overdue · ${plural(m.overdue_count, 'invoice')}` : 'Overdue', m.overdue_count ? usd(m.overdue_usd) : 'none', m.overdue_count ? 'var(--err)' : ''],
+    ].map(([l, v, c]) => `<div><span>${l}</span><b${c ? ` style="color:${c}"` : ''}>${v}</b></div>`).join('');
+
+    document.querySelectorAll('#overview [data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
     renderLive();
     $('ovErr').textContent = d.errors?.length ? 'Some data could not load: ' + d.errors.join(' · ') : '';
   }
