@@ -15,14 +15,6 @@ export default async function handler(req, res) {
       const last = new Date(Date.UTC(y, mo, 0)).toISOString().slice(0, 10);
       return res.status(200).json(await editorOutput({ from: m + '-01', to: last, include_videos: true, video_limit: 500 }));
     }
-    // GET /api/hq?audience=1 -> each creator's YouTube audience + connect link; &refresh=Lindsay pulls fresh numbers
-    if (req.query?.audience) {
-      const Y = await import('../lib/youtube.js');
-      if (req.query.refresh) await Y.refreshAudience(String(req.query.refresh));
-      const have = await Y.audiences();
-      const names = ['Brad', 'Chris', 'Lindsay', 'Duncan', 'Valeri', 'Emtech', 'Dymtro', 'Jonathan'];
-      return res.status(200).json({ ready: Y.ytReady(), creators: names.map((c) => ({ creator: c, link: Y.connectLink(c), ...(have.find((a) => a.creator === c) || {}) })) });
-    }
     if (req.query?.costs === '1') return res.status(200).json(await aiCosts({ fresh: req.query?.fresh === '1' }));
     return res.status(200).json(await buildHQ({ fresh: req.query?.fresh === '1' }));
   } catch (e) {

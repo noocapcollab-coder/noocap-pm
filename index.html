@@ -807,7 +807,6 @@
   <div id="ldDecide"></div>
   <div class="ld-cols" id="ldCols"><div class="skel"></div></div>
   <div class="ofoot" id="ldFoot" style="font-size:12px;color:var(--muted)"></div>
-  <section class="ocard" style="gap:0;margin-top:14px"><h2 style="margin-bottom:6px">YouTube audience <small>for brands asking for stats</small></h2><div class="ofoot" style="margin:0 0 8px">Each creator connects once with Google (read-only). The PM refreshes the numbers weekly and adds them to replies when a brand asks for demographics.</div><div id="ytAud"><div class="skel"></div></div></section>
 </div></section>
 
 <!-- ============ Active brands ============ -->
@@ -993,7 +992,7 @@
     if (v === 'revenue') rv ? renderRevenue() : loadRevenue();
     if (v === 'team') { if (!hqData) loadHQ(); loadEditorMonth(); }
     if (v === 'billing') hqData ? renderInvoices() : loadHQ();
-    if (v === 'leads') { hqData ? renderLeadsTab() : loadHQ(); if (!drafts.length) loadApprovals(true); loadAudience(); }
+    if (v === 'leads') { hqData ? renderLeadsTab() : loadHQ(); if (!drafts.length) loadApprovals(true); }
     if (v === 'active') hqData ? renderActive() : loadHQ();
     if (v === 'runs') startRuns(); else stopRuns();
     if (v === 'chat') setTimeout(() => $('q').focus(), 50);
@@ -1538,21 +1537,6 @@
   // =====================================================================
   // Leads: brands we're still trying to close (mostly Chris's inbox). Won deals move to Active brands.
   // =====================================================================
-
-  // YouTube audience per creator (Leads tab)
-  async function loadAudience(refresh) {
-    const box = $('ytAud'); if (!box) return;
-    try {
-      const res = await fetch('/api/hq?audience=1' + (refresh ? '&refresh=' + encodeURIComponent(refresh) : ''), { headers: headers() });
-      const j = await res.json(); if (!res.ok) throw new Error(j.error || 'Failed');
-      if (!j.ready) { box.innerHTML = '<div class="empty">Add YT_CLIENT_ID and YT_CLIENT_SECRET in Vercel to switch this on.</div>'; return; }
-      const xs = j.creators || [];
-      box.innerHTML = xs.map((c) => c.text ? `<div class="inv-r" style="align-items:flex-start"><span class="c">${esc(c.creator)}</span><span class="b" style="white-space:pre-line;font-size:13px">${esc(c.text)}<small>Updated ${c.updated ? shortDate(String(c.updated).slice(0, 10)) : '—'}</small></span><span class="bt"><button type="button" class="obtn" data-copy="${esc(c.creator)}">Copy</button><button type="button" class="obtn" data-ref="${esc(c.creator)}">Refresh</button></span></div>` : `<div class="inv-r"><span class="c">${esc(c.creator)}</span><span class="b" style="color:var(--dim)">Not connected</span><span class="bt"><button type="button" class="obtn" data-link="${esc(c.link)}">Copy connect link</button></span></div>`).join('');
-      box.querySelectorAll('[data-link]').forEach((b) => b.onclick = async () => { try { await navigator.clipboard.writeText(b.dataset.link); b.textContent = 'Copied ✓'; } catch { prompt('Send this link to the creator:', b.dataset.link); } });
-      box.querySelectorAll('[data-copy]').forEach((b) => b.onclick = async () => { const c = xs.find((x) => x.creator === b.dataset.copy); try { await navigator.clipboard.writeText(c.text); b.textContent = 'Copied ✓'; } catch { prompt('Copy:', c.text); } });
-      box.querySelectorAll('[data-ref]').forEach((b) => b.onclick = () => { b.textContent = 'Refreshing…'; loadAudience(b.dataset.ref); });
-    } catch (e) { box.innerHTML = `<div class="empty">Couldn't load: ${esc(e.message)}</div>`; }
-  }
   function renderLeadsTab() {
     const L = hqData?.leads; if (!L || !$('ldCols')) return;
     const col = (k) => (L.columns || []).find((c) => c.key === k)?.items || [];
