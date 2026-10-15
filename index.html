@@ -483,6 +483,23 @@
   .td-money span { font-size: 12px; color: var(--muted); }
   .td-money b { font: 600 22px 'Space Grotesk', sans-serif; font-variant-numeric: tabular-nums; }
   @media (max-width: 900px) { .td-2 { grid-template-columns: 1fr; } .td-row { grid-template-columns: minmax(0, 1fr) auto; } .td-row .chip { grid-column: 1 / -1; } .td-money { grid-template-columns: 1fr 1fr; } }
+  /* ---------- Editors monthly review ---------- */
+  #team { overflow-y: auto; }
+  .ed-sel { min-height: 38px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line2); background: var(--panel); color: var(--text); font: 13px 'IBM Plex Sans', sans-serif; }
+  .ed-tot { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  #edTable table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  #edTable th { text-align: left; font: 500 12px 'IBM Plex Sans', sans-serif; color: var(--muted); padding: 8px 10px; border-bottom: 1px solid var(--line2); white-space: nowrap; }
+  #edTable td { padding: 11px 10px; border-bottom: 1px solid var(--line3); white-space: nowrap; }
+  #edTable .num { text-align: right; font-family: 'IBM Plex Mono', monospace; }
+  #edTable tr.er { cursor: pointer; }
+  #edTable tr.er:hover td { background: #171a1f; }
+  #edTable tr.vids td { white-space: normal; background: var(--panel2); padding: 4px 14px 12px; }
+  .ed-v { display: grid; grid-template-columns: minmax(0, 1fr) 90px 110px 70px; gap: 10px; padding: 7px 0; border-top: 1px solid var(--line3); font-size: 13px; align-items: center; }
+  .ed-v:first-child { border-top: 0; }
+  .ed-v a { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ed-v a:hover { text-decoration: underline; }
+  .ed-v .m { color: var(--muted); font: 12px 'IBM Plex Mono', monospace; }
+  @media (max-width: 700px) { .ed-tot { grid-template-columns: 1fr 1fr; } .ed-v { grid-template-columns: minmax(0, 1fr) auto; } .ed-v .m.hide { display: none; } }
   /* ---------- Revenue ---------- */
   #revenue { overflow-y: auto; }
   .rv-stats { grid-template-columns: repeat(5, minmax(0, 1fr)); }
@@ -657,6 +674,7 @@
   <div class="grp">
     <div class="lbl">More</div>
     <button data-v="hq" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Schedule &amp; team</button>
+    <button data-v="team" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14.8c1.9.7 3.1 2.4 3.5 5.2"/></svg>Editors</button>
     <button data-v="flow" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 12h4l6-5M11 12l6 5"/></svg>System</button>
     <button data-v="chat" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.4l-1.8-4.9L5 9.7l5.2-1.8z"/><path d="M18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8z"/></svg>Ask the PM</button>
   </div>
@@ -692,6 +710,18 @@
   </div>
   <section class="ocard" aria-label="Money"><h2><span class="num">4</span>Money <small>last 30 days</small><button class="more" type="button" data-go="revenue">Revenue →</button></h2><div class="td-money" id="ovMoney"><div class="skel"></div></div></section>
   <div class="err" id="ovErr" style="font-size:13px"></div>
+</div></section>
+
+<!-- ============ Editors (monthly review) ============ -->
+<section class="view" id="team"><div class="ov">
+  <div class="ov-head">
+    <div><div class="k">Video Intake · checked every month</div><h1>Editors</h1></div>
+    <div class="acts"><select id="edMonth" class="ed-sel" aria-label="Month"></select></div>
+  </div>
+  <section class="ostats ed-tot" id="edTot" aria-label="Month totals"></section>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Each editor <small>click a row to see their videos</small></h2><div class="tscroll" id="edTable"><div class="skel"></div><div class="skel"></div></div></section>
+  <div class="ofoot" style="font-size:12px;color:var(--muted)">Delivered = videos the editor submitted on the handoff form this month. Finished = signed off (To Post) or posted this month. Sent back = times the brand or team asked for changes. Working on now = cards in Editing or Review today.</div>
+  <div class="err" id="edErr" style="font-size:13px"></div>
 </div></section>
 
 <!-- ============ Revenue ============ -->
@@ -840,7 +870,7 @@
   // ---------- tabs ----------
   let view = 'overview';
   function show(v) {
-    if (!['overview', 'hq', 'deals', 'revenue', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
+    if (!['overview', 'hq', 'team', 'deals', 'revenue', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
     view = v;
     document.querySelectorAll('.view').forEach((el) => el.classList.toggle('on', el.id === v));
     document.querySelectorAll('[data-v]').forEach((b) => b.classList.toggle('on', b.dataset.v === v));
@@ -851,12 +881,13 @@
     if (v === 'deals' && hqData) renderBoard();
     if (v === 'flow' && !flowData) loadFlow();
     if (v === 'revenue') rv ? renderRevenue() : loadRevenue();
+    if (v === 'team') { if (!hqData) loadHQ(); loadEditorMonth(); }
     if (v === 'runs') startRuns(); else stopRuns();
     if (v === 'chat') setTimeout(() => $('q').focus(), 50);
   }
   document.querySelectorAll('[data-v]').forEach((b) => b.onclick = () => show(b.dataset.v));
   window.addEventListener('hashchange', () => show(location.hash.slice(1)));
-  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else if (view === 'runs') loadRuns(); else loadHQ(true); };
+  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else if (view === 'team') loadEditorMonth(true); else if (view === 'runs') loadRuns(); else loadHQ(true); };
   document.querySelectorAll('.ov [data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
 
   // =====================================================================
@@ -1136,7 +1167,7 @@
       if (res.status === 401) return needPassword();
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
-      hqData = data; renderHQ(); renderOverview(); loadCosts();
+      hqData = data; renderHQ(); renderOverview(); loadCosts(); if (view === 'team') renderEditorMonth();
       $('hqErr').textContent = data.errors?.length ? 'Some data could not load: ' + data.errors.join(' · ') : '';
     } catch (e) {
       $('hqErr').textContent = $('ovErr').textContent = 'Could not load HQ: ' + e.message;
@@ -1310,6 +1341,48 @@
     document.querySelectorAll('#overview [data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
     renderLive();
     $('ovErr').textContent = d.errors?.length ? 'Some data could not load: ' + d.errors.join(' · ') : '';
+  }
+
+  // =====================================================================
+  // Editors: the monthly check. Every editor's delivered / finished / changes for one month, from Video Intake
+  // =====================================================================
+  const edCache = {}; let edOpen = null, edMonthSel = '';
+  function edMonths() {
+    const t = new Date(Date.now() + 5.5 * 36e5), out = [];
+    for (let i = 0; i < 6; i++) { const d = new Date(Date.UTC(t.getUTCFullYear(), t.getUTCMonth() - i, 1)); out.push(d.toISOString().slice(0, 7)); }
+    return out;
+  }
+  const edLabel = (m) => new Date(m + '-01T00:00:00Z').toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+  async function loadEditorMonth(fresh) {
+    const ms = edMonths();
+    if (!edMonthSel) edMonthSel = ms[0];
+    $('edMonth').innerHTML = ms.map((m) => `<option value="${m}" ${m === edMonthSel ? 'selected' : ''}>${edLabel(m)}${m === ms[0] ? ' (so far)' : ''}</option>`).join('');
+    $('edMonth').onchange = () => { edMonthSel = $('edMonth').value; edOpen = null; loadEditorMonth(); };
+    if (edCache[edMonthSel] && !fresh) return renderEditorMonth();
+    $('edErr').textContent = '';
+    $('edTable').innerHTML = '<div class="skel"></div><div class="skel"></div>';
+    try {
+      const r = await fetch('/api/hq?editors=' + edMonthSel, { headers: headers() });
+      if (r.status === 401) return needPassword();
+      const j = await r.json(); if (!r.ok) throw new Error(j.error || 'Could not load editors');
+      edCache[edMonthSel] = j; renderEditorMonth();
+    } catch (e) { $('edErr').textContent = e.message; $('edTable').innerHTML = '<div class="empty">Could not load. Hit refresh to try again.</div>'; }
+  }
+  function renderEditorMonth() {
+    const d = edCache[edMonthSel]; if (!d) return;
+    const t = d.totals || {}, now = Object.fromEntries((hqData?.editors || []).map((e) => [e.editor, e]));
+    const stat = (l, v, s) => `<div class="ostat"><span class="l">${l}</span><span class="v">${v}</span><span class="s">${s}</span></div>`;
+    $('edTot').innerHTML = stat('Delivered', t.delivered || 0, 'videos submitted by editors') + stat('Finished', t.finished_in_period || 0, 'signed off or posted') + stat('Sent back', t.changes_requested_in_period || 0, 'times changes were asked') + stat('Revision rounds', t.revision_rounds || 0, 'on videos delivered this month');
+    const onTime = (sla) => { const ks = Object.entries(sla || {}); const tot = ks.reduce((n, [, c]) => n + c, 0); if (!tot) return '—'; const ok = ks.filter(([k]) => /on.?time|met|yes|✅|within|true/i.test(k)).reduce((n, [, c]) => n + c, 0); return Math.round(ok / tot * 100) + '%'; };
+    const names = [...new Set([...(d.editors || []).map((e) => e.editor), ...Object.keys(now)])].filter((n) => n && n !== '(no editor)');
+    const rows = names.map((n) => ({ n, e: (d.editors || []).find((x) => x.editor === n) || {}, w: now[n] || {} })).sort((a, z) => (z.e.delivered || 0) - (a.e.delivered || 0) || (z.e.finished_in_period || 0) - (a.e.finished_in_period || 0));
+    const vids = (n) => (d.videos || []).filter((v) => v.editor === n);
+    $('edTable').innerHTML = rows.length ? '<table><tr><th>Editor</th><th class="num">Delivered</th><th class="num">Finished</th><th class="num">Sent back</th><th class="num">Revisions</th><th class="num">Avg edit</th><th class="num">On time</th><th class="num">Working on now</th></tr>' + rows.map(({ n, e, w }) => {
+      const open = edOpen === n, vs = vids(n);
+      const list = open ? `<tr class="vids"><td colspan="8">${vs.length ? vs.map((v) => `<div class="ed-v"><a href="${esc(v.url || '#')}" target="_blank" rel="noopener" title="${esc(v.title)}">${esc(v.title)}</a><span class="m hide">${esc(v.creator || '')}</span><span class="m">${esc(v.status || '')}${v.revisions ? ' · ' + v.revisions + ' rev' : ''}</span><span class="m hide">${v.submitted ? shortDate(v.submitted) : ''}</span></div>`).join('') : '<div class="empty">No videos delivered this month.</div>'}</td></tr>` : '';
+      return `<tr class="er" data-ed="${esc(n)}"><td class="nm"><b>${esc(n)}</b> <span style="color:var(--dim)">${open ? '▾' : '▸'}</span></td><td class="num"><b>${e.delivered || 0}</b></td><td class="num">${e.finished_in_period || 0}</td><td class="num">${e.changes_requested_in_period || '—'}</td><td class="num">${e.revision_rounds || '—'}</td><td class="num">${e.avg_edit_hours != null ? Math.round(e.avg_edit_hours) + 'h' : '—'}</td><td class="num">${onTime(e.draft_sla)}</td><td class="num">${(w.editing || 0) + (w.review || 0) ? `${w.editing || 0} editing · ${w.review || 0} review` : '—'}</td></tr>${list}`;
+    }).join('') + '</table>' : '<div class="empty">No editor activity this month yet.</div>';
+    $('edTable').querySelectorAll('tr.er').forEach((tr) => tr.onclick = () => { edOpen = edOpen === tr.dataset.ed ? null : tr.dataset.ed; renderEditorMonth(); });
   }
 
   // ---- Brand deals: one action list (what needs Harsh) + everything the PM is running on its own, folded ----
