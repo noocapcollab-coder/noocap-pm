@@ -523,6 +523,21 @@
   .ed-v a:hover { text-decoration: underline; }
   .ed-v .m { color: var(--muted); font: 12px 'IBM Plex Mono', monospace; }
   @media (max-width: 700px) { .ed-tot { grid-template-columns: 1fr 1fr; } .ed-v { grid-template-columns: minmax(0, 1fr) auto; } .ed-v .m.hide { display: none; } }
+  /* ---------- Invoices ---------- */
+  #billing { overflow-y: auto; }
+  .inv-tot { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .dotc { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+  .inv-r { display: grid; grid-template-columns: 110px minmax(0, 1fr) 100px 120px auto; gap: 12px; align-items: center; padding: 11px 0; border-top: 1px solid var(--line3); font-size: 14px; }
+  .inv-r:first-child { border-top: 0; }
+  .inv-r .c { font-weight: 600; }
+  .inv-r .b { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .inv-r .b small { display: block; color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; }
+  .inv-r .a { font: 600 14px 'IBM Plex Mono', monospace; text-align: right; }
+  .inv-r .d { font: 12px 'IBM Plex Mono', monospace; color: var(--muted); }
+  .inv-r .d.late { color: var(--err); } .inv-r .d.warn { color: var(--warn); }
+  .inv-r .bt { display: flex; gap: 6px; justify-content: flex-end; }
+  .inv-r.busy { opacity: .45; pointer-events: none; }
+  @media (max-width: 760px) { .inv-tot { grid-template-columns: 1fr 1fr; } .inv-r { grid-template-columns: minmax(0, 1fr) auto; } .inv-r .c { grid-column: 1 / -1; } .inv-r .bt { grid-column: 1 / -1; justify-content: flex-start; } }
   /* ---------- Revenue ---------- */
   #revenue { overflow-y: auto; }
   .rv-stats { grid-template-columns: repeat(5, minmax(0, 1fr)); }
@@ -693,6 +708,7 @@
     <button data-v="deals" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M9 7V5h6v2"/></svg>Brand deals <span class="badge" id="dealsBadge2" hidden>0</span></button>
     <button data-v="approvals" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Approvals <span class="badge" data-count hidden>0</span></button>
     <button data-v="revenue" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M17 7.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2.2 2.7 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3"/></svg>Revenue</button>
+    <button data-v="billing" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12h7M9 16h5"/></svg>Invoices <span class="badge" id="invBadge" hidden>0</span></button>
   </div>
   <div class="grp">
     <div class="lbl">More</div>
@@ -745,6 +761,18 @@
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Each editor <small>click a row to see their videos</small></h2><div class="tscroll" id="edTable"><div class="skel"></div><div class="skel"></div></div></section>
   <div class="ofoot" style="font-size:12px;color:var(--muted)">Delivered = videos the editor submitted on the handoff form this month. Finished = signed off (To Post) or posted this month. Sent back = times the brand or team asked for changes. Working on now = cards in Editing or Review today.</div>
   <div class="err" id="edErr" style="font-size:13px"></div>
+</div></section>
+
+<!-- ============ Invoices ============ -->
+<section class="view" id="billing"><div class="ov">
+  <div class="ov-head">
+    <div><div class="k">Sponsor Video Revenue · last 30 days</div><h1>Invoices</h1></div>
+  </div>
+  <section class="ostats inv-tot" id="invTot" aria-label="Invoice totals"></section>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:var(--warn)"></span>Invoice not raised yet <small id="invRaiseN"></small></h2><div class="ofoot" style="margin:0 0 6px">Posted videos with no invoice sent. Creators raise their own invoices, so remind them, then mark it sent.</div><div id="invRaise"><div class="skel"></div></div></section>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:#38bdf8"></span>Invoiced, waiting for payment <small id="invWaitN"></small></h2><div id="invWait"><div class="skel"></div></div></section>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:var(--info)"></span>NOOCAP cut to collect <small id="invCutN"></small></h2><div id="invCut"><div class="skel"></div></div></section>
+  <div class="err" id="invErr" style="font-size:13px"></div>
 </div></section>
 
 <!-- ============ Revenue ============ -->
@@ -848,6 +876,7 @@
   <button data-v="hq" type="button"><span class="i">▤</span>Schedule</button>
   <button data-v="deals" type="button"><span class="i">▦</span>Deals</button>
   <button data-v="revenue" type="button"><span class="i">$</span>Revenue</button>
+  <button data-v="billing" type="button"><span class="i">🧾</span>Invoices</button>
   <button data-v="flow" type="button"><span class="i">⇢</span>System</button>
   <button data-v="chat" type="button"><span class="i">✦</span>Chat</button>
   <button data-v="approvals" type="button"><span class="i">✉</span>Approvals<span class="badge" data-count hidden>0</span></button>
@@ -893,7 +922,7 @@
   // ---------- tabs ----------
   let view = 'overview';
   function show(v) {
-    if (!['overview', 'hq', 'team', 'deals', 'revenue', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
+    if (!['overview', 'hq', 'team', 'billing', 'deals', 'revenue', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
     view = v;
     document.querySelectorAll('.view').forEach((el) => el.classList.toggle('on', el.id === v));
     document.querySelectorAll('[data-v]').forEach((b) => b.classList.toggle('on', b.dataset.v === v));
@@ -905,6 +934,7 @@
     if (v === 'flow' && !flowData) loadFlow();
     if (v === 'revenue') rv ? renderRevenue() : loadRevenue();
     if (v === 'team') { if (!hqData) loadHQ(); loadEditorMonth(); }
+    if (v === 'billing') hqData ? renderInvoices() : loadHQ();
     if (v === 'runs') startRuns(); else stopRuns();
     if (v === 'chat') setTimeout(() => $('q').focus(), 50);
   }
@@ -1190,7 +1220,7 @@
       if (res.status === 401) return needPassword();
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
-      hqData = data; renderHQ(); renderOverview(); loadCosts(); if (view === 'team') renderEditorMonth();
+      hqData = data; renderHQ(); renderOverview(); loadCosts(); if (view === 'team') renderEditorMonth(); renderInvoices();
       $('hqErr').textContent = data.errors?.length ? 'Some data could not load: ' + data.errors.join(' · ') : '';
     } catch (e) {
       $('hqErr').textContent = $('ovErr').textContent = 'Could not load HQ: ' + e.message;
@@ -1288,7 +1318,7 @@
     // 3. Money decisions
     for (const x of (d.leads?.approvals || [])) out.push({ kind: 'DECIDE', tone: 'bad', t: `${x.brand} × ${x.creator} offers ${usd(x.approval || 0)}`, s: 'Below our floor: approve or decline', pri: 'Decide', go: 'deals' });
     const m3 = d.overview?.money30 || {};
-    if (m3.to_invoice_n) out.push({ kind: 'INVOICE', tone: 'warn', t: `${plural(m3.to_invoice_n, 'posted video')} with no invoice sent (${usd(m3.to_invoice)})`, s: 'Send the invoices so the money starts coming in', pri: 'Revenue', go: 'revenue' });
+    if (m3.to_invoice_n) out.push({ kind: 'INVOICE', tone: 'warn', t: `${plural(m3.to_invoice_n, 'posted video')} with no invoice sent (${usd(m3.to_invoice)})`, s: 'Send the invoices so the money starts coming in', pri: 'Invoices', go: 'billing' });
     for (const a of d.deals.attention.filter((a) => /invoice/i.test(a.why)).slice(0, 3)) out.push({ kind: 'INVOICE', tone: 'warn', t: `${a.brand} × ${a.creator || '?'}`, s: a.why, pri: 'Open deal', url: a.url });
     // 4. Brand emails only Harsh can answer
     const fresh = (d.leads?.recent || []).filter((x) => /^Needs you/i.test(x.next || ''));
@@ -1406,6 +1436,40 @@
       return `<tr class="er" data-ed="${esc(n)}"><td class="nm"><b>${esc(n)}</b> <span style="color:var(--dim)">${open ? '▾' : '▸'}</span></td><td class="num"><b>${e.delivered || 0}</b></td><td class="num">${e.finished_in_period || 0}</td><td class="num">${e.changes_requested_in_period || '—'}</td><td class="num">${e.revision_rounds || '—'}</td><td class="num">${e.avg_edit_hours != null ? Math.round(e.avg_edit_hours) + 'h' : '—'}</td><td class="num">${onTime(e.draft_sla)}</td><td class="num">${(w.editing || 0) + (w.review || 0) ? `${w.editing || 0} editing · ${w.review || 0} review` : '—'}</td></tr>${list}`;
     }).join('') + '</table>' : '<div class="empty">No editor activity this month yet.</div>';
     $('edTable').querySelectorAll('tr.er').forEach((tr) => tr.onclick = () => { edOpen = edOpen === tr.dataset.ed ? null : tr.dataset.ed; renderEditorMonth(); });
+  }
+
+  // =====================================================================
+  // Invoices: what's posted but not invoiced, what's invoiced but unpaid, and NOOCAP's cut to collect
+  // =====================================================================
+  function renderInvoices() {
+    const c = hqData?.chase; if (!c || !$('invRaise')) return;
+    const raise = c.needs_invoice || [], wait = c.awaiting_payment || [], cut = c.cut_pending || [];
+    const sum = (xs) => xs.reduce((n, x) => n + (x.amount || 0), 0);
+    const b = $('invBadge'); b.hidden = !raise.length; b.textContent = raise.length;
+    const stat = (l, v, s, col) => `<div class="ostat"><span class="l">${l}</span><span class="v" style="color:${col}">${v}</span><span class="s">${s}</span></div>`;
+    $('invTot').innerHTML = stat('Not raised yet', usd(sum(raise)), plural(raise.length, 'video'), raise.length ? 'var(--warn)' : 'inherit') + stat('Waiting for payment', usd(sum(wait)), plural(wait.length, 'invoice'), '#38bdf8') + stat('Cut to collect', usd(sum(cut)), plural(cut.length, 'payment'), 'var(--info)');
+    $('invRaiseN').textContent = raise.length ? `${raise.length} · ${usd(sum(raise))}` : '';
+    $('invWaitN').textContent = wait.length ? `${wait.length} · ${usd(sum(wait))}` : '';
+    $('invCutN').textContent = cut.length ? `${cut.length} · ${usd(sum(cut))}` : '';
+    const amt = (x) => x.amount ? usd(x.amount) : '<span style="color:var(--dim)">no amount</span>';
+    const row = (x, i, kind, days, btns) => `<div class="inv-r" data-k="${kind}" data-i="${i}"><span class="c">${esc(x.creator)}</span><span class="b">${esc(x.brand || x.video || '')}${x.video && String(x.video).toLowerCase() !== String(x.brand || '').toLowerCase() ? `<small>${esc(x.video)}</small>` : ''}</span><span class="a">${amt(x)}</span>${days}<span class="bt">${btns}</span></div>`;
+    $('invRaise').innerHTML = raise.length ? raise.map((x, i) => row(x, i, 'raise', `<span class="d ${x.days >= 7 ? 'late' : x.days >= 3 ? 'warn' : ''}">posted ${x.days}d ago</span>`, `<button type="button" class="obtn" data-act="remind">Copy reminder</button><button type="button" class="obtn pri" data-act="sent">Invoice sent</button>`)).join('') : '<div class="empty">Every posted video has an invoice. 🎉</div>';
+    $('invWait').innerHTML = wait.length ? wait.map((x, i) => row(x, i, 'wait', `<span class="d ${x.days >= 30 ? 'late' : x.days >= 14 ? 'warn' : ''}">invoiced ${x.days}d ago</span>`, `<button type="button" class="obtn pri" data-act="paid">Paid</button>`)).join('') : '<div class="empty">Nothing waiting for payment.</div>';
+    $('invCut').innerHTML = cut.length ? cut.map((x, i) => row(x, i, 'cut', `<span class="d">${x.cut_percent}% · paid ${x.days}d ago</span>`, `<button type="button" class="obtn pri" data-act="cut">Collected</button>`)).join('') : '<div class="empty">No cut waiting to be collected.</div>';
+    const lists = { raise, wait, cut };
+    document.querySelectorAll('#billing .inv-r button[data-act]').forEach((btn) => btn.onclick = async () => {
+      const r = btn.closest('.inv-r'), x = lists[r.dataset.k][+r.dataset.i], act = btn.dataset.act;
+      if (act === 'remind') {
+        const msg = `Hi ${x.creator}, ${x.brand || 'the'} video ${x.posted ? 'went live on ' + shortDate(x.posted) : 'is live'}${x.amount ? ` (${usd(x.amount)})` : ''}. Could you send the invoice to the brand when you get a chance, with noocapcollab@gmail.com in CC? Thanks!`;
+        try { await navigator.clipboard.writeText(msg); btn.textContent = 'Copied ✓'; } catch { prompt('Copy this reminder:', msg); }
+        return;
+      }
+      if (!x.rev) return alert('This row has no revenue page to update, open it in Notion.');
+      const body = { action: 'set', revPageId: x.rev, ...(act === 'sent' ? { invoiced: todayISO() } : act === 'paid' ? { paid: true, paidDate: todayISO() } : { cutCollected: true }) };
+      r.classList.add('busy');
+      try { const res = await fetch('/api/revenue', { method: 'POST', headers: headers(), body: JSON.stringify(body) }); const j = await res.json(); if (!res.ok) throw new Error(j.error || 'Failed'); lists[r.dataset.k].splice(+r.dataset.i, 1); renderInvoices(); loadHQ(true); }
+      catch (e) { r.classList.remove('busy'); alert('Not saved: ' + e.message); }
+    });
   }
 
   // ---- Brand deals: one action list (what needs Harsh) + everything the PM is running on its own, folded ----
