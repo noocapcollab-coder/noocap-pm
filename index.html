@@ -300,6 +300,10 @@
   .ap-from.noocap { background: var(--accent-soft); border: 1px solid rgba(61,214,176,.3); }
   .ap-from b { font-weight: 600; }
   .ap-from span { color: var(--muted); }
+  .ap-inbox { flex-wrap: wrap; }
+  .ap-inbox button { flex: 0 0 auto; padding: 6px 10px; }
+  .ibx.sm { font-size: 10px; padding: 1px 7px; }
+  .ap-grp { color: var(--soft); text-transform: none; letter-spacing: 0; font: 600 13px 'Space Grotesk', sans-serif; }
   .ap-list h2 { font: 600 14px 'Space Grotesk', sans-serif; margin: 4px 8px 12px; display: flex; align-items: center; gap: 8px; }
   .ap-item { display: block; width: 100%; text-align: left; background: none; border: 1px solid transparent; color: inherit; border-radius: 12px; padding: 12px; margin-bottom: 6px; }
   .ap-item:hover { background: var(--panel2); }
@@ -1796,7 +1800,7 @@
   // =====================================================================
   // APPROVALS
   // =====================================================================
-  let drafts = [], selDraft = null, apBox = store.get('apBox') || 'all';
+  let drafts = [], selDraft = null, apBox = 'all';
   const INBOX = { chris: { name: "Chris's inbox", addr: 'collab@chriscordero.net' }, noocap: { name: 'NOOCAP inbox', addr: 'noocapcollab@gmail.com' } };
   const inboxOf = (d) => d.sendFrom === 'Chris' ? 'chris' : 'noocap';
   const KIND_LABEL = { Quote: 'Price quote', Counter: 'Counter offer', 'Close deal': 'Close the deal', 'Rate hold': 'Our rate', 'Lead follow-up': 'Follow-up', 'Payment chase': 'Payment reminder' };
@@ -1833,16 +1837,19 @@
       $('ap').classList.remove('editing');
       return;
     }
-    // Two inboxes, kept apart: the tabs filter, and "All" groups them under their own heading
-    const counts = { all: drafts.length, chris: drafts.filter((d) => inboxOf(d) === 'chris').length, noocap: drafts.filter((d) => inboxOf(d) === 'noocap').length };
-    if (apBox !== 'all' && !counts[apBox]) apBox = 'all';
-    $('apInbox').innerHTML = [['all', 'All'], ['chris', "Chris's inbox"], ['noocap', 'NOOCAP inbox']].map(([k, l]) => `<button type="button" class="${k === apBox ? 'on' : ''}" data-box="${k}">${l}<b>${counts[k]}</b></button>`).join('');
+    // Grouped by creator: chips filter to one creator, "All" shows each creator under their own heading.
+    // Which inbox an email sends from is a small tag on the card.
+    const who = (d) => d.creator || 'Other';
+    const byC = {}; for (const d of drafts) (byC[who(d)] ||= []).push(d);
+    const order = Object.keys(byC).sort((a, z) => (a === 'Other') - (z === 'Other') || byC[z].length - byC[a].length || a.localeCompare(z));
+    if (apBox !== 'all' && !byC[apBox]) apBox = 'all';
+    $('apInbox').innerHTML = [['all', 'All', drafts.length], ...order.map((c) => [c, c, byC[c].length])].map(([k, l, n]) => `<button type="button" class="${k === apBox ? 'on' : ''}" data-box="${esc(k)}">${esc(l)}<b>${n}</b></button>`).join('');
     $('apInbox').querySelectorAll('[data-box]').forEach((b) => b.onclick = () => { apBox = b.dataset.box; store.set('apBox', apBox); selDraft = null; renderApprovals(); });
-    const shown = apBox === 'all' ? [...drafts.filter((d) => inboxOf(d) === 'chris'), ...drafts.filter((d) => inboxOf(d) === 'noocap')] : drafts.filter((d) => inboxOf(d) === apBox);
+    const shown = apBox === 'all' ? order.flatMap((c) => byC[c]) : byC[apBox];
     if (selDraft && !shown.find((d) => d.id === selDraft)) selDraft = null;
     if (!selDraft && window.innerWidth > 760 && shown.length) selDraft = shown[0].id;
-    let lastBox = '';
-    list.innerHTML = shown.map((d) => { const bx = inboxOf(d); const head = apBox === 'all' && bx !== lastBox ? `<div class="ap-grp"><span class="ibx ${bx}">${INBOX[bx].name}</span></div>` : ''; lastBox = bx; return head + `<button type="button" class="ap-item ${bx} ${d.id === selDraft ? 'on' : ''}" data-id="${d.id}"><div class="top"><span class="kind ${d.status === 'Failed' ? 'failed' : ''}">${esc(kindLabel(d.kind))}${d.status === 'Failed' ? ' · failed' : ''}</span><span class="age">${autoAt(d) ? `<span style="color:var(--accent)">auto ${autoAt(d)}</span>` : d.created ? since(d.created) : ''}</span></div><div class="who">${esc((d.brand || 'Brand') + (d.creator ? ' × ' + d.creator : ''))}</div><div class="subj">${esc(d.subject || '(no subject)')}</div></button>`; }).join('');
+    let lastC = '';
+    list.innerHTML = shown.map((d) => { const bx = inboxOf(d), c = who(d); const head = apBox === 'all' && c !== lastC ? `<div class="ap-grp">${esc(c)} <span style="color:var(--dim);font-weight:500">${byC[c].length}</span></div>` : ''; lastC = c; return head + `<button type="button" class="ap-item ${bx} ${d.id === selDraft ? 'on' : ''}" data-id="${d.id}"><div class="top"><span class="kind ${d.status === 'Failed' ? 'failed' : ''}">${esc(kindLabel(d.kind))}${d.status === 'Failed' ? ' · failed' : ''}</span><span class="ibx sm ${bx}">${bx === 'chris' ? "Chris's inbox" : 'NOOCAP'}</span><span class="age">${autoAt(d) ? `<span style="color:var(--accent)">auto ${autoAt(d)}</span>` : d.created ? since(d.created) : ''}</span></div><div class="who">${esc(d.brand || 'Brand')}</div><div class="subj">${esc(d.subject || '(no subject)')}</div></button>`; }).join('');
     list.querySelectorAll('.ap-item').forEach((b) => b.onclick = () => { selDraft = b.dataset.id; renderApprovals(); });
     // A background refresh never redraws the email you're looking at, so your edits and cursor stay put
     if (bg && $('apEdit').dataset.id === selDraft) return;
