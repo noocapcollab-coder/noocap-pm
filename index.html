@@ -281,6 +281,25 @@
   #approvals { overflow: hidden; }
   .ap { display: grid; grid-template-columns: 360px 1fr; width: 100%; max-width: 1320px; margin: 0 auto; min-height: 0; }
   .ap-list { border-right: 1px solid var(--line); overflow-y: auto; padding: 16px 12px; }
+  /* Approvals split by inbox: Chris's collab inbox vs the NOOCAP inbox */
+  .ap-inbox { display: flex; gap: 4px; margin: 0 8px 12px; padding: 3px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+  .ap-inbox button { flex: 1; border: 0; background: none; color: var(--muted); border-radius: 7px; padding: 7px 6px; font: 600 12px 'Space Grotesk', sans-serif; white-space: nowrap; }
+  .ap-inbox button.on { background: var(--panel3); color: var(--text); }
+  .ap-inbox button b { font: 500 11px 'IBM Plex Mono', monospace; margin-left: 4px; color: var(--dim); }
+  .ap-grp { margin: 14px 8px 6px; font: 600 11px 'IBM Plex Sans', sans-serif; letter-spacing: .06em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+  .ap-grp:first-child { margin-top: 2px; }
+  .ibx { display: inline-flex; align-items: center; gap: 6px; font: 600 11px 'IBM Plex Sans', sans-serif; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+  .ibx::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  .ibx.chris { background: rgba(251,191,36,.14); color: #fbbf24; }
+  .ibx.noocap { background: var(--accent-soft); color: var(--accent); }
+  .ap-item { border-left: 3px solid transparent; }
+  .ap-item.chris { border-left-color: rgba(251,191,36,.7); }
+  .ap-item.noocap { border-left-color: rgba(61,214,176,.6); }
+  .ap-from { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 10px 14px; border-radius: 10px; margin: 2px 0 12px; font-size: 13px; }
+  .ap-from.chris { background: rgba(251,191,36,.08); border: 1px solid rgba(251,191,36,.3); }
+  .ap-from.noocap { background: var(--accent-soft); border: 1px solid rgba(61,214,176,.3); }
+  .ap-from b { font-weight: 600; }
+  .ap-from span { color: var(--muted); }
   .ap-list h2 { font: 600 14px 'Space Grotesk', sans-serif; margin: 4px 8px 12px; display: flex; align-items: center; gap: 8px; }
   .ap-item { display: block; width: 100%; text-align: left; background: none; border: 1px solid transparent; color: inherit; border-radius: 12px; padding: 12px; margin-bottom: 6px; }
   .ap-item:hover { background: var(--panel2); }
@@ -815,7 +834,7 @@
 <!-- ============ Approvals ============ -->
 <section class="view" id="approvals">
   <div class="ap" id="ap">
-    <div class="ap-list"><h2>Waiting for you <span class="badge" data-count hidden>0</span></h2><div id="apList"><div class="skel"></div><div class="skel"></div></div></div>
+    <div class="ap-list"><h2>Waiting for you <span class="badge" data-count hidden>0</span></h2><div class="ap-inbox" id="apInbox"></div><div id="apList"><div class="skel"></div><div class="skel"></div></div></div>
     <div class="ap-edit" id="apEdit"></div>
   </div>
 </section>
@@ -1777,7 +1796,11 @@
   // =====================================================================
   // APPROVALS
   // =====================================================================
-  let drafts = [], selDraft = null;
+  let drafts = [], selDraft = null, apBox = store.get('apBox') || 'all';
+  const INBOX = { chris: { name: "Chris's inbox", addr: 'collab@chriscordero.net' }, noocap: { name: 'NOOCAP inbox', addr: 'noocapcollab@gmail.com' } };
+  const inboxOf = (d) => d.sendFrom === 'Chris' ? 'chris' : 'noocap';
+  const KIND_LABEL = { Quote: 'Price quote', Counter: 'Counter offer', 'Close deal': 'Close the deal', 'Rate hold': 'Our rate', 'Lead follow-up': 'Follow-up', 'Payment chase': 'Payment reminder' };
+  const kindLabel = (k) => KIND_LABEL[k] || k || 'Email';
   // Autopilot: follow-up nudges send themselves 30 minutes after they're drafted, unless rejected
   const AUTO_FROM = Date.parse('2026-09-29T14:00:00Z');
   const LEAD_AUTO_FROM = Date.parse('2026-10-03T00:00:00+05:30');
@@ -1810,9 +1833,16 @@
       $('ap').classList.remove('editing');
       return;
     }
-    if (selDraft && !drafts.find((d) => d.id === selDraft)) selDraft = null;
-    if (!selDraft && window.innerWidth > 760) selDraft = drafts[0].id;
-    list.innerHTML = drafts.map((d) => `<button type="button" class="ap-item ${d.id === selDraft ? 'on' : ''}" data-id="${d.id}"><div class="top"><span class="kind ${d.status === 'Failed' ? 'failed' : ''}">${esc(d.kind || 'Email')}${d.sendFrom === 'Chris' ? ' · Chris inbox' : ''}${d.status === 'Failed' ? ' · failed' : ''}</span><span class="age">${autoAt(d) ? `<span style="color:var(--accent)">auto ${autoAt(d)}</span>` : d.created ? since(d.created) : ''}</span></div><div class="who">${esc((d.brand || 'Brand') + (d.creator ? ' × ' + d.creator : ''))}</div><div class="subj">${esc(d.subject || '(no subject)')}</div></button>`).join('');
+    // Two inboxes, kept apart: the tabs filter, and "All" groups them under their own heading
+    const counts = { all: drafts.length, chris: drafts.filter((d) => inboxOf(d) === 'chris').length, noocap: drafts.filter((d) => inboxOf(d) === 'noocap').length };
+    if (apBox !== 'all' && !counts[apBox]) apBox = 'all';
+    $('apInbox').innerHTML = [['all', 'All'], ['chris', "Chris's inbox"], ['noocap', 'NOOCAP inbox']].map(([k, l]) => `<button type="button" class="${k === apBox ? 'on' : ''}" data-box="${k}">${l}<b>${counts[k]}</b></button>`).join('');
+    $('apInbox').querySelectorAll('[data-box]').forEach((b) => b.onclick = () => { apBox = b.dataset.box; store.set('apBox', apBox); selDraft = null; renderApprovals(); });
+    const shown = apBox === 'all' ? [...drafts.filter((d) => inboxOf(d) === 'chris'), ...drafts.filter((d) => inboxOf(d) === 'noocap')] : drafts.filter((d) => inboxOf(d) === apBox);
+    if (selDraft && !shown.find((d) => d.id === selDraft)) selDraft = null;
+    if (!selDraft && window.innerWidth > 760 && shown.length) selDraft = shown[0].id;
+    let lastBox = '';
+    list.innerHTML = shown.map((d) => { const bx = inboxOf(d); const head = apBox === 'all' && bx !== lastBox ? `<div class="ap-grp"><span class="ibx ${bx}">${INBOX[bx].name}</span></div>` : ''; lastBox = bx; return head + `<button type="button" class="ap-item ${bx} ${d.id === selDraft ? 'on' : ''}" data-id="${d.id}"><div class="top"><span class="kind ${d.status === 'Failed' ? 'failed' : ''}">${esc(kindLabel(d.kind))}${d.status === 'Failed' ? ' · failed' : ''}</span><span class="age">${autoAt(d) ? `<span style="color:var(--accent)">auto ${autoAt(d)}</span>` : d.created ? since(d.created) : ''}</span></div><div class="who">${esc((d.brand || 'Brand') + (d.creator ? ' × ' + d.creator : ''))}</div><div class="subj">${esc(d.subject || '(no subject)')}</div></button>`; }).join('');
     list.querySelectorAll('.ap-item').forEach((b) => b.onclick = () => { selDraft = b.dataset.id; renderApprovals(); });
     // A background refresh never redraws the email you're looking at, so your edits and cursor stay put
     if (bg && $('apEdit').dataset.id === selDraft) return;
@@ -1826,9 +1856,9 @@
     const att = d.attach && d.attach !== 'None' ? `<div class="attach">📎 ${d.attach === 'Script PDF' ? 'Script PDF, made from the video page' : 'Invoice from the deal'} <button type="button" class="btn sm ghost" id="aPreview" style="margin-left:10px">View attachment</button><span class="state" id="aPrevState"></span></div>` : '';
     $('apEdit').innerHTML = `
       <button type="button" class="iconbtn back" id="apBack" style="margin-bottom:12px">← All emails</button>
-      <div class="head"><span class="kind ${d.status === 'Failed' ? 'failed' : ''}">${esc(d.kind || 'Email')}</span><h2>${esc((d.brand || 'Brand') + (d.creator ? ' × ' + d.creator : ''))}</h2></div>
+      <div class="head"><span class="kind ${d.status === 'Failed' ? 'failed' : ''}">${esc(kindLabel(d.kind))}</span><h2>${esc((d.brand || 'Brand') + (d.creator ? ' × ' + d.creator : ''))}</h2></div>
       ${d.why ? `<div class="why">${esc(d.why.replace(/\s*\[(from|price):[^\]]+\]/g, ''))}</div>` : ''}
-      ${d.sendFrom === 'Chris' ? '<div class="why" style="color:var(--accent)">Sends from Chris\'s collab inbox, in the brand\'s thread.</div>' : ''}
+      <div class="ap-from ${inboxOf(d)}"><span class="ibx ${inboxOf(d)}">${INBOX[inboxOf(d)].name}</span><b>Sends from ${INBOX[inboxOf(d)].addr}</b><span>replies in the brand's own thread</span></div>
       ${d.error ? `<div class="why err">Last error: ${esc(d.error)}</div>` : ''}
       ${(d.files || []).length || d.gmail ? `<div class="bfiles">${(d.files || []).map((f) => `<a class="bfile" href="${esc(f.url)}" target="_blank" rel="noopener" download="${esc(f.name)}">⬇ ${esc(f.name)}</a>`).join('')}${d.gmail ? `<a class="bfile ghost" href="${esc(d.gmail)}" target="_blank" rel="noopener">Open thread in Gmail ↗</a>` : ''}</div>` : ''}
       ${d.context ? `<details class="theirs" open><summary>Latest message in the thread</summary><pre>${esc(d.context)}</pre></details>` : ''}
