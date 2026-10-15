@@ -821,7 +821,8 @@
     <div><div class="k">Sponsor Video Revenue · last 30 days</div><h1>Invoices</h1></div>
   </div>
   <section class="ostats inv-tot" id="invTot" aria-label="Invoice totals"></section>
-  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:var(--warn)"></span>Invoice not raised yet <small id="invRaiseN"></small></h2><div class="ofoot" style="margin:0 0 6px">Posted videos with no invoice sent. Creators raise their own invoices, so remind them, then mark it sent.</div><div id="invRaise"><div class="skel"></div></div></section>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:var(--warn)"></span>Invoice not raised yet <small id="invRaiseN"></small></h2><div class="ofoot" style="margin:0 0 6px">Only videos that are live on the creator's board and whose deal isn't invoiced yet. Creators raise their own invoices: remind them from the day after posting, then mark it sent.</div><div id="invRaise"><div class="skel"></div></div></section>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:var(--dim)"></span>Coming up <small id="invSoonN"></small></h2><div class="ofoot" style="margin:0 0 6px">From Active brands: approved or about to post. No invoice yet, it moves up once the video is live.</div><div id="invSoon"><div class="skel"></div></div></section>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:#38bdf8"></span>Invoiced, waiting for payment <small id="invWaitN"></small></h2><div id="invWait"><div class="skel"></div></div></section>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:var(--info)"></span>NOOCAP cut to collect <small id="invCutN"></small></h2><div id="invCut"><div class="skel"></div></div></section>
   <div class="err" id="invErr" style="font-size:13px"></div>
@@ -1509,14 +1510,17 @@
     $('invCutN').textContent = cut.length ? `${cut.length} · ${usd(sum(cut))}` : '';
     const amt = (x) => x.amount ? usd(x.amount) : '<span style="color:var(--dim)">no amount</span>';
     const row = (x, i, kind, days, btns) => `<div class="inv-r" data-k="${kind}" data-i="${i}"><span class="c">${esc(x.creator)}</span><span class="b">${esc(x.brand || x.video || '')}${x.video && String(x.video).toLowerCase() !== String(x.brand || '').toLowerCase() ? `<small>${esc(x.video)}</small>` : ''}</span><span class="a">${amt(x)}</span>${days}<span class="bt">${btns}</span></div>`;
-    $('invRaise').innerHTML = raise.length ? raise.map((x, i) => row(x, i, 'raise', `<span class="d ${x.days >= 7 ? 'late' : x.days >= 3 ? 'warn' : ''}">posted ${x.days}d ago</span>`, `<button type="button" class="obtn" data-act="remind">Copy reminder</button><button type="button" class="obtn pri" data-act="sent">Invoice sent</button>`)).join('') : '<div class="empty">Every posted video has an invoice. 🎉</div>';
+    $('invRaise').innerHTML = raise.length ? raise.map((x, i) => row(x, i, 'raise', `<span class="d ${x.days >= 7 ? 'late' : x.days >= 3 ? 'warn' : ''}">${x.days ? `posted ${x.days}d ago` : 'posted today'}</span>`, `${x.remind_ok === false ? '<span class="d" style="min-width:auto">remind tomorrow</span>' : '<button type="button" class="obtn" data-act="remind">Copy reminder</button>'}<button type="button" class="obtn pri" data-act="sent">Invoice sent</button>`)).join('') : '<div class="empty">Every posted video has an invoice. 🎉</div>';
+    const soon = c.coming_up || [];
+    $('invSoonN').textContent = soon.length ? `${soon.length}${sum(soon) ? ' · ' + usd(sum(soon)) : ''}` : '';
+    $('invSoon').innerHTML = soon.length ? soon.map((x) => `<div class="inv-r"><span class="c">${esc(x.creator)}</span><span class="b">${esc(x.brand)}<small>${esc(x.doing || '')}</small></span><span class="a">${amt(x)}</span><span class="d">${x.post ? 'posts ' + shortDate(x.post) : 'no post date'}</span><span class="bt">${x.url ? `<a class="obtn" href="${esc(x.url)}" target="_blank" rel="noopener">Card</a>` : ''}</span></div>`).join('') : '<div class="empty">Nothing about to post.</div>';
     $('invWait').innerHTML = wait.length ? wait.map((x, i) => row(x, i, 'wait', `<span class="d ${x.days >= 30 ? 'late' : x.days >= 14 ? 'warn' : ''}">invoiced ${x.days}d ago</span>`, `<button type="button" class="obtn pri" data-act="paid">Paid</button>`)).join('') : '<div class="empty">Nothing waiting for payment.</div>';
     $('invCut').innerHTML = cut.length ? cut.map((x, i) => row(x, i, 'cut', `<span class="d">${x.cut_percent}% · paid ${x.days}d ago</span>`, `<button type="button" class="obtn pri" data-act="cut">Collected</button>`)).join('') : '<div class="empty">No cut waiting to be collected.</div>';
     const lists = { raise, wait, cut };
     document.querySelectorAll('#billing .inv-r button[data-act]').forEach((btn) => btn.onclick = async () => {
       const r = btn.closest('.inv-r'), x = lists[r.dataset.k][+r.dataset.i], act = btn.dataset.act;
       if (act === 'remind') {
-        const msg = `Hi ${x.creator}, ${x.brand || 'the'} video ${x.posted ? 'went live on ' + shortDate(x.posted) : 'is live'}${x.amount ? ` (${usd(x.amount)})` : ''}. Could you send the invoice to the brand when you get a chance, with noocapcollab@gmail.com in CC? Thanks!`;
+        const msg = `Hi ${x.creator}, the ${x.brand || ''} video went live${x.posted ? ' on ' + shortDate(x.posted) : ''}, so it's ready to invoice${x.amount ? ` for ${usd(x.amount)}` : ''}. Could you send the invoice to ${x.brand_email || 'the brand'} with noocapcollab@gmail.com in CC? Once it's out we'll follow up with them for the payment. Thanks!`;
         try { await navigator.clipboard.writeText(msg); btn.textContent = 'Copied ✓'; } catch { prompt('Copy this reminder:', msg); }
         return;
       }
