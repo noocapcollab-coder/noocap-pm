@@ -812,7 +812,7 @@
   <div class="ov-head"><div><div class="k" id="acWhen">Deals we've won, until they're paid</div><h1>Active brands</h1></div></div>
   <div class="cfilter rv-pills" id="acF" style="align-self:flex-start"></div>
   <section class="ocard" style="gap:0"><div id="acList"><div class="skel"></div><div class="skel"></div></div></section>
-  <div class="ofoot" style="font-size:12px;color:var(--muted)">Steps: Brief · Script · Script OK · Filming &amp; editing · Video OK · Posted · Paid. Late = past the post date and not posted yet. Invoices and payments are on the Invoices tab.</div>
+  <div class="ofoot" style="font-size:12px;color:var(--muted)">Steps: Brief · Script · Script OK · Filming &amp; editing · Video OK · Posted · Paid. Late = the ball has been with us for more than 5 days (the brand wrote and we have not replied, or nothing has moved on our side). "Was due" means the post date passed while we wait on the brand. Invoices and payments are on the Invoices tab.</div>
 </div></section>
 
 <!-- ============ Invoices ============ -->
@@ -1577,7 +1577,7 @@
     $('acF').innerHTML = ['All', ...names].map((c) => `<button type="button" class="${c === acCreator ? 'on' : ''}" data-c="${esc(c)}">${esc(c)}<b>${c === 'All' ? all.length : all.filter((r) => r.creator === c).length}</b></button>`).join('');
     $('acF').querySelectorAll('button').forEach((b) => b.onclick = () => { acCreator = b.dataset.c; renderActive(); });
     const xs = all.filter((r) => acCreator === 'All' || r.creator === acCreator);
-    $('acList').innerHTML = xs.length ? xs.map((r) => `<div class="ac-r"><div class="w"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.brand)}</a> <span>× ${esc(r.creator)}</span>${r.next ? `<small title="${esc(r.next)}">Next: ${esc(r.next)}</small>` : ''}</div><div class="steps" title="${esc(r.steps[r.step])}">${r.steps.map((s, i) => `<i class="${i < r.step ? 'on' : i === r.step ? 'cur' : ''}" title="${esc(s)}"></i>`).join('')}</div><div class="doing">${esc(r.doing)}<small>With ${esc(r.who)}${r.video ? ` · <a href="${esc(r.video)}" target="_blank" rel="noopener" style="color:var(--accent)">video card</a>` : ''}</small></div><div class="pd ${r.late ? 'late' : ''}">${r.post ? (r.late ? 'late · ' : 'posts ') + shortDate(r.post) : 'no date'}</div></div>`).join('') : '<div class="empty">No active brands right now.</div>';
+    $('acList').innerHTML = xs.length ? xs.map((r) => `<div class="ac-r"><div class="w"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.brand)}</a> <span>× ${esc(r.creator)}</span>${r.next ? `<small title="${esc(r.next)}">Next: ${esc(r.next)}</small>` : ''}</div><div class="steps" title="${esc(r.steps[r.step])}">${r.steps.map((s, i) => `<i class="${i < r.step ? 'on' : i === r.step ? 'cur' : ''}" title="${esc(s)}"></i>`).join('')}</div><div class="doing">${esc(r.doing)}<small>With ${esc(r.who)}${r.video ? ` · <a href="${esc(r.video)}" target="_blank" rel="noopener" style="color:var(--accent)">video card</a>` : ''}</small></div><div class="pd ${r.late ? 'late' : ''}" title="${esc(r.late_why || (r.post_passed ? 'Post date has passed, but we are waiting on the brand' : ''))}">${r.late ? 'late · ' + esc(r.late_why) : r.post ? (r.post_passed ? 'was due ' : 'posts ') + shortDate(r.post) : 'no date'}</div></div>`).join('') : '<div class="empty">No active brands right now.</div>';
   }
 
   // ---- Brand deals: one action list (what needs Harsh) + everything the PM is running on its own, folded ----
