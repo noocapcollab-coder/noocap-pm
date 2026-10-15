@@ -374,7 +374,7 @@
   /* ---------- sidebar shell (HQ design) ---------- */
   body { flex-direction: row; }
   .appcol { flex: 1; min-width: 0; display: flex; flex-direction: column; height: 100%; }
-  .snav { width: 232px; flex-shrink: 0; padding: 28px 18px; border-right: 1px solid var(--line); background: var(--nav); display: flex; flex-direction: column; gap: 26px; overflow-y: auto; }
+  .snav { width: 232px; flex-shrink: 0; padding: 28px 18px; border-right: 1px solid var(--line); background: var(--nav); display: flex; flex-direction: column; gap: 20px; overflow-y: auto; }
   .snav .brand { padding: 0 10px; }
   .snav .brand b { display: block; font: 700 20px 'Space Grotesk', sans-serif; letter-spacing: .04em; }
   .snav .brand small { color: var(--muted); font-size: 13px; }
@@ -734,6 +734,10 @@
   <div class="brand"><b>NOOCAP</b><small>Agency HQ</small></div>
   <div class="grp">
     <button data-v="overview" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Today</button>
+    <button data-v="chat" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.4l-1.8-4.9L5 9.7l5.2-1.8z"/><path d="M18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8z"/></svg>Ask the PM</button>
+  </div>
+  <div class="grp">
+    <div class="lbl">Brand deals</div>
     <button data-v="leads" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>Leads <span class="badge" id="leadsBadge" hidden>0</span></button>
     <button data-v="active" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M9 7V5h6v2"/><path d="M8 13l3 3 5-6"/></svg>Active brands <span class="badge" id="activeBadge" hidden>0</span></button>
     <button data-v="approvals" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Approvals <span class="badge" data-count hidden>0</span></button>
@@ -741,11 +745,13 @@
     <button data-v="revenue" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M17 7.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2.2 2.7 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3"/></svg>Revenue</button>
   </div>
   <div class="grp">
-    <div class="lbl">More</div>
+    <div class="lbl">Agency workflow</div>
     <button data-v="hq" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Schedule &amp; team</button>
     <button data-v="team" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14.8c1.9.7 3.1 2.4 3.5 5.2"/></svg>Editors</button>
+  </div>
+  <div class="grp">
+    <div class="lbl">Behind the scenes</div>
     <button data-v="flow" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 12h4l6-5M11 12l6 5"/></svg>System</button>
-    <button data-v="chat" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.4l-1.8-4.9L5 9.7l5.2-1.8z"/><path d="M18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8z"/></svg>Ask the PM</button>
   </div>
   <div class="live">
     <div class="h"><i id="liveDot"></i><span id="liveH">PM agent</span></div>
