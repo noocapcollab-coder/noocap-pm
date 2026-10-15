@@ -27,5 +27,15 @@
     "api/whatsapp.js": {
       "maxDuration": 60
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/youtube/connect",
+      "destination": "/api/health?yt=connect"
+    },
+    {
+      "source": "/youtube/callback",
+      "destination": "/api/health?yt=callback"
+    }
+  ]
 }
