@@ -101,8 +101,10 @@ async function handleMessage(m) {
   const replyTo = m.context?.id ? st.messages.find((x) => x.wid && x.wid === m.context.id) : null;
   const quoted = replyTo?.draft ? replyTo : null;
 
+  const forwarded = !!(m.context?.forwarded || m.context?.frequently_forwarded);
   try {
     if (button) await onButton(st, button);
+    else if (text && !quoted && [...st.messages].reverse().find((x) => x.role === 'assistant')?.meta !== 'edit-ask' && await maybeNewDeal(st, text, forwarded)) { /* handled */ }
     else if (quoted && text) await applyEdit(st, quoted.draft, text);
     else await onText(st, text, replyTo?.content || '');
   } catch (e) {
@@ -154,6 +156,9 @@ async function onButton(st, id) {
     return;
   }
   if (action === 'yes' || action === 'no') { await resolvePending(st, action === 'yes'); return; }
+  if (action === 'dealok') { await fileNewDeal(st); return; }
+  if (action === 'dealwho') { await askWhose(st); return; }
+  if (action === 'dealno') { const p = pendingDeal(st); if (p) p.resolved = 'cancelled'; await say(st, 'OK, I left it. Nothing was filed.'); return; }
   await say(st, "I didn't recognise that button. Ask me in a message instead.");
 }
 
@@ -169,6 +174,14 @@ async function resolvePending(st, confirm) {
 
 async function onText(st, text, quotedText = '') {
   const t = text.trim();
+  // We asked whose new deal it is: a creator's name files it
+  const p = pendingDeal(st);
+  if (p && p.whose && t.length < 40) {
+    const { BOARDS } = await import('../lib/tools.js');
+    const c = BOARDS.map((b) => b.creator).find((n) => n.toLowerCase().startsWith(t.toLowerCase().replace(/[^a-z]/g, '').slice(0, 4)) && t.length >= 3);
+    if (c) { p.creator = c; await fileNewDeal(st); return; }
+    if (/^(cancel|no|stop|leave it)\.?$/i.test(t)) { p.resolved = 'cancelled'; await say(st, 'OK, nothing was filed.'); return; }
+  }
   // Waiting for the change to a draft: our last message asked for it (after tapping Edit), within the hour
   const lastOurs = [...st.messages].reverse().find((x) => x.role === 'assistant' && x.meta !== 'pending-doc');
   if (lastOurs?.meta === 'edit-ask' && lastOurs.draft && Date.now() - Date.parse(lastOurs.at) < 36e5) {
@@ -292,4 +305,66 @@ async function showDrafts(st, text) {
   }
   if (hits.length > 3) await say(st, `…and ${hits.length - 3} more for that brand in Approvals.`);
   return true;
+}
+
+
+// ---------- a new brand deal forwarded from a creator ----------
+// Brad / Emtech / Chris send their own deal info ("Here's the Luma info, brief, due Oct 21") and Harsh forwards it here.
+// The PM works out whose deal it is and which brand, shows that with buttons, and on ✅ files it exactly like a brief
+// email: a deal row (Brief Received, Needs Check), a card on the creator's board with the brief, and Shreya pinged.
+const pendingDeal = (st) => [...st.messages].reverse().slice(0, 12).find((x) => x.meta === 'deal-confirm' && !x.resolved && Date.now() - Date.parse(x.at) < 6 * 36e5);
+
+async function maybeNewDeal(st, text, forwarded) {
+  const t = text.trim();
+  const dealish = /\b(brand deal|brief|sponsor|collab|campaign|deliverable|due date|draft due|go live|script)\b/i.test(t);
+  const linky = /https?:\/\/(docs|drive)\.google\.com|notion\.(so|site)|frame\.io|dropbox/i.test(t);
+  if (!(forwarded && (dealish || linky)) && !(t.length > 150 && dealish && linky)) return false;
+  const { claude, HAIKU } = await import('../lib/claude.js');
+  const { BOARDS } = await import('../lib/tools.js');
+  const { openDeals } = await import('../lib/briefs.js');
+  const roster = BOARDS.map((b) => b.creator);
+  const deals = await openDeals().catch(() => []);
+  const tool = { name: 'classify', description: 'Say whether this message is a brand deal for a NOOCAP creator and whose it is.', input_schema: { type: 'object', properties: {
+    is_brand_deal: { type: 'boolean', description: 'True if this message hands over a sponsored brand deal or its brief for a creator to make (brief link, script, due date, deliverables). False for ordinary questions or instructions to the PM.' },
+    creator: { type: ['string', 'null'], enum: [...roster, null], description: 'Whose deal it is, from clues in the message: their own email address (bradgainesmarketing@gmail.com is Brad), their name, their handle, or a creator who already has a deal with this brand. Null if you cannot tell.' },
+    brand: { type: 'string', description: 'The brand name' },
+    due: { type: ['string', 'null'], description: 'Draft or post due date as written, if any' },
+    gist: { type: 'string', description: 'One short line on what the deal is' },
+  }, required: ['is_brand_deal', 'creator', 'brand', 'gist'] } };
+  const r = await claude({ model: HAIKU, max_tokens: 400, tools: [tool], tool_choice: { type: 'tool', name: 'classify' }, messages: [{ role: 'user', content: `NOOCAP creators: ${roster.join(', ')}.\nOpen deals: ${deals.map((d) => `${d.brand} (${d.creator})`).join(', ').slice(0, 2500)}\n\nMessage Harsh ${forwarded ? 'forwarded' : 'sent'} to the PM:\n${t.slice(0, 6000)}` }] });
+  const x = (r.content || []).find((c) => c.type === 'tool_use')?.input;
+  if (!x?.is_brand_deal) return false;
+  const already = x.creator && deals.find((d) => d.creator === x.creator && d.brand.toLowerCase().replace(/[^a-z0-9]/g, '').includes(String(x.brand || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 6)));
+  const head = `🆕 *New brand deal: ${x.brand || 'brand?'} × ${x.creator || 'whose?'}*\n• ${x.gist}${x.due ? `\n• Due: ${x.due}` : ''}${already ? `\n• ${x.creator} already has a "${already.brand}" deal (${already.stage}), so I'd add this brief to it` : ''}`;
+  const entry = { role: 'assistant', content: head, meta: 'deal-confirm', dealText: t.slice(0, 9000), brand: x.brand, creator: x.creator || null, dealId: already?.id || null, at: new Date().toISOString() };
+  if (!x.creator) {
+    entry.whose = true;
+    await sendText(st.person.number, `${head}\n\nWhose deal is this? Reply with the creator's name (${roster.join(', ')}).`);
+  } else {
+    await sendButtons(st.person.number, `${head}\n\nFile it? I'll ${already ? 'add the brief to that deal and its card' : `open the deal, make the card on ${x.creator}'s board with the brief`} and tell Shreya.`, [{ id: 'dealok', title: '✅ File it' }, { id: 'dealwho', title: '👤 Other creator' }, { id: 'dealno', title: '✖️ Not a deal' }]);
+  }
+  st.messages.push(entry);
+  return true;
+}
+
+async function askWhose(st) {
+  const p = pendingDeal(st);
+  if (!p) { await say(st, 'That deal is no longer waiting. Forward it again.'); return; }
+  const { BOARDS } = await import('../lib/tools.js');
+  p.whose = true; p.creator = null; p.dealId = null;
+  await say(st, `Whose deal is it? Reply with the creator's name (${BOARDS.map((b) => b.creator).join(', ')}).`);
+}
+
+async function fileNewDeal(st) {
+  const p = pendingDeal(st);
+  if (!p) { await say(st, 'That deal is no longer waiting. Forward it again.'); return; }
+  if (!p.creator) { await askWhose(st); return; }
+  p.resolved = 'filing';
+  await saveState(st);
+  const { briefFromText } = await import('../lib/briefs.js');
+  const r = await briefFromText({ text: `From: ${p.creator} (forwarded on WhatsApp by ${st.person.name})\nDate: ${new Date().toISOString()}\n\n${p.dealText}`, subject: `${p.brand || 'Brand'} brand deal`, dealId: p.dealId, creator: p.creator });
+  p.resolved = 'filed';
+  const link = r.video || r.card || r.url || r.deal;
+  const done = r.action === 'needs_help' ? `⚠️ I couldn't file it: ${r.why || 'unknown reason'}.` : `✅ Filed *${p.brand} × ${p.creator}*.${r.action === 'updated' ? ' The brief was added to the existing deal and card.' : ' New deal (marked Needs Check so you can add the rate) and a card on the board with the brief. Shreya has been told.'}${link ? `\n${link}` : ''}`;
+  await say(st, done);
 }
