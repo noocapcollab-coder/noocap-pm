@@ -180,9 +180,20 @@ async function onText(st, text, quotedText = '') {
   if (/^(yes|y|confirm|go ahead|do it)\.?!?$/i.test(t) && st.messages.some((x) => x.role === 'assistant' && x.pending?.length && !x.resolved)) { await resolvePending(st, true); return; }
   if (/^(no|cancel|stop|don'?t)\.?!?$/i.test(t) && st.messages.some((x) => x.role === 'assistant' && x.pending?.length && !x.resolved)) { await resolvePending(st, false); return; }
 
-  // "What's the email you drafted?": show the draft itself with its buttons, for the brand they named or the alert they replied to
+  // A change to the draft we were just talking about ("change 'confirm shortly' to 'that works'"): apply it to that
+  // draft and show the new version with its buttons, instead of sending them off to Approvals
+  const focus = await focusDraft(st, quotedText);
+  // Only right after we were talking about a draft, and never for "send it" / "drop it" (those are the buttons' job)
+  const lastA = [...st.messages].reverse().find((x) => x.role === 'assistant' && !['pending-doc', 'nudge', 'morning'].includes(x.meta));
+  const aboutDraft = lastA && (lastA.draft || /\bdraft|approvals\b/i.test(lastA.content || ''));
+  const verbOnly = /^(send|reject|drop|delete|cancel)( it| this| that)?\.?!?$/i.test(t);
+  if (focus && aboutDraft && !verbOnly && EDIT_WORDS.test(t) && !/\?\s*$/.test(t)) { await applyEdit(st, focus, t); return; }
+
+  // "What's the email you drafted?": show the draft itself with its buttons, for the brand they named, the alert they
+  // replied to, or the brand we were just talking about
   if (/\b(draft(ed)?|e-?mail|mail|reply|wrote|written)\b/i.test(t) && !/\b(draft|write|send|make|create)\s+(a|an|me|new)\b/i.test(t)) {
     if (await showDrafts(st, `${t}\n${quotedText}`)) return;
+    if (focus && await showDraftById(st, focus)) return;
   }
 
   // A question or instruction: the same brain as the dashboard chat, with this chat's recent history
@@ -191,7 +202,7 @@ async function onText(st, text, quotedText = '') {
     .slice(-14)
     .map((x) => ({ role: x.role, content: x.content }));
   const { ask } = await import('../lib/ask.js');
-  const r = await ask({ channel: 'whatsapp', save: false, chatId: st.chatId, messages: history });
+  const r = await ask({ channel: 'whatsapp', save: false, chatId: st.chatId, messages: history, person: st.person.name });
   const reply = r.data.reply || `⚠️ ${r.data.error || 'Something went wrong, try again.'}`;
   const pending = r.data.pending || [];
   if (pending.length) {
@@ -234,18 +245,45 @@ async function applyEdit(st, id, instruction) {
   st.messages.push({ role: 'assistant', content: card.slice(0, 1500), meta: 'draft', draft: id, wid: sentId(sent), at: new Date().toISOString() });
 }
 
+const EDIT_WORDS = /\b(change|replace|edit|rewrite|reword|remove|delete|drop|add|instead|make it|update|swap|say|mention|shorten|tweak|fix)\b/i;
+// Brand names compare without "AI", "app", ".io" and the like: "higgsfield" finds the "Higgsfield.AI" draft
+const brandKey = (x) => String(x || '').toLowerCase().replace(/\.(ai|io|app|co|com)\b/g, ' ').replace(/\b(ai|inc|llc|ltd|app|the|team|io|hq|labs?|studio)\b/g, ' ').replace(/[^a-z0-9]/g, '');
+
+// The draft this chat is about right now: one we just showed (within 2 hours), else the one whose brand came up in
+// the last few messages. Only when exactly one draft fits, so a change never lands on the wrong email.
+async function focusDraft(st, quotedText = '') {
+  const recent = st.messages.slice(-8).filter((x) => x.at && Date.now() - Date.parse(x.at) < 2 * 36e5);
+  const shown = [...recent].reverse().find((x) => x.role === 'assistant' && x.draft);
+  const { listDrafts } = await import('../lib/outbox.js');
+  const drafts = (await listDrafts().catch(() => [])).filter((d) => d.status === 'Draft');
+  if (shown && drafts.some((d) => d.id === shown.draft)) return shown.draft;
+  const hay = brandKey(`${quotedText}\n${recent.map((x) => x.content || '').join('\n')}`);
+  const hits = drafts.filter((d) => { const b = brandKey(d.brand); return b.length >= 3 && hay.includes(b); });
+  return hits.length === 1 ? hits[0].id : null;
+}
+
+async function showDraftById(st, id) {
+  const { readDraftById } = await import('../lib/outbox.js');
+  const d = await readDraftById(id).catch(() => null);
+  if (!d || d.status !== 'Draft') return false;
+  await sendText(st.person.number, `*${d.subject}*\nTo: ${d.to || '⚠️ no address yet'}${d.cc ? '\nCc: ' + d.cc : ''}\n\n${d.body}`);
+  const sent = await sendButtons(st.person.number, 'Send it, change it, or drop it? To change it, just tell me what to change.', draftButtons(id));
+  st.messages.push({ role: 'assistant', content: draftCard(d).slice(0, 1500), meta: 'draft', draft: id, wid: sentId(sent), at: new Date().toISOString() });
+  return true;
+}
+
 // Drafts waiting in Approvals whose brand is named in the message (or in the alert they replied to): each one in full,
 // then Send / Edit / Reject. Returns false when nothing matches, so the question goes to the PM brain instead.
 async function showDrafts(st, text) {
   const { listDrafts } = await import('../lib/outbox.js');
-  const key = (x) => String(x || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const key = brandKey;
   const hay = key(text);
   const drafts = (await listDrafts()).filter((d) => d.status === 'Draft');
   const hits = drafts.filter((d) => { const b = key(d.brand); return b.length >= 3 && hay.includes(b); });
   if (!hits.length) return false;
   for (const d of hits.slice(0, 3)) {
     await sendText(st.person.number, `*${d.subject}*\nTo: ${d.to || '⚠️ no address yet'}${d.cc ? '\nCc: ' + d.cc : ''}${d.why ? `\n_${String(d.why).replace(/\s*\[[^\]]*\]/g, '').slice(0, 220)}_` : ''}\n\n${d.body}`);
-    const sent = await sendButtons(st.person.number, `${d.brand || 'This'} draft · send it, change it, or drop it?`, draftButtons(d.id));
+    const sent = await sendButtons(st.person.number, `${d.brand || 'This'} draft · send it, change it, or drop it? To change it, just tell me what to change.`, draftButtons(d.id));
     st.messages.push({ role: 'assistant', content: draftCard(d).slice(0, 1500), meta: 'draft', draft: d.id, wid: sentId(sent), at: new Date().toISOString() });
   }
   if (hits.length > 3) await say(st, `…and ${hits.length - 3} more for that brand in Approvals.`);
