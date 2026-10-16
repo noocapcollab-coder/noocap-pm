@@ -542,6 +542,11 @@
   .ld-card .n .dr { color: var(--accent); }
   .ac-r { display: grid; grid-template-columns: minmax(0, 1.3fr) 170px minmax(0, 1.2fr) 90px; gap: 14px; align-items: center; padding: 12px 0; border-top: 1px solid var(--line3); font-size: 14px; }
   .ac-r:first-child { border-top: 0; }
+  .dh-r { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 14px; padding: 10px 0; border-top: 1px solid var(--line3); font-size: 14px; }
+  .dh-r:first-child { border-top: 0; }
+  .dh-r .w a { font-weight: 600; } .dh-r .w a:hover { text-decoration: underline; } .dh-r .w span { color: var(--muted); }
+  .dh-r .why small { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+  @media (max-width: 640px) { .dh-r { grid-template-columns: 1fr; gap: 4px; } }
   .ac-r .w { min-width: 0; }
   .ac-r .w a { font-weight: 600; } .ac-r .w a:hover { text-decoration: underline; }
   .ac-r .w span { color: var(--muted); }
@@ -814,6 +819,7 @@
   <div class="ov-head"><div><div class="k" id="acWhen">Deals we've won, until they're paid</div><h1>Active brands</h1></div></div>
   <div class="cfilter rv-pills" id="acF" style="align-self:flex-start"></div>
   <section class="ocard" style="gap:0"><div id="acList"><div class="skel"></div><div class="skel"></div></div></section>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" id="dhDot" style="background:var(--dim)"></span>Data checks <small id="dhN"></small></h2><div class="ofoot" style="margin:0 0 6px">Deals whose records disagree with each other: the wrong creator, a thread that belongs to another deal, another creator's inbox on the Cc. Fix them in Notion before the PM emails from them. Who each brand address works with lives in Brand Contacts.</div><div id="dhList"><div class="skel"></div></div></section>
   <div class="ofoot" style="font-size:12px;color:var(--muted)">Steps: Brief · Script · Script OK · Filming &amp; editing · Video OK · Posted · Paid. Late = the ball has been with us for more than 5 days (the brand wrote and we have not replied, or nothing has moved on our side). "Was due" means the post date passed while we wait on the brand. Invoices and payments are on the Invoices tab.</div>
 </div></section>
 
@@ -993,7 +999,7 @@
     if (v === 'team') { if (!hqData) loadHQ(); loadEditorMonth(); }
     if (v === 'billing') hqData ? renderInvoices() : loadHQ();
     if (v === 'leads') { hqData ? renderLeadsTab() : loadHQ(); if (!drafts.length) loadApprovals(true); }
-    if (v === 'active') hqData ? renderActive() : loadHQ();
+    if (v === 'active') hqData ? (renderActive(), renderHealth()) : loadHQ();
     if (v === 'runs') startRuns(); else stopRuns();
     if (v === 'chat') setTimeout(() => $('q').focus(), 50);
   }
@@ -1279,7 +1285,7 @@
       if (res.status === 401) return needPassword();
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
-      hqData = data; renderHQ(); renderOverview(); loadCosts(); if (view === 'team') renderEditorMonth(); renderInvoices(); renderLeadsTab(); renderActive();
+      hqData = data; renderHQ(); renderOverview(); loadCosts(); if (view === 'team') renderEditorMonth(); renderInvoices(); renderLeadsTab(); renderActive(); renderHealth();
       $('hqErr').textContent = data.errors?.length ? 'Some data could not load: ' + data.errors.join(' · ') : '';
     } catch (e) {
       $('hqErr').textContent = $('ovErr').textContent = 'Could not load HQ: ' + e.message;
@@ -1580,6 +1586,13 @@
     $('acF').querySelectorAll('button').forEach((b) => b.onclick = () => { acCreator = b.dataset.c; renderActive(); });
     const xs = all.filter((r) => acCreator === 'All' || r.creator === acCreator);
     $('acList').innerHTML = xs.length ? xs.map((r) => `<div class="ac-r"><div class="w"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.brand)}</a> <span>× ${esc(r.creator)}</span>${r.next ? `<small title="${esc(r.next)}">Next: ${esc(r.next)}</small>` : ''}</div><div class="steps" title="${esc(r.steps[r.step])}">${r.steps.map((s, i) => `<i class="${i < r.step ? 'on' : i === r.step ? 'cur' : ''}" title="${esc(s)}"></i>`).join('')}</div><div class="doing">${esc(r.doing)}<small>With ${esc(r.who)}${r.video ? ` · <a href="${esc(r.video)}" target="_blank" rel="noopener" style="color:var(--accent)">video card</a>` : ''}</small></div><div class="pd ${r.late ? 'late' : ''}" title="${esc(r.late_why || (r.post_passed ? 'Post date has passed, but we are waiting on the brand' : ''))}">${r.late ? 'late · ' + esc(r.late_why) : r.post ? (r.post_passed ? 'was due ' : 'posts ') + shortDate(r.post) : 'no date'}</div></div>`).join('') : '<div class="empty">No active brands right now.</div>';
+  }
+
+  function renderHealth() {
+    const xs = hqData?.health; if (!xs || !$('dhList')) return;
+    $('dhN').textContent = xs.length || '';
+    $('dhDot').style.background = xs.length ? 'var(--warn)' : 'var(--dim)';
+    $('dhList').innerHTML = xs.length ? xs.map((r) => `<div class="dh-r"><div class="w">${r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.brand)}</a>` : esc(r.brand)} <span>× ${esc(r.creator)}${r.stage ? ' · ' + esc(r.stage) : ''}</span></div><div class="why">${esc(r.why)}${r.fix ? `<small>${esc(r.fix)}</small>` : ''}</div></div>`).join('') : '<div class="empty">All records agree.</div>';
   }
 
   // ---- Brand deals: one action list (what needs Harsh) + everything the PM is running on its own, folded ----
