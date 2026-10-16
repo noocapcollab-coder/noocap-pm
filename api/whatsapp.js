@@ -187,13 +187,16 @@ async function onText(st, text, quotedText = '') {
   const lastA = [...st.messages].reverse().find((x) => x.role === 'assistant' && !['pending-doc', 'nudge', 'morning'].includes(x.meta));
   const aboutDraft = lastA && (lastA.draft || /\bdraft|approvals\b/i.test(lastA.content || ''));
   const verbOnly = /^(send|reject|drop|delete|cancel)( it| this| that)?\.?!?$/i.test(t);
-  if (focus && aboutDraft && !verbOnly && EDIT_WORDS.test(t) && !/\?\s*$/.test(t)) { await applyEdit(st, focus, t); return; }
+  if (focus && aboutDraft && !verbOnly && t.length < 400 && !/https?:\/\//i.test(t) && EDIT_WORDS.test(t) && !/\?\s*$/.test(t)) { await applyEdit(st, focus, t); return; }
 
   // "What's the email you drafted?": show the draft itself with its buttons, for the brand they named, the alert they
   // replied to, or the brand we were just talking about
   if (/\b(draft(ed)?|e-?mail|mail|reply|wrote|written)\b/i.test(t) && !/\b(draft|write|send|make|create)\s+(a|an|me|new)\b/i.test(t)) {
     if (await showDrafts(st, `${t}\n${quotedText}`)) return;
-    if (focus && await showDraftById(st, focus)) return;
+    // Falling back to the draft we were just on only for a plain "show me the mail" question, never for a long
+    // message that merely contains the word "email" (a forwarded brief, an instruction)
+    const askShow = t.length < 90 && /\b(show|see|what|where|which|read)\b/i.test(t) && /\b(draft(ed)?|e-?mail|mail|reply|wrote|written)\b/i.test(t);
+    if (focus && askShow && await showDraftById(st, focus)) return;
   }
 
   // A question or instruction: the same brain as the dashboard chat, with this chat's recent history
@@ -266,6 +269,7 @@ async function showDraftById(st, id) {
   const { readDraftById } = await import('../lib/outbox.js');
   const d = await readDraftById(id).catch(() => null);
   if (!d || d.status !== 'Draft') return false;
+  if (!d.brand && d.dealId) { try { const { notion, plain } = await import('../lib/notion.js'); const p = await notion('GET', `/pages/${d.dealId}`); d.brand = plain(p.properties?.['Brand Name']); } catch { /* card says Brand */ } }
   await sendText(st.person.number, `*${d.subject}*\nTo: ${d.to || '⚠️ no address yet'}${d.cc ? '\nCc: ' + d.cc : ''}\n\n${d.body}`);
   const sent = await sendButtons(st.person.number, 'Send it, change it, or drop it? To change it, just tell me what to change.', draftButtons(id));
   st.messages.push({ role: 'assistant', content: draftCard(d).slice(0, 1500), meta: 'draft', draft: id, wid: sentId(sent), at: new Date().toISOString() });
