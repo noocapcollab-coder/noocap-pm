@@ -156,7 +156,8 @@ async function onButton(st, id) {
     return;
   }
   if (action === 'yes' || action === 'no') { await resolvePending(st, action === 'yes'); return; }
-  if (action === 'dealok') { await fileNewDeal(st); return; }
+  if (action === 'dealok' || action === 'dealwa') { await fileNewDeal(st, 'WhatsApp'); return; }
+  if (action === 'dealmail') { await fileNewDeal(st, 'Email'); return; }
   if (action === 'dealwho') { await askWhose(st); return; }
   if (action === 'dealno') { const p = pendingDeal(st); if (p) p.resolved = 'cancelled'; await say(st, 'OK, I left it. Nothing was filed.'); return; }
   await say(st, "I didn't recognise that button. Ask me in a message instead.");
@@ -176,10 +177,14 @@ async function onText(st, text, quotedText = '') {
   const t = text.trim();
   // We asked whose new deal it is: a creator's name files it
   const p = pendingDeal(st);
-  if (p && p.whose && t.length < 40) {
+  if (p && t.length < 40) {
     const { BOARDS } = await import('../lib/tools.js');
     const c = BOARDS.map((b) => b.creator).find((n) => n.toLowerCase().startsWith(t.toLowerCase().replace(/[^a-z]/g, '').slice(0, 4)) && t.length >= 3);
-    if (c) { p.creator = c; await fileNewDeal(st); return; }
+    if (c) {
+      p.creator = c; p.whose = false; p.dealId = null;
+      await sendButtons(st.person.number, `OK, *${p.brand} × ${c}*. Where is the brand handled?\n*WhatsApp* = ${c} deals with them, I never email the brand. *Email* = we run it from our inbox.`, [{ id: 'dealwa', title: '✅ File · WhatsApp' }, { id: 'dealmail', title: '📧 File · Email' }, { id: 'dealno', title: '✖️ Not a deal' }]);
+      return;
+    }
     if (/^(cancel|no|stop|leave it)\.?$/i.test(t)) { p.resolved = 'cancelled'; await say(st, 'OK, nothing was filed.'); return; }
   }
   // Waiting for the change to a draft: our last message asked for it (after tapping Edit), within the hour
@@ -341,7 +346,7 @@ async function maybeNewDeal(st, text, forwarded) {
     entry.whose = true;
     await sendText(st.person.number, `${head}\n\nWhose deal is this? Reply with the creator's name (${roster.join(', ')}).`);
   } else {
-    await sendButtons(st.person.number, `${head}\n\nFile it? I'll ${already ? 'add the brief to that deal and its card' : `open the deal, make the card on ${x.creator}'s board with the brief`} and tell Shreya.`, [{ id: 'dealok', title: '✅ File it' }, { id: 'dealwho', title: '👤 Other creator' }, { id: 'dealno', title: '✖️ Not a deal' }]);
+    await sendButtons(st.person.number, `${head}\n\nFile it? I'll ${already ? 'add the brief to that deal and its card' : `open the deal, make the card on ${x.creator}'s board with the brief`} and tell Shreya.\n\n*WhatsApp* = ${x.creator} handles the brand, so I never email them. *Email* = we run it from our inbox.\nWrong creator? Just reply with the right name.`, [{ id: 'dealwa', title: '✅ File · WhatsApp' }, { id: 'dealmail', title: '📧 File · Email' }, { id: 'dealno', title: '✖️ Not a deal' }]);
   }
   st.messages.push(entry);
   return true;
@@ -355,16 +360,16 @@ async function askWhose(st) {
   await say(st, `Whose deal is it? Reply with the creator's name (${BOARDS.map((b) => b.creator).join(', ')}).`);
 }
 
-async function fileNewDeal(st) {
+async function fileNewDeal(st, channel = 'WhatsApp') {
   const p = pendingDeal(st);
   if (!p) { await say(st, 'That deal is no longer waiting. Forward it again.'); return; }
   if (!p.creator) { await askWhose(st); return; }
   p.resolved = 'filing';
   await saveState(st);
   const { briefFromText } = await import('../lib/briefs.js');
-  const r = await briefFromText({ text: `From: ${p.creator} (forwarded on WhatsApp by ${st.person.name})\nDate: ${new Date().toISOString()}\n\n${p.dealText}`, subject: `${p.brand || 'Brand'} brand deal`, dealId: p.dealId, creator: p.creator });
+  const r = await briefFromText({ text: `From: ${p.creator} (forwarded on WhatsApp by ${st.person.name})\nDate: ${new Date().toISOString()}\n\n${p.dealText}`, subject: `${p.brand || 'Brand'} brand deal`, dealId: p.dealId, creator: p.creator, channel });
   p.resolved = 'filed';
   const link = r.video || r.card || r.url || r.deal;
-  const done = r.action === 'needs_help' ? `⚠️ I couldn't file it: ${r.why || 'unknown reason'}.` : `✅ Filed *${p.brand} × ${p.creator}*.${r.action === 'updated' ? ' The brief was added to the existing deal and card.' : ' New deal (marked Needs Check so you can add the rate) and a card on the board with the brief. Shreya has been told.'}${link ? `\n${link}` : ''}`;
+  const done = r.action === 'needs_help' ? `⚠️ I couldn't file it: ${r.why || 'unknown reason'}.` : `✅ Filed *${p.brand} × ${p.creator}*.${r.action === 'updated' ? ' The brief was added to the existing deal and card.' : ` New deal (marked Needs Check so you can add the rate) and a card on the board with the brief. Shreya has been told.`}${channel === 'WhatsApp' ? `\nHandled on WhatsApp: I won't email the brand. When the cut is ready I'll send you the link here to pass on.` : `\nHandled on email: add the brand's email on the deal so I can follow up.`}${''}${link ? `\n${link}` : ''}`;
   await say(st, done);
 }
