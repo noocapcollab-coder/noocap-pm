@@ -158,6 +158,8 @@ async function onButton(st, id) {
   if (action === 'yes' || action === 'no') { await resolvePending(st, action === 'yes'); return; }
   if (action === 'dealok' || action === 'dealwa') { await fileNewDeal(st, 'WhatsApp'); return; }
   if (action === 'dealmail') { await fileNewDeal(st, 'Email'); return; }
+  if (action === 'noteson') { await sendScriptNotes(st); return; }
+  if (action === 'notesno') { const p = pendingNotes(st); if (p) p.resolved = 'cancelled'; await say(st, 'OK, I didn\'t send it.'); return; }
   if (action === 'dealwho') { await askWhose(st); return; }
   if (action === 'dealno') { const p = pendingDeal(st); if (p) p.resolved = 'cancelled'; await say(st, 'OK, I left it. Nothing was filed.'); return; }
   await say(st, "I didn't recognise that button. Ask me in a message instead.");
@@ -186,6 +188,18 @@ async function onText(st, text, quotedText = '') {
       return;
     }
     if (/^(cancel|no|stop|leave it)\.?$/i.test(t)) { p.resolved = 'cancelled'; await say(st, 'OK, nothing was filed.'); return; }
+  }
+  // We asked whose script feedback it is (or the creator was wrong): a creator's name sets it
+  const pn = pendingNotes(st);
+  if (pn && t.length < 40) {
+    const { BOARDS } = await import('../lib/tools.js');
+    const c = BOARDS.map((b) => b.creator).find((n) => n.toLowerCase().startsWith(t.toLowerCase().replace(/[^a-z]/g, '').slice(0, 4)) && t.length >= 3);
+    if (c) {
+      pn.creator = c; pn.whose = false;
+      await sendButtons(st.person.number, `OK, *${pn.brand} × ${c}*. Send the notes to Shreya?`, [{ id: 'noteson', title: '✏️ Send to Shreya' }, { id: 'notesno', title: '✖️ Don\'t send' }]);
+      return;
+    }
+    if (/^(cancel|no|stop|leave it)\.?$/i.test(t)) { pn.resolved = 'cancelled'; await say(st, 'OK, I didn\'t send it.'); return; }
   }
   // Waiting for the change to a draft: our last message asked for it (after tapping Edit), within the hour
   const lastOurs = [...st.messages].reverse().find((x) => x.role === 'assistant' && x.meta !== 'pending-doc');
@@ -323,22 +337,25 @@ async function maybeNewDeal(st, text, forwarded) {
   const t = text.trim();
   const dealish = /\b(brand deal|brief|sponsor|collab|campaign|deliverable|due date|draft due|go live|script)\b/i.test(t);
   const linky = /https?:\/\/(docs|drive)\.google\.com|notion\.(so|site)|frame\.io|dropbox/i.test(t);
-  if (!(forwarded && (dealish || linky)) && !(t.length > 150 && dealish && linky)) return false;
+  const notesish = t.length > 150 && /\bscript\b/i.test(t) && /\b(feedback|changes?|notes?|additions?|instead of|could you|mention|edits?|tweaks?)\b/i.test(t);
+  if (!(forwarded && (dealish || linky)) && !(t.length > 150 && dealish && linky) && !notesish) return false;
   const { claude, HAIKU } = await import('../lib/claude.js');
   const { BOARDS } = await import('../lib/tools.js');
   const { openDeals } = await import('../lib/briefs.js');
   const roster = BOARDS.map((b) => b.creator);
   const deals = await openDeals().catch(() => []);
   const tool = { name: 'classify', description: 'Say whether this message is a brand deal for a NOOCAP creator and whose it is.', input_schema: { type: 'object', properties: {
-    is_brand_deal: { type: 'boolean', description: 'True if this message hands over a sponsored brand deal or its brief for a creator to make (brief link, script, due date, deliverables). False for ordinary questions or instructions to the PM.' },
+    kind: { type: 'string', enum: ['new_deal', 'script_feedback', 'other'], description: 'new_deal = hands over a sponsored brand deal or its brief for a creator to make (brief link, due date, deliverables). script_feedback = a brand\'s notes, changes or additions on a script we already wrote for them (e.g. "add a line about X", "instead of Y say Z", "everything else is good"). other = ordinary questions or instructions to the PM.' },
+    is_brand_deal: { type: 'boolean', description: 'True only when kind is new_deal.' },
     creator: { type: ['string', 'null'], enum: [...roster, null], description: 'Whose deal it is, from clues in the message: their own email address (bradgainesmarketing@gmail.com is Brad), their name, their handle, or a creator who already has a deal with this brand. Null if you cannot tell.' },
     brand: { type: 'string', description: 'The brand name' },
     due: { type: ['string', 'null'], description: 'Draft or post due date as written, if any' },
     gist: { type: 'string', description: 'One short line on what the deal is' },
-  }, required: ['is_brand_deal', 'creator', 'brand', 'gist'] } };
+  }, required: ['kind', 'is_brand_deal', 'creator', 'brand', 'gist'] } };
   const r = await claude({ model: HAIKU, max_tokens: 400, tools: [tool], tool_choice: { type: 'tool', name: 'classify' }, messages: [{ role: 'user', content: `NOOCAP creators: ${roster.join(', ')}.\nOpen deals: ${deals.map((d) => `${d.brand} (${d.creator})`).join(', ').slice(0, 2500)}\n\nMessage Harsh ${forwarded ? 'forwarded' : 'sent'} to the PM:\n${t.slice(0, 6000)}` }] });
   const x = (r.content || []).find((c) => c.type === 'tool_use')?.input;
-  if (!x?.is_brand_deal) return false;
+  if (x?.kind === 'script_feedback') return offerScriptNotes(st, t, x, deals, roster);
+  if (!x?.is_brand_deal || x.kind === 'other') return false;
   const already = x.creator && deals.find((d) => d.creator === x.creator && d.brand.toLowerCase().replace(/[^a-z0-9]/g, '').includes(String(x.brand || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 6)));
   const head = `🆕 *New brand deal: ${x.brand || 'brand?'} × ${x.creator || 'whose?'}*\n• ${x.gist}${x.due ? `\n• Due: ${x.due}` : ''}${already ? `\n• ${x.creator} already has a "${already.brand}" deal (${already.stage}), so I'd add this brief to it` : ''}`;
   const entry = { role: 'assistant', content: head, meta: 'deal-confirm', dealText: t.slice(0, 9000), brand: x.brand, creator: x.creator || null, dealId: already?.id || null, at: new Date().toISOString() };
@@ -350,6 +367,40 @@ async function maybeNewDeal(st, text, forwarded) {
   }
   st.messages.push(entry);
   return true;
+}
+
+// ---------- a brand's script feedback forwarded on WhatsApp ----------
+// Chris pastes the brand's notes in the creator group, Harsh forwards them here: the PM says whose script it is and,
+// on ✏️, sends the notes to Shreya exactly like script-change emails (Discord ping, notes on the card, card back to Script Draft).
+const pendingNotes = (st) => [...st.messages].reverse().slice(0, 12).find((x) => x.meta === 'notes-confirm' && !x.resolved && Date.now() - Date.parse(x.at) < 6 * 36e5);
+async function offerScriptNotes(st, t, x, deals, roster) {
+  const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const key = norm(x.brand).slice(0, 6);
+  const deal = key && deals.find((d) => norm(d.brand).includes(key) && (!x.creator || d.creator === x.creator));
+  const creator = x.creator || deal?.creator || null;
+  const entry = { role: 'assistant', meta: 'notes-confirm', notes: t.slice(0, 6000), brand: deal?.brand || x.brand, creator, at: new Date().toISOString() };
+  entry.content = `✏️ *Script feedback: ${entry.brand || 'brand?'} × ${creator || 'whose?'}*\n• ${x.gist}`;
+  if (!creator) {
+    entry.whose = true;
+    await sendText(st.person.number, `${entry.content}\n\nWhose script is this? Reply with the creator's name (${roster.join(', ')}).`);
+  } else {
+    await sendButtons(st.person.number, `${entry.content}\n\nSend it to Shreya? I'll ping her on Discord with the notes, add them to the video card and move the card back to Script Draft.\nWrong creator? Just reply with the right name.`, [{ id: 'noteson', title: '✏️ Send to Shreya' }, { id: 'notesno', title: '✖️ Don\'t send' }]);
+  }
+  st.messages.push(entry);
+  return true;
+}
+async function sendScriptNotes(st) {
+  const p = pendingNotes(st);
+  if (!p) { await say(st, 'Those notes are no longer waiting. Forward them again.'); return; }
+  if (!p.creator) { await say(st, 'Whose script is it? Reply with the creator\'s name.'); return; }
+  p.resolved = 'sending'; await saveState(st);
+  const { resendScriptChanges } = await import('../lib/inbox.js');
+  const { forScriptWriter } = await import('../lib/briefs.js');
+  try {
+    const r = await resendScriptChanges({ brand: p.brand, creator: p.creator, feedback: forScriptWriter(p.notes) });
+    p.resolved = 'sent';
+    await say(st, `✅ Sent *${r.deal}*'s script notes to Shreya${r.ok ? '' : ' (the Discord ping failed, but the notes are on the video card)'}.${r.video ? ` Card moved to ${r.video}.` : ''}`);
+  } catch (e) { p.resolved = 'failed'; await say(st, `⚠️ I couldn't send it: ${e.message}. Tell me the brand name as it is on the board and I'll try again.`); }
 }
 
 async function askWhose(st) {
