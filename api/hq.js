@@ -15,6 +15,7 @@ export default async function handler(req, res) {
       const last = new Date(Date.UTC(y, mo, 0)).toISOString().slice(0, 10);
       return res.status(200).json(await editorOutput({ from: m + '-01', to: last, include_videos: true, video_limit: 500 }));
     }
+    if (req.query?.pricing === '1') { const { pricingStats } = await import('../lib/leads.js'); return res.status(200).json(await pricingStats({ days: Number(req.query?.days) || 120 })); }
     if (req.query?.costs === '1') return res.status(200).json(await aiCosts({ fresh: req.query?.fresh === '1' }));
     return res.status(200).json(await buildHQ({ fresh: req.query?.fresh === '1' }));
   } catch (e) {
