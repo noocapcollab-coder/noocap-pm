@@ -548,6 +548,7 @@
   .ac-r2 .w a { font-weight: 600; } .ac-r2 .w a:hover { text-decoration: underline; } .ac-r2 .w span { color: var(--muted); }
   .ac-r2 .w p { margin: 3px 0 0; color: var(--text, #e8e8ea); }
   .ac-r2 .w .need { display: block; margin-top: 3px; font-size: 12px; color: var(--warn); }
+  .ac-r2 .w .owe { display: block; margin-top: 4px; font-size: 13px; color: var(--accent); }
   .ac-who { display: flex; flex-direction: column; gap: 3px; font-size: 13px; } .ac-who b { font-weight: 600; }
   .ac-t { color: var(--muted); font-size: 12px; } .ac-t.late { color: var(--err); }
   .ac-r2 .pd { text-align: right; font-size: 12px; color: var(--muted); display: flex; flex-direction: column; gap: 3px; } .ac-r2 .pd a { color: var(--accent); }
@@ -1689,7 +1690,7 @@
     const xs = all.filter((r) => acCreator === 'All' || r.creator === acCreator);
     const ago = (n) => (n == null ? '' : n === 0 ? 'today' : n === 1 ? '1 day' : n + ' days');
     const row = (r) => {
-      const need = /harsh/i.test(r.next || '') ? `<small class="need">Needs you: ${esc(r.next)}</small>` : '';
+      const need = (r.pending ? `<small class="owe">Pending from us: ${esc(r.pending)}</small>` : '') + (/harsh/i.test(r.next || '') ? `<small class="need">Needs you: ${esc(r.next)}</small>` : '');
       const tag = r.late ? `<span class="ac-t late" title="${esc(r.late_why)}">late · ${esc(r.late_why)}</span>` : r.days != null ? `<span class="ac-t">${r.on === 'Brand' ? 'waiting ' : ''}${ago(r.days)}</span>` : '';
       return `<div class="ac-r2"><div class="w"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.brand)}</a> <span>× ${esc(r.creator)}</span><p>${esc(r.say || r.doing)}</p>${need}</div><div class="ac-who">${r.on === 'Brand' ? '' : `<b>${esc(r.on || r.who)}</b>`}${tag}</div><div class="pd">${r.post ? (r.post_passed ? 'was due ' : 'posts ') + shortDate(r.post) : ''}${r.video ? `<a href="${esc(r.video)}" target="_blank" rel="noopener">video card</a>` : ''}</div></div>`;
     };
