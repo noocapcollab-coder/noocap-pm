@@ -73,7 +73,10 @@ export default async function handler(req, res) {
   const run = await startRun('Inbox', batch.length === 1 ? (batch[0].subject || '(no subject)') + (batch[0].from ? ' · ' + String(batch[0].from).replace(/<.*>/, '').trim() : '') : `${batch.length} emails`);
   for (const email of batch) {
     const c = await claim(email);
-    if (!c.ok) { results.push({ subject: email.subject, action: 'skipped', why: 'already being handled' }); continue; }
+    // Someone else holds the claim. Answer "error" (not "skipped") so n8n leaves the email unlabelled and the next sweep
+    // tries again: if that other run died halfway (a timeout), the claim expires after 5 minutes and this email is
+    // processed then, instead of being marked seen and lost
+    if (!c.ok) { results.push({ subject: email.subject, action: 'error', why: 'busy: another run is handling it, retry later' }); continue; }
     try {
       results.push({ subject: email.subject, ...(await handleInboxEmail(email)) });
     } catch (e) {
