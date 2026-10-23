@@ -10,7 +10,7 @@
       "maxDuration": 300
     },
     "api/outbox.js": {
-      "maxDuration": 60
+      "maxDuration": 120
     },
     "api/hq.js": {
       "maxDuration": 120
