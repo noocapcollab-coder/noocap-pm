@@ -1323,16 +1323,23 @@
     return new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
   };
 
+  // The last copy is kept in this browser, so the dashboard shows straight away and the fresh data replaces it
+  // when it arrives (building it reads every board and deal from Notion, which can take a while)
+  function renderAllHQ() { renderHQ(); renderOverview(); if (view === 'team') renderEditorMonth(); renderInvoices(); renderLeadsTab(); renderActive(); renderHealth(); }
   async function loadHQ(fresh) {
+    if (!hqData) {
+      try { const saved = JSON.parse(store.get('hqCopy') || 'null'); if (saved && saved.data && Date.now() - saved.at < 36 * 36e5) { hqData = saved.data; renderAllHQ(); $('hqErr').textContent = 'Showing the copy from ' + new Date(saved.at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ' while the latest loads…'; } } catch {}
+    }
     try {
       const res = await fetch('/api/hq' + (fresh ? '?fresh=1' : ''), { headers: headers() });
       if (res.status === 401) return needPassword();
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
+      store.set('hqCopy', JSON.stringify({ at: Date.now(), data }));
       hqData = data; renderHQ(); renderOverview(); loadCosts(); if (view === 'team') renderEditorMonth(); renderInvoices(); renderLeadsTab(); renderActive(); renderHealth();
       $('hqErr').textContent = data.errors?.length ? 'Some data could not load: ' + data.errors.join(' · ') : '';
     } catch (e) {
-      $('hqErr').textContent = $('ovErr').textContent = 'Could not load HQ: ' + e.message;
+      $('hqErr').textContent = $('ovErr').textContent = (hqData ? 'Showing the last saved copy. ' : '') + 'Could not load HQ: ' + e.message;
     }
   }
 
