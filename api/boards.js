@@ -67,7 +67,8 @@ let memo = null, inflight = null;
 const lastGood = {};
 async function build() {
   const boards = {};
-  for (const b of BOARDS) {
+  // Three boards at a time: quicker than one by one, still gentle on Notion's limit
+  const one = async (b) => {
     const key = b.ds.replace(/-/g, '');
     try {
       const rows = await readBoard(b);
@@ -77,7 +78,8 @@ async function build() {
       // Keep the board's last good copy rather than dropping it
       boards[key] = lastGood[key] ? { creator: b.creator, rows: lastGood[key].rows, at: lastGood[key].at, stale: true } : { creator: b.creator, rows: [], error: String(e.message || e).slice(0, 200) };
     }
-  }
+  };
+  for (let i = 0; i < BOARDS.length; i += 3) await Promise.all(BOARDS.slice(i, i + 3).map(one));
   return { at: new Date().toISOString(), boards };
 }
 

@@ -1331,7 +1331,7 @@
       try { const saved = JSON.parse(store.get('hqCopy') || 'null'); if (saved && saved.data && Date.now() - saved.at < 36 * 36e5) { hqData = saved.data; renderAllHQ(); $('hqErr').textContent = 'Showing the copy from ' + new Date(saved.at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ' while the latest loads…'; } } catch {}
     }
     try {
-      const res = await fetch('/api/hq' + (fresh ? '?fresh=1' : ''), { headers: headers() });
+      const res = await fetch('/api/hq' + (fresh ? '?fresh=1' : (key ? '?k=' + encodeURIComponent(key) : '')), { headers: headers() });
       if (res.status === 401) return needPassword();
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
