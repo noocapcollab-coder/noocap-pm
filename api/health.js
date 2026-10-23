@@ -19,6 +19,8 @@ export default async function handler(req, res) {
     },
     workspace_id_set: !!process.env.ANTHROPIC_WORKSPACE_ID,
     notion_token_set: !!process.env.NOTION_TOKEN,
+    payment_keys_secret: process.env.PAYMENT_KEYS_SECRET ? (process.env.PAYMENT_KEYS_SECRET.length >= 16 ? 'set' : 'too short') : 'missing',
+    pm_password_set: !!process.env.PM_PASSWORD, cron_secret_set: !!process.env.CRON_SECRET, boards_key_set: !!process.env.BOARDS_KEY,
   };
   if (key) {
     try {
