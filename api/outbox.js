@@ -25,6 +25,10 @@ export default async function handler(req, res) {
     if (req.method !== 'POST') return res.status(405).json({ error: 'GET or POST' });
     const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
     const { id, action, subject, body: text, to, cc } = body;
+    if (action === 'stripe-due') {
+      const I = await import('../lib/invoicing.js');
+      return res.status(200).json(await I.setDraftDue(body.deal, Number(body.days) || I.DUE_DAYS));
+    }
     if (action === 'stripe-billing') {
       const I = await import('../lib/invoicing.js');
       return res.status(200).json(await I.setBillingOnDraft(body.deal, body.billing));
