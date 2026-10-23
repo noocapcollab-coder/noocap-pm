@@ -2221,7 +2221,7 @@
     $('apEdit').dataset.id = d ? d.id : '';
     $('ap').classList.toggle('editing', !!d);
     if (!d) { $('apEdit').innerHTML = ''; return; }
-    const att = d.attach && d.attach !== 'None' ? `<div class="attach">📎 ${d.attach === 'Script PDF' ? 'Script PDF, made from the video page' : 'Invoice from the deal'} <button type="button" class="btn sm ghost" id="aPreview" style="margin-left:10px">View attachment</button><span class="state" id="aPrevState"></span></div>` : '';
+    const att = d.stripeInvoice ? `<div class="attach">🧾 Stripe invoice, drafted in the creator's Stripe. The pay link and PDF are added when you send. <button type="button" class="btn sm ghost" id="aPreview" style="margin-left:10px">View invoice</button><span class="state" id="aPrevState"></span></div>` : d.attach && d.attach !== 'None' ? `<div class="attach">📎 ${d.attach === 'Script PDF' ? 'Script PDF, made from the video page' : 'Invoice from the deal'} <button type="button" class="btn sm ghost" id="aPreview" style="margin-left:10px">View attachment</button><span class="state" id="aPrevState"></span></div>` : '';
     $('apEdit').innerHTML = `
       <button type="button" class="iconbtn back" id="apBack" style="margin-bottom:12px">← All emails</button>
       <div class="head"><span class="kind ${d.status === 'Failed' ? 'failed' : ''}">${esc(kindLabel(d.kind))}</span><h2>${esc((d.brand || 'Brand') + (d.creator ? ' × ' + d.creator : ''))}</h2></div>
