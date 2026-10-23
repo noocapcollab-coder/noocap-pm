@@ -13,7 +13,7 @@
       "maxDuration": 60
     },
     "api/hq.js": {
-      "maxDuration": 60
+      "maxDuration": 120
     },
     "api/flow.js": {
       "maxDuration": 60
