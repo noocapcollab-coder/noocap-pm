@@ -4,7 +4,7 @@
       "maxDuration": 60
     },
     "api/inbox.js": {
-      "maxDuration": 120
+      "maxDuration": 300
     },
     "api/tick.js": {
       "maxDuration": 300

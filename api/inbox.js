@@ -10,6 +10,14 @@ import { discord } from '../lib/briefs.js';
 import { startRun, emailSummary } from '../lib/runs.js';
 
 const MAX_TRIES = 3;
+// A Notion or Gmail call that never answers would hang the run until Vercel kills it, the email stays unlabelled,
+// and the next sweep redoes it (another draft, another ping). Cap every call at 60s.
+if (!globalThis.fetch.__capped) {
+  const raw = globalThis.fetch;
+  const capped = (url, opts = {}) => raw(url, opts.signal ? opts : { ...opts, signal: AbortSignal.timeout(60000) });
+  capped.__capped = true;
+  globalThis.fetch = capped;
+}
 const rt = (s) => [{ type: 'text', text: { content: String(s || '').slice(0, 1900) } }];
 
 async function recordError(email, err) {
