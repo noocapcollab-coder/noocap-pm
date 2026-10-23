@@ -83,7 +83,8 @@ async function build() {
 
 export default async function handler(req, res) {
   const want = process.env.BOARDS_KEY || '';
-  if (!want || String(req.query?.k || '') !== want) return res.status(401).json({ error: 'Set BOARDS_KEY in Vercel and pass it as ?k=' });
+  if (!want) return res.status(503).json({ error: 'BOARDS_KEY is not set on noocap-pm (or it was added without a redeploy)' });
+  if (String(req.query?.k || '') !== want) return res.status(401).json({ error: 'Wrong or missing key' });
   if (!memo || Date.now() - memo.t > MEMO_MS) {
     if (!inflight) inflight = build().then((d) => { memo = { t: Date.now(), d }; return d; }).finally(() => { inflight = null; });
     try { await inflight; } catch (e) { if (!memo) return res.status(502).json({ error: String(e.message || e).slice(0, 200) }); }
