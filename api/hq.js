@@ -24,7 +24,10 @@ export default async function handler(req, res) {
     }
     if (req.query?.pricing === '1') { const { pricingStats } = await import('../lib/leads.js'); return res.status(200).json(await pricingStats({ days: Number(req.query?.days) || 120 })); }
     if (req.query?.costs === '1') return res.status(200).json(await aiCosts({ fresh: req.query?.fresh === '1' }));
-    return res.status(200).json(await buildHQ({ fresh: req.query?.fresh === '1' }));
+    const data = await buildHQ({ fresh: req.query?.fresh === '1' });
+    // A copy with parts missing is only kept briefly at the edge
+    if ((data.errors || []).length && res.getHeader('Cache-Control') !== 'no-store') res.setHeader('Cache-Control', 'public, s-maxage=15');
+    return res.status(200).json(data);
   } catch (e) {
     return res.status(502).json({ error: String(e.message || e).slice(0, 300) });
   }
