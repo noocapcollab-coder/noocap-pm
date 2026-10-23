@@ -606,6 +606,22 @@
   .inv-r .d.late { color: var(--err); } .inv-r .d.warn { color: var(--warn); }
   .inv-r .bt { display: flex; gap: 6px; justify-content: flex-end; }
   .inv-r.busy { opacity: .45; pointer-events: none; }
+  .st-cr { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 10px; }
+  .st-chip { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 999px; padding: 5px 6px 5px 12px; font-size: 13px; }
+  .st-chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--dim); }
+  .st-chip.on .dot { background: var(--ok, #3ddc97); }
+  .st-chip small { color: var(--muted); font-size: 12px; }
+  .st-chip button { font-size: 12px; padding: 3px 9px; }
+  .st-r { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr); gap: 12px; padding: 11px 0; border-top: 1px solid var(--line3); font-size: 14px; }
+  .st-r:first-child { border-top: 0; }
+  .st-r .b { font-weight: 600; min-width: 0; } .st-r .b small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; }
+  .st-p { display: flex; align-items: baseline; gap: 10px; padding: 2px 0; }
+  .st-p .a { font: 600 13px 'IBM Plex Mono', monospace; min-width: 70px; }
+  .st-p .t { font-size: 13px; color: var(--muted); }
+  .st-p .tag { font: 11px 'IBM Plex Mono', monospace; padding: 2px 7px; border-radius: 6px; background: var(--line3); color: var(--muted); white-space: nowrap; }
+  .st-p .tag.draft { background: rgba(240,180,41,.15); color: var(--warn); } .st-p .tag.sent { background: rgba(56,189,248,.15); color: #38bdf8; }
+  .st-p .tag.paid { background: rgba(61,220,151,.15); color: #3ddc97; } .st-p .tag.due { background: rgba(241,107,107,.12); color: var(--err); }
+  @media (max-width: 760px) { .st-r { grid-template-columns: 1fr; gap: 4px; } }
   @media (max-width: 760px) { .inv-tot { grid-template-columns: 1fr 1fr; } .inv-r { grid-template-columns: minmax(0, 1fr) auto; } .inv-r .c { grid-column: 1 / -1; } .inv-r .bt { grid-column: 1 / -1; justify-content: flex-start; } }
   /* ---------- Revenue ---------- */
   #revenue { overflow-y: auto; }
@@ -871,6 +887,7 @@
     <div><div class="k">Sponsor Video Revenue · last 30 days</div><h1>Invoices</h1></div>
   </div>
   <section class="ostats inv-tot" id="invTot" aria-label="Invoice totals"></section>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:#8b7cf6"></span>Automatic invoices in creators' Stripe <small id="stN"></small></h2><div class="ofoot" style="margin:0 0 6px" id="stNote">The PM asks brands for billing details, drafts the invoice in the creator's own Stripe and puts it in Approvals. Nothing goes to a brand until you send it.</div><div class="st-cr" id="stCreators"></div><div id="stDeals"><div class="skel"></div></div></section>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:#38bdf8"></span>Invoiced, waiting for payment <small id="invWaitN"></small></h2><div id="invWait"><div class="skel"></div></div></section>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:var(--warn)"></span>Invoice not raised yet <small id="invRaiseN"></small></h2><div class="ofoot" style="margin:0 0 6px">Only videos that are live on the creator's board and whose deal isn't invoiced yet. Creators raise their own invoices: remind them from the day after posting, then mark it sent.</div><div id="invRaise"><div class="skel"></div></div></section>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:var(--dim)"></span>Coming up <small id="invSoonN"></small></h2><div class="ofoot" style="margin:0 0 6px">From Active brands: approved or about to post. No invoice yet, it moves up once the video is live.</div><div id="invSoon"><div class="skel"></div></div></section>
@@ -1557,7 +1574,32 @@
   // =====================================================================
   // Invoices: what's posted but not invoiced, what's invoiced but unpaid, and NOOCAP's cut to collect
   // =====================================================================
+  // Automatic Stripe invoices: who is connected, and where each deal's invoice stands
+  let stAt = 0;
+  async function loadStripeInv(force) {
+    if (!$('stDeals') || (!force && Date.now() - stAt < 60e3)) return;
+    stAt = Date.now();
+    try {
+      const res = await fetch('/api/hq?invoicing=1', { headers: headers() });
+      const j = await res.json(); if (!res.ok) throw new Error(j.error || 'Error ' + res.status);
+      if (!j.enabled) $('stNote').innerHTML = '<b>Not switched on yet.</b> Add PAYMENT_KEYS_SECRET in Vercel (noocap-pm) and redeploy. Until then nothing is drafted.';
+      const n = j.creators.filter((c) => c.connected).length;
+      $('stN').textContent = `${n} of ${j.creators.length} creators connected`;
+      $('stCreators').innerHTML = j.creators.map((c) => `<span class="st-chip ${c.connected ? 'on' : ''}" title="${esc(c.account)}"><span class="dot"></span>${esc(c.name)} ${c.connected ? `<small>connected</small>` : `<button type="button" class="obtn" data-link="${esc(c.name)}">Copy connect link</button>`}</span>`).join('');
+      const tag = { draft: 'in Approvals', sent: 'awaiting payment', paid: 'paid', due: 'due', later: 'later', manual: 'by hand' };
+      $('stDeals').innerHTML = j.deals.length ? j.deals.map((d) => `<div class="st-r"><div class="b"><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.brand)}</a> × ${esc(d.creator)}<small>${usd(d.rate)}${d.terms ? ' · ' + esc(d.terms) : ''}${d.billed_to ? ' · bills ' + esc(d.billed_to) : ''}</small></div><div>${d.parts.map((p) => `<div class="st-p"><span class="a">${usd(p.amount)}</span><span class="tag ${p.status}">${d.parts.length > 1 ? esc(p.part) + ' · ' : ''}${tag[p.status] || esc(p.status)}</span><span class="t">${esc(p.say)}</span></div>`).join('')}</div></div>`).join('') : '<div class="empty">No deals at the invoicing stage right now.</div>';
+      document.querySelectorAll('#stCreators button[data-link]').forEach((btn) => btn.onclick = async () => {
+        btn.textContent = 'Making link…';
+        try {
+          const r = await fetch('/api/hq?connect=' + encodeURIComponent(btn.dataset.link), { headers: headers() }); const k = await r.json();
+          if (!r.ok) throw new Error(k.error || 'Failed');
+          try { await navigator.clipboard.writeText(k.url); btn.textContent = 'Copied ✓ (valid 7 days)'; } catch { prompt('Send this link to ' + btn.dataset.link + ':', k.url); btn.textContent = 'Copy connect link'; }
+        } catch (e) { alert(e.message); btn.textContent = 'Copy connect link'; }
+      });
+    } catch (e) { $('stDeals').innerHTML = `<div class="empty">Could not load: ${esc(e.message)}</div>`; }
+  }
   function renderInvoices() {
+    loadStripeInv();
     const c = hqData?.chase; if (!c || !$('invRaise')) return;
     const raise = c.needs_invoice || [], wait = c.awaiting_payment || [], cut = c.cut_pending || [];
     const sum = (xs) => xs.reduce((n, x) => n + (x.amount || 0), 0);

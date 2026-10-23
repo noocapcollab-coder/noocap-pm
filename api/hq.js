@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   if (viaQuery) req.headers['x-pm-key'] = req.query.k;
   if (!checkAuth(req)) return res.status(401).json({ error: 'Wrong or missing password' });
   res.setHeader('Cache-Control', 'no-store');
-  const plainLoad = !req.query?.editors && req.query?.pricing !== '1' && req.query?.costs !== '1' && req.query?.fresh !== '1';
+  const plainLoad = !req.query?.editors && req.query?.pricing !== '1' && req.query?.costs !== '1' && req.query?.fresh !== '1' && !req.query?.invoicing && !req.query?.connect;
   // Served instantly from the edge (even when a minute or more old) while Vercel rebuilds it in the background
   if (plainLoad && (viaQuery || !process.env.PM_PASSWORD)) res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=1800');
   try {
@@ -23,6 +23,17 @@ export default async function handler(req, res) {
       return res.status(200).json(await editorOutput({ from: m + '-01', to: last, include_videos: true, video_limit: 500 }));
     }
     if (req.query?.pricing === '1') { const { pricingStats } = await import('../lib/leads.js'); return res.status(200).json(await pricingStats({ days: Number(req.query?.days) || 120 })); }
+    if (req.query?.invoicing === '1') {
+      const { invoicingBoard } = await import('../lib/invoicing.js'); const { openDeals } = await import('../lib/briefs.js');
+      return res.status(200).json(await invoicingBoard(await openDeals({ withClosed: true })));
+    }
+    // A creator's Stripe connect link: only with a PM password set, so nobody outside can attach their own Stripe
+    if (req.query?.connect) {
+      if (!process.env.PM_PASSWORD) return res.status(400).json({ error: 'Set PM_PASSWORD in Vercel first, so only you can make connect links.' });
+      const { connectToken } = await import('../lib/invoicing.js');
+      const c = String(req.query.connect).slice(0, 40);
+      return res.status(200).json({ creator: c, url: `https://${req.headers['x-forwarded-host'] || req.headers.host}/api/pay?c=${encodeURIComponent(connectToken(c))}` });
+    }
     if (req.query?.costs === '1') return res.status(200).json(await aiCosts({ fresh: req.query?.fresh === '1' }));
     const data = await buildHQ({ fresh: req.query?.fresh === '1' });
     // A copy with parts missing is only kept briefly at the edge
