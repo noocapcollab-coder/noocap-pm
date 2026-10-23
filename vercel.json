@@ -7,7 +7,7 @@
       "maxDuration": 120
     },
     "api/tick.js": {
-      "maxDuration": 180
+      "maxDuration": 300
     },
     "api/outbox.js": {
       "maxDuration": 60
