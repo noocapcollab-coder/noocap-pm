@@ -615,11 +615,14 @@
   .st-r { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr); gap: 12px; padding: 11px 0; border-top: 1px solid var(--line3); font-size: 14px; }
   .st-r:first-child { border-top: 0; }
   .st-r .b { font-weight: 600; min-width: 0; } .st-r .b small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; }
-  .st-p { display: flex; align-items: baseline; gap: 10px; padding: 2px 0; }
+  .st-p { display: flex; align-items: baseline; gap: 10px; padding: 2px 0; flex-wrap: wrap; }
   .st-p .a { font: 600 13px 'IBM Plex Mono', monospace; min-width: 70px; }
   .st-p .t { font-size: 13px; color: var(--muted); }
   .st-p .tag { font: 11px 'IBM Plex Mono', monospace; padding: 2px 7px; border-radius: 6px; background: var(--line3); color: var(--muted); white-space: nowrap; }
   .st-p .tag.draft { background: rgba(240,180,41,.15); color: var(--warn); } .st-p .tag.sent { background: rgba(56,189,248,.15); color: #38bdf8; }
+  .st-g { margin-top: 8px; } .st-g + .st-g { margin-top: 16px; }
+  .st-h { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); padding-bottom: 4px; } .st-h small { text-transform: none; letter-spacing: 0; }
+  .st-p .tag.later { background: var(--line3); }
   .st-p .tag.paid { background: rgba(61,220,151,.15); color: #3ddc97; } .st-p .tag.due { background: rgba(241,107,107,.12); color: var(--err); }
   @media (max-width: 760px) { .st-r { grid-template-columns: 1fr; gap: 4px; } }
   @media (max-width: 760px) { .inv-tot { grid-template-columns: 1fr 1fr; } .inv-r { grid-template-columns: minmax(0, 1fr) auto; } .inv-r .c { grid-column: 1 / -1; } .inv-r .bt { grid-column: 1 / -1; justify-content: flex-start; } }
@@ -1586,8 +1589,19 @@
       const n = j.creators.filter((c) => c.connected).length;
       $('stN').textContent = `${n} of ${j.creators.length} creators connected`;
       $('stCreators').innerHTML = j.creators.map((c) => `<span class="st-chip ${c.connected ? 'on' : ''}" title="${esc(c.account)}"><span class="dot"></span>${esc(c.name)} ${c.connected ? `<small>connected</small>` : `<button type="button" class="obtn" data-link="${esc(c.name)}">Copy connect link</button>`}</span>`).join('');
-      const tag = { draft: 'in Approvals', sent: 'awaiting payment', paid: 'paid', due: 'due', later: 'later', manual: 'by hand' };
-      $('stDeals').innerHTML = j.deals.length ? j.deals.map((d) => `<div class="st-r"><div class="b"><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.brand)}</a> × ${esc(d.creator)}<small>${usd(d.rate)}${d.terms ? ' · ' + esc(d.terms) : ''}${d.billed_to ? ' · bills ' + esc(d.billed_to) : ''}</small></div><div>${d.parts.map((p) => `<div class="st-p"><span class="a">${usd(p.amount)}</span><span class="tag ${p.status}">${d.parts.length > 1 ? esc(p.part) + ' · ' : ''}${tag[p.status] || esc(p.status)}</span><span class="t">${esc(p.say)}</span></div>`).join('')}</div></div>`).join('') : '<div class="empty">No deals at the invoicing stage right now.</div>';
+      // One line per invoice the PM will make, grouped by where it stands
+      const rows = j.deals.flatMap((d) => d.parts.map((p) => ({ ...p, d })));
+      const line = (r, right) => `<div class="st-r"><div class="b"><a href="${esc(r.d.url)}" target="_blank" rel="noopener">${esc(r.d.brand)}</a> × ${esc(r.d.creator)}<small>${r.d.parts.length > 1 ? `${r.part === 'upfront' ? 'Upfront' : 'Final'} ${r.pct}% of ${usd(r.d.rate)}` : 'Full fee'}${r.d.billed_to ? ' · bills ' + esc(r.d.billed_to) : ''}</small></div><div class="st-p"><span class="a">${usd(r.amount)}</span><span class="t">${right}</span></div></div>`;
+      const grp = (title, list, right, empty) => `<div class="st-g"><div class="st-h">${title} <small>${list.length ? list.length + ' · ' + usd(list.reduce((n, r) => n + r.amount, 0)) : ''}</small></div>${list.length ? list.map((r) => line(r, right(r))).join('') : `<div class="empty">${empty}</div>`}</div>`;
+      const now = rows.filter((r) => ['due', 'draft'].includes(r.status));
+      const sent = rows.filter((r) => ['sent', 'paid'].includes(r.status));
+      const later = rows.filter((r) => r.status === 'later');
+      const manual = rows.filter((r) => r.status === 'manual');
+      $('stDeals').innerHTML =
+        grp('Being made now', now, (r) => `<span class="tag ${r.status}">${r.status === 'draft' ? 'in Approvals' : 'in progress'}</span> ${esc(r.say)}`, 'Nothing to invoice right now.') +
+        grp('Sent to the brand', sent, (r) => `<span class="tag ${r.status}">${r.status === 'paid' ? 'paid' : 'awaiting payment'}</span> ${esc(r.say)}`, 'No invoices out yet.') +
+        grp('Coming up', later, (r) => `<span class="tag later">next</span> The PM will make this ${esc(r.when || '')}${r.d.connected ? '' : `. <b>${esc(r.d.creator)} hasn't connected Stripe yet</b>`}`, 'Nothing coming up.') +
+        (manual.length ? grp('Invoiced by hand', manual, (r) => esc(r.say), '') : '');
       document.querySelectorAll('#stCreators button[data-link]').forEach((btn) => btn.onclick = async () => {
         btn.textContent = 'Making link…';
         try {
