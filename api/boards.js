@@ -15,6 +15,7 @@
 import { notion } from '../lib/notion.js';
 import { cronAllowed } from '../lib/hook.js';
 import { waitUntil } from '@vercel/functions';
+import { logStatusChanges } from '../lib/history.js';
 
 export const config = { maxDuration: 120 };
 
@@ -28,6 +29,8 @@ const BOARDS = [
   { creator: 'David Iya', ds: '898508e9-9dda-8383-ad90-070f01618f5a' },
   { creator: 'Nicole McCain', ds: '25b449d2-35ba-4026-992e-39af9974b158' },
   { creator: 'Emtech', ds: '328508e9-9dda-8000-b3c9-000b0d791507' },
+  // Not a creator board: editors' finished videos. Synced here so its status changes go into STATUS HISTORY too
+  { creator: 'Video Intake', ds: '13cf6abc-bcfc-4a35-95d5-e130fd58e720', intake: true },
 ];
 const MAX_ROWS = 300;
 const MAX_AGE_DAYS = 150;
@@ -91,10 +94,16 @@ function publish() {
   S.out = { at: new Date(S.lastSync).toISOString(), full_at: new Date(S.lastFull).toISOString(), boards };
 }
 
-async function fullBoard(b) {
+// Cards whose status may have changed since the last sync, with their previous copy, for STATUS HISTORY
+let changes = [];
+async function fullBoard(b, after) {
   const { rows } = await query(b, sinceIso());
+  const old = S.boards[keyOf(b)]?.map;
   const map = new Map();
-  for (const pg of rows) if (!pg.in_trash && !pg.archived) map.set(pg.id, trimPage(pg));
+  for (const pg of rows) {
+    if (!pg.in_trash && !pg.archived) map.set(pg.id, trimPage(pg));
+    if (old && after && pg.last_edited_time >= after) changes.push({ page: pg, board: b, old: old.get(pg.id) });
+  }
   S.boards[keyOf(b)] = { map, at: new Date().toISOString() };
 }
 
@@ -107,13 +116,14 @@ async function sync({ full = false } = {}) {
   const one = async (b) => {
     const k = keyOf(b);
     try {
-      if (doFull || !S.boards[k]) { await fullBoard(b); calls += 3; return; }
+      if (doFull || !S.boards[k]) { await fullBoard(b, S.boards[k] ? after : null); calls += 3; return; }
       const { rows, more } = await query(b, after, 100);
       calls++;
-      if (more) { await fullBoard(b); calls += 3; return; } // a big batch edit: just re-read the board
+      if (more) { await fullBoard(b, after); calls += 3; return; } // a big batch edit: just re-read the board
       const st = S.boards[k];
       for (const pg of rows) {
         changed++;
+        changes.push({ page: pg, board: b, old: st.map.get(pg.id) });
         if (pg.in_trash || pg.archived) st.map.delete(pg.id); else st.map.set(pg.id, trimPage(pg));
       }
       st.at = new Date().toISOString(); delete st.error;
@@ -124,6 +134,7 @@ async function sync({ full = false } = {}) {
   };
   // Three boards at a time: quick, still gentle on Notion's limit
   for (let i = 0; i < BOARDS.length; i += 3) await Promise.all(BOARDS.slice(i, i + 3).map(one));
+  if (changes.length > 500) changes = changes.slice(-500);
   S.lastSync = startedAt;
   if (doFull) S.lastFull = startedAt;
   S.stats = { kind: doFull ? 'full' : 'changes', changed, calls, ms: Date.now() - startedAt };
@@ -143,6 +154,11 @@ export default async function handler(req, res) {
   // The every-minute cron: pick up what changed and report how much work that was
   if (cron || req.query?.sync === '1') {
     await refresh({ full: req.query?.full === '1' }).catch(() => {});
+    // Status changes are written by the cron only, so two syncs can't log the same move twice
+    if (cron && process.env.STATUS_HISTORY !== 'off') {
+      const batch = changes; changes = [];
+      S.stats.history = await logStatusChanges(batch).catch((e) => 'error: ' + String(e.message).slice(0, 120));
+    }
     res.setHeader('Cache-Control', 'no-store');
     return res.status(200).json({ ok: !!S.out, ...S.stats, at: S.out?.at, full_at: S.out?.full_at });
   }
