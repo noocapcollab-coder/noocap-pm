@@ -2,6 +2,7 @@
 // GET  /api/outbox                          -> drafts waiting (and failed sends)
 // GET  /api/outbox?preview=<draft id>       -> the attachment (script PDF / invoice) exactly as it will be sent
 // POST /api/outbox { id, action: 'send' | 'save' | 'reject', subject?, body?, to?, cc? }
+// POST /api/outbox { action: 'send-standard', ids: [...] } -> send the listed standard quotes (list price, nothing asked)
 // POST /api/outbox { id, action: 'send-brief' } -> file the brand message on this draft as a brief for the script writer
 // POST /api/outbox { action: 'script-changes', brand, creator, feedback } -> re-send brand script notes to the script writer on Discord
 // POST /api/outbox { lead, action: 'lead-approve', price? } | { lead, action: 'lead-decline' }  -> Harsh's call on a below-floor offer
@@ -53,6 +54,11 @@ export default async function handler(req, res) {
       const d = await readDraftById(id);
       const B = await import('../lib/briefs.js');
       return res.status(200).json(await B.briefFromText({ text: d.context, subject: d.subject, dealId: d.dealId, threadId: d.threadId, creator: d.creator }));
+    }
+    if (action === 'send-standard') {
+      const { sendStandardQuotes } = await import('../lib/outbox.js');
+      const out = await withRun('Send', `Send ${(body.ids || []).length} standard quotes`, () => sendStandardQuotes(body.ids), { trigger: 'Dashboard', summarize: (r) => ({ did: [`Sent ${r.sent.length} standard quotes`] }) });
+      return res.status(200).json(out);
     }
     if (action === 'reject') { await rejectDraft(id); return res.status(200).json({ ok: true }); }
     if (action === 'save') { await saveDraft(id, { subject, body: text, to, cc }); return res.status(200).json({ ok: true }); }

@@ -989,7 +989,7 @@
 <!-- ============ Approvals ============ -->
 <section class="view" id="approvals">
   <div class="ap" id="ap">
-    <div class="ap-list"><h2>Waiting for you <span class="badge" data-count hidden>0</span></h2><div class="ap-inbox" id="apInbox"></div><div id="apList"><div class="skel"></div><div class="skel"></div></div></div>
+    <div class="ap-list"><h2>Waiting for you <span class="badge" data-count hidden>0</span></h2><div id="apBulk"></div><div class="ap-inbox" id="apInbox"></div><div id="apList"><div class="skel"></div><div class="skel"></div></div></div>
     <div class="ap-edit" id="apEdit"></div>
   </div>
 </section>
@@ -2198,6 +2198,19 @@
       $('ap').classList.remove('editing');
       return;
     }
+    // One click for the routine ones: quotes at our list price where the brand asked nothing special
+    const std = drafts.filter((d) => d.standard);
+    $('apBulk').innerHTML = std.length ? `<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px;padding:10px 12px;border:1px solid var(--line2);border-radius:10px;background:var(--panel2)"><button type="button" class="btn sm" id="apStd">Send ${std.length} standard quote${std.length === 1 ? '' : 's'}</button><span style="color:var(--muted);font-size:12.5px">at our list price, where the brand asked nothing special</span><span class="state" id="apStdState" style="font-size:12.5px"></span></div>` : '';
+    if ($('apStd')) $('apStd').onclick = async () => {
+      if (!confirm(`Send these ${std.length} quotes now?\n\n` + std.map((d) => '• ' + (d.brand || d.subject)).join('\n'))) return;
+      const b = $('apStd'); b.disabled = true; $('apStdState').textContent = 'Sending…';
+      try {
+        const res = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ action: 'send-standard', ids: std.map((d) => d.id) }) });
+        const r = await res.json(); if (!res.ok) throw new Error(r.error || 'Error ' + res.status);
+        $('apStdState').textContent = `Sent ${r.sent.length}` + (r.failed.length ? ` · ${r.failed.length} failed` : '') + (r.left.length ? ` · ${r.left.length} left, click again` : '');
+      } catch (e) { $('apStdState').textContent = e.message; }
+      b.disabled = false; loadApprovals();
+    };
     // Grouped by creator: chips filter to one creator, "All" shows each creator under their own heading.
     // Which inbox an email sends from is a small tag on the card.
     const who = (d) => d.creator || 'Other';
