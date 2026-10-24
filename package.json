@@ -11,5 +11,9 @@
     "mailparser": "^3.9.39",
     "nodemailer": "^6.10.1",
     "pdf-lib": "^1.17.1"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "vercel-build": "node --test test/*.test.js"
   }
 }
