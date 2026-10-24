@@ -3,7 +3,7 @@
 // n8n labels an email PM-seen unless the action is 'error', so errors are retried on the next sweep.
 // After 3 failed tries the PM gives up, tells Harsh on Discord, and returns 'gave_up' so the retries stop.
 import { handleLeadEmail, labelPlan } from '../lib/leads.js';
-import { hookAllowed, HOOK_ERROR } from '../lib/hook.js';
+import { hookAllowed, HOOK_ERROR, cronAllowed } from '../lib/hook.js';
 import { notion } from '../lib/notion.js';
 import { DS } from '../lib/tools.js';
 import { discord } from '../lib/briefs.js';
@@ -37,7 +37,10 @@ async function recordError(email, err) {
 
 export default async function handler(req, res) {
   if (!['POST', 'GET'].includes(req.method)) return res.status(405).json({ error: 'GET or POST' });
-  if (!hookAllowed(req)) return res.status(401).json({ error: HOOK_ERROR });
+  // Vercel Cron (every 5 minutes) polls the creator inboxes; it calls this with no query, so that means poll
+  const cron = cronAllowed(req);
+  if (cron && req.method === 'GET') req.query = { ...(req.query || {}), poll: '1' };
+  if (!cron && !hookAllowed(req)) return res.status(401).json({ error: HOOK_ERROR });
   // GET /api/leads?labels=1&days=30 -> which Gmail label each lead thread should carry (n8n "PM · Label sync")
   // GET /api/leads?poll=1 -> read the creator inboxes the PM reaches itself over IMAP (Lindsay's), every few minutes
   if (req.method === 'GET' && req.query?.poll) {
