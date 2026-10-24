@@ -5,9 +5,16 @@
 // kept hitting "rate limited". Now they read this snapshot instead: Vercel's CDN keeps one copy for a minute and
 // serves it to every viewer, so Notion is asked for the boards about once a minute in total.
 //
+// How it stays light on Notion: a Vercel Cron calls this every minute and asks each board only for the cards edited
+// since the last sync (usually none, so one tiny request per board). The full boards are re-read every 30 minutes and
+// on a cold start, which also drops cards that were deleted. Viewers are always served the copy in memory straight
+// away and never wait on Notion.
+//
 // Rows keep Notion's own property shape (trimmed: rich text is reduced to plain_text and href), so each dashboard's
 // existing readers work on them unchanged. Each board holds its 300 most recently edited cards from the last 150 days.
 import { notion } from '../lib/notion.js';
+import { cronAllowed } from '../lib/hook.js';
+import { waitUntil } from '@vercel/functions';
 
 export const config = { maxDuration: 120 };
 
@@ -24,7 +31,6 @@ const BOARDS = [
 ];
 const MAX_ROWS = 300;
 const MAX_AGE_DAYS = 150;
-const MEMO_MS = 45 * 1000;
 
 const rich = (arr) => (arr || []).map((t) => (t.href ? { plain_text: t.plain_text, href: t.href } : { plain_text: t.plain_text }));
 function trimProp(p) {
@@ -46,52 +52,108 @@ function trimPage(pg) {
   return { id: pg.id, url: pg.url, created_time: pg.created_time, last_edited_time: pg.last_edited_time, parent: pg.parent, properties };
 }
 
-async function readBoard(b) {
-  const since = new Date(Date.now() - MAX_AGE_DAYS * 864e5).toISOString();
+const FULL_EVERY_MS = 30 * 60 * 1000;
+const FRESH_MS = 50 * 1000;
+const sinceIso = () => new Date(Date.now() - MAX_AGE_DAYS * 864e5).toISOString();
+
+// Every card of one board edited on or after `after` (newest first), up to MAX_ROWS
+async function query(b, after, cap = MAX_ROWS) {
   const rows = [];
-  let cursor;
+  let cursor, more = false;
   do {
     const r = await notion('POST', `/data_sources/${b.ds}/query`, {
       page_size: 100,
-      filter: { timestamp: 'last_edited_time', last_edited_time: { on_or_after: since } },
+      filter: { timestamp: 'last_edited_time', last_edited_time: { on_or_after: after } },
       sorts: [{ timestamp: 'last_edited_time', direction: 'descending' }],
       ...(cursor ? { start_cursor: cursor } : {}),
     });
-    for (const pg of r.results || []) if (!pg.in_trash && !pg.archived) rows.push(trimPage(pg));
+    for (const pg of r.results || []) rows.push(pg);
     cursor = r.has_more ? r.next_cursor : undefined;
-  } while (cursor && rows.length < MAX_ROWS);
-  return rows.slice(0, MAX_ROWS);
+    more = !!cursor;
+  } while (cursor && rows.length < cap);
+  return { rows, more };
 }
 
-let memo = null, inflight = null;
-const lastGood = {};
-async function build() {
+// The live copy: one Map of cards per board, kept up to date by small "what changed" queries
+const S = { boards: {}, lastSync: 0, lastFull: 0, out: null, stats: {} };
+const keyOf = (b) => b.ds.replace(/-/g, '');
+
+function publish() {
+  const floor = Date.now() - MAX_AGE_DAYS * 864e5;
   const boards = {};
-  // Three boards at a time: quicker than one by one, still gentle on Notion's limit
+  for (const b of BOARDS) {
+    const k = keyOf(b), st = S.boards[k];
+    if (!st) { boards[k] = { creator: b.creator, rows: [], error: 'not loaded yet' }; continue; }
+    const rows = [...st.map.values()].filter((p) => Date.parse(p.last_edited_time) >= floor)
+      .sort((x, y) => Date.parse(y.last_edited_time) - Date.parse(x.last_edited_time)).slice(0, MAX_ROWS);
+    boards[k] = { creator: b.creator, rows, at: st.at, ...(st.error ? { stale: true } : {}) };
+  }
+  S.out = { at: new Date(S.lastSync).toISOString(), full_at: new Date(S.lastFull).toISOString(), boards };
+}
+
+async function fullBoard(b) {
+  const { rows } = await query(b, sinceIso());
+  const map = new Map();
+  for (const pg of rows) if (!pg.in_trash && !pg.archived) map.set(pg.id, trimPage(pg));
+  S.boards[keyOf(b)] = { map, at: new Date().toISOString() };
+}
+
+async function sync({ full = false } = {}) {
+  const startedAt = Date.now();
+  const doFull = full || !S.lastFull || startedAt - S.lastFull > FULL_EVERY_MS;
+  // Notion's edit times are rounded to the minute, so look back two minutes past the last sync to miss nothing
+  const after = new Date((S.lastSync || startedAt) - 2 * 60 * 1000).toISOString();
+  let changed = 0, calls = 0;
   const one = async (b) => {
-    const key = b.ds.replace(/-/g, '');
+    const k = keyOf(b);
     try {
-      const rows = await readBoard(b);
-      lastGood[key] = { rows, at: new Date().toISOString() };
-      boards[key] = { creator: b.creator, rows, at: lastGood[key].at };
+      if (doFull || !S.boards[k]) { await fullBoard(b); calls += 3; return; }
+      const { rows, more } = await query(b, after, 100);
+      calls++;
+      if (more) { await fullBoard(b); calls += 3; return; } // a big batch edit: just re-read the board
+      const st = S.boards[k];
+      for (const pg of rows) {
+        changed++;
+        if (pg.in_trash || pg.archived) st.map.delete(pg.id); else st.map.set(pg.id, trimPage(pg));
+      }
+      st.at = new Date().toISOString(); delete st.error;
     } catch (e) {
       // Keep the board's last good copy rather than dropping it
-      boards[key] = lastGood[key] ? { creator: b.creator, rows: lastGood[key].rows, at: lastGood[key].at, stale: true } : { creator: b.creator, rows: [], error: String(e.message || e).slice(0, 200) };
+      if (S.boards[k]) S.boards[k].error = String(e.message || e).slice(0, 200);
     }
   };
+  // Three boards at a time: quick, still gentle on Notion's limit
   for (let i = 0; i < BOARDS.length; i += 3) await Promise.all(BOARDS.slice(i, i + 3).map(one));
-  return { at: new Date().toISOString(), boards };
+  S.lastSync = startedAt;
+  if (doFull) S.lastFull = startedAt;
+  S.stats = { kind: doFull ? 'full' : 'changes', changed, calls, ms: Date.now() - startedAt };
+  publish();
 }
+
+let inflight = null;
+const refresh = (opts) => (inflight ||= sync(opts).finally(() => { inflight = null; }));
 
 export default async function handler(req, res) {
   const want = process.env.BOARDS_KEY || '';
-  if (!want) return res.status(503).json({ error: 'BOARDS_KEY is not set on noocap-pm (or it was added without a redeploy)' });
-  if (String(req.query?.k || '') !== want) return res.status(401).json({ error: 'Wrong or missing key' });
-  if (!memo || Date.now() - memo.t > MEMO_MS) {
-    if (!inflight) inflight = build().then((d) => { memo = { t: Date.now(), d }; return d; }).finally(() => { inflight = null; });
-    try { await inflight; } catch (e) { if (!memo) return res.status(502).json({ error: String(e.message || e).slice(0, 200) }); }
+  const cron = cronAllowed(req);
+  if (!cron) {
+    if (!want) return res.status(503).json({ error: 'BOARDS_KEY is not set on noocap-pm (or it was added without a redeploy)' });
+    if (String(req.query?.k || '') !== want) return res.status(401).json({ error: 'Wrong or missing key' });
+  }
+  // The every-minute cron: pick up what changed and report how much work that was
+  if (cron || req.query?.sync === '1') {
+    await refresh({ full: req.query?.full === '1' }).catch(() => {});
+    res.setHeader('Cache-Control', 'no-store');
+    return res.status(200).json({ ok: !!S.out, ...S.stats, at: S.out?.at, full_at: S.out?.full_at });
+  }
+  if (!S.out) {
+    // Cold start: build the copy once, then everyone after this is served from memory
+    try { await refresh({ full: true }); } catch (e) { return res.status(502).json({ error: String(e.message || e).slice(0, 200) }); }
+  } else if (Date.now() - S.lastSync > FRESH_MS) {
+    // Serve the copy now and catch up in the background
+    waitUntil(refresh().catch(() => {}));
   }
   // One copy at Vercel's edge for a minute, then served stale while one request refreshes it in the background
   res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=600');
-  return res.status(200).json(memo.d);
+  return res.status(200).json(S.out);
 }
