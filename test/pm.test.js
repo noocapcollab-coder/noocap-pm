@@ -144,3 +144,33 @@ test('a video row matches its creator in either database spelling', async () => 
   assert.equal(trackerCreator('nicole'), 'Nicole');
   assert.equal(intakeCreator('nicole'), 'NICOLE');
 });
+
+// ---------- Send to Brand (EDIT TRACKER) ----------
+test('a "Send to Brand" row finds its own brand deal, never another creator\'s', async () => {
+  const { pickDealForRow } = await import('../lib/brandsend.js');
+  const deals = [
+    { id: 'a', brand: 'ElevenLabs', creator: 'Lindsay', stage: 'In Production' },
+    { id: 'b', brand: 'ElevenLabs', creator: 'Duncan', stage: 'In Production' },
+    { id: 'c', brand: 'ElevenLabs', creator: 'Duncan', stage: 'Paid' },
+    { id: 'd', brand: 'Zen', creator: 'Valeri', stage: 'Signed' },
+    { id: 'e', brand: 'ZenBusiness', creator: 'Valeri', stage: 'Signed' },
+  ];
+  assert.equal(pickDealForRow({ title: 'ElevenLabs x Duncan UGC', creator: 'Duncan' }, deals).id, 'b');
+  assert.equal(pickDealForRow({ title: 'ZenBusiness explainer', creator: 'Valerie' }, deals).id, 'e');
+  assert.equal(pickDealForRow({ title: 'Morning routine', creator: 'Duncan' }, deals), null);
+});
+
+test('Send to Brand stops with a reason instead of emailing the wrong way', async () => {
+  const { sendBlocker } = await import('../lib/brandsend.js');
+  const row = { title: 'X', creator: 'Duncan', frame: 'https://f.io/abc' };
+  assert.match(sendBlocker({ ...row, frame: null }, { brandEmail: 'a@b.com' }), /Frame\.io/);
+  assert.match(sendBlocker(row, null), /No brand deal/);
+  assert.match(sendBlocker(row, { brand: 'Kylon', channel: 'WhatsApp', brandEmail: 'a@b.com' }), /WhatsApp/);
+  assert.match(sendBlocker(row, { brand: 'Kylon', channel: 'Email', brandEmail: '' }), /no brand email/);
+  assert.equal(sendBlocker(row, { brand: 'Kylon', channel: 'Email', brandEmail: 'a@b.com' }), null);
+});
+
+test('Send to Brand and With Brand count as Review on the boards', () => {
+  assert.equal(stageOf('Send to Brand'), 'Review');
+  assert.equal(stageOf('With Brand'), 'Review');
+});

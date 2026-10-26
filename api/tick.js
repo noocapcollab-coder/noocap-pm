@@ -17,6 +17,15 @@ const HARD_STOP_MS = 250 * 1000;
 export default async function handler(req, res) {
   const fromCron = cronAllowed(req);
   if (!fromCron && !hookAllowed(req)) return res.status(401).json({ error: HOOK_ERROR });
+  // ?cuts=now: n8n saw a row switched to "Send to Brand" in EDIT TRACKER. Send just that (fast), not the whole heartbeat.
+  if (req.query?.cuts === 'now') {
+    if (!hookAllowed(req)) return res.status(401).json({ error: HOOK_ERROR });
+    try {
+      const { sendCutsToBrands } = await import('../lib/brandsend.js');
+      const id = String(req.query.id || req.body?.id || '').replace(/[^0-9a-f]/gi, '');
+      return res.status(200).json(await sendCutsToBrands({ rowId: id.length === 32 ? id : undefined }));
+    } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // Once Vercel runs the heartbeat (HEARTBEAT_SOURCE=vercel), the old n8n timer is ignored so it never runs twice.
   // A manual call with ?brief=now still works.
   if (!fromCron && process.env.HEARTBEAT_SOURCE === 'vercel' && req.query?.brief !== 'now') return res.status(200).json({ skipped: 'heartbeat runs from Vercel now' });
