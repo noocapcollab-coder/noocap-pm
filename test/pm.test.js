@@ -131,3 +131,16 @@ test('a bounce names the address that failed, not the people on the original ema
   assert.equal(isBounce({ from: 'Mail Delivery Subsystem <mailer-daemon@googlemail.com>', subject: 'Delivery Status Notification (Failure)' }), true);
   assert.equal(isBounce({ from: 'brand@x.com', subject: 'Delivery of the video' }), false);
 });
+
+// ---------- EDIT TRACKER + Video Intake ----------
+test('a video row matches its creator in either database spelling', async () => {
+  const { sameVideoCreator, trackerCreator, intakeCreator } = await import('../lib/intake.js');
+  assert.equal(sameVideoCreator('NICOLE', 'Nicole McCain'), true);   // Video Intake
+  assert.equal(sameVideoCreator('Nicole', 'Nicole McCain'), true);   // EDIT TRACKER
+  assert.equal(sameVideoCreator('Valerie', 'Valeri'), true);
+  assert.equal(sameVideoCreator('EmTech', 'Emtech'), true);
+  assert.equal(sameVideoCreator('Brad', 'Chris'), false);
+  assert.equal(sameVideoCreator('', 'Brad'), false);
+  assert.equal(trackerCreator('nicole'), 'Nicole');
+  assert.equal(intakeCreator('nicole'), 'NICOLE');
+});

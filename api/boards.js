@@ -31,6 +31,8 @@ const BOARDS = [
   { creator: 'Emtech', ds: '328508e9-9dda-8000-b3c9-000b0d791507' },
   // Not a creator board: editors' finished videos. Synced here so its status changes go into STATUS HISTORY too
   { creator: 'Video Intake', ds: '13cf6abc-bcfc-4a35-95d5-e130fd58e720', intake: true },
+  // Same for EDIT TRACKER, where every video lives from assignment to posted since 26 Oct 2026
+  { creator: 'EDIT TRACKER', ds: '8fceee86-cd0d-4045-9b4f-33363fcd25c1', intake: true },
 ];
 const MAX_ROWS = 300;
 const MAX_AGE_DAYS = 150;
