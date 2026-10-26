@@ -174,3 +174,9 @@ test('Send to Brand and With Brand count as Review on the boards', () => {
   assert.equal(stageOf('Send to Brand'), 'Review');
   assert.equal(stageOf('With Brand'), 'Review');
 });
+
+test('on new brand leads the PM only drafts follow-ups; management sends quotes and replies', async () => {
+  const { leadKindAllowed } = await import('../lib/outbox.js');
+  assert.equal(leadKindAllowed('Lead follow-up'), true);
+  for (const k of ['Quote', 'Rate hold', 'Counter', 'Close deal', 'Decline', 'Reply']) assert.equal(leadKindAllowed(k), false, k);
+});
