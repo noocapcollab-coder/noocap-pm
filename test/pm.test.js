@@ -191,3 +191,17 @@ test('the cut email never claims a caption it does not carry (ElevenLabs, 26 Oct
   const noLink = cutBody('Hi Yulia,\n\nThe cut is ready.' + sig, 'https://f.io/x', '');
   assert.ok(noLink.includes('Review link: https://f.io/x') && noLink.endsWith("Duncan's Team"));
 });
+
+test("a follow-up from Lindsay's inbox is signed by Lindsay's team, not Chris's", async () => {
+  const { readyNudge } = await import('../lib/leads.js');
+  const body = readyNudge({ nudge: 2, brand: 'Prizmad', name: 'Slava', leadId: 'abc', creator: 'Lindsay' });
+  assert.match(body, /Lindsay's Team/);
+  assert.doesNotMatch(body, /Chris/);
+});
+
+test('the sign-off always matches the inbox the email goes out from', async () => {
+  const { fixSignature } = await import('../lib/outbox.js');
+  assert.equal(fixSignature("Hi,\n\nChecking in.\n\nBest,\nChris's Team", 'Lindsay'), "Hi,\n\nChecking in.\n\nBest,\nLindsay's Team");
+  assert.equal(fixSignature("Hi,\n\nBest,\nChris's Team", 'Chris'), "Hi,\n\nBest,\nChris's Team");
+  assert.equal(fixSignature("Hi,\n\nBest,\nDuncan's Team", 'noocapcollab'), "Hi,\n\nBest,\nDuncan's Team");
+});
