@@ -205,3 +205,10 @@ test('the sign-off always matches the inbox the email goes out from', async () =
   assert.equal(fixSignature("Hi,\n\nBest,\nChris's Team", 'Chris'), "Hi,\n\nBest,\nChris's Team");
   assert.equal(fixSignature("Hi,\n\nBest,\nDuncan's Team", 'noocapcollab'), "Hi,\n\nBest,\nDuncan's Team");
 });
+
+test('when the brand asks for the invoice it is raised right away, not after posting (Polar)', async () => {
+  const { partDue } = await import('../lib/invoicing.js');
+  assert.equal(partDue({ stage: 'Approved', invoiceRequested: true }, 'final', ''), true);
+  assert.equal(partDue({ stage: 'Approved', invoiceRequested: false }, 'final', ''), false);
+  assert.equal(partDue({ stage: 'Script Sent', invoiceRequested: true }, 'final', ''), false);
+});
