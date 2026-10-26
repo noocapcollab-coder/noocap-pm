@@ -180,3 +180,14 @@ test('on new brand leads the PM only drafts follow-ups; management sends quotes 
   assert.equal(leadKindAllowed('Lead follow-up'), true);
   for (const k of ['Quote', 'Rate hold', 'Counter', 'Close deal', 'Decline', 'Reply']) assert.equal(leadKindAllowed(k), false, k);
 });
+
+test('the cut email never claims a caption it does not carry (ElevenLabs, 26 Oct)', async () => {
+  const { cutInstructions, cutBody } = await import('../lib/brandsend.js');
+  assert.match(cutInstructions(''), /Do not say or suggest that a caption/);
+  const sig = "\n\nBest,\nDuncan's Team";
+  const withCap = cutBody('Hi Yulia,\n\nThe cut is ready: https://f.io/x' + sig, 'https://f.io/x', 'Try ElevenLabs today #ad');
+  assert.ok(withCap.includes('Post caption:\nTry ElevenLabs today #ad'));
+  assert.ok(withCap.indexOf('Post caption') < withCap.indexOf('Best,'));
+  const noLink = cutBody('Hi Yulia,\n\nThe cut is ready.' + sig, 'https://f.io/x', '');
+  assert.ok(noLink.includes('Review link: https://f.io/x') && noLink.endsWith("Duncan's Team"));
+});
