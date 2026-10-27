@@ -43,6 +43,9 @@ export default async function handler(req, res) {
   if (!cron && !hookAllowed(req)) return res.status(401).json({ error: HOOK_ERROR });
   // GET /api/leads?labels=1&days=30 -> which Gmail label each lead thread should carry (n8n "PM · Label sync")
   // GET /api/leads?poll=1 -> read the creator inboxes the PM reaches itself over IMAP (Lindsay's), every few minutes
+  // AI paused: don't open the inboxes at all, so every email waits untouched until the pause ends
+  const { aiPaused, PAUSED_MSG } = await import('../lib/pause.js');
+  if (aiPaused() && req.method === 'GET' && req.query?.poll) return res.status(200).json({ paused: PAUSED_MSG() });
   if (req.method === 'GET' && req.query?.poll) {
     const { pollMailboxes } = await import('../lib/mailbox.js');
     const results = await pollMailboxes({ handle: async (email) => { try { return await handleLeadEmail(email); } catch (e) { const msg = String(e.message || e).slice(0, 300); return { action: await recordError(email, msg), error: msg }; } } });
@@ -52,6 +55,7 @@ export default async function handler(req, res) {
   if (req.method === 'GET') return res.status(200).json(await labelPlan({ days: Math.min(90, Number(req.query?.days) || 30) }));
   const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
   const emails = Array.isArray(body.emails) ? body.emails : [body];
+  if (aiPaused()) return res.status(200).json({ results: emails.map((e) => ({ subject: e.subject, action: 'error', why: PAUSED_MSG() })) });
   const results = [];
   const batch = emails.slice(0, 20);
   const run = await startRun('Leads', batch.length === 1 ? (batch[0].subject || '(no subject)') + (batch[0].from ? ' · ' + String(batch[0].from).replace(/<.*>/, '').trim() : '') : `${batch.length} emails`);

@@ -76,6 +76,8 @@ export default async function handler(req, res) {
   if (!hookAllowed(req)) return res.status(401).json({ error: HOOK_ERROR });
   const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
   const emails = Array.isArray(body.emails) ? body.emails : [body];
+  // AI paused: answer "error" so n8n leaves every email unlabelled and the sweep hands them over again after the pause
+  { const { aiPaused, PAUSED_MSG } = await import('../lib/pause.js'); if (aiPaused()) return res.status(200).json({ results: emails.map((e) => ({ subject: e.subject, action: 'error', why: PAUSED_MSG() })) }); }
   const results = [];
   const batch = emails.slice(0, 20);
   const run = await startRun('Inbox', batch.length === 1 ? (batch[0].subject || '(no subject)') + (batch[0].from ? ' · ' + String(batch[0].from).replace(/<.*>/, '').trim() : '') : `${batch.length} emails`);

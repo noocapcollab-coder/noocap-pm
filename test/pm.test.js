@@ -212,3 +212,11 @@ test('when the brand asks for the invoice it is raised right away, not after pos
   assert.equal(partDue({ stage: 'Approved', invoiceRequested: false }, 'final', ''), false);
   assert.equal(partDue({ stage: 'Script Sent', invoiceRequested: true }, 'final', ''), false);
 });
+
+test('while the AI is paused, no AI call is made and emails are left for later', async () => {
+  const prev = process.env.AI_PAUSED_UNTIL;
+  process.env.AI_PAUSED_UNTIL = new Date(Date.now() + 864e5).toISOString();
+  const { aiPaused } = await import('../lib/pause.js?t=1');
+  assert.equal(aiPaused(), true);
+  process.env.AI_PAUSED_UNTIL = prev;
+});
