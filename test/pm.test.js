@@ -229,3 +229,8 @@ test('billing details typed by hand in Notion are understood (Buzzy AI)', async 
   assert.equal(b.country_code, 'HK');
   assert.equal(readBilling('{"company_name":"Brokegirls, Inc."}').company_name, 'Brokegirls, Inc.');
 });
+
+test('follow-ups never offer a call', async () => {
+  const { readyNudge } = await import('../lib/leads.js');
+  for (const n of [2, 3]) for (const id of ['a', 'b', 'c', 'd', 'e', 'f']) assert.doesNotMatch(readyNudge({ nudge: n, brand: 'Granola AI', leadId: id, creator: 'Chris' }), /\bcall\b/i);
+});
