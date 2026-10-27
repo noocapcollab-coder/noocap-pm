@@ -250,3 +250,11 @@ test('tools spend: yearly spread over 12, INR converted, cancelled and one-off i
   assert.equal(s.tools[0].name, 'HeyGen'); assert.equal(s.renewing.length, 1);
   assert.deepEqual(s.byClient.map((x) => x.name), ['Brad', 'NOOCAP']);
 });
+
+test('sponsor cards: Type read from a select or a multi-select (Lindsay\'s board)', async () => {
+  const { typeName } = await import('../lib/actions.js');
+  assert.equal(typeName({ type: 'select', select: { name: 'SPONSOR' } }), 'SPONSOR');
+  assert.equal(typeName({ type: 'multi_select', multi_select: [{ name: 'PERSONAL' }, { name: 'SPONSOR' }] }), 'SPONSOR');
+  assert.equal(typeName({ type: 'multi_select', multi_select: [] }), '');
+  assert.equal(typeName(undefined), '');
+});
