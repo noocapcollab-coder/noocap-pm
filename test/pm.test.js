@@ -220,3 +220,12 @@ test('while the AI is paused, no AI call is made and emails are left for later',
   assert.equal(aiPaused(), true);
   process.env.AI_PAUSED_UNTIL = prev;
 });
+
+test('billing details typed by hand in Notion are understood (Buzzy AI)', async () => {
+  const { readBilling } = await import('../lib/invoicing.js');
+  const b = readBilling('Company: VisionLeap HK Limited | Email: ellaz@zmo.ai | Address: Suite 603, 6/F, Laws Commercial Plaza, 788 Cheung Sha Wan Road, Kowloon, Hong Kong | Country: HK');
+  assert.equal(b.company_name, 'VisionLeap HK Limited');
+  assert.equal(b.email, 'ellaz@zmo.ai');
+  assert.equal(b.country_code, 'HK');
+  assert.equal(readBilling('{"company_name":"Brokegirls, Inc."}').company_name, 'Brokegirls, Inc.');
+});
