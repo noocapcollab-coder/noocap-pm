@@ -196,7 +196,7 @@ async function onText(st, text, quotedText = '') {
     const c = BOARDS.map((b) => b.creator).find((n) => n.toLowerCase().startsWith(t.toLowerCase().replace(/[^a-z]/g, '').slice(0, 4)) && t.length >= 3);
     if (c) {
       pn.creator = c; pn.whose = false;
-      await sendButtons(st.person.number, `OK, *${pn.brand} × ${c}*. Send the notes to Shreya?`, [{ id: 'noteson', title: '✏️ Send to Shreya' }, { id: 'notesno', title: '✖️ Don\'t send' }]);
+      await sendButtons(st.person.number, `OK, *${pn.brand} × ${c}*. Send the notes to Rudraksh?`, [{ id: 'noteson', title: '✏️ Send to Rudraksh' }, { id: 'notesno', title: '✖️ Don\'t send' }]);
       return;
     }
     if (/^(cancel|no|stop|leave it)\.?$/i.test(t)) { pn.resolved = 'cancelled'; await say(st, 'OK, I didn\'t send it.'); return; }
@@ -330,7 +330,7 @@ async function showDrafts(st, text) {
 // ---------- a new brand deal forwarded from a creator ----------
 // Brad / Emtech / Chris send their own deal info ("Here's the Luma info, brief, due Oct 21") and Harsh forwards it here.
 // The PM works out whose deal it is and which brand, shows that with buttons, and on ✅ files it exactly like a brief
-// email: a deal row (Brief Received, Needs Check), a card on the creator's board with the brief, and Shreya pinged.
+// email: a deal row (Brief Received, Needs Check), a card on the creator's board with the brief, and Rudraksh pinged.
 const pendingDeal = (st) => [...st.messages].reverse().slice(0, 12).find((x) => x.meta === 'deal-confirm' && !x.resolved && Date.now() - Date.parse(x.at) < 6 * 36e5);
 
 async function maybeNewDeal(st, text, forwarded) {
@@ -363,7 +363,7 @@ async function maybeNewDeal(st, text, forwarded) {
     entry.whose = true;
     await sendText(st.person.number, `${head}\n\nWhose deal is this? Reply with the creator's name (${roster.join(', ')}).`);
   } else {
-    await sendButtons(st.person.number, `${head}\n\nFile it? I'll ${already ? 'add the brief to that deal and its card' : `open the deal, make the card on ${x.creator}'s board with the brief`} and tell Shreya.\n\n*WhatsApp* = ${x.creator} handles the brand, so I never email them. *Email* = we run it from our inbox.\nWrong creator? Just reply with the right name.`, [{ id: 'dealwa', title: '✅ File · WhatsApp' }, { id: 'dealmail', title: '📧 File · Email' }, { id: 'dealno', title: '✖️ Not a deal' }]);
+    await sendButtons(st.person.number, `${head}\n\nFile it? I'll ${already ? 'add the brief to that deal and its card' : `open the deal, make the card on ${x.creator}'s board with the brief`} and tell Rudraksh.\n\n*WhatsApp* = ${x.creator} handles the brand, so I never email them. *Email* = we run it from our inbox.\nWrong creator? Just reply with the right name.`, [{ id: 'dealwa', title: '✅ File · WhatsApp' }, { id: 'dealmail', title: '📧 File · Email' }, { id: 'dealno', title: '✖️ Not a deal' }]);
   }
   st.messages.push(entry);
   return true;
@@ -371,7 +371,7 @@ async function maybeNewDeal(st, text, forwarded) {
 
 // ---------- a brand's script feedback forwarded on WhatsApp ----------
 // Chris pastes the brand's notes in the creator group, Harsh forwards them here: the PM says whose script it is and,
-// on ✏️, sends the notes to Shreya exactly like script-change emails (Discord ping, notes on the card, card back to Script Draft).
+// on ✏️, sends the notes to Rudraksh exactly like script-change emails (Discord ping, notes on the card, card back to Script Draft).
 const pendingNotes = (st) => [...st.messages].reverse().slice(0, 12).find((x) => x.meta === 'notes-confirm' && !x.resolved && Date.now() - Date.parse(x.at) < 6 * 36e5);
 async function offerScriptNotes(st, t, x, deals, roster) {
   const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -384,7 +384,7 @@ async function offerScriptNotes(st, t, x, deals, roster) {
     entry.whose = true;
     await sendText(st.person.number, `${entry.content}\n\nWhose script is this? Reply with the creator's name (${roster.join(', ')}).`);
   } else {
-    await sendButtons(st.person.number, `${entry.content}\n\nSend it to Shreya? I'll ping her on Discord with the notes, add them to the video card and move the card back to Script Draft.\nWrong creator? Just reply with the right name.`, [{ id: 'noteson', title: '✏️ Send to Shreya' }, { id: 'notesno', title: '✖️ Don\'t send' }]);
+    await sendButtons(st.person.number, `${entry.content}\n\nSend it to Rudraksh? I'll ping him on Discord with the notes, add them to the video card and move the card back to Script Draft.\nWrong creator? Just reply with the right name.`, [{ id: 'noteson', title: '✏️ Send to Rudraksh' }, { id: 'notesno', title: '✖️ Don\'t send' }]);
   }
   st.messages.push(entry);
   return true;
@@ -399,7 +399,7 @@ async function sendScriptNotes(st) {
   try {
     const r = await resendScriptChanges({ brand: p.brand, creator: p.creator, feedback: forScriptWriter(p.notes) });
     p.resolved = 'sent';
-    await say(st, `✅ Sent *${r.deal}*'s script notes to Shreya${r.ok ? '' : ' (the Discord ping failed, but the notes are on the video card)'}.${r.video ? ` Card moved to ${r.video}.` : ''}`);
+    await say(st, `✅ Sent *${r.deal}*'s script notes to Rudraksh${r.ok ? '' : ' (the Discord ping failed, but the notes are on the video card)'}.${r.video ? ` Card moved to ${r.video}.` : ''}`);
   } catch (e) { p.resolved = 'failed'; await say(st, `⚠️ I couldn't send it: ${e.message}. Tell me the brand name as it is on the board and I'll try again.`); }
 }
 
@@ -421,6 +421,6 @@ async function fileNewDeal(st, channel = 'WhatsApp') {
   const r = await briefFromText({ text: `From: ${p.creator} (forwarded on WhatsApp by ${st.person.name})\nDate: ${new Date().toISOString()}\n\n${p.dealText}`, subject: `${p.brand || 'Brand'} brand deal`, dealId: p.dealId, creator: p.creator, channel });
   p.resolved = 'filed';
   const link = r.video || r.card || r.url || r.deal;
-  const done = r.action === 'needs_help' ? `⚠️ I couldn't file it: ${r.why || 'unknown reason'}.` : `✅ Filed *${p.brand} × ${p.creator}*.${r.action === 'updated' ? ' The brief was added to the existing deal and card.' : ` New deal (marked Needs Check so you can add the rate) and a card on the board with the brief. Shreya has been told.`}${channel === 'WhatsApp' ? `\nHandled on WhatsApp: I won't email the brand. When the cut is ready I'll send you the link here to pass on.` : `\nHandled on email: add the brand's email on the deal so I can follow up.`}${''}${link ? `\n${link}` : ''}`;
+  const done = r.action === 'needs_help' ? `⚠️ I couldn't file it: ${r.why || 'unknown reason'}.` : `✅ Filed *${p.brand} × ${p.creator}*.${r.action === 'updated' ? ' The brief was added to the existing deal and card.' : ` New deal (marked Needs Check so you can add the rate) and a card on the board with the brief. Rudraksh has been told.`}${channel === 'WhatsApp' ? `\nHandled on WhatsApp: I won't email the brand. When the cut is ready I'll send you the link here to pass on.` : `\nHandled on email: add the brand's email on the deal so I can follow up.`}${''}${link ? `\n${link}` : ''}`;
   await say(st, done);
 }

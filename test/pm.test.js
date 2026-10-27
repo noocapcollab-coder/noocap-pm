@@ -258,3 +258,12 @@ test('sponsor cards: Type read from a select or a multi-select (Lindsay\'s board
   assert.equal(typeName({ type: 'multi_select', multi_select: [] }), '');
   assert.equal(typeName(undefined), '');
 });
+
+test('script writer is Rudraksh and the old writer is never tagged', async () => {
+  const old = process.env.SHREYA_DISCORD_ID; process.env.SHREYA_DISCORD_ID = '111';
+  delete process.env.SCRIPTWRITER_DISCORD_ID;
+  const { tag } = await import('../lib/briefs.js');
+  assert.equal(tag(), '@Rudraksh');
+  process.env.SCRIPTWRITER_DISCORD_ID = '222'; assert.equal(tag(), '<@222>');
+  delete process.env.SCRIPTWRITER_DISCORD_ID; if (old === undefined) delete process.env.SHREYA_DISCORD_ID; else process.env.SHREYA_DISCORD_ID = old;
+});
