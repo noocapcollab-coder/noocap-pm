@@ -803,6 +803,7 @@
     <button data-v="approvals" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Approvals <span class="badge" data-count hidden>0</span></button>
     <button data-v="billing" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12h7M9 16h5"/></svg>Invoices <span class="badge" id="invBadge" hidden>0</span></button>
     <button data-v="revenue" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M17 7.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2.2 2.7 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3"/></svg>Revenue</button>
+    <button data-v="spend" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>Tools &amp; spend</button>
   </div>
   <div class="grp">
     <div class="lbl">Agency workflow</div>
@@ -913,6 +914,16 @@
   <div class="err" id="rvErr" style="font-size:13px"></div>
 </div></section>
 
+<!-- ============ Tools & spend ============ -->
+<section class="view" id="spend"><div class="ov">
+  <div class="ov-head">
+    <div><div class="k" id="spWhen">AI tools and subscriptions · from Notion</div><h1>Tools &amp; spend</h1></div>
+  </div>
+  <section class="ostats" id="spStats" aria-label="Spend totals"><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div></section>
+  <div id="spBody"><div class="skel"></div><div class="skel"></div></div>
+  <div class="err" id="spErr" style="font-size:13px"></div>
+</div></section>
+
 <!-- ============ Runs ============ -->
 <section class="view" id="runs"><div class="ov">
   <div class="ov-head">
@@ -1002,6 +1013,7 @@
   <button data-v="active" type="button"><span class="i">▦</span>Active</button>
   <button data-v="revenue" type="button"><span class="i">$</span>Revenue</button>
   <button data-v="billing" type="button"><span class="i">🧾</span>Invoices</button>
+  <button data-v="spend" type="button"><span class="i">▭</span>Tools</button>
   <button data-v="flow" type="button"><span class="i">⇢</span>System</button>
   <button data-v="chat" type="button"><span class="i">✦</span>Chat</button>
   <button data-v="approvals" type="button"><span class="i">✉</span>Approvals<span class="badge" data-count hidden>0</span></button>
@@ -1047,7 +1059,7 @@
   // ---------- tabs ----------
   let view = 'overview';
   function show(v) {
-    if (!['overview', 'hq', 'team', 'billing', 'leads', 'pricing', 'active', 'deals', 'revenue', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
+    if (!['overview', 'hq', 'team', 'billing', 'leads', 'pricing', 'active', 'deals', 'revenue', 'spend', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
     if (v === 'deals') v = 'leads'; // the old Brand deals board is now Leads + Active brands
     view = v;
     document.querySelectorAll('.view').forEach((el) => el.classList.toggle('on', el.id === v));
@@ -1059,6 +1071,7 @@
     if (v === 'deals' && hqData) renderBoard();
     if (v === 'flow' && !flowData) loadFlow();
     if (v === 'revenue') rv ? renderRevenue() : loadRevenue();
+    if (v === 'spend') sp ? renderSpend() : loadSpend();
     if (v === 'team') { if (!hqData) loadHQ(); loadEditorMonth(); }
     if (v === 'billing') hqData ? renderInvoices() : loadHQ();
     if (v === 'leads') { hqData ? renderLeadsTab() : loadHQ(); if (!drafts.length) loadApprovals(true); }
@@ -1069,10 +1082,42 @@
   }
   document.querySelectorAll('[data-v]').forEach((b) => b.onclick = () => show(b.dataset.v));
   window.addEventListener('hashchange', () => show(location.hash.slice(1)));
-  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else if (view === 'team') loadEditorMonth(true); else if (view === 'runs') loadRuns(); else if (view === 'pricing') loadPricing(true); else loadHQ(true); };
+  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else if (view === 'spend') loadSpend(true); else if (view === 'team') loadEditorMonth(true); else if (view === 'runs') loadRuns(); else if (view === 'pricing') loadPricing(true); else loadHQ(true); };
   document.querySelectorAll('.ov [data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
 
   // =====================================================================
+  // Tools & spend: monthly AI tool and subscription costs from the TOOLS & SPEND database
+  let sp = null, spLoading = false;
+  async function loadSpend(fresh) {
+    if (spLoading) return; spLoading = true;
+    $('spErr').textContent = '';
+    try {
+      const r = await fetch('/api/spend' + (fresh ? '?fresh=1' : ''), { headers: headers() });
+      if (r.status === 401) { spLoading = false; return needPassword(); }
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error || 'Could not load tools');
+      sp = j; renderSpend();
+    } catch (e) { $('spErr').textContent = e.message; if (!sp) $('spBody').innerHTML = '<div class="empty">Tools could not load. Hit refresh to try again.</div>'; }
+    spLoading = false;
+  }
+  function renderSpend() {
+    if (!sp) return;
+    const money = (n) => '$' + Number(n || 0).toLocaleString('en-US', { maximumFractionDigits: n < 100 ? 2 : 0 });
+    const day = (d) => d ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' }) : '';
+    $('spWhen').textContent = `AI tools and subscriptions · from Notion · updated ${since(sp.generated_at)}`;
+    const stat = (l, v, s, st = '') => `<div class="ostat"><span class="l">${l}</span><span class="v" style="${st}">${v}</span><span class="s">${s}</span></div>`;
+    $('spStats').innerHTML = stat('Per month', money(sp.monthly), sp.noCost ? `${plural(sp.noCost, 'tool')} still missing a cost` : 'all active tools', 'color:var(--accent)')
+      + stat('Per year', money(sp.yearly), 'if nothing changes')
+      + stat('Active tools', sp.active, 'paid or on trial')
+      + stat('Renewing soon', sp.renewing.length, sp.renewing.length ? sp.renewing.map((t) => `${esc(t.name)} ${day(t.renewal)}`).join(' · ') : 'nothing in the next 14 days', sp.renewing.length ? 'color:var(--warn)' : '');
+    const split = (title, xs) => `<section class="ocard"><h2>${title}</h2>${xs.length ? '<table>' + xs.map((x) => `<tr><td class="nm">${esc(x.name)}</td><td class="num">${money(x.monthly)}/mo</td><td class="num" style="color:var(--muted)">${sp.monthly ? Math.round(x.monthly / sp.monthly * 100) : 0}%</td></tr>`).join('') + '</table>' : '<div class="empty">Add costs in Notion to see this.</div>'}</section>`;
+    const rows = sp.tools.map((t) => `<tr style="${t.status === 'Cancelled' || t.status === 'Paused' ? 'opacity:.5' : ''}"><td class="nm"><a href="${esc(t.url || sp.notion)}" target="_blank" rel="noopener">${esc(t.name)}</a>${t.plan ? ` <span style="color:var(--muted)">· ${esc(t.plan)}</span>` : ''}</td><td>${esc(t.category)}</td><td>${esc(t.paidFor)}</td><td class="num">${t.cost == null ? '<span style="color:var(--warn)">add cost</span>' : (t.currency === 'INR' ? '₹' + Number(t.cost).toLocaleString('en-IN') : money(t.cost)) + (t.billing ? ' ' + esc(t.billing.toLowerCase()) : '')}</td><td class="num">${t.monthly ? money(t.monthly) : '—'}</td><td>${t.renewal ? day(t.renewal) : ''}</td><td>${esc(t.status)}</td></tr>`).join('');
+    $('spBody').innerHTML = `<div style="display:flex;flex-direction:column;gap:16px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">${split('By category', sp.byCategory)}${split('By client', sp.byClient)}</div>
+      <section class="ocard"><h2>Every tool <small>${plural(sp.tools.length, 'row')} · INR at ₹${sp.rate} = $1, yearly plans spread over 12 months</small><a class="more" href="${esc(sp.notion)}" target="_blank" rel="noopener">Edit in Notion ↗</a></h2>
+      ${rows ? `<div class="tscroll"><table><tr><th>Tool</th><th>Category</th><th>Paid for</th><th class="num">Cost</th><th class="num">Per month</th><th>Renews</th><th>Status</th></tr>${rows}</table></div>` : '<div class="empty">No tools yet. Add them in Notion.</div>'}</section></div>`;
+  }
+
   // Revenue: sponsor videos x Sponsor Video Revenue x Creator Cut (ported from RevenueDashboard)
   // =====================================================================
   let rv = null, rvSel = null, rvFilter = 'all', rvQ = '', rvCycle = 'all', rvLoading = false;

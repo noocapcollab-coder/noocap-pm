@@ -234,3 +234,19 @@ test('follow-ups never offer a call', async () => {
   const { readyNudge } = await import('../lib/leads.js');
   for (const n of [2, 3]) for (const id of ['a', 'b', 'c', 'd', 'e', 'f']) assert.doesNotMatch(readyNudge({ nudge: n, brand: 'Granola AI', leadId: id, creator: 'Chris' }), /\bcall\b/i);
 });
+
+test('tools spend: yearly spread over 12, INR converted, cancelled and one-off ignored', async () => {
+  const { monthlyUSD, summarize } = await import('../lib/spend.js');
+  assert.equal(monthlyUSD({ Cost: 120, Billing: 'Yearly', Currency: 'USD' }), 10);
+  assert.equal(monthlyUSD({ Cost: 840, Billing: 'Monthly', Currency: 'INR' }, 84), 10);
+  assert.equal(monthlyUSD({ Cost: 50, Billing: 'Monthly', Status: 'Cancelled' }), 0);
+  assert.equal(monthlyUSD({ Cost: 50, Billing: 'One-off' }), 0);
+  const s = summarize([
+    { _id: 'a', Tool: 'Vercel', Cost: 20, Billing: 'Monthly', Category: 'Automation & hosting', Status: 'Active', 'Next Renewal': '2026-10-30' },
+    { _id: 'b', Tool: 'HeyGen', Cost: 29, Billing: 'Monthly', Category: 'AI video', 'Paid For': 'Brad', Status: 'Active' },
+    { _id: 'c', Tool: 'Notion', Billing: 'Monthly', Status: 'Active' },
+  ], '2026-10-27', 84);
+  assert.equal(s.monthly, 49); assert.equal(s.yearly, 588); assert.equal(s.active, 3); assert.equal(s.noCost, 1);
+  assert.equal(s.tools[0].name, 'HeyGen'); assert.equal(s.renewing.length, 1);
+  assert.deepEqual(s.byClient.map((x) => x.name), ['Brad', 'NOOCAP']);
+});
