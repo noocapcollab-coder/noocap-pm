@@ -317,3 +317,9 @@ test('an AI outage never counts as a failed try on an email', async () => {
   assert.ok(AI_DOWN.test('Claude 529: overloaded'));
   assert.ok(!AI_DOWN.test('Notion 400: validation_error on property Brand'));
 });
+
+test('paid deals only ask to collect a cut when the creator has one', async () => {
+  const { paidNextAction } = await import('../lib/invoicing.js');
+  assert.equal(paidNextAction(20), 'Collect NOOCAP cut');
+  assert.match(paidNextAction(0), /no NOOCAP cut/);
+});
