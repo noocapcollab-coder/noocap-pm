@@ -323,3 +323,12 @@ test('paid deals only ask to collect a cut when the creator has one', async () =
   assert.equal(paidNextAction(20), 'Collect NOOCAP cut');
   assert.match(paidNextAction(0), /no NOOCAP cut/);
 });
+
+test('invoice numbers run per creator as INV-001, INV-002', async () => {
+  const { formatInvoiceNumber, highestInvoiceNumber } = await import('../lib/invoicing.js');
+  assert.equal(formatInvoiceNumber(1), 'INV-001');
+  assert.equal(formatInvoiceNumber(12), 'INV-012');
+  assert.equal(highestInvoiceNumber(['INV-001', 'INV-002, INV-004', null, '']), 4);
+  assert.equal(highestInvoiceNumber([]), 0);
+  assert.equal(formatInvoiceNumber(highestInvoiceNumber(['INV 002']) + 1), 'INV-003');
+});
