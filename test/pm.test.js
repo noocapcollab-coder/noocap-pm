@@ -274,3 +274,14 @@ test('invoice email while the AI is paused: plain text with the pay link and the
   assert.match(m.body, /\$950/); assert.match(m.body, /\{\{invoice_link\}\}/); assert.match(m.body, /Chris's Team$/);
   assert.doesNotMatch(m.body, /[—–]/);
 });
+
+test('redraft cooldown: only rejected or expired drafts of the same deal and kind in the last 72 hours', async () => {
+  const { cooldownFilter } = await import('../lib/outbox.js');
+  const f = cooldownFilter({ dealId: 'd1', kind: 'Follow-up', now: Date.parse('2026-10-30T12:00:00Z') });
+  const flat = JSON.stringify(f);
+  assert.match(flat, /"Deal".*"d1"/); assert.match(flat, /"Follow-up"/); assert.match(flat, /Rejected/); assert.match(flat, /Expired/);
+  assert.doesNotMatch(flat, /"Sent"/);
+  assert.match(flat, /2026-10-27T12:00:00/);
+  const l = JSON.stringify(cooldownFilter({ leadId: 'L1', now: 0 }));
+  assert.match(l, /"Lead".*"L1"/);
+});
