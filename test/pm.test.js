@@ -308,3 +308,12 @@ test('PDF attachments go to the AI as text only', async () => {
   assert.match(t, /contract\.pdf/); assert.match(t, /Sponsorship agreement for Lindsay/); assert.doesNotMatch(t, /logo/);
   assert.equal(await attachmentText([{ filename: 'bad.pdf', mimeType: 'application/pdf', data: 'bm90IGEgcGRm' }]), '');
 });
+
+test('an AI outage never counts as a failed try on an email', async () => {
+  const { AI_DOWN } = await import('../api/leads.js');
+  assert.ok(AI_DOWN.test('Claude 400: {"message":"You have reached your specified API usage limits. You will regain access on 2026-11-01"}'));
+  assert.ok(AI_DOWN.test('Claude 400: Your credit balance is too low to access the Anthropic API'));
+  assert.ok(AI_DOWN.test('AI paused until 2026-11-01T00:10:00Z (Anthropic spend limit)'));
+  assert.ok(AI_DOWN.test('Claude 529: overloaded'));
+  assert.ok(!AI_DOWN.test('Notion 400: validation_error on property Brand'));
+});
