@@ -285,3 +285,26 @@ test('redraft cooldown: only rejected or expired drafts of the same deal and kin
   const l = JSON.stringify(cooldownFilter({ leadId: 'L1', now: 0 }));
   assert.match(l, /"Lead".*"L1"/);
 });
+
+test('AI spend: cost per call, alert thresholds once each, job breakdown round trip', async () => {
+  const { callCost, crossed, readJobs, writeJobs } = await import('../lib/aispend.js');
+  assert.equal(callCost('claude-haiku-4-5-20251001', { input_tokens: 1e6, output_tokens: 0 }), 1);
+  assert.equal(callCost('claude-sonnet-5', { input_tokens: 0, output_tokens: 1e6 }), 15);
+  assert.deepEqual(crossed(14, 15.5, 20), [75]);
+  assert.deepEqual(crossed(14, 19.5, 20), [75, 95]);
+  assert.deepEqual(crossed(14, 15.5, 20, '75%'), []);
+  assert.deepEqual(crossed(1, 2, 20), []);
+  const j = readJobs(writeJobs({ inbox: 0.4, drafts: 0.1 }));
+  assert.equal(j.inbox, 0.4); assert.equal(j.drafts, 0.1);
+});
+
+test('PDF attachments go to the AI as text only', async () => {
+  const { PDFDocument, StandardFonts } = await import('pdf-lib');
+  const doc = await PDFDocument.create(); const page = doc.addPage(); const font = await doc.embedFont(StandardFonts.Helvetica);
+  page.drawText('Sponsorship agreement for Lindsay', { x: 50, y: 700, size: 14, font });
+  const b64 = Buffer.from(await doc.save()).toString('base64');
+  const { attachmentText } = await import('../lib/pdftext.js');
+  const t = await attachmentText([{ filename: 'contract.pdf', mimeType: 'application/pdf', data: b64 }, { filename: 'logo.png', mimeType: 'image/png', data: 'xx' }]);
+  assert.match(t, /contract\.pdf/); assert.match(t, /Sponsorship agreement for Lindsay/); assert.doesNotMatch(t, /logo/);
+  assert.equal(await attachmentText([{ filename: 'bad.pdf', mimeType: 'application/pdf', data: 'bm90IGEgcGRm' }]), '');
+});

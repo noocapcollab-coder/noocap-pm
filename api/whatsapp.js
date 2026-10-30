@@ -264,6 +264,7 @@ async function applyEdit(st, id, instruction) {
     'Return only the email body, with no subject line and no commentary.',
   ].join(' ');
   const r = await claude({
+    _job: 'whatsapp',
     model: HAIKU, max_tokens: 1500, system: sys,
     messages: [{ role: 'user', content: `CURRENT DRAFT:\n${d.body}\n\nTEAMMATE'S MESSAGE:\n${instruction}` }],
   });
@@ -352,7 +353,7 @@ async function maybeNewDeal(st, text, forwarded) {
     due: { type: ['string', 'null'], description: 'Draft or post due date as written, if any' },
     gist: { type: 'string', description: 'One short line on what the deal is' },
   }, required: ['kind', 'is_brand_deal', 'creator', 'brand', 'gist'] } };
-  const r = await claude({ model: HAIKU, max_tokens: 400, tools: [tool], tool_choice: { type: 'tool', name: 'classify' }, messages: [{ role: 'user', content: `NOOCAP creators: ${roster.join(', ')}.\nOpen deals: ${deals.map((d) => `${d.brand} (${d.creator})`).join(', ').slice(0, 2500)}\n\nMessage Harsh ${forwarded ? 'forwarded' : 'sent'} to the PM:\n${t.slice(0, 6000)}` }] });
+  const r = await claude({ _job: 'whatsapp', model: HAIKU, max_tokens: 400, tools: [tool], tool_choice: { type: 'tool', name: 'classify' }, messages: [{ role: 'user', content: `NOOCAP creators: ${roster.join(', ')}.\nOpen deals: ${deals.map((d) => `${d.brand} (${d.creator})`).join(', ').slice(0, 2500)}\n\nMessage Harsh ${forwarded ? 'forwarded' : 'sent'} to the PM:\n${t.slice(0, 6000)}` }] });
   const x = (r.content || []).find((c) => c.type === 'tool_use')?.input;
   if (x?.kind === 'script_feedback') return offerScriptNotes(st, t, x, deals, roster);
   if (!x?.is_brand_deal || x.kind === 'other') return false;

@@ -10,7 +10,8 @@
     "imapflow": "^1.7.8",
     "mailparser": "^3.9.39",
     "nodemailer": "^6.10.1",
-    "pdf-lib": "^1.17.1"
+    "pdf-lib": "^1.17.1",
+    "unpdf": "^1.8.1"
   },
   "scripts": {
     "test": "node --test test/*.test.js",
