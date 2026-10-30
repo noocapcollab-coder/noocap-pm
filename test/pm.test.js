@@ -267,3 +267,10 @@ test('script writer is Rudraksh and the old writer is never tagged', async () =>
   process.env.SCRIPTWRITER_DISCORD_ID = '222'; assert.equal(tag(), '<@222>');
   delete process.env.SCRIPTWRITER_DISCORD_ID; if (old === undefined) delete process.env.SHREYA_DISCORD_ID; else process.env.SHREYA_DISCORD_ID = old;
 });
+
+test('invoice email while the AI is paused: plain text with the pay link and the creator team signature', async () => {
+  const { plainInvoiceEmail } = await import('../lib/outbox.js');
+  const m = plainInvoiceEmail({ brand: 'SpeakOn AI', creator: 'Chris', finalRate: 950 }, { amount: '$950', billed_to: 'NOTTA PTE. LTD.' });
+  assert.match(m.body, /\$950/); assert.match(m.body, /\{\{invoice_link\}\}/); assert.match(m.body, /Chris's Team$/);
+  assert.doesNotMatch(m.body, /[—–]/);
+});
