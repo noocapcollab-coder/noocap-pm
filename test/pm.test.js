@@ -369,3 +369,19 @@ test('brand pool: one row per domain, agencies, free mail and our own side', asy
   for (const k of ['Do Not Contact', 'Pitched For', 'Last Pitched', 'Notes']) assert.equal(k in props, false);
   assert.equal(poolSig(props), poolSig(poolProps(acme)));
 });
+
+test('brand pool: subdomains fold into the company, junk names and spelling variants are ignored', async () => {
+  const { buildPool, poolKey, baseDomain } = await import('../lib/brandpool.js');
+  assert.equal(baseDomain('mcn.noxinfluencer.com'), 'noxinfluencer.com');
+  assert.equal(baseDomain('mail.brand.com.cn'), 'brand.com.cn');
+  assert.equal(poolKey('a@newsletter.crm.brandnetworkinghub.com'), 'brandnetworkinghub.com');
+  const pool = buildPool([
+    { email: 'a@sparkols.com', brand: 'Sparkols', creator: 'Chris' },
+    { email: 'b@sparkols.com', brand: 'Sparkols Agency', creator: 'Lindsay' },
+    { email: 'c@sparkols.com', brand: '<UNKNOWN>', creator: 'Lindsay' },
+  ]);
+  const row = pool.get('sparkols.com');
+  assert.equal(row.agency, false);
+  assert.equal(row.brands.size, 1);
+  assert.notEqual(row.title, '<UNKNOWN>');
+});
