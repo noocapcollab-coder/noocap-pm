@@ -332,3 +332,40 @@ test('invoice numbers run per creator as INV-001, INV-002', async () => {
   assert.equal(highestInvoiceNumber([]), 0);
   assert.equal(formatInvoiceNumber(highestInvoiceNumber(['INV 002']) + 1), 'INV-003');
 });
+
+test('brand pool: one row per domain, agencies, free mail and our own side', async () => {
+  const { buildPool, poolKey, poolProps, poolSig, creatorName } = await import('../lib/brandpool.js');
+  assert.equal(poolKey('Jane <jane@acme.com>'), 'acme.com');
+  assert.equal(poolKey('bob@gmail.com'), 'bob@gmail.com');
+  assert.equal(poolKey('noocapcollab@gmail.com'), null);
+  assert.equal(poolKey('collab@valchy.ai'), null);
+  assert.equal(creatorName('Nicole McCain'), 'Nicole');
+  assert.equal(creatorName('Dymtro'), 'Dmytro');
+  const pool = buildPool([
+    { email: 'a@acme.com', brand: 'Acme', creator: 'Lindsay', offerType: 'Gifted', budget: 0, date: '2026-09-01' },
+    { email: 'b@acme.com', brand: 'Acme AI', creator: 'Duncan', offerType: 'Paid offer', budget: 1500, date: '2026-10-05', booked: true },
+    { email: 'x@agency.io', brand: 'Zeely', creator: 'Duncan', date: '2026-10-01' },
+    { email: 'y@agency.io', brand: 'Runway', creator: 'Chris', date: '2026-10-02' },
+    { email: 'c@acme.com', brand: 'Acme', creators: ['Valeri'], count: false },
+    { email: 'noocapcollab@gmail.com', brand: 'Ours', creator: 'Chris' },
+  ]);
+  assert.equal(pool.size, 2);
+  const acme = pool.get('acme.com');
+  assert.equal(acme.title, 'Acme AI');
+  assert.equal(acme.agency, false);
+  assert.deepEqual([...acme.approached].sort(), ['Duncan', 'Lindsay', 'Valeri']);
+  assert.deepEqual([...acme.worked], ['Duncan']);
+  assert.equal(acme.offerType, 'Paid offer');
+  assert.equal(acme.budget, 1500);
+  assert.equal(acme.seen, 2);
+  assert.equal(acme.first, '2026-09-01');
+  assert.equal(acme.last, '2026-10-05');
+  const ag = pool.get('agency.io');
+  assert.equal(ag.agency, true);
+  assert.equal(ag.title, 'agency.io (agency)');
+  assert.match(ag.handled, /Zeely/);
+  // the sync never writes the team's own columns
+  const props = poolProps(acme);
+  for (const k of ['Do Not Contact', 'Pitched For', 'Last Pitched', 'Notes']) assert.equal(k in props, false);
+  assert.equal(poolSig(props), poolSig(poolProps(acme)));
+});
