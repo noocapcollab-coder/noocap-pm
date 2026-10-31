@@ -29,6 +29,7 @@ const BOARDS = [
   { creator: 'David Iya', ds: '898508e9-9dda-8383-ad90-070f01618f5a' },
   { creator: 'Nicole McCain', ds: '25b449d2-35ba-4026-992e-39af9974b158' },
   { creator: 'Emtech', ds: '328508e9-9dda-8000-b3c9-000b0d791507' },
+  { creator: 'AI Learns', ds: 'af9dcf07-9aef-4ee1-b627-bbc904dfe227' },
   // Not a creator board: editors' finished videos. Synced here so its status changes go into STATUS HISTORY too
   { creator: 'Video Intake', ds: '13cf6abc-bcfc-4a35-95d5-e130fd58e720', intake: true },
   // Same for EDIT TRACKER, where every video lives from assignment to posted since 26 Oct 2026
