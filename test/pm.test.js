@@ -385,3 +385,15 @@ test('brand pool: subdomains fold into the company, junk names and spelling vari
   assert.equal(row.brands.size, 1);
   assert.notEqual(row.title, '<UNKNOWN>');
 });
+
+test('brand pool: reach-out history, newest first, with date and creator', async () => {
+  const { buildPool, poolProps } = await import('../lib/brandpool.js');
+  const row = buildPool([
+    { email: 'a@acme.com', brand: 'Acme', creator: 'Lindsay', offerType: 'Paid offer', budget: 1200, date: '2026-09-03', kind: 'lead, lost' },
+    { email: 'b@acme.com', brand: 'Acme', creator: 'Duncan', budget: 1500, date: '2026-10-05T10:00:00Z', kind: 'deal, paid' },
+  ]).get('acme.com');
+  const lines = row.reachOuts.split('\n');
+  assert.equal(lines[0], '5 Oct 2026 · Duncan · Acme · $1,500 · deal, paid');
+  assert.equal(lines[1], '3 Sep 2026 · Lindsay · Acme · Paid offer · $1,200 · lead, lost');
+  assert.ok(poolProps(row)['Reach-outs']);
+});
