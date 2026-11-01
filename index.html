@@ -918,10 +918,10 @@
 <!-- ============ Follow-ups ============ -->
 <section class="view" id="followups"><div class="ov">
   <div class="ov-head">
-    <div><div class="k" id="fuWhen">Lead nudges, deal check-ins and payment chases · from Notion</div><h1>Follow-ups</h1></div>
+    <div><div class="k" id="fuWhen">Brands we followed up with, and what happened</div><h1>Follow-ups</h1></div>
   </div>
   <section class="ostats" id="fuStats" aria-label="Follow-up totals"><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div></section>
-  <div class="rv-tools"><div class="cfilter" id="fuType"></div><div class="cfilter" id="fuCreator"></div></div>
+  <div class="rv-tools"><div class="cfilter" id="fuCreator"></div></div>
   <div id="fuBody"><div class="skel"></div><div class="skel"></div></div>
   <div class="err" id="fuErr" style="font-size:13px"></div>
 </div></section>
@@ -1101,7 +1101,7 @@
 
   // =====================================================================
   // Follow-ups: every nudge, check-in and payment chase, what came of it, and who is being chased now
-  let fu = null, fuLoading = false, fuType = 'all', fuWho = 'all';
+  let fu = null, fuLoading = false, fuWho = 'all';
   async function loadFollowups(fresh) {
     if (fuLoading) return; fuLoading = true;
     $('fuErr').textContent = '';
@@ -1117,43 +1117,58 @@
   function renderFollowups() {
     if (!fu) return;
     const money = (n) => '$' + Math.round(Number(n || 0)).toLocaleString('en-US');
-    const day = (d) => d ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' }) : '—';
-    const mon = (k) => /^\d{4}-\d{2}$/.test(k || '') ? new Date(k + '-01T00:00:00Z').toLocaleDateString('en-GB', { month: 'short', year: 'numeric', timeZone: 'UTC' }) : k;
-    const TYPES = { all: 'All', lead: 'Lead follow-ups', deal: 'Deal check-ins', payment: 'Payment chases' };
-    const OUT = { won: ['ready', 'Won'], paid: ['ready', 'Paid'], replied: ['', 'Replied'], 'replied-lost': ['late', 'Replied, lost'], lost: ['late', 'Lost'], quiet: ['late', 'Went quiet'], waiting: ['', 'Waiting'], draft: ['', 'In Approvals'], 'won-before': ['', 'Won before nudging'], 'paid-before': ['', 'Paid before chase'] };
-    const pill = (o) => { const [c, l] = OUT[o] || ['', o]; return `<span class="pill ${c}">${esc(l)}</span>`; };
-    const hit = (r) => (fuType === 'all' || r.type === fuType) && (fuWho === 'all' || r.creator === fuWho);
-    const t = fu.totals, m = fu.thisMonth;
-    $('fuWhen').textContent = `Lead nudges, deal check-ins and payment chases · from Notion · updated ${since(fu.generated_at)}`;
-    const stat = (l, v, s, st = '') => `<div class="ostat"><span class="l">${l}</span><span class="v" style="${st}">${v}</span><span class="s">${s}</span></div>`;
-    const chasingNow = fu.active.filter((a) => a.state !== 'gone quiet' && a.state !== 'handed to you').length;
-    $('fuStats').innerHTML = stat('Being chased now', chasingNow, `${fu.active.filter((a) => a.state === 'in Approvals').length} waiting in Approvals`, 'color:var(--accent)')
-      + stat(`Sent in ${esc(mon(fu.month))}`, m.sent, `${plural(m.chased, 'brand')} · ${m.replied} replied (${m.replyRate}%)`)
-      + stat('Reply rate, all time', t.replyRate + '%', `${t.replied} of ${plural(t.chased, 'brand')} chased answered`)
-      + stat('Won after a follow-up', money(t.wonValue), `${plural(t.won, 'win')} · ${t.quiet} went quiet`, t.won ? 'color:var(--ok)' : '');
+    const day = (d) => d ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' }) : '';
+    const nth = (n) => ['1st', '2nd', '3rd'][n - 1] || n + 'th';
+    const what = { lead: 'quote', deal: 'deal', payment: 'invoice' };
+    const mine = (r) => fuWho === 'all' || r.creator === fuWho;
+    $('fuWhen').textContent = `Brands we followed up with, and what happened · updated ${since(fu.generated_at)}`;
+
+    // Creator filter
     const creators = [...new Set([...fu.active.map((a) => a.creator), ...fu.history.map((r) => r.creator)].filter(Boolean))].sort();
-    $('fuType').innerHTML = Object.entries(TYPES).map(([k, l]) => `<button type="button" data-k="${k}" class="${fuType === k ? 'on' : ''}">${l}</button>`).join('');
-    $('fuCreator').innerHTML = ['all', ...creators].map((c) => `<button type="button" data-c="${esc(c)}" class="${fuWho === c ? 'on' : ''}">${c === 'all' ? 'Every creator' : esc(c)}</button>`).join('');
-    $('fuType').querySelectorAll('button').forEach((b) => b.onclick = () => { fuType = b.dataset.k; renderFollowups(); });
+    $('fuCreator').innerHTML = ['all', ...creators].map((c) => `<button type="button" data-c="${esc(c)}" class="${fuWho === c ? 'on' : ''}">${c === 'all' ? 'Everyone' : esc(c)}</button>`).join('');
     $('fuCreator').querySelectorAll('button').forEach((b) => b.onclick = () => { fuWho = b.dataset.c; renderFollowups(); });
-    const link = (r) => r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.brand)}</a>` : esc(r.brand);
-    const active = fu.active.filter(hit);
-    const hist = fu.history.filter(hit);
-    const wins = fu.wins.filter(hit);
-    const split = (title, xs, sub) => `<section class="ocard"><h2>${title}${sub ? ` <small>${sub}</small>` : ''}</h2>${xs.length ? `<div class="tscroll"><table><tr><th></th><th class="num">Brands</th><th class="num">Sent</th><th class="num">Replied</th><th class="num">Rate</th><th class="num">Won</th><th class="num">Value</th><th class="num">Went quiet</th></tr>` + xs.map((x) => `<tr><td class="nm">${esc(x.name)}</td><td class="num">${x.chased}</td><td class="num">${x.sent}</td><td class="num">${x.replied}</td><td class="num">${x.replyRate}%</td><td class="num">${x.won}</td><td class="num">${x.wonValue ? money(x.wonValue) : '—'}</td><td class="num">${x.quiet}</td></tr>`).join('') + '</table></div>' : '<div class="empty">Nothing yet.</div>'}</section>`;
-    const nudge = `<section class="ocard"><h2>Which follow-up gets the answer <small>of the brands that got each follow-up, how many replied right after it</small></h2><table>${fu.byNudge.map((n) => `<tr><td class="nm">${['1st', '2nd', '3rd'][n.n - 1]} follow-up</td><td class="num">${n.got} sent</td><td class="num">${n.replied} replied</td><td style="width:40%"><div style="height:8px;border-radius:6px;background:var(--line);overflow:hidden"><div style="height:100%;width:${n.rate}%;background:var(--accent)"></div></div></td><td class="num">${n.rate}%</td><td class="num" style="color:var(--muted)">${n.won} won</td></tr>`).join('')}</table></section>`;
+
+    const active = fu.active.filter(mine);
+    const hist = fu.history.filter(mine);
+    const wins = fu.wins.filter(mine);
+    const chasing = active.filter((a) => a.state === 'scheduled');
+    const approve = active.filter((a) => a.state === 'in Approvals');
+    const gaveUp = active.filter((a) => a.state === 'gone quiet' || a.state === 'handed to you');
+    const replied = hist.filter((r) => r.repliedTo > 0 || ['won', 'paid', 'replied', 'replied-lost'].includes(r.outcome));
+    const rate = hist.length ? Math.round(replied.length / hist.length * 100) : 0;
+    const wonValue = wins.reduce((a, r) => a + (r.value || 0), 0);
+
+    // Three numbers, in plain words
+    const big = (label, value, note, col = '') => `<div class="ostat"><span class="l">${label}</span><span class="v" style="${col}">${value}</span><span class="s">${note}</span></div>`;
+    $('fuStats').innerHTML = big('Brands we are chasing', chasing.length + approve.length, approve.length ? `${approve.length} follow-up${approve.length === 1 ? '' : 's'} waiting for you in Approvals` : 'dates for the next follow-up are below', 'color:var(--accent)')
+      + big('Brands that replied', `${replied.length} of ${hist.length}`, hist.length ? `${rate}% answered after we followed up` : 'no follow-ups sent yet')
+      + big('Won from follow-ups', money(wonValue), wins.length ? `${wins.length} deal${wins.length === 1 ? '' : 's'} came back after a follow-up` : 'nothing yet', wins.length ? 'color:var(--ok)' : '')
+      + big('Stopped, no reply', gaveUp.length, 'no answer after 3 follow-ups');
+
+    // One plain sentence on which follow-up works best
+    const best = [...fu.byNudge].filter((n) => n.got).sort((a, b) => b.rate - a.rate)[0];
+    const tip = best && best.replied ? `Most brands answer after the <b>${nth(best.n)} follow-up</b> (${best.rate}% of the ones who got it replied).` : '';
+
+    const line = (a) => `<li style="display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)">
+        <span><b>${a.url ? `<a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.brand)}</a>` : esc(a.brand)}</b> × ${esc(a.creator || '?')}${a.amount ? ` · ${money(a.amount)} ${what[a.type]}` : ''}<br>
+        <small style="color:var(--muted)">${a.nudges} of 3 follow-ups sent${a.lastBrand ? ` · they last wrote ${day(a.lastBrand)}` : ' · no reply yet'}</small></span>
+        <span style="white-space:nowrap;color:var(--muted);text-align:right">${a.state === 'in Approvals' ? '<span class="pill spon">approve it</span>' : a.next ? `next: <b style="color:var(--text)">${day(a.next)}</b>` : ''}</span></li>`;
+    const list = (title, xs, empty, note) => `<section class="ocard"><h2>${title} <small>${xs.length}${note ? ' · ' + note : ''}</small></h2>${xs.length ? `<ul style="list-style:none;margin:0;padding:0">${xs.map(line).join('')}</ul>` : `<div class="empty">${empty}</div>`}</section>`;
+
+    const winLine = (r) => `<li style="padding:10px 0;border-bottom:1px solid var(--line)"><b>${r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.brand)}</a>` : esc(r.brand)}</b> × ${esc(r.creator)} replied after the ${nth(r.repliedTo || 1)} follow-up and ${r.outcome === 'paid' ? 'paid' : 'agreed'}${r.value ? ` <b style="color:var(--ok)">${money(r.value)}</b>` : ''}${r.lastBrand ? ` <small style="color:var(--muted)">· ${day(r.lastBrand)}</small>` : ''}</li>`;
+
+    // Per creator, only if looking at everyone
+    const per = fuWho === 'all' && fu.byCreator.length > 1 ? `<section class="ocard"><h2>By creator</h2><table><tr><th></th><th class="num">Followed up</th><th class="num">Replied</th><th class="num">Won</th></tr>${fu.byCreator.map((c) => `<tr><td class="nm">${esc(c.name)}</td><td class="num">${c.chased}</td><td class="num">${c.replied} <span style="color:var(--muted)">(${c.replyRate}%)</span></td><td class="num">${c.won ? money(c.wonValue) : '—'}</td></tr>`).join('')}</table></section>` : '';
+
     $('fuBody').innerHTML = `<div style="display:flex;flex-direction:column;gap:16px">
-      <section class="ocard"><h2>Being chased now <small>${plural(active.length, 'brand')} · next follow-up dates skip weekends, so they can land a day or two later</small></h2>
-      ${active.length ? `<div class="tscroll"><table><tr><th>Brand</th><th>Creator</th><th>Type</th><th class="num">Amount</th><th class="num">Follow-ups</th><th>Our last email</th><th>Their last email</th><th class="num">Quiet</th><th>Next</th><th>State</th></tr>${active.map((a) => `<tr><td class="nm">${link(a)}</td><td>${esc(a.creator || '')}</td><td>${esc(TYPES[a.type])}${a.stage ? ` <span style="color:var(--muted)">· ${esc(a.stage)}</span>` : ''}</td><td class="num">${a.amount ? money(a.amount) : '—'}</td><td class="num">${a.nudges} of ${a.of}</td><td>${day(a.lastOur)}</td><td>${day(a.lastBrand)}</td><td class="num">${a.quietDays ?? '—'}d</td><td>${a.next ? day(a.next) : '—'}</td><td><span class="pill ${a.state === 'gone quiet' || a.state === 'handed to you' ? 'late' : a.state === 'in Approvals' ? 'spon' : ''}">${esc(a.state)}</span></td></tr>`).join('')}</table></div>` : '<div class="empty">Nobody is being chased right now.</div>'}</section>
-      ${nudge}
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:16px">${split('By creator', fu.byCreator)}${split('By type', fu.byType)}</div>
-      ${split('By month', fu.byMonth.map((x) => ({ ...x, name: mon(x.name) })), 'month of the first follow-up')}
-      <section class="ocard"><h2>Won after a follow-up <small>${plural(wins.length, 'deal')} · ${money(wins.reduce((a, r) => a + (r.value || 0), 0))}</small></h2>
-      ${wins.length ? `<div class="tscroll"><table><tr><th>Brand</th><th>Creator</th><th>Type</th><th class="num">Value</th><th class="num">Answered follow-up</th><th>First follow-up</th><th>Their reply</th></tr>${wins.map((r) => `<tr><td class="nm">${link(r)}</td><td>${esc(r.creator)}</td><td>${esc(TYPES[r.type])}</td><td class="num">${r.value ? money(r.value) : '—'}</td><td class="num">${r.repliedTo ? ['1st', '2nd', '3rd'][r.repliedTo - 1] || r.repliedTo : '—'}</td><td>${day(r.firstSent)}</td><td>${day(r.lastBrand)}</td></tr>`).join('')}</table></div>` : '<div class="empty">No wins from follow-ups yet.</div>'}</section>
-      <section class="ocard"><h2>Every follow-up <small>${plural(hist.length, 'brand')} chased · newest first${fu.rejected ? ` · ${plural(fu.rejected, 'follow-up')} you rejected` : ''}</small></h2>
-      ${hist.length ? `<div class="tscroll"><table><tr><th>Brand</th><th>Creator</th><th>Type</th><th class="num">Sent</th><th>First</th><th>Last</th><th>Their last email</th><th class="num">Value</th><th>Result</th></tr>${hist.map((r) => `<tr><td class="nm">${link(r)}</td><td>${esc(r.creator)}</td><td>${esc(TYPES[r.type])}</td><td class="num">${r.sent}</td><td>${day(r.firstSent)}</td><td>${day(r.lastSent)}</td><td>${day(r.lastBrand)}</td><td class="num">${r.value ? money(r.value) : '—'}</td><td>${pill(r.outcome)}</td></tr>`).join('')}</table></div>` : '<div class="empty">No follow-ups sent yet.</div>'}</section>
+      ${tip ? `<div class="ocard" style="flex-direction:row;align-items:center;gap:10px">💡 <span>${tip}</span></div>` : ''}
+      ${approve.length ? list('Waiting for your approval', approve, '', 'open Approvals to send them') : ''}
+      ${list('Next follow-up coming', chasing, 'Nobody to follow up right now.', 'the PM writes each one on the date shown')}
+      <section class="ocard"><h2>Won after a follow-up <small>${wins.length}</small></h2>${wins.length ? `<ul style="list-style:none;margin:0;padding:0">${wins.map(winLine).join('')}</ul>` : '<div class="empty">No deals from follow-ups yet.</div>'}</section>
+      ${per}
+      ${list('Stopped, no reply after 3 follow-ups', gaveUp, 'None.', 'reply yourself if you still want them')}
     </div>`;
-    const b = $('fuBadge'); if (b) { b.textContent = chasingNow; b.hidden = !chasingNow; }
+    const b = $('fuBadge'); if (b) { const n = fu.active.filter((a) => a.state === 'in Approvals').length; b.textContent = n; b.hidden = !n; }
   }
 
   // =====================================================================
