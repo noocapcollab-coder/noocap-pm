@@ -407,3 +407,12 @@ test('lead catch-up does not spend AI when only follow-ups may be drafted', asyn
     assert.deepEqual(await catchUpUnanswered(), []);
   }
 });
+
+test('handover: creator team adding noocapcollab opens the deal', async () => {
+  const { isHandover } = await import('../lib/inbox.js');
+  const email = { to: 'Faved <creators@faved.com>', cc: 'noocapcollab <noocapcollab@gmail.com>', text: 'Hi,\r\n\r\nPlease add noocapcollab@gmail.com to this thread so they can take over the\r\ncollaboration moving forward.\r\n\r\nThanks\r\n\r\nOn Sat, Oct 31 wrote:\n> old' };
+  assert.equal(isHandover(email, { from_role: 'creator', brand: 'Luma AI' }), true);
+  assert.equal(isHandover(email, { from_role: 'brand', brand: 'Luma AI' }), false);
+  assert.equal(isHandover({ ...email, cc: '' }, { from_role: 'creator', brand: 'Luma AI' }), false);
+  assert.equal(isHandover({ ...email, text: 'Our rate is $1,500 for one reel.' }, { from_role: 'creator', brand: 'Luma AI' }), false);
+});
