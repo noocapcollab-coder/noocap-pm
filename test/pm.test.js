@@ -397,3 +397,13 @@ test('brand pool: reach-out history, newest first, with date and creator', async
   assert.equal(lines[1], '3 Sep 2026 · Lindsay · Acme · Paid offer · $1,200 · lead, lost');
   assert.ok(poolProps(row)['Reach-outs']);
 });
+
+test('lead catch-up does not spend AI when only follow-ups may be drafted', async () => {
+  const { catchUpWanted, catchUpUnanswered } = await import('../lib/leads.js');
+  const { LEAD_KINDS_ALLOWED } = await import('../lib/outbox.js');
+  if (!process.env.LEADS_DRAFT_KINDS) {
+    assert.deepEqual(LEAD_KINDS_ALLOWED, ['Lead follow-up']);
+    assert.equal(catchUpWanted(), false);
+    assert.deepEqual(await catchUpUnanswered(), []);
+  }
+});
