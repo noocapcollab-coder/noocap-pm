@@ -416,3 +416,11 @@ test('handover: creator team adding noocapcollab opens the deal', async () => {
   assert.equal(isHandover({ ...email, cc: '' }, { from_role: 'creator', brand: 'Luma AI' }), false);
   assert.equal(isHandover({ ...email, text: 'Our rate is $1,500 for one reel.' }, { from_role: 'creator', brand: 'Luma AI' }), false);
 });
+
+test('a hand-sent pay-link invoice covering the full fee stops a second invoice', async () => {
+  const { coveredByExtra, readInvoices } = await import('../lib/invoicing.js');
+  assert.equal(coveredByExtra(readInvoices('extra | in_1 | sent | 3600'), 3600), true);
+  assert.equal(coveredByExtra(readInvoices('extra | in_1 | sent | 1000'), 2000), false);
+  assert.equal(coveredByExtra(readInvoices('final | in_1 | sent | 3600'), 3600), false);
+  assert.equal(coveredByExtra([], 3600), false);
+});
