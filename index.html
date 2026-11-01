@@ -1118,6 +1118,7 @@
     if (!fu) return;
     const money = (n) => '$' + Math.round(Number(n || 0)).toLocaleString('en-US');
     const day = (d) => d ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' }) : '—';
+    const mon = (k) => /^\d{4}-\d{2}$/.test(k || '') ? new Date(k + '-01T00:00:00Z').toLocaleDateString('en-GB', { month: 'short', year: 'numeric', timeZone: 'UTC' }) : k;
     const TYPES = { all: 'All', lead: 'Lead follow-ups', deal: 'Deal check-ins', payment: 'Payment chases' };
     const OUT = { won: ['ready', 'Won'], paid: ['ready', 'Paid'], replied: ['', 'Replied'], 'replied-lost': ['late', 'Replied, lost'], lost: ['late', 'Lost'], quiet: ['late', 'Went quiet'], waiting: ['', 'Waiting'], draft: ['', 'In Approvals'], 'won-before': ['', 'Won before nudging'], 'paid-before': ['', 'Paid before chase'] };
     const pill = (o) => { const [c, l] = OUT[o] || ['', o]; return `<span class="pill ${c}">${esc(l)}</span>`; };
@@ -1127,7 +1128,7 @@
     const stat = (l, v, s, st = '') => `<div class="ostat"><span class="l">${l}</span><span class="v" style="${st}">${v}</span><span class="s">${s}</span></div>`;
     const chasingNow = fu.active.filter((a) => a.state !== 'gone quiet' && a.state !== 'handed to you').length;
     $('fuStats').innerHTML = stat('Being chased now', chasingNow, `${fu.active.filter((a) => a.state === 'in Approvals').length} waiting in Approvals`, 'color:var(--accent)')
-      + stat(`Sent in ${esc(fu.month)}`, m.sent, `${plural(m.chased, 'brand')} · ${m.replied} replied (${m.replyRate}%)`)
+      + stat(`Sent in ${esc(mon(fu.month))}`, m.sent, `${plural(m.chased, 'brand')} · ${m.replied} replied (${m.replyRate}%)`)
       + stat('Reply rate, all time', t.replyRate + '%', `${t.replied} of ${plural(t.chased, 'brand')} chased answered`)
       + stat('Won after a follow-up', money(t.wonValue), `${plural(t.won, 'win')} · ${t.quiet} went quiet`, t.won ? 'color:var(--ok)' : '');
     const creators = [...new Set([...fu.active.map((a) => a.creator), ...fu.history.map((r) => r.creator)].filter(Boolean))].sort();
@@ -1146,7 +1147,7 @@
       ${active.length ? `<div class="tscroll"><table><tr><th>Brand</th><th>Creator</th><th>Type</th><th class="num">Amount</th><th class="num">Follow-ups</th><th>Our last email</th><th>Their last email</th><th class="num">Quiet</th><th>Next</th><th>State</th></tr>${active.map((a) => `<tr><td class="nm">${link(a)}</td><td>${esc(a.creator || '')}</td><td>${esc(TYPES[a.type])}${a.stage ? ` <span style="color:var(--muted)">· ${esc(a.stage)}</span>` : ''}</td><td class="num">${a.amount ? money(a.amount) : '—'}</td><td class="num">${a.nudges} of ${a.of}</td><td>${day(a.lastOur)}</td><td>${day(a.lastBrand)}</td><td class="num">${a.quietDays ?? '—'}d</td><td>${a.next ? day(a.next) : '—'}</td><td><span class="pill ${a.state === 'gone quiet' || a.state === 'handed to you' ? 'late' : a.state === 'in Approvals' ? 'spon' : ''}">${esc(a.state)}</span></td></tr>`).join('')}</table></div>` : '<div class="empty">Nobody is being chased right now.</div>'}</section>
       ${nudge}
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:16px">${split('By creator', fu.byCreator)}${split('By type', fu.byType)}</div>
-      ${split('By month', fu.byMonth, 'month of the first follow-up')}
+      ${split('By month', fu.byMonth.map((x) => ({ ...x, name: mon(x.name) })), 'month of the first follow-up')}
       <section class="ocard"><h2>Won after a follow-up <small>${plural(wins.length, 'deal')} · ${money(wins.reduce((a, r) => a + (r.value || 0), 0))}</small></h2>
       ${wins.length ? `<div class="tscroll"><table><tr><th>Brand</th><th>Creator</th><th>Type</th><th class="num">Value</th><th class="num">Answered follow-up</th><th>First follow-up</th><th>Their reply</th></tr>${wins.map((r) => `<tr><td class="nm">${link(r)}</td><td>${esc(r.creator)}</td><td>${esc(TYPES[r.type])}</td><td class="num">${r.value ? money(r.value) : '—'}</td><td class="num">${r.repliedTo ? ['1st', '2nd', '3rd'][r.repliedTo - 1] || r.repliedTo : '—'}</td><td>${day(r.firstSent)}</td><td>${day(r.lastBrand)}</td></tr>`).join('')}</table></div>` : '<div class="empty">No wins from follow-ups yet.</div>'}</section>
       <section class="ocard"><h2>Every follow-up <small>${plural(hist.length, 'brand')} chased · newest first${fu.rejected ? ` · ${plural(fu.rejected, 'follow-up')} you rejected` : ''}</small></h2>
