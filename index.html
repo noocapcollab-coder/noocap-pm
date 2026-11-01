@@ -798,6 +798,7 @@
   <div class="grp">
     <div class="lbl">Brand deals</div>
     <button data-v="leads" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>Leads <span class="badge" id="leadsBadge" hidden>0</span></button>
+    <button data-v="followups" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg>Follow-ups <span class="badge" id="fuBadge" hidden>0</span></button>
     <button data-v="pricing" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Pricing</button>
     <button data-v="active" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M9 7V5h6v2"/><path d="M8 13l3 3 5-6"/></svg>Active brands <span class="badge" id="activeBadge" hidden>0</span></button>
     <button data-v="approvals" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Approvals <span class="badge" data-count hidden>0</span></button>
@@ -914,6 +915,17 @@
   <div class="err" id="rvErr" style="font-size:13px"></div>
 </div></section>
 
+<!-- ============ Follow-ups ============ -->
+<section class="view" id="followups"><div class="ov">
+  <div class="ov-head">
+    <div><div class="k" id="fuWhen">Lead nudges, deal check-ins and payment chases · from Notion</div><h1>Follow-ups</h1></div>
+  </div>
+  <section class="ostats" id="fuStats" aria-label="Follow-up totals"><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div></section>
+  <div class="rv-tools"><div class="cfilter" id="fuType"></div><div class="cfilter" id="fuCreator"></div></div>
+  <div id="fuBody"><div class="skel"></div><div class="skel"></div></div>
+  <div class="err" id="fuErr" style="font-size:13px"></div>
+</div></section>
+
 <!-- ============ Tools & spend ============ -->
 <section class="view" id="spend"><div class="ov">
   <div class="ov-head">
@@ -1009,6 +1021,7 @@
   <button data-v="overview" type="button"><span class="i">◎</span>Today</button>
   <button data-v="hq" type="button"><span class="i">▤</span>Schedule</button>
   <button data-v="leads" type="button"><span class="i">⌁</span>Leads</button>
+  <button data-v="followups" type="button"><span class="i">↻</span>Follow-ups</button>
   <button data-v="pricing" type="button"><span class="i">▥</span>Pricing</button>
   <button data-v="active" type="button"><span class="i">▦</span>Active</button>
   <button data-v="revenue" type="button"><span class="i">$</span>Revenue</button>
@@ -1059,7 +1072,7 @@
   // ---------- tabs ----------
   let view = 'overview';
   function show(v) {
-    if (!['overview', 'hq', 'team', 'billing', 'leads', 'pricing', 'active', 'deals', 'revenue', 'spend', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
+    if (!['overview', 'hq', 'team', 'billing', 'leads', 'followups', 'pricing', 'active', 'deals', 'revenue', 'spend', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
     if (v === 'deals') v = 'leads'; // the old Brand deals board is now Leads + Active brands
     view = v;
     document.querySelectorAll('.view').forEach((el) => el.classList.toggle('on', el.id === v));
@@ -1072,6 +1085,7 @@
     if (v === 'flow' && !flowData) loadFlow();
     if (v === 'revenue') rv ? renderRevenue() : loadRevenue();
     if (v === 'spend') sp ? renderSpend() : loadSpend();
+    if (v === 'followups') fu ? renderFollowups() : loadFollowups();
     if (v === 'team') { if (!hqData) loadHQ(); loadEditorMonth(); }
     if (v === 'billing') hqData ? renderInvoices() : loadHQ();
     if (v === 'leads') { hqData ? renderLeadsTab() : loadHQ(); if (!drafts.length) loadApprovals(true); }
@@ -1082,8 +1096,64 @@
   }
   document.querySelectorAll('[data-v]').forEach((b) => b.onclick = () => show(b.dataset.v));
   window.addEventListener('hashchange', () => show(location.hash.slice(1)));
-  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else if (view === 'spend') loadSpend(true); else if (view === 'team') loadEditorMonth(true); else if (view === 'runs') loadRuns(); else if (view === 'pricing') loadPricing(true); else loadHQ(true); };
+  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else if (view === 'spend') loadSpend(true); else if (view === 'followups') loadFollowups(true); else if (view === 'team') loadEditorMonth(true); else if (view === 'runs') loadRuns(); else if (view === 'pricing') loadPricing(true); else loadHQ(true); };
   document.querySelectorAll('.ov [data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
+
+  // =====================================================================
+  // Follow-ups: every nudge, check-in and payment chase, what came of it, and who is being chased now
+  let fu = null, fuLoading = false, fuType = 'all', fuWho = 'all';
+  async function loadFollowups(fresh) {
+    if (fuLoading) return; fuLoading = true;
+    $('fuErr').textContent = '';
+    try {
+      const r = await fetch('/api/followups' + (fresh ? '?fresh=1' : ''), { headers: headers() });
+      if (r.status === 401) { fuLoading = false; return needPassword(); }
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error || 'Could not load follow-ups');
+      fu = j; renderFollowups();
+    } catch (e) { $('fuErr').textContent = e.message; if (!fu) $('fuBody').innerHTML = '<div class="empty">Follow-ups could not load. Hit refresh to try again.</div>'; }
+    fuLoading = false;
+  }
+  function renderFollowups() {
+    if (!fu) return;
+    const money = (n) => '$' + Math.round(Number(n || 0)).toLocaleString('en-US');
+    const day = (d) => d ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' }) : '—';
+    const TYPES = { all: 'All', lead: 'Lead follow-ups', deal: 'Deal check-ins', payment: 'Payment chases' };
+    const OUT = { won: ['ready', 'Won'], paid: ['ready', 'Paid'], replied: ['', 'Replied'], 'replied-lost': ['late', 'Replied, lost'], lost: ['late', 'Lost'], quiet: ['late', 'Went quiet'], waiting: ['', 'Waiting'], draft: ['', 'In Approvals'], 'won-before': ['', 'Won before nudging'], 'paid-before': ['', 'Paid before chase'] };
+    const pill = (o) => { const [c, l] = OUT[o] || ['', o]; return `<span class="pill ${c}">${esc(l)}</span>`; };
+    const hit = (r) => (fuType === 'all' || r.type === fuType) && (fuWho === 'all' || r.creator === fuWho);
+    const t = fu.totals, m = fu.thisMonth;
+    $('fuWhen').textContent = `Lead nudges, deal check-ins and payment chases · from Notion · updated ${since(fu.generated_at)}`;
+    const stat = (l, v, s, st = '') => `<div class="ostat"><span class="l">${l}</span><span class="v" style="${st}">${v}</span><span class="s">${s}</span></div>`;
+    const chasingNow = fu.active.filter((a) => a.state !== 'gone quiet' && a.state !== 'handed to you').length;
+    $('fuStats').innerHTML = stat('Being chased now', chasingNow, `${fu.active.filter((a) => a.state === 'in Approvals').length} waiting in Approvals`, 'color:var(--accent)')
+      + stat(`Sent in ${esc(fu.month)}`, m.sent, `${plural(m.chased, 'brand')} · ${m.replied} replied (${m.replyRate}%)`)
+      + stat('Reply rate, all time', t.replyRate + '%', `${t.replied} of ${plural(t.chased, 'brand')} chased answered`)
+      + stat('Won after a follow-up', money(t.wonValue), `${plural(t.won, 'win')} · ${t.quiet} went quiet`, t.won ? 'color:var(--ok)' : '');
+    const creators = [...new Set([...fu.active.map((a) => a.creator), ...fu.history.map((r) => r.creator)].filter(Boolean))].sort();
+    $('fuType').innerHTML = Object.entries(TYPES).map(([k, l]) => `<button type="button" data-k="${k}" class="${fuType === k ? 'on' : ''}">${l}</button>`).join('');
+    $('fuCreator').innerHTML = ['all', ...creators].map((c) => `<button type="button" data-c="${esc(c)}" class="${fuWho === c ? 'on' : ''}">${c === 'all' ? 'Every creator' : esc(c)}</button>`).join('');
+    $('fuType').querySelectorAll('button').forEach((b) => b.onclick = () => { fuType = b.dataset.k; renderFollowups(); });
+    $('fuCreator').querySelectorAll('button').forEach((b) => b.onclick = () => { fuWho = b.dataset.c; renderFollowups(); });
+    const link = (r) => r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.brand)}</a>` : esc(r.brand);
+    const active = fu.active.filter(hit);
+    const hist = fu.history.filter(hit);
+    const wins = fu.wins.filter(hit);
+    const split = (title, xs, sub) => `<section class="ocard"><h2>${title}${sub ? ` <small>${sub}</small>` : ''}</h2>${xs.length ? `<div class="tscroll"><table><tr><th></th><th class="num">Brands</th><th class="num">Sent</th><th class="num">Replied</th><th class="num">Rate</th><th class="num">Won</th><th class="num">Value</th><th class="num">Went quiet</th></tr>` + xs.map((x) => `<tr><td class="nm">${esc(x.name)}</td><td class="num">${x.chased}</td><td class="num">${x.sent}</td><td class="num">${x.replied}</td><td class="num">${x.replyRate}%</td><td class="num">${x.won}</td><td class="num">${x.wonValue ? money(x.wonValue) : '—'}</td><td class="num">${x.quiet}</td></tr>`).join('') + '</table></div>' : '<div class="empty">Nothing yet.</div>'}</section>`;
+    const nudge = `<section class="ocard"><h2>Which follow-up gets the answer <small>of the brands that got each follow-up, how many replied right after it</small></h2><table>${fu.byNudge.map((n) => `<tr><td class="nm">${['1st', '2nd', '3rd'][n.n - 1]} follow-up</td><td class="num">${n.got} sent</td><td class="num">${n.replied} replied</td><td style="width:40%"><div style="height:8px;border-radius:6px;background:var(--line);overflow:hidden"><div style="height:100%;width:${n.rate}%;background:var(--accent)"></div></div></td><td class="num">${n.rate}%</td><td class="num" style="color:var(--muted)">${n.won} won</td></tr>`).join('')}</table></section>`;
+    $('fuBody').innerHTML = `<div style="display:flex;flex-direction:column;gap:16px">
+      <section class="ocard"><h2>Being chased now <small>${plural(active.length, 'brand')} · next follow-up dates skip weekends, so they can land a day or two later</small></h2>
+      ${active.length ? `<div class="tscroll"><table><tr><th>Brand</th><th>Creator</th><th>Type</th><th class="num">Amount</th><th class="num">Follow-ups</th><th>Our last email</th><th>Their last email</th><th class="num">Quiet</th><th>Next</th><th>State</th></tr>${active.map((a) => `<tr><td class="nm">${link(a)}</td><td>${esc(a.creator || '')}</td><td>${esc(TYPES[a.type])}${a.stage ? ` <span style="color:var(--muted)">· ${esc(a.stage)}</span>` : ''}</td><td class="num">${a.amount ? money(a.amount) : '—'}</td><td class="num">${a.nudges} of ${a.of}</td><td>${day(a.lastOur)}</td><td>${day(a.lastBrand)}</td><td class="num">${a.quietDays ?? '—'}d</td><td>${a.next ? day(a.next) : '—'}</td><td><span class="pill ${a.state === 'gone quiet' || a.state === 'handed to you' ? 'late' : a.state === 'in Approvals' ? 'spon' : ''}">${esc(a.state)}</span></td></tr>`).join('')}</table></div>` : '<div class="empty">Nobody is being chased right now.</div>'}</section>
+      ${nudge}
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:16px">${split('By creator', fu.byCreator)}${split('By type', fu.byType)}</div>
+      ${split('By month', fu.byMonth, 'month of the first follow-up')}
+      <section class="ocard"><h2>Won after a follow-up <small>${plural(wins.length, 'deal')} · ${money(wins.reduce((a, r) => a + (r.value || 0), 0))}</small></h2>
+      ${wins.length ? `<div class="tscroll"><table><tr><th>Brand</th><th>Creator</th><th>Type</th><th class="num">Value</th><th class="num">Answered follow-up</th><th>First follow-up</th><th>Their reply</th></tr>${wins.map((r) => `<tr><td class="nm">${link(r)}</td><td>${esc(r.creator)}</td><td>${esc(TYPES[r.type])}</td><td class="num">${r.value ? money(r.value) : '—'}</td><td class="num">${r.repliedTo ? ['1st', '2nd', '3rd'][r.repliedTo - 1] || r.repliedTo : '—'}</td><td>${day(r.firstSent)}</td><td>${day(r.lastBrand)}</td></tr>`).join('')}</table></div>` : '<div class="empty">No wins from follow-ups yet.</div>'}</section>
+      <section class="ocard"><h2>Every follow-up <small>${plural(hist.length, 'brand')} chased · newest first${fu.rejected ? ` · ${plural(fu.rejected, 'follow-up')} you rejected` : ''}</small></h2>
+      ${hist.length ? `<div class="tscroll"><table><tr><th>Brand</th><th>Creator</th><th>Type</th><th class="num">Sent</th><th>First</th><th>Last</th><th>Their last email</th><th class="num">Value</th><th>Result</th></tr>${hist.map((r) => `<tr><td class="nm">${link(r)}</td><td>${esc(r.creator)}</td><td>${esc(TYPES[r.type])}</td><td class="num">${r.sent}</td><td>${day(r.firstSent)}</td><td>${day(r.lastSent)}</td><td>${day(r.lastBrand)}</td><td class="num">${r.value ? money(r.value) : '—'}</td><td>${pill(r.outcome)}</td></tr>`).join('')}</table></div>` : '<div class="empty">No follow-ups sent yet.</div>'}</section>
+    </div>`;
+    const b = $('fuBadge'); if (b) { b.textContent = chasingNow; b.hidden = !chasingNow; }
+  }
 
   // =====================================================================
   // Tools & spend: monthly AI tool and subscription costs from the TOOLS & SPEND database

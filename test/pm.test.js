@@ -424,3 +424,39 @@ test('a hand-sent pay-link invoice covering the full fee stops a second invoice'
   assert.equal(coveredByExtra(readInvoices('final | in_1 | sent | 3600'), 3600), false);
   assert.equal(coveredByExtra([], 3600), false);
 });
+
+test('follow-ups tracker: replies, wins, which nudge worked, who is chased now', async () => {
+  const { buildFollowups, briefLine } = await import('../lib/followups.js');
+  const now = Date.parse('2026-11-01T06:00:00Z');
+  const leads = [
+    { id: 'L1', brand: 'Acme', creator: 'Lindsay', status: 'Locked', followUps: 2, lastOur: '2026-10-20T10:00:00Z', lastBrand: '2026-10-22T10:00:00Z', quoted: 1500, agreed: 1500 },
+    { id: 'L2', brand: 'Beta', creator: 'Chris', status: 'Waiting on brand', followUps: 1, lastOur: '2026-10-29T10:00:00Z', lastBrand: '2026-10-20T10:00:00Z', ask: 1200 },
+    { id: 'L3', brand: 'Gamma', creator: 'Chris', status: 'Waiting on brand', followUps: 3, lastOur: '2026-10-10T10:00:00Z', lastBrand: '2026-09-28T10:00:00Z', ask: 1000 },
+  ];
+  const deals = [{ id: 'D1', brand: 'Delta', creator: 'Duncan', stage: 'Paid', followUps: 1, invoiceAmount: 1700, paidDate: '2026-10-25', lastOur: '2026-10-21T10:00:00Z' }];
+  const drafts = [
+    { kind: 'Lead follow-up', status: 'Sent', sentAt: '2026-10-15T10:00:00Z', leadId: 'L1' },
+    { kind: 'Lead follow-up', status: 'Sent', sentAt: '2026-10-20T10:00:00Z', leadId: 'L1' },
+    { kind: 'Lead follow-up', status: 'Sent', sentAt: '2026-10-29T10:00:00Z', leadId: 'L2' },
+    { kind: 'Lead follow-up', status: 'Sent', sentAt: '2026-10-01T10:00:00Z', leadId: 'L3' },
+    { kind: 'Lead follow-up', status: 'Sent', sentAt: '2026-10-06T10:00:00Z', leadId: 'L3' },
+    { kind: 'Lead follow-up', status: 'Sent', sentAt: '2026-10-10T10:00:00Z', leadId: 'L3' },
+    { kind: 'Payment chase', status: 'Sent', sentAt: '2026-10-21T10:00:00Z', dealId: 'D1' },
+    { kind: 'Reply', status: 'Sent', sentAt: '2026-10-21T10:00:00Z', leadId: 'L2' },
+  ];
+  const f = buildFollowups({ drafts, leads, deals, now });
+  const acme = f.history.find((r) => r.brand === 'Acme');
+  assert.equal(acme.outcome, 'won');
+  assert.equal(acme.repliedTo, 2);
+  assert.equal(f.history.find((r) => r.brand === 'Gamma').outcome, 'quiet');
+  assert.equal(f.history.find((r) => r.brand === 'Delta').outcome, 'paid');
+  assert.equal(f.totals.chased, 4);
+  assert.equal(f.totals.won, 2);
+  assert.equal(f.totals.wonValue, 3200);
+  assert.equal(f.byNudge[1].replied, 1); // Acme answered the 2nd follow-up
+  const beta = f.active.find((a) => a.brand === 'Beta');
+  assert.equal(beta.nudges, 1);
+  assert.equal(beta.next, '2026-11-03'); // 5 days after the 1st follow-up
+  assert.equal(f.active.find((a) => a.brand === 'Gamma').state, 'gone quiet');
+  assert.match(briefLine(f), /Follow-ups: chasing 1 quoted brand and 0 deals/);
+});
