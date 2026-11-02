@@ -555,3 +555,11 @@ test('second look keeps real paid offers the AI skipped, and still drops pitches
   assert.match(fillTextFromHtml({ text: '', html: '<p>Hi Lindsay,</p><p>We would love a <b>paid</b> reel for Domo AI, budget $800.</p>' }).text, /paid reel for Domo AI, budget \$800/);
 });
 
+
+test('cuts waiting In Review: a missed go-live is late, today/tomorrow is soon', async () => {
+  const { reviewUrgency } = await import('../lib/reviewwait.js');
+  assert.equal(reviewUrgency('2026-10-31', '2026-11-02'), 'late');
+  assert.equal(reviewUrgency('2026-11-03', '2026-11-02'), 'soon');
+  assert.equal(reviewUrgency('2026-11-09', '2026-11-02'), 'later');
+  assert.equal(reviewUrgency(null, '2026-11-02'), 'none');
+});
