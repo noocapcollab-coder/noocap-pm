@@ -654,3 +654,14 @@ test('"UGC 1 / UGC 2 / UGC 3" notes split onto ZEN UGC 1/2/3, and change notes g
   const fs = await import('node:fs');
   assert.match(fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8'), /x\.needs_reply && !onlyNotes/);
 });
+
+test('a hand-added deal with no brand contact gets it from its lead (Hyper3D script could not be emailed)', async () => {
+  const H = await import('../lib/heartbeat.js');
+  const f = H.leadContactFill({ creator: 'Lindsay' }, { email: 'cherish@mcn.noxinfluencer.com', messageId: '<6096@localhost>', threadId: '<879a@noxinfluencer.com>', subject: 'Paid Collaboration Invitation', creator: 'Lindsay' });
+  assert.equal(f.props['Brand Email'], 'cherish@mcn.noxinfluencer.com');
+  assert.equal(f.props['Message ID'], '<6096@localhost>');
+  assert.equal(f.props['Thread ID'], '<6096@localhost>');
+  assert.equal(f.props['Thread CC'], 'collab@automateaiconsulting.com');
+  const kept = H.leadContactFill({ brandEmail: 'a@b.co', threadId: 'abc123def456', messageRfc: '<x@y>', threadSubject: 's', threadCc: 'c@d.co' }, { email: 'z@z.co', messageId: '<q@q>' });
+  assert.equal(Object.keys(kept.props).length, 0);
+});
