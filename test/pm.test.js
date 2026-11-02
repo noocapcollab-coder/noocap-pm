@@ -630,3 +630,15 @@ test('the video (Raw Footage) Drive folder is shared with anyone with the link, 
   assert.match(src, /shareAnyone\(videoF\.id, 'reader'\)/);
   assert.match(src, /export async function openRawFolders/);
 });
+
+test('brand change notes go to the editor (not a drafted reply), and the revised cut is drafted once the editor is done', async () => {
+  const fs = await import('node:fs');
+  const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  const pre = ib.slice(0, ib.indexOf('switch (x.event) {'));
+  assert.match(pre, /x\.event === 'brand_reply' && String\(x\.feedback[\s\S]{0,400}x\.event = 'video_feedback'/);
+  assert.match(pre, /x\.event = 'script_changes'/);
+  const hb = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
+  assert.match(hb, /row\.source !== 'tracker' \|\| round > 1\) && row\.status === 'In Review'/);
+  const ob = fs.readFileSync(new URL('../lib/outbox.js', import.meta.url), 'utf8');
+  assert.match(ob, /case 'Draft video':[\s\S]{0,700}'With Brand'/);
+});
