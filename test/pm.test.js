@@ -582,3 +582,13 @@ test('a file sent on WhatsApp can go out with a brand email (Send File on the dr
   const W = await import('../lib/whatsapp.js');
   assert.equal(typeof W.downloadMedia, 'function');
 });
+
+test('a waiting draft is shown (and gets the sent file) instead of the AI writing the same email again', async () => {
+  const fs = await import('node:fs');
+  const wa = fs.readFileSync(new URL('../api/whatsapp.js', import.meta.url), 'utf8');
+  assert.match(wa, /instead of paying the AI to write the same email again/);
+  assert.match(wa, /async function attachFileToDraft/);
+  const askSrc = fs.readFileSync(new URL('../lib/ask.js', import.meta.url), 'utf8');
+  assert.match(askSrc, /The email already written stays as it is/);
+  assert.match(askSrc, /do NOT write a new one/);
+});

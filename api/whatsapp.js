@@ -227,6 +227,19 @@ async function onText(st, text, quotedText = '') {
   const verbOnly = /^(send|reject|drop|delete|cancel)( it| this| that)?\.?!?$/i.test(t);
   if (focus && aboutDraft && !verbOnly && t.length < 400 && !/https?:\/\//i.test(t) && EDIT_WORDS.test(t) && !/\?\s*$/.test(t)) { await applyEdit(st, focus, t); return; }
 
+  // "Send this contract to Atoms × Lindsay" / "mail Atoms": a draft for that brand is already waiting, so show it
+  // (with the file they just sent attached) instead of paying the AI to write the same email again
+  if (/\b(send|mail|e-?mail|share|draft|forward|reply)\b/i.test(t) && !/\b(new|another|fresh|rewrite)\b/i.test(t)) {
+    const { listDrafts } = await import('../lib/outbox.js');
+    const hay = brandKey(`${t}\n${quotedText}`);
+    const waiting = (await listDrafts()).filter((d) => d.status === 'Draft' && brandKey(d.brand).length >= 3 && hay.includes(brandKey(d.brand)));
+    if (waiting.length) {
+      const file = [...st.messages].reverse().find((x) => x.role === 'user' && x.file && Date.now() - Date.parse(x.at) < 6 * 36e5)?.file;
+      if (file && waiting.length === 1 && /\b(this|it|contract|file|pdf|doc|attach)/i.test(t)) await attachFileToDraft(waiting[0].id, file);
+      if (await showDrafts(st, `${t}\n${quotedText}`)) return;
+    }
+  }
+
   // "What's the email you drafted?": show the draft itself with its buttons, for the brand they named, the alert they
   // replied to, or the brand we were just talking about
   if (/\b(draft(ed)?|e-?mail|mail|reply|wrote|written)\b/i.test(t) && !/\b(draft|write|send|make|create)\s+(a|an|me|new)\b/i.test(t)) {
@@ -319,6 +332,17 @@ async function showDraftById(st, id) {
 
 // Drafts waiting in Approvals whose brand is named in the message (or in the alert they replied to): each one in full,
 // then Send / Edit / Reject. Returns false when nothing matches, so the question goes to the PM brain instead.
+// Put a file sent in this chat on a waiting draft (no AI): it goes out as the email's attachment
+async function attachFileToDraft(id, file) {
+  const W = await import('../lib/whatsapp.js');
+  const { uploadToNotion } = await import('../lib/briefs.js');
+  const { notion } = await import('../lib/notion.js');
+  const got = await W.downloadMedia(file.mediaId);
+  const up = await uploadToNotion({ filename: file.filename, mimeType: file.mime || got.mimeType, data: got.data });
+  if (!up) throw new Error('Could not save the file, send it again');
+  await notion('PATCH', `/pages/${id}`, { properties: { 'Send File': { files: [{ type: 'file_upload', file_upload: { id: up }, name: String(file.filename).slice(0, 100) }] }, Attach: { select: { name: 'File' } } } });
+}
+
 async function showDrafts(st, text) {
   const { listDrafts } = await import('../lib/outbox.js');
   const key = brandKey;
