@@ -642,3 +642,15 @@ test('brand change notes go to the editor (not a drafted reply), and the revised
   const ob = fs.readFileSync(new URL('../lib/outbox.js', import.meta.url), 'utf8');
   assert.match(ob, /case 'Draft video':[\s\S]{0,700}'With Brand'/);
 });
+
+test('"UGC 1 / UGC 2 / UGC 3" notes split onto ZEN UGC 1/2/3, and change notes get no "we are on it" reply', async () => {
+  const I = await import('../lib/inbox.js');
+  const rows = [{ title: 'ZEN UGC 1' }, { title: 'ZEN UGC 2' }, { title: 'ZEN UGC 3' }, { title: 'ZEN UGC 11' }];
+  const text = 'Hi there,\nPlease see the below feedback.\nUGC 1\n * 0:13s - Missing the registered trademark after Velo.\n\nUGC 2\n\n * 0:01s - Missing the registered trademark after Velo.\n\nUGC 3\n\n * 0:04s - Make sure Velo is spelled correctly\n * 0:21s - Lowercase the e in email.\n\nBest always,\nNatalie';
+  const parts = I.notesPerVideo(text, rows);
+  assert.equal(parts.length, 3);
+  assert.deepEqual(parts.map((p) => p.row.title), ['ZEN UGC 1', 'ZEN UGC 2', 'ZEN UGC 3']);
+  assert.equal(parts[2].lines.length, 2);
+  const fs = await import('node:fs');
+  assert.match(fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8'), /x\.needs_reply && !onlyNotes/);
+});
