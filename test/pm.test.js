@@ -569,3 +569,16 @@ test('"Fetch from inbox" requests are read from the Agent Log title', async () =
   assert.deepEqual(parseFetch('Fetch from inbox: Lindsay | Atoms'), { creator: 'Lindsay', text: 'Atoms' });
   assert.equal(parseFetch('Inbox error: x'), null);
 });
+
+test('a file sent on WhatsApp can go out with a brand email (Send File on the draft)', async () => {
+  const fs = await import('node:fs');
+  const wa = fs.readFileSync(new URL('../api/whatsapp.js', import.meta.url), 'utf8');
+  assert.match(wa, /m\.type === 'document' \|\| m\.type === 'image'/);
+  assert.match(wa, /file: sentFile/);
+  const ob = fs.readFileSync(new URL('../lib/outbox.js', import.meta.url), 'utf8');
+  assert.match(ob, /d\.attach === 'File'\) \{\n\s+attachment = await sentFileAttachment\(page\)/);
+  const askSrc = fs.readFileSync(new URL('../lib/ask.js', import.meta.url), 'utf8');
+  assert.match(askSrc, /'Sent file'/);
+  const W = await import('../lib/whatsapp.js');
+  assert.equal(typeof W.downloadMedia, 'function');
+});

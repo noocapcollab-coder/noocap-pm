@@ -83,17 +83,22 @@ async function handleMessage(m) {
   const at = new Date(Number(m.timestamp || Date.now() / 1000) * 1000).toISOString();
 
   // What they sent: a typed message, a reply-button tap, or the template's "Show me"
-  let text = '', button = '';
+  let text = '', button = '', file = null;
   if (m.type === 'text') text = m.text?.body || '';
   else if (m.type === 'interactive') button = m.interactive?.button_reply?.id || m.interactive?.list_reply?.id || '';
   else if (m.type === 'button') button = m.button?.payload || 'DIGEST';
+  else if (m.type === 'document' || m.type === 'image') {
+    const f = m[m.type] || {};
+    file = { mediaId: f.id, filename: f.filename || (m.type === 'image' ? 'image.jpg' : 'file'), mime: f.mime_type || '' };
+    text = f.caption ? `${f.caption}\n(sent a file: ${file.filename})` : `(sent a file: ${file.filename})`;
+  }
   else text = `(sent a ${m.type})`;
   const label = button ? `[tapped ${m.interactive?.button_reply?.title || m.button?.text || button}]` : text;
   // The chat had gone quiet for over 24 hours, so alerts in between could not be delivered: after answering,
   // send what they missed. Measured from the last thing we managed to send them.
   const wasClosed = !windowOpen(st);
   const lastSent = [...st.messages].reverse().find((x) => x.role === 'assistant' && x.at && x.meta !== 'pending-doc')?.at || null;
-  st.messages.push({ role: 'user', content: label, wa: m.id, at, ...(button ? { meta: 'button' } : {}) });
+  st.messages.push({ role: 'user', content: label, wa: m.id, at, ...(button ? { meta: 'button' } : {}), ...(file ? { file } : {}) });
   await saveState(st); // saved first, so a retry from Meta is recognised
   markRead(m.id).catch(() => {});
 
@@ -106,6 +111,7 @@ async function handleMessage(m) {
     if (button) await onButton(st, button);
     else if (text && !quoted && [...st.messages].reverse().find((x) => x.role === 'assistant')?.meta !== 'edit-ask' && await maybeNewDeal(st, text, forwarded)) { /* handled */ }
     else if (quoted && text) await applyEdit(st, quoted.draft, text);
+    else if (file && /^\(sent a file: /.test(text)) await say(st, `📎 Got *${file.filename}*. Tell me what to do with it, e.g. "send this to Atoms × Lindsay" and I'll put the email with this file attached in the brand's thread for you to approve.`);
     else await onText(st, text, replyTo?.content || '');
   } catch (e) {
     await say(st, `⚠️ ${String(e.message || e).slice(0, 300)}`).catch(() => {});
@@ -237,7 +243,9 @@ async function onText(st, text, quotedText = '') {
     .slice(-14)
     .map((x) => ({ role: x.role, content: x.content }));
   const { ask } = await import('../lib/ask.js');
-  const r = await ask({ channel: 'whatsapp', save: false, chatId: st.chatId, messages: history, person: st.person.name });
+  // The last file they sent (within 6 hours) can go out with an email: "send this contract to Atoms × Lindsay"
+  const sentFile = [...st.messages].reverse().find((x) => x.role === 'user' && x.file && Date.now() - Date.parse(x.at) < 6 * 36e5)?.file || null;
+  const r = await ask({ channel: 'whatsapp', save: false, chatId: st.chatId, messages: history, person: st.person.name, file: sentFile });
   const reply = r.data.reply || `⚠️ ${r.data.error || 'Something went wrong, try again.'}`;
   const pending = r.data.pending || [];
   if (pending.length) {
