@@ -613,3 +613,13 @@ test('a brand asking for something only we have (ad codes) gets a WhatsApp quest
   const W = await import('../lib/whatsapp.js');
   assert.equal(typeof W.askForInfo, 'function');
 });
+
+test('WhatsApp: one short catch-up with buttons instead of a pile, and the reopen template is created if missing', async () => {
+  const W = await import('../lib/whatsapp.js');
+  assert.equal(typeof W.ensureTemplate, 'function');
+  assert.equal(typeof W.catchUpList, 'function');
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/whatsapp.js', import.meta.url), 'utf8');
+  const fn = src.slice(src.indexOf('export async function catchUp('), src.indexOf('export async function catchUpList('));
+  assert.doesNotMatch(fn, /sendDigest/);
+});

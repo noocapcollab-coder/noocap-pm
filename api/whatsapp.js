@@ -128,6 +128,7 @@ async function handleMessage(m) {
 async function onButton(st, id) {
   const [action, arg] = String(id).split(':');
   if (action === 'DIGEST' || action === 'digest') { await sendDigest(st); return; }
+  if (action === 'catchup') { const { catchUpList } = await import('../lib/whatsapp.js'); await catchUpList(st, new Date(Number(arg) || Date.now() - 864e5).toISOString()); return; }
   if (action === 'send') {
     const { approveAndSend, readDraftById } = await import('../lib/outbox.js');
     const { withRun } = await import('../lib/runs.js');
