@@ -460,3 +460,13 @@ test('follow-ups tracker: replies, wins, which nudge worked, who is chased now',
   assert.equal(f.active.find((a) => a.brand === 'Gamma').state, 'gone quiet');
   assert.match(briefLine(f), /Follow-ups: chasing 1 quoted brand and 0 deals/);
 });
+
+test('deal check-ins: the brand is not chased while the next move is ours', async () => {
+  const { ourMoveText } = await import('../lib/heartbeat.js');
+  assert.equal(ourMoveText('Chris to opt in on Creator.co so Bluehost can approve him', 'Chris'), true);
+  assert.equal(ourMoveText('Management: review and sign the contract', 'Lindsay'), true);
+  assert.equal(ourMoveText('Management to sign the contract', 'Lindsay'), true);
+  assert.equal(ourMoveText('Rudraksh writing the script', 'Lindsay'), true);
+  assert.equal(ourMoveText('Waiting for Bluehost to share the contract and brand brief', 'Chris'), false);
+  assert.equal(ourMoveText('Waiting for the brand to approve the script', 'Chris'), false);
+});
