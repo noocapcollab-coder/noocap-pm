@@ -479,3 +479,14 @@ test('a posted sponsor video with no brand deal is not an invoice to raise (Whac
   assert.deepEqual(out.needs_invoice.map((x) => x.brand), ['Runway']);
   assert.deepEqual(out.no_deal.map((x) => x.brand), ['Whacka']);
 });
+
+test('invoice rows: creator name is not repeated, numbered videos stay apart, $1 placeholders are not fees', async () => {
+  const { cleanBrand, brandFromTitle, videoLabel, realAmount } = await import('../lib/money.js');
+  assert.equal(cleanBrand('Luma AI × Brad', 'Brad'), 'Luma AI');
+  assert.equal(cleanBrand(brandFromTitle('Polar × Valeri'), 'Valeri'), 'Polar');
+  assert.equal(cleanBrand('Rocket x', 'Brad'), 'Rocket x');
+  assert.equal(videoLabel('REPLO', 'REPLO - 2'), 'REPLO 2');
+  assert.equal(videoLabel('UTOPAI', 'UTOPAI (SENT THE UPDATED VIDEO ON 23rd)'), 'UTOPAI');
+  assert.equal(realAmount(1), null);
+  assert.equal(realAmount(1500), 1500);
+});
