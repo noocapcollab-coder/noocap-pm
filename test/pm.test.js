@@ -470,3 +470,12 @@ test('deal check-ins: the brand is not chased while the next move is ours', asyn
   assert.equal(ourMoveText('Waiting for Bluehost to share the contract and brand brief', 'Chris'), false);
   assert.equal(ourMoveText('Waiting for the brand to approve the script', 'Chris'), false);
 });
+
+test('a posted sponsor video with no brand deal is not an invoice to raise (Whacka × Brad)', async () => {
+  const { invoicePlan } = await import('../lib/hq.js');
+  const chase = { needs_invoice: [{ brand: 'Whacka', creator: 'Brad', days: 5 }, { brand: 'Runway', creator: 'Chris', days: 3 }], awaiting_payment: [] };
+  const deals = [{ brand: 'Runway', creator: 'Chris', stage: 'Posted' }];
+  const out = invoicePlan(chase, [], deals, '2026-11-02');
+  assert.deepEqual(out.needs_invoice.map((x) => x.brand), ['Runway']);
+  assert.deepEqual(out.no_deal.map((x) => x.brand), ['Whacka']);
+});
