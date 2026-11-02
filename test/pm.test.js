@@ -528,3 +528,12 @@ test('a deal email with no brand thread never sends itself (Weglot script went o
   assert.match(src, /const auto = !noThread &&/);
   assert.match(src, /\(no email thread to reply in\)/);
 });
+
+test('a deal whose video card is Posted moves to Posted (that is what starts the invoice)', async () => {
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
+  assert.match(src, /video\.num === 12 && deal\.stage && deal\.stage !== 'Lost' && postedRecently && stageBefore\(deal\.stage, 'Posted'\)/);
+  const { stageBefore } = await import('../lib/outbox.js');
+  assert.equal(stageBefore('Script Approved', 'Posted'), true);
+  assert.equal(stageBefore('Invoiced', 'Posted'), false);
+});
