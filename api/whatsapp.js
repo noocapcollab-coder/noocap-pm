@@ -111,6 +111,7 @@ async function handleMessage(m) {
     if (button) await onButton(st, button);
     else if (text && !quoted && [...st.messages].reverse().find((x) => x.role === 'assistant')?.meta !== 'edit-ask' && await maybeNewDeal(st, text, forwarded)) { /* handled */ }
     else if (quoted && text) await applyEdit(st, quoted.draft, text);
+    else if (infoAskFor(st, replyTo) && (text || file)) await answerInfoAsk(st, infoAskFor(st, replyTo), text, file);
     else if (file && /^\(sent a file: /.test(text)) await say(st, `📎 Got *${file.filename}*. Tell me what to do with it, e.g. "send this to Atoms × Lindsay" and I'll put the email with this file attached in the brand's thread for you to approve.`);
     else await onText(st, text, replyTo?.content || '');
   } catch (e) {
@@ -341,6 +342,35 @@ async function attachFileToDraft(id, file) {
   const up = await uploadToNotion({ filename: file.filename, mimeType: file.mime || got.mimeType, data: got.data });
   if (!up) throw new Error('Could not save the file, send it again');
   await notion('PATCH', `/pages/${id}`, { properties: { 'Send File': { files: [{ type: 'file_upload', file_upload: { id: up }, name: String(file.filename).slice(0, 100) }] }, Attach: { select: { name: 'File' } } } });
+}
+
+// The PM asked for something a brand wants (ad codes, analytics). A swipe-reply to that question, or the next message
+// within 2 hours when the question is the last thing we said, is the answer: it becomes the email draft (one AI call).
+function infoAskFor(st, replyTo) {
+  if (replyTo?.meta === 'info-ask' && replyTo.infoAsk && !replyTo.resolved) return replyTo;
+  const last = [...st.messages].reverse().find((x) => x.role === 'assistant' && !['pending-doc', 'nudge'].includes(x.meta));
+  return last?.meta === 'info-ask' && last.infoAsk && !last.resolved && Date.now() - Date.parse(last.at) < 2 * 36e5 ? last : null;
+}
+async function answerInfoAsk(st, msg, text, file) {
+  const a = msg.infoAsk;
+  if (/^(cancel|skip|ignore|no|not now|leave it)\.?$/i.test(String(text || '').trim())) { msg.resolved = 'skipped'; await say(st, 'OK, I won\'t reply to them about it.'); return; }
+  const { openDeals } = await import('../lib/briefs.js');
+  const deal = (await openDeals({ withClosed: true })).find((d) => d.id === a.dealId);
+  if (!deal) { await say(st, 'I couldn\'t find that deal anymore.'); return; }
+  const here = { ...deal, threadId: a.threadId || deal.threadId, messageRfc: a.messageRfc || deal.messageRfc, threadSubject: a.subject || deal.threadSubject, brandEmail: a.brandEmail || deal.brandEmail };
+  const { writeEmail, createDraft } = await import('../lib/outbox.js');
+  const mail = await writeEmail({ kind: 'Reply', deal: here, facts: { their_latest_message: a.theirMessage, they_asked_for: a.need, we_provide: text || '(see the attached file)', note: 'Give them exactly what we_provide says, word for word for any codes, links or numbers. Keep it short.' } });
+  let sendFile = null;
+  if (file?.mediaId) {
+    const W = await import('../lib/whatsapp.js');
+    const { uploadToNotion } = await import('../lib/briefs.js');
+    const got = await W.downloadMedia(file.mediaId);
+    const id = await uploadToNotion({ filename: file.filename, mimeType: file.mime || got.mimeType, data: got.data });
+    if (id) sendFile = [{ type: 'file_upload', file_upload: { id }, name: String(file.filename).slice(0, 100) }];
+  }
+  msg.resolved = 'answered';
+  const r = await createDraft({ kind: 'Reply', deal: here, subject: mail.subject, body: mail.body, attach: sendFile ? 'File' : 'None', sendFile, video: deal.linkedVideo, why: `${deal.brand} asked for: ${a.need}. Written from your WhatsApp answer.`, notify: true });
+  if (r.skipped) await say(st, 'A reply for that thread is already waiting, so I showed that one instead.');
 }
 
 async function showDrafts(st, text) {

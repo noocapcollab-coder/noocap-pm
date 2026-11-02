@@ -600,3 +600,14 @@ test('a draft card on WhatsApp is followed by the file the email will carry', as
   assert.match(fs.readFileSync(new URL('../lib/whatsapp.js', import.meta.url), 'utf8'), /await sendDraftAttachment\(st\.person\.number, d\.id\)/);
   assert.match(fs.readFileSync(new URL('../api/whatsapp.js', import.meta.url), 'utf8'), /W\.sendDraftAttachment\(st\.person\.number, d\.id\)/);
 });
+
+test('a brand asking for something only we have (ad codes) gets a WhatsApp question, not a drafted email', async () => {
+  const fs = await import('node:fs');
+  const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  assert.match(ib, /needs_our_info: \{ type: 'boolean'/);
+  assert.match(ib, /x\.needs_our_info && x\.info_needed\) \{[\s\S]{0,1400}W\.askForInfo\(ask\)/);
+  const wa = fs.readFileSync(new URL('../api/whatsapp.js', import.meta.url), 'utf8');
+  assert.match(wa, /answerInfoAsk\(st, infoAskFor\(st, replyTo\), text, file\)/);
+  const W = await import('../lib/whatsapp.js');
+  assert.equal(typeof W.askForInfo, 'function');
+});
