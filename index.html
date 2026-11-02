@@ -1772,6 +1772,8 @@
       ...raise.map((x, i) => row(x.creator, link(x), x.amount, `video posted ${ago(x.days)}, no invoice yet`, `${x.remind_ok === false ? '' : '<button type="button" class="obtn" data-act="remind">Copy reminder</button>'}<button type="button" class="obtn pri" data-act="sent">Invoice sent</button>`, `data-k="raise" data-i="${i}"`)),
       ...making.map((p) => row(p.creator, link(p), p.amount, `<span style="color:var(--muted)">the PM is on it: ${esc(String(p.say || '').replace(/^Creating the invoice in Stripe$/, 'making the invoice'))}</span>`)),
     ].join('') : '<div class="empty">Nothing to do. 🎉</div>';
+    const noDeal = c.no_deal || [];
+    if (noDeal.length) $('invTodo').innerHTML += `<div style="margin:14px 0 4px;font-size:12px;color:var(--muted)">Not in our emails (WhatsApp or other tools) · not counted above. Mark each one so it leaves this list:</div>${noDeal.map((x, i) => row(x.creator, link(x), x.amount, '<span style="color:var(--muted)">only on the creator\'s board</span>', `<button type="button" class="obtn" data-act="skip" title="Handled outside the PM, stop showing it">Hide</button><button type="button" class="obtn" data-act="sent">Invoice sent</button><button type="button" class="obtn pri" data-act="paid">Paid</button>`, `data-k="nodeal" data-i="${i}"`)).join('')}`;
 
     $('invWaitN').textContent = waitAll.length ? `${waitAll.length} · ${usd(sum(waitAll))}` : '';
     $('invWait').innerHTML = waitAll.length ? [
@@ -1802,7 +1804,7 @@
     });
     document.querySelectorAll('#billing [data-go-ap]').forEach((btn) => btn.onclick = () => { apBox = 'all'; show('approvals'); });
 
-    const lists = { raise, wait: outHand, cut };
+    const lists = { raise, wait: outHand, cut, nodeal: c.no_deal || [] };
     document.querySelectorAll('#billing .inv-r button[data-act]').forEach((btn) => btn.onclick = async () => {
       const r = btn.closest('.inv-r'), x = lists[r.dataset.k][+r.dataset.i], act = btn.dataset.act;
       if (act === 'remind') {
@@ -1811,7 +1813,7 @@
         return;
       }
       if (!x.rev) return alert('This row has no revenue page to update, open it in Notion.');
-      const body = { action: 'set', revPageId: x.rev, ...(act === 'sent' ? { invoiced: todayISO() } : act === 'paid' ? { paid: true, paidDate: todayISO() } : { cutCollected: true }) };
+      const body = { action: 'set', revPageId: x.rev, ...(act === 'sent' ? { invoiced: todayISO() } : act === 'paid' ? { paid: true, paidDate: todayISO() } : act === 'skip' ? { skip: true } : { cutCollected: true }) };
       r.classList.add('busy');
       try { const res = await fetch('/api/revenue', { method: 'POST', headers: headers(), body: JSON.stringify(body) }); const j = await res.json(); if (!res.ok) throw new Error(j.error || 'Failed'); lists[r.dataset.k].splice(+r.dataset.i, 1); renderInvoices(true); loadHQ(true); }
       catch (e) { r.classList.remove('busy'); alert('Not saved: ' + e.message); }

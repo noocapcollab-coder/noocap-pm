@@ -490,3 +490,9 @@ test('invoice rows: creator name is not repeated, numbered videos stay apart, $1
   assert.equal(realAmount(1), null);
   assert.equal(realAmount(1500), 1500);
 });
+
+test('Hide on the Invoices page sets Skip Invoicing, and those rows are never chased', async () => {
+  const fs = await import('node:fs');
+  assert.match(fs.readFileSync(new URL('../lib/revenue.js', import.meta.url), 'utf8'), /'skip' in b\) p\['Skip Invoicing'\]/);
+  assert.match(fs.readFileSync(new URL('../lib/money.js', import.meta.url), 'utf8'), /if \(r\['Skip Invoicing'\] === true\) continue;/);
+});
