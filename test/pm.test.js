@@ -665,3 +665,11 @@ test('a hand-added deal with no brand contact gets it from its lead (Hyper3D scr
   const kept = H.leadContactFill({ brandEmail: 'a@b.co', threadId: 'abc123def456', messageRfc: '<x@y>', threadSubject: 's', threadCc: 'c@d.co' }, { email: 'z@z.co', messageId: '<q@q>' });
   assert.equal(Object.keys(kept.props).length, 0);
 });
+
+test('a reply-to Message-ID saved without <> still goes out as a proper In-Reply-To', async () => {
+  const { buildMime } = await import('../lib/mime.js');
+  const raw = buildMime({ to: 'a@b.co', subject: 'Re: x', text: 'hi', inReplyTo: '6096.1@localhost' });
+  const txt = Buffer.from(String(raw).replace(/-/g, '+').replace(/_/g, '/'), 'base64').toString('utf8');
+  const all = String(raw) + txt;
+  assert.match(all, /In-Reply-To: <6096\.1@localhost>/);
+});
