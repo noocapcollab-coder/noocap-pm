@@ -496,3 +496,11 @@ test('Hide on the Invoices page sets Skip Invoicing, and those rows are never ch
   assert.match(fs.readFileSync(new URL('../lib/revenue.js', import.meta.url), 'utf8'), /'skip' in b\) p\['Skip Invoicing'\]/);
   assert.match(fs.readFileSync(new URL('../lib/money.js', import.meta.url), 'utf8'), /if \(r\['Skip Invoicing'\] === true\) continue;/);
 });
+
+test('the sponsor money step runs on every heartbeat (no minute gate that the :04/:14 schedule never hits)', async () => {
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
+  const at = src.indexOf('report.money = await syncMoney()');
+  assert.ok(at > 0);
+  assert.doesNotMatch(src.slice(at - 400, at), /getUTCMinutes\(\) % 10/);
+});
