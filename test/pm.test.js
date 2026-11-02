@@ -554,3 +554,10 @@ test('second look keeps real paid offers the AI skipped, and still drops pitches
   // HTML-only email gets readable text
   assert.match(fillTextFromHtml({ text: '', html: '<p>Hi Lindsay,</p><p>We would love a <b>paid</b> reel for Domo AI, budget $800.</p>' }).text, /paid reel for Domo AI, budget \$800/);
 });
+
+test('new sponsor cards that need a script are picked for the script writer ping', async () => {
+  const { needsScript } = await import('../lib/scriptping.js');
+  assert.equal(needsScript({ sponsor: true, status: '3- Transcript' }), true);
+  assert.equal(needsScript({ sponsor: true, status: '12- Posted' }), false);
+  assert.equal(needsScript({ sponsor: false, status: '3- Transcript' }), false);
+});
