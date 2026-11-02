@@ -520,3 +520,11 @@ test('Stripe invoices paid by bank transfer can be marked Paid; "DREAMINA 2" is 
   const fs = await import('node:fs');
   assert.match(fs.readFileSync(new URL('../api/revenue.js', import.meta.url), 'utf8'), /b\.action === 'dealPaid'/);
 });
+
+test('a deal email with no brand thread never sends itself (Weglot script went out as a new email)', async () => {
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
+  assert.match(src, /const noThread = !deal\.threadId \|\| !deal\.messageRfc;/);
+  assert.match(src, /const auto = !noThread &&/);
+  assert.match(src, /\(no email thread to reply in\)/);
+});
