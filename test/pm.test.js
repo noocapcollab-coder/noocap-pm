@@ -504,3 +504,10 @@ test('the sponsor money step runs on every heartbeat (no minute gate that the :0
   assert.ok(at > 0);
   assert.doesNotMatch(src.slice(at - 400, at), /getUTCMinutes\(\) % 10/);
 });
+
+test('a posted sponsor video whose deal is already invoiced is logged as invoiced and does not ask for an invoice again', async () => {
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/money.js', import.meta.url), 'utf8');
+  assert.match(src, /const billed = billedDeal\(v\);/);
+  assert.match(src, /if \(!billed && daysSince\(posted, today\) <= 2/);
+});
