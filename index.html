@@ -1737,7 +1737,8 @@
     const c = hqData?.chase; if (!c || !$('invTodo')) return;
     const st = stData || { deals: [], creators: [] };
     const sum = (xs) => xs.reduce((n, x) => n + (Number(x.amount) || 0), 0);
-    const key = (x) => `${String(x.brand || '').toLowerCase().replace(/[^a-z0-9]/g, '')}|${String(x.creator || '').toLowerCase()}`;
+    // "Runway AI 2" and "Runway AI" are the same deal (one Stripe invoice can cover several videos)
+    const key = (x) => `${String(x.brand || '').toLowerCase().replace(/[^a-z0-9]/g, '').replace(/\d+$/, '')}|${String(x.creator || '').toLowerCase()}`;
     const ago = (n) => n == null ? '' : n === 0 ? 'today' : n === 1 ? 'yesterday' : `${n} days ago`;
     const link = (x) => x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.label || x.brand)}</a>` : esc(x.label || x.brand || x.video || '');
     const parts = st.deals.flatMap((d) => d.parts.map((p) => ({ ...p, brand: d.brand, creator: d.creator, url: d.url, billed: d.billed_to, connected: d.connected, rate: d.rate })));
