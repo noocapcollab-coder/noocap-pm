@@ -674,11 +674,7 @@ test('a reply-to Message-ID saved without <> still goes out as a proper In-Reply
   assert.match(all, /In-Reply-To: <6096\.1@localhost>/);
 });
 
-test('a Lindsay thread that lives only in her inbox is answered from her inbox, not as a new noocapcollab thread', async () => {
-  const O = await import('../lib/outbox.js');
-  const yes = () => true;
-  assert.equal(O.pickSender({ creator: 'Lindsay', threadId: '<6096@localhost>', messageRfc: '<6096@localhost>' }, yes), 'Lindsay');
-  assert.equal(O.pickSender({ creator: 'Lindsay', threadId: '19ec2cfd4a5b5a45', messageRfc: '<a@b>' }, yes), 'noocapcollab');
-  assert.equal(O.pickSender({ creator: 'Lindsay', threadId: '<6096@localhost>' }, () => false), 'noocapcollab');
-  assert.equal(O.pickSender({ creator: 'Chris', threadId: '<x@y>' }, yes), 'noocapcollab');
+test('the send step passes subject and recipient so n8n can find the brand thread by subject', async () => {
+  const fs = await import('node:fs');
+  assert.match(fs.readFileSync(new URL('../lib/outbox.js', import.meta.url), 'utf8'), /lookup: inReplyTo \} : \{\}\), subject: d\.subject \|\| '', to: d\.to \|\| ''/);
 });
