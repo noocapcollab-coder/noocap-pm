@@ -605,7 +605,9 @@ test('a brand asking for something only we have (ad codes) gets a WhatsApp quest
   const fs = await import('node:fs');
   const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
   assert.match(ib, /needs_our_info: \{ type: 'boolean'/);
-  assert.match(ib, /x\.needs_our_info && x\.info_needed\) \{[\s\S]{0,1400}W\.askForInfo\(ask\)/);
+  assert.match(ib, /\(x\.needs_our_info \|\| x\.we_owe\)[\s\S]{0,1500}W\.askForInfo\(ask\)/);
+  const ob = fs.readFileSync(new URL('../lib/outbox.js', import.meta.url), 'utf8');
+  assert.doesNotMatch(ob, /say we will send it over/);
   const wa = fs.readFileSync(new URL('../api/whatsapp.js', import.meta.url), 'utf8');
   assert.match(wa, /answerInfoAsk\(st, infoAskFor\(st, replyTo\), text, file\)/);
   const W = await import('../lib/whatsapp.js');
