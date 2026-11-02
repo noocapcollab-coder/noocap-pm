@@ -1772,8 +1772,6 @@
       ...raise.map((x, i) => row(x.creator, link(x), x.amount, `video posted ${ago(x.days)}, no invoice yet`, `${x.remind_ok === false ? '' : '<button type="button" class="obtn" data-act="remind">Copy reminder</button>'}<button type="button" class="obtn pri" data-act="sent">Invoice sent</button>`, `data-k="raise" data-i="${i}"`)),
       ...making.map((p) => row(p.creator, link(p), p.amount, `<span style="color:var(--muted)">the PM is on it: ${esc(String(p.say || '').replace(/^Creating the invoice in Stripe$/, 'making the invoice'))}</span>`)),
     ].join('') : '<div class="empty">Nothing to do. 🎉</div>';
-    const noDeal = c.no_deal || [];
-    if (noDeal.length) $('invTodo').innerHTML += `<details style="margin-top:8px"><summary style="cursor:pointer;color:var(--muted);font-size:12px">${plural(noDeal.length, 'sponsor video')} posted with no brand email or deal, so they're not counted here</summary>${noDeal.map((x) => row(x.creator, link(x), x.amount, '<span style="color:var(--muted)">only on the creator\'s board · check with the creator if it was paid</span>')).join('')}</details>`;
 
     $('invWaitN').textContent = waitAll.length ? `${waitAll.length} · ${usd(sum(waitAll))}` : '';
     $('invWait').innerHTML = waitAll.length ? [
