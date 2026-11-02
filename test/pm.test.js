@@ -563,3 +563,9 @@ test('cuts waiting In Review: a missed go-live is late, today/tomorrow is soon',
   assert.equal(reviewUrgency('2026-11-09', '2026-11-02'), 'later');
   assert.equal(reviewUrgency(null, '2026-11-02'), 'none');
 });
+
+test('"Fetch from inbox" requests are read from the Agent Log title', async () => {
+  const { parseFetch } = await import('../lib/inboxfetch.js');
+  assert.deepEqual(parseFetch('Fetch from inbox: Lindsay | Atoms'), { creator: 'Lindsay', text: 'Atoms' });
+  assert.equal(parseFetch('Inbox error: x'), null);
+});
