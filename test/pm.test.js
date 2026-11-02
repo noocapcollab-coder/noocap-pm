@@ -537,3 +537,20 @@ test('a deal whose video card is Posted moves to Posted (that is what starts the
   assert.equal(stageBefore('Script Approved', 'Posted'), true);
   assert.equal(stageBefore('Invoiced', 'Posted'), false);
 });
+
+test('second look keeps real paid offers the AI skipped, and still drops pitches and spam', async () => {
+  const { maybeRealDeal, fillTextFromHtml } = await import('../lib/leads.js');
+  const e = (subject, text = '') => ({ subject, text });
+  // Missed in Nov
+  assert.ok(maybeRealDeal({ is_lead: false, not_lead_kind: 'other', offer: 'USD 5250 for 3 long-form YouTube integrations plus 25% affiliate commission on sales' }, e('Re: Paid collab offer with Arcads')));
+  assert.ok(maybeRealDeal({ is_lead: false, not_lead_kind: 'job_or_service_pitch', offer: 'Sponsorship platform facilitating deals', brand: 'Weglot' }, e('Weglot Paid Sponsorship x Automate AI Consulting - deal-ceqxmo'), true));
+  assert.ok(maybeRealDeal({ is_lead: false, not_lead_kind: 'other', offer: 'Unable to determine - email content requires HTML rendering' }, e('Collaboration Opportunity with Sparkols | Domo AI Project')));
+  assert.ok(maybeRealDeal({ is_lead: false, not_lead_kind: 'spam', offer: 'Paid Instagram collaboration with Dreamina', brand: 'Dreamina' }, e('{达人名字} x Paid Instagram Collaboration with Dreamina'), true));
+  // Still dropped
+  assert.equal(maybeRealDeal({ is_lead: false, not_lead_kind: 'job_or_service_pitch', offer: 'Video editing services (unsolicited sample offered)' }, e('Video editing collaboration')), null);
+  assert.equal(maybeRealDeal({ is_lead: false, not_lead_kind: 'job_or_service_pitch', offer: 'HostEdge offers 20% affiliate commission on all referrals' }, e('A HostEdge partnership: 20% for 12 months')), null);
+  assert.equal(maybeRealDeal({ is_lead: false, not_lead_kind: 'spam', offer: '$49 lifetime vault access with 100+ workflows' }, e('Automate, last look at this')), null);
+  assert.equal(maybeRealDeal({ is_lead: false, not_lead_kind: 'spam', offer: 'Contest entry: post one Reel for a chance to win $2,000' }, e('#PredisReelRush is live: $2,000 for one Reel')), null);
+  // HTML-only email gets readable text
+  assert.match(fillTextFromHtml({ text: '', html: '<p>Hi Lindsay,</p><p>We would love a <b>paid</b> reel for Domo AI, budget $800.</p>' }).text, /paid reel for Domo AI, budget \$800/);
+});
