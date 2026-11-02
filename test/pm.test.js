@@ -623,3 +623,10 @@ test('WhatsApp: one short catch-up with buttons instead of a pile, and the reope
   const fn = src.slice(src.indexOf('export async function catchUp('), src.indexOf('export async function catchUpList('));
   assert.doesNotMatch(fn, /sendDigest/);
 });
+
+test('the video (Raw Footage) Drive folder is shared with anyone with the link, not left private', async () => {
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/drive.js', import.meta.url), 'utf8');
+  assert.match(src, /shareAnyone\(videoF\.id, 'reader'\)/);
+  assert.match(src, /export async function openRawFolders/);
+});
