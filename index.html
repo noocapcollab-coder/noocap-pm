@@ -596,6 +596,13 @@
   #billing { overflow-y: auto; }
   .inv-tot { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .dotc { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+  #billing .inv-s { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 14px; align-items: center; }
+  #billing .inv-s .w { min-width: 0; }
+  #billing .inv-s .w small { display: block; color: var(--muted); font-size: 12.5px; margin-top: 2px; }
+  #billing .inv-s .w small .late { color: var(--err); } #billing .inv-s .w small .warn { color: var(--warn); }
+  #billing .inv-s .a { font-weight: 600; font-variant-numeric: tabular-nums; }
+  #billing .inv-s .bt { display: flex; gap: 6px; }
+  @media (max-width: 640px) { #billing .inv-s { grid-template-columns: minmax(0, 1fr) auto; } #billing .inv-s .bt { grid-column: 1 / -1; } }
   .inv-r { display: grid; grid-template-columns: 110px minmax(0, 1fr) 100px 120px auto; gap: 12px; align-items: center; padding: 11px 0; border-top: 1px solid var(--line3); font-size: 14px; }
   .inv-r:first-child { border-top: 0; }
   .inv-r .c { font-weight: 600; }
@@ -889,14 +896,15 @@
 <!-- ============ Invoices ============ -->
 <section class="view" id="billing"><div class="ov">
   <div class="ov-head">
-    <div><div class="k">Sponsor Video Revenue · last 30 days</div><h1>Invoices</h1></div>
+    <div><div class="k" id="invWhen">Money from brands: what to send, what to collect</div><h1>Invoices</h1></div>
   </div>
   <section class="ostats inv-tot" id="invTot" aria-label="Invoice totals"></section>
-  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:#8b7cf6"></span>Automatic invoices in creators' Stripe <small id="stN"></small></h2><div class="ofoot" style="margin:0 0 6px" id="stNote">The PM asks brands for billing details, drafts the invoice in the creator's own Stripe and puts it in Approvals. Nothing goes to a brand until you send it.</div><div class="st-cr" id="stCreators"></div><div id="stDeals"><div class="skel"></div></div></section>
-  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:#38bdf8"></span>Invoiced, waiting for payment <small id="invWaitN"></small></h2><div id="invWait"><div class="skel"></div></div></section>
-  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:var(--warn)"></span>Invoice not raised yet <small id="invRaiseN"></small></h2><div class="ofoot" style="margin:0 0 6px">Only videos that are live on the creator's board and whose deal isn't invoiced yet. Creators raise their own invoices: remind them from the day after posting, then mark it sent.</div><div id="invRaise"><div class="skel"></div></div></section>
-  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:var(--dim)"></span>Coming up <small id="invSoonN"></small></h2><div class="ofoot" style="margin:0 0 6px">From Active brands: approved or about to post. No invoice yet, it moves up once the video is live.</div><div id="invSoon"><div class="skel"></div></div></section>
-  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px"><span class="dotc" style="background:var(--info)"></span>NOOCAP cut to collect <small id="invCutN"></small></h2><div id="invCut"><div class="skel"></div></div></section>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Needs you <small id="invTodoN"></small></h2><div id="invTodo"><div class="skel"></div></div></section>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Waiting for the brand to pay <small id="invWaitN"></small></h2><div id="invWait"><div class="skel"></div></div></section>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">NOOCAP cut to collect <small id="invCutN"></small></h2><div id="invCut"><div class="skel"></div></div></section>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Paid <small id="invPaidN"></small></h2><div id="invPaid"><div class="skel"></div></div></section>
+  <details class="ocard" style="gap:0"><summary style="cursor:pointer;font:600 15px 'Space Grotesk',sans-serif">Coming up <small id="invSoonN" style="color:var(--muted);font-weight:400"></small> <small style="color:var(--muted);font-weight:400">· the invoice is made once the video is posted</small></summary><div id="invSoon" style="margin-top:8px"></div></details>
+  <div class="ofoot" id="stFoot" style="margin:2px 0 0"></div>
   <div class="err" id="invErr" style="font-size:13px"></div>
 </div></section>
 
@@ -1714,60 +1722,87 @@
   // Invoices: what's posted but not invoiced, what's invoiced but unpaid, and NOOCAP's cut to collect
   // =====================================================================
   // Automatic Stripe invoices: who is connected, and where each deal's invoice stands
-  let stAt = 0;
+  let stAt = 0, stData = null;
   async function loadStripeInv(force) {
-    if (!$('stDeals') || (!force && Date.now() - stAt < 60e3)) return;
+    if (!force && Date.now() - stAt < 60e3) return;
     stAt = Date.now();
     try {
       const res = await fetch('/api/hq?invoicing=1', { headers: headers() });
       const j = await res.json(); if (!res.ok) throw new Error(j.error || 'Error ' + res.status);
-      if (!j.enabled) $('stNote').innerHTML = '<b>Not switched on yet.</b> Add PAYMENT_KEYS_SECRET in Vercel (noocap-pm) and redeploy. Until then nothing is drafted.';
-      const n = j.creators.filter((c) => c.connected).length;
-      $('stN').textContent = `${n} of ${j.creators.length} creators connected`;
-      $('stCreators').innerHTML = j.creators.map((c) => `<span class="st-chip ${c.connected ? 'on' : ''}" title="${esc(c.account)}"><span class="dot"></span>${esc(c.name)} ${c.connected ? `<small>connected</small>` : `<button type="button" class="obtn" data-link="${esc(c.name)}">Copy connect link</button>`}</span>`).join('');
-      // One line per invoice the PM will make, grouped by where it stands
-      const rows = j.deals.flatMap((d) => d.parts.map((p) => ({ ...p, d })));
-      const line = (r, right) => `<div class="st-r"><div class="b"><a href="${esc(r.d.url)}" target="_blank" rel="noopener">${esc(r.d.brand)}</a> × ${esc(r.d.creator)}<small>${r.d.parts.length > 1 ? `${r.part === 'upfront' ? 'Upfront' : 'Final'} ${r.pct}% of ${usd(r.d.rate)}` : 'Full fee'}${r.d.billed_to ? ' · bills ' + esc(r.d.billed_to) : ''}</small></div><div class="st-p"><span class="a">${usd(r.amount)}</span><span class="t">${right}</span></div></div>`;
-      const grp = (title, list, right, empty) => `<div class="st-g"><div class="st-h">${title} <small>${list.length ? list.length + ' · ' + usd(list.reduce((n, r) => n + r.amount, 0)) : ''}</small></div>${list.length ? list.map((r) => line(r, right(r))).join('') : `<div class="empty">${empty}</div>`}</div>`;
-      const now = rows.filter((r) => ['due', 'draft'].includes(r.status));
-      const sent = rows.filter((r) => ['sent', 'paid'].includes(r.status));
-      const later = rows.filter((r) => r.status === 'later');
-      const manual = rows.filter((r) => r.status === 'manual');
-      $('stDeals').innerHTML =
-        grp('Being made now', now, (r) => `<span class="tag ${r.status}">${r.status === 'draft' ? 'in Approvals' : 'in progress'}</span> ${esc(r.say)}`, 'Nothing to invoice right now.') +
-        grp('Sent to the brand', sent, (r) => `<span class="tag ${r.status}">${r.status === 'paid' ? 'paid' : 'awaiting payment'}</span> ${esc(r.say)}`, 'No invoices out yet.') +
-        grp('Coming up', later, (r) => `<span class="tag later">next</span> The PM will make this ${esc(r.when || '')}${r.d.connected ? '' : `. <b>${esc(r.d.creator)} hasn't connected Stripe yet</b>`}`, 'Nothing coming up.') +
-        (manual.length ? grp('Invoiced by hand', manual, (r) => esc(r.say), '') : '');
-      document.querySelectorAll('#stCreators button[data-link]').forEach((btn) => btn.onclick = async () => {
-        btn.textContent = 'Making link…';
-        try {
-          const r = await fetch('/api/hq?connect=' + encodeURIComponent(btn.dataset.link), { headers: headers() }); const k = await r.json();
-          if (!r.ok) throw new Error(k.error || 'Failed');
-          try { await navigator.clipboard.writeText(k.url); btn.textContent = 'Copied ✓ (valid 7 days)'; } catch { prompt('Send this link to ' + btn.dataset.link + ':', k.url); btn.textContent = 'Copy connect link'; }
-        } catch (e) { alert(e.message); btn.textContent = 'Copy connect link'; }
-      });
-    } catch (e) { $('stDeals').innerHTML = `<div class="empty">Could not load: ${esc(e.message)}</div>`; }
+      stData = j; renderInvoices(true);
+    } catch (e) { $('invErr').textContent = 'Stripe invoices could not load: ' + e.message; }
   }
-  function renderInvoices() {
-    loadStripeInv();
-    const c = hqData?.chase; if (!c || !$('invRaise')) return;
-    const raise = c.needs_invoice || [], wait = c.awaiting_payment || [], cut = c.cut_pending || [];
-    const sum = (xs) => xs.reduce((n, x) => n + (x.amount || 0), 0);
-    const b = $('invBadge'); b.hidden = !raise.length; b.textContent = raise.length;
+  function renderInvoices(fromStripe) {
+    if (!fromStripe) loadStripeInv();
+    const c = hqData?.chase; if (!c || !$('invTodo')) return;
+    const st = stData || { deals: [], creators: [] };
+    const sum = (xs) => xs.reduce((n, x) => n + (Number(x.amount) || 0), 0);
+    const key = (x) => `${String(x.brand || '').toLowerCase().replace(/[^a-z0-9]/g, '')}|${String(x.creator || '').toLowerCase()}`;
+    const ago = (n) => n == null ? '' : n === 0 ? 'today' : n === 1 ? 'yesterday' : `${n} days ago`;
+    const link = (x) => x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.brand)}</a>` : esc(x.brand || x.video || '');
+    const parts = st.deals.flatMap((d) => d.parts.map((p) => ({ ...p, brand: d.brand, creator: d.creator, url: d.url, billed: d.billed_to, connected: d.connected, rate: d.rate })));
+
+    // 1. Needs you: invoices ready to send, posted videos with no invoice
+    const ready = parts.filter((p) => p.status === 'draft');
+    const making = parts.filter((p) => p.status === 'due');
+    const stripeKeys = new Set(parts.map(key));
+    const raise = (c.needs_invoice || []).filter((x) => !stripeKeys.has(key(x)));
+    // 2. Waiting for payment: Stripe invoices out + invoices the creator sent themselves
+    const outStripe = parts.filter((p) => p.status === 'sent');
+    const outKeys = new Set(outStripe.map(key));
+    const outHand = (c.awaiting_payment || []).filter((x) => !outKeys.has(key(x)));
+    const paid = parts.filter((p) => p.status === 'paid');
+    const cut = c.cut_pending || [];
+    const later = parts.filter((p) => p.status === 'later');
+    const laterKeys = new Set(later.map(key));
+    const soon = [...later, ...(c.coming_up || []).filter((x) => !laterKeys.has(key(x)))];
+    const waitAll = [...outStripe, ...outHand];
+
+    const b = $('invBadge'); const todo = ready.length + raise.length; b.hidden = !todo; b.textContent = todo;
     const stat = (l, v, s, col) => `<div class="ostat"><span class="l">${l}</span><span class="v" style="color:${col}">${v}</span><span class="s">${s}</span></div>`;
-    $('invTot').innerHTML = stat('Not raised yet', usd(sum(raise)), plural(raise.length, 'video'), raise.length ? 'var(--warn)' : 'inherit') + stat('Waiting for payment', usd(sum(wait)), plural(wait.length, 'invoice'), '#38bdf8') + stat('Cut to collect', usd(sum(cut)), plural(cut.length, 'payment'), 'var(--info)');
-    $('invRaiseN').textContent = raise.length ? `${raise.length} · ${usd(sum(raise))}` : '';
-    $('invWaitN').textContent = wait.length ? `${wait.length} · ${usd(sum(wait))}` : '';
+    $('invTot').innerHTML = stat('Waiting for brands to pay', usd(sum(waitAll)), plural(waitAll.length, 'invoice'), '#38bdf8')
+      + stat('Needs you', todo, todo ? `${ready.length ? `${ready.length} ready to send` : ''}${ready.length && raise.length ? ' · ' : ''}${raise.length ? `${raise.length} posted with no invoice` : ''}` : 'nothing to do', todo ? 'var(--warn)' : 'inherit')
+      + stat('NOOCAP cut to collect', usd(sum(cut)), plural(cut.length, 'payment'), 'var(--info)');
+
+    const row = (who, what, amount, note, btns = '', attrs = '') => `<div class="inv-r inv-s" ${attrs}><div class="w"><b>${what}</b> × ${esc(who)}<small>${note}</small></div><span class="a">${amount ? usd(amount) : '<span style="color:var(--dim)">no amount</span>'}</span><span class="bt">${btns}</span></div>`;
+
+    $('invTodoN').textContent = todo + making.length ? `${todo + making.length}` : '';
+    $('invTodo').innerHTML = (ready.length + raise.length + making.length) ? [
+      ...ready.map((p) => row(p.creator, link(p), p.amount, 'invoice ready, send it from Approvals', `<button type="button" class="obtn pri" data-go-ap="1">Open Approvals</button>`)),
+      ...raise.map((x, i) => row(x.creator, link(x), x.amount, `video posted ${ago(x.days)}, no invoice yet`, `${x.remind_ok === false ? '' : '<button type="button" class="obtn" data-act="remind">Copy reminder</button>'}<button type="button" class="obtn pri" data-act="sent">Invoice sent</button>`, `data-k="raise" data-i="${i}"`)),
+      ...making.map((p) => row(p.creator, link(p), p.amount, `<span style="color:var(--muted)">the PM is on it: ${esc(String(p.say || '').replace(/^Creating the invoice in Stripe$/, 'making the invoice'))}</span>`)),
+    ].join('') : '<div class="empty">Nothing to do. 🎉</div>';
+
+    $('invWaitN').textContent = waitAll.length ? `${waitAll.length} · ${usd(sum(waitAll))}` : '';
+    $('invWait').innerHTML = waitAll.length ? [
+      ...outStripe.map((p) => row(p.creator, link(p), p.amount, 'sent with a Stripe pay link · marks itself paid')),
+      ...outHand.map((x, i) => row(x.creator, link(x), x.amount, `<span class="${x.days >= 30 ? 'late' : x.days >= 14 ? 'warn' : ''}">invoiced ${ago(x.days)}</span>`, `<button type="button" class="obtn pri" data-act="paid">Paid</button>`, `data-k="wait" data-i="${i}"`)),
+    ].join('') : '<div class="empty">Nothing waiting for payment.</div>';
+
     $('invCutN').textContent = cut.length ? `${cut.length} · ${usd(sum(cut))}` : '';
-    const amt = (x) => x.amount ? usd(x.amount) : '<span style="color:var(--dim)">no amount</span>';
-    const row = (x, i, kind, days, btns) => `<div class="inv-r" data-k="${kind}" data-i="${i}"><span class="c">${esc(x.creator)}</span><span class="b">${esc(x.brand || x.video || '')}${x.video && String(x.video).toLowerCase() !== String(x.brand || '').toLowerCase() ? `<small>${esc(x.video)}</small>` : ''}</span><span class="a">${amt(x)}</span>${days}<span class="bt">${btns}</span></div>`;
-    $('invRaise').innerHTML = raise.length ? raise.map((x, i) => row(x, i, 'raise', `<span class="d ${x.days >= 7 ? 'late' : x.days >= 3 ? 'warn' : ''}">${x.days ? `posted ${x.days}d ago` : 'posted today'}</span>`, `${x.remind_ok === false ? '<span class="d" style="min-width:auto">remind tomorrow</span>' : '<button type="button" class="obtn" data-act="remind">Copy reminder</button>'}<button type="button" class="obtn pri" data-act="sent">Invoice sent</button>`)).join('') : '<div class="empty">Every posted video has an invoice. 🎉</div>';
-    const soon = c.coming_up || [];
-    $('invSoonN').textContent = soon.length ? `${soon.length}${sum(soon) ? ' · ' + usd(sum(soon)) : ''}` : '';
-    $('invSoon').innerHTML = soon.length ? soon.map((x) => `<div class="inv-r"><span class="c">${esc(x.creator)}</span><span class="b">${esc(x.brand)}<small>${esc(x.doing || '')}</small></span><span class="a">${amt(x)}</span><span class="d">${x.post ? 'posts ' + shortDate(x.post) : 'no post date'}</span><span class="bt">${x.url ? `<a class="obtn" href="${esc(x.url)}" target="_blank" rel="noopener">Card</a>` : ''}</span></div>`).join('') : '<div class="empty">Nothing about to post.</div>';
-    $('invWait').innerHTML = wait.length ? wait.map((x, i) => row(x, i, 'wait', `<span class="d ${x.days >= 30 ? 'late' : x.days >= 14 ? 'warn' : ''}">invoiced ${x.days}d ago</span>`, `<button type="button" class="obtn pri" data-act="paid">Paid</button>`)).join('') : '<div class="empty">Nothing waiting for payment.</div>';
-    $('invCut').innerHTML = cut.length ? cut.map((x, i) => row(x, i, 'cut', `<span class="d">${x.cut_percent}% · paid ${x.days}d ago</span>`, `<button type="button" class="obtn pri" data-act="cut">Collected</button>`)).join('') : '<div class="empty">No cut waiting to be collected.</div>';
-    const lists = { raise, wait, cut };
+    $('invCut').innerHTML = cut.length ? cut.map((x, i) => row(x.creator, link(x), x.amount, `${x.cut_percent}% · brand paid ${ago(x.days)}`, `<button type="button" class="obtn pri" data-act="cut">Collected</button>`, `data-k="cut" data-i="${i}"`)).join('') : '<div class="empty">No cut waiting to be collected.</div>';
+
+    $('invPaidN').textContent = paid.length ? `${paid.length} · ${usd(sum(paid))}` : '';
+    $('invPaid').innerHTML = paid.length ? paid.map((p) => row(p.creator, link(p), p.amount, 'paid through Stripe')).join('') : '<div class="empty">No Stripe payments yet.</div>';
+
+    $('invSoonN').textContent = soon.length ? `${soon.length} · ${usd(sum(soon))}` : '';
+    $('invSoon').innerHTML = soon.length ? soon.map((x) => row(x.creator, link(x), x.amount, x.status === 'later' ? (x.connected === false ? `${esc(x.creator)} hasn't connected Stripe` : esc(String(x.when || 'once the video is posted'))) : (x.post ? 'posts ' + shortDate(x.post) : 'no post date'))).join('') : '<div class="empty">Nothing about to post.</div>';
+
+    // Stripe connections, one quiet line
+    const off = (st.creators || []).filter((x) => !x.connected);
+    const on = (st.creators || []).filter((x) => x.connected);
+    $('stFoot').innerHTML = st.creators.length ? `Stripe connected: ${on.map((x) => esc(x.name)).join(', ') || 'nobody yet'}${off.length ? ` · not yet: ${off.map((x) => `${esc(x.name)} <button type="button" class="obtn" data-link="${esc(x.name)}">Copy connect link</button>`).join(' ')}` : ''}${st.enabled === false ? ' · <b>automatic invoices are switched off (PAYMENT_KEYS_SECRET missing)</b>' : ''}` : '';
+    document.querySelectorAll('#stFoot button[data-link]').forEach((btn) => btn.onclick = async () => {
+      btn.textContent = 'Making link…';
+      try {
+        const r = await fetch('/api/hq?connect=' + encodeURIComponent(btn.dataset.link), { headers: headers() }); const k = await r.json();
+        if (!r.ok) throw new Error(k.error || 'Failed');
+        try { await navigator.clipboard.writeText(k.url); btn.textContent = 'Copied ✓ (valid 7 days)'; } catch { prompt('Send this link to ' + btn.dataset.link + ':', k.url); btn.textContent = 'Copy connect link'; }
+      } catch (e) { alert(e.message); btn.textContent = 'Copy connect link'; }
+    });
+    document.querySelectorAll('#billing [data-go-ap]').forEach((btn) => btn.onclick = () => { apBox = 'all'; show('approvals'); });
+
+    const lists = { raise, wait: outHand, cut };
     document.querySelectorAll('#billing .inv-r button[data-act]').forEach((btn) => btn.onclick = async () => {
       const r = btn.closest('.inv-r'), x = lists[r.dataset.k][+r.dataset.i], act = btn.dataset.act;
       if (act === 'remind') {
@@ -1778,7 +1813,7 @@
       if (!x.rev) return alert('This row has no revenue page to update, open it in Notion.');
       const body = { action: 'set', revPageId: x.rev, ...(act === 'sent' ? { invoiced: todayISO() } : act === 'paid' ? { paid: true, paidDate: todayISO() } : { cutCollected: true }) };
       r.classList.add('busy');
-      try { const res = await fetch('/api/revenue', { method: 'POST', headers: headers(), body: JSON.stringify(body) }); const j = await res.json(); if (!res.ok) throw new Error(j.error || 'Failed'); lists[r.dataset.k].splice(+r.dataset.i, 1); renderInvoices(); loadHQ(true); }
+      try { const res = await fetch('/api/revenue', { method: 'POST', headers: headers(), body: JSON.stringify(body) }); const j = await res.json(); if (!res.ok) throw new Error(j.error || 'Failed'); lists[r.dataset.k].splice(+r.dataset.i, 1); renderInvoices(true); loadHQ(true); }
       catch (e) { r.classList.remove('busy'); alert('Not saved: ' + e.message); }
     });
   }
