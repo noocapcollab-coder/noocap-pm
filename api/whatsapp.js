@@ -354,6 +354,8 @@ async function showDrafts(st, text) {
     await sendText(st.person.number, `*${d.subject}*\nTo: ${d.to || '⚠️ no address yet'}${d.cc ? '\nCc: ' + d.cc : ''}${d.why ? `\n_${String(d.why).replace(/\s*\[[^\]]*\]/g, '').slice(0, 220)}_` : ''}\n\n${d.body}`);
     const sent = await sendButtons(st.person.number, `${d.brand || 'This'} draft · send it, change it, or drop it? To change it, just tell me what to change.`, draftButtons(d.id));
     st.messages.push({ role: 'assistant', content: draftCard(d).slice(0, 1500), meta: 'draft', draft: d.id, wid: sentId(sent), at: new Date().toISOString() });
+    // The file this email will carry, so it can be opened and checked right here
+    if (d.attach && d.attach !== 'None') { const W = await import('../lib/whatsapp.js'); await W.sendDraftAttachment(st.person.number, d.id).catch(() => {}); }
   }
   if (hits.length > 3) await say(st, `…and ${hits.length - 3} more for that brand in Approvals.`);
   return true;

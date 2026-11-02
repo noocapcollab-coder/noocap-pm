@@ -592,3 +592,11 @@ test('a waiting draft is shown (and gets the sent file) instead of the AI writin
   assert.match(askSrc, /The email already written stays as it is/);
   assert.match(askSrc, /do NOT write a new one/);
 });
+
+test('a draft card on WhatsApp is followed by the file the email will carry', async () => {
+  const W = await import('../lib/whatsapp.js');
+  assert.equal(typeof W.sendDraftAttachment, 'function');
+  const fs = await import('node:fs');
+  assert.match(fs.readFileSync(new URL('../lib/whatsapp.js', import.meta.url), 'utf8'), /await sendDraftAttachment\(st\.person\.number, d\.id\)/);
+  assert.match(fs.readFileSync(new URL('../api/whatsapp.js', import.meta.url), 'utf8'), /W\.sendDraftAttachment\(st\.person\.number, d\.id\)/);
+});
