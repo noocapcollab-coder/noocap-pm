@@ -511,3 +511,12 @@ test('a posted sponsor video whose deal is already invoiced is logged as invoice
   assert.match(src, /const billed = billedDeal\(v\);/);
   assert.match(src, /if \(!billed && daysSince\(posted, today\) <= 2/);
 });
+
+test('Stripe invoices paid by bank transfer can be marked Paid; "DREAMINA 2" is not labelled "DREAMINA 2 2"', async () => {
+  const { videoLabel } = await import('../lib/money.js');
+  assert.equal(videoLabel('DREAMINA 2', 'DREAMINA 2'), 'DREAMINA 2');
+  const inv = await import('../lib/invoicing.js');
+  assert.equal(typeof inv.markPaidByHand, 'function');
+  const fs = await import('node:fs');
+  assert.match(fs.readFileSync(new URL('../api/revenue.js', import.meta.url), 'utf8'), /b\.action === 'dealPaid'/);
+});

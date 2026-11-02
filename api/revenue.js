@@ -1,5 +1,6 @@
 // GET  /api/revenue            -> sponsor videos x revenue rows x creator cuts (?fresh=1 skips the 60s cache)
-// POST /api/revenue {action}   -> 'set' (upsert a revenue row), 'cut' (creator cut %), 'delete' (trash a revenue row)
+// POST /api/revenue {action}   -> 'set' (upsert a revenue row), 'cut' (creator cut %), 'delete' (trash a revenue row),
+//                                 'dealPaid' (a Stripe-invoiced deal paid by bank transfer: deal + rows to Paid)
 import { revenueData, setRevenue, setCut, deleteRevenue } from '../lib/revenue.js';
 import { checkAuth } from '../lib/auth.js';
 
@@ -13,6 +14,12 @@ export default async function handler(req, res) {
     if (b.action === 'set') return res.status(200).json(await setRevenue(b));
     if (b.action === 'cut') return res.status(200).json(await setCut(b.creator, b.pct));
     if (b.action === 'delete') return res.status(200).json(await deleteRevenue(b.revPageId));
+    if (b.action === 'dealPaid') {
+      const id = (String(b.deal || '').replace(/-/g, '').match(/[0-9a-f]{32}/i) || [])[0];
+      if (!id) return res.status(400).json({ error: 'deal link required' });
+      const { markPaidByHand } = await import('../lib/invoicing.js');
+      return res.status(200).json(await markPaidByHand(id));
+    }
     return res.status(400).json({ error: 'Unknown action' });
   } catch (e) {
     return res.status(502).json({ error: String(e.message || e).slice(0, 300) });

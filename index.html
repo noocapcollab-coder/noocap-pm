@@ -1778,7 +1778,7 @@
 
     $('invWaitN').textContent = waitAll.length ? `${waitAll.length} · ${usd(sum(waitAll))}` : '';
     $('invWait').innerHTML = waitAll.length ? [
-      ...outStripe.map((p) => row(p.creator, link(p), p.amount, 'sent with a Stripe pay link · marks itself paid')),
+      ...outStripe.map((p, i) => row(p.creator, link(p), p.amount, 'invoice sent · if they pay by card it marks itself paid; if they pay by bank transfer, press Paid', `<button type="button" class="obtn pri" data-act="stpaid">Paid</button>`, `data-k="st" data-i="${i}"`)),
       ...outHand.map((x, i) => row(x.creator, link(x), x.amount, `<span class="${x.days >= 30 ? 'late' : x.days >= 14 ? 'warn' : ''}">invoiced ${ago(x.days)}</span>`, `<button type="button" class="obtn pri" data-act="paid">Paid</button>`, `data-k="wait" data-i="${i}"`)),
     ].join('') : '<div class="empty">Nothing waiting for payment.</div>';
 
@@ -1805,12 +1805,19 @@
     });
     document.querySelectorAll('#billing [data-go-ap]').forEach((btn) => btn.onclick = () => { apBox = 'all'; show('approvals'); });
 
-    const lists = { raise, wait: outHand, cut, nodeal: c.no_deal || [] };
+    const lists = { raise, wait: outHand, cut, nodeal: c.no_deal || [], st: outStripe };
     document.querySelectorAll('#billing .inv-r button[data-act]').forEach((btn) => btn.onclick = async () => {
       const r = btn.closest('.inv-r'), x = lists[r.dataset.k][+r.dataset.i], act = btn.dataset.act;
       if (act === 'remind') {
         const msg = `Hi ${x.creator}, the ${x.brand || ''} video went live${x.posted ? ' on ' + shortDate(x.posted) : ''}, so it's ready to invoice${x.amount ? ` for ${usd(x.amount)}` : ''}. Could you send the invoice to ${x.brand_email || 'the brand'} with noocapcollab@gmail.com in CC? Once it's out we'll follow up with them for the payment. Thanks!`;
         try { await navigator.clipboard.writeText(msg); btn.textContent = 'Copied ✓'; } catch { prompt('Copy this reminder:', msg); }
+        return;
+      }
+      if (act === 'stpaid') {
+        if (!confirm(`Mark ${x.brand} × ${x.creator} as paid by bank transfer? The Stripe pay link is closed and the deal goes to Paid.`)) return;
+        r.classList.add('busy');
+        try { const res = await fetch('/api/revenue', { method: 'POST', headers: headers(), body: JSON.stringify({ action: 'dealPaid', deal: x.url }) }); const j = await res.json(); if (!res.ok) throw new Error(j.error || 'Failed'); stAt = 0; loadStripeInv(true); loadHQ(true); }
+        catch (e) { r.classList.remove('busy'); alert('Not saved: ' + e.message); }
         return;
       }
       if (!x.rev) return alert('This row has no revenue page to update, open it in Notion.');
