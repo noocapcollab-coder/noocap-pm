@@ -785,3 +785,12 @@ test('a WhatsApp message naming another brand never edits the draft on screen', 
   assert.equal(await namesOtherBrand(msg, 'd2', { deals, drafts }), false);
   assert.equal(await namesOtherBrand('add a line about the bio link', 'd1', { deals, drafts }), false);
 });
+
+test('a brand ask nobody answered is found from the deal memory', async () => {
+  const { owedItem } = await import('../lib/owed.js');
+  const deal = { stage: 'Invoiced', channel: 'Email', lastBrand: '2026-11-02T13:01', lastOur: '2026-10-28T14:39', memory: 'AGREED: x<br /><br />OPEN NOW: Two items pending. We owe: the ad codes for TikTok and Instagram for video 2.' };
+  assert.match(owedItem(deal, '2026-11-03').need, /ad codes/);
+  assert.equal(owedItem({ ...deal, lastOur: '2026-11-03T08:00' }, '2026-11-03'), null);
+  assert.equal(owedItem({ ...deal, memory: 'OPEN NOW: We owe: nothing.' }, '2026-11-03'), null);
+  assert.equal(owedItem({ ...deal, channel: 'WhatsApp' }, '2026-11-03'), null);
+});
