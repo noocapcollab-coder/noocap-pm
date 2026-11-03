@@ -60,6 +60,16 @@ test('a contract in an email is spotted (it goes to WhatsApp, never signed by th
 });
 
 // ---------- board cards ----------
+test('a cut sent to the brand moves the board card forward to approval, never backwards (CapCut x ChatGPT, Chris)', () => {
+  const boards = [{ creator: 'Chris', ds: 'x' }];
+  const card = { creator: 'Chris', title: 'CapCut x ChatGPT', status: '7- In Edit', id: 'c1' };
+  assert.equal(cardToMove({ creator: 'Chris', title: 'CapCut x ChatGPT' }, [card], boards, [6, 7, 8])?.card.id, 'c1');
+  assert.equal(cardToMove({ creator: 'Chris', title: 'CapCut x ChatGPT' }, [{ ...card, status: '8- Changes' }], boards, [6, 7, 8])?.card.id, 'c1');
+  // already at approval or past it: left alone
+  assert.equal(cardToMove({ creator: 'Chris', title: 'CapCut x ChatGPT' }, [{ ...card, status: '9- Approval Brand/Creator' }], boards, [6, 7, 8]), null);
+  assert.equal(cardToMove({ creator: 'Chris', title: 'CapCut x ChatGPT' }, [{ ...card, status: '11- Ready' }], boards, [6, 7, 8]), null);
+});
+
 test("an editor finishing the CTAs only counts at Intake 'Posted', never 'To Post' (David's card)", () => {
   assert.equal(INTAKE_DONE_STATUS, 'Posted');
 });
