@@ -794,3 +794,13 @@ test('a brand ask nobody answered is found from the deal memory', async () => {
   assert.equal(owedItem({ ...deal, memory: 'OPEN NOW: We owe: nothing.' }, '2026-11-03'), null);
   assert.equal(owedItem({ ...deal, channel: 'WhatsApp' }, '2026-11-03'), null);
 });
+
+test('owed sweep asks only for things a person hands over, never team work', async () => {
+  const { owedItem } = await import('../lib/owed.js');
+  const base = { stage: 'Script Sent', channel: 'Email', lastBrand: '2026-11-02T13:01', lastOur: '2026-10-28T14:39' };
+  const m = (w) => ({ ...base, memory: `OPEN NOW: We owe: ${w}.` });
+  assert.equal(owedItem(m('revised videos with all requested changes applied'), '2026-11-03'), null);
+  assert.equal(owedItem(m('delivery of the filmed and edited video by end of day'), '2026-11-03'), null);
+  assert.equal(owedItem(m('upload the script to the campaign link on Faved'), '2026-11-03'), null);
+  assert.ok(owedItem(m("Duncan's Luma account email and a signed contract"), '2026-11-03'));
+});
