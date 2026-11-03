@@ -727,7 +727,7 @@ test('an invoice request is caught and answered by the invoice, stale drafts are
   const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
   assert.match(ib, /x\.asks_for_invoice = true;/);
   assert.match(ib, /if \(fromBrand && ageH0\(email\) <= 36\) \{\s*await replaceOlderReplies/);
-  assert.match(ib, /x\.event === 'payment_confirmed'\) for \(const k of \['Payment chase', 'Billing details'\]\)/);
+  assert.match(ib, /x\.event === 'payment_confirmed' && proofFilesOf\(email\)\.length\) for \(const k of/);
   const re = /\b(send|share|provide|issue|need|forward|resend|raise)\b[^.?\n]{0,60}\binvoice\b/i;
   assert.ok(re.test('Could you please provide the invoice for the remaining payment?'));
   assert.ok(!re.test('Thanks, the invoice was paid yesterday.'));
@@ -741,4 +741,12 @@ test('an agency thread with two brands: the email lands on the deal of the brand
   assert.equal(I.matchDealIndex(deals, { threadId: 't1' }, { brand: 'CapCut' }), 1);
   assert.equal(I.matchDealIndex(deals, { threadId: 't1' }, { brand: 'Zeely' }), 0);
   assert.equal(I.matchDealIndex(deals, { threadId: 't1' }, { brand: '' }), 0);
+});
+
+test('a brand saying it paid without any proof is not marked paid; the PM asks for the confirmation', async () => {
+  const fs = await import('node:fs');
+  const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  const c = ib.slice(ib.indexOf("case 'payment_confirmed'"), ib.indexOf("case 'payment_confirmed'") + 2500);
+  assert.match(c, /if \(fromBrand && !hasProof\)/);
+  assert.match(c, /ask them to share the payment confirmation/);
 });
