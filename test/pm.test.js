@@ -750,3 +750,12 @@ test('a brand saying it paid without any proof is not marked paid; the PM asks f
   assert.match(c, /if \(fromBrand && !hasProof\)/);
   assert.match(c, /ask them to share the payment confirmation/);
 });
+
+test('a hand-filed deal with no email thread is treated as a WhatsApp deal (Buzzy × Brad got an email-style invoice ping)', async () => {
+  const fs = await import('node:fs');
+  const b = fs.readFileSync(new URL('../lib/briefs.js', import.meta.url), 'utf8');
+  assert.match(b, /channel: get\('Channel'\) \|\| \(!get\('Thread ID'\) && !get\('Message ID'\) && get\('Deal Source'\) === 'Manually added' \? 'WhatsApp' : 'Email'\)/);
+  const h = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
+  assert.match(h, /waOnce\('Script ready'/);
+  assert.match(h, /waOnce\('Posted'/);
+});
