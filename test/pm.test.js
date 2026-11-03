@@ -687,3 +687,9 @@ test('a brand request (ad code) survives the chat save, and a message naming the
   assert.ok(wa.indexOf('infoAskFor(st, replyTo, text) && (text || file)') < wa.indexOf('await maybeNewDeal(st, text, forwarded)'));
   assert.match(fs.readFileSync(new URL('../lib/ask.js', import.meta.url), 'utf8'), /Never save it as a note or propose a Notion change instead/);
 });
+
+test('the deal follows the brand person who wrote last (Emergent: Kritika -> Gautam)', async () => {
+  const fs = await import('node:fs');
+  const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  assert.match(ib, /own && sender\.toLowerCase\(\) !== String\(deal\.brandEmail\)\.toLowerCase\(\)\)\)\) set\('Brand Email', sender\)/);
+});
