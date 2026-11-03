@@ -2445,11 +2445,11 @@
     };
     const val = () => ({ id: d.id, to: $('fTo').value, cc: $('fCc').value, subject: $('fSubj').value, body: $('fBody').value });
     const btns = () => $('apEdit').querySelectorAll('.ap-actions button');
-    const act = async (action, label) => {
+    const act = async (action, label, extra = {}) => {
       const st = $('aState');
       btns().forEach((b) => b.disabled = true); st.textContent = label; st.className = 'state';
       try {
-        const res = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ ...val(), action }) });
+        const res = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ ...val(), action, ...extra }) });
         const data = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(data.error || 'Error ' + res.status);
         if (action === 'save') { Object.assign(d, val()); st.textContent = 'Saved.'; btns().forEach((b) => b.disabled = false); return; }
@@ -2462,7 +2462,18 @@
     };
     $('aSend').onclick = () => act('send', 'Sending…');
     $('aSave').onclick = () => act('save', 'Saving…');
-    $('aRej').onclick = () => act('reject', 'Rejecting…');
+    // Reject asks what was wrong (one tap): the reason becomes a lesson so the PM doesn't do it again
+    $('aRej').onclick = () => {
+      const st = $('aState');
+      const reasons = [['Wrong info', 'it had wrong or invented information (facts, dates, amounts, links that are not in the conversation)'], ['Wrong person / thread', 'it went to the wrong person or the wrong thread'], ['Not needed', 'the email was not needed (already answered, nothing to say, or not ours to send)'], ['Too long / wrong tone', 'it was too long, wordy or in the wrong tone'], ['Promise we can\'t keep', 'it promised something vague or something we cannot back up']];
+      st.className = 'state';
+      st.innerHTML = 'What was wrong? ' + reasons.map((r, i) => `<button type="button" class="btn sm ghost" data-r="${i}">${r[0]}</button>`).join(' ') + ' <button type="button" class="btn sm ghost" data-r="other">Other…</button> <button type="button" class="btn sm ghost" data-r="skip">Just reject</button>';
+      st.querySelectorAll('button').forEach((b) => b.onclick = () => {
+        const k = b.dataset.r;
+        const reason = k === 'skip' ? '' : k === 'other' ? (prompt('What was wrong with it?') || '') : reasons[Number(k)][1];
+        act('reject', 'Rejecting…', reason ? { reason } : {});
+      });
+    };
     if ($('aBrief')) $('aBrief').onclick = async () => {
       const st = $('aState'), b = $('aBrief');
       if (!confirm(`File the ${d.brand || 'brand'} message as a brief and ping the script writer?`)) return;

@@ -26,6 +26,9 @@
     },
     "api/whatsapp.js": {
       "maxDuration": 60
+    },
+    "api/daily.js": {
+      "maxDuration": 300
     }
   },
   "crons": [
@@ -44,6 +47,10 @@
     {
       "path": "/api/leads",
       "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/daily",
+      "schedule": "40 21 * * *"
     }
   ]
 }

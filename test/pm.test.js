@@ -867,3 +867,40 @@ test('lessons: the ones that fit the situation come first, and real edits count 
   assert.equal(L.changedEnough('Hi there, thanks', 'Hi there, thanks'), false);
   assert.equal(L.changedEnough('Hi Natalie, we will send the codes shortly. Best', 'Hi Natalie, here are the ad codes: IG abc, TikTok xyz. Best'), true);
 });
+
+test('test bank: judging the reader against the right answer', async () => {
+  const { judge } = await import('../lib/evals.js');
+  const { CASES } = await import('../lib/evalcases.js');
+  const runway = CASES.find((c) => c.id === 'runway-payment-queue');
+  assert.deepEqual(judge(runway, { event: 'brand_reply' }), []);
+  assert.equal(judge(runway, { event: 'payment_confirmed', deal_stage: 'Paid' }).length, 2);
+  const weglot = CASES.find((c) => c.id === 'weglot-faved-approval');
+  assert.equal(judge(weglot, { event: 'script_changes' }).length, 1);
+  const inv = CASES.find((c) => c.id === 'invoice-request');
+  assert.deepEqual(judge(inv, { event: 'brand_reply' }), []); // the invoice-request rule catches it even if the AI misses the flag
+  assert.ok(CASES.length >= 10 && CASES.every((c) => c.id && c.email?.text && c.expect));
+});
+
+test('test bank: the fixed guards turn the known mistakes around', async () => {
+  const { applyTextGuards } = await import('../lib/inbox.js');
+  const { CASES } = await import('../lib/evalcases.js');
+  const weglot = CASES.find((c) => c.id === 'weglot-faved-approval');
+  assert.equal(applyTextGuards({ event: 'brief' }, weglot.email).event, 'script_approved');
+  const runway = CASES.find((c) => c.id === 'runway-payment-queue');
+  const x = applyTextGuards({ event: 'payment_confirmed', deal_stage: 'Paid' }, runway.email);
+  assert.equal(x.event, 'brand_reply'); assert.equal(x.deal_stage, null);
+});
+
+test('scorecard: accuracy, per-kind record and earned autopilot', async () => {
+  const S = await import('../lib/scorecard.js');
+  const rows = [...Array(9)].map(() => ({ kind: 'Draft video', status: 'Sent', error: '' })).concat([
+    { kind: 'Reply', status: 'Sent', error: '' }, { kind: 'Reply', status: 'Rejected', error: '' },
+    { kind: 'Posted links', status: 'Sent', error: '' }, { kind: 'Follow-up', status: 'Rejected', error: 'Auto-rejected by system check: filler' },
+  ]);
+  const rec = S.kindRecord(rows, ['Polar Reply']);
+  assert.equal(rec['Draft video'].sent, 9); assert.equal(rec.Reply.rejected, 1); assert.equal(rec.Reply.edited, 1); assert.equal(rec['Follow-up'].autoRejected, 1);
+  assert.deepEqual(S.earnedKinds(rec, ['Follow-up']).map((e) => e.kind), ['Draft video']); // Reply never, Posted links too few
+  assert.equal(S.accuracy({ decisions: 50, corrections: 5 }), 90);
+  const txt = S.scorecardText({ days: 7, decisions: 50, corrections: 5, accuracy: 90, totals: { sent: 40, rejected: 2, autoRejected: 1, edited: 2 }, sr: { agree: 30, disagree: 2, flags: 1 }, test: 'Test bank 2026-11-09: 10/10 right', newLessons: ['A'], repeated: [], spend: { usd: 12.5, budget: 20 }, earned: [{ kind: 'Draft video', sent: 9 }] });
+  assert.match(txt, /90% right/); assert.match(txt, /autopilot Draft video on/);
+});

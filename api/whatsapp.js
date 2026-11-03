@@ -130,6 +130,12 @@ async function handleMessage(m) {
 async function onButton(st, id) {
   const [action, arg] = String(id).split(':');
   if (action === 'DIGEST' || action === 'digest') { await sendDigest(st); return; }
+  if (action === 'why') {
+    const [code, draftId] = String(arg || '').split('|');
+    const REASONS = { info: 'it had wrong or invented information (facts, dates, amounts, links that are not in the conversation)', person: 'it went to the wrong person or the wrong thread', none: 'the email was not needed (already answered, nothing to say, or not ours to send)' };
+    await learnFromReject(st, { rejected: draftId, resolved: null }, REASONS[code] || code);
+    return;
+  }
   if (action === 'catchup') { const { catchUpList } = await import('../lib/whatsapp.js'); await catchUpList(st, new Date(Number(arg) || Date.now() - 864e5).toISOString()); return; }
   if (action === 'send') {
     const { approveAndSend, readDraftById } = await import('../lib/outbox.js');
@@ -142,7 +148,10 @@ async function onButton(st, id) {
   if (action === 'reject') {
     const { rejectDraft } = await import('../lib/outbox.js');
     await rejectDraft(arg);
-    const r = await sendText(st.person.number, '✖️ Rejected. Nothing was sent.\nIf it was wrong, swipe-reply to this with why and I won\'t make that mistake again.');
+    // One tap tells the PM what was wrong, so it learns without anyone typing (or swipe-reply with your own words)
+    const r = await sendButtons(st.person.number, '✖️ Rejected. Nothing was sent.\nWhat was wrong? Tap one, or swipe-reply with your own words, and I won\'t make that mistake again.', [
+      { id: `why:info|${arg}`, title: 'Wrong info' }, { id: `why:person|${arg}`, title: 'Wrong person/thread' }, { id: `why:none|${arg}`, title: 'Not needed' },
+    ]);
     st.messages.push({ role: 'assistant', content: '✖️ Rejected. Nothing was sent.', meta: 'reject-why', rejected: arg, wid: sentId(r), at: new Date().toISOString() });
     return;
   }
