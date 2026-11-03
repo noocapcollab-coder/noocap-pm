@@ -768,3 +768,10 @@ test('payment details are printed as text on the invoice when the deal or creato
   delete process.env.PAYMENT_DETAILS_DUNCAN;
   assert.equal(I.paymentDetails({ creator: 'Duncan' }), '');
 });
+
+test('a duplicate inbox delivery held by another run is not logged as a failure', async () => {
+  const { emailSummary } = await import('../lib/runs.js');
+  const s = emailSummary([{ subject: 'Re: Dreamina', action: 'error', busy: true, why: 'busy' }, { subject: 'Re: X', action: 'error', why: 'boom' }]);
+  assert.equal(s.errors.length, 1);
+  assert.match(s.did[0], /left to the run already handling it/);
+});
