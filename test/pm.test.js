@@ -812,3 +812,13 @@ test('a brief for the next reel gets its own card, an update stays on the curren
   assert.equal(isNextVideo({ is_update: true }, 4), false);   // revised brief for the script in progress
   assert.equal(isNextVideo({}, 0), false);                    // no linked card
 });
+
+test('a deal for several reels is counted from the AI or the deliverables', async () => {
+  const { videoCount } = await import('../lib/briefs.js');
+  assert.equal(videoCount({ video_count: 2 }), 2);
+  assert.equal(videoCount({ deliverables: '2 Instagram reels cross-posted to TikTok' }), 2);
+  assert.equal(videoCount({ deliverables: 'Two sponsored videos' }), 2);
+  assert.equal(videoCount({}, { deliverables: '3 UGC videos' }), 3);
+  assert.equal(videoCount({ deliverables: 'One reel on IG, TikTok, YouTube Shorts' }), 1);
+  assert.equal(videoCount({ deliverables: 'Dedicated reel' }), 1);
+});
