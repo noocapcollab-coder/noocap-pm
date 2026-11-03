@@ -854,3 +854,16 @@ test('second reader: which decisions get checked, and what it is shown', async (
   assert.match(V.RULES, /payment queue/);
   assert.equal(V.DEFAULT_MODE, 'shadow');
 });
+
+test('lessons: the ones that fit the situation come first, and real edits count as corrections', async () => {
+  const L = await import('../lib/lessons.js');
+  const lessons = [
+    { lesson: 'Scheduled is not paid', when: 'A brand writes about paying', do: 'Only Stripe or a receipt counts as paid.', never: 'Mark Paid from a promise', area: 'Payments', seen: 1 },
+    { lesson: 'One video card per reel', when: 'A deal covers 2+ reels', do: 'Make a card per reel.', never: '', area: 'Briefs & scripts', seen: 1 },
+  ];
+  const top = L.relevant(lessons, 'Thank you for the invoice, it is in our payment queue, due to be paid 13/11', { max: 1 });
+  assert.equal(top[0].lesson, 'Scheduled is not paid');
+  assert.match(L.lessonsText(top), /never repeat it/);
+  assert.equal(L.changedEnough('Hi there, thanks', 'Hi there, thanks'), false);
+  assert.equal(L.changedEnough('Hi Natalie, we will send the codes shortly. Best', 'Hi Natalie, here are the ad codes: IG abc, TikTok xyz. Best'), true);
+});

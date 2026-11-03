@@ -110,6 +110,7 @@ async function handleMessage(m) {
   try {
     if (button) await onButton(st, button);
     else if (quoted && file) { await attachFileToDraft(quoted.draft, file); await say(st, `📎 Attached *${file.filename}* to that email. It goes with it when you tap Send.`); if (text && !/^\(sent a file: /.test(text)) await applyEdit(st, quoted.draft, text.replace(/\n?\(sent a file: [^)]*\)$/, '').trim()); }
+    else if (replyTo?.meta === 'reject-why' && text) await learnFromReject(st, replyTo, text);
     else if (quoted && text) await applyEdit(st, quoted.draft, text);
     else if (infoAskFor(st, replyTo, text) && (text || file)) await answerInfoAsk(st, infoAskFor(st, replyTo, text), text, file);
     else if (text && !quoted && [...st.messages].reverse().find((x) => x.role === 'assistant')?.meta !== 'edit-ask' && await maybeNewDeal(st, text, forwarded)) { /* handled */ }
@@ -141,7 +142,8 @@ async function onButton(st, id) {
   if (action === 'reject') {
     const { rejectDraft } = await import('../lib/outbox.js');
     await rejectDraft(arg);
-    await say(st, '✖️ Rejected. Nothing was sent.');
+    const r = await sendText(st.person.number, '✖️ Rejected. Nothing was sent.\nIf it was wrong, swipe-reply to this with why and I won\'t make that mistake again.');
+    st.messages.push({ role: 'assistant', content: '✖️ Rejected. Nothing was sent.', meta: 'reject-why', rejected: arg, wid: sentId(r), at: new Date().toISOString() });
     return;
   }
   if (action === 'edit') {
@@ -278,6 +280,16 @@ async function onText(st, text, quotedText = '') {
 
 // Change a draft from WhatsApp: a short instruction is applied by the PM, a full pasted email replaces the body.
 // The new version is saved in Approvals and shown again with Send / Edit / Reject, nothing goes out until Send.
+// "Why did you reject it?" answered: the reason becomes a lesson the PM reads before the next similar email
+async function learnFromReject(st, msg, why) {
+  const { readDraftById } = await import('../lib/outbox.js');
+  const d = await readDraftById(msg.rejected).catch(() => null);
+  const L = await import('../lib/lessons.js');
+  const r = await L.learn({ correction: `Harsh rejected this ${d?.kind || ''} email${d?.brand ? ` to ${d.brand}` : ''} because: ${why}\n\nThe rejected email:\n${String(d?.body || '').replace(/<br\s*\/?>/g, '\n').slice(0, 1500)}`, source: 'Draft rejected', example: `${d?.brand || ''} ${d?.kind || ''}: ${d?.subject || ''}`.trim() });
+  msg.resolved = 'learned';
+  await say(st, r?.added ? `📝 Got it, I'll remember: *${r.added}*` : r?.repeated ? `📝 Noted. That's a lesson I already had (*${r.repeated}*), now seen ${r.times} times, so I'm treating it as a priority.` : '📝 Noted.');
+}
+
 async function applyEdit(st, id, instruction) {
   const { readDraftById, saveDraft } = await import('../lib/outbox.js');
   const d = await readDraftById(id);
@@ -298,6 +310,8 @@ async function applyEdit(st, id, instruction) {
   const body = (r.content || []).map((c) => c.text || '').join('').trim();
   if (!body) { await say(st, "⚠️ I couldn't rewrite that one. Try saying the change another way, or edit it in Approvals."); return; }
   await saveDraft(id, { body });
+  // Harsh had to change it: what he asked for is a lesson for the next draft like this one
+  try { const L = await import('../lib/lessons.js'); if (L.changedEnough(d.body, body)) await L.learn({ correction: `Harsh changed a ${d.kind || ''} email${d.brand ? ` to ${d.brand}` : ''} before sending. His instruction: "${instruction}".\nBefore:\n${String(d.body || '').replace(/<br\s*\/?>/g, '\n').slice(0, 1200)}\nAfter:\n${String(body).replace(/<br\s*\/?>/g, '\n').slice(0, 1200)}`, source: 'Draft edit', example: `${d.brand || ''} ${d.kind || ''}`.trim() }); } catch { /* learning is best-effort */ }
   try {
     const { log } = await import('../lib/briefs.js');
     await log({ event: `Draft edited on WhatsApp: ${d.subject || id}`, outcome: 'Rule', email: { messageId: '' }, details: `By ${st.person.name}: ${instruction}`.slice(0, 1800), area: 'System', source: 'WhatsApp' });

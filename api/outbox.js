@@ -60,9 +60,20 @@ export default async function handler(req, res) {
       const out = await withRun('Send', `Send ${(body.ids || []).length} standard quotes`, () => sendStandardQuotes(body.ids), { trigger: 'Dashboard', summarize: (r) => ({ did: [`Sent ${r.sent.length} standard quotes`] }) });
       return res.status(200).json(out);
     }
-    if (action === 'reject') { await rejectDraft(id); return res.status(200).json({ ok: true }); }
+    // An edit by hand before sending (or saving) is a correction: learn from it. A reject with a reason is one too.
+    const learnFrom = async (label) => {
+      try {
+        const { readDraftById } = await import('../lib/outbox.js');
+        const L = await import('../lib/lessons.js');
+        const d = await readDraftById(id);
+        if (label === 'reject') { if (String(body.reason || '').trim()) await L.learn({ correction: `Harsh rejected this ${d.kind || ''} email${d.brand ? ` to ${d.brand}` : ''} because: ${body.reason}\n\nThe email:\n${String(d.body || '').replace(/<br\s*\/?>/g, '\n').slice(0, 1500)}`, source: 'Draft rejected', example: `${d.brand || ''} ${d.kind || ''}`.trim() }); return; }
+        if (text && L.changedEnough(d.body, text)) await L.learn({ correction: `Harsh rewrote a ${d.kind || ''} email${d.brand ? ` to ${d.brand}` : ''} before sending.\nBefore:\n${String(d.body || '').replace(/<br\s*\/?>/g, '\n').slice(0, 1200)}\nAfter:\n${String(text).replace(/<br\s*\/?>/g, '\n').slice(0, 1200)}`, source: 'Draft edit', example: `${d.brand || ''} ${d.kind || ''}`.trim() });
+      } catch { /* learning is best-effort */ }
+    };
+    if (action === 'reject') { await learnFrom('reject'); await rejectDraft(id); return res.status(200).json({ ok: true }); }
     if (action === 'save') { await saveDraft(id, { subject, body: text, to, cc }); return res.status(200).json({ ok: true }); }
     if (action === 'send') {
+      await learnFrom('send');
       const out = await withRun('Send', `Send: ${subject || id}`, () => approveAndSend(id, { subject, body: text, to, cc }), { trigger: 'Dashboard', summarize: () => ({ did: [`Sent to ${to || 'brand'}${subject ? ' · ' + subject : ''}`] }) });
       return res.status(200).json(out);
     }
