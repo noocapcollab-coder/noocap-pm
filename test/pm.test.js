@@ -609,7 +609,7 @@ test('a brand asking for something only we have (ad codes) gets a WhatsApp quest
   const ob = fs.readFileSync(new URL('../lib/outbox.js', import.meta.url), 'utf8');
   assert.doesNotMatch(ob, /say we will send it over/);
   const wa = fs.readFileSync(new URL('../api/whatsapp.js', import.meta.url), 'utf8');
-  assert.match(wa, /answerInfoAsk\(st, infoAskFor\(st, replyTo\), text, file\)/);
+  assert.match(wa, /answerInfoAsk\(st, infoAskFor\(st, replyTo, text\), text, file\)/);
   const W = await import('../lib/whatsapp.js');
   assert.equal(typeof W.askForInfo, 'function');
 });
@@ -677,4 +677,13 @@ test('a reply-to Message-ID saved without <> still goes out as a proper In-Reply
 test('the send step passes subject and recipient so n8n can find the brand thread by subject', async () => {
   const fs = await import('node:fs');
   assert.match(fs.readFileSync(new URL('../lib/outbox.js', import.meta.url), 'utf8'), /lookup: inReplyTo \} : \{\}\), subject: d\.subject \|\| '', to: d\.to \|\| ''/);
+});
+
+test('a brand request (ad code) survives the chat save, and a message naming the brand answers it', async () => {
+  const fs = await import('node:fs');
+  const ch = fs.readFileSync(new URL('../lib/chats.js', import.meta.url), 'utf8');
+  assert.match(ch, /m\.infoAsk \? \{ infoAsk: keepAsk\(m\.infoAsk\) \}/);
+  const wa = fs.readFileSync(new URL('../api/whatsapp.js', import.meta.url), 'utf8');
+  assert.ok(wa.indexOf('infoAskFor(st, replyTo, text) && (text || file)') < wa.indexOf('await maybeNewDeal(st, text, forwarded)'));
+  assert.match(fs.readFileSync(new URL('../lib/ask.js', import.meta.url), 'utf8'), /Never save it as a note or propose a Notion change instead/);
 });

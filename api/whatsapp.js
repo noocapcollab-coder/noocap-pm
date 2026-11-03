@@ -109,9 +109,9 @@ async function handleMessage(m) {
   const forwarded = !!(m.context?.forwarded || m.context?.frequently_forwarded);
   try {
     if (button) await onButton(st, button);
-    else if (text && !quoted && [...st.messages].reverse().find((x) => x.role === 'assistant')?.meta !== 'edit-ask' && await maybeNewDeal(st, text, forwarded)) { /* handled */ }
     else if (quoted && text) await applyEdit(st, quoted.draft, text);
-    else if (infoAskFor(st, replyTo) && (text || file)) await answerInfoAsk(st, infoAskFor(st, replyTo), text, file);
+    else if (infoAskFor(st, replyTo, text) && (text || file)) await answerInfoAsk(st, infoAskFor(st, replyTo, text), text, file);
+    else if (text && !quoted && [...st.messages].reverse().find((x) => x.role === 'assistant')?.meta !== 'edit-ask' && await maybeNewDeal(st, text, forwarded)) { /* handled */ }
     else if (file && /^\(sent a file: /.test(text)) await say(st, `📎 Got *${file.filename}*. Tell me what to do with it, e.g. "send this to Atoms × Lindsay" and I'll put the email with this file attached in the brand's thread for you to approve.`);
     else await onText(st, text, replyTo?.content || '');
   } catch (e) {
@@ -347,9 +347,14 @@ async function attachFileToDraft(id, file) {
 
 // The PM asked for something a brand wants (ad codes, analytics). A swipe-reply to that question, or the next message
 // within 2 hours when the question is the last thing we said, is the answer: it becomes the email draft (one AI call).
-function infoAskFor(st, replyTo) {
+export function infoAskFor(st, replyTo, text = '') {
   if (replyTo?.meta === 'info-ask' && replyTo.infoAsk && !replyTo.resolved) return replyTo;
-  const last = [...st.messages].reverse().find((x) => x.role === 'assistant' && !['pending-doc', 'nudge'].includes(x.meta));
+  const open = [...st.messages].reverse().filter((x) => x.role === 'assistant' && x.meta === 'info-ask' && x.infoAsk && !x.resolved && Date.now() - Date.parse(x.at) < 3 * 864e5);
+  // A swipe on the alert that followed the question, or a message that names the brand ("this is emergent ad code …")
+  if (replyTo && open.length) { const q = open.find((x) => replyTo.content && brandKey(replyTo.content).includes(brandKey(x.infoAsk.brand || ''))); if (q && brandKey(q.infoAsk.brand || '').length >= 3) return q; }
+  const named = open.filter((x) => { const b = brandKey(x.infoAsk.brand || ''); return b.length >= 3 && brandKey(text).includes(b); });
+  if (named.length === 1) return named[0];
+  const last = [...st.messages].reverse().find((x) => x.role === 'assistant' && !['pending-doc', 'nudge', 'alert'].includes(x.meta));
   return last?.meta === 'info-ask' && last.infoAsk && !last.resolved && Date.now() - Date.parse(last.at) < 2 * 36e5 ? last : null;
 }
 async function answerInfoAsk(st, msg, text, file) {
