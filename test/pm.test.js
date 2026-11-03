@@ -841,3 +841,16 @@ test('the deal conversation is kept word for word, one entry per email', async (
   const l = transcriptLine({ who: 'brand (Ushni)', date: '2026-10-30T02:07:00Z', subject: 'Re: Polar', text: 'Second video by Thursday.\n\n\n\nThanks' });
   assert.match(l, /^📨 2026-10-30 · brand \(Ushni\) · Re: Polar\nSecond video by Thursday\.\n\nThanks$/);
 });
+
+test('second reader: which decisions get checked, and what it is shown', async () => {
+  const V = await import('../lib/verify.js');
+  assert.equal(V.needsSecondRead({ event: 'not_relevant' }), false);
+  assert.equal(V.needsSecondRead({ event: 'brand_reply', needs_reply: false }), false);
+  assert.equal(V.needsSecondRead({ event: 'payment_confirmed' }), true);
+  assert.equal(V.needsSecondRead({ event: 'brand_reply', asks_for_invoice: true }), true);
+  const t = V.decisionText({ event: 'payment_confirmed', deal_stage: 'Paid', summary: ['in our payment queue'] }, { brand: 'Runway AI', creator: 'Chris', stage: 'Invoiced', finalRate: 3600 });
+  assert.match(t, /Runway AI x Chris \(stage Invoiced, rate 3600\)/);
+  assert.match(t, /event: payment_confirmed/);
+  assert.match(V.RULES, /payment queue/);
+  assert.equal(V.DEFAULT_MODE, 'shadow');
+});
