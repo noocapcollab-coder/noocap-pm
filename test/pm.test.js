@@ -822,3 +822,10 @@ test('a deal for several reels is counted from the AI or the deliverables', asyn
   assert.equal(videoCount({ deliverables: 'One reel on IG, TikTok, YouTube Shorts' }), 1);
   assert.equal(videoCount({ deliverables: 'Dedicated reel' }), 1);
 });
+
+test('"in our payment queue, due to be paid 13/11" is not a payment', async () => {
+  const { isPaymentScheduled } = await import('../lib/inbox.js');
+  assert.equal(isPaymentScheduled('Thank you for sharing the invoice. I can confirm receipt and also that this invoice is now in our payment queue, due to be paid 13/11/26'), true);
+  assert.equal(isPaymentScheduled('The payment has been sent today, please check your account'), false);
+  assert.equal(isPaymentScheduled('Payment is done on our end'), false);
+});
