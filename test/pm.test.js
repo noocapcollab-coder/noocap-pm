@@ -734,3 +734,11 @@ test('an invoice request is caught and answered by the invoice, stale drafts are
   const inv = fs.readFileSync(new URL('../lib/invoicing.js', import.meta.url), 'utf8');
   assert.match(inv, /asked for the invoice\*\*, but I can't raise it yet/);
 });
+
+test('an agency thread with two brands: the email lands on the deal of the brand it is about (Zeely vs CapCut)', async () => {
+  const I = await import('../lib/inbox.js');
+  const deals = [{ brand: 'Zeely AI', creator: 'Duncan', stage: 'Posted', threadId: 't1' }, { brand: 'CapCut', creator: 'Duncan', stage: 'Negotiating', threadId: 't1' }];
+  assert.equal(I.matchDealIndex(deals, { threadId: 't1' }, { brand: 'CapCut' }), 1);
+  assert.equal(I.matchDealIndex(deals, { threadId: 't1' }, { brand: 'Zeely' }), 0);
+  assert.equal(I.matchDealIndex(deals, { threadId: 't1' }, { brand: '' }), 0);
+});
