@@ -804,3 +804,11 @@ test('owed sweep asks only for things a person hands over, never team work', asy
   assert.equal(owedItem(m('upload the script to the campaign link on Faved'), '2026-11-03'), null);
   assert.ok(owedItem(m("Duncan's Luma account email and a signed contract"), '2026-11-03'));
 });
+
+test('a brief for the next reel gets its own card, an update stays on the current one', async () => {
+  const { isNextVideo } = await import('../lib/briefs.js');
+  assert.equal(isNextVideo({ new_video: true }, 12), true);   // SpeakOn reel 2 while reel 1 is posted
+  assert.equal(isNextVideo({ is_update: false }, 12), true);  // card already posted
+  assert.equal(isNextVideo({ is_update: true }, 4), false);   // revised brief for the script in progress
+  assert.equal(isNextVideo({}, 0), false);                    // no linked card
+});
