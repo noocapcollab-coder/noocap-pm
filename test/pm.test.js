@@ -721,3 +721,16 @@ test('Nov 3 audit: hand-sent scripts are recorded, brand matching is exact, upfr
   const intake = fs.readFileSync(new URL('../lib/intake.js', import.meta.url), 'utf8');
   assert.match(intake, /feedback\.filter\(Boolean\)\.join\('\\n'\)/);
 });
+
+test('an invoice request is caught and answered by the invoice, stale drafts are retired when the brand writes again', async () => {
+  const fs = await import('node:fs');
+  const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  assert.match(ib, /x\.asks_for_invoice = true;/);
+  assert.match(ib, /if \(fromBrand && ageH0\(email\) <= 36\) \{\s*await replaceOlderReplies/);
+  assert.match(ib, /x\.event === 'payment_confirmed'\) for \(const k of \['Payment chase', 'Billing details'\]\)/);
+  const re = /\b(send|share|provide|issue|need|forward|resend|raise)\b[^.?\n]{0,60}\binvoice\b/i;
+  assert.ok(re.test('Could you please provide the invoice for the remaining payment?'));
+  assert.ok(!re.test('Thanks, the invoice was paid yesterday.'));
+  const inv = fs.readFileSync(new URL('../lib/invoicing.js', import.meta.url), 'utf8');
+  assert.match(inv, /asked for the invoice\*\*, but I can't raise it yet/);
+});
