@@ -829,3 +829,9 @@ test('"in our payment queue, due to be paid 13/11" is not a payment', async () =
   assert.equal(isPaymentScheduled('The payment has been sent today, please check your account'), false);
   assert.equal(isPaymentScheduled('Payment is done on our end'), false);
 });
+
+test('a brand approval with their validated script is approval, not changes for the writer', async () => {
+  const { isApprovedWithEdits } = await import('../lib/inbox.js');
+  assert.equal(isApprovedWithEdits('Update\nWeglot - Approved Idea, Script & Live Date With Feedback:\nHere is the validated version with few updates :)\n(0:00) If you build...\nNext Step\nDraft video - waiting on creator submission'), true);
+  assert.equal(isApprovedWithEdits('Thanks for the script. Please revise the hook and send us a revised script.'), false);
+});
