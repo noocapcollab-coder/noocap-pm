@@ -682,7 +682,7 @@ test('the send step passes subject and recipient so n8n can find the brand threa
 test('a brand request (ad code) survives the chat save, and a message naming the brand answers it', async () => {
   const fs = await import('node:fs');
   const ch = fs.readFileSync(new URL('../lib/chats.js', import.meta.url), 'utf8');
-  assert.match(ch, /m\.infoAsk \? \{ infoAsk: keepAsk\(m\.infoAsk\) \}/);
+  assert.match(ch, /if \(m\.infoAsk\) o\.infoAsk = keepAsk\(m\.infoAsk\)/);
   const wa = fs.readFileSync(new URL('../api/whatsapp.js', import.meta.url), 'utf8');
   assert.ok(wa.indexOf('infoAskFor(st, replyTo, text) && (text || file)') < wa.indexOf('await maybeNewDeal(st, text, forwarded)'));
   assert.match(fs.readFileSync(new URL('../lib/ask.js', import.meta.url), 'utf8'), /Never save it as a note or propose a Notion change instead/);
@@ -692,4 +692,32 @@ test('the deal follows the brand person who wrote last (Emergent: Kritika -> Gau
   const fs = await import('node:fs');
   const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
   assert.match(ib, /own && sender\.toLowerCase\(\) !== String\(deal\.brandEmail\)\.toLowerCase\(\)\)\)\) set\('Brand Email', sender\)/);
+});
+
+test('Nov 3 audit: drafts are checked for filler, placeholders and the wrong creator signature', async () => {
+  const O = await import('../lib/outbox.js');
+  const a = O.checkDraft({ body: "Hi,\n\nWe'll get the ad codes over to you today.\n\nBest,\nChris's Team", creator: 'Lindsay' });
+  assert.match(a.body, /Lindsay's Team\s*$/);
+  assert.ok(a.issues.some((i) => /promises/.test(i)));
+  const b = O.checkDraft({ body: 'Whenever <UNKNOWN> is ready, reply here.\n\nBest,\nLindsay\'s Team', creator: 'Lindsay' });
+  assert.ok(b.issues.some((i) => /placeholder/.test(i)));
+  const c = O.checkDraft({ body: 'Here is the ad code: abc. You can pay here: {{invoice_link}}\n\nBest,\nChris\'s Team', creator: 'Chris' });
+  assert.equal(c.issues.length, 0);
+});
+
+test('Nov 3 audit: chat messages keep every field across a save (forwarded deals, script notes, files)', async () => {
+  const C = await import('../lib/chats.js');
+  const m = C.keepMessage({ role: 'assistant', content: 'x', meta: 'deal-confirm', dealText: 'brief', creator: 'Brad', brand: 'Luma', file: { mediaId: '1', filename: 'a.pdf' }, notes: 'n' });
+  assert.equal(m.creator, 'Brad'); assert.equal(m.dealText, 'brief'); assert.equal(m.file.mediaId, '1'); assert.equal(m.notes, 'n');
+});
+
+test('Nov 3 audit: hand-sent scripts are recorded, brand matching is exact, upfront money never closes an unposted deal', async () => {
+  const fs = await import('node:fs');
+  const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  const hr = ib.slice(ib.indexOf('async function handleOurReply'), ib.indexOf('async function handleOurReply') + 400);
+  assert.match(hr, /const atDay = /);
+  assert.match(ib, /deal = fit\.length === 1 \? fit\[0\] : null/);
+  assert.match(ib, /if \(!Number\.isFinite\(st\) && deal\.stage && stageBefore\(deal\.stage, 'Posted'\)\) upfront = true/);
+  const intake = fs.readFileSync(new URL('../lib/intake.js', import.meta.url), 'utf8');
+  assert.match(intake, /feedback\.filter\(Boolean\)\.join\('\\n'\)/);
 });

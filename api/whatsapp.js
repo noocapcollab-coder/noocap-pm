@@ -109,6 +109,7 @@ async function handleMessage(m) {
   const forwarded = !!(m.context?.forwarded || m.context?.frequently_forwarded);
   try {
     if (button) await onButton(st, button);
+    else if (quoted && file) { await attachFileToDraft(quoted.draft, file); await say(st, `📎 Attached *${file.filename}* to that email. It goes with it when you tap Send.`); if (text && !/^\(sent a file: /.test(text)) await applyEdit(st, quoted.draft, text.replace(/\n?\(sent a file: [^)]*\)$/, '').trim()); }
     else if (quoted && text) await applyEdit(st, quoted.draft, text);
     else if (infoAskFor(st, replyTo, text) && (text || file)) await answerInfoAsk(st, infoAskFor(st, replyTo, text), text, file);
     else if (text && !quoted && [...st.messages].reverse().find((x) => x.role === 'assistant')?.meta !== 'edit-ask' && await maybeNewDeal(st, text, forwarded)) { /* handled */ }
@@ -178,9 +179,12 @@ async function resolvePending(st, confirm) {
   const msg = [...st.messages].reverse().find((x) => x.role === 'assistant' && Array.isArray(x.pending) && x.pending.length && !x.resolved);
   if (!msg) { await say(st, 'There is no change waiting for a yes.'); return; }
   const { ask } = await import('../lib/ask.js');
-  const r = await ask({ channel: 'whatsapp', save: false, chatId: st.chatId, messages: [], ...(confirm ? { confirm: msg.pending[0].token } : { cancel: true }) });
+  // Every change listed in the message, not just the first one
+  const replies = [];
+  if (confirm) { for (const pnd of msg.pending) { const r = await ask({ channel: 'whatsapp', save: false, chatId: st.chatId, messages: [], confirm: pnd.token }); replies.push(r.data.reply || r.data.error || 'Done.'); } }
+  else { const r = await ask({ channel: 'whatsapp', save: false, chatId: st.chatId, messages: [], cancel: true }); replies.push(r.data.reply || r.data.error || 'Cancelled.'); }
   msg.resolved = confirm ? 'confirmed' : 'cancelled';
-  await say(st, r.data.reply || r.data.error || 'Done.');
+  await say(st, [...new Set(replies)].join('\n'));
 }
 
 async function onText(st, text, quotedText = '') {
@@ -352,7 +356,9 @@ export function infoAskFor(st, replyTo, text = '') {
   const open = [...st.messages].reverse().filter((x) => x.role === 'assistant' && x.meta === 'info-ask' && x.infoAsk && !x.resolved && Date.now() - Date.parse(x.at) < 3 * 864e5);
   // A swipe on the alert that followed the question, or a message that names the brand ("this is emergent ad code …")
   if (replyTo && open.length) { const q = open.find((x) => replyTo.content && brandKey(replyTo.content).includes(brandKey(x.infoAsk.brand || ''))); if (q && brandKey(q.infoAsk.brand || '').length >= 3) return q; }
-  const named = open.filter((x) => { const b = brandKey(x.infoAsk.brand || ''); return b.length >= 3 && brandKey(text).includes(b); });
+  // ...but a question about it ("any update on Emergent?") is not the answer
+  const asking = /\?\s*$/.test(String(text).trim()) || /^(any|what|when|where|did|has|have|is|are|can|could|how|why|status|update|whats|what's)\b/i.test(String(text).trim());
+  const named = asking ? [] : open.filter((x) => { const b = brandKey(x.infoAsk.brand || ''); return b.length >= 3 && brandKey(text).includes(b); });
   if (named.length === 1) return named[0];
   const last = [...st.messages].reverse().find((x) => x.role === 'assistant' && !['pending-doc', 'nudge', 'alert'].includes(x.meta));
   return last?.meta === 'info-ask' && last.infoAsk && !last.resolved && Date.now() - Date.parse(last.at) < 2 * 36e5 ? last : null;
