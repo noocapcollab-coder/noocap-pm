@@ -835,3 +835,9 @@ test('a brand approval with their validated script is approval, not changes for 
   assert.equal(isApprovedWithEdits('Update\nWeglot - Approved Idea, Script & Live Date With Feedback:\nHere is the validated version with few updates :)\n(0:00) If you build...\nNext Step\nDraft video - waiting on creator submission'), true);
   assert.equal(isApprovedWithEdits('Thanks for the script. Please revise the hook and send us a revised script.'), false);
 });
+
+test('the deal conversation is kept word for word, one entry per email', async () => {
+  const { transcriptLine } = await import('../lib/memory.js');
+  const l = transcriptLine({ who: 'brand (Ushni)', date: '2026-10-30T02:07:00Z', subject: 'Re: Polar', text: 'Second video by Thursday.\n\n\n\nThanks' });
+  assert.match(l, /^📨 2026-10-30 · brand \(Ushni\) · Re: Polar\nSecond video by Thursday\.\n\nThanks$/);
+});
