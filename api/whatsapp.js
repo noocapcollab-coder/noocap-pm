@@ -231,7 +231,7 @@ async function onText(st, text, quotedText = '') {
   const lastA = [...st.messages].reverse().find((x) => x.role === 'assistant' && !['pending-doc', 'nudge', 'morning'].includes(x.meta));
   const aboutDraft = lastA && (lastA.draft || /\bdraft|approvals\b/i.test(lastA.content || ''));
   const verbOnly = /^(send|reject|drop|delete|cancel)( it| this| that)?\.?!?$/i.test(t);
-  if (focus && aboutDraft && !verbOnly && t.length < 400 && !/https?:\/\//i.test(t) && EDIT_WORDS.test(t) && !/\?\s*$/.test(t)) { await applyEdit(st, focus, t); return; }
+  if (focus && aboutDraft && !verbOnly && t.length < 400 && !/https?:\/\//i.test(t) && EDIT_WORDS.test(t) && !/\?\s*$/.test(t) && !(await namesOtherBrand(t, focus))) { await applyEdit(st, focus, t); return; }
 
   // "Send this contract to Atoms × Lindsay" / "mail Atoms": a draft for that brand is already waiting, so show it
   // (with the file they just sent attached) instead of paying the AI to write the same email again
@@ -314,6 +314,19 @@ const brandKey = (x) => String(x || '').toLowerCase().replace(/\.(ai|io|app|co|c
 
 // The draft this chat is about right now: one we just showed (within 2 hours), else the one whose brand came up in
 // the last few messages. Only when exactly one draft fits, so a change never lands on the wrong email.
+// "Runway x Chris: here are the ad codes" while another brand's draft is on screen is news for Runway, never an edit to
+// that other draft. True when the message names a deal brand and the focused draft belongs to a different one.
+export async function namesOtherBrand(text, draftId, { deals, drafts } = {}) {
+  const hay = brandKey(text);
+  if (!deals) { const { openDeals } = await import('../lib/briefs.js'); deals = await openDeals({ withClosed: true }).catch(() => []); }
+  const named = [...new Set(deals.map((d) => d.brand).filter((b) => brandKey(b).length >= 3 && hay.includes(brandKey(b))))];
+  if (!named.length) return false;
+  if (!drafts) { const { listDrafts } = await import('../lib/outbox.js'); drafts = await listDrafts().catch(() => []); }
+  const d = drafts.find((x) => x.id === draftId);
+  if (!d?.brand) return true;
+  return !named.some((b) => brandKey(b) === brandKey(d.brand));
+}
+
 async function focusDraft(st, quotedText = '') {
   const recent = st.messages.slice(-8).filter((x) => x.at && Date.now() - Date.parse(x.at) < 2 * 36e5);
   const shown = [...recent].reverse().find((x) => x.role === 'assistant' && x.draft);

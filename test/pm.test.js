@@ -775,3 +775,13 @@ test('a duplicate inbox delivery held by another run is not logged as a failure'
   assert.equal(s.errors.length, 1);
   assert.match(s.did[0], /left to the run already handling it/);
 });
+
+test('a WhatsApp message naming another brand never edits the draft on screen', async () => {
+  const { namesOtherBrand } = await import('../api/whatsapp.js');
+  const deals = [{ brand: 'Runway' }, { brand: 'Tripo' }];
+  const drafts = [{ id: 'd1', brand: 'Tripo' }, { id: 'd2', brand: 'Runway' }];
+  const msg = 'Runway x Chris\n\nLink and discount code add in Bio\n\nInstagram adcode-xyz';
+  assert.equal(await namesOtherBrand(msg, 'd1', { deals, drafts }), true);
+  assert.equal(await namesOtherBrand(msg, 'd2', { deals, drafts }), false);
+  assert.equal(await namesOtherBrand('add a line about the bio link', 'd1', { deals, drafts }), false);
+});
