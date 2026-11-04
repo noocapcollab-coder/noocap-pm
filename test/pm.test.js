@@ -914,3 +914,10 @@ test('scorecard: accuracy, per-kind record and earned autopilot', async () => {
   const txt = S.scorecardText({ days: 7, decisions: 50, corrections: 5, accuracy: 90, totals: { sent: 40, rejected: 2, autoRejected: 1, edited: 2 }, sr: { agree: 30, disagree: 2, flags: 1 }, test: 'Test bank 2026-11-09: 10/10 right', newLessons: ['A'], repeated: [], spend: { usd: 12.5, budget: 20 }, earned: [{ kind: 'Draft video', sent: 9 }] });
   assert.match(txt, /90% right/); assert.match(txt, /autopilot Draft video on/);
 });
+
+test('a brand hold only pings the script writer when a brief/card exists (Emergent, Nov 4)', async () => {
+  const { holdPingsWriter } = await import('../lib/inbox.js');
+  assert.equal(holdPingsWriter({ brand: 'Emergent' }), false);
+  assert.equal(holdPingsWriter({ brand: 'Emergent', linkedVideo: '' }), false);
+  assert.equal(holdPingsWriter({ brand: 'Weglot', linkedVideo: 'https://app.notion.com/p/abc' }), true);
+});
