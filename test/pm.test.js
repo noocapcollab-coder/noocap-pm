@@ -862,7 +862,7 @@ test('second reader: which decisions get checked, and what it is shown', async (
   assert.match(t, /Runway AI x Chris \(stage Invoiced, rate 3600\)/);
   assert.match(t, /event: payment_confirmed/);
   assert.match(V.RULES, /payment queue/);
-  assert.equal(V.DEFAULT_MODE, 'shadow');
+  assert.equal(V.DEFAULT_MODE, 'off');
 });
 
 test('lessons: the ones that fit the situation come first, and real edits count as corrections', async () => {
