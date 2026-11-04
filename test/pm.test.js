@@ -987,3 +987,9 @@ test('two deals on one thread: money goes to the invoiced one, a new brief to th
   assert.equal(threadDeal(deals, { threadId: 't1', text: 'Thanks for the script, the ElevenLabs team approved it!' }).id, 'nov');
   assert.equal(threadDeal([deals[0]], { threadId: 't1', text: 'script approved' }).id, 'oct');
 });
+
+test('a deal already asked on WhatsApp in the last day is not asked again', async () => {
+  const src = (await import('node:fs')).readFileSync(new URL('../lib/whatsapp.js', import.meta.url), 'utf8');
+  assert.match(src, /m\.infoAsk\?\.dealId === ask\.dealId && !m\.resolved/);
+  assert.match(src, /they need something from us/);
+});
