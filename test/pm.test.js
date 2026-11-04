@@ -939,3 +939,10 @@ test('invoice due days come from the contract terms (Topview: 14 days, not Strip
   assert.equal(termsDueDays('net-45 days from the date the invoice is submitted'), 45);
   assert.equal(termsDueDays('50% upfront, 50% on publish'), null);
 });
+
+test('a late invoice keeps the short due date (Topview posted Sep 18, invoiced Nov 4: 3 days)', async () => {
+  const { dueDaysFor, DUE_DAYS } = await import('../lib/invoicing.js');
+  assert.equal(dueDaysFor({ paymentTerms: 'payable within fourteen (14) days', delivered: '2026-09-18' }, '2026-11-04'), DUE_DAYS);
+  assert.equal(dueDaysFor({ paymentTerms: 'Net 30', delivered: '2026-11-01' }, '2026-11-04'), 30);
+  assert.equal(dueDaysFor({ paymentTerms: '' }, '2026-11-04'), DUE_DAYS);
+});
