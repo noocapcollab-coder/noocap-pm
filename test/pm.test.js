@@ -976,3 +976,14 @@ test('a brand still waiting for something we sent always needs a reply (Hyper3D,
   assert.equal(x.needs_reply, true);
   assert.match(x.we_owe, /script again/);
 });
+
+test('two deals on one thread: money goes to the invoiced one, a new brief to the working one', async () => {
+  const { threadDeal } = await import('../lib/inbox.js');
+  const deals = [
+    { id: 'oct', brand: 'ElevenLabs', stage: 'Invoiced', threadId: 't1', created: '2026-10-23T00:00:00Z' },
+    { id: 'nov', brand: 'ElevenLabs', stage: 'Brief Received', threadId: 't1', created: '2026-11-04T00:00:00Z' },
+  ];
+  assert.equal(threadDeal(deals, { threadId: 't1', text: 'Our finance team has processed the payment for your invoice.' }).id, 'oct');
+  assert.equal(threadDeal(deals, { threadId: 't1', text: 'Thanks for the script, the ElevenLabs team approved it!' }).id, 'nov');
+  assert.equal(threadDeal([deals[0]], { threadId: 't1', text: 'script approved' }).id, 'oct');
+});
