@@ -946,3 +946,13 @@ test('a late invoice keeps the short due date (Topview posted Sep 18, invoiced N
   assert.equal(dueDaysFor({ paymentTerms: 'Net 30', delivered: '2026-11-01' }, '2026-11-04'), 30);
   assert.equal(dueDaysFor({ paymentTerms: '' }, '2026-11-04'), DUE_DAYS);
 });
+
+test('the address a brand gives for invoices is kept and used for chases (GetRamped finance, Nov 4)', async () => {
+  const { billingEmailIn, withBillingEmail, billingEmailOf } = await import('../lib/invoicing.js');
+  assert.equal(billingEmailIn('Hi! Invoices are paid 30 days after they are sent to finance@getramped.com'), 'finance@getramped.com');
+  assert.equal(billingEmailIn('Please send the invoice to ap@brand.io, thanks'), 'ap@brand.io');
+  assert.equal(billingEmailIn('Thanks for the video, looks great'), null);
+  assert.equal(billingEmailOf(withBillingEmail('', 'finance@getramped.com')), 'finance@getramped.com');
+  assert.equal(billingEmailOf(withBillingEmail('{"company_name":"Ramped LLC","email":"celina@getramped.com"}', 'finance@getramped.com')), 'finance@getramped.com');
+  assert.equal(billingEmailOf(withBillingEmail('Company: X | Email: a@b.com', 'finance@getramped.com')), 'finance@getramped.com');
+});
