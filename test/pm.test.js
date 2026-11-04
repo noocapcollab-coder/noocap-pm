@@ -965,3 +965,14 @@ test('brand changes send the board card back to 8- Changes only from edit/approv
   assert.equal(cardToMove({ creator: 'Chris', title: 'CapCut x ChatGPT' }, [card], boards, [7, 9, 10, 11])?.card.id, 'c1');
   assert.equal(cardToMove({ creator: 'Chris', title: 'CapCut x ChatGPT' }, [{ ...card, status: '12- Posted' }], boards, [7, 9, 10, 11]), null);
 });
+
+test('a brand still waiting for something we sent always needs a reply (Hyper3D, Nov 3)', async () => {
+  const { stillWaitingFor, applyTextGuards } = await import('../lib/inbox.js');
+  assert.equal(stillWaitingFor('Okay, got it. Hope to receive the script soon.'), 'script');
+  assert.equal(stillWaitingFor("Hi, we haven't received the invoice yet"), 'invoice');
+  assert.equal(stillWaitingFor('Thanks, the video looks great'), null);
+  const x = { event: 'brand_reply', needs_reply: false };
+  applyTextGuards(x, { text: 'Okay, got it. Hope to receive the script soon.' });
+  assert.equal(x.needs_reply, true);
+  assert.match(x.we_owe, /script again/);
+});
