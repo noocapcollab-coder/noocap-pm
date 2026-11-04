@@ -921,3 +921,12 @@ test('a brand hold only pings the script writer when a brief/card exists (Emerge
   assert.equal(holdPingsWriter({ brand: 'Emergent', linkedVideo: '' }), false);
   assert.equal(holdPingsWriter({ brand: 'Weglot', linkedVideo: 'https://app.notion.com/p/abc' }), true);
 });
+
+test('an email can never move a deal to Invoiced or Paid on its own (Topview × Chris, Nov 4)', async () => {
+  const { aiStage, MONEY_STAGES } = await import('../lib/inbox.js');
+  assert.deepEqual(MONEY_STAGES, ['Invoiced', 'Paid']);
+  assert.equal(aiStage('Invoiced'), null);
+  assert.equal(aiStage('Paid'), null);
+  assert.equal(aiStage('Posted'), 'Posted');
+  assert.equal(aiStage('Script Approved'), 'Script Approved');
+});
