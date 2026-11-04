@@ -930,3 +930,12 @@ test('an email can never move a deal to Invoiced or Paid on its own (Topview × 
   assert.equal(aiStage('Posted'), 'Posted');
   assert.equal(aiStage('Script Approved'), 'Script Approved');
 });
+
+test('invoice due days come from the contract terms (Topview: 14 days, not Stripe default 3)', async () => {
+  const { termsDueDays } = await import('../lib/invoicing.js');
+  assert.equal(termsDueDays('100% within 14 days after the video is live and a valid invoice is received'), 14);
+  assert.equal(termsDueDays('payable within fourteen (14) days'), 14);
+  assert.equal(termsDueDays('Net 30'), 30);
+  assert.equal(termsDueDays('net-45 days from the date the invoice is submitted'), 45);
+  assert.equal(termsDueDays('50% upfront, 50% on publish'), null);
+});
