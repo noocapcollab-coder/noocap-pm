@@ -91,6 +91,22 @@ async function handleMessage(m) {
     const f = m[m.type] || {};
     file = { mediaId: f.id, filename: f.filename || (m.type === 'image' ? 'image.jpg' : 'file'), mime: f.mime_type || '' };
     text = f.caption ? `${f.caption}\n(sent a file: ${file.filename})` : `(sent a file: ${file.filename})`;
+    // A screenshot is read, so its words count like typed text: bank or PayPal details for an invoice, a brand's message,
+    // an address (Harsh, Nov 5: "if I share a screenshot of the bank details, can you read it?"). The file still goes
+    // with any email it is attached to.
+    if (m.type === 'image') {
+      try {
+        const W = await import('../lib/whatsapp.js');
+        const got = await W.downloadMedia(f.id);
+        const { claude, HAIKU } = await import('../lib/claude.js');
+        const r = await claude({ _job: 'whatsapp', model: HAIKU, max_tokens: 800, messages: [{ role: 'user', content: [
+          { type: 'image', source: { type: 'base64', media_type: /^image\/(png|jpeg|gif|webp)$/.test(got.mimeType) ? got.mimeType : 'image/jpeg', data: got.data } },
+          { type: 'text', text: 'Copy out all the text in this screenshot exactly as written (names, numbers, IBAN, account and routing numbers, emails, addresses), one item per line. No commentary.' },
+        ] }] });
+        const read = (r.content || []).map((c) => c.text || '').join('').trim();
+        if (read) text = `${f.caption ? f.caption + '\n' : ''}(sent a screenshot; the text in it reads:)\n${read.slice(0, 3000)}`;
+      } catch (e) { console.error('WhatsApp screenshot read', e.message); }
+    }
   }
   else text = `(sent a ${m.type})`;
   const label = button ? `[tapped ${m.interactive?.button_reply?.title || m.button?.text || button}]` : text;
