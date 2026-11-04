@@ -1095,9 +1095,10 @@
     if (v === 'spend') sp ? renderSpend() : loadSpend();
     if (v === 'followups') fu ? renderFollowups() : loadFollowups();
     if (v === 'team') { if (!hqData) loadHQ(); loadEditorMonth(); }
-    if (v === 'billing') hqData ? renderInvoices() : loadHQ();
-    if (v === 'leads') { hqData ? renderLeadsTab() : loadHQ(); if (!drafts.length) loadApprovals(true); }
-    if (v === 'active') hqData ? (renderActive(), renderHealth()) : loadHQ();
+    // Draw what we have at once, then fetch the latest: a copy loaded hours ago must never stand as the current picture
+    if (v === 'billing') { if (hqData) renderInvoices(); loadHQ(); }
+    if (v === 'leads') { if (hqData) renderLeadsTab(); loadHQ(); if (!drafts.length) loadApprovals(true); }
+    if (v === 'active') { if (hqData) { renderActive(); renderHealth(); } loadHQ(); }
     if (v === 'pricing') pricing ? renderPricing() : loadPricing();
     if (v === 'runs') startRuns(); else stopRuns();
     if (v === 'chat') setTimeout(() => $('q').focus(), 50);
@@ -2496,7 +2497,11 @@
     loadApprovals();
     if (chatId) openChat(chatId);
   }
-  setInterval(() => { if (document.visibilityState === 'visible') { if (view === 'overview' || view === 'hq' || view === 'deals') loadHQ(); if (view === 'flow') loadFlow(); loadApprovals(true); } }, 60000);
+  // Every page drawn from the HQ snapshot refreshes every minute while it is open (Active brands used to keep the copy it
+  // first loaded, so a cut sent hours earlier still showed "we haven't replied", Nov 4)
+  const HQ_VIEWS = ['overview', 'hq', 'deals', 'active', 'leads', 'billing', 'team', 'revenue'];
+  setInterval(() => { if (document.visibilityState === 'visible') { if (HQ_VIEWS.includes(view)) loadHQ(); if (view === 'flow') loadFlow(); loadApprovals(true); } }, 60000);
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && HQ_VIEWS.includes(view)) loadHQ(); });
   setInterval(() => { if (hqData) { $('upd').textContent = 'updated ' + since(hqData.generated_at); renderLive(); } }, 20000);
   boot();
 </script>
