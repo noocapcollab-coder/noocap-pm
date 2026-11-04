@@ -956,3 +956,12 @@ test('the address a brand gives for invoices is kept and used for chases (GetRam
   assert.equal(billingEmailOf(withBillingEmail('{"company_name":"Ramped LLC","email":"celina@getramped.com"}', 'finance@getramped.com')), 'finance@getramped.com');
   assert.equal(billingEmailOf(withBillingEmail('Company: X | Email: a@b.com', 'finance@getramped.com')), 'finance@getramped.com');
 });
+
+test('brand changes send the board card back to 8- Changes only from edit/approval stages (CapCut, Nov 4)', async () => {
+  const { cardToMove, CHANGES_NUMBER } = await import('../lib/intake.js');
+  assert.equal(CHANGES_NUMBER, 8);
+  const boards = [{ creator: 'Chris', ds: 'x' }];
+  const card = { creator: 'Chris', title: 'CapCut x ChatGPT', status: '9- Approval Brand/Creator', id: 'c1' };
+  assert.equal(cardToMove({ creator: 'Chris', title: 'CapCut x ChatGPT' }, [card], boards, [7, 9, 10, 11])?.card.id, 'c1');
+  assert.equal(cardToMove({ creator: 'Chris', title: 'CapCut x ChatGPT' }, [{ ...card, status: '12- Posted' }], boards, [7, 9, 10, 11]), null);
+});
