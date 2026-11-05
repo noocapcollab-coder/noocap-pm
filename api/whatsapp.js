@@ -197,6 +197,7 @@ async function onButton(st, id) {
   if (action === 'noteson') { await sendScriptNotes(st); return; }
   if (action === 'notesno') { const p = pendingNotes(st); if (p) p.resolved = 'cancelled'; await say(st, 'OK, I didn\'t send it.'); return; }
   if (action === 'invpick') { const W = await import('../lib/wainvoice.js'); await W.pickInvoice(st, String(id).slice('invpick:'.length)); return; }
+  if (action === 'invpage') { const W = await import('../lib/wainvoice.js'); await W.startInvoice(st, Number(arg) || 0); return; }
   if (action === 'invgo') { const W = await import('../lib/wainvoice.js'); await W.finishInvoice(st, arg); return; }
   if (action === 'dealwho') { await askWhose(st); return; }
   if (action === 'dealno') { const p = pendingDeal(st); if (p) p.resolved = 'cancelled'; await say(st, 'OK, I left it. Nothing was filed.'); return; }
