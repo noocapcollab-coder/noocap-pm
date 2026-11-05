@@ -1148,3 +1148,13 @@ test('inbox: the creator on the email confirms the creator, not the deal', async
   const br = fs.readFileSync(new URL('../lib/briefs.js', import.meta.url), 'utf8');
   assert.match(br, /!givenDeal && deal && !sameDealParty\(deal, email\)/);
 });
+
+// Nov 5: deals opened from a creator's handover email had no Brand Email (Valchy AI x Valeri, Panda Security x Chris)
+test('handoverBrandEmail: the brand is who our handover email was written to', async () => {
+  const { handoverBrandEmail } = await import('../lib/inbox.js');
+  assert.equal(handoverBrandEmail({ to: 'Kico <kico@partnerly.us>', cc: 'noocapcollab@gmail.com' }), 'kico@partnerly.us');
+  assert.equal(handoverBrandEmail({ to: 'no-reply@luagroup.com', cc: 'business@luagroup.com, noocapcollab@gmail.com' }), 'business@luagroup.com');
+  assert.equal(handoverBrandEmail({ to: 'noocapcollab@gmail.com', cc: 'lindsay@automateaiconsulting.com' }), null);
+  const fs = await import('node:fs');
+  assert.match(fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8'), /else if \(isHandover\(email, x\)\) setIf\(schema, props, 'Brand Email', handoverBrandEmail\(email\)\)/);
+});
