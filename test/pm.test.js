@@ -993,3 +993,16 @@ test('a deal already asked on WhatsApp in the last day is not asked again', asyn
   assert.match(src, /m\.infoAsk\?\.dealId === ask\.dealId && !m\.resolved/);
   assert.match(src, /they need something from us/);
 });
+
+// System check, Nov 5: the test bank case zeely-claimed-paid ("we have already paid the 50% advance") came back as a
+// plain brand_reply, so the payment claim was never checked against Stripe or proof
+test('"we have already paid the advance" is a payment claim; scheduled payments and invoice talk are not', async () => {
+  const { isPaymentClaimed } = await import('../lib/inbox.js');
+  assert.equal(isPaymentClaimed('Hi team,\n\nWe have already paid the 50% advance for this collaboration. Please let us know if you need anything else.'), true);
+  assert.equal(isPaymentClaimed('The payment for the invoice was sent today by bank transfer'), true);
+  assert.equal(isPaymentClaimed("We've paid the invoice, please confirm"), true);
+  assert.equal(isPaymentClaimed('This invoice is now in our payment queue, due to be paid 13/11/26'), false);
+  assert.equal(isPaymentClaimed('The payment is scheduled for processing this week'), false);
+  assert.equal(isPaymentClaimed('Could you please provide the invoice for the remaining payment?'), false);
+  assert.equal(isPaymentClaimed('We will pay once the video is live'), false);
+});
