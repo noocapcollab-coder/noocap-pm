@@ -1080,3 +1080,30 @@ test('an agency pitching another brand in a deal thread, or asking our rate, is 
   assert.ok(briefIsInquiry({ threadId: 't9', text: 'Love your content, what would you charge for one reel?' }, { brand: 'Foo' }, deals));
   assert.equal(briefIsInquiry({ threadId: 't1', text: 'Here is the brief for the Kylon video, please send the script by Friday.' }, { brand: 'Kylon' }, deals), null);
 });
+
+test('one email per Stripe invoice: a waiting or sent invoice email blocks a second one (ChatGPT x Duncan, Nov 5)', async () => {
+  const { invoiceEmailFilter } = await import('../lib/outbox.js');
+  const f = invoiceEmailFilter('extra|in_1UYKs2P2gZWUBjRtue9Kd0kC');
+  assert.deepEqual(f.and[0], { property: 'Stripe Invoice', rich_text: { contains: 'in_1UYKs2P2gZWUBjRtue9Kd0kC' } });
+  assert.deepEqual(f.and[1].or.map((x) => x.select.equals).sort(), ['Draft', 'Sent']);
+  assert.equal(invoiceEmailFilter(''), null);
+  assert.equal(invoiceEmailFilter(undefined), null);
+});
+
+test('a delivery promise like "within 5 business days" is flagged as filler (Readdy x Lindsay, Nov 5)', async () => {
+  const { checkDraft } = await import('../lib/outbox.js');
+  const readdy = 'Hi Harper,\n\nThanks so much for the approval. Filming is in progress now and we expect to have the first cut ready for you within 5 business days.\n\nBest,\nLindsay\'s Team';
+  assert.ok(checkDraft({ body: readdy, creator: 'Lindsay' }).issues.some((i) => /promises/.test(i)));
+  assert.ok(checkDraft({ body: 'We will have it within two weeks.', creator: 'Lindsay' }).issues.length);
+  assert.equal(checkDraft({ body: 'The video goes live on November 9.\n\nBest,\nLindsay\'s Team', creator: 'Lindsay' }).issues.length, 0);
+});
+
+test('undated sponsor cards go to Harsh in one message, the rest counted (post-date ask split in 3, Nov 5)', async () => {
+  const { postDateAskText } = await import('../lib/postdates.js');
+  const cards = Array.from({ length: 17 }, (_, i) => ({ title: `Card ${i + 1}`, creator: 'Chris', status: '11- Ready' }));
+  const t = postDateAskText(cards);
+  assert.match(t, /^🙋 \*17 sponsor cards have no post date\*/);
+  assert.equal((t.match(/^• \*Card/gm) || []).length, 8);
+  assert.match(t, /…and 9 more/);
+  assert.doesNotMatch(postDateAskText(cards.slice(0, 1)), /more/);
+});
