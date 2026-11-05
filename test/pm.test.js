@@ -648,7 +648,9 @@ test('brand change notes go to the editor (not a drafted reply), and the revised
   assert.match(pre, /x\.event === 'brand_reply' && String\(x\.feedback[\s\S]{0,400}x\.event = 'video_feedback'/);
   assert.match(pre, /x\.event = 'script_changes'/);
   const hb = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
-  assert.match(hb, /row\.source !== 'tracker' \|\| round > 1\) && row\.status === 'In Review'/);
+  // revised cuts now go out through Send to Brand per video (brandRoundsToSend), with no approval (Harsh, Nov 5)
+  assert.match(hb, /row\.source !== 'tracker' && round === 1 && row\.status === 'In Review'/);
+  assert.match(hb, /brandRoundsToSend\(/);
   const ob = fs.readFileSync(new URL('../lib/outbox.js', import.meta.url), 'utf8');
   assert.match(ob, /case 'Draft video':[\s\S]{0,700}'With Brand'/);
 });
@@ -1106,4 +1108,23 @@ test('undated sponsor cards go to Harsh in one message, the rest counted (post-d
   assert.equal((t.match(/^• \*Card/gm) || []).length, 8);
   assert.match(t, /…and 9 more/);
   assert.doesNotMatch(postDateAskText(cards.slice(0, 1)), /more/);
+});
+
+// Harsh, Nov 5: a revised cut after the brand's changes goes straight back to the brand (ZEN UGC 3 sat at In Review)
+test('isBrandRound: only brand-change rounds finished after the cutoff', async () => {
+  const { isBrandRound } = await import('../lib/brandsend.js');
+  const row = (o = {}) => ({ last_edited_time: o.edited || '2026-11-06T10:00:00Z', properties: {
+    Status: { type: 'select', select: { name: o.status || 'In Review' } },
+    'Frame.io Link': { type: 'url', url: o.frame === undefined ? 'https://f.io/x' : o.frame },
+    Revisions: { type: 'number', number: o.rev ?? 1 },
+    'Sent To Brand At': { type: 'date', date: o.sent ? { start: o.sent } : null },
+    'Changes Requested At': { type: 'date', date: o.asked === null ? null : { start: o.asked || '2026-11-06T08:00:00Z' } },
+  } });
+  assert.equal(isBrandRound(row()), true);
+  assert.equal(isBrandRound(row({ rev: 0 })), false, 'internal changes stay with Harsh');
+  assert.equal(isBrandRound(row({ rev: 0, sent: '2026-11-05T13:00:00Z' })), true, 'already with the brand');
+  assert.equal(isBrandRound(row({ status: 'Changes' })), false);
+  assert.equal(isBrandRound(row({ frame: null })), false);
+  assert.equal(isBrandRound(row({ asked: null })), false);
+  assert.equal(isBrandRound(row({ edited: '2026-11-04T10:00:00Z', asked: '2026-11-03T10:00:00Z' })), false, 'old rows never emailed out of the blue');
 });
