@@ -1071,3 +1071,12 @@ test('the deal briefing finds the deal a message names, and the creator narrows 
   assert.equal(namedDeals('elevenlabs status?', deals)[0].creator, 'Duncan');
   assert.equal(namedDeals('hi', deals).length, 0);
 });
+
+test('an agency pitching another brand in a deal thread, or asking our rate, is an inquiry, not a brief', async () => {
+  const { briefIsInquiry } = await import('../lib/inbox.js');
+  const deals = [{ brand: 'Kylon', creator: 'Lindsay', threadId: 't1' }];
+  const teamily = { threadId: 't1', text: "Yes, thank you! Alyssa will follow up regarding the Kylon payment.\\nI also wanted to introduce another project: Teamily. Could you please share your current rate for a video integration?" };
+  assert.ok(briefIsInquiry(teamily, { brand: 'Teamily' }, deals));
+  assert.ok(briefIsInquiry({ threadId: 't9', text: 'Love your content, what would you charge for one reel?' }, { brand: 'Foo' }, deals));
+  assert.equal(briefIsInquiry({ threadId: 't1', text: 'Here is the brief for the Kylon video, please send the script by Friday.' }, { brand: 'Kylon' }, deals), null);
+});
