@@ -223,6 +223,8 @@ async function onText(st, text, quotedText = '') {
   // "uploaded <brand>" marks a platform invoice as sent
   {
     const W = await import('../lib/wainvoice.js');
+    const pd = (await import('../lib/postdates.js')).parseDateCommand(t);
+    if (pd) { const P = await import('../lib/postdates.js'); const r = await P.setDateFromChat(pd).catch((e) => ({ error: e.message })); await say(st, r.error ? `I couldn't set it: ${r.error}` : `✅ *${r.title}* (${r.creator}) now posts on ${r.day}${r.before ? ` (was ${r.before})` : ''}. It shows on the calendar now.`); return; }
     if (W.isInvoiceCommand(t)) { await W.startInvoice(st); return; }
     const q = W.quickInvoice(t);
     if (q) { await W.quickStart(st, q); return; }

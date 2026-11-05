@@ -1048,3 +1048,13 @@ test('a brand asking when the draft comes is put to Harsh; plain team work is no
   assert.ok(owedItem({ ...d, memory: 'OPEN NOW: We owe: estimated delivery timeline for first draft.' }, '2026-11-05'));
   assert.equal(owedItem({ ...d, memory: 'OPEN NOW: We owe: the revised cut.' }, '2026-11-05'), null);
 });
+
+test('"date speakon 12 nov" sets a post date; no guessing from loose text', async () => {
+  const { parseDateCommand } = await import('../lib/postdates.js');
+  const now = new Date('2026-11-05T09:00:00Z');
+  assert.deepEqual(parseDateCommand('date speakon 12 nov', now), { brand: 'speakon', day: '2026-11-12' });
+  assert.deepEqual(parseDateCommand('post date Semrush Nov 20', now), { brand: 'Semrush', day: '2026-11-20' });
+  assert.deepEqual(parseDateCommand('date polar 2026-11-18', now), { brand: 'polar', day: '2026-11-18' });
+  assert.deepEqual(parseDateCommand('date speakon 3 jan', now), { brand: 'speakon', day: '2027-01-03' });
+  assert.equal(parseDateCommand('what date is speakon going live?', now), null);
+});
