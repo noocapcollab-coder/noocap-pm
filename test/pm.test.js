@@ -1034,3 +1034,17 @@ test('"invoice semrush 1500" goes straight to that deal with the amount', async 
   assert.equal(W.quickInvoice('invoice'), null);
   assert.equal(W.quickInvoice('invoice for semrush was paid?'), null);
 });
+
+test('a Paid deal whose brand wrote again after the payment still gets its open ask raised', async () => {
+  const { owedItem } = await import('../lib/owed.js');
+  const base = { stage: 'Paid', paidDate: '2026-11-01', lastOur: '2026-10-28T07:12:00Z', memory: 'OPEN NOW: We owe: estimated timeline and confirmation of the brief details.' };
+  assert.ok(owedItem({ ...base, lastBrand: '2026-11-05T09:11:00Z' }, '2026-11-05'));
+  assert.equal(owedItem({ ...base, lastBrand: '2026-10-30T09:11:00Z' }, '2026-11-05'), null);
+});
+
+test('a brand asking when the draft comes is put to Harsh; plain team work is not', async () => {
+  const { owedItem } = await import('../lib/owed.js');
+  const d = { stage: 'Brief Received', lastOur: '2026-10-28', lastBrand: '2026-11-05' };
+  assert.ok(owedItem({ ...d, memory: 'OPEN NOW: We owe: estimated delivery timeline for first draft.' }, '2026-11-05'));
+  assert.equal(owedItem({ ...d, memory: 'OPEN NOW: We owe: the revised cut.' }, '2026-11-05'), null);
+});
