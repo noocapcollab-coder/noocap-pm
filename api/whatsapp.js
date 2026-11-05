@@ -224,6 +224,8 @@ async function onText(st, text, quotedText = '') {
   {
     const W = await import('../lib/wainvoice.js');
     if (W.isInvoiceCommand(t)) { await W.startInvoice(st); return; }
+    const q = W.quickInvoice(t);
+    if (q) { await W.quickStart(st, q); return; }
     const up = W.uploadedCommand(t);
     if (up) { await W.markUploaded(st, up); return; }
     const inv = W.pendingInvoice(st);

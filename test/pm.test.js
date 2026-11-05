@@ -1025,3 +1025,12 @@ test('WhatsApp invoice commands: "invoice" opens the flow, "uploaded Semrush" ma
   assert.equal(W.uploadedCommand('Uploaded the semrush invoice'), 'semrush');
   assert.equal(W.uploadedCommand('I uploaded it'), null);
 });
+
+test('"invoice semrush 1500" goes straight to that deal with the amount', async () => {
+  const W = await import('../lib/wainvoice.js');
+  assert.deepEqual(W.quickInvoice('invoice semrush 1500'), { brand: 'semrush', amount: 1500 });
+  assert.deepEqual(W.quickInvoice('Invoice Polar'), { brand: 'Polar', amount: null });
+  assert.deepEqual(W.quickInvoice('invoice chatgpt $1,800'), { brand: 'chatgpt', amount: 1800 });
+  assert.equal(W.quickInvoice('invoice'), null);
+  assert.equal(W.quickInvoice('invoice for semrush was paid?'), null);
+});
