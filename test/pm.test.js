@@ -1058,3 +1058,16 @@ test('"date speakon 12 nov" sets a post date; no guessing from loose text', asyn
   assert.deepEqual(parseDateCommand('date speakon 3 jan', now), { brand: 'speakon', day: '2027-01-03' });
   assert.equal(parseDateCommand('what date is speakon going live?', now), null);
 });
+
+test('the deal briefing finds the deal a message names, and the creator narrows it', async () => {
+  const { namedDeals } = await import('../lib/briefing.js');
+  const deals = [
+    { brand: 'SpeakOn AI', creator: 'Chris', stage: 'Brief Received', lastBrand: '2026-11-05' },
+    { brand: 'ElevenLabs', creator: 'Duncan', stage: 'Script Sent', lastBrand: '2026-11-04' },
+    { brand: 'ElevenLabs', creator: 'Valeri', stage: 'Paid', lastBrand: '2026-10-20' },
+  ];
+  assert.deepEqual(namedDeals('send the script to speakon', deals).map((d) => d.creator), ['Chris']);
+  assert.deepEqual(namedDeals('tell elevenlabs duncan is filming tomorrow', deals).map((d) => d.creator), ['Duncan']);
+  assert.equal(namedDeals('elevenlabs status?', deals)[0].creator, 'Duncan');
+  assert.equal(namedDeals('hi', deals).length, 0);
+});
