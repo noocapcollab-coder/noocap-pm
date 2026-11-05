@@ -1006,3 +1006,13 @@ test('"we have already paid the advance" is a payment claim; scheduled payments 
   assert.equal(isPaymentClaimed('Could you please provide the invoice for the remaining payment?'), false);
   assert.equal(isPaymentClaimed('We will pay once the video is live'), false);
 });
+
+// System check, Nov 5: the 03:35 IST digest listed "Waiting for PromoCut to approve", "Waiting for payment" and team
+// work ("Editor making the brand's changes", "Send Luma AI the draft script") as things Harsh had to decide
+test('digest asks only about deals that need Harsh, not brand waits or team work', async () => {
+  const { notHarshsCall } = await import('../lib/whatsapp.js');
+  for (const t of ['Waiting for PromoCut to approve or provide feedback on the script', 'Waiting for payment', "Editor making the brand's changes", 'Send Luma AI the draft script (promised 2026-11-02)', 'Lindsay filming the approved script, then submit the draft video on Faved', 'Shreya revising the script', 'Paid, nothing left to do (no NOOCAP cut)'])
+    assert.equal(notHarshsCall(t), true, t);
+  for (const t of ['Waiting on us: Register noocaptools@gmail.com with Atoms tool, then confirm to brand', 'Brand asked for the media kit before going ahead', 'Decide whether to accept the $1,200 counter', ''])
+    assert.equal(notHarshsCall(t), false, t);
+});
