@@ -196,6 +196,8 @@ async function onButton(st, id) {
   if (action === 'dealmail') { await fileNewDeal(st, 'Email'); return; }
   if (action === 'noteson') { await sendScriptNotes(st); return; }
   if (action === 'notesno') { const p = pendingNotes(st); if (p) p.resolved = 'cancelled'; await say(st, 'OK, I didn\'t send it.'); return; }
+  if (action === 'invpick') { const W = await import('../lib/wainvoice.js'); await W.pickInvoice(st, String(id).slice('invpick:'.length)); return; }
+  if (action === 'invgo') { const W = await import('../lib/wainvoice.js'); await W.finishInvoice(st, arg); return; }
   if (action === 'dealwho') { await askWhose(st); return; }
   if (action === 'dealno') { const p = pendingDeal(st); if (p) p.resolved = 'cancelled'; await say(st, 'OK, I left it. Nothing was filed.'); return; }
   await say(st, "I didn't recognise that button. Ask me in a message instead.");
@@ -216,6 +218,16 @@ async function resolvePending(st, confirm) {
 
 async function onText(st, text, quotedText = '') {
   const t = text.trim();
+  // Invoices in a few taps: "invoice" opens the pick-list, an open setup takes the answer to its question,
+  // "uploaded <brand>" marks a platform invoice as sent
+  {
+    const W = await import('../lib/wainvoice.js');
+    if (W.isInvoiceCommand(t)) { await W.startInvoice(st); return; }
+    const up = W.uploadedCommand(t);
+    if (up) { await W.markUploaded(st, up); return; }
+    const inv = W.pendingInvoice(st);
+    if (inv && inv.missing) { await W.answerInvoice(st, inv, t); return; }
+  }
   // We asked whose new deal it is: a creator's name files it
   const p = pendingDeal(st);
   if (p && t.length < 40) {

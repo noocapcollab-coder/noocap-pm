@@ -1016,3 +1016,12 @@ test('digest asks only about deals that need Harsh, not brand waits or team work
   for (const t of ['Waiting on us: Register noocaptools@gmail.com with Atoms tool, then confirm to brand', 'Brand asked for the media kit before going ahead', 'Decide whether to accept the $1,200 counter', ''])
     assert.equal(notHarshsCall(t), false, t);
 });
+
+test('WhatsApp invoice commands: "invoice" opens the flow, "uploaded Semrush" marks it sent', async () => {
+  const W = await import('../lib/wainvoice.js');
+  for (const t of ['invoice', 'Invoices', 'raise invoice', 'raise an invoice?']) assert.equal(W.isInvoiceCommand(t), true, t);
+  for (const t of ['raise the semrush invoice for Lindsay', 'what about the invoice for Topview']) assert.equal(W.isInvoiceCommand(t), false, t);
+  assert.equal(W.uploadedCommand('uploaded Semrush'), 'Semrush');
+  assert.equal(W.uploadedCommand('Uploaded the semrush invoice'), 'semrush');
+  assert.equal(W.uploadedCommand('I uploaded it'), null);
+});
