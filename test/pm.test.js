@@ -1128,3 +1128,23 @@ test('isBrandRound: only brand-change rounds finished after the cutoff', async (
   assert.equal(isBrandRound(row({ asked: null })), false);
   assert.equal(isBrandRound(row({ edited: '2026-11-04T10:00:00Z', asked: '2026-11-03T10:00:00Z' })), false, 'old rows never emailed out of the blue');
 });
+
+// Nov 5: GrowMaxValue's new CapCut brief for Chris was filed onto another agency's CapCut x ChatGPT deal
+test('sameDealParty: same brand from another company on another thread is a new deal', async () => {
+  const { sameDealParty } = await import('../lib/briefs.js');
+  const deal = { brand: 'CapCut', creator: 'Chris', threadId: 'aaa111', brandEmail: 'alisa@capcut-agency.com', threadCc: 'ops@capcut-agency.com' };
+  assert.equal(sameDealParty(deal, { threadId: 'bbb222', from: 'Mia Brown <mia.brown@growmaxvalue.com>' }), false);
+  assert.equal(sameDealParty(deal, { threadId: 'aaa111', from: 'Mia Brown <mia.brown@growmaxvalue.com>' }), true, 'same thread always');
+  assert.equal(sameDealParty(deal, { threadId: 'ccc333', from: 'Alisa <alisa@capcut-agency.com>' }), true, 'same company, new thread');
+  assert.equal(sameDealParty(deal, { threadId: 'ccc333', from: 'ops <ops@mail.capcut-agency.com>' }), true, 'subdomain of a CC');
+  assert.equal(sameDealParty({ ...deal, threadId: '' }, { threadId: 'x', from: 'a@b.com' }), true, 'WhatsApp / hand-added deal');
+  assert.equal(sameDealParty({ ...deal, brandEmail: 'jo@gmail.com', threadCc: '' }, { threadId: 'z', from: 'sam@gmail.com' }), false, 'free mail compares the address');
+});
+
+test('inbox: the creator on the email confirms the creator, not the deal', async () => {
+  const fs = await import('node:fs');
+  const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  assert.match(ib, /!sameThread && x\.from_role === 'brand' && !sameDealParty\(d, email\)/);
+  const br = fs.readFileSync(new URL('../lib/briefs.js', import.meta.url), 'utf8');
+  assert.match(br, /!givenDeal && deal && !sameDealParty\(deal, email\)/);
+});
