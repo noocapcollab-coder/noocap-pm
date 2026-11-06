@@ -1215,3 +1215,13 @@ test('dueDateForBrand: a due date reaches a brand email only when the deal terms
   const fs = await import('node:fs');
   assert.match(fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8'), /Never name a due date or a payment date/);
 });
+
+test('a rate ask on a finished deal opens its own inquiry, whatever the event (Migoo x Brad, Nov 6)', async () => {
+  const { finishedDealInquiry } = await import('../lib/inbox.js');
+  const deals = [{ brand: 'Migoo', creator: 'Brad', threadId: 'm1', stage: 'Paid' }, { brand: 'Kylon', creator: 'Lindsay', threadId: 'k1', stage: 'Script Sent' }];
+  const migoo = { threadId: 'm1', text: 'The Migoo team will be hosting an offline event from December 7 to 12. Would you be interested in participating? If so, could you please let me know your rate for this session?' };
+  assert.ok(finishedDealInquiry(migoo, { event: 'brand_reply', from_role: 'brand' }, deals));
+  assert.equal(finishedDealInquiry(migoo, { event: 'brand_reply', from_role: 'noocap' }, deals), null);
+  assert.equal(finishedDealInquiry({ threadId: 'm1', text: 'Thanks, payment went through.' }, { event: 'brand_reply', from_role: 'brand' }, deals), null);
+  assert.equal(finishedDealInquiry({ threadId: 'k1', text: 'What is your rate for a second reel?' }, { event: 'brand_reply', from_role: 'brand' }, deals), null);
+});
