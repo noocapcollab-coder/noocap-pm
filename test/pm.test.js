@@ -1225,3 +1225,11 @@ test('a rate ask on a finished deal opens its own inquiry, whatever the event (M
   assert.equal(finishedDealInquiry({ threadId: 'm1', text: 'Thanks, payment went through.' }, { event: 'brand_reply', from_role: 'brand' }, deals), null);
   assert.equal(finishedDealInquiry({ threadId: 'k1', text: 'What is your rate for a second reel?' }, { event: 'brand_reply', from_role: 'brand' }, deals), null);
 });
+
+// Nov 7: a brand that said "sending the script to the client" gets nudged after 3 days, not 7
+test('heartbeat: script/video approval waits use the 3-day gap even after a brand holding reply', async () => {
+  const fs = await import('node:fs');
+  const hb = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
+  assert.match(hb, /const holdDays = cardWaits \|\| waitStage === 'Script Sent' \|\| waitStage === 'Submitted' \? followGap\(0\) : 7;/);
+  assert.match(hb, /daysSince\(lastMail\.at\) >= holdDays/);
+});
