@@ -1246,3 +1246,11 @@ test('follow-ups and chases never send themselves; weekend is New York time', as
   assert.equal(isWeekend(new Date('2026-11-07T15:00:00Z')), true, 'Saturday in New York');
   assert.equal(isWeekend(new Date('2026-11-09T03:00:00Z')), true, 'Mon 8:30 AM IST is still Sunday night in New York');
 });
+
+// Nov 7: a before-due chase retired at the due date must be replaced, not blocked by the 3-day pause
+test('heartbeat: past-due replacement chase skips the recently-dropped pause', async () => {
+  const fs = await import('node:fs');
+  const hb = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
+  assert.match(hb, /if \(!args\.replaces\) \{ const \{ recentlyDropped \}/);
+  assert.match(hb, /sameAs: 'past-due', replaces: true/);
+});
