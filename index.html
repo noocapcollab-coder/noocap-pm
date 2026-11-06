@@ -594,7 +594,7 @@
   @media (max-width: 900px) { .ld-cols { grid-template-columns: 1fr; } .ac-r { grid-template-columns: minmax(0, 1fr) auto; } .ac-r .steps { grid-column: 1 / -1; order: 3; } }
   /* ---------- Invoices ---------- */
   #billing { overflow-y: auto; }
-  .inv-tot { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .inv-tot { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .dotc { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 8px; }
   #billing .inv-s { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 14px; align-items: center; }
   #billing .inv-s .w { min-width: 0; }
@@ -793,6 +793,20 @@
     .back { display: inline-flex; }
     .ap-edit textarea.body { min-height: 260px; }
   }
+
+  .inv-chips{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 4px}
+  .inv-chips button{border:1px solid var(--line,#2a2f3a);background:transparent;color:inherit;border-radius:999px;padding:6px 12px;font:500 13px inherit;cursor:pointer}
+  .inv-chips button.on{background:#38bdf8;color:#0b1020;border-color:#38bdf8}
+  .inv-cr{width:100%;border-collapse:collapse;font-size:14px}
+  .inv-cr th{text-align:left;font-weight:500;color:var(--muted);font-size:12px;padding:6px 8px;border-bottom:1px solid var(--line,#2a2f3a)}
+  .inv-cr td{padding:10px 8px;border-bottom:1px solid var(--line,#2a2f3a)}
+  .inv-cr .num{text-align:right;white-space:nowrap}
+  .inv-cr tr.crr{cursor:pointer}
+  .inv-cr tr.crr:hover td{background:rgba(56,189,248,.06)}
+  .inv-cr tr.on td{background:rgba(56,189,248,.12)}
+  .inv-grp{display:flex;justify-content:space-between;align-items:baseline;margin:16px 0 2px;padding-bottom:4px;border-bottom:1px solid var(--line,#2a2f3a);font:600 14px 'Space Grotesk',sans-serif}
+  .inv-grp small{color:var(--muted);font-weight:400}
+  @media (max-width:640px){.inv-cr .hide{display:none}}
 </style>
 </head>
 <body>
@@ -899,8 +913,10 @@
     <div><div class="k" id="invWhen">Money from brands: what to send, what to collect</div><h1>Invoices</h1></div>
   </div>
   <section class="ostats inv-tot" id="invTot" aria-label="Invoice totals"></section>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">By creator <small style="color:var(--muted);font-weight:400">· tap a creator to see only theirs</small></h2><div id="invByCr"><div class="skel"></div></div></section>
+  <div id="invChips" class="inv-chips" role="group" aria-label="Filter by creator"></div>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Needs you <small id="invTodoN"></small></h2><div id="invTodo"><div class="skel"></div></div></section>
-  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Waiting for the brand to pay <small id="invWaitN"></small></h2><div id="invWait"><div class="skel"></div></div></section>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Sent to brands, not paid yet <small id="invWaitN"></small></h2><div id="invWait"><div class="skel"></div></div></section>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">NOOCAP cut to collect <small id="invCutN"></small></h2><div id="invCut"><div class="skel"></div></div></section>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Paid <small id="invPaidN"></small></h2><div id="invPaid"><div class="skel"></div></div></section>
   <details class="ocard" style="gap:0"><summary style="cursor:pointer;font:600 15px 'Space Grotesk',sans-serif">Coming up <small id="invSoonN" style="color:var(--muted);font-weight:400"></small> <small style="color:var(--muted);font-weight:400">· the invoice is made once the video is posted</small></summary><div id="invSoon" style="margin-top:8px"></div></details>
@@ -1723,7 +1739,7 @@
   // Invoices: what's posted but not invoiced, what's invoiced but unpaid, and NOOCAP's cut to collect
   // =====================================================================
   // Automatic Stripe invoices: who is connected, and where each deal's invoice stands
-  let stAt = 0, stData = null;
+  let stAt = 0, stData = null, invCreator = 'all';
   async function loadStripeInv(force) {
     if (!force && Date.now() - stAt < 60e3) return;
     stAt = Date.now();
@@ -1742,7 +1758,7 @@
     const key = (x) => `${String(x.brand || '').toLowerCase().replace(/[^a-z0-9]/g, '').replace(/\d+$/, '')}|${String(x.creator || '').toLowerCase()}`;
     const ago = (n) => n == null ? '' : n === 0 ? 'today' : n === 1 ? 'yesterday' : `${n} days ago`;
     const link = (x) => x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.label || x.brand)}</a>` : esc(x.label || x.brand || x.video || '');
-    const parts = st.deals.flatMap((d) => d.parts.map((p) => ({ ...p, brand: d.brand, creator: d.creator, url: d.url, billed: d.billed_to, connected: d.connected, rate: d.rate })));
+    const parts = st.deals.flatMap((d) => d.parts.map((p) => ({ ...p, brand: d.brand, creator: d.creator, url: d.url, billed: d.billed_to, connected: d.connected, rate: d.rate, sent: d.invoice_sent, due: d.invoice_due })));
 
     // 1. Needs you: invoices ready to send, posted videos with no invoice
     const ready = parts.filter((p) => p.status === 'draft');
@@ -1762,11 +1778,37 @@
 
     const b = $('invBadge'); const todo = ready.length + raise.length; b.hidden = !todo; b.textContent = todo;
     const stat = (l, v, s, col) => `<div class="ostat"><span class="l">${l}</span><span class="v" style="color:${col}">${v}</span><span class="s">${s}</span></div>`;
-    $('invTot').innerHTML = stat('Waiting for brands to pay', usd(sum(waitAll)), plural(waitAll.length, 'invoice'), '#38bdf8')
+    // Each unpaid invoice: when it went out, how old, when it's due, and whether it's late (Harsh, Nov 7: "which invoices
+    // are pending, which amount is yet to come, and by creator")
+    const dayMs = 864e5, todayD = new Date(todayISO());
+    const daysFrom = (d) => d ? Math.max(0, Math.round((todayD - new Date(String(d).slice(0, 10))) / dayMs)) : null;
+    const waitInfo = (x) => {
+      const dateOf = (v) => (typeof v === 'string' && /^\d{4}-\d{2}-\d{2}/.test(v) ? v.slice(0, 10) : null);
+      const sentOn = dateOf(x.sent) || dateOf(x.invoiced) || dateOf(x.invoice_sent) || null, age = x.days != null ? x.days : daysFrom(sentOn);
+      const dueOn = dateOf(x.due) || dateOf(x.invoice_due) || null, overdue = dueOn ? String(dueOn).slice(0, 10) < todayISO() : (age != null && age > 30);
+      return { sentOn, age, dueOn, overdue };
+    };
+    const allCr = [...new Set([...waitAll, ...ready, ...raise, ...making, ...cut, ...soon, ...paid].map((x) => x.creator).filter(Boolean))].sort();
+    if (invCreator !== 'all' && !allCr.includes(invCreator)) invCreator = 'all';
+    const vis = (x) => invCreator === 'all' || x.creator === invCreator;
+    const pick = (xs) => xs.filter(vis);
+    const wv = pick(waitAll), od = wv.filter((x) => waitInfo(x).overdue);
+    const toInvoice = [...ready, ...raise, ...making];
+    $('invTot').innerHTML = stat(invCreator === 'all' ? 'Still to come from brands' : `Still to come · ${esc(invCreator)}`, usd(sum(wv)), plural(wv.length, 'invoice') + ' sent, not paid', '#38bdf8')
+      + stat('Overdue', usd(sum(od)), od.length ? plural(od.length, 'invoice') + ' past due or older than 30 days' : 'nothing late', od.length ? 'var(--bad, #f87171)' : 'inherit')
       + stat('Needs you', todo, todo ? `${ready.length ? `${ready.length} ready to send` : ''}${ready.length && raise.length ? ' · ' : ''}${raise.length ? `${raise.length} posted with no invoice` : ''}` : 'nothing to do', todo ? 'var(--warn)' : 'inherit')
-      + stat('NOOCAP cut to collect', usd(sum(cut)), plural(cut.length, 'payment'), 'var(--info)');
+      + stat('NOOCAP cut to collect', usd(sum(pick(cut))), plural(pick(cut).length, 'payment'), 'var(--info)');
 
-    const row = (who, what, amount, note, btns = '', attrs = '') => `<div class="inv-r inv-s" ${attrs}><div class="w"><b>${what}</b> × ${esc(who)}<small>${note}</small></div><span class="a">${amount ? usd(amount) : '<span style="color:var(--dim)">no amount</span>'}</span><span class="bt">${btns}</span></div>`;
+    const crRows = allCr.map((n) => {
+      const w = waitAll.filter((x) => x.creator === n), ti = toInvoice.filter((x) => x.creator === n), ages = w.map((x) => waitInfo(x).age).filter((a) => a != null);
+      const late = w.filter((x) => waitInfo(x).overdue);
+      return { n, w, ti, oldest: ages.length ? Math.max(...ages) : null, late, paidAmt: sum(paid.filter((x) => x.creator === n)) };
+    }).sort((a, z) => sum(z.w) - sum(a.w) || a.n.localeCompare(z.n));
+    $('invByCr').innerHTML = crRows.length ? `<table class="inv-cr"><tr><th>Creator</th><th class="num">Sent, not paid</th><th class="num">Still to come</th><th class="num hide">Oldest</th><th class="num">Overdue</th><th class="num hide">Not invoiced yet</th></tr>${crRows.map((r) => `<tr class="crr${invCreator === r.n ? ' on' : ''}" data-cr="${esc(r.n)}"><td><b>${esc(r.n)}</b></td><td class="num">${r.w.length || '—'}</td><td class="num"><b>${r.w.length ? usd(sum(r.w)) : '—'}</b></td><td class="num hide">${r.oldest != null ? ago(r.oldest) : '—'}</td><td class="num"${r.late.length ? ' style="color:var(--bad, #f87171)"' : ''}>${r.late.length ? `${r.late.length} · ${usd(sum(r.late))}` : '—'}</td><td class="num hide">${r.ti.length ? `${r.ti.length} · ${usd(sum(r.ti))}` : '—'}</td></tr>`).join('')}<tr><td><b>Total</b></td><td class="num">${waitAll.length}</td><td class="num"><b>${usd(sum(waitAll))}</b></td><td class="num hide"></td><td class="num">${waitAll.filter((x) => waitInfo(x).overdue).length ? usd(sum(waitAll.filter((x) => waitInfo(x).overdue))) : '—'}</td><td class="num hide">${toInvoice.length ? usd(sum(toInvoice)) : '—'}</td></tr></table>` : '<div class="empty">No invoices yet.</div>';
+    $('invChips').innerHTML = ['all', ...allCr].map((n) => `<button type="button" data-cr="${esc(n)}" class="${invCreator === n ? 'on' : ''}">${n === 'all' ? 'All creators' : esc(n)}</button>`).join('');
+    document.querySelectorAll('#invChips button, #invByCr tr.crr').forEach((el) => el.onclick = () => { invCreator = invCreator === el.dataset.cr && el.tagName === 'TR' ? 'all' : el.dataset.cr; renderInvoices(true); });
+
+    const row = (who, what, amount, note, btns = '', attrs = '') => (invCreator !== 'all' && who !== invCreator) ? '' : `<div class="inv-r inv-s" ${attrs}><div class="w"><b>${what}</b> × ${esc(who)}<small>${note}</small></div><span class="a">${amount ? usd(amount) : '<span style="color:var(--dim)">no amount</span>'}</span><span class="bt">${btns}</span></div>`;
 
     $('invTodoN').textContent = todo + making.length ? `${todo + making.length}` : '';
     $('invTodo').innerHTML = (ready.length + raise.length + making.length) ? [
@@ -1777,11 +1819,18 @@
     const noDeal = c.no_deal || [];
     if (noDeal.length) $('invTodo').innerHTML += `<div style="margin:14px 0 4px;font-size:12px;color:var(--muted)">Not in our emails (WhatsApp or other tools) · not counted above. Mark each one so it leaves this list:</div>${noDeal.map((x, i) => row(x.creator, link(x), x.amount, '<span style="color:var(--muted)">only on the creator\'s board</span>', `<button type="button" class="obtn" data-act="skip" title="Handled outside the PM, stop showing it">Hide</button><button type="button" class="obtn" data-act="sent">Invoice sent</button><button type="button" class="obtn pri" data-act="paid">Paid</button>`, `data-k="nodeal" data-i="${i}"`)).join('')}`;
 
-    $('invWaitN').textContent = waitAll.length ? `${waitAll.length} · ${usd(sum(waitAll))}` : '';
-    $('invWait').innerHTML = waitAll.length ? [
-      ...outStripe.map((p, i) => row(p.creator, link(p), p.amount, 'invoice sent · if they pay by card it marks itself paid; if they pay by bank transfer, press Paid', `<button type="button" class="obtn pri" data-act="stpaid">Paid</button>`, `data-k="st" data-i="${i}"`)),
-      ...outHand.map((x, i) => row(x.creator, link(x), x.amount, `<span class="${x.days >= 30 ? 'late' : x.days >= 14 ? 'warn' : ''}">invoiced ${ago(x.days)}</span>`, `<button type="button" class="obtn pri" data-act="paid">Paid</button>`, `data-k="wait" data-i="${i}"`)),
-    ].join('') : '<div class="empty">Nothing waiting for payment.</div>';
+    $('invWaitN').textContent = wv.length ? `${wv.length} · ${usd(sum(wv))} to come` : '';
+    const waitNote = (x, how) => {
+      const w = waitInfo(x), cls = w.overdue ? 'late' : w.age >= 14 ? 'warn' : '';
+      const bits = [w.sentOn ? `sent ${shortDate(w.sentOn)}${w.age != null ? ` (${ago(w.age)})` : ''}` : (w.age != null ? `sent ${ago(w.age)}` : 'sent'), w.dueOn ? `${w.overdue ? 'was due' : 'due'} ${shortDate(w.dueOn)}` : '', how].filter(Boolean);
+      return `<span class="${cls}">${w.overdue ? '⚠️ overdue · ' : ''}${bits.join(' · ')}</span>`;
+    };
+    const waitRows = [
+      ...outStripe.map((p, i) => ({ x: p, html: row(p.creator, link(p), p.amount, waitNote(p, 'Stripe link: marks itself paid by card, press Paid for a bank transfer'), `<button type="button" class="obtn pri" data-act="stpaid">Paid</button>`, `data-k="st" data-i="${i}"`) })),
+      ...outHand.map((x, i) => ({ x, html: row(x.creator, link(x), x.amount, waitNote(x, 'sent by the creator'), `<button type="button" class="obtn pri" data-act="paid">Paid</button>`, `data-k="wait" data-i="${i}"`) })),
+    ].filter((r) => vis(r.x)).sort((a, z) => (waitInfo(z.x).age ?? -1) - (waitInfo(a.x).age ?? -1));
+    const groups = [...new Set(waitRows.map((r) => r.x.creator))].sort((a, z) => sum(waitRows.filter((r) => r.x.creator === z).map((r) => r.x)) - sum(waitRows.filter((r) => r.x.creator === a).map((r) => r.x)));
+    $('invWait').innerHTML = waitRows.length ? groups.map((g) => { const rs = waitRows.filter((r) => r.x.creator === g); return `<div class="inv-grp"><span>${esc(g)}</span><small>${plural(rs.length, 'invoice')} · ${usd(sum(rs.map((r) => r.x)))} to come</small></div>${rs.map((r) => r.html).join('')}`; }).join('') : '<div class="empty">Nothing waiting for payment.</div>';
 
     $('invCutN').textContent = cut.length ? `${cut.length} · ${usd(sum(cut))}` : '';
     $('invCut').innerHTML = cut.length ? cut.map((x, i) => row(x.creator, link(x), x.amount, `${x.cut_percent}% · brand paid ${ago(x.days)}`, `<button type="button" class="obtn pri" data-act="cut">Collected</button>`, `data-k="cut" data-i="${i}"`)).join('') : '<div class="empty">No cut waiting to be collected.</div>';
