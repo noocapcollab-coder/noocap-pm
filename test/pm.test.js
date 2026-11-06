@@ -1274,7 +1274,14 @@ test('script writer channel drops fee / total / package amounts but keeps produc
   const out = forScriptWriter('✏️ Brief updated: Luma AI × Chris\n• Total fee: USD $1,300 for Instagram Reel and Story package\n• Deliverables confirmed: Reel, Story, Comment-to-DM automation\n• Plans start from $25 a month');
   assert.doesNotMatch(out, /1,300/);
   assert.match(out, /Deliverables confirmed/);
-  assert.match(out, /\$25 a month/);
+  assert.doesNotMatch(out, /\$25/, 'no amount of any kind reaches the script writer channel');
+});
+
+test('script writer channel: no amount or money word in any phrasing', async () => {
+  const { forScriptWriter } = await import('../lib/briefs.js');
+  const lines = ['• Budget is 2k USD', '• They will pay USD 900', '• Deal worth €1.200', '• Fee locked in', '• Invoice after posting', '• 50% upfront', '• Rate: 1,300 dollars', '• Brand wants a demo of the Notes feature'];
+  const out = forScriptWriter('✏️ Brief updated: X × Chris ($1,300)\n' + lines.join('\n'));
+  assert.equal(out, '✏️ Brief updated: X × Chris ()\n• Brand wants a demo of the Notes feature');
 });
 
 test('cards never get contract or invoice files', async () => {
