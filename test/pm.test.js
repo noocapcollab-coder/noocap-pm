@@ -1267,3 +1267,18 @@ test('tool-access email after script approval', async () => {
   assert.ok(hb.AUTO_KINDS.includes('Tool access'));
   assert.equal(await ib.askToolAccess({ id: 'x', threadId: '', brand: 'A' }, {}), null, 'no thread, no email');
 });
+
+// Nov 7: "Total fee: USD $1,300 ..." reached Rudraksh's channel
+test('script writer channel drops fee / total / package amounts but keeps product prices', async () => {
+  const { forScriptWriter } = await import('../lib/briefs.js');
+  const out = forScriptWriter('✏️ Brief updated: Luma AI × Chris\n• Total fee: USD $1,300 for Instagram Reel and Story package\n• Deliverables confirmed: Reel, Story, Comment-to-DM automation\n• Plans start from $25 a month');
+  assert.doesNotMatch(out, /1,300/);
+  assert.match(out, /Deliverables confirmed/);
+  assert.match(out, /\$25 a month/);
+});
+
+test('cards never get contract or invoice files', async () => {
+  const { cardFiles } = await import('../lib/briefs.js');
+  const out = cardFiles([{ filename: 'NJ_Agency_x_Chris_Cordero_Luma_Partnership_Agreement.pdf' }, { filename: 'Luma_Brief.pdf' }, { filename: 'INV-003.pdf' }]);
+  assert.deepEqual(out.map((a) => a.filename), ['Luma_Brief.pdf']);
+});
