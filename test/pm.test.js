@@ -1254,3 +1254,16 @@ test('heartbeat: past-due replacement chase skips the recently-dropped pause', a
   assert.match(hb, /if \(!args\.replaces\) \{ const \{ recentlyDropped \}/);
   assert.match(hb, /sameAs: 'past-due', replaces: true/);
 });
+
+// Nov 7: script approved -> ask the brand for tool access on noocaptools@gmail.com, sent automatically
+test('tool-access email after script approval', async () => {
+  const ib = await import('../lib/inbox.js');
+  const body = ib.toolAccessBody({ firstName: 'Yulia', brand: 'ElevenLabs', creator: 'Duncan' });
+  assert.match(body, /^Hi Yulia,/);
+  assert.match(body, /access to ElevenLabs on noocaptools@gmail\.com/);
+  assert.match(body, /let us know once the access has been given/);
+  assert.match(body, /Duncan's Team$/);
+  const hb = await import('../lib/heartbeat.js');
+  assert.ok(hb.AUTO_KINDS.includes('Tool access'));
+  assert.equal(await ib.askToolAccess({ id: 'x', threadId: '', brand: 'A' }, {}), null, 'no thread, no email');
+});
