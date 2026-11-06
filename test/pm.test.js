@@ -1230,6 +1230,9 @@ test('a rate ask on a finished deal opens its own inquiry, whatever the event (M
 test('heartbeat: script/video approval waits use the 3-day gap even after a brand holding reply', async () => {
   const fs = await import('node:fs');
   const hb = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
-  assert.match(hb, /const holdDays = cardWaits \|\| waitStage === 'Script Sent' \|\| waitStage === 'Submitted' \? followGap\(0\) : 7;/);
+  assert.match(hb, /const holdDays = cardWaits \|\| waitStage === 'Script Sent' \|\| waitStage === 'Submitted' \? 3 : 7;/);
+  assert.match(hb, /const SCRIPT_FOLLOW_UPS = 5;/);
+  assert.match(hb, /const SCRIPT_FOLLOW_GAP = 3;/);
+  assert.match(hb, /const gapNow = scriptWait \? SCRIPT_FOLLOW_GAP : followGap/);
   assert.match(hb, /daysSince\(lastMail\.at\) >= holdDays/);
 });
