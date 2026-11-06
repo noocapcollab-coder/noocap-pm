@@ -1289,3 +1289,18 @@ test('cards never get contract or invoice files', async () => {
   const out = cardFiles([{ filename: 'NJ_Agency_x_Chris_Cordero_Luma_Partnership_Agreement.pdf' }, { filename: 'Luma_Brief.pdf' }, { filename: 'INV-003.pdf' }]);
   assert.deepEqual(out.map((a) => a.filename), ['Luma_Brief.pdf']);
 });
+
+test('ElevenLabs: "move forward with the video draft, don\'t publish yet" is script approved plus a posting hold, never script changes or a work hold', async () => {
+  const { applyTextGuards, goAheadToVideo, postingOnlyHold } = await import('../lib/inbox.js');
+  const mail = `Hi Duncan and team,\n\nThank you so much for following up!\n\nDuncan's script has been reviewed. I converted it into a Google Doc so the ElevenLabs team could leave their feedback directly in the document. There is one small note there that I'd like you to keep in mind when creating the video draft:\n\nhttps://docs.google.com/document/d/abc/edit\n\nYou can now move forward with the video draft. However, I wanted to let you know that Huedini hasn't officially launched yet, and it looks like the launch may be slightly delayed. This could also affect the November 13 posting date you mentioned, so please don't publish the video without checking with me first.\n\nThe ElevenLabs team is expected to provide early access to creators working on the Huedini brief. I'd recommend not rushing the video production.\n\nThat said, it's completely up to you. If you'd prefer to start working on the video now, you're welcome to do so.`;
+  assert.equal(goAheadToVideo(mail), true);
+  assert.equal(postingOnlyHold(mail), true);
+  const x = applyTextGuards({ event: 'script_changes', from_role: 'brand', feedback: 'One small note in the linked Google Doc at https://docs.google.com/document/d/abc/edit', on_hold: true, hold_reason: 'Huedini launch delayed' }, { text: mail });
+  assert.equal(x.event, 'script_approved');
+  assert.equal(x.on_hold, false);
+  assert.match(x.posting_hold, /Huedini/);
+  assert.match(x.filming_notes, /docs\.google/);
+  // A real work pause stays a hold, and comments to apply before filming stay script changes
+  assert.equal(postingOnlyHold('Please pause the scripting for now, we are waiting for legal.'), false);
+  assert.equal(goAheadToVideo('Please start filming once you have applied the comments in the doc.'), false);
+});
