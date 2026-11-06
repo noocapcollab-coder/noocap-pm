@@ -1158,3 +1158,25 @@ test('handoverBrandEmail: the brand is who our handover email was written to', a
   const fs = await import('node:fs');
   assert.match(fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8'), /else if \(isHandover\(email, x\)\) setIf\(schema, props, 'Brand Email', handoverBrandEmail\(email\)\)/);
 });
+
+test('no before-due payment check-in once the brand answered the invoice (Runway "scheduled 13/11", Dreamina "submitted", Nov 6)', async () => {
+  const { brandAnsweredInvoice } = await import('../lib/heartbeat.js');
+  // Runway: invoice Oct 29, brand confirmed it is scheduled on Nov 3 after our last email
+  assert.equal(brandAnsweredInvoice({ invoiceSent: '2026-10-29', lastOur: '2026-11-03T10:43:00.000Z', lastBrand: '2026-11-03T12:08:00.000Z' }, true), true);
+  // Dreamina: brand said payment submitted after our last email
+  assert.equal(brandAnsweredInvoice({ invoiceSent: '2026-11-01', lastOur: '2026-11-02T07:12:00.000Z', lastBrand: '2026-11-03T04:30:00.000Z' }, true), true);
+  // Zeely: our invoice email is the last word, so a gentle check-in is fine
+  assert.equal(brandAnsweredInvoice({ invoiceSent: '2026-11-03', lastOur: '2026-11-03T08:17:00.000Z', lastBrand: '2026-11-03T07:56:00.000Z' }, true), false);
+  // past the due date the real chase always goes ahead
+  assert.equal(brandAnsweredInvoice({ invoiceSent: '2026-10-29', lastOur: '2026-11-03T10:43:00.000Z', lastBrand: '2026-11-03T12:08:00.000Z' }, false), false);
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
+  assert.match(src, /!brandAnsweredInvoice\(deal, !!beforeDue\)/);
+});
+
+test('a failed WhatsApp template nudge reports what Meta says about the template (Pratham 132001, Nov 6)', async () => {
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/whatsapp.js', import.meta.url), 'utf8');
+  assert.match(src, /const t = await ensureTemplate\(\)/);
+  assert.match(src, /last\.message = `\$\{last\.message\} \| template/);
+});
