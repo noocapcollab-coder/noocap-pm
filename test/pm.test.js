@@ -1189,3 +1189,18 @@ test('scriptSentFor: an earlier reel\'s Script Sent Date does not block the next
   assert.equal(scriptSentFor({ scriptSent: null }, { created: '2026-11-03T09:40:00Z' }), false);
   assert.equal(scriptSentFor({ scriptSent: '2026-10-14' }, {}), true, 'no card date: keep the old guard');
 });
+
+// Nov 6 afternoon: debug_token gave no WABA, so ensureTemplate could never see or create pm_needs_you (132001 all day)
+test('findWabas: falls back to the businesses the token belongs to when debug_token has no WhatsApp scopes', async () => {
+  const W = await import('../lib/whatsapp.js');
+  const replies = {
+    debug_token: { data: { granular_scopes: [{ scope: 'business_management', target_ids: ['9'] }] } },
+    'me/businesses': { data: [{ id: 'B1' }] },
+    'B1/owned_whatsapp_business_accounts': { data: [{ id: 'W1' }] },
+    'B1/client_whatsapp_business_accounts': { data: [{ id: 'W2' }, { id: 'W1' }] },
+  };
+  const fake = async (url) => { const path = url.split('/v23.0/')[1].split('?')[0]; return { json: async () => replies[path] || {} }; };
+  assert.deepEqual(await W.findWabas(fake, 'v23.0', 't'), ['W1', 'W2']);
+  const direct = async (url) => ({ json: async () => (url.includes('debug_token') ? { data: { granular_scopes: [{ scope: 'whatsapp_business_management', target_ids: ['W7'] }] } } : {}) });
+  assert.deepEqual(await W.findWabas(direct, 'v23.0', 't'), ['W7']);
+});
