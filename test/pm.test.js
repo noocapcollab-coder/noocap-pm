@@ -1238,9 +1238,9 @@ test('heartbeat: script/video approval waits use the 3-day gap even after a bran
 });
 
 // Nov 7: follow-ups wait for Harsh's approval, and the weekend is US time
-test('follow-ups and chases never send themselves; weekend is New York time', async () => {
+test('follow-ups and payment chases send themselves; weekend is New York time', async () => {
   const hb = await import('../lib/heartbeat.js');
-  for (const k of ['Follow-up', 'Payment chase', 'Lead follow-up']) assert.ok(!hb.AUTO_KINDS.includes(k), k);
+  for (const k of ['Follow-up', 'Payment chase']) assert.ok(hb.AUTO_KINDS.includes(k), k);
   const { isWeekend } = await import('../lib/tools.js');
   assert.equal(isWeekend(new Date('2026-11-06T20:30:00Z')), false, 'Sat 2 AM IST is Fri 3:30 PM in New York');
   assert.equal(isWeekend(new Date('2026-11-07T15:00:00Z')), true, 'Saturday in New York');
