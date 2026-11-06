@@ -1180,3 +1180,12 @@ test('a failed WhatsApp template nudge reports what Meta says about the template
   assert.match(src, /const t = await ensureTemplate\(\)/);
   assert.match(src, /last\.message = `\$\{last\.message\} \| template/);
 });
+
+// Nov 6: SpeakOn x Chris reel 2 sat at 5- Script Approval because reel 1's Script Sent Date (Oct 14) was on the deal
+test('scriptSentFor: an earlier reel\'s Script Sent Date does not block the next reel\'s script', async () => {
+  const { scriptSentFor } = await import('../lib/heartbeat.js');
+  assert.equal(scriptSentFor({ scriptSent: '2026-10-14' }, { created: '2026-11-03T09:40:00Z' }), false);
+  assert.equal(scriptSentFor({ scriptSent: '2026-11-05' }, { created: '2026-11-03T09:40:00Z' }), true);
+  assert.equal(scriptSentFor({ scriptSent: null }, { created: '2026-11-03T09:40:00Z' }), false);
+  assert.equal(scriptSentFor({ scriptSent: '2026-10-14' }, {}), true, 'no card date: keep the old guard');
+});
