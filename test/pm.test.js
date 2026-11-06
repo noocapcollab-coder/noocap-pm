@@ -1204,3 +1204,14 @@ test('findWabas: falls back to the businesses the token belongs to when debug_to
   const direct = async (url) => ({ json: async () => (url.includes('debug_token') ? { data: { granular_scopes: [{ scope: 'whatsapp_business_management', target_ids: ['W7'] }] } } : {}) });
   assert.deepEqual(await W.findWabas(direct, 'v23.0', 't'), ['W7']);
 });
+
+// Nov 6 afternoon: Zeely's chase quoted our own Stripe default due date ("on track for payment by November 6th")
+test('dueDateForBrand: a due date reaches a brand email only when the deal terms name one', async () => {
+  const { dueDateForBrand } = await import('../lib/heartbeat.js');
+  assert.equal(dueDateForBrand({ invoiceDue: '2026-11-06', paymentTerms: '' }), null);
+  assert.equal(dueDateForBrand({ invoiceDue: '2026-11-06', paymentTerms: '50% remaining balance due upon confirmation' }), null);
+  assert.equal(dueDateForBrand({ invoiceDue: '2026-12-03', paymentTerms: 'Net 30' }), '2026-12-03');
+  assert.equal(dueDateForBrand({ invoiceDue: null, paymentTerms: 'Net 30' }), null);
+  const fs = await import('node:fs');
+  assert.match(fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8'), /Never name a due date or a payment date/);
+});
