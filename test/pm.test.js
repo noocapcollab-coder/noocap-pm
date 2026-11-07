@@ -1304,3 +1304,14 @@ test('ElevenLabs: "move forward with the video draft, don\'t publish yet" is scr
   assert.equal(postingOnlyHold('Please pause the scripting for now, we are waiting for legal.'), false);
   assert.equal(goAheadToVideo('Please start filming once you have applied the comments in the doc.'), false);
 });
+
+test('Joylo x Chris: follow-ups recorded in the deal memory count toward the limit (counter said 3, history had 8)', async () => {
+  const { memoryFollowUps } = await import('../lib/briefs.js');
+  const mem = 'AGREED: 1400 rate.<br /><br />HISTORY: 2026-09-30 us / brief filed and deal created. 2026-10-01 us / script sent. 2026-10-03 us / follow-up. 2026-10-05 us / follow-up. 2026-10-07 us / follow-up. 2026-10-12 us / follow-up. 2026-10-20 us / follow-up. 2026-10-22 us / follow-up. 2026-10-29 us / follow-up requesting urgent approval. 2026-11-02 us / follow-up demanding response.<br /><br />BILLING: not yet<br /><br />OPEN NOW: no follow-up from brand.';
+  assert.equal(memoryFollowUps(mem, '2026-09-29T20:53:00.000Z'), 8);
+  // Only those after the brand's last reply count
+  assert.equal(memoryFollowUps(mem, '2026-10-21T00:00:00.000Z'), 3);
+  // "2026-11-07 us followed up on script review status" style also counts; brand lines never do
+  assert.equal(memoryFollowUps('HISTORY:\n2026-11-03 us sent script PDF.\n2026-11-07 us followed up on script review status.\n2026-11-08 brand followed up.', '2026-11-03T01:12:00Z'), 1);
+  assert.equal(memoryFollowUps('', null), 0);
+});
