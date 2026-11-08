@@ -1226,6 +1226,21 @@ test('a rate ask on a finished deal opens its own inquiry, whatever the event (M
   assert.equal(finishedDealInquiry({ threadId: 'k1', text: 'What is your rate for a second reel?' }, { event: 'brand_reply', from_role: 'brand' }, deals), null);
 });
 
+// Nov 8: an invite to the next campaign in a finished deal's thread opens its own deal (Dreamina x Chris)
+test('inbox: a new-campaign invite on an invoiced deal is a new inquiry, payment news is not', async () => {
+  const { finishedDealInquiry } = await import('../lib/inbox.js');
+  const deals = [{ brand: 'Dreamina', creator: 'Chris', threadId: 'd1', stage: 'Invoiced' }, { brand: 'Kylon', creator: 'Lindsay', threadId: 'k1', stage: 'Script Sent' }];
+  const dreamina = { threadId: 'd1', text: "Hi,\n\nThanks for confirming that the required hashtags have been added!\n\nWe expect to complete your payment in around 3-5 days.\n\nWe'd also love to invite you to our latest Dreamina campaign at the same rate as our previous collaboration.\n\nCreative Brief: https://example.com/brief" };
+  const r = finishedDealInquiry(dreamina, { event: 'brand_reply', from_role: 'brand' }, deals);
+  assert.ok(r && r.invite && r.onThread.brand === 'Dreamina');
+  assert.ok(finishedDealInquiry(dreamina, { event: 'brief', from_role: 'brand' }, deals)?.invite, 'an invite read as a brief is still a new deal');
+  assert.equal(finishedDealInquiry({ threadId: 'd1', text: 'We expect to complete your payment in around 3-5 days.' }, { event: 'brand_reply', from_role: 'brand' }, deals), null);
+  assert.equal(finishedDealInquiry({ threadId: 'k1', text: "We'd love to invite you to our latest campaign." }, { event: 'brand_reply', from_role: 'brand' }, deals), null, 'live deal: not a new inquiry');
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  assert.match(src, /finishedDealInquiry\(email, x, everything\)/, 'Paid deals must be searched too');
+});
+
 // Nov 7: a brand that said "sending the script to the client" gets nudged after 3 days, not 7
 test('heartbeat: script/video approval waits use the 3-day gap even after a brand holding reply', async () => {
   const fs = await import('node:fs');
