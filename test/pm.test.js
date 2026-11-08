@@ -1330,3 +1330,21 @@ test('Joylo x Chris: follow-ups recorded in the deal memory count toward the lim
   assert.equal(memoryFollowUps('HISTORY:\n2026-11-03 us sent script PDF.\n2026-11-07 us followed up on script review status.\n2026-11-08 brand followed up.', '2026-11-03T01:12:00Z'), 1);
   assert.equal(memoryFollowUps('', null), 0);
 });
+
+// System check Nov 8 night: Chris's team pasted the CapCut script into Mia's thread ("Here's the script draft: ...").
+// The reader filed it as a promise to send the script, so the deal kept "Send CapCut the script" with no Script Sent Date.
+test('a script our side pastes into the thread is the script delivered, not a promise', async () => {
+  const { scriptPromiseKept, handsOverScript } = await import('../lib/inbox.js');
+  const pasted = "Hey,\n\nHere's the script draft:\n\n*Hook:*\n\n*This dog has never worn this bandana...*";
+  const r = scriptPromiseKept(['script'], 'creator', pasted);
+  assert.equal(r.handed, true);
+  assert.deepEqual(r.promised, []);
+  // Talking about the script is still a promise
+  const later = scriptPromiseKept(['script'], 'creator', "We're working on the script and will share it soon.");
+  assert.equal(later.handed, false);
+  assert.deepEqual(later.promised, ['script']);
+  // The brand writing "here's the script" is never our delivery
+  assert.equal(scriptPromiseKept(['script'], 'brand', pasted).handed, false);
+  assert.equal(handsOverScript('Script attached for your review.'), true);
+  assert.equal(handsOverScript('When can you expect the script?'), false);
+});
