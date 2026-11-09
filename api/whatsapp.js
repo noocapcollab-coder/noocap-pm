@@ -480,6 +480,13 @@ async function answerInfoAsk(st, msg, text, file) {
     const id = await uploadToNotion({ filename: file.filename, mimeType: file.mime || got.mimeType, data: got.data });
     if (id) sendFile = [{ type: 'file_upload', file_upload: { id }, name: String(file.filename).slice(0, 100) }];
   }
+  // The answer didn't hold what the brand asked for, so the email could only promise it later: no draft, ask again
+  // (CapCut x Chris, Nov 9: "will send over both UIDs right away" written from a message about another deal)
+  const { checkDraft } = await import('../lib/outbox.js');
+  if (!file && checkDraft({ body: mail.body }).issues.some((i) => /promises to send something later/.test(i))) {
+    await say(st, `That didn't look like the ${a.need} for ${deal.brand}, so I haven't written anything. Swipe-reply to the question with it and I'll draft the email.`);
+    return;
+  }
   msg.resolved = 'answered';
   const r = await createDraft({ kind: 'Reply', deal: here, subject: mail.subject, body: mail.body, attach: sendFile ? 'File' : 'None', sendFile, video: deal.linkedVideo, why: `${deal.brand} asked for: ${a.need}. Written from your WhatsApp answer.`, notify: true });
   if (r.skipped) await say(st, 'A reply for that thread is already waiting, so I showed that one instead.');

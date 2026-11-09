@@ -1499,3 +1499,13 @@ test('a follow-up waits from the cut we just sent, not an older Last Our Reply (
   assert.equal(latestOurEmail(deal, null), '2026-11-05T09:00:00.000Z');
   assert.equal(latestOurEmail({ lastOur: '2026-11-10T10:00:00.000Z' }, '2026-11-09T17:44:00.000Z'), '2026-11-10T10:00:00.000Z');
 });
+
+test('a WhatsApp answer that can only promise the thing later writes no draft (CapCut x Chris, Nov 9)', async () => {
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../api/whatsapp.js', import.meta.url), 'utf8');
+  const fn = src.slice(src.indexOf('async function answerInfoAsk'), src.indexOf('async function showDrafts'));
+  assert.ok(fn.indexOf('promises to send something later') > -1 && fn.indexOf('promises to send something later') < fn.indexOf('createDraft({'));
+  const { checkDraft } = await import('../lib/outbox.js');
+  const { issues } = checkDraft({ body: "We're setting up the Dreamina account now and will send over both UIDs right away so we can get filming started." });
+  assert.ok(issues.some((i) => /promises to send something later/.test(i)));
+});
