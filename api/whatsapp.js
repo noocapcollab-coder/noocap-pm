@@ -420,17 +420,28 @@ async function attachFileToDraft(id, file) {
 
 // The PM asked for something a brand wants (ad codes, analytics). A swipe-reply to that question, or the next message
 // within 2 hours when the question is the last thing we said, is the answer: it becomes the email draft (one AI call).
+// A message that names a different creator is never the answer to this creator's question, even when the brand
+// matches: "Chris X Elevenlabs brand deal, add a new card" became a made-up "we've checked, the post is live" reply to
+// the ElevenLabs × Duncan Instagram question (system check, Nov 9)
+const CREATOR_WORDS = { brad: 'Brad', chris: 'Chris', lindsay: 'Lindsay', emtech: 'Emtech', duncan: 'Duncan', valeri: 'Valeri', valerie: 'Valeri', david: 'David Iya', nicole: 'Nicole', dmytro: 'Dmytro', dymtro: 'Dmytro', jonathan: 'Jonathan' };
+export function namesOtherCreator(text, creator) {
+  const named = [...new Set((String(text).toLowerCase().match(/[a-z]+/g) || []).map((w) => CREATOR_WORDS[w]).filter(Boolean))];
+  if (!named.length || !creator) return false;
+  const own = CREATOR_WORDS[String(creator).split(/\s+/)[0].toLowerCase()] || creator;
+  return !named.includes(own);
+}
 export function infoAskFor(st, replyTo, text = '') {
   if (replyTo?.meta === 'info-ask' && replyTo.infoAsk && !replyTo.resolved) return replyTo;
+  const forOther = (x) => namesOtherCreator(text, x?.infoAsk?.creator);
   const open = [...st.messages].reverse().filter((x) => x.role === 'assistant' && x.meta === 'info-ask' && x.infoAsk && !x.resolved && Date.now() - Date.parse(x.at) < 3 * 864e5);
   // A swipe on the alert that followed the question, or a message that names the brand ("this is emergent ad code …")
-  if (replyTo && open.length) { const q = open.find((x) => replyTo.content && brandKey(replyTo.content).includes(brandKey(x.infoAsk.brand || ''))); if (q && brandKey(q.infoAsk.brand || '').length >= 3) return q; }
+  if (replyTo && open.length) { const q = open.find((x) => replyTo.content && brandKey(replyTo.content).includes(brandKey(x.infoAsk.brand || ''))); if (q && brandKey(q.infoAsk.brand || '').length >= 3 && !forOther(q)) return q; }
   // ...but a question about it ("any update on Emergent?") is not the answer
   const asking = /\?\s*$/.test(String(text).trim()) || /^(any|what|when|where|did|has|have|is|are|can|could|how|why|status|update|whats|what's)\b/i.test(String(text).trim());
-  const named = asking ? [] : open.filter((x) => { const b = brandKey(x.infoAsk.brand || ''); return b.length >= 3 && brandKey(text).includes(b); });
+  const named = asking ? [] : open.filter((x) => { const b = brandKey(x.infoAsk.brand || ''); return b.length >= 3 && brandKey(text).includes(b) && !forOther(x); });
   if (named.length === 1) return named[0];
   const last = [...st.messages].reverse().find((x) => x.role === 'assistant' && !['pending-doc', 'nudge', 'alert'].includes(x.meta));
-  return last?.meta === 'info-ask' && last.infoAsk && !last.resolved && Date.now() - Date.parse(last.at) < 2 * 36e5 ? last : null;
+  return last?.meta === 'info-ask' && last.infoAsk && !last.resolved && !forOther(last) && Date.now() - Date.parse(last.at) < 2 * 36e5 ? last : null;
 }
 async function answerInfoAsk(st, msg, text, file) {
   const a = msg.infoAsk;

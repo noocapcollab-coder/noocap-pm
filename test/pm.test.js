@@ -1365,3 +1365,28 @@ test('a brand email in the creator inbox finds its deal by the brand contact, no
   // Paid or Lost deals are not reopened this way
   assert.equal(dealByContact([{ ...deals[1], stage: 'Paid' }], 'cherish@mcn.noxinfluencer.com', 'Lindsay'), null);
 });
+
+test('a WhatsApp message naming another creator is not the answer to this creator\'s brand question (ElevenLabs x Duncan, Nov 9)', async () => {
+  const { infoAskFor, namesOtherCreator } = await import('../api/whatsapp.js');
+  const at = new Date().toISOString();
+  const ask = { role: 'assistant', meta: 'info-ask', at, content: '🙋 ElevenLabs × Duncan is asking for: post status', infoAsk: { brand: 'ElevenLabs', creator: 'Duncan', dealId: 'd1', need: 'post status' } };
+  const st = { messages: [ask] };
+  assert.equal(namesOtherCreator('Chris X Elevenlabs brand deal', 'Duncan'), true);
+  assert.equal(namesOtherCreator('elevenlabs duncan post is live', 'Duncan'), false);
+  assert.equal(namesOtherCreator('elevenlabs post is live', 'Duncan'), false);
+  assert.equal(namesOtherCreator('valerie polar link', 'Valeri'), false);
+  assert.equal(infoAskFor(st, null, "Chris X Elevenlabs brand deal it's a UGC deal no rate just add a new card in the dashboard"), null);
+  assert.equal(infoAskFor(st, null, 'Elevenlabs: the reel is live, here are the insights'), ask);
+  // A swipe-reply straight onto the question still answers it
+  assert.equal(infoAskFor(st, ask, 'Chris checked it, it is live'), ask);
+});
+
+test('no follow-up to the brand while we owe the revised cut (CapCut x Chris, Nov 9)', async () => {
+  const fs = await import('node:fs');
+  const { ourMoveText } = await import('../lib/heartbeat.js');
+  assert.equal(ourMoveText("Editor making the brand's changes", 'Chris'), true);
+  assert.equal(ourMoveText('Brad reshooting the video with original footage', 'Chris'), true);
+  assert.equal(ourMoveText('Waiting for the brand to review the revised cut', 'Chris'), false);
+  const hb = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
+  assert.match(hb, /status === 'Changes' : false;\n\s*const ourMove = changesOpen \|\|/);
+});
