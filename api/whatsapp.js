@@ -194,6 +194,8 @@ async function onButton(st, id) {
   if (action === 'yes' || action === 'no') { await resolvePending(st, action === 'yes'); return; }
   if (action === 'dealok' || action === 'dealwa') { await fileNewDeal(st, 'WhatsApp'); return; }
   if (action === 'dealmail') { await fileNewDeal(st, 'Email'); return; }
+  if (action === 'moreyes') { await addMoreVideos(st); return; }
+  if (action === 'moreno') { const p = pendingMore(st); if (p) p.resolved = 'cancelled'; await say(st, 'OK, I didn\'t add anything.'); return; }
   if (action === 'noteson') { await sendScriptNotes(st); return; }
   if (action === 'notesno') { const p = pendingNotes(st); if (p) p.resolved = 'cancelled'; await say(st, 'OK, I didn\'t send it.'); return; }
   if (action === 'invpick') { const W = await import('../lib/wainvoice.js'); await W.pickInvoice(st, String(id).slice('invpick:'.length)); return; }
@@ -499,23 +501,29 @@ async function maybeNewDeal(st, text, forwarded) {
   // Harsh saying it outright: "Chris x ElevenLabs brand deal ... add a new card in the dashboard" (Nov 9: this went
   // to the general chat, which showed an unrelated ElevenLabs × Duncan draft instead)
   const explicit = /\b(brand deal|new deal|ugc deal|sponsor(ed)? deal|add (a )?(new )?(card|deal)|new card|open (a )?deal)\b/i.test(t);
+  const morish = moreVideosAsk(t);
   const notesish = t.length > 150 && /\bscript\b/i.test(t) && /\b(feedback|changes?|notes?|additions?|instead of|could you|mention|edits?|tweaks?)\b/i.test(t);
-  if (!(forwarded && (dealish || linky)) && !(t.length > 150 && dealish && linky) && !explicit && !notesish) return false;
+  if (!(forwarded && (dealish || linky)) && !(t.length > 150 && dealish && linky) && !explicit && !notesish && !morish) return false;
   const { claude, HAIKU } = await import('../lib/claude.js');
   const { BOARDS } = await import('../lib/tools.js');
   const { openDeals } = await import('../lib/briefs.js');
   const roster = BOARDS.map((b) => b.creator);
   const deals = await openDeals().catch(() => []);
   const tool = { name: 'classify', description: 'Say whether this message is a brand deal for a NOOCAP creator and whose it is.', input_schema: { type: 'object', properties: {
-    kind: { type: 'string', enum: ['new_deal', 'script_feedback', 'other'], description: 'new_deal = hands over a sponsored brand deal or its brief for a creator to make (brief link, due date, deliverables), including a short note like "Chris x ElevenLabs brand deal, UGC, no rate, add a new card" with no rate or details. script_feedback = a brand\'s notes, changes or additions on a script we already wrote for them (e.g. "add a line about X", "instead of Y say Z", "everything else is good"). other = ordinary questions or instructions to the PM.' },
+    kind: { type: 'string', enum: ['new_deal', 'more_videos', 'script_feedback', 'other'], description: 'new_deal = hands over a sponsored brand deal or its brief for a creator to make (brief link, due date, deliverables), including a short note like "Chris x ElevenLabs brand deal, UGC, no rate, add a new card" with no rate or details. more_videos = Harsh asks for one or more NEW videos (cards) for a brand a creator already works with, usually with a brief link and a post date for each (e.g. "add 4 more videos of Higgsfield: 1. Today\'s video ... Brief: <link> 2. Tomorrow\'s video ... Brief: <link>"). Each brief link in such a message is a separate new video, never notes on an old script. script_feedback = a brand\'s notes, changes or additions on a script we ALREADY wrote and sent them (e.g. "add a line about X", "instead of Y say Z", "everything else is good"); never pick it when the message hands over new briefs or asks for new videos or cards. other = ordinary questions or instructions to the PM.' },
+    videos: { type: 'array', description: 'more_videos only: one entry per new video named in the message, in order.', items: { type: 'object', properties: { title: { type: 'string', description: 'Short video title as written, e.g. "Fable 5.2 x Higgsfield: Free Unlimited V2 Racing Game"' }, brief: { type: ['string', 'null'], description: 'Its brief link, copied exactly, or null' }, post_date: { type: ['string', 'null'], description: 'Its post date as YYYY-MM-DD ("today" and "tomorrow" count from the date given above), or null' } }, required: ['title', 'brief', 'post_date'] } },
+    count: { type: ['integer', 'null'], description: 'more_videos only: how many new videos Harsh asked for in total (e.g. 4 in "add 4 more videos"), even if fewer are described.' },
     is_brand_deal: { type: 'boolean', description: 'True only when kind is new_deal.' },
     creator: { type: ['string', 'null'], enum: [...roster, null], description: 'Whose deal it is, from clues in the message: their own email address (bradgainesmarketing@gmail.com is Brad), their name, their handle, or a creator who already has a deal with this brand. Null if you cannot tell.' },
     brand: { type: 'string', description: 'The brand name' },
     due: { type: ['string', 'null'], description: 'Draft or post due date as written, if any' },
     gist: { type: 'string', description: 'One short line on what the deal is' },
   }, required: ['kind', 'is_brand_deal', 'creator', 'brand', 'gist'] } };
-  const r = await claude({ _job: 'whatsapp', model: HAIKU, max_tokens: 400, tools: [tool], tool_choice: { type: 'tool', name: 'classify' }, messages: [{ role: 'user', content: `NOOCAP creators: ${roster.join(', ')}.\nOpen deals: ${deals.map((d) => `${d.brand} (${d.creator})`).join(', ').slice(0, 2500)}\n\nMessage Harsh ${forwarded ? 'forwarded' : 'sent'} to the PM:\n${t.slice(0, 6000)}` }] });
+  const r = await claude({ _job: 'whatsapp', model: HAIKU, max_tokens: 400, tools: [tool], tool_choice: { type: 'tool', name: 'classify' }, messages: [{ role: 'user', content: `Today is ${new Date(Date.now() + 5.5 * 36e5).toISOString().slice(0, 10)} (IST).\nNOOCAP creators: ${roster.join(', ')}.\nOpen deals: ${deals.map((d) => `${d.brand} (${d.creator})`).join(', ').slice(0, 2500)}\n\nMessage Harsh ${forwarded ? 'forwarded' : 'sent'} to the PM:\n${t.slice(0, 6000)}` }] });
   const x = (r.content || []).find((c) => c.type === 'tool_use')?.input;
+  // "Add 4 more videos of Higgsfield" with new brief links was read as script feedback (Nov 9) and sent to Rudraksh
+  // as script changes. New briefs or an ask for more videos are new cards, whatever the model said.
+  if (x && (x.kind === 'more_videos' || (x.kind === 'script_feedback' && morish))) return offerMoreVideos(st, t, x, deals, roster);
   if (x?.kind === 'script_feedback') return offerScriptNotes(st, t, x, deals, roster);
   if (!x?.is_brand_deal || x.kind === 'other') return false;
   const already = x.creator && deals.find((d) => d.creator === x.creator && d.brand.toLowerCase().replace(/[^a-z0-9]/g, '').includes(String(x.brand || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 6)));
@@ -530,6 +538,56 @@ async function maybeNewDeal(st, text, forwarded) {
   }
   st.messages.push(entry);
   return true;
+}
+
+// ---------- more videos for a brand the creator already works with ----------
+// "I am telling you to add 4 more videos of Higgsfield: 1. Today's video ... Brief: <link> 2. ..." (Harsh, Nov 9).
+// Each described video becomes its own card on the creator's board (Script Draft, sponsor, brief link, post date), and
+// Rudraksh hears about them in one message. Videos asked for without a brief are listed as still to come.
+export function moreVideosAsk(text) {
+  const t = String(text || '');
+  const num = '(\\d+|one|two|three|four|five|six|a few|some)';
+  if (new RegExp(`\\b(add|make|create|open|need)\\b[^.\\n]{0,40}\\b${num}?\\s*(more|new|extra|other)\\s+(videos?|cards?|reels?|briefs?)\\b`, 'i').test(t)) return true;
+  if (/\b(here'?s|here is|these are|sending)\b[^.\n]{0,30}\b(the\s+)?(briefs?|breifs?)\b/i.test(t) && (t.match(/https?:\/\//g) || []).length >= 1) return true;
+  return false;
+}
+const pendingMore = (st) => [...st.messages].reverse().slice(0, 12).find((x) => x.meta === 'more-confirm' && !x.resolved && Date.now() - Date.parse(x.at) < 6 * 36e5);
+async function offerMoreVideos(st, t, x, deals, roster) {
+  const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const key = norm(x.brand).slice(0, 6);
+  const deal = key && deals.find((d) => norm(d.brand).includes(key) && (!x.creator || d.creator === x.creator));
+  const creator = x.creator || deal?.creator || null;
+  const links = t.match(/https?:\/\/[^\s)>\]]+/g) || [];
+  let videos = (x.videos || []).filter((v) => v && v.title);
+  // The model missed the list: one card per brief link at least
+  if (!videos.length && links.length) videos = links.map((l, i) => ({ title: `${x.brand || 'Brand'} video ${i + 1}`, brief: l, post_date: null }));
+  const total = Math.max(Number(x.count) || 0, videos.length);
+  const missing = Math.max(0, total - videos.length);
+  const entry = { role: 'assistant', meta: 'more-confirm', brand: deal?.brand || x.brand, creator, videos, missing, at: new Date().toISOString() };
+  const day = (d) => (d ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }) : 'no date');
+  const list = videos.map((v, i) => `${i + 1}. ${v.title} · posts ${day(v.post_date)}${v.brief ? '' : ' · ⚠️ no brief link'}`).join('\n');
+  entry.content = `🎬 *${videos.length} new video${videos.length === 1 ? '' : 's'}: ${entry.brand || 'brand?'} × ${creator || 'whose?'}*\n${list}${missing ? `\n+ ${missing} more you mentioned, waiting for their briefs` : ''}`;
+  if (!creator) {
+    await sendText(st.person.number, `${entry.content}\n\nWhose videos are these? Send it again with the creator's name (${roster.join(', ')}).`);
+  } else if (!videos.length) {
+    await sendText(st.person.number, `${entry.content}\n\nSend me the brief link and post date for each one and I'll make the cards.`);
+  } else {
+    await sendButtons(st.person.number, `${entry.content}\n\nAdd them? I'll make ${videos.length === 1 ? 'a card' : 'one card each'} on ${creator}'s board (Script Draft, sponsor, brief linked, post date set) and send Rudraksh the briefs.\nWrong creator? Just reply with the right name.`, [{ id: 'moreyes', title: `➕ Add ${videos.length} card${videos.length === 1 ? '' : 's'}` }, { id: 'moreno', title: '✖️ Don\'t add' }]);
+  }
+  st.messages.push(entry);
+  return true;
+}
+async function addMoreVideos(st) {
+  const p = pendingMore(st);
+  if (!p) { await say(st, 'Those videos are no longer waiting. Send them again.'); return; }
+  if (!p.creator) { await say(st, 'Whose videos are they? Reply with the creator\'s name.'); return; }
+  p.resolved = 'adding'; await saveState(st);
+  const { addVideoCards } = await import('../lib/briefs.js');
+  try {
+    const made = await addVideoCards({ creator: p.creator, brand: p.brand, videos: p.videos });
+    p.resolved = 'added';
+    await say(st, `✅ Added ${made.length} card${made.length === 1 ? '' : 's'} on ${p.creator}'s board and sent Rudraksh the brief${made.length === 1 ? '' : 's'}:\n${made.map((m) => `• ${m.title}: ${m.url}`).join('\n')}${p.missing ? `\nStill to come: ${p.missing} more. Send their briefs and I'll add them.` : ''}`);
+  } catch (e) { p.resolved = 'failed'; await say(st, `⚠️ I couldn't add them: ${e.message}`); }
 }
 
 // ---------- a brand's script feedback forwarded on WhatsApp ----------

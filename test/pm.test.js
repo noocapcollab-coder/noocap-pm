@@ -1457,3 +1457,12 @@ test('brand pool: a campaign record per deal we ran with the brand', async () =>
   const props = poolProps(pool.get('softr.io'));
   assert.match(props.Campaigns.rich_text[0].text.content, /Sep 2026 · Lindsay · Softr · \$1,500 · invoiced, not paid yet \(due 27 Nov 2026\)/);
 });
+
+test('WhatsApp: an ask for more videos is not script feedback (Higgsfield × Lindsay, Nov 9)', async () => {
+  const { moreVideosAsk } = await import('../api/whatsapp.js');
+  assert.equal(moreVideosAsk("I am telling you to add 4 more video of Higgsfield\n1. Today's Video (November 9) – Fable 5.2 x Higgsfield: Free Unlimited V1 Announcement\nBrief: https://higgsfield-ai.notion.site/x\nhere's breif for two"), true);
+  assert.equal(moreVideosAsk("Here's the brief for two https://higgsfield-ai.notion.site/y"), true);
+  assert.equal(moreVideosAsk('add two new cards for Chris'), true);
+  assert.equal(moreVideosAsk('Brand feedback on the script: add a line about the free trial, everything else is good'), false);
+  assert.equal(moreVideosAsk('instead of saying fast, say instant'), false);
+});
