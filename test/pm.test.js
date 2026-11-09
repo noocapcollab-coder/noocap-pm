@@ -864,7 +864,14 @@ test('second reader: which decisions get checked, and what it is shown', async (
   assert.match(t, /Runway AI x Chris \(stage Invoiced, rate 3600\)/);
   assert.match(t, /event: payment_confirmed/);
   assert.match(V.RULES, /payment queue/);
-  assert.equal(V.DEFAULT_MODE, 'off');
+  assert.equal(V.DEFAULT_MODE, 'team');
+  // team mode checks only what would reach Rudraksh or an editor
+  assert.equal(V.pingsTeam({ event: 'brief' }), true);
+  assert.equal(V.pingsTeam({ event: 'script_changes' }), true);
+  assert.equal(V.pingsTeam({ event: 'video_feedback' }), true);
+  assert.equal(V.pingsTeam({ event: 'brand_reply', on_hold: true }), true);
+  assert.equal(V.pingsTeam({ event: 'payment_confirmed' }), false);
+  assert.equal(V.pingsTeam({ event: 'brand_reply', needs_reply: true }), false);
 });
 
 test('lessons: the ones that fit the situation come first, and real edits count as corrections', async () => {
