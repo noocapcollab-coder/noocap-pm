@@ -1483,3 +1483,11 @@ test('Valeri invoices: own numbering from 10000000016 and her VAT number (Nov 9)
   assert.equal(sellerVat('VAT number: BG208339346'), 'BG208339346');
   assert.equal(sellerVat('VAT ID: none (US company)'), '');
 });
+
+test('Brand Email on cards: brand contacts only, no creator team or NOOCAP (Nov 9)', async () => {
+  const { brandContacts } = await import('../lib/brandemails.js');
+  assert.equal(brandContacts({ brandEmail: 'higgsfield.ai@jeevmedia.net', threadCc: 'collab@automateaiconsulting.com, ops@jeevmedia.net, noocapcollab@gmail.com' }), 'higgsfield.ai@jeevmedia.net, ops@jeevmedia.net');
+  assert.equal(brandContacts({ brandEmail: 'mia@gmail.com', threadCc: 'tom@gmail.com' }), 'mia@gmail.com');
+  assert.equal(brandContacts({ channel: 'WhatsApp' }), 'Brand handled on WhatsApp (no email)');
+  assert.equal(brandContacts({}), '');
+});
