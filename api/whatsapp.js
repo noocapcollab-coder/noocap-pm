@@ -481,17 +481,22 @@ const pendingDeal = (st) => [...st.messages].reverse().slice(0, 12).find((x) => 
 
 async function maybeNewDeal(st, text, forwarded) {
   const t = text.trim();
-  const dealish = /\b(brand deal|brief|sponsor|collab|campaign|deliverable|due date|draft due|go live|script)\b/i.test(t);
-  const linky = /https?:\/\/(docs|drive)\.google\.com|notion\.(so|site)|frame\.io|dropbox/i.test(t);
+  const dealish = /\b(brand deal|brief|sponsor|collab|campaign|deliverable|due date|draft due|go live|script|ugc)\b/i.test(t);
+  // Any brief link counts: Google Docs/Drive, Notion, Frame.io, Dropbox, a shared Claude artifact, or a Gmail
+  // redirect wrapping one of them (google.com/url?q=...)
+  const linky = /https?:\/\/((docs|drive)\.google\.com|[\w-]+\.notion\.(so|site)|notion\.(so|site)|frame\.io|(www\.)?dropbox|claude\.ai\/(artifact|public)|(www\.)?google\.com\/url\?)/i.test(t);
+  // Harsh saying it outright: "Chris x ElevenLabs brand deal ... add a new card in the dashboard" (Nov 9: this went
+  // to the general chat, which showed an unrelated ElevenLabs × Duncan draft instead)
+  const explicit = /\b(brand deal|new deal|ugc deal|sponsor(ed)? deal|add (a )?(new )?(card|deal)|new card|open (a )?deal)\b/i.test(t);
   const notesish = t.length > 150 && /\bscript\b/i.test(t) && /\b(feedback|changes?|notes?|additions?|instead of|could you|mention|edits?|tweaks?)\b/i.test(t);
-  if (!(forwarded && (dealish || linky)) && !(t.length > 150 && dealish && linky) && !notesish) return false;
+  if (!(forwarded && (dealish || linky)) && !(t.length > 150 && dealish && linky) && !explicit && !notesish) return false;
   const { claude, HAIKU } = await import('../lib/claude.js');
   const { BOARDS } = await import('../lib/tools.js');
   const { openDeals } = await import('../lib/briefs.js');
   const roster = BOARDS.map((b) => b.creator);
   const deals = await openDeals().catch(() => []);
   const tool = { name: 'classify', description: 'Say whether this message is a brand deal for a NOOCAP creator and whose it is.', input_schema: { type: 'object', properties: {
-    kind: { type: 'string', enum: ['new_deal', 'script_feedback', 'other'], description: 'new_deal = hands over a sponsored brand deal or its brief for a creator to make (brief link, due date, deliverables). script_feedback = a brand\'s notes, changes or additions on a script we already wrote for them (e.g. "add a line about X", "instead of Y say Z", "everything else is good"). other = ordinary questions or instructions to the PM.' },
+    kind: { type: 'string', enum: ['new_deal', 'script_feedback', 'other'], description: 'new_deal = hands over a sponsored brand deal or its brief for a creator to make (brief link, due date, deliverables), including a short note like "Chris x ElevenLabs brand deal, UGC, no rate, add a new card" with no rate or details. script_feedback = a brand\'s notes, changes or additions on a script we already wrote for them (e.g. "add a line about X", "instead of Y say Z", "everything else is good"). other = ordinary questions or instructions to the PM.' },
     is_brand_deal: { type: 'boolean', description: 'True only when kind is new_deal.' },
     creator: { type: ['string', 'null'], enum: [...roster, null], description: 'Whose deal it is, from clues in the message: their own email address (bradgainesmarketing@gmail.com is Brad), their name, their handle, or a creator who already has a deal with this brand. Null if you cannot tell.' },
     brand: { type: 'string', description: 'The brand name' },
@@ -504,7 +509,8 @@ async function maybeNewDeal(st, text, forwarded) {
   if (!x?.is_brand_deal || x.kind === 'other') return false;
   const already = x.creator && deals.find((d) => d.creator === x.creator && d.brand.toLowerCase().replace(/[^a-z0-9]/g, '').includes(String(x.brand || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 6)));
   const head = `🆕 *New brand deal: ${x.brand || 'brand?'} × ${x.creator || 'whose?'}*\n• ${x.gist}${x.due ? `\n• Due: ${x.due}` : ''}${already ? `\n• ${x.creator} already has a "${already.brand}" deal (${already.stage}), so I'd add this brief to it` : ''}`;
-  const entry = { role: 'assistant', content: head, meta: 'deal-confirm', dealText: t.slice(0, 9000), brand: x.brand, creator: x.creator || null, dealId: already?.id || null, at: new Date().toISOString() };
+  const unwrapped = t.replace(/https?:\/\/(?:www\.)?google\.com\/url\?q=([^&\s]+)[^\s]*/gi, (m, q) => { try { return decodeURIComponent(q); } catch { return m; } });
+  const entry = { role: 'assistant', content: head, meta: 'deal-confirm', dealText: unwrapped.slice(0, 9000), brand: x.brand, creator: x.creator || null, dealId: already?.id || null, at: new Date().toISOString() };
   if (!x.creator) {
     entry.whose = true;
     await sendText(st.person.number, `${head}\n\nWhose deal is this? Reply with the creator's name (${roster.join(', ')}).`);
