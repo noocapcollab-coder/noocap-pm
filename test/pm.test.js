@@ -1397,3 +1397,15 @@ test('no follow-up to the brand while we owe the revised cut (CapCut x Chris, No
   const hb = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
   assert.match(hb, /status === 'Changes' : false;\n\s*const ourMove = changesOpen \|\|/);
 });
+
+test('posting hold: the brand clearing it, and the once-only markers', async () => {
+  const { postingCleared } = await import('../lib/inbox.js');
+  const { holdMarkers } = await import('../lib/heartbeat.js');
+  assert.equal(postingCleared('Huedini has officially launched, so you can go ahead and publish the video.'), true);
+  assert.equal(postingCleared('Feel free to post it on the 13th.'), true);
+  assert.equal(postingCleared('We are good to go live tomorrow.'), true);
+  assert.equal(postingCleared("Please don't publish the video without checking with me first."), false);
+  assert.equal(postingCleared('Thanks, we will review the cut and get back to you.'), false);
+  assert.deepEqual(holdMarkers('Huedini launch [warned 10] [checked in]'), { warned: [10], checkedIn: true });
+  assert.deepEqual(holdMarkers('Huedini launch'), { warned: [], checkedIn: false });
+});
