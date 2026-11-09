@@ -1447,3 +1447,13 @@ test('#pm-alerts: updates that need nothing are batched, needs-you alerts post a
   assert.equal(isFyi('🟡 **Loose ends today (4)**'), false);
   assert.equal(headlineOf('🎉 **Zeely × Duncan · video approved**\n• x'), '🎉 Zeely × Duncan · video approved');
 });
+
+test('brand pool: a campaign record per deal we ran with the brand', async () => {
+  const { campaignLine, buildPool, poolProps } = await import('../lib/brandpool.js');
+  const line = campaignLine({ brand: 'Softr', creator: 'Lindsay', stage: 'Paid', rate: 1500, deliverables: '1 YouTube video', postedLinks: 'https://youtu.be/abc', paidDate: '2026-11-30', invoiceDue: '2026-11-27', threadId: '1a0917c035225859', started: '2026-09-11' });
+  assert.equal(line, 'Sep 2026 · Lindsay · Softr · $1,500 · 1 YouTube video · posted https://youtu.be/abc · paid 3 days late · thread https://mail.google.com/mail/u/?authuser=noocapcollab@gmail.com#all/1a0917c035225859');
+  assert.match(campaignLine({ brand: 'ElevenLabs', creator: 'Duncan', stage: 'Script Approved', started: '2026-10-30' }), /Oct 2026 · Duncan · ElevenLabs · in progress \(script approved\)/);
+  const pool = buildPool([{ email: 'kat@softr.io', brand: 'Softr', creator: 'Lindsay', budget: 1500, date: '2026-11-06', booked: true, campaign: { brand: 'Softr', creator: 'Lindsay', stage: 'Invoiced', rate: 1500, invoiceDue: '2026-11-27', started: '2026-09-11' } }]);
+  const props = poolProps(pool.get('softr.io'));
+  assert.match(props.Campaigns.rich_text[0].text.content, /Sep 2026 · Lindsay · Softr · \$1,500 · invoiced, not paid yet \(due 27 Nov 2026\)/);
+});
