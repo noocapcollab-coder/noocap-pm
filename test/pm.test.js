@@ -1473,3 +1473,13 @@ test('WhatsApp: a dated list of brand videos counts as more videos (Lindsay × H
   assert.equal(moreVideosAsk(msg), true);
   assert.equal(moreVideosAsk('This Lindsay x Higgfield we have total 4 video deals'), true);
 });
+
+test('Valeri invoices: own numbering from 10000000016 and her VAT number (Nov 9)', async () => {
+  const { nextNumberFor, sellerVat } = await import('../lib/invoicing.js');
+  assert.equal(nextNumberFor('Valeri', []), '10000000016');
+  assert.equal(nextNumberFor('Valeri', ['INV-003', '10000000016']), '10000000017');
+  assert.equal(nextNumberFor('Valeri', ['10000000016, 10000000018']), '10000000019');
+  assert.equal(nextNumberFor('Duncan', ['INV-004']), 'INV-005');
+  assert.equal(sellerVat('VAT number: BG208339346'), 'BG208339346');
+  assert.equal(sellerVat('VAT ID: none (US company)'), '');
+});
