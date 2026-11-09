@@ -1348,3 +1348,20 @@ test('a script our side pastes into the thread is the script delivered, not a pr
   assert.equal(handsOverScript('Script attached for your review.'), true);
   assert.equal(handsOverScript('When can you expect the script?'), false);
 });
+
+// System check Nov 9 morning: Cherish (NoxInfluencer) wrote three times in Lindsay's inbox that she had not seen the
+// Hyper3D script and wants it sent to the client. Another Gmail thread id than the deal's, and the lead was linked to
+// Lindsay's other Tripo deal by name, so the Hyper3D deal kept "waiting for the brand" and nobody answered.
+test('a brand email in the creator inbox finds its deal by the brand contact, not by name', async () => {
+  const { dealByContact } = await import('../lib/leads.js');
+  const deals = [
+    { id: 'tripo', brand: 'Tripo 3D', creator: 'Lindsay', stage: 'Script Sent', brandEmail: 'rajeshwari@jeevmedia.net', threadId: '1a0c' },
+    { id: 'hyper', brand: 'Hyper3D', creator: 'Lindsay', stage: 'Script Sent', brandEmail: 'cherish@mcn.noxinfluencer.com', threadId: '1a16' },
+    { id: 'old', brand: 'Hyper3D', creator: 'Valeri', stage: 'Script Sent', brandEmail: 'cherish@mcn.noxinfluencer.com' },
+  ];
+  assert.equal(dealByContact(deals, 'NoxInfluencer <Cherish@mcn.noxinfluencer.com>', 'Lindsay')?.id, 'hyper');
+  assert.equal(dealByContact(deals, 'someone@else.com', 'Lindsay'), null);
+  assert.equal(dealByContact(deals, 'cherish@mcn.noxinfluencer.com', 'Valeri')?.id, 'old');
+  // Paid or Lost deals are not reopened this way
+  assert.equal(dealByContact([{ ...deals[1], stage: 'Paid' }], 'cherish@mcn.noxinfluencer.com', 'Lindsay'), null);
+});
