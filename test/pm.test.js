@@ -1466,3 +1466,10 @@ test('WhatsApp: an ask for more videos is not script feedback (Higgsfield × Lin
   assert.equal(moreVideosAsk('Brand feedback on the script: add a line about the free trial, everything else is good'), false);
   assert.equal(moreVideosAsk('instead of saying fast, say instant'), false);
 });
+
+test('WhatsApp: a dated list of brand videos counts as more videos (Lindsay × Higgsfield, Nov 9)', async () => {
+  const { moreVideosAsk } = await import('../api/whatsapp.js');
+  const msg = "The brand requires three videos on the following dates:\n\n1.⁠ ⁠Today's Video (November 9) – Fable 5.2 x Higgsfield: Free Unlimited V1 Announcement\n\nBrief: https://higgsfield-ai.notion.site/a\n\n2.⁠ ⁠Tomorrow's Video (November 10) – Fable 5.2 x Higgsfield: Free Unlimited V2 Racing Game\n\nBrief: https://higgsfield-ai.notion.site/b\n\n3.⁠ ⁠November 11 Video\nThe brand will share this brief later.";
+  assert.equal(moreVideosAsk(msg), true);
+  assert.equal(moreVideosAsk('This Lindsay x Higgfield we have total 4 video deals'), true);
+});

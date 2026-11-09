@@ -247,6 +247,24 @@ async function onText(st, text, quotedText = '') {
     }
     if (/^(cancel|no|stop|leave it)\.?$/i.test(t)) { p.resolved = 'cancelled'; await say(st, 'OK, nothing was filed.'); return; }
   }
+  // More videos waiting for a tap: a follow-up naming the creator or the total ("This Lindsay x Higgfield we have total
+  // 4 video deals", sent right after the list) fills them in instead of starting something new
+  const pm = pendingMore(st);
+  if (pm && t.length < 200 && Date.now() - Date.parse(pm.at) < 30 * 6e4) {
+    const { BOARDS } = await import('../lib/tools.js');
+    const words = t.toLowerCase();
+    const c = BOARDS.map((b) => b.creator).find((n) => new RegExp(`\\b${n.toLowerCase().split(' ')[0].slice(0, 5)}`).test(words));
+    const W = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8 };
+    const cm = words.match(/\b(\d+|one|two|three|four|five|six|seven|eight)\s+(?:more\s+|new\s+)?(?:videos?|reels?)\b/);
+    const total = cm ? Number(W[cm[1]] || cm[1]) : 0;
+    if (/^(cancel|no|stop|leave it)\.?$/i.test(t)) { pm.resolved = 'cancelled'; await say(st, 'OK, I didn\'t add anything.'); return; }
+    if (c || total) {
+      if (c) pm.creator = c;
+      if (total) pm.missing = Math.max(0, total - (pm.videos || []).length);
+      await showMore(st, pm);
+      return;
+    }
+  }
   // We asked whose script feedback it is (or the creator was wrong): a creator's name sets it
   const pn = pendingNotes(st);
   if (pn && t.length < 40) {
@@ -494,6 +512,9 @@ const pendingDeal = (st) => [...st.messages].reverse().slice(0, 12).find((x) => 
 
 async function maybeNewDeal(st, text, forwarded) {
   const t = text.trim();
+  // A short follow-up to a video list still waiting for a tap ("we have total 4 video deals") fills that list in
+  const waiting = pendingMore(st);
+  if (waiting && t.length < 200 && !/https?:\/\//.test(t) && Date.now() - Date.parse(waiting.at) < 30 * 6e4) return false;
   const dealish = /\b(brand deal|brief|sponsor|collab|campaign|deliverable|due date|draft due|go live|script|ugc)\b/i.test(t);
   // Any brief link counts: Google Docs/Drive, Notion, Frame.io, Dropbox, a shared Claude artifact, or a Gmail
   // redirect wrapping one of them (google.com/url?q=...)
@@ -523,7 +544,10 @@ async function maybeNewDeal(st, text, forwarded) {
   const x = (r.content || []).find((c) => c.type === 'tool_use')?.input;
   // "Add 4 more videos of Higgsfield" with new brief links was read as script feedback (Nov 9) and sent to Rudraksh
   // as script changes. New briefs or an ask for more videos are new cards, whatever the model said.
-  if (x && (x.kind === 'more_videos' || (x.kind === 'script_feedback' && morish))) return offerMoreVideos(st, t, x, deals, roster);
+  // A list of dated videos for a brand the creator already has a deal or card with is more videos, not a new deal to
+  // fold into that old deal ("The brand requires three videos..." for Lindsay x Higgsfield, Nov 9)
+  const hasBrand = () => { const k = String(x?.brand || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 6); return !!k && deals.some((d) => (!x.creator || d.creator === x.creator) && d.brand.toLowerCase().replace(/[^a-z0-9]/g, '').includes(k)); };
+  if (x && (x.kind === 'more_videos' || (morish && (x.kind === 'script_feedback' || x.kind === 'other' || (x.kind === 'new_deal' && hasBrand()))))) return offerMoreVideos(st, t, x, deals, roster);
   if (x?.kind === 'script_feedback') return offerScriptNotes(st, t, x, deals, roster);
   if (!x?.is_brand_deal || x.kind === 'other') return false;
   const already = x.creator && deals.find((d) => d.creator === x.creator && d.brand.toLowerCase().replace(/[^a-z0-9]/g, '').includes(String(x.brand || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 6)));
@@ -545,7 +569,15 @@ async function maybeNewDeal(st, text, forwarded) {
 // Each described video becomes its own card on the creator's board (Script Draft, sponsor, brief link, post date), and
 // Rudraksh hears about them in one message. Videos asked for without a brief are listed as still to come.
 export function moreVideosAsk(text) {
-  const t = String(text || '');
+  // WhatsApp pastes hide word-joiners and zero-width spaces after list numbers ("1.\u2060 \u2060Today's Video")
+  const t = String(text || '').replace(/[\u200b-\u200d\u2060\ufeff]/g, '');
+  const n = '(\\d+|one|two|three|four|five|six|seven|eight)';
+  // "The brand requires three videos on the following dates", "we have total 4 video deals"
+  if (new RegExp(`\\b(requires?|needs?|wants?|asked for|asking for|booked|confirmed)\\s+(the\\s+)?${n}\\s+(more\\s+|new\\s+)?(videos?|reels?)\\b`, 'i').test(t)) return true;
+  if (new RegExp(`\\b${n}\\s+(videos?|reels?)\\s+(deals?|campaigns?)\\b`, 'i').test(t)) return true;
+  // A numbered list of two or more videos, with at least one brief link
+  const items = t.match(/(^|\n)\s*\d+[.)]\s*[^\n]*\b(video|reel)\b/gi) || [];
+  if (items.length >= 2 && /https?:\/\//.test(t)) return true;
   const num = '(\\d+|one|two|three|four|five|six|a few|some)';
   if (new RegExp(`\\b(add|make|create|open|need)\\b[^.\\n]{0,40}\\b${num}?\\s*(more|new|extra|other)\\s+(videos?|cards?|reels?|briefs?)\\b`, 'i').test(t)) return true;
   if (/\b(here'?s|here is|these are|sending)\b[^.\n]{0,30}\b(the\s+)?(briefs?|breifs?)\b/i.test(t) && (t.match(/https?:\/\//g) || []).length >= 1) return true;
@@ -555,8 +587,10 @@ const pendingMore = (st) => [...st.messages].reverse().slice(0, 12).find((x) => 
 async function offerMoreVideos(st, t, x, deals, roster) {
   const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const key = norm(x.brand).slice(0, 6);
-  const deal = key && deals.find((d) => norm(d.brand).includes(key) && (!x.creator || d.creator === x.creator));
-  const creator = x.creator || deal?.creator || null;
+  const same = key ? deals.filter((d) => norm(d.brand).includes(key) && (!x.creator || d.creator === x.creator)) : [];
+  const deal = same[0];
+  // Guess the creator from the deal only when exactly one creator works with this brand right now
+  const creator = x.creator || (new Set(same.map((d) => d.creator)).size === 1 ? deal.creator : null);
   const links = t.match(/https?:\/\/[^\s)>\]]+/g) || [];
   let videos = (x.videos || []).filter((v) => v && v.title);
   // The model missed the list: one card per brief link at least
@@ -564,18 +598,23 @@ async function offerMoreVideos(st, t, x, deals, roster) {
   const total = Math.max(Number(x.count) || 0, videos.length);
   const missing = Math.max(0, total - videos.length);
   const entry = { role: 'assistant', meta: 'more-confirm', brand: deal?.brand || x.brand, creator, videos, missing, at: new Date().toISOString() };
+  st.messages.push(entry);
+  await showMore(st, entry, roster);
+  return true;
+}
+async function showMore(st, entry, roster) {
+  if (!roster) { const { BOARDS } = await import('../lib/tools.js'); roster = BOARDS.map((b) => b.creator); }
+  const { videos = [], missing = 0, creator } = entry;
   const day = (d) => (d ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }) : 'no date');
-  const list = videos.map((v, i) => `${i + 1}. ${v.title} · posts ${day(v.post_date)}${v.brief ? '' : ' · ⚠️ no brief link'}`).join('\n');
-  entry.content = `🎬 *${videos.length} new video${videos.length === 1 ? '' : 's'}: ${entry.brand || 'brand?'} × ${creator || 'whose?'}*\n${list}${missing ? `\n+ ${missing} more you mentioned, waiting for their briefs` : ''}`;
+  const list = videos.map((v, i) => `${i + 1}. ${v.title} · posts ${day(v.post_date)}${v.brief ? '' : ' · brief comes later'}`).join('\n');
+  entry.content = `🎬 *${videos.length} new video${videos.length === 1 ? '' : 's'}: ${entry.brand || 'brand?'} × ${creator || 'whose?'}*\n${list}${missing ? `\n+ ${missing} more you mentioned, waiting for their brief${missing === 1 ? '' : 's'}` : ''}`;
   if (!creator) {
-    await sendText(st.person.number, `${entry.content}\n\nWhose videos are these? Send it again with the creator's name (${roster.join(', ')}).`);
+    await sendText(st.person.number, `${entry.content}\n\nWhose videos are these? Reply with the creator's name (${roster.join(', ')}).`);
   } else if (!videos.length) {
     await sendText(st.person.number, `${entry.content}\n\nSend me the brief link and post date for each one and I'll make the cards.`);
   } else {
-    await sendButtons(st.person.number, `${entry.content}\n\nAdd them? I'll make ${videos.length === 1 ? 'a card' : 'one card each'} on ${creator}'s board (Script Draft, sponsor, brief linked, post date set) and send Rudraksh the briefs.\nWrong creator? Just reply with the right name.`, [{ id: 'moreyes', title: `➕ Add ${videos.length} card${videos.length === 1 ? '' : 's'}` }, { id: 'moreno', title: '✖️ Don\'t add' }]);
+    await sendButtons(st.person.number, `${entry.content}\n\nAdd them? I'll make ${videos.length === 1 ? 'a card' : 'one card each'} on ${creator}'s board (Script Draft, sponsor, brief linked, post date set) and send Rudraksh the briefs. A brief already on the board keeps its card.\nWrong creator? Just reply with the right name.`, [{ id: 'moreyes', title: `➕ Add ${videos.length} card${videos.length === 1 ? '' : 's'}` }, { id: 'moreno', title: '✖️ Don\'t add' }]);
   }
-  st.messages.push(entry);
-  return true;
 }
 async function addMoreVideos(st) {
   const p = pendingMore(st);
