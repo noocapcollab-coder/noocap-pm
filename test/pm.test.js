@@ -1433,3 +1433,17 @@ test('loose ends: cards without deals, deals without cards, missing dates, amoun
   assert.equal(l.mismatch.length, 1);
   assert.ok(looseEndsText(l).join('\n').includes('deal $1000, revenue row $2000'));
 });
+
+test('#pm-alerts: updates that need nothing are batched, needs-you alerts post at once', async () => {
+  const { isFyi, headlineOf } = await import('../lib/briefs.js');
+  assert.equal(isFyi('🎉 **Zeely × Duncan · video approved**\n• Video Intake set to To Post'), true);
+  assert.equal(isFyi('✅ **ElevenLabs × Duncan · brand cleared the video for posting**'), true);
+  assert.equal(isFyi('📅 **ElevenLabs × Duncan · posting waits for the brand**'), true);
+  assert.equal(isFyi('🙋 **Over to you: Kylon × Lindsay**\nNo reply after 3 follow-ups'), false);
+  assert.equal(isFyi('⛔ **Don\'t post yet: ElevenLabs × Duncan**'), false);
+  assert.equal(isFyi('📝 **Script ready: Teamily × Lindsay**\n• Send it to the brand from the email thread'), false);
+  assert.equal(isFyi('📎 **Atoms × Lindsay · still to send**'), false);
+  assert.equal(isFyi('🧾 **Luma × Brad · sponsor video posted**\n• Ask Brad to send their invoice'), false);
+  assert.equal(isFyi('🟡 **Loose ends today (4)**'), false);
+  assert.equal(headlineOf('🎉 **Zeely × Duncan · video approved**\n• x'), '🎉 Zeely × Duncan · video approved');
+});
