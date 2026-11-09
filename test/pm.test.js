@@ -1409,3 +1409,27 @@ test('posting hold: the brand clearing it, and the once-only markers', async () 
   assert.deepEqual(holdMarkers('Huedini launch [warned 10] [checked in]'), { warned: [10], checkedIn: true });
   assert.deepEqual(holdMarkers('Huedini launch'), { warned: [], checkedIn: false });
 });
+
+test('loose ends: cards without deals, deals without cards, missing dates, amount mismatches', async () => {
+  const { findLooseEnds, looseEndsText } = await import('../lib/looseends.js');
+  const id = (n) => `${'a'.repeat(31)}${n}`;
+  const videos = [
+    { id: id(1), creator: 'Chris', title: 'TRIPO', status: '4- Script Draft', sponsor: true, post_date: null },
+    { id: id(2), creator: 'Duncan', title: 'ElevenLabs', status: '6- To Film', sponsor: true, post_date: '2026-11-19' },
+    { id: id(3), creator: 'Lindsay', title: 'Personal', status: '6- To Film', sponsor: false, post_date: null },
+    { id: id(4), creator: 'Chris', title: 'Old', status: '12- Posted', sponsor: true, post_date: null },
+  ];
+  const deals = [
+    { brand: 'ElevenLabs', creator: 'Duncan', stage: 'Script Approved', linkedVideo: `https://app.notion.com/p/x-${id(2)}`, finalRate: 1000, deliverables: '1 short video' },
+    { brand: 'Luma', creator: 'Chris', stage: 'Brief Received', linkedVideo: '' },
+    { brand: 'Softr', creator: 'Lindsay', stage: 'Invoiced', invoiceDue: null },
+  ];
+  const revenue = [{ 'Video Link': `https://app.notion.com/p/${id(2)}`, 'Amount USD': 2000 }];
+  const l = findLooseEnds({ videos, deals, revenue });
+  assert.deepEqual(l.cardsNoDeal.map((v) => v.title), ['TRIPO']);
+  assert.deepEqual(l.cardsNoDate.map((v) => v.title), ['TRIPO']);
+  assert.deepEqual(l.dealsNoCard.map((d) => d.brand), ['Luma']);
+  assert.deepEqual(l.invoicedNoDue.map((d) => d.brand), ['Softr']);
+  assert.equal(l.mismatch.length, 1);
+  assert.ok(looseEndsText(l).join('\n').includes('deal $1000, revenue row $2000'));
+});
