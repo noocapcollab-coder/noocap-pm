@@ -1509,3 +1509,15 @@ test('a WhatsApp answer that can only promise the thing later writes no draft (C
   const { issues } = checkDraft({ body: "We're setting up the Dreamina account now and will send over both UIDs right away so we can get filming started." });
   assert.ok(issues.some((i) => /promises to send something later/.test(i)));
 });
+
+test('Loose ends: two tracker rows for one video are caught, the real one kept (FLOVA, Nov 7)', async () => {
+  const { duplicateTrackerRows } = await import('../lib/looseends.js');
+  const d = duplicateTrackerRows([
+    { title: 'FLOVA', videoId: '400508e99dda8087b03bc9928f372949', frame: 'https://f.io/L5D4BsWC', created: '2026-10-28' },
+    { title: 'FLOVA × Duncan', videoId: '400508e9-9dda-8087-b03b-c9928f372949', frame: '', created: '2026-11-07' },
+    { title: 'Other', videoId: 'abc', frame: '', created: '2026-11-01' },
+  ]);
+  assert.equal(d.length, 1);
+  assert.equal(d[0].extra.title, 'FLOVA × Duncan');
+  assert.equal(d[0].keep.title, 'FLOVA');
+});
