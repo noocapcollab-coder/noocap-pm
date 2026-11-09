@@ -586,7 +586,13 @@ async function addMoreVideos(st) {
   try {
     const made = await addVideoCards({ creator: p.creator, brand: p.brand, videos: p.videos });
     p.resolved = 'added';
-    await say(st, `✅ Added ${made.length} card${made.length === 1 ? '' : 's'} on ${p.creator}'s board and sent Rudraksh the brief${made.length === 1 ? '' : 's'}:\n${made.map((m) => `• ${m.title}: ${m.url}`).join('\n')}${p.missing ? `\nStill to come: ${p.missing} more. Send their briefs and I'll add them.` : ''}`);
+    const fresh = made.filter((m) => !m.existed), old = made.filter((m) => m.existed);
+    const lines = [
+      fresh.length ? `✅ Added ${fresh.length} card${fresh.length === 1 ? '' : 's'} on ${p.creator}'s board and sent Rudraksh the brief${fresh.length === 1 ? '' : 's'}:\n${fresh.map((m) => `• ${m.title}: ${m.url}`).join('\n')}` : null,
+      old.length ? `${fresh.length ? '' : '👍 Nothing new to add. '}Already on the board with this brief, so I didn't make another card:\n${old.map((m) => `• ${m.title}: ${m.url}`).join('\n')}` : null,
+      p.missing ? `Still to come: ${p.missing} more. Send their briefs and I'll add them.` : null,
+    ].filter(Boolean);
+    await say(st, lines.join('\n'));
   } catch (e) { p.resolved = 'failed'; await say(st, `⚠️ I couldn't add them: ${e.message}`); }
 }
 
