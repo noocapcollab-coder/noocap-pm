@@ -1491,3 +1491,11 @@ test('Brand Email on cards: brand contacts only, no creator team or NOOCAP (Nov 
   assert.equal(brandContacts({ channel: 'WhatsApp' }), 'Brand handled on WhatsApp (no email)');
   assert.equal(brandContacts({}), '');
 });
+
+test('a follow-up waits from the cut we just sent, not an older Last Our Reply (Readdy x Lindsay, Nov 9)', async () => {
+  const { latestOurEmail } = await import('../lib/heartbeat.js');
+  const deal = { lastOur: '2026-11-05T09:00:00.000Z', lastBrand: '2026-11-05T08:57:00.000Z' };
+  assert.equal(latestOurEmail(deal, '2026-11-09T17:44:00.000Z'), '2026-11-09T17:44:00.000Z');
+  assert.equal(latestOurEmail(deal, null), '2026-11-05T09:00:00.000Z');
+  assert.equal(latestOurEmail({ lastOur: '2026-11-10T10:00:00.000Z' }, '2026-11-09T17:44:00.000Z'), '2026-11-10T10:00:00.000Z');
+});
