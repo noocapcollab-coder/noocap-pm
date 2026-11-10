@@ -1611,3 +1611,27 @@ test('creator-inbox email: an explicit script approval is recognised, questions 
   assert.equal(scriptApprovedIn('The script is approved with a few changes to the hook, see feedback below.'), false);
   assert.equal(scriptApprovedIn('Please send the script once it is approved internally.'), false);
 });
+
+// Nov 10: one check before every send, built from the mistakes that reached brands
+test('preflight puts thread, subject, CC and body right, or holds the email', async () => {
+  const { preflight, cleanBody } = await import('../lib/preflight.js');
+  const deal = { threadId: '1a19ac2c52e4e0b9', messageRfc: '<brand@creator.co>', threadCc: 'collab@chriscordero.net', threadSubject: 'Re: Following Up: Bluehost AI', creator: 'Chris' };
+  // a follow-up made in a stray thread, with no CC and HTML in the text
+  const r = preflight({ kind: 'Follow-up', to: 'smahi@creator.co', cc: '', subject: 'Bluehost × Chris - contract and brief', body: 'Hi Smahi,<br /><br />Just checking in on **the invite**.<br />Best,<br />Chris\'s Team', threadId: '19aaaaaaaaaaaaaa', replyTo: '' }, deal);
+  assert.equal(r.hold.length, 0);
+  assert.equal(r.draft.threadId, deal.threadId);
+  assert.equal(r.draft.replyTo, deal.messageRfc);
+  assert.equal(r.draft.subject, 'Re: Following Up: Bluehost AI');
+  assert.match(r.draft.cc, /collab@chriscordero\.net/);
+  assert.doesNotMatch(r.draft.body, /<br|\*\*/);
+  // no brand thread at all: held, never a new email
+  const h = preflight({ kind: 'Follow-up', to: 'x@brand.com', subject: 'Hi', body: 'Hi there, just checking in on the brief for this video.' }, { creator: 'Chris' });
+  assert.match(h.hold.join(' '), /no email thread/);
+  // placeholders and empty emails are held
+  assert.match(preflight({ kind: 'Reply', to: 'x@brand.com', replyTo: '<a@b.c>', subject: 'Re: x', body: 'Hi [Name], here is the link: {{link}} for the video.' }, null).hold.join(' '), /still has/);
+  // a Reply to a second brand thread keeps its own thread and subject
+  const rep = preflight({ kind: 'Reply', to: 'erick@creator.co', replyTo: '<erick@creator.co>', threadId: '19bbbbbbbbbbbbbb', subject: 'Re: Bluehost AI | Paid Creator Collaboration', body: 'Hi Erick, thanks for the new invite, Chris will opt in today.' }, deal);
+  assert.equal(rep.draft.threadId, '19bbbbbbbbbbbbbb');
+  assert.equal(rep.draft.subject, 'Re: Bluehost AI | Paid Creator Collaboration');
+  assert.equal(cleanBody('See [the cut](https://f.io/x) &amp; reply'), 'See the cut: https://f.io/x & reply');
+});
