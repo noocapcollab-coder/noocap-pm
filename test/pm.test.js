@@ -1569,3 +1569,11 @@ test('a revised cut email is the revised cut, never a promise of one or a billin
   assert.match(cutInstructions('', true), /revised cut that already makes the changes/);
   assert.match(cutInstructions('', false), /Do not answer or raise anything else/);
 });
+
+test('a WhatsApp push failure is logged at most once per 6 hours per person, across cold starts (Nov 10)', async () => {
+  const { recentFailFilter } = await import('../lib/whatsapp.js');
+  const now = Date.parse('2026-11-10T06:06:00Z');
+  const f = recentFailFilter('Pratham', now);
+  assert.equal(f.and[0].title.equals, 'WhatsApp alert to Pratham failed');
+  assert.equal(f.and[1].created_time.after, '2026-11-10T00:06:00.000Z');
+});
