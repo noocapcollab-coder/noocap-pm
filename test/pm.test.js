@@ -1577,3 +1577,13 @@ test('a WhatsApp push failure is logged at most once per 6 hours per person, acr
   assert.equal(f.and[0].title.equals, 'WhatsApp alert to Pratham failed');
   assert.equal(f.and[1].created_time.after, '2026-11-10T00:06:00.000Z');
 });
+
+// Nov 10: the full stop after a Frame.io link became part of the link, and old <br /> text showed in the quote
+test('links stop before sentence punctuation; quoted history has real line breaks', async () => {
+  const o = await import('../lib/outbox.js');
+  assert.equal(o.linkify('cut: https://f.io/bTfgtvKC. Thanks'), 'cut: <a href="https://f.io/bTfgtvKC">https://f.io/bTfgtvKC</a>. Thanks');
+  assert.equal(o.linkify('(https://a.com/x?y=1)'), '(<a href="https://a.com/x?y=1">https://a.com/x?y=1</a>)');
+  const q = o.quoteHistory(['📨 2026-11-09 · us (NOOCAP) · Re: x\nHi Yulia,<br /><br />Checking in.<br />Best']);
+  assert.doesNotMatch(q.text + q.html, /&lt;br|<br \/>/);
+  assert.match(q.text, /> Hi Yulia,\n> \n> Checking in\./);
+});
