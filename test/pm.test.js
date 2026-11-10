@@ -1681,3 +1681,10 @@ Thank you! I'm looking forward to watching the draft.`).join('\n'));
   const mia = T.accessPart(['Okay, please share your CapCut UID with me.', 'How to get your Dreamina UID:', '1. Log in to the Dreamina official website: https://dreamina.capcut.com/']);
   assert.ok(mia.steps.length >= 2);
 });
+
+test('preflight holds <UNKNOWN> and tidies mail-merge greetings', async () => {
+  const { preflight } = await import('../lib/preflight.js');
+  assert.match(preflight({ kind: 'Reply', to: 'a@b.co', replyTo: '<x@y.z>', subject: 'Re: x', body: 'Hi Eva,\n\nWhenever <UNKNOWN> is ready to move forward, just reply here.' }, null).hold.join(' '), /UNKNOWN/);
+  assert.match(preflight({ kind: 'Reply', to: 'a@b.co', replyTo: '<x@y.z>', subject: 'Re: x', body: 'Hi williamm,\n\nThanks for the note about the campaign timing.' }, null).draft.body, /^Hi Williamm,/);
+  assert.match(preflight({ kind: 'Reply', to: 'a@b.co', replyTo: '<x@y.z>', subject: 'Re: x', body: 'Hi Creator,\n\nThanks for the note about the campaign timing.' }, null).draft.body, /^Hi there,/);
+});
