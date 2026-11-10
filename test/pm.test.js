@@ -1587,3 +1587,17 @@ test('links stop before sentence punctuation; quoted history has real line break
   assert.doesNotMatch(q.text + q.html, /&lt;br|<br \/>/);
   assert.match(q.text, /> Hi Yulia,\n> \n> Checking in\./);
 });
+
+// Nov 10: Mia (CapCut) answered our access email with UID steps; they go to the editor, never with money in them
+test('tool access replies are spotted and made editor-safe', async () => {
+  const T = await import('../lib/toolaccess.js');
+  const mia = 'Okay, please share your CapCut UID with me. Also, since your brief is for Dreamina, you need to download and register a Dreamina account and send over your Dreamina UID.\nHow to get your Dreamina UID:\n1. Log in to the Dreamina official website: https://dreamina.capcut.com/\nThe fee of $1,500 is paid after posting.';
+  assert.ok(T.isAccessReply(mia));
+  assert.ok(!T.isAccessReply('Hi, are you running into any difficulties? I am happy to help.'));
+  const safe = T.editorSafe(mia);
+  assert.ok(safe.some((l) => /Dreamina UID/.test(l)));
+  assert.ok(!safe.some((l) => /\$|fee|paid/i.test(l)), 'no money for editors');
+  const msg = T.editorMessage({ brand: 'CapCut', creator: 'Chris', title: 'CapCut × Chris', cardUrl: 'https://notion.so/x', lines: safe, at: '123456789012345678' });
+  assert.match(msg, /<@123456789012345678>/);
+  assert.match(msg, /For the brand/);
+});
