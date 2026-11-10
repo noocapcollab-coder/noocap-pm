@@ -1662,3 +1662,22 @@ wrote:
   const msg = T.editorMessage({ brand: 'CapCut', creator: 'Chris', title: 'CapCut × Chris', cardUrl: 'u', lines: steps });
   assert.doesNotMatch(msg, /from CapCut|emails it to/);
 });
+
+// Nov 11: Yulia said access was granted and that the video link 404s; only the access part is the editor's
+test('only the account part of a brand email goes to the editor', async () => {
+  const T = await import('../lib/toolaccess.js');
+  const yulia = T.editorSafe(T.instructionsOnly(`Hi team,
+Apologies for not getting back to you yesterday. As soon as I received your
+message, I contacted the development team to ask them to enable your
+access. My understanding is that access has now been granted, which is
+great!
+I'm having trouble opening your video draft, though. The link gives me a
+404 error. Could you please check it and resend the link?
+Thank you! I'm looking forward to watching the draft.`).join('\n'));
+  const y = T.accessPart(yulia);
+  assert.equal(y.steps.length, 0, 'nothing to do in the tool');
+  assert.ok(y.granted, 'access granted is noted');
+  assert.ok(y.other.some((l) => /404|resend/.test(l)), 'the broken link stays with the PM to answer');
+  const mia = T.accessPart(['Okay, please share your CapCut UID with me.', 'How to get your Dreamina UID:', '1. Log in to the Dreamina official website: https://dreamina.capcut.com/']);
+  assert.ok(mia.steps.length >= 2);
+});
