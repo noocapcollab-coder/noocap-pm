@@ -1285,6 +1285,8 @@ test('tool-access email after script approval', async () => {
   assert.match(body, /access to ElevenLabs on noocaptools@gmail\.com/);
   assert.match(body, /let us know once the access has been given/);
   assert.match(body, /Duncan's Team$/);
+  assert.doesNotMatch(body, /<br/i, 'real line breaks, never HTML tags as text (Nov 9 ElevenLabs email)');
+  assert.match(body, /^Hi Yulia,\n\n/);
   const hb = await import('../lib/heartbeat.js');
   assert.ok(hb.AUTO_KINDS.includes('Tool access'));
   assert.equal(await ib.askToolAccess({ id: 'x', threadId: '', brand: 'A' }, {}), null, 'no thread, no email');
