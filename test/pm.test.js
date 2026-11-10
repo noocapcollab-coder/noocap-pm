@@ -1635,3 +1635,30 @@ test('preflight puts thread, subject, CC and body right, or holds the email', as
   assert.equal(rep.draft.subject, 'Re: Bluehost AI | Paid Creator Collaboration');
   assert.equal(cleanBody('See [the cut](https://f.io/x) &amp; reply'), 'See the cut: https://f.io/x & reply');
 });
+
+// Nov 10: editors get only the steps (no rep, agency, emails, quoted thread, brand name)
+test('tool access steps are instructions only', async () => {
+  const T = await import('../lib/toolaccess.js');
+  const mia = `Okay, please share your CapCut UID with me. Also, since your brief is for
+Dreamina, you need to download and register a Dreamina account and send
+over your Dreamina UID. This will help you create the content smoothly.
+How to get your Dreamina UID:
+1. Log in to the Dreamina official website: https://dreamina.capcut.com/
+2. Click your profile avatar at the top right of the page
+3. Right-click the avatar, and your UID will be automatically copied to
+your clipboard. You will see the pop-up notice "userId copy success" once
+copied.
+Mia Brown | BD
+GrowMaxValue Agency
+📧mia.brown@growmaxvalue.com
+On Mon, Nov 9, 2026 at 10:27 PM noocap collab <noocapcollab@gmail.com>
+wrote:
+> Hi Mia, thanks for approving the script`;
+  const steps = T.instructionsOnly(mia);
+  const all = steps.join('\n');
+  assert.doesNotMatch(all, /Mia|GrowMax|@growmaxvalue|noocap collab|wrote:/);
+  assert.match(all, /send over your Dreamina UID\./);
+  assert.ok(steps.some((l) => /^3\. Right-click the avatar, and your UID will be automatically copied to your clipboard\./.test(l)));
+  const msg = T.editorMessage({ brand: 'CapCut', creator: 'Chris', title: 'CapCut × Chris', cardUrl: 'u', lines: steps });
+  assert.doesNotMatch(msg, /from CapCut|emails it to/);
+});
