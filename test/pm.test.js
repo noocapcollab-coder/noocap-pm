@@ -1601,3 +1601,13 @@ test('tool access replies are spotted and made editor-safe', async () => {
   assert.match(msg, /<@123456789012345678>/);
   assert.match(msg, /For the brand/);
 });
+
+// System check Nov 10: Luma AI x Chris approved the script only in Chris's inbox; the deal stayed at Script Sent
+test('creator-inbox email: an explicit script approval is recognised, questions and change notes are not', async () => {
+  const { scriptApprovedIn } = await import('../lib/leads.js');
+  assert.equal(scriptApprovedIn('Hi Team Chris, Good news! Your script has been approved by the Luma team. The next step is to create your account on Luma.'), true);
+  assert.equal(scriptApprovedIn('We approved the script, go ahead and film.'), true);
+  assert.equal(scriptApprovedIn('Has the script been approved by your team yet?'), false);
+  assert.equal(scriptApprovedIn('The script is approved with a few changes to the hook, see feedback below.'), false);
+  assert.equal(scriptApprovedIn('Please send the script once it is approved internally.'), false);
+});
