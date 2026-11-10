@@ -1557,3 +1557,15 @@ test('Replies quote the earlier emails underneath (Readdy in PrivateEmail, Nov 1
   assert.ok(q.text.indexOf('2026-11-05') < q.text.indexOf('2026-11-03'));
   assert.equal(quoteHistory([]), null);
 });
+
+test('a revised cut email is the revised cut, never a promise of one or a billing ask (Polar x Valeri, Nov 10)', async () => {
+  const { cutBodyProblems, plainCutBody, cutInstructions } = await import('../lib/brandsend.js');
+  const sent = "Hi Ushni,<br /><br />Thanks so much! We can absolutely swap the music to something more casual or pull it out entirely, and we'll get you the revised cut for a final check before we post. <br /><br />To close out invoicing on both videos, we'll need your company name, billing address, and billing email.<br /><br />Best,<br />Valeri's Team";
+  assert.equal(cutBodyProblems(sent, true).length, 2);
+  assert.deepEqual(cutBodyProblems("Hi Ushni,\n\nHere is the revised cut with more casual music: https://f.io/x\n\nBest,\nValeri's Team", true), []);
+  const plainBody = plainCutBody(sent, 'https://f.io/6CLu_W2h', 'Valeri', true);
+  assert.equal(plainBody, "Hi Ushni,\n\nHere is the revised cut with the changes you asked for: https://f.io/6CLu_W2h\n\nBest,\nValeri's Team");
+  assert.deepEqual(cutBodyProblems(plainBody, true), []);
+  assert.match(cutInstructions('', true), /revised cut that already makes the changes/);
+  assert.match(cutInstructions('', false), /Do not answer or raise anything else/);
+});
