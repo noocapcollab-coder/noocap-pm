@@ -1521,3 +1521,28 @@ test('Loose ends: two tracker rows for one video are caught, the real one kept (
   assert.equal(d[0].extra.title, 'FLOVA × Duncan');
   assert.equal(d[0].keep.title, 'FLOVA');
 });
+
+// ---------- system check, Nov 10 ----------
+test("Brad's own inbox (ninjaaitools.com) is our side, never the brand's address (PromoCut, Teamily AI, Nov 10)", async () => {
+  const { oursAddr } = await import('../lib/outbox.js');
+  const { ourSide } = await import('../lib/contacts.js');
+  assert.equal(oursAddr('partnerships@ninjaaitools.com'), true);
+  assert.equal(ourSide('partnerships@ninjaaitools.com'), true);
+  assert.equal(oursAddr('alyssa@withwidely.com'), false);
+});
+
+test('an outside company the reader calls "noocap" is the brand side (Nicole at Quil Media, PromoCut, Nov 10)', async () => {
+  const { sideOf } = await import('../lib/inbox.js');
+  assert.equal(sideOf('Nicole <nicole@quilmedia.com>', 'noocap'), 'brand');
+  assert.equal(sideOf('noocap collab <noocapcollab@gmail.com>', 'noocap'), 'noocap');
+  assert.equal(sideOf('Brad <partnerships@ninjaaitools.com>', 'noocap'), 'noocap');
+  assert.equal(sideOf('someone@gmail.com', 'noocap'), 'noocap');
+  assert.equal(sideOf('Nicole <nicole@quilmedia.com>', 'brand'), 'brand');
+});
+
+test("the PM's own auto-sent email only retires waiting drafts of its kind (Gamut tool access vs Iddo's date question, Nov 10)", async () => {
+  const { retiredByOurEmail } = await import('../lib/inbox.js');
+  assert.equal(retiredByOurEmail('Reply', 'Tool access'), false);
+  assert.equal(retiredByOurEmail('Tool access', 'Tool access'), true);
+  assert.equal(retiredByOurEmail('Reply', null), true); // a hand-written email answers whatever was waiting
+});
