@@ -1546,3 +1546,12 @@ test("the PM's own auto-sent email only retires waiting drafts of its kind (Gamu
   assert.equal(retiredByOurEmail('Tool access', 'Tool access'), true);
   assert.equal(retiredByOurEmail('Reply', null), true); // a hand-written email answers whatever was waiting
 });
+
+test('Replies quote the earlier emails underneath (Readdy in PrivateEmail, Nov 10)', async () => {
+  const { quoteHistory } = await import('../lib/outbox.js');
+  const q = quoteHistory(['📨 2026-11-03 · us (NOOCAP) · Re: x\nThe script PDF is attached.', '📨 2026-11-05 · brand (Harper Collins <harper@readdy.ai>) · Re: x\nThanks for the update!'], { ours: "Lindsay's Team" });
+  assert.match(q.text, /On 2026-11-05, Harper Collins <harper@readdy.ai> wrote:\n> Thanks for the update!/);
+  assert.match(q.text, /On 2026-11-03, Lindsay's Team wrote:/);
+  assert.ok(q.text.indexOf('2026-11-05') < q.text.indexOf('2026-11-03'));
+  assert.equal(quoteHistory([]), null);
+});
