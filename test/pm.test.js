@@ -1716,3 +1716,13 @@ test('the invoice sync never puts an old invoice on a deal opened after it (Drea
   assert.equal(invoiceDealFor([newDeal], '2026-11-01'), null);
   assert.equal(invoiceDealFor([newDeal], '2026-11-20').id, 'b', 'its own later invoice is fine');
 });
+
+// Nov 11: Readdy and ElevenLabs could not open first cuts because a full stop followed the link
+test('a link is never followed by a full stop or comma in the email', async () => {
+  const { linksAlone, preflight } = await import('../lib/preflight.js');
+  assert.equal(linksAlone('The first cut is ready for your review at https://f.io/4z1wDGD5. Please let us know.'), 'The first cut is ready for your review at:\n\nhttps://f.io/4z1wDGD5\n\nPlease let us know.');
+  assert.equal(linksAlone("Here's the first cut of the video: https://f.io/bTfgtvKC. Please take a look."), "Here's the first cut of the video:\n\nhttps://f.io/bTfgtvKC\n\nPlease take a look.");
+  assert.doesNotMatch(linksAlone('the link https://f.io/6CLu_W2h, once reviewed'), /W2h,/);
+  const r = preflight({ kind: 'Draft video', to: 'harper@readdy.ai', replyTo: '<a@b>', subject: 'Re: x', body: 'Hi Harper,\n\nThe first cut is ready at https://f.io/4z1wDGD5. Thanks!\n\nBest,\nLindsay\'s Team' }, null);
+  assert.doesNotMatch(r.draft.body, /https:\/\/\S*[.,](\s|$)/);
+});
