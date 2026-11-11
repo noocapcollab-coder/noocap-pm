@@ -1777,3 +1777,13 @@ test('a cut link drafted from chat after script approval is a Draft video email'
   assert.equal(chatEmailKind('Script', 'Brief Received', 'Here is the script: https://docs.google.com/document/d/x'), 'Script');
   assert.equal(chatEmailKind('Invoice', 'Posted', body), 'Invoice');
 });
+
+// System check Nov 11: the same draft card reached Pratham twice in a row (Gamut x Lindsay)
+test('a draft card is not sent twice within 15 minutes', async () => {
+  const { cardedRecently } = await import('../lib/whatsapp.js');
+  const now = Date.parse('2026-11-11T14:20:00Z');
+  const st = { messages: [{ meta: 'draft', draft: 'abc', at: '2026-11-11T14:15:00Z' }] };
+  assert.ok(cardedRecently(st, 'abc', now));
+  assert.ok(!cardedRecently(st, 'xyz', now));
+  assert.ok(!cardedRecently(st, 'abc', Date.parse('2026-11-11T15:00:00Z')));
+});
