@@ -1706,3 +1706,13 @@ test('a new-campaign deal with the old deal\'s copied invoice never chases it (D
   assert.equal(copiedInvoice({ ...copy, invoiceSent: '2026-11-20' }, [oldDeal, copy]), false, 'its own later invoice is chased');
   assert.equal(copiedInvoice({ ...copy, threadId: 't2' }, [oldDeal, copy]), false);
 });
+
+test('the invoice sync never puts an old invoice on a deal opened after it (Dreamina BD-70 kept getting the Oct invoice)', async () => {
+  const { invoiceDealFor } = await import('../lib/money.js');
+  const newDeal = { id: 'b', created: '2026-11-08T10:06:01Z', stage: 'Price Agreed' };
+  const oldDeal = { id: 'a', created: '2026-09-28T02:50:35Z', stage: 'Invoiced', invoiceSent: '2026-11-01' };
+  assert.equal(invoiceDealFor([newDeal, oldDeal], '2026-11-01').id, 'a', 'the deal holding the invoice keeps it');
+  assert.equal(invoiceDealFor([newDeal, { ...oldDeal, invoiceSent: '' }], '2026-11-01').id, 'a', 'a deal opened later never gets it');
+  assert.equal(invoiceDealFor([newDeal], '2026-11-01'), null);
+  assert.equal(invoiceDealFor([newDeal], '2026-11-20').id, 'b', 'its own later invoice is fine');
+});
