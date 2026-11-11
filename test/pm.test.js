@@ -1747,3 +1747,14 @@ test('editor replies: an empty For the brand field never crashes, and acknowledg
   const src = (await import('node:fs')).readFileSync(new URL('../lib/toolaccess.js', import.meta.url), 'utf8');
   assert.doesNotMatch(src, /plain\(card\.properties\?\.\[FOR_BRAND\]\)\.trim\(\)/, 'plain() can be null: wrap it before trim');
 });
+
+// System check Nov 11: Runway asked in Chris's inbox to rerun the November campaign like for like; it stayed on the Invoiced deal
+test('a rerun of the same campaign is a new-campaign invite', async () => {
+  const { campaignInviteIn } = await import('../lib/inbox.js');
+  assert.ok(campaignInviteIn('Client was really pleased with Chris and wanted to know if we can rerun the same campaign again for November? Like for like (Same deliverables + cost)'));
+  assert.ok(campaignInviteIn("We'd love to invite you to our latest Dreamina campaign at the same rate"));
+  assert.ok(!campaignInviteIn('Thank you for sharing the invoice. It is in our payment queue, due to be paid 13/11/26'));
+  assert.ok(!campaignInviteIn('The campaign went really well, thanks again!'));
+  const src = (await import('node:fs')).readFileSync(new URL('../lib/leads.js', import.meta.url), 'utf8');
+  assert.match(src, /openCampaignInquiry/, 'the creator-inbox path opens the inquiry too');
+});
