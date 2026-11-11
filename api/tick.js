@@ -26,6 +26,12 @@ export default async function handler(req, res) {
       return res.status(200).json(await sendCutsToBrands({ rowId: id.length === 32 ? id : undefined }));
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?briefs=now: send briefs pasted on waiting cards to the script writer right away (not the whole heartbeat)
+  if (req.query?.briefs === 'now') {
+    if (!hookAllowed(req)) return res.status(401).json({ error: HOOK_ERROR });
+    try { const { briefsAddedToWaitingCards } = await import('../lib/briefs.js'); return res.status(200).json({ sent: await briefsAddedToWaitingCards() }); }
+    catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // Once Vercel runs the heartbeat (HEARTBEAT_SOURCE=vercel), the old n8n timer is ignored so it never runs twice.
   // A manual call with ?brief=now still works.
   if (!fromCron && process.env.HEARTBEAT_SOURCE === 'vercel' && req.query?.brief !== 'now') return res.status(200).json({ skipped: 'heartbeat runs from Vercel now' });
