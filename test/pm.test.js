@@ -1726,3 +1726,11 @@ test('a link is never followed by a full stop or comma in the email', async () =
   const r = preflight({ kind: 'Draft video', to: 'harper@readdy.ai', replyTo: '<a@b>', subject: 'Re: x', body: 'Hi Harper,\n\nThe first cut is ready at https://f.io/4z1wDGD5. Thanks!\n\nBest,\nLindsay\'s Team' }, null);
   assert.doesNotMatch(r.draft.body, /https:\/\/\S*[.,](\s|$)/);
 });
+
+test('a brand saying the link does not open is spotted', async () => {
+  const { linkBroken } = await import('../lib/inbox.js');
+  assert.ok(linkBroken("Unfortunately, we're unable to open the link on our end, it doesn't seem to load properly for us. Could you please re-share the video link?"));
+  assert.ok(linkBroken("I'm having trouble opening your video draft, though. The link gives me a 404 error."));
+  assert.ok(!linkBroken('Thanks, the video looks great, approved!'));
+  assert.ok(!linkBroken('Please change the music at 0:12 and add the link in the caption.'));
+});
