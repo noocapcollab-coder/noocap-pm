@@ -1797,3 +1797,12 @@ test('brand wiki groups the same brand under one key', async () => {
   const g = groupByBrand([{ id: '1', brand: 'Higgsfield.AI', creator: 'Lindsay' }, { id: '2', brand: 'Higgsfield', creator: 'Chris' }, { id: '3', brand: 'Readdy AI', creator: 'Lindsay' }]);
   assert.equal(g.length, 2);
 });
+
+test('one-line emails do not rebuild the deal record', async () => {
+  const { isTrivial } = await import('../lib/memory.js');
+  assert.ok(isTrivial('Thanks! Looking forward to it.'));
+  assert.ok(isTrivial('Received, will review shortly.'));
+  assert.ok(!isTrivial('Approved! Please send the invoice.'));
+  assert.ok(!isTrivial('Here is the link https://f.io/x'));
+  assert.ok(!isTrivial('Can we post on the 14th?'));
+});
