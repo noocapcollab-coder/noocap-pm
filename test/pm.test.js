@@ -1688,3 +1688,21 @@ test('preflight holds <UNKNOWN> and tidies mail-merge greetings', async () => {
   assert.match(preflight({ kind: 'Reply', to: 'a@b.co', replyTo: '<x@y.z>', subject: 'Re: x', body: 'Hi williamm,\n\nThanks for the note about the campaign timing.' }, null).draft.body, /^Hi Williamm,/);
   assert.match(preflight({ kind: 'Reply', to: 'a@b.co', replyTo: '<x@y.z>', subject: 'Re: x', body: 'Hi Creator,\n\nThanks for the note about the campaign timing.' }, null).draft.body, /^Hi there,/);
 });
+
+test('a second-reader flag holds the draft in team mode too (Dreamina and OiiOii auto-sent while flagged, Nov 10)', async () => {
+  const { secondReadHolds } = await import('../lib/outbox.js');
+  assert.equal(secondReadHolds('team'), true);
+  assert.equal(secondReadHolds('on'), true);
+  assert.equal(secondReadHolds('shadow'), false);
+  assert.equal(secondReadHolds('off'), false);
+});
+
+test('a new-campaign deal with the old deal\'s copied invoice never chases it (Dreamina BD-70, Nov 10)', async () => {
+  const { copiedInvoice } = await import('../lib/heartbeat.js');
+  const oldDeal = { id: 'a', threadId: 't1', invoiceSent: '2026-11-01', created: '2026-09-28T02:50:35Z', stage: 'Invoiced' };
+  const copy = { id: 'b', threadId: 't1', invoiceSent: '2026-11-01', created: '2026-11-08T10:06:01Z', stage: 'Invoiced' };
+  assert.equal(copiedInvoice(copy, [oldDeal, copy]), true, 'the newer deal is the copy');
+  assert.equal(copiedInvoice(oldDeal, [oldDeal, copy]), false, 'the original deal still chases');
+  assert.equal(copiedInvoice({ ...copy, invoiceSent: '2026-11-20' }, [oldDeal, copy]), false, 'its own later invoice is chased');
+  assert.equal(copiedInvoice({ ...copy, threadId: 't2' }, [oldDeal, copy]), false);
+});
