@@ -1734,3 +1734,16 @@ test('a brand saying the link does not open is spotted', async () => {
   assert.ok(!linkBroken('Thanks, the video looks great, approved!'));
   assert.ok(!linkBroken('Please change the music at 0:12 and add the link in the caption.'));
 });
+
+// System check Nov 11: "editor replies: Cannot read properties of null (reading 'trim')" every 30 minutes from 62aae1a,
+// because plain() gives null for an empty "For the brand" field, so no editor reply was ever picked up
+test('editor replies: an empty For the brand field never crashes, and acknowledgements are not details', async () => {
+  const T = await import('../lib/toolaccess.js');
+  const { plain } = await import('../lib/notion.js');
+  assert.equal(plain({ type: 'rich_text', rich_text: [] }), null);
+  assert.doesNotThrow(() => String(plain({ type: 'rich_text', rich_text: [] }) || '').trim());
+  assert.equal(T.editorReplyText(['ok', 'thanks!']), '');
+  assert.equal(T.editorReplyText(['7676360876761269265', 'CapCut UID: 4401089801 Dreamina UID: 7676360876761269265', 'done']), 'CapCut UID: 4401089801 Dreamina UID: 7676360876761269265');
+  const src = (await import('node:fs')).readFileSync(new URL('../lib/toolaccess.js', import.meta.url), 'utf8');
+  assert.doesNotMatch(src, /plain\(card\.properties\?\.\[FOR_BRAND\]\)\.trim\(\)/, 'plain() can be null: wrap it before trim');
+});
