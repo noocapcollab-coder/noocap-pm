@@ -1787,3 +1787,13 @@ test('a draft card is not sent twice within 15 minutes', async () => {
   assert.ok(!cardedRecently(st, 'xyz', now));
   assert.ok(!cardedRecently(st, 'abc', Date.parse('2026-11-11T15:00:00Z')));
 });
+
+test('brand wiki groups the same brand under one key', async () => {
+  const { brandKey, groupByBrand } = await import('../lib/wiki.js');
+  assert.equal(brandKey('Higgsfield.AI'), brandKey('Higgsfield'));
+  assert.equal(brandKey('Bluehost 2'), 'bluehost');
+  assert.equal(brandKey('Luma AI'), 'luma');
+  assert.notEqual(brandKey('CapCut'), brandKey('Dreamina'));
+  const g = groupByBrand([{ id: '1', brand: 'Higgsfield.AI', creator: 'Lindsay' }, { id: '2', brand: 'Higgsfield', creator: 'Chris' }, { id: '3', brand: 'Readdy AI', creator: 'Lindsay' }]);
+  assert.equal(g.length, 2);
+});

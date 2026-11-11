@@ -26,6 +26,12 @@ export default async function handler(req, res) {
       return res.status(200).json(await sendCutsToBrands({ rowId: id.length === 32 ? id : undefined }));
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?wiki=now: build a batch of brand wiki pages right away
+  if (req.query?.wiki === 'now') {
+    if (!hookAllowed(req)) return res.status(401).json({ error: HOOK_ERROR });
+    try { const { updateWiki } = await import('../lib/wiki.js'); const { openDeals } = await import('../lib/briefs.js'); return res.status(200).json(await updateWiki(await openDeals({ withClosed: true }), { limit: Number(req.query.n) || 15 })); }
+    catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // ?briefs=now: send briefs pasted on waiting cards to the script writer right away (not the whole heartbeat)
   if (req.query?.briefs === 'now') {
     if (!hookAllowed(req)) return res.status(401).json({ error: HOOK_ERROR });
