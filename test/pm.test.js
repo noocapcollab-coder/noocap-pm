@@ -1758,3 +1758,13 @@ test('a rerun of the same campaign is a new-campaign invite', async () => {
   const src = (await import('node:fs')).readFileSync(new URL('../lib/leads.js', import.meta.url), 'utf8');
   assert.match(src, /openCampaignInquiry/, 'the creator-inbox path opens the inquiry too');
 });
+
+// System check Nov 11: the inbox read returned we_promised as one string and the whole email failed to file (Runway x Chris)
+test('list fields from the inbox reader are always lists', async () => {
+  const { normalizeRead } = await import('../lib/inbox.js');
+  const x = normalizeRead({ summary: 'one point', we_promised: 'two new scripts', delivers: null });
+  assert.deepEqual(x.we_promised, ['two new scripts']);
+  assert.deepEqual(x.delivers, []);
+  assert.deepEqual(x.summary, ['one point']);
+  assert.doesNotThrow(() => x.we_promised.filter(Boolean));
+});
