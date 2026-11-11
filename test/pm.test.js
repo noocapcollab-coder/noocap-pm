@@ -1768,3 +1768,12 @@ test('list fields from the inbox reader are always lists', async () => {
   assert.deepEqual(x.summary, ['one point']);
   assert.doesNotThrow(() => x.we_promised.filter(Boolean));
 });
+
+// System check Nov 11: a first-draft link drafted from WhatsApp after script approval went out as a Script email (Gamut x Lindsay)
+test('a cut link drafted from chat after script approval is a Draft video email', async () => {
+  const { chatEmailKind } = await import('../lib/ask.js');
+  const body = "Hi,<br /><br />Here's the first draft for your review.<br />https://drive.google.com/drive/folders/1VwU8BOSC7hCocCFOv5jjRWmcuyWISrTf";
+  assert.equal(chatEmailKind('Script', 'Script Approved', body), 'Draft video');
+  assert.equal(chatEmailKind('Script', 'Brief Received', 'Here is the script: https://docs.google.com/document/d/x'), 'Script');
+  assert.equal(chatEmailKind('Invoice', 'Posted', body), 'Invoice');
+});
