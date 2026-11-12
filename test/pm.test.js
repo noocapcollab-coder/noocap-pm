@@ -1997,3 +1997,21 @@ test('a contract inside a brief email is found: unnamed PDFs, and contract links
   const named = contractIn({ text: 'Brief and contract attached', attachments: [{ filename: 'Brief.pdf', mimeType: 'application/pdf' }, { filename: 'Agreement_Atoms.pdf', mimeType: 'application/pdf' }] });
   assert.deepEqual(named.files.map((f) => f.filename), ['Agreement_Atoms.pdf']);
 });
+
+test('an Anthropic spend limit tells Harsh once that brand emails are going unread (system check, Nov 12)', async () => {
+  const { spendLimitAlert } = await import('../lib/pause.js');
+  const sent = [];
+  const send = async (content, channel) => { sent.push({ content, channel }); return true; };
+  const err = 'Claude 400: {"type":"error","error":{"type":"invalid_request_error","message":"You have reached your specified API usage limits. You will regain access on 2026-12-01 at 00:00 UTC."}}';
+  assert.equal(await spendLimitAlert(err, send), true);
+  assert.equal(sent.length, 1);
+  assert.equal(sent[0].channel, 'pm');
+  assert.match(sent[0].content, /^⚠️ \*\*Brand emails are not being read/);
+  assert.match(sent[0].content, /console\.anthropic\.com/);
+  // The headline is fixed, so discord()'s 12-hour dedupe sends it once however many emails fail
+  await spendLimitAlert(err.replace('2026-12-01', '2027-01-01'), send);
+  assert.equal(sent[0].content.split('\n')[0], sent[1].content.split('\n')[0]);
+  // A passing overload is not a spend limit: no alert
+  assert.equal(await spendLimitAlert('Claude 529: overloaded', send), false);
+  assert.equal(sent.length, 2);
+});

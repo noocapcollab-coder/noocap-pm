@@ -17,7 +17,12 @@ const rt = (s) => [{ type: 'text', text: { content: String(s || '').slice(0, 190
 export const AI_DOWN = /usage limit|credit balance|AI paused|overloaded|rate.?limit|Claude (429|529|5\d\d)/i;
 
 async function recordError(email, err) {
-  if (AI_DOWN.test(String(err))) return 'error';
+  if (AI_DOWN.test(String(err))) {
+    // Spend limit / no credit: one alert to Harsh (deduped for 12 hours), the email itself is retried later
+    const { spendLimitAlert } = await import('../lib/pause.js');
+    await spendLimitAlert(err, discord);
+    return 'error';
+  }
   const id = String(email.messageId || '').slice(0, 1900);
   let tries = 0;
   try {
