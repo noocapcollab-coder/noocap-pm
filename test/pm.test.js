@@ -1970,3 +1970,19 @@ test("outreach: the creator's Instagram goes on its own line before the sign-off
   assert.equal(out, "Hi,\n\nPitch.\n\nYou can see Valeri's content here:\nhttps://www.instagram.com/valeridoesai/\n\nThanks");
   assert.equal(withInstagram('Hi,\n\nThanks', 'Brad'), 'Hi,\n\nThanks');
 });
+
+test('a signed contract from WhatsApp finds its deal, and asks when it is not clear', async () => {
+  const { matchDeal, looksLikeContract, contractEmail } = await import('../lib/contracts.js');
+  const deals = [
+    { id: '1', brand: 'Atoms', creator: 'Lindsay', stage: 'Price Agreed', brandEmail: 'gina@luminarysm.com' },
+    { id: '2', brand: 'OiiOii', creator: 'Chris', stage: 'Price Agreed', brandEmail: 'vera@luminarysm.com' },
+    { id: '3', brand: 'TapNow AI', creator: 'Chris', stage: 'Paid', brandEmail: 'lily@macaron-ai.com' },
+  ];
+  assert.equal(matchDeal({ filename: 'Atoms_Lindsay_Agreement_signed.pdf' }, deals)?.id, '1');
+  assert.equal(matchDeal({ caption: 'oiioii signed', filename: 'scan.pdf' }, deals)?.id, '2');
+  assert.equal(matchDeal({ filename: 'contract.pdf', text: 'This Agreement is made between Luminary SM and the creator' }, deals), null); // agency runs two deals: ask
+  assert.equal(matchDeal({ filename: 'TapNow contract.pdf' }, deals), null); // paid deal: not a target
+  assert.ok(looksLikeContract('scan.pdf', 'IN WITNESS WHEREOF the parties have signed'));
+  assert.ok(!looksLikeContract('thumbnail.png', 'hello'));
+  assert.match(contractEmail(deals[0]), /^Hi Gina,\n\nPlease find the signed contract attached/);
+});

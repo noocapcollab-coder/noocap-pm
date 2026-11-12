@@ -83,13 +83,14 @@ async function handleMessage(m) {
   const at = new Date(Number(m.timestamp || Date.now() / 1000) * 1000).toISOString();
 
   // What they sent: a typed message, a reply-button tap, or the template's "Show me"
-  let text = '', button = '', file = null;
+  let text = '', button = '', file = null, caption = '';
   if (m.type === 'text') text = m.text?.body || '';
   else if (m.type === 'interactive') button = m.interactive?.button_reply?.id || m.interactive?.list_reply?.id || '';
   else if (m.type === 'button') button = m.button?.payload || 'DIGEST';
   else if (m.type === 'document' || m.type === 'image') {
     const f = m[m.type] || {};
     file = { mediaId: f.id, filename: f.filename || (m.type === 'image' ? 'image.jpg' : 'file'), mime: f.mime_type || '' };
+    caption = f.caption || '';
     text = f.caption ? `${f.caption}\n(sent a file: ${file.filename})` : `(sent a file: ${file.filename})`;
     // A screenshot is read, so its words count like typed text: bank or PayPal details for an invoice, a brand's message,
     // an address (Harsh, Nov 5: "if I share a screenshot of the bank details, can you read it?"). The file still goes
@@ -130,6 +131,8 @@ async function handleMessage(m) {
     else if (quoted && text) await applyEdit(st, quoted.draft, text);
     else if (infoAskFor(st, replyTo, text) && (text || file)) await answerInfoAsk(st, infoAskFor(st, replyTo, text), text, file);
     else if (text && !quoted && [...st.messages].reverse().find((x) => x.role === 'assistant')?.meta !== 'edit-ask' && await maybeNewDeal(st, text, forwarded)) { /* handled */ }
+    else if (file && m.type === 'document' && await signedContract(st, file, caption)) { /* sent to the brand, or asked which brand */ }
+    else if (!file && text && pendingContract(st) && await signedContract(st, pendingContract(st), text, true)) { /* the brand named for the waiting contract */ }
     else if (file && /^\(sent a file: /.test(text)) await say(st, `📎 Got *${file.filename}*. Tell me what to do with it, e.g. "send this to Atoms × Lindsay" and I'll put the email with this file attached in the brand's thread for you to approve.`);
     else await onText(st, text, replyTo?.content || '');
   } catch (e) {
@@ -428,6 +431,48 @@ async function showDraftById(st, id) {
 // Drafts waiting in Approvals whose brand is named in the message (or in the alert they replied to): each one in full,
 // then Send / Edit / Reject. Returns false when nothing matches, so the question goes to the PM brain instead.
 // Put a file sent in this chat on a waiting draft (no AI): it goes out as the email's attachment
+// The contract still waiting for "which brand?" (asked in the last 6 hours, not sent since)
+function pendingContract(st) {
+  for (let i = st.messages.length - 1; i >= 0; i--) {
+    const x = st.messages[i];
+    if (x.meta === 'contract-done') return null;
+    if (x.meta === 'contract-ask') return Date.now() - Date.parse(x.at) < 6 * 36e5 ? x.file : null;
+  }
+  return null;
+}
+// A signed contract dropped into the chat goes to the brand by itself (lib/contracts.js). Returns true when handled.
+async function signedContract(st, file, hint = '', answering = false) {
+  const C = await import('../lib/contracts.js');
+  let text = '';
+  if (!answering && /pdf/i.test(`${file.mime} ${file.filename}`)) {
+    try { const W = await import('../lib/whatsapp.js'); const got = await W.downloadMedia(file.mediaId); const { pdfText } = await import('../lib/pdftext.js'); text = (await pdfText(got.data, 20000)) || ''; } catch { /* name and caption still work */ }
+  }
+  if (!answering && !C.looksLikeContract(file.filename, text, hint)) return false;
+  const { openDeals } = await import('../lib/briefs.js');
+  const deals = await openDeals({ withClosed: true }).catch(() => []);
+  const deal = C.matchDeal({ caption: hint, filename: answering ? '' : file.filename, text: answering ? '' : text }, deals);
+  if (!deal) {
+    if (answering) return false; // not a brand name: let the message be handled normally
+    const ask = `📎 Got *${file.filename}*. Which brand is this signed contract for? Reply with the brand name (e.g. "Atoms") and I'll email it to them right away.`;
+    await sendText(st.person.number, ask);
+    st.messages.push({ role: 'assistant', content: ask, meta: 'contract-ask', file, at: new Date().toISOString() });
+    return true;
+  }
+  if (!deal.brandEmail || !(deal.threadId || deal.messageRfc)) {
+    st.messages.push({ role: 'assistant', content: '', meta: 'contract-done', at: new Date().toISOString() });
+    await say(st, `📎 This looks like the *${deal.brand} × ${deal.creator}* contract, but that deal has no email thread with the brand to reply in, so I haven't sent it. Send it from Gmail this time.`);
+    return true;
+  }
+  try {
+    const r = await C.sendSignedContract(deal, file);
+    st.messages.push({ role: 'assistant', content: '', meta: 'contract-done', at: new Date().toISOString() });
+    await say(st, `✅ Sent the signed contract (*${file.filename}*) to ${r.to} for *${r.brand} × ${r.creator}*, in the brand's email thread.`);
+  } catch (e) {
+    await say(st, `⚠️ Couldn't send the signed contract for *${deal.brand} × ${deal.creator}*: ${String(e.message).slice(0, 200)}`);
+  }
+  return true;
+}
+
 async function attachFileToDraft(id, file) {
   const W = await import('../lib/whatsapp.js');
   const { uploadToNotion } = await import('../lib/briefs.js');
