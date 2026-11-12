@@ -20,7 +20,7 @@
       "maxDuration": 60
     },
     "api/leads.js": {
-      "maxDuration": 120
+      "maxDuration": 300
     },
     "api/revenue.js": {
       "maxDuration": 60
