@@ -26,11 +26,42 @@ export async function creatorView(creator, data) {
       // the team's notes on a card title ("- CHRIS WHATSAPP", "- FOLLOWED UP") and the creator's own name are dropped
       const clean = (t) => String(t || '').replace(/\s+[-–—|]\s+[A-Z0-9 ,.&'/]{3,}$/, '').replace(new RegExp(`\\s*[×x]\\s*${creator}\\b`, 'i'), '').replace(/\s{2,}/g, ' ').trim();
       const title = clean(v.title) || clean(v.brand);
-      return { title, brand: clean(v.brand), stage, date: v.date || '', amount: Number(v.amount) || null, paid: !!v.paid, paidDate: v.paidDate || '', invoiced: v.invoiced || '',
+      return { key: v.key, title, brand: clean(v.brand), stage, date: v.date || '', amount: Number(v.amount) || null, paid: !!v.paid, paidDate: v.paidDate || '', invoiced: v.invoiced || '',
         // a payment date only means something once the video is up
         expected: !v.paid && stage === 'Posted' ? (v.deal?.expected || '') : '' };
     });
   return { ok: true, creator, generated_at: data.generated_at, today: data.today, videos: rows };
+}
+
+const isoDay = (d) => (/^\d{4}-\d{2}-\d{2}$/.test(String(d || '')) ? String(d) : '');
+export async function creatorSave(creator, b) {
+  const ck = (s) => String(s || '').toLowerCase().replace(/[^a-z]/g, '');
+  const data = await revenueData({ fresh: true });
+  const v = data.videos.find((x) => x.key === b.key && ck(x.creator) === ck(creator));
+  if (!v) throw new Error('That video is not on your list');
+  const body = { action: 'set' };
+  if ('amount' in b) {
+    const n = b.amount === '' || b.amount == null ? null : Number(String(b.amount).replace(/[$,\s]/g, ''));
+    if (n != null && (!Number.isFinite(n) || n < 0 || n > 1e6)) throw new Error('Amount must be a number');
+    body.amount = n;
+  }
+  if ('paid' in b) { body.paid = !!b.paid; if (b.paid) body.paidDate = isoDay(b.paidDate) || data.today; }
+  else if ('paidDate' in b && isoDay(b.paidDate)) body.paidDate = isoDay(b.paidDate);
+  if ('invoiced' in b) body.invoiced = isoDay(b.invoiced) || '';
+  if (Object.keys(body).length === 1) throw new Error('Nothing to save');
+  // what the dashboard filled in from the deal is written to the row the first time it's saved, like on the team page
+  if (!('amount' in body) && v.amount && (v.amountFrom === 'deal' || !v.revPageId)) body.amount = v.amount;
+  if (!('paid' in body) && v.paidFrom === 'deal') { body.paid = true; body.paidDate = v.paidDate || data.today; }
+  if (v.revPageId) body.revPageId = v.revPageId;
+  else Object.assign(body, { link: v.link, title: v.title, creator: v.creator, brand: v.brand, date: v.date });
+  const r = await setRevenue(body);
+  // every change a creator makes is in the Agent Log, so the team can see who changed what
+  try {
+    const { log } = await import('../lib/briefs.js');
+    const said = [('amount' in b) && `amount ${b.amount === '' || b.amount == null ? 'cleared' : '$' + body.amount}`, ('paid' in b) && (b.paid ? `paid on ${body.paidDate}` : 'marked not paid'), ('invoiced' in b) && `invoice date ${body.invoiced || 'cleared'}`].filter(Boolean).join(', ');
+    await log({ event: `${creator} edited earnings: ${v.title}`.slice(0, 120), outcome: 'Rule', email: { messageId: '' }, details: `${said} (from ${creator}'s earnings page)`, creator });
+  } catch { /* the save itself went through */ }
+  return { ok: true, revPageId: r.revPageId };
 }
 
 export default async function handler(req, res) {
@@ -39,6 +70,18 @@ export default async function handler(req, res) {
     res.setHeader('Cache-Control', 'no-store');
     try { return res.status(200).json(await creatorView(viewer, await revenueData({ fresh: req.query?.fresh === '1' }))); }
     catch (e) { return res.status(502).json({ error: 'Could not load right now, try again in a minute' }); }
+  }
+  // A creator saving their own row: amount, paid, paid date, invoice date. Nothing else can be written from their link,
+  // and only on a row the server itself finds under that creator's name
+  if (req.method === 'POST') {
+    const b = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
+    if (b.k) {
+      const who = creatorForKey(b.k);
+      if (!who) return res.status(401).json({ error: 'This link is not valid' });
+      res.setHeader('Cache-Control', 'no-store');
+      try { return res.status(200).json(await creatorSave(who, b)); }
+      catch (e) { return res.status(400).json({ error: String(e.message || e).slice(0, 200) }); }
+    }
   }
   if (req.query?.k) return res.status(401).json({ error: 'This link is not valid' });
   if (!checkAuth(req)) return res.status(401).json({ error: 'Wrong or missing password' });

@@ -30,6 +30,20 @@
   .chip.paid { background: color-mix(in srgb, var(--go) 16%, transparent); color: var(--go); }
   .chip.due { background: color-mix(in srgb, var(--wait) 16%, transparent); color: var(--wait); }
   .chip.up { background: color-mix(in srgb, var(--acc) 16%, transparent); color: var(--acc); }
+  .row { cursor: pointer; }
+  .row.open { border-color: var(--acc); cursor: default; }
+  .ed { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--line); }
+  .ed label { display: grid; gap: 4px; font-size: 12px; color: var(--mute); }
+  .ed input[type=text], .ed input[type=date] { background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font: inherit; width: 100%; }
+  .ed .chk { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink); align-self: end; padding-bottom: 8px; }
+  .ed .chk input { width: 18px; height: 18px; accent-color: var(--go); }
+  .ed .acts { grid-column: 1 / -1; display: flex; gap: 8px; align-items: center; }
+  .btn { background: var(--acc); color: #fff; border: 0; border-radius: 8px; padding: 9px 16px; font: inherit; font-weight: 600; cursor: pointer; }
+  .btn.ghost { background: transparent; color: var(--mute); border: 1px solid var(--line); }
+  .btn:disabled { opacity: .6; cursor: wait; }
+  .err { color: #ff6b6b; font-size: 13px; }
+  .hint { color: var(--mute); font-size: 13px; margin: -8px 0 14px; }
+  .saved { color: var(--go); font-size: 13px; }
   .msg { color: var(--mute); padding: 40px 0; text-align: center; }
   footer { color: var(--mute); font-size: 12px; margin-top: 30px; }
   @media (max-width: 520px) { .tiles { grid-template-columns: 1fr 1fr; } .tile:first-child { grid-column: 1 / -1; } }
@@ -50,7 +64,7 @@
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const day = (d) => d ? new Date(d + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
   const monthOf = (d) => d ? new Date(d.slice(0, 7) + '-01T00:00:00').toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : 'Date to come';
-  let data = null, tab = 'all';
+  let data = null, tab = 'all', openKey = null, flash = '';
 
   function render() {
     const vids = data.videos;
@@ -71,13 +85,59 @@
         <div class="tile wait"><span class="k">Posted, not paid yet</span><b>${money(owed)}</b></div>
         <div class="tile"><span class="k">In the works</span><b>${money(coming)}</b></div>
       </div>
+      <p class="hint">Tap a video to fill in or fix its amount, or mark it paid. Changes save straight to NOOCAP.</p>
       <div class="tabs">${[['all', 'All'], ['open', 'Not paid yet'], ['paid', 'Paid']].map(([k, l]) => `<button type="button" data-t="${k}" class="${tab === k ? 'on' : ''}">${l}</button>`).join('')}</div>
       ${shown.length ? Object.entries(groups).map(([m, list]) => `
         <h2><span>${esc(m)}</span><span>${money(list.reduce((a, v) => a + (v.amount || 0), 0))}</span></h2>
-        ${list.map((v) => `<div class="row"><span class="t">${esc(v.title)}</span><span class="amt">${v.amount ? money(v.amount) : '—'}</span>
-          <span class="sub">${esc(v.brand || '')}${v.date ? ' · ' + (v.stage === 'Posted' ? 'posted ' : 'posting ') + day(v.date) : ''}${!v.paid && v.expected ? ' · payment expected ' + day(v.expected) : ''}</span>${chip(v)}</div>`).join('')}`).join('')
+        ${list.map((v) => `<div class="row${openKey === v.key ? ' open' : ''}" data-k="${esc(v.key)}"><span class="t">${esc(v.title)}</span><span class="amt">${v.amount ? money(v.amount) : '—'}</span>
+          <span class="sub">${esc(v.brand || '')}${v.date ? ' · ' + (v.stage === 'Posted' ? 'posted ' : 'posting ') + day(v.date) : ''}${!v.paid && v.expected ? ' · payment expected ' + day(v.expected) : ''}${flash === v.key ? ' · <span class="saved">Saved</span>' : ''}</span>${chip(v)}${openKey === v.key ? editor(v) : ''}</div>`).join('')}`).join('')
         : '<div class="msg">Nothing here yet.</div>'}`;
     app.querySelectorAll('[data-t]').forEach((b) => b.onclick = () => { tab = b.dataset.t; render(); });
+    app.querySelectorAll('.row').forEach((el) => el.onclick = (e) => {
+      if (e.target.closest('.ed')) return;
+      openKey = openKey === el.dataset.k ? null : el.dataset.k; flash = ''; render();
+    });
+    const ed = app.querySelector('.ed');
+    if (ed) {
+      const paid = ed.querySelector('[name=paid]'), pd = ed.querySelector('[name=paidDate]');
+      paid.onchange = () => { pd.disabled = !paid.checked; if (paid.checked && !pd.value) pd.value = data.today; };
+      ed.querySelector('[data-cancel]').onclick = () => { openKey = null; render(); };
+      ed.querySelector('form').onsubmit = (e) => { e.preventDefault(); save(ed); };
+    }
+  }
+
+  function editor(v) {
+    return `<div class="ed"><form style="display:contents">
+      <label>Amount (USD)<input type="text" inputmode="decimal" name="amount" value="${v.amount ?? ''}" placeholder="e.g. 1500"></label>
+      <label>Invoice sent on<input type="date" name="invoiced" value="${esc(v.invoiced)}"></label>
+      <span class="chk"><input type="checkbox" name="paid" id="pd_${esc(v.key)}" ${v.paid ? 'checked' : ''}><label for="pd_${esc(v.key)}" style="display:inline;color:var(--ink);font-size:14px">Paid</label></span>
+      <label>Paid on<input type="date" name="paidDate" value="${esc(v.paidDate)}" ${v.paid ? '' : 'disabled'}></label>
+      <div class="acts"><button class="btn" type="submit">Save</button><button class="btn ghost" type="button" data-cancel>Cancel</button><span class="err"></span></div>
+    </form></div>`;
+  }
+
+  async function save(ed) {
+    const v = data.videos.find((x) => x.key === openKey);
+    if (!v) return;
+    const f = ed.querySelector('form'), btn = f.querySelector('[type=submit]'), err = f.querySelector('.err');
+    const amountRaw = f.amount.value.trim().replace(/[$,\s]/g, '');
+    if (amountRaw && !(Number(amountRaw) >= 0)) { err.textContent = 'Amount must be a number'; return; }
+    const body = { k: key, key: v.key };
+    const amount = amountRaw === '' ? null : Number(amountRaw);
+    if (amount !== (v.amount ?? null)) body.amount = amount;
+    if (f.paid.checked !== v.paid || (f.paid.checked && f.paidDate.value !== (v.paidDate || ''))) { body.paid = f.paid.checked; body.paidDate = f.paidDate.value; }
+    if ((f.invoiced.value || '') !== (v.invoiced || '')) body.invoiced = f.invoiced.value;
+    if (Object.keys(body).length === 2) { openKey = null; render(); return; }
+    btn.disabled = true; err.textContent = '';
+    try {
+      const r = await fetch('/api/revenue', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error || 'Not saved');
+      if ('amount' in body) v.amount = body.amount;
+      if ('paid' in body) { v.paid = body.paid; v.paidDate = body.paid ? (body.paidDate || data.today) : ''; }
+      if ('invoiced' in body) v.invoiced = body.invoiced;
+      flash = v.key; openKey = null; render();
+    } catch (e) { err.textContent = e.message; btn.disabled = false; }
   }
 
   async function load() {

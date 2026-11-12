@@ -1893,3 +1893,10 @@ test("a creator's earnings link shows only their own rows and nothing internal",
   assert.ok(!/notion|cutCollected|"cuts"|Lindsay|suggested|revUrl/i.test(s));
   assert.equal(v.videos[0].stage, 'In production');
 });
+
+test("a creator can only save rows that are theirs, and only money fields", async () => {
+  const src = (await import('node:fs')).readFileSync(new URL('../api/revenue.js', import.meta.url), 'utf8');
+  const save = src.slice(src.indexOf('export async function creatorSave'), src.indexOf('export default'));
+  assert.ok(/x\.key === b\.key && ck\(x\.creator\) === ck\(creator\)/.test(save));
+  assert.ok(!/cutCollected|skip/.test(save));
+});
