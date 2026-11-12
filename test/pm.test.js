@@ -1827,3 +1827,11 @@ test('CapCut x Lindsay, Nov 12: contract and payment key points never reach the 
   assert.doesNotMatch(text, /contract attached/i);
   assert.doesNotMatch(text, /Payment 100%/);
 });
+
+test('CapCut x Lindsay, Nov 12: "3 promotional videos" is three cards', async () => {
+  const { videoCount } = await import('../lib/briefs.js');
+  assert.equal(videoCount({ deliverables: '3 promotional videos for CapCut APP on Instagram, 30–60 seconds each' }), 3);
+  assert.equal(videoCount({ deliverables: 'two branded reels' }), 2);
+  assert.equal(videoCount({ deliverables: 'One dedicated long-form YouTube video (8-10 minutes)' }), 1);
+  assert.equal(videoCount({ deliverables: 'one instagram reel (collab post) + cross post on TikTok' }), 1);
+});
