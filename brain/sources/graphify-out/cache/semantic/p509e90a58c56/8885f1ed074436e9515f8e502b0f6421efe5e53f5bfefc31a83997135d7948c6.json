@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_flowtica_flowtica", "label": "Flowtica", "file_type": "document", "source_file": "brands/flowtica.md"}], "edges": [{"source": "brands_flowtica_flowtica", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/flowtica.md"}], "hyperedges": []}

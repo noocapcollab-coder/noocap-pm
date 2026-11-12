@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_aisa_brand", "label": "AIsa", "file_type": "concept", "source_file": "brands/aisa.md"}], "edges": [{"source": "brands_aisa_brand", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/aisa.md"}], "hyperedges": []}

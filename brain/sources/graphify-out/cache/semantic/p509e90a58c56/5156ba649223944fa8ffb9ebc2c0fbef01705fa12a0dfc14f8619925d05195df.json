@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_minimaxdesign_minimax_design", "label": "MiniMax Design", "file_type": "document", "source_file": "brands/minimaxdesign.md"}], "edges": [{"source": "brands_minimaxdesign_minimax_design", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/minimaxdesign.md"}], "hyperedges": []}

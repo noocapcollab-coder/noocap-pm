@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_holafly_holafly", "label": "Holafly", "file_type": "document", "source_file": "brands/holafly.md"}], "edges": [{"source": "brands_holafly_holafly", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/holafly.md"}], "hyperedges": []}

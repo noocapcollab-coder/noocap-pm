@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_vinabot_vinabot_ai", "label": "Vinabot AI", "file_type": "concept", "source_file": "brands/vinabot.md"}], "edges": [{"source": "brands_vinabot_vinabot_ai", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/vinabot.md"}], "hyperedges": []}

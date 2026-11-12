@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_makeborne_makeborne", "label": "Makeborne", "file_type": "document", "source_file": "brands/makeborne.md"}], "edges": [{"source": "brands_makeborne_makeborne", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/makeborne.md"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_gridsocial_gridsocial", "label": "GridSocial", "file_type": "document", "source_file": "brands/gridsocial.md"}], "edges": [{"source": "brands_gridsocial_gridsocial", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/gridsocial.md"}], "hyperedges": []}

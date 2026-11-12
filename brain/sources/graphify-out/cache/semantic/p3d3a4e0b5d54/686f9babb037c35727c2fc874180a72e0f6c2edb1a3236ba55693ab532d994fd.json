@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_wizstar_wizstar", "label": "Wizstar", "file_type": "concept", "source_file": "brands/wizstar.md", "_origin": "semantic"}], "edges": [{"source": "brands_wizstar_wizstar", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/wizstar.md", "_origin": "semantic"}], "hyperedges": []}

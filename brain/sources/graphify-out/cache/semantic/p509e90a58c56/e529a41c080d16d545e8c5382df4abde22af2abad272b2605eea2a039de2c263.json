@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_moredashads_moredash_ads", "label": "MoreDash Ads", "file_type": "document", "source_file": "brands/moredashads.md"}], "edges": [{"source": "brands_moredashads_moredash_ads", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/moredashads.md"}], "hyperedges": []}

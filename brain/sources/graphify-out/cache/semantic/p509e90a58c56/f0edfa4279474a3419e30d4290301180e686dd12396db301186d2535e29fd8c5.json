@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_omnisocials_omnisocials", "label": "OmniSocials", "file_type": "document", "source_file": "brands/omnisocials.md"}], "edges": [{"source": "brands_omnisocials_omnisocials", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/omnisocials.md"}], "hyperedges": []}

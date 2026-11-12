@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_headsupp_headsupp", "label": "HeadsUpp", "file_type": "document", "source_file": "brands/headsupp.md"}], "edges": [{"source": "brands_headsupp_headsupp", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/headsupp.md"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_roboneo_roboneo", "label": "RoboNeo", "file_type": "document", "source_file": "brands/roboneo.md", "_origin": "semantic"}], "edges": [{"source": "brands_roboneo_roboneo", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/roboneo.md", "_origin": "semantic"}], "hyperedges": []}

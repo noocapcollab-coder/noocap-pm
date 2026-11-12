@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_munchstudio_munch_studio", "label": "Munch Studio", "file_type": "document", "source_file": "brands/munchstudio.md"}], "edges": [{"source": "brands_munchstudio_munch_studio", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/munchstudio.md"}], "hyperedges": []}

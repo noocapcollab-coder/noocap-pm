@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_apterno_brand", "label": "Apterno", "file_type": "concept", "source_file": "brands/apterno.md"}], "edges": [{"source": "brands_apterno_brand", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/apterno.md"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_renoise_renoise", "label": "Renoise", "file_type": "document", "source_file": "brands/renoise.md"}], "edges": [{"source": "brands_renoise_renoise", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/renoise.md"}], "hyperedges": []}

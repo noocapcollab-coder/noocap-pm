@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_fireflies_fireflies", "label": "Fireflies AI", "file_type": "document", "source_file": "brands/fireflies.md"}], "edges": [{"source": "brands_fireflies_fireflies", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/fireflies.md"}], "hyperedges": []}

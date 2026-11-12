@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_qoder_qoder", "label": "Qoder", "file_type": "document", "source_file": "brands/qoder.md", "_origin": "semantic"}], "edges": [{"source": "brands_qoder_qoder", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/qoder.md", "_origin": "semantic"}], "hyperedges": []}

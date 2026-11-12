@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_flymy_flymy", "label": "FlyMy.AI", "file_type": "document", "source_file": "brands/flymy.md"}], "edges": [{"source": "brands_flymy_flymy", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/flymy.md"}], "hyperedges": []}

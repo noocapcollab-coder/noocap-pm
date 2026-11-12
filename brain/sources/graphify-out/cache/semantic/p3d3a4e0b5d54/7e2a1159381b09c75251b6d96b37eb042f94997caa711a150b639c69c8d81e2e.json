@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_mvland_mvland", "label": "MVLAND", "file_type": "document", "source_file": "brands/mvland.md", "_origin": "semantic"}], "edges": [{"source": "brands_mvland_mvland", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/mvland.md", "_origin": "semantic"}], "hyperedges": []}

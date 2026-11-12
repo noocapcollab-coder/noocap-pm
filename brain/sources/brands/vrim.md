@@ -1,0 +1,6 @@
+# vrim.ai
+
+Brand. Works with creators: [[Chris]].
+
+## Inbound leads
+- Deliverables: Short-form video or YouTube video with concept and script by creator, 2 rounds of revisions · Next Step: No action needed. Keep contact info for future outreach if VRIM's budget grows. · Platforms: YouTube Shorts, YouTube · Last Our Email: 2026-10-29 · Last Brand Email: 2026-11-01· Thread Subject: Collab on face consistency — vrim.ai· Status: Lost · Creator: Chris · Type: Paid offer· Brand Email: contact@vrim.ai

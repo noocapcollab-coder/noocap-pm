@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_openbmb_openbmb", "label": "OpenBMB", "file_type": "document", "source_file": "brands/openbmb.md"}], "edges": [{"source": "brands_openbmb_openbmb", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/openbmb.md"}], "hyperedges": []}

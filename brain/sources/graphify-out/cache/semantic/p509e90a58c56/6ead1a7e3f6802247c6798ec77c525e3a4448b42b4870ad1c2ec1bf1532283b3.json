@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_hi3d30_hi3d30", "label": "Hi3D 3.0", "file_type": "document", "source_file": "brands/hi3d30.md"}], "edges": [{"source": "brands_hi3d30_hi3d30", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/hi3d30.md"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_rumbo_rumbo", "label": "Rumbo", "file_type": "document", "source_file": "brands/rumbo.md"}], "edges": [{"source": "brands_rumbo_rumbo", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/rumbo.md"}], "hyperedges": []}

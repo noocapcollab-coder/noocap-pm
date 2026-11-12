@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_brandinpro_brand", "label": "BrandinPro (AI Tool)", "file_type": "concept", "source_file": "brands/brandinpro.md"}], "edges": [{"source": "brands_brandinpro_brand", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/brandinpro.md"}], "hyperedges": []}

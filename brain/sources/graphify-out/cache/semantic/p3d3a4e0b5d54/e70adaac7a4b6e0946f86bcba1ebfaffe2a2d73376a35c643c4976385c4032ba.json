@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_august_brand", "label": "August App", "file_type": "concept", "source_file": "brands/august.md", "_origin": "semantic"}], "edges": [{"source": "brands_august_brand", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/august.md", "_origin": "semantic"}], "hyperedges": []}

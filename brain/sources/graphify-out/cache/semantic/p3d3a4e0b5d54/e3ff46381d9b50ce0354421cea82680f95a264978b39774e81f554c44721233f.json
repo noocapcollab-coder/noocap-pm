@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_spytrend_spytrend", "label": "SpyTrend", "file_type": "concept", "source_file": "brands/spytrend.md", "_origin": "semantic"}], "edges": [{"source": "brands_spytrend_spytrend", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/spytrend.md", "_origin": "semantic"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_shay_shay", "label": "Shay", "file_type": "concept", "source_file": "brands/shay.md"}], "edges": [{"source": "brands_shay_shay", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/shay.md"}], "hyperedges": []}

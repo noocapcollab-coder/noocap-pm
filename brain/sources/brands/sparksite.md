@@ -1,0 +1,6 @@
+# Spark.site
+
+Brand. Works with creators: [[Chris]].
+
+## Inbound leads
+- Deliverables: 1 short-form video, cross-posted to TikTok, Instagram Reels, YouTube Shorts, and Facebook Reels. · Contact Name: Plusai · Next Step: New brand: management to reply with pricing · Platforms: Instagram, TikTok, YouTube Shorts, Facebook · Last Our Email: 2026-10-26 · Last Brand Email: 2026-10-26· Thread Subject: Collaboration with @ Spark.site | thechriscordero· Status: Negotiating · Creator: Chris · Type: Paid offer· Brand Email: plusai@brandface.co

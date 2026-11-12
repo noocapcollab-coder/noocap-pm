@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_twinr_twinr", "label": "Twinr", "file_type": "concept", "source_file": "brands/twinr.md"}], "edges": [{"source": "brands_twinr_twinr", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/twinr.md"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_tulvo_tulvo", "label": "Tulvo", "file_type": "concept", "source_file": "brands/tulvo.md", "_origin": "semantic"}], "edges": [{"source": "brands_tulvo_tulvo", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/tulvo.md", "_origin": "semantic"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_wistar_wistar", "label": "Wistar", "file_type": "concept", "source_file": "brands/wistar.md"}], "edges": [{"source": "brands_wistar_wistar", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/wistar.md"}], "hyperedges": []}

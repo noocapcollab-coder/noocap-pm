@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_dellxps_brand", "label": "Dell XPS 13", "file_type": "concept", "source_file": "brands/dellxps.md", "_origin": "semantic"}], "edges": [{"source": "brands_dellxps_brand", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/dellxps.md", "_origin": "semantic"}], "hyperedges": []}

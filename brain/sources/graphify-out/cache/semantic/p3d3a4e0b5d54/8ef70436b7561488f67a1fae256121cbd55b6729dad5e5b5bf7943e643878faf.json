@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_base44_brand", "label": "Base44", "file_type": "concept", "source_file": "brands/base44.md", "_origin": "semantic"}], "edges": [{"source": "brands_base44_brand", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/base44.md", "_origin": "semantic"}], "hyperedges": []}

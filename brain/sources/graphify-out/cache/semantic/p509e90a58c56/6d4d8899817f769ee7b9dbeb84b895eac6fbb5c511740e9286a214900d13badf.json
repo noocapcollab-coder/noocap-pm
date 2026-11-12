@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_orilo_orilo", "label": "Orilo", "file_type": "document", "source_file": "brands/orilo.md"}], "edges": [{"source": "brands_orilo_orilo", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/orilo.md"}], "hyperedges": []}

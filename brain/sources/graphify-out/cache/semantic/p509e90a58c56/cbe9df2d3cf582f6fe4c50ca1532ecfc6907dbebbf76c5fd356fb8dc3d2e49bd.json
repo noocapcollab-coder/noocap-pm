@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_quiv_quiv", "label": "QUIV", "file_type": "document", "source_file": "brands/quiv.md"}], "edges": [{"source": "brands_quiv_quiv", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/quiv.md"}], "hyperedges": []}

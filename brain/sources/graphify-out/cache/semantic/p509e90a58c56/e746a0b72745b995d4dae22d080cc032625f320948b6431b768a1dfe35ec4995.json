@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_readdy_readdy_ai", "label": "Readdy AI", "file_type": "document", "source_file": "brands/readdy.md"}], "edges": [{"source": "brands_readdy_readdy_ai", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/readdy.md"}], "hyperedges": []}

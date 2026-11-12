@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_robofy_robofy", "label": "Robofy", "file_type": "document", "source_file": "brands/robofy.md"}], "edges": [{"source": "brands_robofy_robofy", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/robofy.md"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_toughtongue_tough_tongue_ai", "label": "Tough Tongue AI", "file_type": "concept", "source_file": "brands/toughtongue.md"}], "edges": [{"source": "brands_toughtongue_tough_tongue_ai", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/toughtongue.md"}], "hyperedges": []}

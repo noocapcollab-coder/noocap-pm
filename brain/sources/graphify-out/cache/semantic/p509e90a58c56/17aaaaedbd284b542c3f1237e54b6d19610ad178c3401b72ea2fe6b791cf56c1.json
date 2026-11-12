@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_repdog_repdog", "label": "RepDog", "file_type": "document", "source_file": "brands/repdog.md"}], "edges": [{"source": "brands_repdog_repdog", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/repdog.md"}], "hyperedges": []}

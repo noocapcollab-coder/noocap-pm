@@ -1,0 +1,1 @@
+{"nodes": [{"id": "editing_nicole_graphics", "label": "Nicole Graphics", "file_type": "code", "source_file": "editing/nicole-graphics.md"}], "edges": [{"source": "editing_nicole_graphics", "target": "creators_nicole", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "editing/nicole-graphics.md"}], "hyperedges": []}

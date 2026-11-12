@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_tapo_tapo", "label": "Tapo", "file_type": "concept", "source_file": "brands/tapo.md", "_origin": "semantic"}], "edges": [{"source": "brands_tapo_tapo", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/tapo.md", "_origin": "semantic"}], "hyperedges": []}

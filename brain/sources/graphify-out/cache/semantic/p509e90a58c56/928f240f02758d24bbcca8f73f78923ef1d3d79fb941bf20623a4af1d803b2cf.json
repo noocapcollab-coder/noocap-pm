@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_alloop_brand", "label": "Alloop", "file_type": "concept", "source_file": "brands/alloop.md"}], "edges": [{"source": "brands_alloop_brand", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/alloop.md"}], "hyperedges": []}

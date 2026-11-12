@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_vinaai_vinaai", "label": "VinaAI", "file_type": "concept", "source_file": "brands/vinaai.md"}], "edges": [{"source": "brands_vinaai_vinaai", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/vinaai.md"}], "hyperedges": []}

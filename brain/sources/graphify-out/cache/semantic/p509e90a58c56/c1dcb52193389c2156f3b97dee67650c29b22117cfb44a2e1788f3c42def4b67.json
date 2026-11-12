@@ -1,0 +1,1 @@
+{"nodes": [{"id": "systems_n8n_workflows", "label": "n8n Automations", "file_type": "document", "source_file": "systems/n8n-workflows.md", "rationale": "Documentation of automated workflows connecting Notion, Gmail, and Discord."}], "edges": [], "hyperedges": []}

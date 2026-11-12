@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_postermywall_postermywall", "label": "PosterMyWall", "file_type": "document", "source_file": "brands/postermywall.md"}], "edges": [{"source": "brands_postermywall_postermywall", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/postermywall.md"}], "hyperedges": []}

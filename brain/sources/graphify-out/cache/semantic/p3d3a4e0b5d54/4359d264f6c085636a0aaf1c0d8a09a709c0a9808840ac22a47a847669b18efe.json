@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_tripoapi_tripo_api", "label": "Tripo API", "file_type": "concept", "source_file": "brands/tripoapi.md", "_origin": "semantic"}], "edges": [{"source": "brands_tripoapi_tripo_api", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/tripoapi.md", "_origin": "semantic"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_goldjoy_goldjoy", "label": "GoldJoy", "file_type": "document", "source_file": "brands/goldjoy.md"}], "edges": [{"source": "brands_goldjoy_goldjoy", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/goldjoy.md"}], "hyperedges": []}

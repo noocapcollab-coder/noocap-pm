@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_marketcalls_market_calls", "label": "Market Calls", "file_type": "document", "source_file": "brands/marketcalls.md"}], "edges": [{"source": "brands_marketcalls_market_calls", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/marketcalls.md"}], "hyperedges": []}

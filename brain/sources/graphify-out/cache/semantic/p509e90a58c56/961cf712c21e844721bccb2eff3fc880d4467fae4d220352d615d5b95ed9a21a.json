@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_chatpro_brand", "label": "AI Chat Pro", "file_type": "concept", "source_file": "brands/chatpro.md"}], "edges": [{"source": "brands_chatpro_brand", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/chatpro.md"}], "hyperedges": []}

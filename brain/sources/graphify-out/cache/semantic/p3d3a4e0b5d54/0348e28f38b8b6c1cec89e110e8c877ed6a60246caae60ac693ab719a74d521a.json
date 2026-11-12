@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_captiono_brand", "label": "Captiono", "file_type": "concept", "source_file": "brands/captiono.md", "_origin": "semantic"}], "edges": [{"source": "brands_captiono_brand", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/captiono.md", "_origin": "semantic"}], "hyperedges": []}

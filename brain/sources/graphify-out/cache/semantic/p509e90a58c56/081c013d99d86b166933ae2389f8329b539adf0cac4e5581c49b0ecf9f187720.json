@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_vivix_vivix", "label": "Vivix", "file_type": "concept", "source_file": "brands/vivix.md"}], "edges": [{"source": "brands_vivix_vivix", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/vivix.md"}], "hyperedges": []}

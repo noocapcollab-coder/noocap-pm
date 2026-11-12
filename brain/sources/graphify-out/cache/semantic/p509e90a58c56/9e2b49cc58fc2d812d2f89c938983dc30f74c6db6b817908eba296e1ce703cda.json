@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_hubspot_hubspot", "label": "HubSpot", "file_type": "document", "source_file": "brands/hubspot.md"}], "edges": [{"source": "brands_hubspot_hubspot", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/hubspot.md"}], "hyperedges": []}

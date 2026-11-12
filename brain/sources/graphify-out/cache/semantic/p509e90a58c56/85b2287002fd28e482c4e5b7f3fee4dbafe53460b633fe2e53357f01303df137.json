@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_rokid_rokid", "label": "Rokid", "file_type": "document", "source_file": "brands/rokid.md"}], "edges": [{"source": "brands_rokid_rokid", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/rokid.md"}], "hyperedges": []}

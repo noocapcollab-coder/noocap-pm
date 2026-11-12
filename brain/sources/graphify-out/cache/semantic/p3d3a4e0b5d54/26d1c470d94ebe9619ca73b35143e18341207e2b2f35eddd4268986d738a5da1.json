@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_tapnow_tapnow_ai", "label": "TapNow AI", "file_type": "concept", "source_file": "brands/tapnow.md", "_origin": "semantic"}], "edges": [{"source": "brands_tapnow_tapnow_ai", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/tapnow.md", "_origin": "semantic"}], "hyperedges": []}

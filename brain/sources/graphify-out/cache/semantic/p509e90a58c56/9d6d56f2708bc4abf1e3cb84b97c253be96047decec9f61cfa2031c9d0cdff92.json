@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_vibecoding_vibe_coding", "label": "Vibe Coding", "file_type": "concept", "source_file": "brands/vibecoding.md"}], "edges": [{"source": "brands_vibecoding_vibe_coding", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/vibecoding.md"}], "hyperedges": []}

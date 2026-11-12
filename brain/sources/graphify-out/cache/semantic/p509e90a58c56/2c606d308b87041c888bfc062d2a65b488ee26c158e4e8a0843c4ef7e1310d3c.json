@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_vidagent_vidagent", "label": "VidAgent", "file_type": "concept", "source_file": "brands/vidagent.md"}], "edges": [{"source": "brands_vidagent_vidagent", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/vidagent.md"}], "hyperedges": []}

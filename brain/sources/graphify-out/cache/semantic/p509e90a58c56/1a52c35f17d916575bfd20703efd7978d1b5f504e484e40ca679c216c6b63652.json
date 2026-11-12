@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_toptal_toptal_ai", "label": "Toptal AI", "file_type": "concept", "source_file": "brands/toptal.md"}], "edges": [{"source": "brands_toptal_toptal_ai", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/toptal.md"}], "hyperedges": []}

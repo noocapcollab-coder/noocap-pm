@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_dynal_brand", "label": "Dynal", "file_type": "concept", "source_file": "brands/dynal.md"}], "edges": [{"source": "brands_dynal_brand", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/dynal.md"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_swarms_swarms", "label": "Swarms", "file_type": "concept", "source_file": "brands/swarms.md"}], "edges": [{"source": "brands_swarms_swarms", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/swarms.md"}], "hyperedges": []}

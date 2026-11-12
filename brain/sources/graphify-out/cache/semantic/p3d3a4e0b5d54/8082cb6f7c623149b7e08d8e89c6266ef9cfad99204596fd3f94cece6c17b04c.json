@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_aistlabs_brand", "label": "AistLabs", "file_type": "concept", "source_file": "brands/aistlabs.md", "_origin": "semantic"}], "edges": [{"source": "brands_aistlabs_brand", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/aistlabs.md", "_origin": "semantic"}], "hyperedges": []}

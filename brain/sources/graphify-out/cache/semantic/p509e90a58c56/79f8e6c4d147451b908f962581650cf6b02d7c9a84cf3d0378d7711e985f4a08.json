@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_gologin_gologin", "label": "GoLogin", "file_type": "document", "source_file": "brands/gologin.md"}], "edges": [{"source": "brands_gologin_gologin", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/gologin.md"}], "hyperedges": []}

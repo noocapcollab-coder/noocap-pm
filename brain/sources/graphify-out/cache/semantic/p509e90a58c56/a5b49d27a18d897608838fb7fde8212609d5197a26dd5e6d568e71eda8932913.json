@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_botslab_brand", "label": "Botslab", "file_type": "concept", "source_file": "brands/botslab.md"}], "edges": [{"source": "brands_botslab_brand", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/botslab.md"}], "hyperedges": []}

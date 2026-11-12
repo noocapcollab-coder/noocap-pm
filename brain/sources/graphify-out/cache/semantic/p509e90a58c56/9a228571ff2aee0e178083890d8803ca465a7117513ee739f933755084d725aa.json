@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_testsprite_testsprite", "label": "Testsprite", "file_type": "concept", "source_file": "brands/testsprite.md"}], "edges": [{"source": "brands_testsprite_testsprite", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/testsprite.md"}], "hyperedges": []}

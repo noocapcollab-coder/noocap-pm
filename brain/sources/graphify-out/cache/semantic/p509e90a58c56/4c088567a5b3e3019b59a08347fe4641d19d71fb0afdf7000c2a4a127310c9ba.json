@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_templify_templify", "label": "Templify", "file_type": "concept", "source_file": "brands/templify.md"}], "edges": [{"source": "brands_templify_templify", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/templify.md"}], "hyperedges": []}

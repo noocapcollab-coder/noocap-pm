@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_notegpt_notegpt", "label": "NoteGPT", "file_type": "document", "source_file": "brands/notegpt.md", "_origin": "semantic"}], "edges": [{"source": "brands_notegpt_notegpt", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/notegpt.md", "_origin": "semantic"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_bynn_brand", "label": "Bynn (DecisionNode)", "file_type": "concept", "source_file": "brands/bynn.md", "_origin": "semantic"}], "edges": [{"source": "brands_bynn_brand", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/bynn.md", "_origin": "semantic"}], "hyperedges": []}

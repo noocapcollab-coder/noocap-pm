@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_capmind_brand", "label": "Capmind", "file_type": "concept", "source_file": "brands/capmind.md", "_origin": "semantic"}], "edges": [{"source": "brands_capmind_brand", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/capmind.md", "_origin": "semantic"}], "hyperedges": []}

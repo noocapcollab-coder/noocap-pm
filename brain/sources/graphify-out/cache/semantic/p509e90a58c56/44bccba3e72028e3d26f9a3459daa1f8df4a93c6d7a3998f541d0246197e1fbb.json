@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_median_median_co", "label": "Median.co", "file_type": "document", "source_file": "brands/median.md"}], "edges": [{"source": "brands_median_median_co", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/median.md"}], "hyperedges": []}

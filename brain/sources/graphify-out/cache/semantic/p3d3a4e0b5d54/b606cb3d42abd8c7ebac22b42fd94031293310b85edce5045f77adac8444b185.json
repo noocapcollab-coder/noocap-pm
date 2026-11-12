@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_webzum_webzum", "label": "WebZum", "file_type": "concept", "source_file": "brands/webzum.md", "_origin": "semantic"}], "edges": [{"source": "brands_webzum_webzum", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/webzum.md", "_origin": "semantic"}], "hyperedges": []}

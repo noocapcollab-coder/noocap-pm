@@ -1,5 +1,6 @@
 // /api/brain — the second brain (lib/brain.js)
 //   GET ?export=1  with header x-brain-key: <BRAIN_KEY>  -> every brain source file as markdown, money removed.
+//   GET ?q=<question>  same key                       -> what search_brain returns (checks the bundled brain).
 //   Used by the weekly rebuild (a Claude session that runs Graphify and commits the graph into brain/).
 import crypto from 'node:crypto';
 import { exportBrain } from '../lib/brain.js';
@@ -15,6 +16,7 @@ export default async function handler(req, res) {
   if (!keyOk(req)) return res.status(401).json({ error: 'Bad or missing x-brain-key' });
   try {
     if (req.query?.export) return res.status(200).json(await exportBrain());
+    if (req.query?.q) { const { searchBrain } = await import('../lib/brainsearch.js'); return res.status(200).json(searchBrain(String(req.query.q))); }
     return res.status(400).json({ error: 'Use ?export=1' });
   } catch (e) {
     return res.status(500).json({ error: String(e.message || e).slice(0, 300) });

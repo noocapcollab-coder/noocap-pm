@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_pazi_pazi", "label": "Pazi", "file_type": "document", "source_file": "brands/pazi.md"}], "edges": [{"source": "brands_pazi_pazi", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/pazi.md"}], "hyperedges": []}

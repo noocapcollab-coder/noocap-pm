@@ -1,7 +1,8 @@
 {
   "functions": {
     "api/chat.js": {
-      "maxDuration": 60
+      "maxDuration": 60,
+      "includeFiles": "brain/{sources/*/*.md,graphify-out/graph.json}"
     },
     "api/inbox.js": {
       "maxDuration": 300
@@ -25,7 +26,8 @@
       "maxDuration": 60
     },
     "api/whatsapp.js": {
-      "maxDuration": 60
+      "maxDuration": 60,
+      "includeFiles": "brain/{sources/*/*.md,graphify-out/graph.json}"
     },
     "api/daily.js": {
       "maxDuration": 300
@@ -34,7 +36,8 @@
       "maxDuration": 120
     },
     "api/brain.js": {
-      "maxDuration": 300
+      "maxDuration": 300,
+      "includeFiles": "brain/{sources/*/*.md,graphify-out/graph.json}"
     }
   },
   "crons": [

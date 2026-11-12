@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_bobby_brand", "label": "Bobby AI", "file_type": "concept", "source_file": "brands/bobby.md"}], "edges": [{"source": "brands_bobby_brand", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/bobby.md"}], "hyperedges": []}

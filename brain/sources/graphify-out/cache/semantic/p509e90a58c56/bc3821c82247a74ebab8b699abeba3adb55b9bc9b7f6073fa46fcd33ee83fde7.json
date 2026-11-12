@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_eshinemedia_eshinemedia", "label": "Eshine Media", "file_type": "document", "source_file": "brands/eshinemedia.md"}], "edges": [{"source": "brands_eshinemedia_eshinemedia", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/eshinemedia.md"}], "hyperedges": []}

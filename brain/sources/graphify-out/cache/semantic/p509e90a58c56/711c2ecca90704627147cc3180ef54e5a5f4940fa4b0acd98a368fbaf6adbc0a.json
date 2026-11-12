@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_oleap_oleap", "label": "OLEAP", "file_type": "document", "source_file": "brands/oleap.md"}], "edges": [{"source": "brands_oleap_oleap", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/oleap.md"}], "hyperedges": []}

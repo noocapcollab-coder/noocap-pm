@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_lovart", "label": "Lovart", "file_type": "document", "source_file": "brands/lovart.md", "_origin": "semantic"}], "edges": [{"source": "brands_lovart", "target": "creators_valeri", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/lovart.md", "_origin": "semantic"}], "hyperedges": []}

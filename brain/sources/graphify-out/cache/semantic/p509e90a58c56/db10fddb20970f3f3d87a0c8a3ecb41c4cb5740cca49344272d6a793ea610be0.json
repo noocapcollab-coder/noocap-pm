@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_openui_openui", "label": "OpenUI", "file_type": "document", "source_file": "brands/openui.md"}], "edges": [{"source": "brands_openui_openui", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/openui.md"}], "hyperedges": []}

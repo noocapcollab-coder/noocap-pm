@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_medeo_medeo", "label": "Medeo", "file_type": "document", "source_file": "brands/medeo.md"}], "edges": [{"source": "brands_medeo_medeo", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/medeo.md"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "creators_brad", "label": "Brad", "file_type": "document", "source_file": "creators/brad.md"}], "edges": [{"source": "creators_brad", "target": "brands_unknown", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "creators/brad.md"}], "hyperedges": []}

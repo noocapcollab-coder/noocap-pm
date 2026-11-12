@@ -1,0 +1,1 @@
+{"nodes": [{"id": "creators_valeri", "label": "Valeri", "file_type": "document", "source_file": "creators/valeri.md", "_origin": "semantic"}], "edges": [{"source": "creators_valeri", "target": "brands_lovart", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "creators/valeri.md", "_origin": "semantic"}], "hyperedges": []}

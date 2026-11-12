@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_sweetmyo_sweetmyo", "label": "Sweetmyo", "file_type": "concept", "source_file": "brands/sweetmyo.md"}], "edges": [{"source": "brands_sweetmyo_sweetmyo", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/sweetmyo.md"}], "hyperedges": []}

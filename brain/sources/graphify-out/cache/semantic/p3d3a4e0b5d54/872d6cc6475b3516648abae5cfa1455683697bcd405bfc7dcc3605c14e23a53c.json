@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_oasis_oasis", "label": "Oasis", "file_type": "document", "source_file": "brands/oasis.md", "_origin": "semantic"}], "edges": [{"source": "brands_oasis_oasis", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/oasis.md", "_origin": "semantic"}], "hyperedges": []}

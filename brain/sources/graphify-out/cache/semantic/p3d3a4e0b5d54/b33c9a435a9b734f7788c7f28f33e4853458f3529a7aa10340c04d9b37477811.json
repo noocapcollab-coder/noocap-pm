@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_tools_ai_tools", "label": "AI tools (multiple)", "file_type": "concept", "source_file": "brands/tools.md", "_origin": "semantic"}], "edges": [{"source": "brands_tools_ai_tools", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/tools.md", "_origin": "semantic"}], "hyperedges": []}
