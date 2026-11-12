@@ -1947,3 +1947,14 @@ test('a handover nobody chased for weeks is not chased out of the blue (Hailuo, 
   const { briefChaseDue } = await import('../lib/leads.js');
   assert.equal(briefChaseDue({ status: 'Locked', nextStep: 'Handed to noocapcollab: waiting for the brief', lastOur: '2026-10-28T07:15:00Z', lastBrand: '2026-10-26T03:30:00Z', n: 0, now: Date.parse('2026-11-12T12:00:00Z') }), null);
 });
+
+test('outreach skips an agency mid-deal with another creator, matched by its email domain (growmaxvalue / CapCut)', async () => {
+  const { pickBrands } = await import('../lib/outreach.js');
+  const row = { id: 'g', properties: { Key: { type: 'rich_text', rich_text: [{ plain_text: 'growmaxvalue.com' }] }, Brand: { type: 'title', title: [{ plain_text: 'growmaxvalue.com (agency)' }] },
+    'Contact Emails': { type: 'rich_text', rich_text: [{ plain_text: 'jenny.c@growmaxvalue.com' }] }, 'Offer Type': { type: 'select', select: { name: 'Paid offer' } }, 'Do Not Contact': { type: 'checkbox', checkbox: false },
+    Approached: { type: 'multi_select', multi_select: [] }, 'Worked With': { type: 'multi_select', multi_select: [] }, 'Pitched For': { type: 'multi_select', multi_select: [] }, 'Last Pitched': { type: 'date', date: null },
+    'Last Seen': { type: 'date', date: { start: '2026-11-10' } }, 'Top Budget USD': { type: 'number', number: 3000 }, 'Contact Name': { type: 'rich_text', rich_text: [] } } };
+  const now = Date.parse('2026-11-12');
+  assert.equal(pickBrands('Valeri', [row], [], [{ brand: 'CapCut', creator: 'Chris', stage: 'In Production', brandEmail: 'mia.brown@growmaxvalue.com' }], { now }).length, 0);
+  assert.equal(pickBrands('Valeri', [row], [], [], { now })[0].brand, 'Growmaxvalue');
+});
