@@ -120,3 +120,23 @@ for f in OUT.glob('.graphify_*'):
 for f in OUT.glob('.sem_run*.json'):
     f.unlink()
 print(f'graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges, {len(communities)} groups')
+
+# 5. Data for the team page (site/index.html), published as the "NOOCAP Brain" artifact
+from datetime import date
+GROUPS = {'brands': 'Brands', 'creators': 'Creators', 'editing': 'Editing style', 'rules': 'Rules', 'lessons': 'Lessons', 'pages': 'SOPs & Notion pages', 'systems': 'Automations'}
+pages = []
+for f in sorted(ROOT.rglob('*.md')):
+    rel = str(f.relative_to(ROOT)); grp = rel.split('/')[0]
+    if grp not in GROUPS:
+        continue
+    md = f.read_text()
+    pages.append({'p': rel, 'g': GROUPS[grp], 't': (re.search(r'^# (.+)$', md, re.M) or [None, f.stem])[1], 'md': md})
+g = json.loads((OUT / 'graph.json').read_text())
+ids = {n['id']: i for i, n in enumerate(g['nodes'])}
+site = {'built': str(date.today()), 'pages': pages,
+        'nodes': [{'l': n.get('label', n['id']), 'c': n.get('community', -1), 'f': n.get('source_file', '')} for n in g['nodes']],
+        'links': [[ids[e['source']], ids[e['target']], e.get('relation', '')] for e in g['links'] if e['source'] in ids and e['target'] in ids],
+        'groups': {str(k): v for k, v in labels.items()}}
+(HERE / 'site').mkdir(exist_ok=True)
+(HERE / 'site' / 'brain-data.json').write_text(json.dumps(site, ensure_ascii=False, separators=(',', ':')))
+print(f'team page data: {len(pages)} pages')
