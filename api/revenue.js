@@ -21,7 +21,15 @@ const STAGE = (s) => { const n = parseInt(s, 10); if (/posted|^paid$/i.test(s) |
 export async function creatorView(creator, data) {
   const ck = (s) => String(s || '').toLowerCase().replace(/[^a-z]/g, '');
   const rows = data.videos.filter((v) => ck(v.creator) === ck(creator) && (!v.orphan || v.amount))
-    .map((v) => ({ title: v.title, brand: v.brand, stage: v.orphan ? 'Posted' : STAGE(v.status), date: v.date || '', amount: Number(v.amount) || null, paid: !!v.paid, paidDate: v.paidDate || '', invoiced: v.invoiced || '', expected: v.paid ? '' : (v.deal?.expected || '') }));
+    .map((v) => {
+      const stage = v.orphan ? 'Posted' : STAGE(v.status);
+      // the team's notes on a card title ("- CHRIS WHATSAPP", "- FOLLOWED UP") and the creator's own name are dropped
+      const clean = (t) => String(t || '').replace(/\s+[-–—|]\s+[A-Z0-9 ,.&'/]{3,}$/, '').replace(new RegExp(`\\s*[×x]\\s*${creator}\\b`, 'i'), '').replace(/\s{2,}/g, ' ').trim();
+      const title = clean(v.title) || clean(v.brand);
+      return { title, brand: clean(v.brand), stage, date: v.date || '', amount: Number(v.amount) || null, paid: !!v.paid, paidDate: v.paidDate || '', invoiced: v.invoiced || '',
+        // a payment date only means something once the video is up
+        expected: !v.paid && stage === 'Posted' ? (v.deal?.expected || '') : '' };
+    });
   return { ok: true, creator, generated_at: data.generated_at, today: data.today, videos: rows };
 }
 
