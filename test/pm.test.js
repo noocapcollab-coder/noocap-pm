@@ -1864,3 +1864,18 @@ Chris Cordero <collab@chriscordero.net> wrote:
   const { DOC_LINK } = await import('../lib/briefs.js');
   assert.ok(DOC_LINK.test('https://rcne281884cj.feishu.cn/wiki/abc'));
 });
+
+// System check Nov 12 (Readdy AI x Lindsay): a stale queued WhatsApp ask went out after we had already answered it,
+// and it blocked the brand's newer question for that deal.
+test('a queued WhatsApp ask is dropped once the deal moved, and a newer ask replaces it (Readdy AI x Lindsay, Nov 12)', async () => {
+  const fs = await import('node:fs');
+  const W = await import('../lib/whatsapp.js');
+  const queued = '2026-11-11T09:20:00.000Z';
+  assert.equal(W.queuedAskStale(queued, { lastOur: '2026-11-11T09:28:00.000Z', lastBrand: '2026-11-11T09:10:00.000Z' }), true);
+  assert.equal(W.queuedAskStale(queued, { lastOur: '2026-11-10T09:00:00.000Z', lastBrand: '2026-11-11T10:15:00.000Z' }), true);
+  assert.equal(W.queuedAskStale(queued, { lastOur: '2026-11-10T09:00:00.000Z', lastBrand: '2026-11-11T09:10:00.000Z' }), false);
+  assert.equal(W.queuedAskStale(queued, null), false);
+  const src = fs.readFileSync(new URL('../lib/whatsapp.js', import.meta.url), 'utf8');
+  assert.match(src, /if \(await askIsStale\(m\)\) \{ m\.meta = 'stale-ask'; m\.resolved = true; continue; \}/);
+  assert.match(src, /meta === 'pending-ask' && m\.infoAsk\?\.dealId === ask\.dealId && !m\.resolved\);\s*if \(queued\) \{ queued\.content/);
+});
