@@ -32,6 +32,9 @@
     },
     "api/outreach.js": {
       "maxDuration": 120
+    },
+    "api/brain.js": {
+      "maxDuration": 300
     }
   },
   "crons": [
