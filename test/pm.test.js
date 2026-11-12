@@ -1835,3 +1835,32 @@ test('CapCut x Lindsay, Nov 12: "3 promotional videos" is three cards', async ()
   assert.equal(videoCount({ deliverables: 'One dedicated long-form YouTube video (8-10 minutes)' }), 1);
   assert.equal(videoCount({ deliverables: 'one instagram reel (collab post) + cross post on TikTok' }), 1);
 });
+
+test('a brief that only sits in the quoted thread is found, without the budget (Dreamina x Chris, Nov 12)', async () => {
+  const { quotedBrief } = await import('../lib/inbox.js');
+  const mail = `Hi,
+Thank you for your update. Our timeline is extremely tight. We must receive both the script and UID today.
+
+Jenny, BD
+
+Chris Cordero <collab@chriscordero.net> wrote:
+> Hi Jenny,
+> We will move forward and submit the script shortly for approval.
+>
+> On Wed, Nov 11, 2026 at 9:43 PM Jenny Guo <jenny@viralvibe.llc> wrote:
+>> We're excited to move forward with this Dreamina collaboration! Please find the key project details below:
+>> Project: Dreamina
+>> Deliverables: 1 reel+7d bio + 1mon adcode
+>> Budget: $1200 USD
+>> Content Direction: Topic 2 – Artist Team
+>> Brief:
+>> https://rcne281884cj.feishu.cn/wiki/XQ5KwTi26iNsr0kQrldcAK3FnFf?from=from_copylink
+>> Script Submission: 11/11`;
+  const b = quotedBrief(mail);
+  assert.ok(b.includes('feishu.cn/wiki/XQ5KwTi26iNsr0kQrldcAK3FnFf'));
+  assert.ok(b.includes('Topic 2'));
+  assert.ok(!/1200/.test(b));
+  assert.equal(quotedBrief('Thanks, the payment went out today.\n\n> On Mon you wrote:\n> Here is our invoice https://pay.stripe.com/x'), '');
+  const { DOC_LINK } = await import('../lib/briefs.js');
+  assert.ok(DOC_LINK.test('https://rcne281884cj.feishu.cn/wiki/abc'));
+});
