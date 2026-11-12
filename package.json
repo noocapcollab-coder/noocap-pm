@@ -14,7 +14,7 @@
     "unpdf": "^1.8.1"
   },
   "scripts": {
-    "test": "node --test test/*.test.js",
-    "vercel-build": "node --test test/*.test.js"
+    "test": "GEMINI_API_KEY= PM_AI_PROVIDER= node --test test/*.test.js",
+    "vercel-build": "GEMINI_API_KEY= PM_AI_PROVIDER= node --test test/*.test.js"
   }
 }
