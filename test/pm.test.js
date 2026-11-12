@@ -1818,3 +1818,12 @@ test('Dreamina x Chris / AI Inspo x Duncan, Nov 12: a brand describing the scrip
   // A real go-ahead still counts
   assert.equal(goAheadToVideo('The script has been reviewed and looks great. You can now move forward with the video draft.'), true);
 });
+
+test('CapCut x Lindsay, Nov 12: contract and payment key points never reach the video card', async () => {
+  const { pageBody } = await import('../lib/briefs.js');
+  const blocks = pageBody({ x: { brand: 'CapCut', summary: ['Campaign brief provided via link', 'Collaboration agreement contract attached, needs signature and return', 'Publication deadline: November 27', 'Payment 100% within 7 days after all conditions met (publication + W-8/W-9 + invoice)'] }, email: { from: 'a', subject: 'b', date: 'c' }, links: [], uploads: [] });
+  const text = JSON.stringify(blocks);
+  assert.match(text, /Publication deadline/);
+  assert.doesNotMatch(text, /contract attached/i);
+  assert.doesNotMatch(text, /Payment 100%/);
+});
