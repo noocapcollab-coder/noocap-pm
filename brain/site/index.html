@@ -60,9 +60,13 @@ main { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(240p
 .links h4 { margin-top: 0; }
 .links .chip { margin: 0 6px 6px 0; }
 .empty { color: var(--muted); padding: 14px 8px; }
-.map { grid-column: 1 / -1; position: relative; }
+.map { grid-column: 1 / -1; position: relative; background: #0a0e1a; border-color: #1b2340; overflow: hidden; }
 #graph { position: absolute; inset: 0; }
-.legend { position: absolute; left: 10px; top: 10px; max-width: min(300px, 70%); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 12px; max-height: 45%; overflow: auto; }
+.legend { position: absolute; left: 12px; top: 12px; max-width: min(260px, 70%); background: rgba(10,14,26,.82); color: #b9c8f0; border: 1px solid #1b2340; border-radius: 8px; padding: 9px 12px; font-size: 12px; max-height: 50%; overflow: auto; }
+.legend .lg-title { font: 600 13px var(--display); color: #dfe8ff; margin-bottom: 4px; }
+.legend div { justify-content: space-between; }
+.legend span { color: #7f90bd; font-variant-numeric: tabular-nums; }
+.legend .note { color: #7f90bd; margin-top: 6px; }
 .legend div { display: flex; align-items: center; gap: 6px; }
 .legend i { width: 9px; height: 9px; border-radius: 50%; flex: none; }
 .note { font-size: 12px; color: var(--muted); }
@@ -201,24 +205,34 @@ function show(v) {
 $('#tab-read').onclick = () => show('read');
 $('#tab-map').onclick = () => show('map');
 
-const PALETTE = ['#0f8f72', '#3b6fd8', '#c2410c', '#9333ea', '#b45309', '#0e7490', '#be185d', '#4d7c0f', '#6d28d9', '#a16207'];
+// The map is drawn like an Obsidian graph view: one dark night-sky look in both themes, every note a dot with its name
+const MAP = { bg: '#0a0e1a', dot: '#9db8ff', hub: '#dfe8ff', text: '#b9c8f0', edge: 'rgba(140,165,230,0.24)', hot: '#ffffff' };
+const KIND = { creator: 'Creators', brand: 'Brands', deal: 'Deals', lead: 'Inbound leads', lesson: 'Lessons', rule: 'PM rules', sop: 'SOPs', style: 'Editing style', system: 'Automations', hub: 'Hubs', tag: 'Other' };
 function drawMap() {
   if (net || !window.vis) { if (!window.vis) $('#legend').innerHTML = '<div class="note">The map library could not load. The Read view still works.</div>'; return; }
-  const css = getComputedStyle(document.documentElement);
-  const fg = css.getPropertyValue('--fg').trim(), line = css.getPropertyValue('--line').trim();
-  const deg = new Array(D.nodes.length).fill(0); for (const [a, b] of D.links) { deg[a]++; deg[b]++; }
-  const color = (c) => (c >= 0 && c < 10 ? PALETTE[c] : '#8a9893');
-  const nodes = new vis.DataSet(D.nodes.map((n, i) => ({ id: i, label: deg[i] > 2 || n.f.startsWith('creators') ? n.l : undefined, title: n.l, value: 1 + deg[i], color: color(n.c), font: { color: fg, size: 13 } })));
-  const edges = new vis.DataSet(D.links.map(([a, b, r], i) => ({ id: i, from: a, to: b, title: r, color: { color: line, highlight: color(D.nodes[a].c) } })));
-  net = new vis.Network($('#graph'), { nodes, edges }, { nodes: { shape: 'dot', scaling: { min: 4, max: 40 } }, edges: { smooth: false, width: 0.6 }, physics: { solver: 'forceAtlas2Based', stabilization: { iterations: 180 } }, interaction: { hover: true, tooltipDelay: 120 } });
-  net.on('doubleClick', (p) => { if (p.nodes.length) { const n = D.nodes[p.nodes[0]]; const pg = D.pages.find((x) => x.p === n.f); if (pg) { show('read'); openPage(pg.p); } } });
-  const groups = Object.entries(D.groups).map(([c, l]) => [Number(c), l]).filter(([c]) => c < 10);
-  $('#legend').innerHTML = groups.map(([c, l]) => `<div><i style="background:${color(c)}"></i>${esc(l)}</div>`).join('') + '<div class="note" style="margin-top:6px">Double-click a dot to read its page.</div>';
+  const G = D.notes;
+  const deg = new Array(G.nodes.length).fill(0); for (const [a, b] of G.links) { deg[a]++; deg[b]++; }
+  const big = (i) => G.nodes[i].t === 'creator' || deg[i] > 12;
+  const nodes = new vis.DataSet(G.nodes.map((n, i) => ({ id: i, label: n.l, title: `${n.l} · ${KIND[n.t] || n.t}`, value: 1 + deg[i],
+    color: { background: big(i) ? MAP.hub : MAP.dot, border: 'transparent', highlight: { background: MAP.hot, border: MAP.hot }, hover: { background: MAP.hot, border: MAP.hot } },
+    font: { color: MAP.text, size: big(i) ? 26 : 11, face: 'Inter', strokeWidth: 0 } })));
+  const edges = new vis.DataSet(G.links.map(([a, b], i) => ({ id: i, from: a, to: b })));
+  net = new vis.Network($('#graph'), { nodes, edges }, {
+    nodes: { shape: 'dot', borderWidth: 0, scaling: { min: 4, max: 30, label: { enabled: false } } },
+    edges: { smooth: false, width: 0.5, color: { color: MAP.edge, highlight: 'rgba(200,215,255,0.8)', hover: 'rgba(200,215,255,0.6)' } },
+    physics: { solver: 'forceAtlas2Based', forceAtlas2Based: { gravitationalConstant: -38, springLength: 60, avoidOverlap: 0.2 }, stabilization: { iterations: 260, updateInterval: 40 } },
+    interaction: { hover: true, hoverConnectedEdges: true, tooltipDelay: 80, hideEdgesOnDrag: true } });
+  net.once('stabilizationIterationsDone', () => net.setOptions({ physics: false }));
+  net.on('doubleClick', (p) => { if (!p.nodes.length) return; const n = G.nodes[p.nodes[0]]; const pg = D.pages.find((x) => x.p === n.p); if (pg) { show('read'); openPage(pg.p); } });
+  const counts = {}; for (const n of G.nodes) counts[n.t] = (counts[n.t] || 0) + 1;
+  $('#legend').innerHTML = `<div class="lg-title">${G.nodes.length.toLocaleString()} notes · ${G.links.length.toLocaleString()} links</div>` +
+    Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([t, c]) => `<div>${esc(KIND[t] || t)} <span>${c}</span></div>`).join('') +
+    '<div class="note">Scroll to zoom. Double-click a note to read it.</div>';
 }
 
 fetch('brain-data.json').then((r) => r.json()).then((d) => {
   D = d; for (const p of D.pages) p.lc = p.md.toLowerCase();
-  $('#meta').textContent = `${D.pages.length} pages · ${D.nodes.length} concepts · updated ${D.built} · no money in here`;
+  $('#meta').textContent = `${D.pages.length} pages · ${(D.notes?.nodes.length || D.nodes.length).toLocaleString()} notes · updated ${D.built} · no money in here`;
   const groups = ['All', ...new Set(D.pages.map((p) => p.g))];
   $('#filters').innerHTML = groups.map((g) => `<button class="chip" aria-pressed="${g === 'All'}" data-g="${esc(g)}">${esc(g)}</button>`).join('');
   $('#filters').onclick = (e) => { const b = e.target.closest('[data-g]'); if (!b) return; group = b.dataset.g; document.querySelectorAll('[data-g]').forEach((x) => x.setAttribute('aria-pressed', x === b)); drawList(); };

@@ -137,6 +137,8 @@ site = {'built': str(date.today()), 'pages': pages,
         'nodes': [{'l': n.get('label', n['id']), 'c': n.get('community', -1), 'f': n.get('source_file', '')} for n in g['nodes']],
         'links': [[ids[e['source']], ids[e['target']], e.get('relation', '')] for e in g['links'] if e['source'] in ids and e['target'] in ids],
         'groups': {str(k): v for k, v in labels.items()}}
+import notes as _notes
+site['notes'] = _notes.build()  # Obsidian-style note graph for the map, and brain/vault for Obsidian
 (HERE / 'site').mkdir(exist_ok=True)
 (HERE / 'site' / 'brain-data.json').write_text(json.dumps(site, ensure_ascii=False, separators=(',', ':')))
 print(f'team page data: {len(pages)} pages')
