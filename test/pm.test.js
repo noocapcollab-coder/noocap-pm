@@ -1909,10 +1909,10 @@ test('outreach: the right brands are picked for a creator', async () => {
     'Offer Type': { type: 'select', select: { name: o.t || 'Paid offer' } }, 'Do Not Contact': { type: 'checkbox', checkbox: !!o.dnc },
     Approached: { type: 'multi_select', multi_select: (o.a || []).map((name) => ({ name })) }, 'Worked With': { type: 'multi_select', multi_select: [] },
     'Pitched For': { type: 'multi_select', multi_select: (o.p || []).map((name) => ({ name })) }, 'Last Pitched': { type: 'date', date: o.lp ? { start: o.lp } : null },
-    'Last Seen': { type: 'date', date: { start: o.ls || '2026-11-01' } }, 'Top Budget USD': { type: 'number', number: o.u || 0 }, 'Contact Name': { type: 'rich_text', rich_text: [] } } });
+    'Last Seen': { type: 'date', date: { start: o.ls || '2026-11-01' } }, 'Reach-outs': { type: 'rich_text', rich_text: [{ plain_text: o.r ?? '1 Nov 2026 · Chris · X · Paid offer · lead, waiting on brand' }] }, 'Top Budget USD': { type: 'number', number: o.u || 0 }, 'Contact Name': { type: 'rich_text', rich_text: [] } } });
   const pool = [P({ k: 'good.com', b: 'Good', u: 2000 }), P({ k: 'gift.com', b: 'Gift', t: 'Gifted' }), P({ k: 'dnc.com', b: 'Dnc', dnc: 1 }),
     P({ k: 'own.com', b: 'Own', a: ['Lindsay'] }), P({ k: 'old.com', b: 'Old', ls: '2025-01-01' }), P({ k: 'recent.com', b: 'Recent', p: ['Lindsay'], lp: '2026-11-01' }),
-    P({ k: 'busy.com', b: 'Busy AI' }), P({ k: 'q.com', b: 'Q' }), P({ k: 'cheap.com', b: 'Cheap', u: 300 })];
+    P({ k: 'busy.com', b: 'Busy AI' }), P({ k: 'q.com', b: 'Q' }), P({ k: 'cheap.com', b: 'Cheap', u: 300 }), P({ k: 'offeronly.com', b: 'OfferOnly', r: '2 Nov 2026 · Chris · OfferOnly · Paid offer · lead, new offer' })];
   const out = pickBrands('Lindsay', pool, [{ creator: 'Lindsay', poolKey: 'q.com' }], [{ brand: 'Busy', creator: 'Chris' }], { now: Date.parse('2026-11-12') });
   assert.deepEqual(out.map((x) => x.brand), ['Good', 'Cheap']);
 });
@@ -1953,7 +1953,7 @@ test('outreach skips an agency mid-deal with another creator, matched by its ema
   const row = { id: 'g', properties: { Key: { type: 'rich_text', rich_text: [{ plain_text: 'growmaxvalue.com' }] }, Brand: { type: 'title', title: [{ plain_text: 'growmaxvalue.com (agency)' }] },
     'Contact Emails': { type: 'rich_text', rich_text: [{ plain_text: 'jenny.c@growmaxvalue.com' }] }, 'Offer Type': { type: 'select', select: { name: 'Paid offer' } }, 'Do Not Contact': { type: 'checkbox', checkbox: false },
     Approached: { type: 'multi_select', multi_select: [] }, 'Worked With': { type: 'multi_select', multi_select: [] }, 'Pitched For': { type: 'multi_select', multi_select: [] }, 'Last Pitched': { type: 'date', date: null },
-    'Last Seen': { type: 'date', date: { start: '2026-11-10' } }, 'Top Budget USD': { type: 'number', number: 3000 }, 'Contact Name': { type: 'rich_text', rich_text: [] } } };
+    'Last Seen': { type: 'date', date: { start: '2026-11-10' } }, 'Reach-outs': { type: 'rich_text', rich_text: [{ plain_text: '10 Nov 2026 · Lindsay · CapCut · deal, brief received' }] }, 'Top Budget USD': { type: 'number', number: 3000 }, 'Contact Name': { type: 'rich_text', rich_text: [] } } };
   const now = Date.parse('2026-11-12');
   assert.equal(pickBrands('Valeri', [row], [], [{ brand: 'CapCut', creator: 'Chris', stage: 'In Production', brandEmail: 'mia.brown@growmaxvalue.com' }], { now }).length, 0);
   assert.equal(pickBrands('Valeri', [row], [], [], { now })[0].brand, 'Growmaxvalue');
