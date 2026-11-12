@@ -1942,3 +1942,8 @@ test('a creator looping noocapcollab in for the contract and brief is a handover
   assert.equal(briefChaseDue({ ...base, n: 0, now, dealHasBrief: true }), null);
   assert.match(briefChaseText({ n: 1, brand: 'TapNow AI', name: 'Lily', creator: 'Chris' }), /^Hi Lily,\n\nJust following up on the contract and brief for TapNow AI/);
 });
+
+test('a handover nobody chased for weeks is not chased out of the blue (Hailuo, Oct 28)', async () => {
+  const { briefChaseDue } = await import('../lib/leads.js');
+  assert.equal(briefChaseDue({ status: 'Locked', nextStep: 'Handed to noocapcollab: waiting for the brief', lastOur: '2026-10-28T07:15:00Z', lastBrand: '2026-10-26T03:30:00Z', n: 0, now: Date.parse('2026-11-12T12:00:00Z') }), null);
+});
