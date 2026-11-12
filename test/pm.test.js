@@ -1928,3 +1928,17 @@ test('outreach: the template fills in and follows the creator', async () => {
   assert.equal(nextUp(cs, rows, now).row.id, 3); // a due follow-up goes first
   assert.equal(nextUp(cs, rows.slice(0, 2), now).row.id, 1); // a paused creator never sends
 });
+
+test('a creator looping noocapcollab in for the contract and brief is a handover, and the brief gets chased twice', async () => {
+  const { isHandover, briefChaseDue, briefChaseText } = await import('../lib/leads.js');
+  assert.ok(isHandover('Hi Lily,\n\nThat works for me. I can publish the video within two weeks.\n\nPlease send over the contract and brand brief and I am looping noocapcollab@gmail.com in the thread in so we can move straight into scripting.', 'lily@macaron-ai.com', 'noocapcollab@gmail.com'));
+  assert.ok(!isHandover('What would the contract terms be? Our rate is $1,500.', '', 'noocapcollab@gmail.com'));
+  const base = { status: 'Locked', nextStep: 'Handed to noocapcollab: waiting for the brief', lastOur: '2026-11-06T11:07:00Z', lastBrand: '2026-11-06T03:43:00Z' };
+  const now = Date.parse('2026-11-12T12:00:00Z');
+  assert.equal(briefChaseDue({ ...base, n: 0, now }), 'chase');
+  assert.equal(briefChaseDue({ ...base, n: 1, lastOur: '2026-11-11T10:00:00Z', now }), null); // 3 days between chases
+  assert.equal(briefChaseDue({ ...base, n: 2, now }), 'handoff');
+  assert.equal(briefChaseDue({ ...base, n: 0, lastBrand: '2026-11-08T10:00:00Z', now }), null); // the brand answered
+  assert.equal(briefChaseDue({ ...base, n: 0, now, dealHasBrief: true }), null);
+  assert.match(briefChaseText({ n: 1, brand: 'TapNow AI', name: 'Lily', creator: 'Chris' }), /^Hi Lily,\n\nJust following up on the contract and brief for TapNow AI/);
+});
