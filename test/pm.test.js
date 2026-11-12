@@ -1986,3 +1986,14 @@ test('a signed contract from WhatsApp finds its deal, and asks when it is not cl
   assert.ok(!looksLikeContract('thumbnail.png', 'hello'));
   assert.match(contractEmail(deals[0]), /^Hi Gina,\n\nPlease find the signed contract attached/);
 });
+
+test('a contract inside a brief email is found: unnamed PDFs, and contract links next to the word "contract"', async () => {
+  const { contractIn, contractDocLinks } = await import('../lib/inbox.js');
+  const brief = 'Hi! Here is the brief: https://docs.google.com/document/d/BRIEF123/edit\nAnd the contract for signing: https://docs.google.com/document/d/CONTRACT456/edit\nThanks';
+  assert.deepEqual(contractDocLinks(brief), ['https://docs.google.com/document/d/CONTRACT456/edit']);
+  const c = contractIn({ text: 'Please find the brief and our collaboration details attached.', attachments: [{ filename: 'Collaboration.pdf', mimeType: 'application/pdf', data: 'x' }, { filename: 'Brief.pdf', mimeType: 'application/pdf', data: 'y' }] });
+  assert.equal(c.unnamed.length, 1);
+  assert.equal(c.unnamed[0].filename, 'Collaboration.pdf');
+  const named = contractIn({ text: 'Brief and contract attached', attachments: [{ filename: 'Brief.pdf', mimeType: 'application/pdf' }, { filename: 'Agreement_Atoms.pdf', mimeType: 'application/pdf' }] });
+  assert.deepEqual(named.files.map((f) => f.filename), ['Agreement_Atoms.pdf']);
+});
