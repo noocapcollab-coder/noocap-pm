@@ -1958,3 +1958,8 @@ test('outreach skips an agency mid-deal with another creator, matched by its ema
   assert.equal(pickBrands('Valeri', [row], [], [{ brand: 'CapCut', creator: 'Chris', stage: 'In Production', brandEmail: 'mia.brown@growmaxvalue.com' }], { now }).length, 0);
   assert.equal(pickBrands('Valeri', [row], [], [], { now })[0].brand, 'Growmaxvalue');
 });
+
+test('outreach: a saved campaign with no pronoun still uses she for Valeri, Lindsay and Nicole', async () => {
+  const { defaultPronoun } = await import('../lib/outreach.js');
+  assert.equal(defaultPronoun('Valeri'), 'she'); assert.equal(defaultPronoun('Lindsay'), 'she'); assert.equal(defaultPronoun('Chris'), 'he');
+});
