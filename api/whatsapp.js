@@ -533,6 +533,8 @@ async function answerInfoAsk(st, msg, text, file) {
     return;
   }
   msg.resolved = 'answered';
+  // First brain -> second brain: Harsh's answer is a decision the brain keeps for this brand (lib/brain.js exports it)
+  if (text) { const { logDecision } = await import('../lib/brain.js'); logDecision({ brand: deal.brand, creator: deal.creator, asked: a.need, answer: text }).catch(() => {}); }
   const r = await createDraft({ kind: 'Reply', deal: here, subject: mail.subject, body: mail.body, attach: sendFile ? 'File' : 'None', sendFile, video: deal.linkedVideo, why: `${deal.brand} asked for: ${a.need}. Written from your WhatsApp answer.`, notify: true });
   if (r.skipped) await say(st, 'A reply for that thread is already waiting, so I showed that one instead.');
 }

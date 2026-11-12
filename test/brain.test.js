@@ -10,3 +10,10 @@ test('money never reaches the brain', () => {
   assert.ok(!/Wise|net 30/.test(w)); assert.ok(w.includes('never post on weekends') && w.includes('Ana'));
   assert.equal(slug('Higgsfield.AI (agency)'), 'higgsfield-ai-agency');
 });
+
+test('script cards get what we learned about the brand, never money or contract lines', async () => {
+  const { teamNotesFrom } = await import('../lib/briefs.js');
+  const page = 'WHO: X\nHOW THEY WORK: They review scripts in Google Docs and want the hook in the first 3 seconds. Invoices go to finance@x.com within 30 days. They pay $1,500 per reel.\nPAYMENT: net 30\nWATCH OUT: Never mention competitors by name. The contract forbids posting before approval.\nOPEN NOW: script';
+  const n = teamNotesFrom(page);
+  assert.deepEqual(n, ['They review scripts in Google Docs and want the hook in the first 3 seconds.', 'Never mention competitors by name.']);
+});
