@@ -1900,3 +1900,31 @@ test("a creator can only save rows that are theirs, and only money fields", asyn
   assert.ok(/x\.key === b\.key && ck\(x\.creator\) === ck\(creator\)/.test(save));
   assert.ok(!/cutCollected|skip/.test(save));
 });
+
+test('outreach: the right brands are picked for a creator', async () => {
+  const { pickBrands } = await import('../lib/outreach.js');
+  const P = (o) => ({ id: o.k, properties: {
+    Key: { type: 'rich_text', rich_text: [{ plain_text: o.k }] }, Brand: { type: 'title', title: [{ plain_text: o.b }] },
+    'Contact Emails': { type: 'rich_text', rich_text: [{ plain_text: o.e || `hi@${o.k}` }] },
+    'Offer Type': { type: 'select', select: { name: o.t || 'Paid offer' } }, 'Do Not Contact': { type: 'checkbox', checkbox: !!o.dnc },
+    Approached: { type: 'multi_select', multi_select: (o.a || []).map((name) => ({ name })) }, 'Worked With': { type: 'multi_select', multi_select: [] },
+    'Pitched For': { type: 'multi_select', multi_select: (o.p || []).map((name) => ({ name })) }, 'Last Pitched': { type: 'date', date: o.lp ? { start: o.lp } : null },
+    'Last Seen': { type: 'date', date: { start: o.ls || '2026-11-01' } }, 'Top Budget USD': { type: 'number', number: o.u || 0 }, 'Contact Name': { type: 'rich_text', rich_text: [] } } });
+  const pool = [P({ k: 'good.com', b: 'Good', u: 2000 }), P({ k: 'gift.com', b: 'Gift', t: 'Gifted' }), P({ k: 'dnc.com', b: 'Dnc', dnc: 1 }),
+    P({ k: 'own.com', b: 'Own', a: ['Lindsay'] }), P({ k: 'old.com', b: 'Old', ls: '2025-01-01' }), P({ k: 'recent.com', b: 'Recent', p: ['Lindsay'], lp: '2026-11-01' }),
+    P({ k: 'busy.com', b: 'Busy AI' }), P({ k: 'q.com', b: 'Q' }), P({ k: 'cheap.com', b: 'Cheap', u: 300 })];
+  const out = pickBrands('Lindsay', pool, [{ creator: 'Lindsay', poolKey: 'q.com' }], [{ brand: 'Busy', creator: 'Chris' }], { now: Date.parse('2026-11-12') });
+  assert.deepEqual(out.map((x) => x.brand), ['Good', 'Cheap']);
+});
+
+test('outreach: the template fills in and follows the creator', async () => {
+  const { render, nextUp } = await import('../lib/outreach.js');
+  const t = 'I manage [creator] (X+ followers). Since [creator] is an AI creator, he would fit. His audience wants {brand}.';
+  assert.equal(render(t, { creator: 'Lindsay', followers: '250K', pronoun: 'she', brand: 'Acme' }), 'I manage Lindsay (250K+ followers). Since Lindsay is an AI creator, she would fit. Her audience wants Acme.');
+  const cs = [{ creator: 'Chris', status: 'Running', followUp1: 'fu', followUp2: '' }, { creator: 'Brad', status: 'Paused', followUp1: '', followUp2: '' }];
+  const now = Date.parse('2026-11-12T15:00:00Z');
+  const rows = [{ id: 1, creator: 'Chris', status: 'Queued', created: '2026-11-10' }, { id: 2, creator: 'Brad', status: 'Queued', created: '2026-11-01' },
+    { id: 3, creator: 'Chris', status: 'Sent', lastSentAt: '2026-11-07T15:00:00Z' }];
+  assert.equal(nextUp(cs, rows, now).row.id, 3); // a due follow-up goes first
+  assert.equal(nextUp(cs, rows.slice(0, 2), now).row.id, 1); // a paused creator never sends
+});

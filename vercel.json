@@ -29,6 +29,9 @@
     },
     "api/daily.js": {
       "maxDuration": 300
+    },
+    "api/outreach.js": {
+      "maxDuration": 120
     }
   },
   "crons": [
@@ -51,6 +54,10 @@
     {
       "path": "/api/daily",
       "schedule": "40 21 * * *"
+    },
+    {
+      "path": "/api/outreach",
+      "schedule": "*/5 * * * *"
     }
   ]
 }
