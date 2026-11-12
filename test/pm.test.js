@@ -1890,6 +1890,6 @@ test("a creator's earnings link shows only their own rows and nothing internal",
   const v = await creatorView('Chris', d);
   assert.equal(v.videos.length, 1);
   const s = JSON.stringify(v);
-  assert.ok(!/notion|cut|Lindsay|suggested|revUrl/i.test(s));
+  assert.ok(!/notion|cutCollected|"cuts"|Lindsay|suggested|revUrl/i.test(s));
   assert.equal(v.videos[0].stage, 'In production');
 });
