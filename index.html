@@ -825,7 +825,7 @@
     <button data-v="approvals" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Approvals <span class="badge" data-count hidden>0</span></button>
     <button data-v="billing" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12h7M9 16h5"/></svg>Invoices <span class="badge" id="invBadge" hidden>0</span></button>
     <button data-v="revenue" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M17 7.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2.2 2.7 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3"/></svg>Revenue</button>
-    <a href="/outreach.html" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;padding:7px 16px;border-radius:9px;font:600 13px 'Space Grotesk',sans-serif">✉ Outreach</a>
+    <button data-v="outreach" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>Outreach</button>
     <button data-v="spend" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>Tools &amp; spend</button>
   </div>
   <div class="grp">
@@ -961,6 +961,16 @@
   <div class="err" id="spErr" style="font-size:13px"></div>
 </div></section>
 
+<!-- ============ Outreach ============ -->
+<section class="view" id="outreach"><div class="ov">
+  <div class="ov-head">
+    <div><div class="k" id="orWhen">Pitching creators to Brand Pool brands · from harshkoli201@gmail.com</div><h1>Outreach</h1></div>
+  </div>
+  <section class="ostats" id="orStats" aria-label="Outreach totals"><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div></section>
+  <div id="orBody"><div class="skel"></div><div class="skel"></div></div>
+  <div class="err" id="orErr" style="font-size:13px"></div>
+</div></section>
+
 <!-- ============ Runs ============ -->
 <section class="view" id="runs"><div class="ov">
   <div class="ov-head">
@@ -1050,6 +1060,7 @@
   <button data-v="pricing" type="button"><span class="i">▥</span>Pricing</button>
   <button data-v="active" type="button"><span class="i">▦</span>Active</button>
   <button data-v="revenue" type="button"><span class="i">$</span>Revenue</button>
+  <button data-v="outreach" type="button"><span class="i">➤</span>Outreach</button>
   <button data-v="billing" type="button"><span class="i">🧾</span>Invoices</button>
   <button data-v="spend" type="button"><span class="i">▭</span>Tools</button>
   <button data-v="flow" type="button"><span class="i">⇢</span>System</button>
@@ -1097,7 +1108,7 @@
   // ---------- tabs ----------
   let view = 'overview';
   function show(v) {
-    if (!['overview', 'hq', 'team', 'billing', 'leads', 'followups', 'pricing', 'active', 'deals', 'revenue', 'spend', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
+    if (!['overview', 'hq', 'team', 'billing', 'leads', 'followups', 'pricing', 'active', 'deals', 'revenue', 'outreach', 'spend', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
     if (v === 'deals') v = 'leads'; // the old Brand deals board is now Leads + Active brands
     view = v;
     document.querySelectorAll('.view').forEach((el) => el.classList.toggle('on', el.id === v));
@@ -1110,6 +1121,7 @@
     if (v === 'flow' && !flowData) loadFlow();
     if (v === 'revenue') rv ? renderRevenue() : loadRevenue();
     if (v === 'spend') sp ? renderSpend() : loadSpend();
+    if (v === 'outreach') { if (orData) renderOutreach(); loadOutreach(); }
     if (v === 'followups') fu ? renderFollowups() : loadFollowups();
     if (v === 'team') { if (!hqData) loadHQ(); loadEditorMonth(); }
     // Draw what we have at once, then fetch the latest: a copy loaded hours ago must never stand as the current picture
@@ -1122,7 +1134,7 @@
   }
   document.querySelectorAll('[data-v]').forEach((b) => b.onclick = () => show(b.dataset.v));
   window.addEventListener('hashchange', () => show(location.hash.slice(1)));
-  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else if (view === 'spend') loadSpend(true); else if (view === 'followups') loadFollowups(true); else if (view === 'team') loadEditorMonth(true); else if (view === 'runs') loadRuns(); else if (view === 'pricing') loadPricing(true); else loadHQ(true); };
+  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else if (view === 'spend') loadSpend(true); else if (view === 'outreach') loadOutreach(); else if (view === 'followups') loadFollowups(true); else if (view === 'team') loadEditorMonth(true); else if (view === 'runs') loadRuns(); else if (view === 'pricing') loadPricing(true); else loadHQ(true); };
   document.querySelectorAll('.ov [data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
 
   // =====================================================================
@@ -1233,6 +1245,64 @@
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">${split('By category', sp.byCategory)}${split('By client', sp.byClient)}</div>
       <section class="ocard"><h2>Every tool <small>${plural(sp.tools.length, 'row')} · INR at ₹${sp.rate} = $1, yearly plans spread over 12 months</small><a class="more" href="${esc(sp.notion)}" target="_blank" rel="noopener">Edit in Notion ↗</a></h2>
       ${rows ? `<div class="tscroll"><table><tr><th>Tool</th><th>Category</th><th>Paid for</th><th class="num">Cost</th><th class="num">Per month</th><th>Renews</th><th>Status</th></tr>${rows}</table></div>` : '<div class="empty">No tools yet. Add them in Notion.</div>'}</section></div>`;
+  }
+
+
+  // =====================================================================
+  // Outreach: creators pitched to Brand Pool brands from harshkoli201 (lib/outreach.js). Stats and Start/Pause only.
+  // =====================================================================
+  let orData = null, orLoading = false;
+  async function loadOutreach() {
+    if (orLoading) return; orLoading = true; $('orErr').textContent = '';
+    try {
+      const r = await fetch('/api/outreach', { headers: headers() });
+      if (r.status === 401) { orLoading = false; return needPassword(); }
+      const j = await r.json(); if (!r.ok) throw new Error(j.error || 'Could not load outreach');
+      orData = j; renderOutreach();
+    } catch (e) { $('orErr').textContent = e.message; if (!orData) $('orBody').innerHTML = '<div class="empty">Outreach could not load. Hit refresh to try again.</div>'; }
+    orLoading = false;
+  }
+  async function orPost(body) {
+    const r = await fetch('/api/outreach', { method: 'POST', headers: headers(), body: JSON.stringify(body) });
+    const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.error || 'Failed'); return j;
+  }
+  function renderOutreach() {
+    const d = orData; if (!d) return;
+    const istT = (iso) => iso ? new Date(iso).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }) : '';
+    const all = Object.values(d.stats).reduce((a, x) => { for (const k in x) a[k] = (a[k] || 0) + x[k]; return a; }, {});
+    const running = d.campaigns.filter((c) => c.status === 'Running').map((c) => c.creator);
+    $('orWhen').textContent = `From harshkoli201@gmail.com · ${d.inWindow ? 'sending now' : 'sends Mon–Fri 7:30pm–3:30am IST'} · ${d.sentToday}/${d.settings.dailyCap} today, one every ${d.settings.gapMin}+ min${d.lastSentAt ? ' · last ' + istT(d.lastSentAt) : ''}`;
+    const stat = (l, v, sub, st = '') => `<div class="ostat"><span class="l">${l}</span><span class="v" style="${st}">${v || 0}</span><span class="s">${sub}</span></div>`;
+    $('orStats').innerHTML = stat('Emails sent', all.sent, `${all.followedUp || 0} follow-ups`, 'color:var(--accent)')
+      + stat('Replies', all.replied, all.sent ? Math.round((all.replied || 0) / all.sent * 100) + '% reply rate' : 'none yet')
+      + stat('Interested', all.interested, 'marked by you')
+      + stat('Waiting to send', all.queued, running.length ? 'running: ' + esc(running.join(', ')) : 'nothing running');
+    const tagOf = (st) => `<span class="tag ${/Not interested|Bounced|Failed/.test(st) ? 'bad' : /Running|Replied|Interested/.test(st) ? 'go' : /Paused|Follow-up/.test(st) ? 'warn' : ''}">${esc(st)}</span>`;
+    const rows = d.campaigns.map((c) => { const x = d.stats[c.creator] || {};
+      const btn = c.status === 'Running' ? `<button class="btn ghost sm" data-or="pause" data-c="${esc(c.creator)}">Pause</button>` : `<button class="btn sm" data-or="start" data-c="${esc(c.creator)}">${c.status === 'Paused' ? 'Resume' : 'Start'}</button>`;
+      return `<tr><td class="nm">${esc(c.creator)}</td><td>${tagOf(c.status === 'Running' ? 'Running' : c.status)}</td><td class="num">${x.sent || 0}</td><td class="num">${x.followedUp || 0}</td><td class="num">${x.replied || 0}</td><td class="num">${x.interested || 0}</td><td class="num">${x.queued || 0}</td><td class="num">${(x.bounced || 0) + (x.failed || 0)}</td><td style="text-align:right">${btn}</td></tr>`; }).join('');
+    const replies = d.replies.slice(0, 40).map((r) => `<div style="border-top:1px solid var(--line);padding:10px 0"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><b>${esc(r.brand)}</b><span style="color:var(--muted)">for ${esc(r.creator)}</span>${tagOf(r.status)}
+      <span style="margin-left:auto;display:flex;gap:6px">${r.status !== 'Interested' ? `<button class="btn ghost sm" data-orst="Interested" data-id="${r.id}">Interested</button>` : ''}${r.status !== 'Not interested' ? `<button class="btn ghost sm" data-orst="Not interested" data-id="${r.id}">Not interested</button>` : ''}</span></div>
+      <div style="white-space:pre-wrap;color:var(--muted);font-size:13px;margin-top:4px">${esc(r.reply)}</div></div>`).join('');
+    const log = d.recent.map((r) => `<tr><td>${istT(r.lastSentAt) || '—'}</td><td class="nm">${esc(r.brand)}</td><td>${esc(r.creator)}</td><td style="color:var(--muted)">${esc(r.to)}</td><td>${tagOf(r.status)}${r.error ? `<div style="color:var(--muted);font-size:12px">${esc(r.error)}</div>` : ''}</td></tr>`).join('');
+    $('orBody').innerHTML = `<div style="display:flex;flex-direction:column;gap:16px">
+      <section class="ocard"><h2>Creators <small>Start emails the brands that made a paid offer to another creator in the last 6 months</small><a class="more" href="https://app.notion.com/p/dc3d8810b3074fd1baf0bc06e24e9920" target="_blank" rel="noopener">Queue in Notion ↗</a></h2>
+        <div class="tscroll"><table><tr><th>Creator</th><th>Status</th><th class="num">Sent</th><th class="num">Follow-ups</th><th class="num">Replies</th><th class="num">Interested</th><th class="num">Waiting</th><th class="num">Bounced</th><th></th></tr>${rows}</table></div></section>
+      <section class="ocard"><h2>Replies <small>${d.replies.length ? d.replies.length + ', newest first · answer them from harshkoli201@gmail.com' : 'none yet'}</small></h2>${replies || '<div class="empty">Brand replies show up here.</div>'}</section>
+      <section class="ocard"><h2>Sent log <small>last ${d.recent.length}</small></h2>${log ? `<div class="tscroll"><table><tr><th>When (IST)</th><th>Brand</th><th>Creator</th><th>To</th><th>Status</th></tr>${log}</table></div>` : '<div class="empty">Nothing sent yet.</div>'}</section></div>`;
+    $('orBody').querySelectorAll('[data-or]').forEach((b) => b.onclick = async () => {
+      const c = b.dataset.c, a = b.dataset.or; b.disabled = true; $('orErr').textContent = '';
+      try {
+        if (a === 'start') {
+          const r = await fetch('/api/outreach?preview=' + encodeURIComponent(c), { headers: headers() }); const p = await r.json(); if (!r.ok) throw new Error(p.error || 'Failed');
+          if (!p.count) { $('orErr').textContent = `No brands to pitch for ${c} right now.`; b.disabled = false; return; }
+          if (!confirm(`Start outreach for ${c}?\n\n${p.count} brands will be emailed from harshkoli201@gmail.com, one every 5+ minutes, at most ${orData.settings.dailyCap} a day.\n\nFirst one: ${p.brands[0].brand} (${p.sample.to})\nSubject: ${p.sample.subject}`)) { b.disabled = false; return; }
+          await orPost({ action: 'start', creator: c });
+        } else await orPost({ action: 'pause', creator: c });
+      } catch (e) { $('orErr').textContent = e.message; }
+      loadOutreach();
+    });
+    $('orBody').querySelectorAll('[data-orst]').forEach((b) => b.onclick = async () => { b.disabled = true; try { await orPost({ action: 'status', id: b.dataset.id, status: b.dataset.orst }); } catch (e) { $('orErr').textContent = e.message; } loadOutreach(); });
   }
 
   // Revenue: sponsor videos x Sponsor Video Revenue x Creator Cut (ported from RevenueDashboard)
