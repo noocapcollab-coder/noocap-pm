@@ -1806,3 +1806,15 @@ test('one-line emails do not rebuild the deal record', async () => {
   assert.ok(!isTrivial('Here is the link https://f.io/x'));
   assert.ok(!isTrivial('Can we post on the 14th?'));
 });
+
+test('Dreamina x Chris / AI Inspo x Duncan, Nov 12: a brand describing the script review still to come is not script approved', async () => {
+  const { applyTextGuards, goAheadToVideo } = await import('../lib/inbox.js');
+  const jenny = 'Hi,\nThank you for your update. I fully understand that you will submit the\nscript for review and start video production upon our approval.\n\nHowever, our timeline is extremely tight at this moment. We must receive\nboth the script and UID today to keep the whole project on track.';
+  const inspo = 'STEP-BY-STEP Collaboration Guide\n\n3.Script Preparation\n\nPlease write the script based on the production guide and materials we\nprovide.\n\n4.Script Approval\n\nPlease send us the script for review.\n\n5.Filming & Editing\n\nPlease proceed with filming and editing according to the approved script\nand production guide.';
+  assert.equal(goAheadToVideo(jenny), false);
+  assert.equal(goAheadToVideo(inspo), false);
+  assert.equal(applyTextGuards({ event: 'brand_reply', from_role: 'brand' }, { text: jenny }).event, 'brand_reply');
+  assert.equal(applyTextGuards({ event: 'brand_reply', from_role: 'brand' }, { text: inspo }).event, 'brand_reply');
+  // A real go-ahead still counts
+  assert.equal(goAheadToVideo('The script has been reviewed and looks great. You can now move forward with the video draft.'), true);
+});
