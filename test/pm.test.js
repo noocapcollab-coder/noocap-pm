@@ -1963,3 +1963,10 @@ test('outreach: a saved campaign with no pronoun still uses she for Valeri, Lind
   const { defaultPronoun } = await import('../lib/outreach.js');
   assert.equal(defaultPronoun('Valeri'), 'she'); assert.equal(defaultPronoun('Lindsay'), 'she'); assert.equal(defaultPronoun('Chris'), 'he');
 });
+
+test("outreach: the creator's Instagram goes on its own line before the sign-off, nothing after the link", async () => {
+  const { withInstagram } = await import('../lib/outreach.js');
+  const out = withInstagram('Hi,\n\nPitch.\n\nThanks', 'Valeri');
+  assert.equal(out, "Hi,\n\nPitch.\n\nYou can see Valeri's content here:\nhttps://www.instagram.com/valeridoesai/\n\nThanks");
+  assert.equal(withInstagram('Hi,\n\nThanks', 'Brad'), 'Hi,\n\nThanks');
+});
