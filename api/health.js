@@ -37,6 +37,17 @@ export default async function handler(req, res) {
       out.anthropic_test = 'Could not reach Anthropic: ' + e.message;
     }
   }
+  // ?gemini=1 runs one tiny tool call through the Gemini fallback, the same path brand emails take when Claude is out
+  const G = await import('../lib/gemini.js');
+  out.gemini = { key_set: G.hasGemini(), model: G.GEMINI_MODEL(), forced: G.geminiFirst() };
+  if (G.hasGemini() && req.query?.gemini) {
+    try {
+      const r = await G.gemini({ max_tokens: 200, tools: [{ name: 'record', description: 'Record the brand', input_schema: { type: 'object', properties: { brand: { type: 'string' }, price: { type: ['number', 'null'] } }, required: ['brand'] } }], tool_choice: { type: 'tool', name: 'record' },
+        messages: [{ role: 'user', content: 'Email: "Hi, Lemlist here, we would love a reel with Valeri for $1,500." Record it.' }] });
+      const call = r.content.find((c) => c.type === 'tool_use');
+      out.gemini.test = call ? `OK: ${JSON.stringify(call.input)}` : `answered without the tool: ${JSON.stringify(r.content).slice(0, 200)}`;
+    } catch (e) { out.gemini.test = 'FAILED: ' + String(e.message).slice(0, 300); }
+  }
   res.setHeader('Cache-Control', 'no-store');
   return res.status(200).json(out);
 }
