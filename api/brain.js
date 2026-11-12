@@ -1,8 +1,12 @@
 // /api/brain — the second brain (lib/brain.js)
 //   GET ?export=1  with header x-brain-key: <BRAIN_KEY>  -> every brain source file as markdown, money removed.
 //   GET ?q=<question>  same key                       -> what search_brain returns (checks the bundled brain).
+//   GET ?map=1 with the PM password (Agency HQ, Brain tab) -> the note graph of brain/site/brain-data.json
 //   Used by the weekly rebuild (a Claude session that runs Graphify and commits the graph into brain/).
 import crypto from 'node:crypto';
+import fs from 'node:fs';
+import path from 'node:path';
+import { checkAuth } from '../lib/auth.js';
 import { exportBrain } from '../lib/brain.js';
 
 const keyOk = (req) => {
@@ -13,6 +17,13 @@ const keyOk = (req) => {
 
 export default async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
+  if (req.query?.map) {
+    if (!checkAuth(req)) return res.status(401).json({ error: 'Wrong or missing password' });
+    try {
+      const d = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'brain', 'site', 'brain-data.json'), 'utf8'));
+      return res.status(200).json({ built: d.built, notes: d.notes });
+    } catch (e) { return res.status(500).json({ error: 'The brain has not been built yet' }); }
+  }
   if (!keyOk(req)) return res.status(401).json({ error: 'Bad or missing x-brain-key' });
   try {
     if (req.query?.export) return res.status(200).json(await exportBrain());

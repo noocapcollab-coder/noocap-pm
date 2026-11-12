@@ -84,7 +84,7 @@ def build(write_vault=True):
     titles = list(notes)
     idx = {t: i for i, t in enumerate(titles)}
     links = sorted({tuple(sorted((idx[t], idx[l]))) for t, n in notes.items() for l in n['links'] if l in idx and l != t})
-    return {'nodes': [{'l': t, 't': notes[t]['type'], 'p': notes[t]['page']} for t in titles], 'links': [list(x) for x in links]}
+    return {'nodes': [{'l': t, 't': notes[t]['type'], 'p': notes[t]['page'], 'b': notes[t]['body'][:3000]} for t in titles], 'links': [list(x) for x in links]}
 
 
 if __name__ == '__main__':
