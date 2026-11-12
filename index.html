@@ -1251,7 +1251,7 @@
   // =====================================================================
   // Outreach: creators pitched to Brand Pool brands from harshkoli201 (lib/outreach.js). Stats and Start/Pause only.
   // =====================================================================
-  let orData = null, orLoading = false;
+  let orData = null, orLoading = false; const orOpen = new Set();
   async function loadOutreach() {
     if (orLoading) return; orLoading = true; $('orErr').textContent = '';
     try {
@@ -1284,12 +1284,16 @@
     const replies = d.replies.slice(0, 40).map((r) => `<div style="border-top:1px solid var(--line);padding:10px 0"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><b>${esc(r.brand)}</b><span style="color:var(--muted)">for ${esc(r.creator)}</span>${tagOf(r.status)}
       <span style="margin-left:auto;display:flex;gap:6px">${r.status !== 'Interested' ? `<button class="btn ghost sm" data-orst="Interested" data-id="${r.id}">Interested</button>` : ''}${r.status !== 'Not interested' ? `<button class="btn ghost sm" data-orst="Not interested" data-id="${r.id}">Not interested</button>` : ''}</span></div>
       <div style="white-space:pre-wrap;color:var(--muted);font-size:13px;margin-top:4px">${esc(r.reply)}</div></div>`).join('');
-    const log = d.recent.map((r) => `<tr><td>${istT(r.lastSentAt) || '—'}</td><td class="nm">${esc(r.brand)}</td><td>${esc(r.creator)}</td><td style="color:var(--muted)">${esc(r.to)}</td><td>${tagOf(r.status)}${r.error ? `<div style="color:var(--muted);font-size:12px">${esc(r.error)}</div>` : ''}</td></tr>`).join('');
+    const log = d.recent.map((r, i) => `<tr data-orlog="${i}" style="cursor:${r.body ? 'pointer' : 'default'}"><td>${istT(r.lastSentAt) || '—'}</td><td class="nm">${esc(r.brand)}</td><td>${esc(r.creator)}</td><td style="color:var(--muted)">${esc(r.to)}</td><td>${tagOf(r.status)}${r.error ? `<div style="color:var(--muted);font-size:12px">${esc(r.error)}</div>` : ''}</td><td style="color:var(--muted);text-align:right">${r.body ? (orOpen.has(i) ? 'Hide ▴' : 'View email ▾') : ''}</td></tr>`
+      + (orOpen.has(i) && r.body ? `<tr><td colspan="6" style="padding:4px 8px 16px"><div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:13px;line-height:1.55">
+          <div style="color:var(--muted);margin-bottom:8px">From harshkoli201@gmail.com · to ${esc(r.to)}</div><div style="font-weight:600;margin-bottom:10px">${esc(r.subject)}</div><div style="white-space:pre-wrap">${esc(r.body)}</div>
+          ${r.followupsText ? `<div style="white-space:pre-wrap;color:var(--muted);margin-top:12px;border-top:1px solid var(--line);padding-top:10px">${esc(r.followupsText)}</div>` : ''}
+          ${r.reply ? `<div style="white-space:pre-wrap;margin-top:12px;border-top:1px solid var(--line);padding-top:10px"><b>Their reply</b>\n${esc(r.reply)}</div>` : ''}</div></td></tr>` : '')).join('');
     $('orBody').innerHTML = `<div style="display:flex;flex-direction:column;gap:16px">
       <section class="ocard"><h2>Creators <small>Start emails the brands that made a paid offer to another creator in the last 6 months</small><a class="more" href="https://app.notion.com/p/dc3d8810b3074fd1baf0bc06e24e9920" target="_blank" rel="noopener">Queue in Notion ↗</a></h2>
         <div class="tscroll"><table><tr><th>Creator</th><th>Status</th><th class="num">Sent</th><th class="num">Follow-ups</th><th class="num">Replies</th><th class="num">Interested</th><th class="num">Waiting</th><th class="num">Bounced</th><th></th></tr>${rows}</table></div></section>
       <section class="ocard"><h2>Replies <small>${d.replies.length ? d.replies.length + ', newest first · answer them from harshkoli201@gmail.com' : 'none yet'}</small></h2>${replies || '<div class="empty">Brand replies show up here.</div>'}</section>
-      <section class="ocard"><h2>Sent log <small>last ${d.recent.length}</small></h2>${log ? `<div class="tscroll"><table><tr><th>When (IST)</th><th>Brand</th><th>Creator</th><th>To</th><th>Status</th></tr>${log}</table></div>` : '<div class="empty">Nothing sent yet.</div>'}</section></div>`;
+      <section class="ocard"><h2>Sent log <small>last ${d.recent.length}</small></h2>${log ? `<div class="tscroll"><table><tr><th>When (IST)</th><th>Brand</th><th>Creator</th><th>To</th><th>Status</th><th></th></tr>${log}</table></div>` : '<div class="empty">Nothing sent yet.</div>'}</section></div>`;
     $('orBody').querySelectorAll('[data-or]').forEach((b) => b.onclick = async () => {
       const c = b.dataset.c, a = b.dataset.or; b.disabled = true; $('orErr').textContent = '';
       try {
@@ -1302,6 +1306,7 @@
       } catch (e) { $('orErr').textContent = e.message; }
       loadOutreach();
     });
+    $('orBody').querySelectorAll('[data-orlog]').forEach((tr) => tr.onclick = () => { const i = Number(tr.dataset.orlog); if (!orData.recent[i]?.body) return; orOpen.has(i) ? orOpen.delete(i) : orOpen.add(i); renderOutreach(); });
     $('orBody').querySelectorAll('[data-orst]').forEach((b) => b.onclick = async () => { b.disabled = true; try { await orPost({ action: 'status', id: b.dataset.id, status: b.dataset.orst }); } catch (e) { $('orErr').textContent = e.message; } loadOutreach(); });
   }
 
