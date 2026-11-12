@@ -1879,3 +1879,17 @@ test('a queued WhatsApp ask is dropped once the deal moved, and a newer ask repl
   assert.match(src, /if \(await askIsStale\(m\)\) \{ m\.meta = 'stale-ask'; m\.resolved = true; continue; \}/);
   assert.match(src, /meta === 'pending-ask' && m\.infoAsk\?\.dealId === ask\.dealId && !m\.resolved\);\s*if \(queued\) \{ queued\.content/);
 });
+
+test("a creator's earnings link shows only their own rows and nothing internal", async () => {
+  process.env.CREATOR_REVENUE_KEYS = 'Chris:aaaaaaaaaaaaaaaaaaaaaaaa';
+  const { creatorView } = await import('../api/revenue.js');
+  const d = { generated_at: 'x', today: '2026-11-12', cuts: { Chris: 0, Lindsay: 20 }, videos: [
+    { creator: 'Chris', title: 'CapCut × Chris', brand: 'CapCut', status: '7- In Edit', date: '2026-11-18', amount: 1500, paid: false, deal: { expected: '2026-12-18', url: 'https://notion/deal' }, link: 'https://notion/card', revUrl: 'r', suggested: 9, cutCollected: true },
+    { creator: 'Lindsay', title: 'X', amount: 3000 },
+  ] };
+  const v = await creatorView('Chris', d);
+  assert.equal(v.videos.length, 1);
+  const s = JSON.stringify(v);
+  assert.ok(!/notion|cut|Lindsay|suggested|revUrl/i.test(s));
+  assert.equal(v.videos[0].stage, 'In production');
+});
