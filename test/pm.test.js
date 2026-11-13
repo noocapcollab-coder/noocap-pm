@@ -2039,3 +2039,16 @@ test('a brand asking WHEN gets a WhatsApp ask to Harsh, never a draft with a [DA
   const src = fs.readFileSync(new URL('../lib/briefs.js', import.meta.url), 'utf8');
   assert.doesNotMatch(src, /write "\[DATE\]" where the date goes/);
 });
+
+test('a UID or code the brand email, deal and Harsh never gave holds the reply (Dreamina x Chris, Nov 13)', async () => {
+  const O = await import('../lib/outbox.js');
+  const src = 'From: Jenny Guo\n\nCould you please send me your Dreamina UID as soon as possible?\n{"brand":"Dreamina","creator":"Chris"}';
+  const bad = O.checkDraft({ body: 'Hi Jenny,\n\nOur Dreamina UID is 829104.\n\nBest,\nChris\'s Team', creator: 'Chris', sources: src });
+  assert.ok(bad.issues.some((i) => /829104/.test(i) && /made up/.test(i)));
+  // the same number in the facts is fine, and without sources (WhatsApp answers) nothing is checked
+  assert.equal(O.checkDraft({ body: 'Our Dreamina UID is 829104.', creator: 'Chris', sources: src + ' UID 829104' }).issues.length, 0);
+  assert.equal(O.checkDraft({ body: 'Our Dreamina UID is 829104.', creator: 'Chris' }).issues.length, 0);
+  // words after "code" are not codes
+  assert.deepEqual(O.inventedCodes('The code is ready and the ID is attached.', src), []);
+  assert.deepEqual(O.inventedCodes('Use promo code LINDSAY_PROMO2 at checkout.', src), ['LINDSAY_PROMO2']);
+});
