@@ -207,7 +207,7 @@ $('#tab-map').onclick = () => show('map');
 
 // The map is drawn like an Obsidian graph view: one dark night-sky look in both themes, every note a dot with its name
 const MAP = { bg: '#0a0e1a', dot: '#9db8ff', hub: '#dfe8ff', text: '#b9c8f0', edge: 'rgba(140,165,230,0.24)', hot: '#ffffff' };
-const KIND = { creator: 'Creators', brand: 'Brands', deal: 'Deals', lead: 'Inbound leads', lesson: 'Lessons', rule: 'PM rules', sop: 'SOPs', style: 'Editing style', system: 'Automations', hub: 'Hubs', tag: 'Other' };
+const KIND = { creator: 'Creators', brand: 'Brands', deal: 'Deals', lead: 'Inbound leads', lesson: 'Lessons', rule: 'PM rules', sop: 'SOPs', style: 'Editing style', system: 'Automations', hub: 'Hubs', performance: 'What performs', script: 'Posted scripts', feedback: 'Brand feedback', tag: 'Other' };
 function drawMap() {
   if (net || !window.vis) { if (!window.vis) $('#legend').innerHTML = '<div class="note">The map library could not load. The Read view still works.</div>'; return; }
   const G = D.notes;

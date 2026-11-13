@@ -11,7 +11,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 SRC = HERE / 'sources'
 VAULT = HERE / 'vault'
-TYPES = {'brands': 'brand', 'creators': 'creator', 'editing': 'style', 'rules': 'rule', 'lessons': 'lesson', 'pages': 'sop', 'systems': 'system'}
+TYPES = {'performance': 'performance', 'scripts': 'script', 'feedback': 'feedback', 'brands': 'brand', 'creators': 'creator', 'editing': 'style', 'rules': 'rule', 'lessons': 'lesson', 'pages': 'sop', 'systems': 'system'}
 safe = lambda s: re.sub(r'[\\/:*?"<>|#^\[\]]+', ' ', s).strip()[:90] or 'untitled'
 
 

@@ -123,7 +123,7 @@ print(f'graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges, {len(co
 
 # 5. Data for the team page (site/index.html), published as the "NOOCAP Brain" artifact
 from datetime import date
-GROUPS = {'brands': 'Brands', 'creators': 'Creators', 'editing': 'Editing style', 'rules': 'Rules', 'lessons': 'Lessons', 'pages': 'SOPs & Notion pages', 'systems': 'Automations'}
+GROUPS = {'performance': 'What performs', 'scripts': 'Posted scripts', 'feedback': 'Brand feedback on cuts', 'brands': 'Brands', 'creators': 'Creators', 'editing': 'Editing style', 'rules': 'Rules', 'lessons': 'Lessons', 'pages': 'SOPs & Notion pages', 'systems': 'Automations'}
 pages = []
 for f in sorted(ROOT.rglob('*.md')):
     rel = str(f.relative_to(ROOT)); grp = rel.split('/')[0]
