@@ -16,6 +16,8 @@ NOOCAP team, noocapcollab@gmail.com, agency, must be copied on all emails, signs
 DEALS:
 Upfluence x Duncan | 2x YouTube Shorts (syndicated to TikTok, Facebook, Instagram), 2x Instagram Stories (minimum 2 frames each) | Submitted | Rate and terms not confirmed
 
+WATCH OUT (Nov 12-13): Upfluence approved Duncan's first draft from a new email thread ("the first draft looks great, approved!"). The PM held that email, so the EDIT TRACKER row stayed on With Brand and a follow-up asking for feedback went out by mistake on Nov 13. The row is now To Post (approved Nov 12) and the code is fixed. Their approvals can arrive on a fresh thread, so check every Upfluence email, not only the original thread.
+
 HOW THEY WORK: Scripts and draft videos are reviewed via their campaign drafting link (https://creators.upfluence.com/contribution/upfluence-creator-for-ai-tools-and-mcp-duncan-rogoff-ai-automation-10838846/create-draft). First drafts are also shared via Frame.io links. Content requires a tracking link provided by the brand. Always Reply All to keep noocapcollab@gmail.com in the loop.
 
 WATCH OUT: Failing to Reply All to emails causes communication gaps with the team and delays. Scripts should focus on Upfluence AI and concrete value (such as time saved, creator replies, attributed sales) rather than heavy hype or search and tracking links alone.

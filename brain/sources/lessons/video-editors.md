@@ -77,3 +77,9 @@ When: A brand sends notes on a cut or a script
 Do: Put the notes on the right video row and send them to the editor (cut) or Rudraksh (script). After the editor is done, draft the revised-cut email.
 Never: Reply to the brand just to acknowledge the notes.
 Seen 2 time(s). Source: Rulebook.
+## A brand approving the cut moves the tracker row to To Post, even when the second reader only argues about the label
+When: A brand writes that the draft or cut is approved ("looks great, approved!", "go ahead and publish"), even while asking for the remaining assets or a final check
+Do: Read it as video_feedback with video_approved: move the EDIT TRACKER row to To Post with Approved At, and stop chasing the brand for feedback on that cut
+Never: Never hold a video approval just because the second reader calls it a plain brand_reply, and never leave the row on With Brand after the brand approved it
+Example: [[Upfluence]] x [[Duncan]], Nov 12: the approval came on a new thread, the readers disagreed on the label, the email was held, the row stayed on With Brand and a "have you looked at the first draft?" follow-up went out. Fixed in code; the row was moved to To Post on Nov 13.
+Seen 1 time(s). Source: Harsh correction.
