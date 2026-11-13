@@ -1255,7 +1255,7 @@ test('heartbeat: script/video approval waits use the 3-day gap even after a bran
   assert.match(hb, /const holdDays = cardWaits \|\| waitStage === 'Script Sent' \|\| waitStage === 'Submitted' \? 3 : 7;/);
   assert.match(hb, /const SCRIPT_FOLLOW_UPS = 5;/);
   assert.match(hb, /const SCRIPT_FOLLOW_GAP = 3;/);
-  assert.match(hb, /const gapNow = scriptWait \? SCRIPT_FOLLOW_GAP : followGap/);
+  assert.match(hb, /const gapNow = cutWait \|\| scriptWait \? SCRIPT_FOLLOW_GAP : followGap/);
   assert.match(hb, /daysSince\(lastMail\.at\) >= holdDays/);
 });
 
