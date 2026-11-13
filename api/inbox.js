@@ -87,6 +87,14 @@ export default async function handler(req, res) {
   if (!hookAllowed(req)) return res.status(401).json({ error: HOOK_ERROR });
   const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
   const emails = Array.isArray(body.emails) ? body.emails : [body];
+  // Weekly contract sweep (n8n "Contract sweep", Sundays): only contract detection, no AI, nothing labelled or sent
+  if (req.query?.contractsweep) {
+    const T = await import('../lib/contracttrack.js');
+    const inbox = /chris/i.test(String(req.query.inbox || '')) ? 'Chris inbox' : 'Weekly sweep';
+    const out = [];
+    for (const e of emails.slice(0, 10)) { try { out.push({ subject: e.subject, ...(await T.sweepEmail(e, { inbox: 'Weekly sweep', creator: /chris/i.test(String(req.query.inbox || '')) ? 'Chris' : undefined })) }); } catch (err) { out.push({ subject: e.subject, error: String(err.message || err).slice(0, 200) }); } }
+    return res.status(200).json({ inbox, results: out });
+  }
   // AI paused: answer "error" so n8n leaves every email unlabelled and the sweep hands them over again after the pause
   { const { aiPaused, PAUSED_MSG } = await import('../lib/pause.js'); if (aiPaused()) return res.status(200).json({ results: emails.map((e) => ({ subject: e.subject, action: 'error', why: PAUSED_MSG() })) }); }
   const results = [];
