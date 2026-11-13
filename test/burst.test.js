@@ -55,5 +55,7 @@ test('loop-in reply confirms we take over and asks only for what is missing (Nov
   assert.ok(a.endsWith("Duncan's Team"));
   const b = handoverAckText({ name: '', brand: 'Hyper3D', creator: 'Lindsay', text: 'Adding noocapcollab. The brief is here: https://notion.so/brief-123' });
   assert.ok(b.startsWith('Hi Hyper3D team,'));
-  assert.ok(!/the brief/.test(b) && /the contract/.test(b));
+  // Same copy for everyone (Harsh, Nov 13): only the sign-off changes
+  assert.equal(b.split('\n').slice(1, -1).join('\n'), a.split('\n').slice(1, -1).join('\n'));
+  assert.ok(b.endsWith("Lindsay's Team"));
 });
