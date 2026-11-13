@@ -17,3 +17,12 @@ test('script cards get what we learned about the brand, never money or contract 
   const n = teamNotesFrom(page);
   assert.deepEqual(n, ['They review scripts in Google Docs and want the hook in the first 3 seconds.', 'Never mention competitors by name.']);
 });
+
+test('EDIT TRACKER sponsor rows find their deal for the brand email (Nov 13)', async () => {
+  const { trackerDeal, brandContacts } = await import('../lib/brandemails.js');
+  const deals = [{ brand: 'PromoCut', creator: 'Brad', brandEmail: 'nicole@quilmedia.com', threadCc: 'hamza@quilmedia.com, collab@noocap.co' }, { brand: 'Polar', creator: 'Valeri', brandEmail: 'ushni@polar.sh' }];
+  assert.equal(brandContacts(trackerDeal(deals, 'PromoCut × Brad', 'Brad')), 'nicole@quilmedia.com, hamza@quilmedia.com');
+  assert.equal(trackerDeal(deals, 'POLAR - 2', 'Valerie').brand, 'Polar');
+  assert.equal(trackerDeal(deals, '10 Website', 'Brad'), null);
+  assert.equal(trackerDeal(deals, 'PromoCut × Brad', 'Chris'), null);
+});
