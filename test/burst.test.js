@@ -68,3 +68,11 @@ test('a video approval the second reader only relabels is not held (Upfluence x 
   assert.ok(!labelOnlyApproval(x, { agree: false, rightEvent: 'brand_reply', wrongDeal: true, reason: 'approved, but another deal' }));
   assert.ok(!labelOnlyApproval({ event: 'video_feedback', video_approved: false }, { agree: false, rightEvent: 'brand_reply', reason: 'approved' }));
 });
+
+test('asking the brand to send the contract and brief to noocapcollab is a handover (Fotor x Chris, Nov 13)', async () => {
+  const { isHandover } = await import('../lib/inbox.js');
+  const x = { from_role: 'creator', brand: 'Fotor' };
+  const email = { to: 'marina@fotor.me', cc: 'noocapcollab@gmail.com', text: "Hi Marina,\n\nThanks for pushing for that budget. We can move forward with $1,200 for the video package.\n\nPlease send over the contract and content brief to noocapcollab@gmail.com (cc'd here), and we will get started on the script and send it over for your review.\n\nThanks" };
+  assert.ok(isHandover(email, x));
+  assert.ok(!isHandover({ ...email, text: 'Thanks Marina, we can move forward with $1,200.' }, x));
+});
