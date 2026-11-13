@@ -10,3 +10,10 @@ test('"final OK on the revised cut" is a cut waiting on the brand', () => {
   assert.ok(!cutAwaitsBrand('OPEN NOW: Waiting on brand: billing details.'));
   assert.ok(!cutAwaitsBrand('OPEN NOW: Nothing open.'));
 });
+
+test('a system auto-rejection stops blocking new drafts after a day', async () => {
+  const { autoRejected, AUTO_REJECT_COOLDOWN_H } = await import('../lib/outbox.js');
+  assert.equal(AUTO_REJECT_COOLDOWN_H, 24);
+  assert.ok(autoRejected({ properties: { Error: { rich_text: [{ plain_text: 'Auto-rejected by system check: drafted 2.4 days after...' }] } } }));
+  assert.ok(!autoRejected({ properties: { Error: { rich_text: [] } } }));
+});
