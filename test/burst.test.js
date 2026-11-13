@@ -59,3 +59,12 @@ test('loop-in reply confirms we take over and asks only for what is missing (Nov
   assert.equal(b.split('\n').slice(1, -1).join('\n'), a.split('\n').slice(1, -1).join('\n'));
   assert.ok(b.endsWith("Lindsay's Team"));
 });
+
+test('a video approval the second reader only relabels is not held (Upfluence x Duncan, Nov 12)', async () => {
+  const { labelOnlyApproval } = await import('../lib/verify.js');
+  const x = { event: 'video_feedback', video_approved: true };
+  assert.ok(labelOnlyApproval(x, { agree: false, rightEvent: 'brand_reply', reason: "The brand approved the first draft video and asked the team to proceed with remaining assets, but this is not feedback on a video—it's an approval" }));
+  assert.ok(!labelOnlyApproval(x, { agree: false, rightEvent: 'brand_reply', reason: 'The brand has not approved the video yet, they only asked a question' }));
+  assert.ok(!labelOnlyApproval(x, { agree: false, rightEvent: 'brand_reply', wrongDeal: true, reason: 'approved, but another deal' }));
+  assert.ok(!labelOnlyApproval({ event: 'video_feedback', video_approved: false }, { agree: false, rightEvent: 'brand_reply', reason: 'approved' }));
+});
