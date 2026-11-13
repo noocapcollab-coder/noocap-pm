@@ -2730,14 +2730,14 @@
     "semantic_hash": "d4aa2663ece12370b9bc0e7432e3679b"
   },
   "sources/pages/lindsay-design-file-motion-graphics.md": {
-    "mtime": 1794553375.7679987,
-    "seen": 1794553501.3658364,
+    "mtime": 1794555274.9141269,
+    "seen": 1794555297.7477596,
     "ast_hash": "3b890b9a872908ca98092b5a126413e9",
     "semantic_hash": "3b890b9a872908ca98092b5a126413e9"
   },
   "sources/pages/valeri-design-file-motion-graphics.md": {
-    "mtime": 1794553375.7681153,
-    "seen": 1794553501.365837,
+    "mtime": 1794555274.9141486,
+    "seen": 1794555297.7477615,
     "ast_hash": "9887937400c874132a80989c395473b5",
     "semantic_hash": "9887937400c874132a80989c395473b5"
   },
@@ -2914,5 +2914,95 @@
     "seen": 1794553501.365848,
     "ast_hash": "51333490270ebcbbcabdcb69c64b8e17",
     "semantic_hash": "51333490270ebcbbcabdcb69c64b8e17"
+  },
+  "sources/pages/01-video-assignment-editing-flow.md": {
+    "mtime": 1794555274.9138696,
+    "seen": 1794555297.7477481,
+    "ast_hash": "ef0e05afa2de2eed8125936cc6a63cb7",
+    "semantic_hash": "ef0e05afa2de2eed8125936cc6a63cb7"
+  },
+  "sources/pages/02-video-review-approval.md": {
+    "mtime": 1794555274.913891,
+    "seen": 1794555297.7477496,
+    "ast_hash": "5ac7f0ea53b575c266aa758a1cd173e0",
+    "semantic_hash": "5ac7f0ea53b575c266aa758a1cd173e0"
+  },
+  "sources/pages/03-motion-studio-setup.md": {
+    "mtime": 1794555274.9139094,
+    "seen": 1794555297.7477503,
+    "ast_hash": "1f80ddc77adbac3dbee3e67efa1deaac",
+    "semantic_hash": "1f80ddc77adbac3dbee3e67efa1deaac"
+  },
+  "sources/pages/04-daily-script-generation.md": {
+    "mtime": 1794555274.9139326,
+    "seen": 1794555297.7477512,
+    "ast_hash": "1f4e4a3ec5dc4529bb24503676c6a964",
+    "semantic_hash": "1f4e4a3ec5dc4529bb24503676c6a964"
+  },
+  "sources/pages/05-lead-magnet-production.md": {
+    "mtime": 1794555274.9139473,
+    "seen": 1794555297.747752,
+    "ast_hash": "83084ef4acf44a57d12042f638dba557",
+    "semantic_hash": "83084ef4acf44a57d12042f638dba557"
+  },
+  "sources/pages/06-manychat-dm-funnels.md": {
+    "mtime": 1794555274.9139624,
+    "seen": 1794555297.7477527,
+    "ast_hash": "277a4ddba3dfdf9ed9dc20eafc5dd887",
+    "semantic_hash": "277a4ddba3dfdf9ed9dc20eafc5dd887"
+  },
+  "sources/pages/07-carousel-automation.md": {
+    "mtime": 1794555274.9139788,
+    "seen": 1794555297.7477534,
+    "ast_hash": "51162afb6ef9a8d352b6e462fb58d0dc",
+    "semantic_hash": "51162afb6ef9a8d352b6e462fb58d0dc"
+  },
+  "sources/pages/08-brand-deal-email-triage.md": {
+    "mtime": 1794555274.913993,
+    "seen": 1794555297.7477543,
+    "ast_hash": "d17d5742bce20e613ba0f981bc2f9711",
+    "semantic_hash": "d17d5742bce20e613ba0f981bc2f9711"
+  },
+  "sources/pages/09-brand-deal-to-invoice.md": {
+    "mtime": 1794555274.914007,
+    "seen": 1794555297.747755,
+    "ast_hash": "7c0366f809492fb488dd1a23f703f977",
+    "semantic_hash": "7c0366f809492fb488dd1a23f703f977"
+  },
+  "sources/pages/10-cold-email-outreach.md": {
+    "mtime": 1794555274.91402,
+    "seen": 1794555297.7477558,
+    "ast_hash": "2540d728cf3a3f4cab1ef8cdc1ea4a27",
+    "semantic_hash": "2540d728cf3a3f4cab1ef8cdc1ea4a27"
+  },
+  "sources/pages/11-loom-outreach.md": {
+    "mtime": 1794555274.9140337,
+    "seen": 1794555297.7477565,
+    "ast_hash": "cff619fa10f8a666f8e194189459029d",
+    "semantic_hash": "cff619fa10f8a666f8e194189459029d"
+  },
+  "sources/pages/12-creator-account-access-posting.md": {
+    "mtime": 1794555274.914078,
+    "seen": 1794555297.7477572,
+    "ast_hash": "3aea0d685443bc43c90bcc151a3f1543",
+    "semantic_hash": "3aea0d685443bc43c90bcc151a3f1543"
+  },
+  "sources/pages/13-newsletter-attribution.md": {
+    "mtime": 1794555274.9140952,
+    "seen": 1794555297.747758,
+    "ast_hash": "a89fdeb2004fefba12ef2469cd06df62",
+    "semantic_hash": "a89fdeb2004fefba12ef2469cd06df62"
+  },
+  "sources/pages/14-kpi-tracking-dashboard.md": {
+    "mtime": 1794555274.9141102,
+    "seen": 1794555297.7477586,
+    "ast_hash": "54f5f0515786c196633d3d09160df040",
+    "semantic_hash": "54f5f0515786c196633d3d09160df040"
+  },
+  "sources/pages/noocap-systems-sop-library.md": {
+    "mtime": 1794555274.9138343,
+    "seen": 1794555297.7477603,
+    "ast_hash": "7184a1fae42a513045b38d091d8bee4d",
+    "semantic_hash": "7184a1fae42a513045b38d091d8bee4d"
   }
 }
