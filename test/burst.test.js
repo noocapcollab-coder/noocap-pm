@@ -33,3 +33,14 @@ test('a forwarded note and the label sent with it are read as one message by the
   // Button taps are never joined
   assert.deepEqual(burstOf([notes, { ...label, meta: 'button' }], notes), {});
 });
+
+test('a flagged card finds its deal by link, else by brand and creator', async () => {
+  const { dealForCard } = await import('../lib/scriptping.js');
+  const deals = [
+    { id: 'd1', brand: 'Hyper3D', creator: 'Lindsay', linkedVideo: 'https://app.notion.com/p/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' },
+    { id: 'd2', brand: 'Hyper3D', creator: 'Chris', linkedVideo: '' },
+  ];
+  assert.equal(dealForCard(deals, { url: 'https://www.notion.so/Hyper3D-Lindsay-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', title: 'whatever', creator: 'Lindsay' }).id, 'd1');
+  assert.equal(dealForCard(deals, { url: 'https://www.notion.so/x-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', title: 'Hyper3D × Chris', creator: 'Chris' }).id, 'd2');
+  assert.equal(dealForCard(deals, { url: 'https://www.notion.so/x-cccccccccccccccccccccccccccccccc', title: 'Polar', creator: 'Chris' }), null);
+});
