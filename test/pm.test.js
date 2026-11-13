@@ -2027,3 +2027,15 @@ test('an email held by the second reader still stamps who wrote last, so no foll
   assert.deepEqual(heldBrandStamps(email, { from_role: 'creator' }), []);
   assert.deepEqual(heldBrandStamps(email, { from_role: 'us' }), []);
 });
+
+test('a brand asking WHEN gets a WhatsApp ask to Harsh, never a draft with a [DATE] gap (Manyfast x Chris, Nov 13)', async () => {
+  const { asksForDate } = await import('../lib/briefs.js');
+  assert.equal(asksForDate('After trying the account, could you let us know when you expect to share the script, video draft and proposed publication date?'), true);
+  assert.equal(asksForDate('Could you share your timeline for the first cut?'), true);
+  assert.equal(asksForDate('How soon can the video go live?'), true);
+  assert.equal(asksForDate('Do you have a CapCut Pro subscription and enough credits?'), false);
+  assert.equal(asksForDate('Could you suggest a comment keyword for your audience?'), false);
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/briefs.js', import.meta.url), 'utf8');
+  assert.doesNotMatch(src, /write "\[DATE\]" where the date goes/);
+});
