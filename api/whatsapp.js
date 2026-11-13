@@ -5,6 +5,7 @@ import {
   waOn, personByNumber, loadState, saveState, sendText, sendButtons, sendDigest, markRead, validSignature,
   draftCard, draftButtons, windowOpen, sentId, catchUp, flushPending,
 } from '../lib/whatsapp.js';
+import { looksLikeCutNotes as looksLikeCutNotesSync } from '../lib/inbox.js';
 
 export const config = { api: { bodyParser: false } };
 
@@ -67,10 +68,39 @@ export default async function handler(req, res) {
   for (const e of payload.entry || []) for (const ch of e.changes || []) for (const m of ch.value?.messages || []) incoming.push(m);
   if (!incoming.length) return res.status(200).end(); // delivery / read receipts
 
-  const work = async () => { for (const m of incoming) { try { await handleMessage(m); } catch (err) { console.error('WhatsApp message failed', err.message); } } };
+  // Side by side, so messages that arrive in one delivery can see each other and be read as one (readBurst)
+  const work = async () => { await Promise.all(incoming.map((m) => handleMessage(m).catch((err) => console.error('WhatsApp message failed', err.message)))); };
   const inline = await later(work);
   if (inline) await work();
   return res.status(200).end();
+}
+
+const BURST_MS = 20000;
+const pause = (ms) => new Promise((ok) => setTimeout(ok, ms));
+// Typed messages from one person within 20 seconds of each other are one message. Returns { yield } when a newer
+// message in the burst will handle this one, or { text } with the whole burst joined (oldest first, forwards first).
+export function burstOf(messages, mine) {
+  const t0 = Date.parse(mine.at);
+  const near = messages.filter((x) => x.role === 'user' && x.wa && !x.meta && !x.file && typeof x.content === 'string' && Math.abs(Date.parse(x.at) - t0) <= BURST_MS);
+  if (near.length < 2) return {};
+  const order = (a, b) => Date.parse(a.at) - Date.parse(b.at) || (b.fwd ? 1 : 0) - (a.fwd ? 1 : 0) || String(a.wa).localeCompare(String(b.wa));
+  near.sort(order);
+  const lead = [...near].sort((a, b) => Date.parse(a.at) - Date.parse(b.at) || String(a.wa).localeCompare(String(b.wa))).pop();
+  if (lead.wa !== mine.wa) return { yield: true };
+  return { text: near.map((x) => x.content).join('\n\n'), fwd: near.some((x) => x.fwd) };
+}
+async function readBurst(person, mine) {
+  try {
+    await pause(4000);
+    let fresh = await loadState(person, { fresh: true });
+    // Two messages saved at the same moment can overwrite each other: put ours back before the others look
+    if (!fresh.messages.some((x) => x.wa === mine.wa)) { fresh.messages.push(mine); fresh.messages.sort((a, b) => Date.parse(a.at || 0) - Date.parse(b.at || 0)); await saveState(fresh); }
+    await pause(3500);
+    fresh = await loadState(person, { fresh: true });
+    if (!fresh.messages.some((x) => x.wa === mine.wa)) fresh.messages.push(mine);
+    const b = burstOf(fresh.messages, mine);
+    return b.text ? { ...b, messages: fresh.messages } : b;
+  } catch (e) { console.error('WhatsApp burst', e.message); return {}; }
 }
 
 const say = async (st, text) => { await sendText(st.person.number, text); st.messages.push({ role: 'assistant', content: text, meta: 'wa', at: new Date().toISOString() }); };
@@ -115,15 +145,27 @@ async function handleMessage(m) {
   // send what they missed. Measured from the last thing we managed to send them.
   const wasClosed = !windowOpen(st);
   const lastSent = [...st.messages].reverse().find((x) => x.role === 'assistant' && x.at && x.meta !== 'pending-doc')?.at || null;
-  st.messages.push({ role: 'user', content: label, wa: m.id, at, ...(button ? { meta: 'button' } : {}), ...(file ? { file } : {}) });
+  const forwardedMsg = !!(m.context?.forwarded || m.context?.frequently_forwarded);
+  const mine = { role: 'user', content: label, wa: m.id, at, ...(button ? { meta: 'button' } : {}), ...(file ? { file } : {}), ...(forwardedMsg ? { fwd: true } : {}) };
+  st.messages.push(mine);
   await saveState(st); // saved first, so a retry from Meta is recognised
   markRead(m.id).catch(() => {});
+
+  // Messages sent together are read together (Harsh, Nov 13: a forwarded note with "Brad x promo cut changes" right
+  // after it was handled as two messages, so the notes went to the wrong deal and the label became a brand reply).
+  // Every plain typed message waits a few seconds; the newest message of the burst handles all of them as one.
+  let burstFwd = false;
+  if (m.type === 'text' && !m.context?.id) {
+    const b = await readBurst(person, mine);
+    if (b.yield) return;
+    if (b.text) { text = b.text; burstFwd = b.fwd; st.messages = b.messages; }
+  }
 
   // A swipe-reply to one of our draft cards: whatever they typed is the change to make to that email
   const replyTo = m.context?.id ? st.messages.find((x) => x.wid && x.wid === m.context.id) : null;
   const quoted = replyTo?.draft ? replyTo : null;
 
-  const forwarded = !!(m.context?.forwarded || m.context?.frequently_forwarded);
+  const forwarded = forwardedMsg || burstFwd;
   try {
     if (button) await onButton(st, button);
     else if (quoted && file) { await attachFileToDraft(quoted.draft, file); await say(st, `📎 Attached *${file.filename}* to that email. It goes with it when you tap Send.`); if (text && !/^\(sent a file: /.test(text)) await applyEdit(st, quoted.draft, text.replace(/\n?\(sent a file: [^)]*\)$/, '').trim()); }
@@ -496,6 +538,7 @@ export function namesOtherCreator(text, creator) {
   const own = CREATOR_WORDS[String(creator).split(/\s+/)[0].toLowerCase()] || creator;
   return !named.includes(own);
 }
+const teamNotes = (text = '') => /^\s*[\w .&'-]{2,40}\s+(x|×)\s+[\w .&'-]{2,40}\s+(changes|fixes|edits|feedback|notes|revisions?)\s*$/im.test(String(text)) || looksLikeCutNotesSync(text);
 export function infoAskFor(st, replyTo, text = '') {
   if (replyTo?.meta === 'info-ask' && replyTo.infoAsk && !replyTo.resolved) return replyTo;
   const forOther = (x) => namesOtherCreator(text, x?.infoAsk?.creator);
@@ -503,6 +546,8 @@ export function infoAskFor(st, replyTo, text = '') {
   // A swipe on the alert that followed the question, or a message that names the brand ("this is emergent ad code …")
   if (replyTo && open.length) { const q = open.find((x) => replyTo.content && brandKey(replyTo.content).includes(brandKey(x.infoAsk.brand || ''))); if (q && brandKey(q.infoAsk.brand || '').length >= 3 && !forOther(q)) return q; }
   // ...but a question about it ("any update on Emergent?") is not the answer
+  // Change notes for our own team ("Brad x promo cut changes", cut notes) are not what the brand asked for
+  if (teamNotes(text)) return null;
   const asking = /\?\s*$/.test(String(text).trim()) || /^(any|what|when|where|did|has|have|is|are|can|could|how|why|status|update|whats|what's)\b/i.test(String(text).trim());
   const named = asking ? [] : open.filter((x) => { const b = brandKey(x.infoAsk.brand || ''); return b.length >= 3 && brandKey(text).includes(b) && !forOther(x); });
   if (named.length === 1) return named[0];
