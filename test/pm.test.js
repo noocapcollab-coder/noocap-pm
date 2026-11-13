@@ -2052,3 +2052,23 @@ test('a UID or code the brand email, deal and Harsh never gave holds the reply (
   assert.deepEqual(O.inventedCodes('The code is ready and the ID is attached.', src), []);
   assert.deepEqual(O.inventedCodes('Use promo code LINDSAY_PROMO2 at checkout.', src), ['LINDSAY_PROMO2']);
 });
+
+test('proof of an earlier payment never marks a later invoice paid (Zeely AI x Duncan, Nov 13)', async () => {
+  const { earlierProof } = await import('../lib/inbox.js');
+  const mem = 'HISTORY:<br />2026-10-23 brand first payment transfer confirmation sent.<br />2026-11-13 brand Victoria Ev states the second half of the payment was sent and asks to check it.';
+  assert.equal(earlierProof(mem, '', '2026-11-03'), false);
+  assert.equal(earlierProof(mem, '', ''), true);
+  assert.equal(earlierProof('2026-11-05 brand payment confirmation attached', '', '2026-11-03'), true);
+  assert.equal(earlierProof('', 'receipt attached on the old invoice', '2026-11-03'), false);
+});
+
+test('a step-by-step guide with script approval as a future step is never script_approved (AI Inspo x Duncan, test bank, Nov 13)', async () => {
+  const I = await import('../lib/inbox.js');
+  const text = "Hi ,\n\nHere is the Google Drive folder.\n\nSTEP-BY-STEP Collaboration Guide\n1.Payment Information\nPlease provide your payment information.\n3.Script Preparation\nPlease write the script based on the production guide.\n4.Script Approval\nPlease send us the script for review.\n5.Filming & Editing\nPlease proceed with filming and editing according to the approved script and production guide.\n\nBest regards,\nJessie";
+  const x = { event: 'script_approved', from_role: 'brand' };
+  I.applyTextGuards(x, { text });
+  assert.equal(x.event, 'brand_reply');
+  const y = { event: 'script_approved', from_role: 'brand' };
+  I.applyTextGuards(y, { text: 'The script is approved! Please proceed with filming. Once done, send the draft for review.' });
+  assert.equal(y.event, 'script_approved');
+});
