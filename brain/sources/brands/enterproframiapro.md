@@ -13,4 +13,4 @@ collaboration, and if so, what would your rate be for the package
 outlined below? If it’s not a fit, no worries—just let me know.
 
 Best,
-Mi Xu· Thread Subject: Enter Pro × Framia Pro: paid Instagram collaboration· Status: Negotiating · Creator: Chris · Type: Unclear· Brand Email: mi@allyreel.com
+Mi Xu · Thread Subject: Enter Pro × Framia Pro: paid Instagram collaboration · Status: Negotiating · Creator: Chris · Type: Unclear · Brand Email: mi@allyreel.com

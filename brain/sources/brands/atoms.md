@@ -3,17 +3,17 @@
 Brand. Works with creators: [[Lindsay]].
 
 ## Brand wiki (from every email with them)
-WHO: Atoms is an AI-powered platform for building business ideas and revenue streams. They contact us directly through their team.
+WHO: Atoms, an AI tool (From Idea to Revenue with AI). They come to us directly.
 
-CONTACTS: May (xiaohua su, may@atoms.dev) is the primary contact who signs off on decisions. Xiaohua Su also represents the brand. All replies must be sent Reply All to include noocapcollab@gmail.com on cc line.
+CONTACTS: May (xiaohua su, may@atoms.dev), brand contact. Must copy collab@automateaiconsulting.com and noocapcollab@gmail.com on replies.
 
-DEALS: Lindsay, 1 dedicated YouTube video (English) + sponsorship slot, [amount]USD, signed stage, publication window November 23 to December 7 2026 (adjustable).
+DEALS: Atoms x Lindsay | 1 dedicated YouTube video (English) + sponsorship slot | rate [amount] | stage Signed | publication window November 23 to December 7 2026 (adjustable).
 
-HOW THEY WORK: They require Atoms account registration before tool access is granted. Contract must include Party B legal details completed, signed with handwritten or signature-style signature (not typed text). They provide a Notion brief link for reference. Next steps are: signed contract returned, registered Atoms account email provided for platform access upgrade, and 2 to 3 practical build ideas submitted for approval before script work begins. All internal emails from us must cc noocapcollab@gmail.com. May clarified that compensation clause language in their legal template says no payout required but this is standard for their internal process; the [amount]rate and email discussion terms are what govern the actual deal. No tool portal or dashboard mentioned beyond account registration.
+HOW THEY WORK: Brief requires 2 to 3 practical build ideas submitted for approval. Script comes after build idea approval. Contract requires Party B legal details completed, signed with handwritten signature, signature image, or signature-style font (not typed text). Tool access requires registering an account on Atoms first (noocaptools@gmail.com), then providing that registered email to upgrade access.
 
-WATCH OUT: Their contract template contains a compensation clause stating no payout; this is their legal standard but does not override the [amount]agreed rate. Ensure the contract clearly states the [amount]fee in email discussions and Company policy section before signing. Do not sign without clarifying this discrepancy first.
+WATCH OUT: Always use Reply All to include noocapcollab@gmail.com. Do not use ordinary typed text for signing contracts; use handwritten signature, signature image, or signature style font.
 
-OPEN NOW: We owe: send revised signed contract with Party B legal details and handwritten signature, register noocaptools@gmail.com on Atoms platform and provide that registered account email to May, submit 2 to 3 practical build ideas for approval. All replies must include noocapcollab@gmail.com on cc line.
+OPEN NOW: We owe: send revised signed contract with Party B legal details and handwritten signature, register noocaptools@gmail.com on Atoms platform and provide that account email, submit 2 to 3 practical build ideas for approval.
 
 ## Deal with [[Lindsay]] (Signed, opened 2026-10-30)
 Last brand reply 2026-11-12, our last reply 2026-11-12.
@@ -26,6 +26,6 @@ BILLING: not yet
 OPEN NOW: We owe: send revised signed contract with Party B legal details and handwritten signature, register noocaptools@gmail.com on Atoms platform and provide that account email, submit 2-3 practical build ideas for approval per brief. All replies must cc noocapcollab@gmail.com.
 
 ## Inbound leads
-- Deliverables: 1 dedicated YouTube video (brand wants "dedicated video, not integration") · Contact Name: Ataur · Next Step: New brand: management to reply with pricing · Platforms: YouTube · Last Our Email: 2026-11-11 · Last Brand Email: 2026-11-12· Thread Subject: Paid Sponsorship Opportunity – Atoms.dev· Status: Negotiating · Creator: Lindsay · Type: Paid offer· Brand Email: ataurrahman0301@gmail.com
-- Deliverables: One short-form video cross-posted to YouTube Shorts, Instagram and TikTok · Contact Name: xiaohua · Next Step: Wait for brand team to review and approve budget · Platforms: YouTube Shorts, Instagram, TikTok · Last Our Email: 2026-11-04 · Deal: 1 linked · Last Brand Email: 2026-11-05· Thread Subject: Creator Partnership Inquiry – Atoms AI Platform· Status: Locked · Creator: Lindsay · Type: Paid offer· Brand Email: gina@luminarysm.com
-- Contact Name: Anna · Next Step: Wait for Maxiom to return with brand team's feedback on the [amount]and [amount]rate options · Platforms: YouTube · Last Our Email: 2026-10-26 · Follow-ups: 1 · Last Brand Email: 2026-10-20· Thread Subject: Paid YouTube collaboration with Atoms· Status: Waiting on brand · Creator: Lindsay · Type: Paid offer· Brand Email: may@atoms.dev
+- Deliverables: 1 dedicated YouTube video (brand wants "dedicated video, not integration") · Contact Name: Ataur · Next Step: New brand: management to reply with pricing · Platforms: YouTube · Last Our Email: 2026-11-11 · Last Brand Email: 2026-11-12 · Thread Subject: Paid Sponsorship Opportunity – Atoms.dev · Status: Negotiating · Creator: Lindsay · Type: Paid offer · Brand Email: ataurrahman0301@gmail.com
+- Deliverables: One short-form video cross-posted to YouTube Shorts, Instagram and TikTok · Contact Name: xiaohua · Next Step: Wait for brand team to review and approve budget · Platforms: YouTube Shorts, Instagram, TikTok · Last Our Email: 2026-11-04 · Deal: 1 linked · Last Brand Email: 2026-11-05 · Thread Subject: Creator Partnership Inquiry – Atoms AI Platform · Status: Locked · Creator: Lindsay · Type: Paid offer · Brand Email: gina@luminarysm.com
+- Contact Name: Anna · Next Step: Wait for Maxiom to return with brand team's feedback on the [amount]and [amount]rate options · Platforms: YouTube · Last Our Email: 2026-10-26 · Follow-ups: 1 · Last Brand Email: 2026-10-20 · Thread Subject: Paid YouTube collaboration with Atoms · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: may@atoms.dev

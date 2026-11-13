@@ -29,7 +29,7 @@ Subject: Re: Paid collab offer with Arcads
 
 Hey!
 
-We're mostly interested in long form.· Thread Subject: Paid collab offer with Arcads· Status: Waiting on brand · Creator: Lindsay · Type: Paid offer· Brand Email: k@arcads.ai
+We're mostly interested in long form. · Thread Subject: Paid collab offer with Arcads · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: k@arcads.ai
 - Deliverables: Long-form integrations (details to be clarified) · Next Step: Reply with details about long-form integrations capabilities · Last Our Email: 2026-10-29 · Last Brand Email: 2026-10-29 · Thread Text: From: collab <collab@automateaiconsulting.com>
 Date: 2026-10-29Z
 
@@ -50,4 +50,4 @@ Subject: Re: Paid collab offer with Arcads
    
    
 
-Hey! Can you tell me more about the long form integrations?· Thread Subject: Paid collab offer with Arcads· Status: Waiting on brand · Creator: Lindsay · Type: Paid offer· Brand Email: k@arcads.ai
+Hey! Can you tell me more about the long form integrations? · Thread Subject: Paid collab offer with Arcads · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: k@arcads.ai

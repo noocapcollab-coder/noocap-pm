@@ -3,4 +3,4 @@
 Brand. Works with creators: [[Chris]].
 
 ## Inbound leads
-- Next Step: Replied 2026-11-12, waiting on the brand · Last Our Email: 2026-11-12 · Last Brand Email: 2026-11-11· Thread Subject: Partnership Opportunity with Chris· Status: Waiting on brand · Creator: Chris · Type: Unclear· Brand Email: partners@tiiny.host
+- Next Step: New brand: management to reply with pricing · Last Our Email: 2026-11-12 · Last Brand Email: 2026-11-13 · Thread Subject: Partnership Opportunity with Chris · Status: Negotiating · Creator: Chris · Type: Affiliate · Brand Email: partners@tiiny.host

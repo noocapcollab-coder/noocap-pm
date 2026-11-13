@@ -13,4 +13,4 @@ I will revert to you shortly with new projects.
 
 Best,
 Elza
-Golden Whale Agency· Thread Subject: You lost previous mail about paid collaboration with Golden Whale Agency.· Status: Waiting on brand · Creator: Chris · Type: Paid offer· Brand Email: elza@goldenwhale-collabs.com
+Golden Whale Agency · Thread Subject: You lost previous mail about paid collaboration with Golden Whale Agency. · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: elza@goldenwhale-collabs.com

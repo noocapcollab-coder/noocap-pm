@@ -12,4 +12,4 @@ thanks for getting back! we're commission only for now, so the flat
 rate won't work on our side. no worries at all, appreciate you letting
 me know.
 
-sahil· Thread Subject: Creator program at Okara· Status: Lost · Creator: Lindsay · Type: Affiliate· Brand Email: sahil.patel@okara.ai
+sahil · Thread Subject: Creator program at Okara · Status: Lost · Creator: Lindsay · Type: Affiliate · Brand Email: sahil.patel@okara.ai

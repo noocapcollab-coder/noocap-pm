@@ -13,4 +13,4 @@ dedicated YouTube video with the UTM link in the first two description
 lines?
 
 Best,
-Mi· Thread Subject: MGX x YouTube: paid collaboration· Status: Negotiating · Creator: Lindsay · Type: Paid offer· Brand Email: mi@allyreel.com
+Mi · Thread Subject: MGX x YouTube: paid collaboration · Status: Negotiating · Creator: Lindsay · Type: Paid offer · Brand Email: mi@allyreel.com

@@ -3,17 +3,17 @@
 Brand. Works with creators: [[Duncan]].
 
 ## Brand wiki (from every email with them)
-WHO: ChatGPT is a branded short video campaign. They work through Viral Nation Inc., a talent management and brand partnership agency that handles all communications and payments on their behalf.
+WHO: ChatGPT comes to us through the agency Viral Nation.
 
-CONTACTS: Delton Alves (dalves@viralnation.com) is the Invoicing Specialist who manages payments and sends payment requests. Banks Burkart (bburkart@viralnation.com) supports deal coordination. CC always to mvalore@viralnation.com, dliang@viralnation.com, adesai@viralnation.com, jmcghee@viralnation.com, collab@buildroom.ai, bburkart@viralnation.com. Sign as Duncan's Team.
+CONTACTS: Delton Alves, dalves@viralnation.com, Invoicing Specialist at Viral Nation; Banks Burkart, bburkart@viralnation.com, Viral Nation; M. Valore, mvalore@viralnation.com, Viral Nation; D. Liang, dliang@viralnation.com, Viral Nation; A. Desai, adesai@viralnation.com, Viral Nation; J. McGhee, jmcghee@viralnation.com, Viral Nation; collab@buildroom.ai.
 
-DEALS: Duncan, Switch to ChatGPT campaign, rate [amount]USD, deliverables and usage rights not specified, payment terms net upon invoice submission, no completion dates agreed.
+DEALS: Duncan | Switch to ChatGPT | [amount]USD | Invoiced | Invoice sent 2026-11-05.
 
-HOW THEY WORK: Process invoices through Trolley service. They require a Vendor Form completed before AP team will process payment. Previous payment (ChatGPT Work / Codex, [amount]) was processed via Trolley and paid 2026-10-20. Use Stripe payment links in invoices. Invoice INV-004 was sent 2026-11-05 with Stripe link. Billing address: 2680 Skymark Ave, Unit 400, Mississauga, ON L4W 5L6. Company: Viral Nation Inc.
+HOW THEY WORK: Payments are processed through their Trolley service, which requires a one-time Vendor Form completion. Billing details: Viral Nation Inc., 2680 Skymark Ave, Unit 400, Mississauga, ON L4W 5L6.
 
-WATCH OUT: Deal has no deliverables, usage rights, or completion dates specified. Vendor Form required by Trolley before any payment processes. Always include the full CC list on all emails to this brand.
+WATCH OUT: None noted.
 
-OPEN NOW: Vendor Form completion is required before Viral Nation AP will process payment of INV-004. We owe: complete the Trolley Vendor Form at https://docs.google.com/forms/d/e/1FAIpQLScQYcv0PfFkwQ1WOv7MWESRPJxtq6cTO5ZsQ6LGX1jOhi4qSw/viewform.
+OPEN NOW: Invoice INV-004 ([amount]) awaiting AP Team processing via Trolley service after Vendor Form completion. Waiting on brand for payment processing.
 
 ## Deal with [[Duncan]] (Invoiced, opened 2026-09-29)
 Last brand reply 2026-11-12, our last reply 2026-11-10.

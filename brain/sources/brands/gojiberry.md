@@ -20,4 +20,4 @@ Best,
 
 Guillaume - GTM & Growth @ Gojiberry
 Twitter <https://x.com/GuillaumeBardet> & LinkedIn
-<https://www.linkedin.com/in/guillaumebardet/>· Thread Subject: Automated AI Consulting <> Gojiberry.ai· Status: New offer · Creator: Lindsay · Type: Paid offer· Brand Email: guillaume@gojiberry.ai
+<https://www.linkedin.com/in/guillaumebardet/> · Thread Subject: Automated AI Consulting <> Gojiberry.ai · Status: New offer · Creator: Lindsay · Type: Paid offer · Brand Email: guillaume@gojiberry.ai

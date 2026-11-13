@@ -19,4 +19,4 @@ dedicated video, and when you'd next have availability?
 
 Thanks,
 Ethan Tan
-Feiye Media· Thread Subject: Sponsored video rate?· Status: New offer · Creator: Lindsay · Type: Paid offer· Brand Email: ethan@feiyemedia.com
+Feiye Media · Thread Subject: Sponsored video rate? · Status: New offer · Creator: Lindsay · Type: Paid offer · Brand Email: ethan@feiyemedia.com

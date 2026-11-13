@@ -11,4 +11,4 @@ Thoughts?
 Kathy from the Hoox team
 
 Not your thing? Just reply "no thanks" and I won't follow up.
-5 Thomas Street, New York, NY, USA· Thread Subject: Chris, quick question· Status: Negotiating · Creator: Chris · Type: Unclear· Brand Email: Kathy@hoox-ai.com
+5 Thomas Street, New York, NY, USA · Thread Subject: Chris, quick question · Status: Negotiating · Creator: Chris · Type: Unclear · Brand Email: Kathy@hoox-ai.com

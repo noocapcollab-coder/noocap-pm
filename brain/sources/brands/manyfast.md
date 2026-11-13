@@ -3,20 +3,36 @@
 Brand. Works with creators: [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: Manyfast is a product development platform (idea to prototype workflow using Claude Code through MCP). They contact us directly.
+WHO: Manyfast is an AI-powered product planning platform that helps users organize requirements, user flows, and wireframes, and connect them to AI coding tools like Claude Code through MCP to build working prototypes. They come to us directly.
 
-CONTACTS: Konan (Seungjoo Lee, konan@manyfast.io) handles content, script, revisions and product support. Jun (jun@manyfast.io) handles invoices and payment only; mention Seungjoo Lee / Konan as referral. CEO Leo (leo@manyfast.io) receives contracts if we send one. Chris's side signs; copy noocapcollab@gmail.com and konan@manyfast.io.
+CONTACTS:
+Seungjoo Lee, also known as Konan, konan@manyfast.io, brand contact for content, script, product questions, and revisions, signs as Seungjoo Lee (Konan).
+Leo, leo@manyfast.io, CEO for contract review and signature.
+Jun, Seungjoo Lee's referral, jun@manyfast.io, operations lead for invoices and payment arrangements.
+Chris Cordero, collab@chriscordero.net, creator.
+NOOCAP team, noocapcollab@gmail.com, agency managing brand emails and submissions.
 
-DEALS: Chris, [amount]for paid reel highlighting Manyfast product showing idea-to-prototype workflow with Claude Code and MCP, plus comment-keyword DM automation sending 30% Pro promo code to viewers, plus 7-day bio link. Usage rights not confirmed. Payment terms not confirmed. Start week of 2026-11-17 or earlier.
+DEALS:
+Chris | 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days | [amount]USD | Brief Received | Start week of 2026-11-17, promo code CHRIS30 active until February 1, 2027.
 
-HOW THEY WORK: No standard contract; will accept terms from email thread if we don't send ours. Content direction: explore trial account then highlight useful parts in own style, emphasizing user flow, wireframe, Claude Code through MCP to working prototype. DM automation must send promo code and signup link via comment keywords. Tracking link required: https://manyfast.io/en/?utm_source=instagram&utm_medium=influencer&utm_campaign=202611_chris&utm_content=reel. Billing contact separate from content contact. No invoice format or payment method specified yet.
+HOW THEY WORK:
+Content angle focuses on avoiding repeated explanations to AI by starting with a clear product plan. Demonstration should cover taking a small app idea, organizing requirements in Manyfast, showing the user flow and wireframes, and connecting Claude Code through MCP to build a working prototype as one connected story without a feature-by-feature walkthrough.
+Trial account provided at https://manyfast.io/en/ with login chriscordero@manyfast.io and password R#Wa5U5ks6ZV.
+Tracking link is https://manyfast.io/en/?utm_source=instagram&utm_medium=influencer&utm_campaign=202611_chris&utm_content=reel.
+English Instagram account to tag is @manyfast.official.
+Creator must select a natural comment keyword for the automated DM and place the tracking link in the bio for 7 days.
+Promo code is CHRIS30 for 30 percent off the first month of the Pro monthly plan, entered at checkout.
+No standard contract template exists from the brand; our contract goes to leo@manyfast.io, or we proceed on email terms.
+Invoices go exclusively to jun@manyfast.io, mentioning referral by Seungjoo Lee (Konan). All content, script, revisions, and product support stay on thread with Konan at konan@manyfast.io.
 
-WATCH OUT: None recorded yet.
+WATCH OUT:
+Always reply all to the email thread to keep all team members on CC. Keep content and script discussions with Konan at konan@manyfast.io and financial matters strictly with Jun at jun@manyfast.io.
 
-OPEN NOW: We must decide whether to send our contract to leo@manyfast.io or reply confirming email-thread terms. Brand owes final promo code, code terms, and brand brief to this thread.
+OPEN NOW:
+Chris and team owe the initial concept or script, first video draft, and proposed posting date to Konan.
 
-## Deal with [[Chris]] (Price Agreed, opened 2026-11-10)
-Last brand reply 2026-11-12, our last reply none.
+## Deal with [[Chris]] (Brief Received, opened 2026-11-10)
+Last brand reply 2026-11-13, our last reply none.
 AGREED: [amount]rate. Deliverables: paid reel highlighting Manyfast product (from idea to user flow, wireframe, Claude Code through MCP to working prototype), comment-keyword DM automation sending promo code to viewers, bio link live for 7 days. Usage rights: not yet confirmed. Payment terms: not yet confirmed (we proposed 50% upon script approval and 50% upon publication if no contract is signed). Start: as early as week of 2026-11-17.
 
 HISTORY:
@@ -31,4 +47,4 @@ BILLING: invoices and payment contact is jun@manyfast.io (reference Seungjoo Lee
 OPEN NOW: Waiting on brand: share the brand brief on the thread, reply all, respond to our proposed payment terms, and provide final promo code and terms.
 
 ## Inbound leads
-- Deliverables: Comment-keyword DM automation setup, bio link placement, trial account exploration and content creation · Next Step: Handed to noocapcollab: waiting for the brief · Platforms: Instagram · Last Our Email: 2026-11-12 · Last Brand Email: 2026-11-10· Thread Subject: Paid Reel collaboration — Manyfast × Chris· Status: Locked · Creator: Chris · Type: Paid offer· Brand Email: konan@manyfast.io
+- Deliverables: Comment-keyword DM automation setup, bio link placement, trial account exploration and content creation · Next Step: Handed to noocapcollab: waiting for the brief · Platforms: Instagram · Last Our Email: 2026-11-12 · Last Brand Email: 2026-11-10 · Thread Subject: Paid Reel collaboration — Manyfast × Chris · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: konan@manyfast.io

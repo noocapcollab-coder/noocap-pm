@@ -31,7 +31,7 @@ BILLING: not yet
 OPEN NOW: We owe resubmitting the draft video on the Faved campaign link (deal-ceqmqr) instead of email, then waiting on brand approval.
 
 ## Inbound leads
-- Last Brand Email: 2026-10-28 · Thread Subject: Weglot Paid Sponsorship x Automate AI Consulting - deal-ceqxmo (2nd partnership)· Status: New offer · Creator: Lindsay · Notes: PM double-check: the PM wrongly skipped this as outreach on Oct 28. Added back by hand on Nov 2. Reply to Faved in this thread. · Type: Paid offer· Brand Email: creators@faved.com
+- Last Brand Email: 2026-10-28 · Thread Subject: Weglot Paid Sponsorship x Automate AI Consulting - deal-ceqxmo (2nd partnership) · Status: New offer · Creator: Lindsay · Notes: PM double-check: the PM wrongly skipped this as outreach on Oct 28. Added back by hand on Nov 2. Reply to Faved in this thread. · Type: Paid offer · Brand Email: creators@faved.com
 - Deliverables: Short-form video · Contact Name: Faved · Next Step: This is platform admin/reminder email, not a brand lead. No action needed unless Lindsay wants to engage with Faved's platform. · Platforms: Instagram, TikTok, YouTube Shorts · Last Our Email: 2026-10-26 · Deal: 1 linked · Last Brand Email: 2026-11-06 · Thread Text: From: Faved <creators@faved.com>
 Date: 2026-11-09Z
 
@@ -42,4 +42,4 @@ Lindsay Gonzales - Submitted Draft Video & Caption
 Next Step: Draft video - waiting on brand approval
 
 Thanks,
-Faved· Thread Subject: Weglot Paid Sponsorship x Automate AI Consulting - deal-ceqmqr· Status: Locked · Creator: Lindsay · Type: Unclear· Brand Email: creators@faved.com
+Faved · Thread Subject: Weglot Paid Sponsorship x Automate AI Consulting - deal-ceqmqr · Status: Locked · Creator: Lindsay · Type: Unclear · Brand Email: creators@faved.com

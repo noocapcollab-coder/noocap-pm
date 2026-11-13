@@ -16,4 +16,4 @@ You can pick a time here:
 https://calendly.com/josh-videoduck/30min
 
 Best Regards,
-Josh VideoDuck· Thread Subject: VideoDuck creator program· Status: Negotiating · Creator: Chris · Type: Unclear· Brand Email: josh@videoduckai.net
+Josh VideoDuck · Thread Subject: VideoDuck creator program · Status: Negotiating · Creator: Chris · Type: Unclear · Brand Email: josh@videoduckai.net

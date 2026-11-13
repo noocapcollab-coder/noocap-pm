@@ -19,4 +19,4 @@ I look forward to hearing from you.
 Best,
 
 Muhammad Razali
-Founder, Positron Marketing· Thread Subject: Chris Cordero x brand collaboration· Status: New offer · Creator: Chris · Type: Unclear· Brand Email: mrazali@usepositronmktg.com
+Founder, Positron Marketing · Thread Subject: Chris Cordero x brand collaboration · Status: New offer · Creator: Chris · Type: Unclear · Brand Email: mrazali@usepositronmktg.com

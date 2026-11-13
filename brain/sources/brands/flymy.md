@@ -3,4 +3,4 @@
 Brand. Works with creators: [[Chris]].
 
 ## Inbound leads
-- Contact Name: Iryna · Next Step: Lost: gifted / affiliate only, no fee · Platforms: Instagram · Last Brand Email: 2026-08-17· Thread Subject: Chris — quick idea for your Instagram audience· Status: Lost · Creator: Chris · Type: Affiliate· Brand Email: ira@joinflymyai.com
+- Contact Name: Iryna · Next Step: Lost: gifted / affiliate only, no fee · Platforms: Instagram · Last Brand Email: 2026-08-17 · Thread Subject: Chris — quick idea for your Instagram audience · Status: Lost · Creator: Chris · Type: Affiliate · Brand Email: ira@joinflymyai.com

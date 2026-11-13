@@ -17,4 +17,4 @@ and we'd run them as Meta ads, nothing goes on your channels.
 We pay per video, plus a bonus when an ad performs well. Would that work
 for you?
 
-Tadeáš· Thread Subject: Ad videos for Macaly· Status: New offer · Creator: Chris · Type: Paid offer· Brand Email: tadeasraska@macaly.com
+Tadeáš · Thread Subject: Ad videos for Macaly · Status: New offer · Creator: Chris · Type: Paid offer · Brand Email: tadeasraska@macaly.com

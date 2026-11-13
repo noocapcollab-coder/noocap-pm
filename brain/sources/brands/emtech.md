@@ -16,4 +16,4 @@ Could you please let us know when we can expect the payment to be processed?
 Thanks so much for your help with this.
 
 Best,
-Chris's Team· Thread Subject: Collaboration with EmTech (640k+ Followers)· Status: Locked · Creator: Chris · Type: Paid offer· Brand Email: celina@getramped.com
+Chris's Team · Thread Subject: Collaboration with EmTech (640k+ Followers) · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: celina@getramped.com

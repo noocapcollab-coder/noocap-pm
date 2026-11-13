@@ -12,4 +12,4 @@ However for the future reference once we secure the budget, could you share your
 media kit?
 
 Best,
-Robin· Thread Subject: Creator collaboration with Breezm Eyewear· Status: Waiting on brand · Creator: Chris · Type: Unclear· Brand Email: marketing@breezmteam.com
+Robin · Thread Subject: Creator collaboration with Breezm Eyewear · Status: Waiting on brand · Creator: Chris · Type: Unclear · Brand Email: marketing@breezmteam.com

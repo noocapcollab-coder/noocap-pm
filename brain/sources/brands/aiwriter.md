@@ -13,4 +13,4 @@ Last note from me. The application page in my first email will still be there if
 Thanks,
 
 Brett
-aiWriter.ai· Thread Subject: a partnershp idea from aiWriter (typo so you know I am a person)· Status: Lost · Creator: Chris · Type: Unclear· Brand Email: brett@aiwriterteam.com
+aiWriter.ai · Thread Subject: a partnershp idea from aiWriter (typo so you know I am a person) · Status: Lost · Creator: Chris · Type: Unclear · Brand Email: brett@aiwriterteam.com

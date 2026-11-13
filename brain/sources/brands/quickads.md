@@ -18,4 +18,4 @@ earliest availability. Happy to share the brief.
 Thanks,
 Nanyant
 Quickads.ai
-Not a fit? Reply "not interested" and I won't email you again.· Thread Subject: Paid reel collab with QuickAds· Status: New offer · Creator: Chris · Type: Paid offer· Brand Email: nanyant@quickads.ai
+Not a fit? Reply "not interested" and I won't email you again. · Thread Subject: Paid reel collab with QuickAds · Status: New offer · Creator: Chris · Type: Paid offer · Brand Email: nanyant@quickads.ai

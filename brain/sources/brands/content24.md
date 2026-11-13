@@ -3,7 +3,7 @@
 Brand. Works with creators: [[Lindsay]].
 
 ## Inbound leads
-- Deliverables: Dedicated YouTube video and/or 60–90 second YouTube integration (exact deliverables to be specified by creator) · Next Step: New brand: management to reply with pricing · Platforms: YouTube · Last Brand Email: 2026-11-03· Thread Subject: Quick question re: your business AI automations· Status: New offer · Creator: Lindsay · Type: Unclear· Brand Email: tylerbizcreator@gmail.com
+- Deliverables: Dedicated YouTube video and/or 60–90 second YouTube integration (exact deliverables to be specified by creator) · Next Step: New brand: management to reply with pricing · Platforms: YouTube · Last Brand Email: 2026-11-03 · Thread Subject: Quick question re: your business AI automations · Status: New offer · Creator: Lindsay · Type: Unclear · Brand Email: tylerbizcreator@gmail.com
 - Contact Name: Tyler · Next Step: Lost: gifted / affiliate only, no fee · Platforms: YouTube, TikTok, Instagram · Last Brand Email: 2026-10-28 · Thread Text: From: Tyler <tylerbizcreator@gmail.com>
 Date: 2026-10-28Z
 
@@ -20,4 +20,4 @@ recurring commission.
 Would you be open to me sending over the details?
 
 Best regards,
-Tyler· Thread Subject: Quick question re: your business AI automations· Status: Lost · Creator: Lindsay · Type: Affiliate· Brand Email: tylerbizcreator@gmail.com
+Tyler · Thread Subject: Quick question re: your business AI automations · Status: Lost · Creator: Lindsay · Type: Affiliate · Brand Email: tylerbizcreator@gmail.com

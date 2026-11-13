@@ -15,4 +15,4 @@ Easy is a private AI agent platform: a team of agents with long-term memory and 
 We'll set you up with a free installation to try it properly first.
 
 Thanks,
-David Cassar· Thread Subject: Sponsoring a review of Easy· Status: New offer · Creator: Lindsay · Type: Gifted· Brand Email: d@easy.one
+David Cassar · Thread Subject: Sponsoring a review of Easy · Status: New offer · Creator: Lindsay · Type: Gifted · Brand Email: d@easy.one

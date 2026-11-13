@@ -19,4 +19,4 @@ Hello,&nbsp;
 
 ~~~~~~~~~~~~~~~~~~~~
 
-Click to join the program: https://track.pstmrk.it/3ts/sire-run-inc.getrewardful.com%2Finvitations%2FgPZ3L6ccQK5EbaYGVdda9ohq/804w/uL3IAQ/AQ/e4d5d307-6db6-405a-975a-e5b89aeb4b3e/1/QEyj1aLGwn· Thread Subject: Join our affiliate program!· Status: New offer · Creator: Lindsay · Type: Affiliate· Brand Email: affiliates@rewardful.com
+Click to join the program: https://track.pstmrk.it/3ts/sire-run-inc.getrewardful.com%2Finvitations%2FgPZ3L6ccQK5EbaYGVdda9ohq/804w/uL3IAQ/AQ/e4d5d307-6db6-405a-975a-e5b89aeb4b3e/1/QEyj1aLGwn · Thread Subject: Join our affiliate program! · Status: New offer · Creator: Lindsay · Type: Affiliate · Brand Email: affiliates@rewardful.com

@@ -2,6 +2,19 @@
 
 Brand. Works with creators: [[Lindsay]].
 
+## Brand wiki (from every email with them)
+WHO: Pazi makes an AI tool called Pazi, and they come to us through an agency named Automate AI Consulting.
+
+CONTACTS: Kevin writes from kevin@pazi.ai in the role of the brand, Zvonimir writes from zvonimir@pazi.ai, and collab@automateaiconsulting.com must be copied on emails.
+
+DEALS: Lindsay, [amount], Paid, paid on 2026-09-28.
+
+HOW THEY WORK: Not specified.
+
+WATCH OUT: There is a duplicate deal thread for Pazi and Lindsay, which was closed as Lost so it does not count.
+
+OPEN NOW: Nothing is pending.
+
 ## Deal with [[Lindsay]] (Lost, opened 2026-09-28)
 Last brand reply 2026-09-28, our last reply none.
 
@@ -31,4 +44,4 @@ On Wed, Sep 30, 2026 05:57 PM, noocap collab <noocapcollab@gmail.com> wrote:
 > working on that now and should have it to you early next week so you can
 > review and confirm before we move forward.
 >
-> Thanks· Thread Subject: Partnering on a sponsored Reel with Pazi· Status: Locked · Creator: Lindsay · Type: Paid offer· Brand Email: kevin@pazi.ai
+> Thanks · Thread Subject: Partnering on a sponsored Reel with Pazi · Status: Locked · Creator: Lindsay · Type: Paid offer · Brand Email: kevin@pazi.ai

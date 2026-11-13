@@ -3,4 +3,4 @@
 Brand. Works with creators: [[Chris]].
 
 ## Inbound leads
-- Next Step: Wait for brand to confirm if [amount]budget works for them · Platforms: TikTok, YouTube Shorts · Last Our Email: 2026-09-14 · Last Brand Email: 2026-09-12 · Thread Subject: Chris Cordero | AI Educator & Creator x freebeat | Paid Collaboration 🎶 — World's 1st AI Music Video Agent· Status: Waiting on brand · Creator: Chris · Type: Paid offer· Brand Email: liab@freebeat.ai
+- Next Step: Wait for brand to confirm if [amount]budget works for them · Platforms: TikTok, YouTube Shorts · Last Our Email: 2026-09-14 · Last Brand Email: 2026-09-12 · Thread Subject: Chris Cordero | AI Educator & Creator x freebeat | Paid Collaboration 🎶 — World's 1st AI Music Video Agent · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: liab@freebeat.ai

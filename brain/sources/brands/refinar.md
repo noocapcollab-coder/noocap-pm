@@ -20,4 +20,4 @@ Your viewers get 50% off their first month, and you get a free account.
 Want to set it up together?
 
 Yaman
-Founder, Refinar · refinar.ai· Thread Subject: Affiliate offer for Lindsay· Status: Lost · Creator: Lindsay · Type: Affiliate· Brand Email: yaman@refinar.ai
+Founder, Refinar · refinar.ai · Thread Subject: Affiliate offer for Lindsay · Status: Lost · Creator: Lindsay · Type: Affiliate · Brand Email: yaman@refinar.ai

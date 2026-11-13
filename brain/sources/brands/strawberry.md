@@ -17,4 +17,4 @@ https://laurits-strawberry.github.io/strawberry-creator-pack/brief.html
 moving up to milestone bonuses also brings a free Strawberry plan.
 details at strawberrybrowser.com/creators
 
-laurits· Thread Subject: Paid Strawberry creator programme· Status: Negotiating · Our Counters: 0 · Creator: Chris · Type: Paid offer· Brand Email: laurits@strawberrybrowser.com
+laurits · Thread Subject: Paid Strawberry creator programme · Status: Negotiating · Our Counters: 0 · Creator: Chris · Type: Paid offer · Brand Email: laurits@strawberrybrowser.com

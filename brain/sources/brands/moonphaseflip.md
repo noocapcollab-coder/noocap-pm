@@ -20,4 +20,4 @@ your own account
 Happy to share more details if this sounds like a fit.
 
 Best,
-Eve· Thread Subject: Paid Instagram collaboration — Moonphase Flip· Status: New offer · Creator: Lindsay · Type: Paid offer· Brand Email: zhoueve00@gmail.com
+Eve · Thread Subject: Paid Instagram collaboration — Moonphase Flip · Status: New offer · Creator: Lindsay · Type: Paid offer · Brand Email: zhoueve00@gmail.com

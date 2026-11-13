@@ -2,6 +2,24 @@
 
 Brand. Works with creators: [[Lindsay]].
 
+## Brand wiki (from every email with them)
+WHO: Velanir is an AI product/brand, coming to us directly.
+
+CONTACTS:
+Nathan Ricks, nate@velanir.ai, brand contact, signs as Nate, copy collab@automateaiconsulting.com and dan@velanir.ai.
+
+DEALS:
+Lindsay | One dedicated short-form video for Velanir, posted on Instagram, Facebook and YouTube Shorts (@lindsay.ai) | [amount] | Paid | Invoiced 2026-10-31, Paid 2026-10-01.
+
+HOW THEY WORK:
+Billing details given: company name Botero Labs, Inc., address 500 Masonic Ave, APT 8, San Francisco, 94117, contact name Nathan Ricks, email nate@velanir.ai, country code US.
+
+WATCH OUT:
+Usage rights not confirmed in writing. No specific delivery date agreed.
+
+OPEN NOW:
+Deal complete. Video posted across all platforms. Brand paid in full. We owe: response to Nathan's 2026-10-29 email confirming edit completion and posting confirmation if not yet sent.
+
 ## Deal with [[Lindsay]] (Paid, opened 2026-10-12)
 Last brand reply 2026-10-31, our last reply 2026-10-29.
 AGREED: Rate [amount]. Deliverables: one short-form video for Velanir posted on Instagram, Facebook, and YouTube Shorts (@lindsay.ai). Usage rights: not confirmed in writing. Payment terms: full payment via Stripe. No specific delivery date agreed.
@@ -24,5 +42,5 @@ BILLING: Botero Labs, Inc., 500 Masonic Ave APT 8, San Francisco 94117. Invoice 
 OPEN NOW: Deal complete. Video posted across all platforms. Brand paid in full. We owe: response to Nathan's 2026-10-29 email confirming edit completion and posting confirmation if not yet sent.
 
 ## Inbound leads
-- Deliverables: 3 short-form videos (Instagram, Facebook, YouTube Shorts) promoting Velanir with custom discount code AUTOMATEAI · Contact Name: Nathan · Next Step: Deal complete – monitor campaign performance. Await potential follow-up collaboration inquiry. · Platforms: YouTube Shorts · Deal: 1 linked · Last Brand Email: 2026-10-30· Thread Subject: Lindsay <> Velanir | Collaboration· Status: Locked · Creator: Lindsay · Type: Paid offer· Brand Email: nate@velanir.ai
-- Deliverables: Short-form video promoting Velanir Business plan with CTA ("comment AGENT") for free 3-month access · Contact Name: Nathan · Next Step: Wait for first draft video delivery by weekend; brand to review and approve before publishing · Platforms: Instagram, TikTok, YouTube Shorts · Last Our Email: 2026-10-21 · Deal: 1 linked · Last Brand Email: 2026-10-21· Thread Subject: Lindsay <> Velanir | Collaboration· Status: Locked · Creator: Lindsay · Type: Paid offer· Brand Email: nate@velanir.ai
+- Deliverables: 3 short-form videos (Instagram, Facebook, YouTube Shorts) promoting Velanir with custom discount code AUTOMATEAI · Contact Name: Nathan · Next Step: Deal complete – monitor campaign performance. Await potential follow-up collaboration inquiry. · Platforms: YouTube Shorts · Deal: 1 linked · Last Brand Email: 2026-10-30 · Thread Subject: Lindsay <> Velanir | Collaboration · Status: Locked · Creator: Lindsay · Type: Paid offer · Brand Email: nate@velanir.ai
+- Deliverables: Short-form video promoting Velanir Business plan with CTA ("comment AGENT") for free 3-month access · Contact Name: Nathan · Next Step: Wait for first draft video delivery by weekend; brand to review and approve before publishing · Platforms: Instagram, TikTok, YouTube Shorts · Last Our Email: 2026-10-21 · Deal: 1 linked · Last Brand Email: 2026-10-21 · Thread Subject: Lindsay <> Velanir | Collaboration · Status: Locked · Creator: Lindsay · Type: Paid offer · Brand Email: nate@velanir.ai
