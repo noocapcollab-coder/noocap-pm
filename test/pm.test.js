@@ -2072,3 +2072,10 @@ test('a step-by-step guide with script approval as a future step is never script
   I.applyTextGuards(y, { text: 'The script is approved! Please proceed with filming. Once done, send the draft for review.' });
   assert.equal(y.event, 'script_approved');
 });
+
+test('our "send the contract and brief and we will start the script" is not a script we owe (Fotor x Chris, Nov 13)', async () => {
+  const I = await import('../lib/inbox.js');
+  const latest = "Hi Marina,\n\nThanks for pushing for that budget. We can move forward with $1,200 for the\nvideo package.\n\nPlease send over the contract and content brief to noocapcollab@gmail.com\n(cc'd here), and we will get started on the script and send it over for\nyour review.\n\nThanks";
+  assert.deepEqual(I.scriptPromiseKept(['Script'], 'creator', latest).promised, []);
+  assert.deepEqual(I.scriptPromiseKept(['Script', 'signed contract'], 'noocap', "We'll send the revised script tomorrow and the signed contract today.").promised, ['Script', 'signed contract']);
+});
