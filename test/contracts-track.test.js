@@ -32,6 +32,10 @@ test('our signed copy going back is recognised', () => {
   assert.ok(signedCopyIn({ text: 'Attached.', attachments: [pdf('signed.pdf')] }));
   assert.ok(!signedCopyIn({ text: 'Here is the script for your review.', attachments: [pdf('Script - CapCut.pdf')] }));
   assert.ok(!signedCopyIn({ text: 'We signed off on the script.', attachments: [] }));
+  // Panda x Chris, Nov 5: Chris's team forwarded the unsigned agreement to noocapcollab; that is not a signed copy
+  assert.ok(!signedCopyIn({ subject: 'Fwd: Paid campaign with Panda Security - thechriscordero', to: 'noocapcollab@gmail.com', text: 'Please find the contract attached for your signature.', attachments: [pdf('Numucorp_Panda_Security_Chris_Cordero_Agreement_EN.docx.pdf')] }));
+  assert.ok(!signedCopyIn({ subject: 'Re: Panda', to: 'noocapcollab@gmail.com', text: 'signed contract attached', attachments: [pdf('Agreement signed.pdf')] }));
+  assert.ok(signedCopyIn({ subject: 'Re: Panda', to: 'camila.molares@luagroup.com', cc: 'noocapcollab@gmail.com', text: 'signed contract attached', attachments: [pdf('Agreement signed.pdf')] }));
 });
 
 test('morning lines say how long each contract has waited', () => {
