@@ -476,6 +476,17 @@
   .brain-note h3 { margin: 0 0 4px; font-size: 18px; } .brain-note h4 { margin: 14px 0 4px; font-size: 13.5px; }
   .brain-note p, .brain-note li { margin: 4px 0; overflow-wrap: anywhere; }
   .brain-note .lnk { display: inline-block; margin: 0 6px 6px 0; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line, #2a2f3a); cursor: pointer; font-size: 12px; background: none; color: inherit; }
+  .brain-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .brain-stats .st { border: 1px solid var(--line, #2a2f3a); border-radius: 10px; padding: 10px 12px; }
+  .brain-stats .st b { display: block; font-size: 22px; font-variant-numeric: tabular-nums; line-height: 1.1; }
+  .brain-stats .st span { font-size: 12px; opacity: .72; }
+  .brain-note .live-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #3dd6b0; margin-right: 6px; box-shadow: 0 0 0 3px rgba(61,214,176,.18); }
+  .brain-note .how li { margin: 6px 0; } .brain-note .how b { font-weight: 600; }
+  .brain-note .brfeed { list-style: none; padding: 0; margin: 6px 0 0; display: block; }
+  .brain-note .brfeed li { display: block; padding: 7px 0; border-bottom: 1px solid var(--line, #2a2f3a); font-size: 13px; }
+  .brain-note .brfeed time { display: block; font-size: 11px; opacity: .6; }
+  .brain-note .tag { display: inline-block; font-size: 10.5px; padding: 1px 6px; border-radius: 999px; border: 1px solid var(--line, #2a2f3a); margin-right: 6px; opacity: .85; }
+  .brain-note .back { background: none; border: 0; color: inherit; opacity: .7; cursor: pointer; padding: 0; margin-bottom: 8px; font: inherit; font-size: 12.5px; }
   @media (max-width: 900px) { .brain-wrap { grid-template-columns: 1fr; } .brain-map { min-height: 420px; } .brain-note { max-height: none; } }
 
   /* ---------- match the HQ design: pills, filter chips, buttons ---------- */
@@ -983,9 +994,10 @@
     <div><div class="k" id="brWhen">The second brain · every brand, deal, lead, lesson and SOP as linked notes · no money</div><h1>Brain</h1></div>
     <input id="brQ" type="search" placeholder="Find a note (brand, creator, rule…)" autocomplete="off" aria-label="Find a note">
   </div>
+  <div class="brain-stats" id="brStats" aria-live="polite"></div>
   <div class="brain-wrap">
     <div class="brain-map"><div id="brGraph"></div><div class="brain-legend" id="brLegend"><div class="skel"></div></div></div>
-    <aside class="brain-note" id="brNote"><div class="k">Click a note on the map to read it here.</div></aside>
+    <aside class="brain-note" id="brNote"></aside>
   </div>
   <div class="err" id="brErr" style="font-size:13px"></div>
 </div></section>
@@ -1285,7 +1297,41 @@
   const BR_KIND = { creator: 'Creators', brand: 'Brands', deal: 'Deals', lead: 'Inbound leads', lesson: 'Lessons', rule: 'PM rules', sop: 'SOPs', style: 'Editing style', system: 'Automations', hub: 'Hubs', performance: 'What performs', script: 'Posted scripts', feedback: 'Brand feedback', tag: 'Other' };
   const brEsc = (x) => String(x ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   function brScript() { return window.vis ? Promise.resolve() : new Promise((ok, bad) => { const t = document.createElement('script'); t.src = 'https://unpkg.com/vis-network@9.1.6/standalone/umd/vis-network.min.js'; t.onload = ok; t.onerror = () => bad(new Error('Map library did not load')); document.head.appendChild(t); }); }
+  // What the brain does, in plain words, and what it did lately (live, /api/brain?activity=1)
+  let brAct = null, brActTimer = null;
+  const BR_HOW = [
+    ['Brand emails', 'Before reading or answering a brand, the PM checks everything we know about them: contacts, how they work, what went wrong before and what Harsh decided. Replies answer every ask, in their words.'],
+    ['Scripts', 'A new script card shows what we learned from past work with that brand and the creator\'s best hooks of the last 90 days, so scripts start from what works.'],
+    ['Editing', 'Every change a brand asked for on a cut is kept, so editors see it before the next video for that brand.'],
+    ['What performs', 'Each creator has their top videos with views, likes, shares and saves, so content choices rest on results.'],
+    ['Mistakes become rules', 'Corrections, edited drafts and Harsh\'s WhatsApp answers become lessons and decisions the PM follows from then on.'],
+    ['Gaps', 'Questions the brain cannot answer are logged, so missing knowledge gets added.'],
+    ['One source', 'The PM, this tab, the team page and Claude chats all read the same brain, rebuilt every night. No money is stored in it.'],
+  ];
+  const BR_TAG = { pages: 'Brand pages', card: 'Script card', decision: 'Decision', gap: 'Gap', lesson: 'Lesson', brain: 'Brain' };
+  const brAgo = (t) => { const m = Math.round((Date.now() - Date.parse(t)) / 6e4); return m < 1 ? 'just now' : m < 60 ? `${m} min ago` : m < 1440 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} d ago`; };
+  function brHome() {
+    const a = brAct;
+    $('brNote').innerHTML = `<div class="k"><span class="live-dot"></span>Live · what the brain did this week</div>
+      ${a ? (a.events.length ? `<ul class="brfeed">${a.events.slice(0, 14).map((e) => `<li><span class="tag">${brEsc(BR_TAG[e.kind] || 'Brain')}</span>${brEsc(e.text)}<time>${brAgo(e.at)}</time></li>`).join('')}</ul>` : '<p class="k">Nothing yet this week. Activity shows here as the PM uses the brain.</p>') : '<div class="skel"></div>'}
+      ${a?.repeats?.length ? `<h4>Mistakes that keep coming back (to fix in code)</h4><ul>${a.repeats.map((r) => `<li>${brEsc(r.lesson)} <span class="tag">${r.seen}×</span></li>`).join('')}</ul>` : ''}
+      <h4>How the brain improves our systems</h4><ul class="how">${BR_HOW.map(([t, d]) => `<li><b>${t}.</b> ${d}</li>`).join('')}</ul>
+      <p class="k">Click any note on the map to read it.</p>`;
+  }
+  function brStats() {
+    const c = brAct?.count || {}, n = brData?.notes?.nodes?.length;
+    const tiles = [[n ? n.toLocaleString() : '…', `notes · rebuilt ${brData?.built || ''}`], [c.pages ?? '…', 'brand pages updated this week'], [c.cards ?? '…', 'script cards helped this week'], [c.decisions ?? '…', 'your answers saved as rules'], [c.lessons ?? '…', 'new lessons this week'], [c.gaps ?? '…', 'questions it couldn\'t answer']];
+    $('brStats').innerHTML = tiles.map(([v, l]) => `<div class="st"><b>${brEsc(v)}</b><span>${brEsc(l)}</span></div>`).join('');
+  }
+  async function loadBrainActivity(home) {
+    try { const r = await fetch('/api/brain?activity=1', { headers: headers() }); if (r.ok) brAct = await r.json(); } catch { /* keep the last */ }
+    brStats(); if (home) brHome();
+  }
   async function loadBrain() {
+    const atHome = !$('brNote').dataset.note;
+    if (!brActTimer) brActTimer = setInterval(() => { if (!$('brain').hidden && document.visibilityState === 'visible' && $('brain').classList.contains('on')) loadBrainActivity(!$('brNote').dataset.note); }, 60000);
+    brStats(); if (atHome) brHome();
+    loadBrainActivity(atHome);
     if (brNet) return;
     try {
       $('brErr').textContent = '';
@@ -1304,12 +1350,13 @@
   function brOpen(i) {
     const G = brData.notes, n = G.nodes[i]; if (!n) return;
     const near = []; for (const [a, b] of G.links) { if (a === i) near.push(b); else if (b === i) near.push(a); }
-    $('brNote').innerHTML = `<div class="k">${brEsc(BR_KIND[n.t] || n.t)}</div><h3>${brEsc(n.l)}</h3>${brMd(n.b)}` +
+    $('brNote').dataset.note = '1';
+    $('brNote').innerHTML = `<button class="back" data-brhome>← What the brain is doing</button><div class="k">${brEsc(BR_KIND[n.t] || n.t)}</div><h3>${brEsc(n.l)}</h3>${brMd(n.b)}` +
       (near.length ? `<h4>Linked notes (${near.length})</h4>${near.slice(0, 60).map((j) => `<button class="lnk" data-bn="${j}">${brEsc(G.nodes[j].l)}</button>`).join('')}` : '');
     $('brNote').scrollTop = 0;
     if (brNet) { brNet.selectNodes([i]); brNet.focus(i, { scale: 0.55, animation: { duration: 400 } }); }
   }
-  $('brNote').addEventListener('click', (e) => { const b = e.target.closest('[data-bn]'); if (b) brOpen(Number(b.dataset.bn)); });
+  $('brNote').addEventListener('click', (e) => { if (e.target.closest('[data-brhome]')) { delete $('brNote').dataset.note; brHome(); return; } const b = e.target.closest('[data-bn]'); if (b) brOpen(Number(b.dataset.bn)); });
   $('brQ').addEventListener('keydown', (e) => {
     if (e.key !== 'Enter' || !brData) return;
     const q = e.target.value.trim().toLowerCase(); if (!q) return;
@@ -1336,6 +1383,7 @@
     $('brLegend').innerHTML = `<b>${G.nodes.length.toLocaleString()} notes · ${G.links.length.toLocaleString()} links</b>` +
       Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([t, c]) => `<div>${brEsc(BR_KIND[t] || t)} <span>${c}</span></div>`).join('') +
       `<span class="tip">Updated ${brEsc(brData.built)}. Scroll to zoom, click a note to read it.</span>`;
+    brStats();
   }
 
   // Outreach: creators pitched to Brand Pool brands from harshkoli201 (lib/outreach.js). Stats and Start/Pause only.

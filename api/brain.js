@@ -17,6 +17,11 @@ const keyOk = (req) => {
 
 export default async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
+  if (req.query?.activity) {
+    if (!checkAuth(req)) return res.status(401).json({ error: 'Wrong or missing password' });
+    const { brainActivity } = await import('../lib/brain.js');
+    return res.status(200).json(await brainActivity());
+  }
   if (req.query?.map) {
     if (!checkAuth(req)) return res.status(401).json({ error: 'Wrong or missing password' });
     try {
