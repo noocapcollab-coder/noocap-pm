@@ -7,10 +7,13 @@ Next Step: None—brand declined. Add to priority creator database per Sally's o
 Platforms: TikTok, Instagram, YouTube Shorts, Facebook
 Last Our Email: 2026-10-22
 Follow-ups: 0
-Last Brand Email: 2026-10-22· Thread Subject: Collaboration Opportunity with Filmora· Status: Lost
+Last Brand Email: 2026-10-22
+Thread Subject: Collaboration Opportunity with Filmora
+Status: Lost
 Our Counters: 0
 Creator: Chris
-Type: Paid offer· Brand Email: sally@ssgcollab.com
+Type: Paid offer
+Brand Email: sally@ssgcollab.com
 
 ## Links
 - [[Chris]]

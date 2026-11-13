@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_invideo_invideo", "label": "InVideo", "file_type": "concept", "source_file": "brands/invideo.md", "_origin": "semantic"}], "edges": [{"source": "brands_invideo_invideo", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/invideo.md", "_origin": "semantic"}], "hyperedges": []}

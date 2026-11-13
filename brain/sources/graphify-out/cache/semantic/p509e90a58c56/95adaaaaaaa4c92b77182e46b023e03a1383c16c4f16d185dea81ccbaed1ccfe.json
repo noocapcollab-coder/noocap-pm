@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_apiqik_brand", "label": "APIQIK", "file_type": "code", "source_file": "brands/apiqik.md"}], "edges": [{"source": "brands_apiqik_brand", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/apiqik.md"}], "hyperedges": []}

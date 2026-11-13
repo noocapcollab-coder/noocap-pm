@@ -1,0 +1,7 @@
+---
+type: performance
+---
+Instagram Short: 267 views, 3 likes, 1 comments, 0 shares, 0 saves.
+
+## Links
+- [[Nicole - what performs]]

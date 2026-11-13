@@ -5,9 +5,12 @@ Deliverables: Instagram carousel post about OmniSocials API with audience commen
 Next Step: Wait for brand to confirm if [amount]works and check Chris's availability
 Platforms: Instagram
 Last Our Email: 2026-08-20
-Last Brand Email: 2026-08-19· Thread Subject: Sponsored Post Request· Status: Waiting on brand
+Last Brand Email: 2026-08-19
+Thread Subject: Sponsored Post Request
+Status: Waiting on brand
 Creator: Chris
-Type: Paid offer· Brand Email: robert@omnisocials.com
+Type: Paid offer
+Brand Email: robert@omnisocials.com
 
 ## Links
 - [[Chris]]

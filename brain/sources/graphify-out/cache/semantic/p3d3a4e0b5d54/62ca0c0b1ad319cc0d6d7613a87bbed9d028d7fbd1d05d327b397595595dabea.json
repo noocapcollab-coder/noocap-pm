@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_acciowork_brand", "label": "Accio Work", "file_type": "code", "source_file": "brands/acciowork.md", "_origin": "semantic"}], "edges": [{"source": "brands_acciowork_brand", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/acciowork.md", "_origin": "semantic"}], "hyperedges": []}

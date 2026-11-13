@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_kast_kast", "label": "KAST", "file_type": "concept", "source_file": "brands/kast.md"}], "edges": [{"source": "brands_kast_kast", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/kast.md"}], "hyperedges": []}

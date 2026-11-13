@@ -6,9 +6,12 @@ Next Step: Needs you: wants video to feature Flova logo and on-screen mention of
 Quote at [amount]waiting in Approvals
 Platforms: Instagram
 Last Our Email: 2026-10-21
-Last Brand Email: 2026-10-23· Thread Subject: Flova AI × Lindsay | Paid Creative Collaboration· Status: Negotiating
+Last Brand Email: 2026-10-23
+Thread Subject: Flova AI × Lindsay | Paid Creative Collaboration
+Status: Negotiating
 Creator: Lindsay
-Type: Paid offer· Brand Email: ekko.liu@solbridgemedia.com
+Type: Paid offer
+Brand Email: ekko.liu@solbridgemedia.com
 
 ## Links
 - [[Flova AI]]

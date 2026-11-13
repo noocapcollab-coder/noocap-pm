@@ -7,10 +7,13 @@ Next Step: Lost: brand's last offer [amount]is under the [amount]lowball line
 Platforms: TikTok, Instagram
 Last Our Email: 2026-10-12
 Follow-ups: 0
-Last Brand Email: 2026-10-12· Thread Subject: Paid Partnership Opp: Chris Cordero x Fireflies AI· Status: Lost
+Last Brand Email: 2026-10-12
+Thread Subject: Paid Partnership Opp: Chris Cordero x Fireflies AI
+Status: Lost
 Our Counters: 0
 Creator: Chris
-Type: Paid offer· Brand Email: lynn@creoinfluence.com
+Type: Paid offer
+Brand Email: lynn@creoinfluence.com
 
 ## Links
 - [[Chris]]

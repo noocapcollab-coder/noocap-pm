@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_aries_brand", "label": "Aries", "file_type": "code", "source_file": "brands/aries.md"}], "edges": [{"source": "brands_aries_brand", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/aries.md"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_happyscribe_happyscribe", "label": "HappyScribe", "file_type": "concept", "source_file": "brands/happyscribe.md"}], "edges": [{"source": "brands_happyscribe_happyscribe", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/happyscribe.md"}], "hyperedges": []}

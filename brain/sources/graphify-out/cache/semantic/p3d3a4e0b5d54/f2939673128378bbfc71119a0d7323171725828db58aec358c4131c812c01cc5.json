@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_yantra_yantra", "label": "Yantra", "file_type": "document", "source_file": "brands/yantra.md", "_origin": "semantic"}], "edges": [{"source": "brands_yantra_yantra", "target": "creators_chris_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/yantra.md", "_origin": "semantic"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_systemind_systemind_sharednet", "label": "SysteMind (SharedNet)", "file_type": "code", "source_file": "brands/systemind.md"}], "edges": [{"source": "brands_systemind_systemind_sharednet", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/systemind.md"}], "hyperedges": []}

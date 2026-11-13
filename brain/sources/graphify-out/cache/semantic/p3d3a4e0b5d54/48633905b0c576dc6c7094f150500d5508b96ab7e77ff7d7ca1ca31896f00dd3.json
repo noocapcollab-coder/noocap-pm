@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_inmo_inmo", "label": "INMO", "file_type": "concept", "source_file": "brands/inmo.md", "_origin": "semantic"}], "edges": [{"source": "brands_inmo_inmo", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/inmo.md", "_origin": "semantic"}], "hyperedges": []}

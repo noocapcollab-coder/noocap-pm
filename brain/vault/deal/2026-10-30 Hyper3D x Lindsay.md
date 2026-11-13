@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Script Sent
-Last brand reply 2026-11-10, our last reply 2026-11-07.
+Last brand reply 2026-11-13, our last reply 2026-11-07.
 AGREED: rate 1100, deliverables 1 sponsored short-form video per brief, usage rights not confirmed, payment terms not confirmed, target delivery November 5th.
 
 HISTORY:

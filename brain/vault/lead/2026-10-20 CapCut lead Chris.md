@@ -7,10 +7,13 @@ Next Step: Reply with rate for 1 short-form video
 Platforms: Instagram, TikTok, YouTube Shorts
 Last Our Email: 2026-11-02
 Follow-ups: 1
-Last Brand Email: 2026-10-20· Thread Subject: CapCut Black Friday 💯 | Potential Collaboration· Status: Waiting on brand
+Last Brand Email: 2026-10-20
+Thread Subject: CapCut Black Friday 💯 | Potential Collaboration
+Status: Waiting on brand
 Our Counters: 0
 Creator: Chris
-Type: Paid offer· Brand Email: cyan@ssgmcn.com
+Type: Paid offer
+Brand Email: cyan@ssgmcn.com
 
 ## Links
 - [[CapCut]]

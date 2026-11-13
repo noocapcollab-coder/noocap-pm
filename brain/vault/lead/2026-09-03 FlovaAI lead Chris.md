@@ -5,9 +5,12 @@ Deliverables: One dedicated YouTube tutorial (minimum 3 minutes) featuring Flova
 Next Step: Wait for brand to confirm acceptance of rates ([amount]for IG video, [amount]for dedicated YouTube video)
 Platforms: YouTube
 Last Our Email: 2026-09-03
-Last Brand Email: 2026-09-03· Thread Subject: Ongoing YouTube Collaboration with FlovaAI· Status: Waiting on brand
+Last Brand Email: 2026-09-03
+Thread Subject: Ongoing YouTube Collaboration with FlovaAI
+Status: Waiting on brand
 Creator: Chris
-Type: Paid offer· Brand Email: Karl@invite.flova.ai
+Type: Paid offer
+Brand Email: Karl@invite.flova.ai
 
 ## Links
 - [[Chris]]

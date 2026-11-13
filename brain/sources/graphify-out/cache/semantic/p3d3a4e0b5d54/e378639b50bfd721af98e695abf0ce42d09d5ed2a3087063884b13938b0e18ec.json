@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_cutrover_brand", "label": "CutRover", "file_type": "code", "source_file": "brands/cutrover.md", "_origin": "semantic"}], "edges": [{"source": "brands_cutrover_brand", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/cutrover.md", "_origin": "semantic"}], "hyperedges": []}

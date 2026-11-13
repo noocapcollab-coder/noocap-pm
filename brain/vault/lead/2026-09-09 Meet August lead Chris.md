@@ -7,9 +7,12 @@ Next Step: Chris to decide if [amount]offer meets his rate or decline; brand wai
 Platforms: Instagram, TikTok, YouTube
 Last Our Email: 2026-10-06
 Follow-ups: 3
-Last Brand Email: 2026-09-09· Thread Subject: thechriscordero x August App collab· Status: Waiting on brand
+Last Brand Email: 2026-09-09
+Thread Subject: thechriscordero x August App collab
+Status: Waiting on brand
 Creator: Chris
-Type: Paid offer· Brand Email: abby@goprospectloop.co
+Type: Paid offer
+Brand Email: abby@goprospectloop.co
 
 ## Links
 - [[Chris]]

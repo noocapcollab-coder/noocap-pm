@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_manus_manus", "label": "Manus AI", "file_type": "concept", "source_file": "brands/manus.md", "_origin": "semantic"}], "edges": [{"source": "brands_manus_manus", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/manus.md", "_origin": "semantic"}], "hyperedges": []}

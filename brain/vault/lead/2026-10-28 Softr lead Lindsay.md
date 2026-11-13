@@ -7,9 +7,12 @@ Next Step: Wait for Kat to return and follow up with accountant on budget for ne
 Platforms: YouTube
 Last Our Email: 2026-10-23
 Deal: 1 linked
-Last Brand Email: 2026-10-28· Thread Subject: September video topics· Status: Locked
+Last Brand Email: 2026-10-28
+Thread Subject: September video topics
+Status: Locked
 Creator: Lindsay
-Type: Paid offer· Brand Email: katerina@softr.io
+Type: Paid offer
+Brand Email: katerina@softr.io
 
 ## Links
 - [[Lindsay]]

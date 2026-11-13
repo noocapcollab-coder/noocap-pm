@@ -5,17 +5,31 @@ type: brand
 
 Brand. Works with creators: [[Chris]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Dreamina is a product/brand. They work through Katlas Media, a creative agency. Primary contact is Kepan at outreach@katlasmedia.com. Jenny Guo at jenny@viralvibe.llc also contacted us directly but appears to be a separate outreach thread.
+WHO: Dreamina, an AI video creation product. They come to us directly and through agencies (Viral Vibe, Katlas Media).
 
-CONTACTS: Kepan, outreach@katlasmedia.com, manages campaigns and payment at Katlas Media. CC: siyu@katlasmedia.com, silvia@katlasmedia.com. Jenny Guo, jenny@viralvibe.llc, sent thumbs-up approval but no formal communication. All future emails must CC noocapcollab@gmail.com per creator request.
+CONTACTS:
+Jenny Guo, jenny@viralvibe.llc, Viral Vibe, signs as Jenny BD, mobile +86 17623670242, CC camila@viralvibe.llc, charlotte@viralvibe.llc, emma@viralvibe.llc, collab@chriscordero.net.
+Kepan, outreach@katlasmedia.com, Katlas Media, CC siyu@katlasmedia.com, silvia@katlasmedia.com.
+Vivi, Katlas Media.
+Harsh, Katlas Media.
 
-DEALS: Chris Cordero, [amount]USD for sponsored video with required hashtags, stage Invoiced, invoice sent 2026-11-01, video approved and published 2026-10-26, payment via bank transfer processing as of 2026-11-08, expected within 3-5 days. Chris Cordero, [amount]USD for Option 1 full package (deliverables and usage rights not yet confirmed in writing), stage Price Agreed, awaiting contract and brand brief, payment terms not set. Chris Cordero, brief received but no deal terms documented, stage Brief Received, Jenny Guo thumbs-up reaction only.
+DEALS:
+Dreamina x Chris | 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team) | [amount]USD | Script Approved | Post date requested Nov 15, proposed Nov 23
+Dreamina x Chris | Option 1 full package brief | [amount]USD | Price Agreed | Dates not set
+Dreamina x Chris | Sponsored video featuring Dreamina with required hashtags | [amount]USD | Invoiced | Invoice sent 2026-11-01
 
-HOW THEY WORK: Brand sends creative brief via Feishu link with password. No script required for new campaign, creator films from brief and sends cut for review before publishing. Brief link: https://winddownclub.feishu.cn/wiki/WliSwqr52i54SrkJglxcRxw7nQ8 password 023Kdreamina. Video must include required hashtags. Payment via bank transfer. Katlas Media has not yet provided company billing details.
+HOW THEY WORK:
+Viral Vibe: Script review and video production. Brand provides brief or script feedback, we film and send cut for review.
+Katlas Media: Brief provided via Feishu link (password 023Kdreamina). No script needed for some campaigns: creator films directly from brief and sends cut for review before publishing.
+Invoicing: Raise Stripe invoice in creator account. Katlas Media needs to provide company billing details. Payment methods include bank transfer or PayPal.
 
-WATCH OUT: Brand flagged missing hashtags in published posts on 2026-11-03 after video went live. Rule: confirm all required hashtags with creator before publishing and verify they are added immediately after posting. Payment delays occurred on [amount]invoice, brand acknowledged and promised delivery within 48 hours from 2026-11-11.
+WATCH OUT:
+Never mention other brands in the hook per brand requirements. Do not forget required hashtags on published posts.
 
-OPEN NOW: Waiting on brand to send contract and full brief for the [amount]deal so creator can proceed. Waiting on payment receipt or transaction confirmation for [amount]invoice. Jenny Guo thread stalled at thumbs-up with no formal parameters. Kepan owes next move on contract and brief delivery.
+OPEN NOW:
+Deal 1 (Viral Vibe script approved): We owe confirmation of publication date feasibility (Nov 15 vs Nov 23) and the UID.
+Deal 2 (Katlas Media [amount]deal): We owe the contract and brand brief. Waiting on brand to send both so creator can proceed.
+Deal 3 (Katlas Media [amount]invoice): Waiting on brand for payment receipt or transaction confirmation.
 
 
 ## Links

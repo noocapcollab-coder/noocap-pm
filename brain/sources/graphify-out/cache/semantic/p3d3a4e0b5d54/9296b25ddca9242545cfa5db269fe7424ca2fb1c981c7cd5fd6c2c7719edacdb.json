@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_klap_klap", "label": "Klap", "file_type": "concept", "source_file": "brands/klap.md", "_origin": "semantic"}], "edges": [{"source": "brands_klap_klap", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/klap.md", "_origin": "semantic"}], "hyperedges": []}

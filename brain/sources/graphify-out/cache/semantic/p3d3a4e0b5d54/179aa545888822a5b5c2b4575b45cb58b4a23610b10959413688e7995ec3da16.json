@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_oneup_oneup", "label": "OneUp", "file_type": "concept", "source_file": "brands/oneup.md", "_origin": "semantic"}], "edges": [{"source": "brands_oneup_oneup", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/oneup.md", "_origin": "semantic"}], "hyperedges": []}

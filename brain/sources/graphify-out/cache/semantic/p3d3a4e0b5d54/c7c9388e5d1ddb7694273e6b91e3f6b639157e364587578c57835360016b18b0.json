@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_levoit_levoit", "label": "Levoit", "file_type": "concept", "source_file": "brands/levoit.md", "_origin": "semantic"}], "edges": [{"source": "brands_levoit_levoit", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/levoit.md", "_origin": "semantic"}], "hyperedges": []}

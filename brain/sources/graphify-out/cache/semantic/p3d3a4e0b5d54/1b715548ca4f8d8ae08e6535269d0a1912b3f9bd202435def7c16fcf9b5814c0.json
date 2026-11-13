@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_elemove_brand", "label": "Elemove", "file_type": "code", "source_file": "brands/elemove.md", "_origin": "semantic"}], "edges": [{"source": "brands_elemove_brand", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/elemove.md", "_origin": "semantic"}], "hyperedges": []}

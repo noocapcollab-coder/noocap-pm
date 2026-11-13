@@ -6,9 +6,12 @@ Next Step: Wait for brand to confirm if [amount]works for their budget
 Platforms: TikTok
 Last Our Email: 2026-10-05
 Follow-ups: 3
-Last Brand Email: 2026-09-24· Thread Subject: 🤖 Tripo 3D AI x thechriscordero — Collaboration Opportunity — David· Status: Waiting on brand
+Last Brand Email: 2026-09-24
+Thread Subject: 🤖 Tripo 3D AI x thechriscordero — Collaboration Opportunity — David
+Status: Waiting on brand
 Creator: Chris
-Type: Paid offer· Brand Email: lily@mediamz.com
+Type: Paid offer
+Brand Email: lily@mediamz.com
 
 ## Links
 - [[Chris]]

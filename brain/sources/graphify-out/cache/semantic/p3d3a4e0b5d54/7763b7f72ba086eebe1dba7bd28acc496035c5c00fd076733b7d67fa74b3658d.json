@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_olalabs_olalabs", "label": "Olalabs", "file_type": "concept", "source_file": "brands/olalabs.md", "_origin": "semantic"}], "edges": [{"source": "brands_olalabs_olalabs", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/olalabs.md", "_origin": "semantic"}], "hyperedges": []}

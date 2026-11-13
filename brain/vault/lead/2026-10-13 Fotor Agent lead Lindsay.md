@@ -7,9 +7,12 @@ Next Step: Quote at [amount]waiting in Approvals
 Platforms: Instagram
 Last Our Email: 2026-11-02
 Follow-ups: 3
-Last Brand Email: 2026-10-13· Thread Subject: Fotor x lindsay.ai | Paid Instagram Collaboration· Status: Waiting on brand
+Last Brand Email: 2026-10-13
+Thread Subject: Fotor x lindsay.ai | Paid Instagram Collaboration
+Status: Waiting on brand
 Creator: Lindsay
-Type: Paid offer· Brand Email: collab@creatioz.com
+Type: Paid offer
+Brand Email: collab@creatioz.com
 
 ## Links
 - [[Fotor Agent]]

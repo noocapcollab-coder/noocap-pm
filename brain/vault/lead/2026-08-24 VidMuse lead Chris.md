@@ -5,9 +5,12 @@ Deliverables: One dedicated video featuring VidMuse; script approval; content li
 Next Step: Wait for brand to confirm if [amount]rate works and which platform(s) they prefer
 Platforms: Instagram
 Last Our Email: 2026-08-24
-Last Brand Email: 2026-08-24· Thread Subject: Collaboration Opportunity with VidMuse – AI Video Creation Platform· Status: Waiting on brand
+Last Brand Email: 2026-08-24
+Thread Subject: Collaboration Opportunity with VidMuse – AI Video Creation Platform
+Status: Waiting on brand
 Creator: Chris
-Type: Paid offer· Brand Email: joey@globeinflu.com
+Type: Paid offer
+Brand Email: joey@globeinflu.com
 
 ## Links
 - [[Chris]]

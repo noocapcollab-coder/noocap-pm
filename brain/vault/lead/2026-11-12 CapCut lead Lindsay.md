@@ -6,18 +6,24 @@ Contact Name: Sophie
 Next Step: Reply with rates for TikTok, Instagram, and YouTube
 Platforms: Instagram, TikTok, YouTube
 Deal: 1 linked
-Last Brand Email: 2026-11-12· Thread Subject: Collaboration Opportunity with CapCut 🎁· Status: Locked
+Last Brand Email: 2026-11-12
+Thread Subject: Collaboration Opportunity with CapCut 🎁
+Status: Locked
 Creator: Lindsay
-Type: Paid offer· Brand Email: avery@bioby.ai
+Type: Paid offer
+Brand Email: avery@bioby.ai
 Deliverables: Three short-form videos for CapCut promotion with deadline November 27
 Contact Name: Sophie
 Next Step: Deal declined. Archive or follow up if brand increases budget.
 Platforms: YouTube Shorts
 Last Our Email: 2026-11-12
-Last Brand Email: 2026-11-12· Thread Subject: Paid collab — CapCut
-Black Friday & Q4 Campaigns· Status: Lost
+Last Brand Email: 2026-11-12
+Thread Subject: Paid collab — CapCut
+Black Friday & Q4 Campaigns
+Status: Lost
 Creator: Lindsay
-Type: Paid offer· Brand Email: SorenDai@superlinear.cc
+Type: Paid offer
+Brand Email: SorenDai@superlinear.cc
 
 ## Links
 - [[CapCut]]

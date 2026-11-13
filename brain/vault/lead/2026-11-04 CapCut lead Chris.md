@@ -6,9 +6,12 @@ Contact Name: Liora
 Next Step: No action needed; keep Gillian's contact for future opportunities
 Platforms: Instagram, TikTok, YouTube Shorts
 Last Our Email: 2026-11-03
-Last Brand Email: 2026-11-04· Thread Subject: 🚀Paid Collaboration Opportunity with CapCut· Status: Lost
+Last Brand Email: 2026-11-04
+Thread Subject: 🚀Paid Collaboration Opportunity with CapCut
+Status: Lost
 Creator: Chris
-Type: Paid offer· Brand Email: gillian@ssgcollab.com
+Type: Paid offer
+Brand Email: gillian@ssgcollab.com
 
 ## Links
 - [[CapCut]]

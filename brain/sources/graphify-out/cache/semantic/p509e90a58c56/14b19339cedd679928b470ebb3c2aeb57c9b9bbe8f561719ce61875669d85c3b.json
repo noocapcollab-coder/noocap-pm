@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_godofprompt_brand", "label": "God of Prompt", "file_type": "code", "source_file": "brands/godofprompt.md"}], "edges": [{"source": "brands_godofprompt_brand", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/godofprompt.md"}], "hyperedges": []}

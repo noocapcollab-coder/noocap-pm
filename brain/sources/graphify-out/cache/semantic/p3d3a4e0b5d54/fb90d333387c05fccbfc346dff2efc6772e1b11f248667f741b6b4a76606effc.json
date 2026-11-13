@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_acasis_brand", "label": "ACASIS", "file_type": "code", "source_file": "brands/acasis.md", "_origin": "semantic"}], "edges": [{"source": "brands_acasis_brand", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/acasis.md", "_origin": "semantic"}], "hyperedges": []}

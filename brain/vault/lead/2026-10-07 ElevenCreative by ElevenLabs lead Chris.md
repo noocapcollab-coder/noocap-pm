@@ -7,10 +7,13 @@ Next Step: Lost: offer [amount]is under our [amount]inimum, not answered
 Platforms: Instagram, TikTok, YouTube Shorts, Facebook
 Last Our Email: 2026-10-07
 Follow-ups: 0
-Last Brand Email: 2026-10-07· Thread Subject: Collaboration ElevenCreative by ElevenLabs· Status: Lost
+Last Brand Email: 2026-10-07
+Thread Subject: Collaboration ElevenCreative by ElevenLabs
+Status: Lost
 Our Counters: 0
 Creator: Chris
-Type: Paid offer· Brand Email: alisa@kudosnarratives.com
+Type: Paid offer
+Brand Email: alisa@kudosnarratives.com
 
 ## Links
 - [[Chris]]

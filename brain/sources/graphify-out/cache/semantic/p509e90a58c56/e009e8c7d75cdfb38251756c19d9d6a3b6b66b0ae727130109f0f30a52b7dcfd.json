@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_kitchenmuh_kitchenmuh", "label": "Kitchenmuh", "file_type": "concept", "source_file": "brands/kitchenmuh.md"}], "edges": [{"source": "brands_kitchenmuh_kitchenmuh", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/kitchenmuh.md"}], "hyperedges": []}

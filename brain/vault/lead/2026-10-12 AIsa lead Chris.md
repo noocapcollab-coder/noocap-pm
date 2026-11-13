@@ -6,9 +6,12 @@ Next Step: Needs you: Do you currently run a Discord, Skool, Telegram, or anothe
 Platforms: X
 Last Our Email: 2026-10-06
 Follow-ups: 3
-Last Brand Email: 2026-10-12· Thread Subject: Chris Cordero× AIsa — Follow Us on X + Brand Ambassador Opportunities· Status: Waiting on brand
+Last Brand Email: 2026-10-12
+Thread Subject: Chris Cordero× AIsa — Follow Us on X + Brand Ambassador Opportunities
+Status: Waiting on brand
 Creator: Chris
-Type: Unclear· Brand Email: katherine@aisa.one
+Type: Unclear
+Brand Email: katherine@aisa.one
 
 ## Links
 - [[AIsa]]

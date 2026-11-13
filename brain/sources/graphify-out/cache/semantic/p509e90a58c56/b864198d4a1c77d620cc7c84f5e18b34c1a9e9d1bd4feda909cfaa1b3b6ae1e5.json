@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_aicoooffice_brand", "label": "AICOO Office", "file_type": "code", "source_file": "brands/aicoooffice.md"}], "edges": [{"source": "brands_aicoooffice_brand", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/aicoooffice.md"}], "hyperedges": []}

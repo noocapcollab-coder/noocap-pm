@@ -6,9 +6,12 @@ Contact Name: Jacqueline
 Next Step: No action needed unless Lindsay wants to follow up with single-platform offer later
 Platforms: Instagram, TikTok, Facebook
 Last Our Email: 2026-11-09
-Last Brand Email: 2026-11-10· Thread Subject: Lindsay Gonzales x Kalowave | Paid creator partnership· Status: Lost
+Last Brand Email: 2026-11-10
+Thread Subject: Lindsay Gonzales x Kalowave | Paid creator partnership
+Status: Lost
 Creator: Lindsay
-Type: Paid offer· Brand Email: jacqueline.lai@kalowave.com
+Type: Paid offer
+Brand Email: jacqueline.lai@kalowave.com
 
 ## Links
 - [[Kalowave]]

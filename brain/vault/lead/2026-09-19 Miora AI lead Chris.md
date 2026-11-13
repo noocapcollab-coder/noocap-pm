@@ -6,9 +6,12 @@ Next Step: Wait for brand to confirm if [amount]rate works for their budget
 Platforms: YouTube
 Last Our Email: 2026-10-06
 Follow-ups: 3
-Last Brand Email: 2026-09-19· Thread Subject: Paid Collabs Opportunity with Miora – AI Creative Platform· Status: Waiting on brand
+Last Brand Email: 2026-09-19
+Thread Subject: Paid Collabs Opportunity with Miora – AI Creative Platform
+Status: Waiting on brand
 Creator: Chris
-Type: Paid offer· Brand Email: tracy@socialbook.io
+Type: Paid offer
+Brand Email: tracy@socialbook.io
 
 ## Links
 - [[Chris]]

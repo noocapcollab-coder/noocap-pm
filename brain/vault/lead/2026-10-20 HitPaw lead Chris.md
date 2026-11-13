@@ -6,9 +6,12 @@ Contact Name: Vita
 Next Step: Lost: offer [amount]is under our [amount]inimum, not answered
 Platforms: Instagram, TikTok, YouTube Shorts, Facebook
 Last Our Email: 2026-10-19
-Last Brand Email: 2026-10-20· Thread Subject: HitPaw Business Cooperation· Status: Lost
+Last Brand Email: 2026-10-20
+Thread Subject: HitPaw Business Cooperation
+Status: Lost
 Creator: Chris
-Type: Paid offer· Brand Email: vita@hitpaw.com
+Type: Paid offer
+Brand Email: vita@hitpaw.com
 
 ## Links
 - [[Chris]]

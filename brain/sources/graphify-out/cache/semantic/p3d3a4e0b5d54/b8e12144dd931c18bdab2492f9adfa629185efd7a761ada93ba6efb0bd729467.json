@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_selectra_selectra", "label": "Selectra", "file_type": "code", "source_file": "brands/selectra.md", "_origin": "semantic"}], "edges": [{"source": "brands_selectra_selectra", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/selectra.md", "_origin": "semantic"}], "hyperedges": []}

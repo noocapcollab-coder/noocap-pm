@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_freebeat_brand", "label": "freebeat.ai", "file_type": "code", "source_file": "brands/freebeat.md"}], "edges": [{"source": "brands_freebeat_brand", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/freebeat.md"}], "hyperedges": []}

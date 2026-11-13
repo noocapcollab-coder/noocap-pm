@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_alinea_brand", "label": "Alinea", "file_type": "code", "source_file": "brands/alinea.md"}], "edges": [{"source": "brands_alinea_brand", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/alinea.md"}], "hyperedges": []}

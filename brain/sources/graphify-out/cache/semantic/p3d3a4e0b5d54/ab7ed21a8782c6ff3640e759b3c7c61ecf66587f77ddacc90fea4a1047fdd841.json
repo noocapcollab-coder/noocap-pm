@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_fishaudio_brand", "label": "Fish Audio", "file_type": "code", "source_file": "brands/fishaudio.md", "_origin": "semantic"}], "edges": [{"source": "brands_fishaudio_brand", "target": "duncan", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/fishaudio.md", "_origin": "semantic"}], "hyperedges": []}

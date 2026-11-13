@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_grammarly_brand", "label": "Grammarly", "file_type": "code", "source_file": "brands/grammarly.md", "_origin": "semantic"}], "edges": [{"source": "brands_grammarly_brand", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/grammarly.md", "_origin": "semantic"}], "hyperedges": []}

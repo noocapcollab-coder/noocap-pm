@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_hi3d_hi3d", "label": "Hi3D", "file_type": "concept", "source_file": "brands/hi3d.md", "_origin": "semantic"}], "edges": [{"source": "brands_hi3d_hi3d", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/hi3d.md", "_origin": "semantic"}], "hyperedges": []}

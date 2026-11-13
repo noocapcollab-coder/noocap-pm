@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_lomote_lomote", "label": "Lomote AI", "file_type": "concept", "source_file": "brands/lomote.md"}], "edges": [{"source": "brands_lomote_lomote", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/lomote.md"}], "hyperedges": []}

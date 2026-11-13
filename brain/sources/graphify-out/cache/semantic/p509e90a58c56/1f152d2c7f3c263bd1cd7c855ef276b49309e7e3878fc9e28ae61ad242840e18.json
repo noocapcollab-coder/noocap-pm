@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_kiva_kiva", "label": "Kiva", "file_type": "concept", "source_file": "brands/kiva.md"}], "edges": [{"source": "brands_kiva_kiva", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/kiva.md"}], "hyperedges": []}

@@ -7,9 +7,12 @@ Next Step: Wait for Alice from GridSocial to follow up with decision on our rate
 Platforms: TikTok, Instagram, YouTube Shorts
 Last Our Email: 2026-11-02
 Follow-ups: 1
-Last Brand Email: 2026-10-23· Thread Subject: Re：Creator Collaboration Inquiry· Status: Waiting on brand
+Last Brand Email: 2026-10-23
+Thread Subject: Re：Creator Collaboration Inquiry
+Status: Waiting on brand
 Creator: Lindsay
-Type: Paid offer· Brand Email: tina_yicheng@gridsocial.net
+Type: Paid offer
+Brand Email: tina_yicheng@gridsocial.net
 
 ## Links
 - [[GridSocial]]

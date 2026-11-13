@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_submagic_submagic", "label": "Submagic", "file_type": "code", "source_file": "brands/submagic.md"}], "edges": [{"source": "brands_submagic_submagic", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/submagic.md"}], "hyperedges": []}

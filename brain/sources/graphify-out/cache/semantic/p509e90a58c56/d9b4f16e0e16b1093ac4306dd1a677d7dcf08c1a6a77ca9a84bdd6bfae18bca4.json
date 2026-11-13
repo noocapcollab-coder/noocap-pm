@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_moprobo_moprobo", "label": "Moprobo", "file_type": "concept", "source_file": "brands/moprobo.md"}], "edges": [{"source": "brands_moprobo_moprobo", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/moprobo.md"}], "hyperedges": []}

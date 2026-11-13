@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_dreaminaseedance20_brand", "label": "Dreamina Seedance 2.0", "file_type": "code", "source_file": "brands/dreaminaseedance20.md"}], "edges": [{"source": "brands_dreaminaseedance20_brand", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/dreaminaseedance20.md"}], "hyperedges": []}

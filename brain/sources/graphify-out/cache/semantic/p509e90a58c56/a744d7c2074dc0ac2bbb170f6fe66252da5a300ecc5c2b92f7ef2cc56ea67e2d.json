@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_meetaugust_meetaugust", "label": "Meet August", "file_type": "concept", "source_file": "brands/meetaugust.md"}], "edges": [{"source": "brands_meetaugust_meetaugust", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/meetaugust.md"}], "hyperedges": []}

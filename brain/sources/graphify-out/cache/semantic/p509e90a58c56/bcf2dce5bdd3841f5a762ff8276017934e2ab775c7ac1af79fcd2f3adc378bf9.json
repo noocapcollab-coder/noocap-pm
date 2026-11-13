@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_gigax_brand", "label": "Giga X", "file_type": "code", "source_file": "brands/gigax.md"}], "edges": [{"source": "brands_gigax_brand", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/gigax.md"}], "hyperedges": []}

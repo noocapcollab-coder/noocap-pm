@@ -3,7 +3,7 @@ type: creator
 ---
 # Valeri
 
-NOOCAP creator. Brands: [[Valchy AI]], [[Polar]], [[Tripo 3D]], [[ElevenLabs]], [[Panda Security]], [[Buzzy AI]], [[Lovart]], [[Holo]].
+NOOCAP creator. Brands: [[Holo]], [[Lovart]], [[Buzzy AI]], [[Valchy AI]], [[Polar]], [[Tripo 3D]], [[ElevenLabs]], [[Panda Security]].
 
 ## Links
 - [[Buzzy AI]]

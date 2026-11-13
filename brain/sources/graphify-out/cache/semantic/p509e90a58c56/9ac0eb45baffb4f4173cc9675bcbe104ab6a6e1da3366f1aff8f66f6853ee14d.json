@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_mgx_mgx", "label": "MGX", "file_type": "concept", "source_file": "brands/mgx.md"}], "edges": [{"source": "brands_mgx_mgx", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/mgx.md"}], "hyperedges": []}

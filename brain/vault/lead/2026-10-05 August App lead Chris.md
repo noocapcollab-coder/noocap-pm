@@ -7,10 +7,13 @@ Next Step: Chris to decide: either provide absolute lowest rate for 2 videos or 
 Platforms: TikTok, Instagram, YouTube Shorts, Facebook
 Last Our Email: 2026-10-05
 Follow-ups: 0
-Last Brand Email: 2026-10-05· Thread Subject: Something your audience would love· Status: Negotiating
+Last Brand Email: 2026-10-05
+Thread Subject: Something your audience would love
+Status: Negotiating
 Our Counters: 0
 Creator: Chris
-Type: Paid offer· Brand Email: daniel@brioquest.com
+Type: Paid offer
+Brand Email: daniel@brioquest.com
 
 ## Links
 - [[August App]]

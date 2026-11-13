@@ -6,9 +6,12 @@ Contact Name: Julien
 Next Step: Replied 2026-11-11, waiting on the brand
 Platforms: Instagram
 Last Our Email: 2026-11-11
-Last Brand Email: 2026-11-10· Thread Subject: Working together on Carnage?· Status: Waiting on brand
+Last Brand Email: 2026-11-10
+Thread Subject: Working together on Carnage?
+Status: Waiting on brand
 Creator: Chris
-Type: Paid offer· Brand Email: contact@carnagegame.com
+Type: Paid offer
+Brand Email: contact@carnagegame.com
 
 ## Links
 - [[Carnage]]

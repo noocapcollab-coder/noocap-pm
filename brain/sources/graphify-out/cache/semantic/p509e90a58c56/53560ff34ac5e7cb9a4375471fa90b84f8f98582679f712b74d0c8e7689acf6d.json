@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_zenbusiness_zenbusiness", "label": "ZenBusiness", "file_type": "document", "source_file": "brands/zenbusiness.md"}], "edges": [{"source": "brands_zenbusiness_zenbusiness", "target": "creators_lindsay_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/zenbusiness.md"}], "hyperedges": []}

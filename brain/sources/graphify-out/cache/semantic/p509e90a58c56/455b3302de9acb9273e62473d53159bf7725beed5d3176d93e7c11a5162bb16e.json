@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_nakodo_nakodo", "label": "Nakodo", "file_type": "concept", "source_file": "brands/nakodo.md"}], "edges": [{"source": "brands_nakodo_nakodo", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/nakodo.md"}], "hyperedges": []}

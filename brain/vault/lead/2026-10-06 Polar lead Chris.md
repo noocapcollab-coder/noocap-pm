@@ -7,10 +7,13 @@ Next Step: Keep Polar in pipeline for future opportunities with higher budget
 Platforms: TikTok, Instagram, YouTube Shorts, Facebook
 Last Our Email: 2026-10-05
 Follow-ups: 1
-Last Brand Email: 2026-10-06· Thread Subject: Exciting Partnership Opportunity with Polar x @thechriscordero· Status: Lost
+Last Brand Email: 2026-10-06
+Thread Subject: Exciting Partnership Opportunity with Polar x @thechriscordero
+Status: Lost
 Our Counters: 0
 Creator: Chris
-Type: Paid offer· Brand Email: ushni@thebreadwinners.club
+Type: Paid offer
+Brand Email: ushni@thebreadwinners.club
 
 ## Links
 - [[Chris]]

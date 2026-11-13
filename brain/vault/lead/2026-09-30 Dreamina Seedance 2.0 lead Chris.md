@@ -6,9 +6,12 @@ Next Step: Lost: offer [amount]is under our [amount]inimum, not answered
 Platforms: Instagram, TikTok, YouTube
 Last Our Email: 2026-09-29
 Follow-ups: 1
-Last Brand Email: 2026-09-30· Thread Subject: Dreamina Seedance 2.0 | Creator Collaboration Opportunity· Status: Lost
+Last Brand Email: 2026-09-30
+Thread Subject: Dreamina Seedance 2.0 | Creator Collaboration Opportunity
+Status: Lost
 Creator: Chris
-Type: Paid offer· Brand Email: nathalia.creatorshub@gmail.com
+Type: Paid offer
+Brand Email: nathalia.creatorshub@gmail.com
 
 ## Links
 - [[Chris]]

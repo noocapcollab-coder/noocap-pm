@@ -5,9 +5,12 @@ Deliverables: 1 short-form video; 30 days usage rights on brand's organic channe
 Contact Name: Alice
 Next Step: None – brand declined. Move on to other opportunities.
 Platforms: TikTok, Instagram, YouTube Shorts
-Last Brand Email: 2026-10-23· Thread Subject: Creator Collaboration Inquiry· Status: Lost
+Last Brand Email: 2026-10-23
+Thread Subject: Creator Collaboration Inquiry
+Status: Lost
 Creator: Lindsay
-Type: Paid offer· Brand Email: alice_yicheng@gridsocial.net
+Type: Paid offer
+Brand Email: alice_yicheng@gridsocial.net
 
 ## Links
 - [[AI-powered video editing tool]]

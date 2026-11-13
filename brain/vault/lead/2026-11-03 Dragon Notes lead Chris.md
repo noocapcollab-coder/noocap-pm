@@ -6,9 +6,12 @@ Contact Name: Avnii
 Next Step: New brand: management to reply with pricing
 Platforms: Instagram
 Last Our Email: 2026-11-03
-Last Brand Email: 2026-11-03· Thread Subject: Paid Collaboration Opportunity· Status: Negotiating
+Last Brand Email: 2026-11-03
+Thread Subject: Paid Collaboration Opportunity
+Status: Negotiating
 Creator: Chris
-Type: Paid offer· Brand Email: avnii@musesconsultingstudio.com
+Type: Paid offer
+Brand Email: avnii@musesconsultingstudio.com
 
 ## Links
 - [[Chris]]

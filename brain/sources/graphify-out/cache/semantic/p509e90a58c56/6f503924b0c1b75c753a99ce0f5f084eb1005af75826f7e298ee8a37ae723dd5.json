@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_noiz_noiz", "label": "Noiz AI", "file_type": "concept", "source_file": "brands/noiz.md"}], "edges": [{"source": "brands_noiz_noiz", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/noiz.md"}], "hyperedges": []}

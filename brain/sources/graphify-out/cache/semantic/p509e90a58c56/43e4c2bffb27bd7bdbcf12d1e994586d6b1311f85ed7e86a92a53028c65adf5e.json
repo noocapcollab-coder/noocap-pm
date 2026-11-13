@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_lovart20_lovart20", "label": "Lovart 2.0", "file_type": "concept", "source_file": "brands/lovart20.md"}], "edges": [{"source": "brands_lovart20_lovart20", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/lovart20.md"}], "hyperedges": []}

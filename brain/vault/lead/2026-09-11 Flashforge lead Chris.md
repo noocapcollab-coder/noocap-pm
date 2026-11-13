@@ -6,9 +6,12 @@ Next Step: Follow-ups stopped: Harsh rejected the follow-up
 Platforms: Instagram, TikTok
 Last Our Email: 2026-09-21
 Follow-ups: 3
-Last Brand Email: 2026-09-11· Thread Subject: ️ Paid partnership: Flashforge x thechriscordero campaign – Lucy-Penny· Status: Lost
+Last Brand Email: 2026-09-11
+Thread Subject: ️ Paid partnership: Flashforge x thechriscordero campaign – Lucy-Penny
+Status: Lost
 Creator: Chris
-Type: Paid offer· Brand Email: partnerships@mediamz.com
+Type: Paid offer
+Brand Email: partnerships@mediamz.com
 
 ## Links
 - [[Chris]]

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_lemlist_lemlist", "label": "Lemlist", "file_type": "concept", "source_file": "brands/lemlist.md"}], "edges": [{"source": "brands_lemlist_lemlist", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/lemlist.md"}], "hyperedges": []}

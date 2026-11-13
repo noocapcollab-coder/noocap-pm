@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_popmaker_popmaker", "label": "PopMaker AI", "file_type": "concept", "source_file": "brands/popmaker.md"}], "edges": [{"source": "brands_popmaker_popmaker", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/popmaker.md"}], "hyperedges": []}

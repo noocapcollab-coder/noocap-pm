@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_ltx_ltx", "label": "LTX", "file_type": "concept", "source_file": "brands/ltx.md", "_origin": "semantic"}], "edges": [{"source": "brands_ltx_ltx", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/ltx.md", "_origin": "semantic"}], "hyperedges": []}

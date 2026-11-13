@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_movo_movo", "label": "MOVO AI", "file_type": "concept", "source_file": "brands/movo.md"}], "edges": [{"source": "brands_movo_movo", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/movo.md"}], "hyperedges": []}

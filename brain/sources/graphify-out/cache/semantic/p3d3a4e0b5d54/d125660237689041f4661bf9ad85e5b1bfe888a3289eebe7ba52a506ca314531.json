@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_recapo_recapo", "label": "Recapo", "file_type": "code", "source_file": "brands/recapo.md", "_origin": "semantic"}], "edges": [{"source": "brands_recapo_recapo", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/recapo.md", "_origin": "semantic"}], "hyperedges": []}

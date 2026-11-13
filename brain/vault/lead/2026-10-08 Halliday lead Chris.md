@@ -7,9 +7,12 @@ Next Step: Wait for payment to be processed
 Platforms: Instagram, TikTok
 Last Our Email: 2026-08-26
 Deal: 1 linked
-Last Brand Email: 2026-10-08· Thread Subject: PAID IG/TT Collaboration | @thechriscordero x Halliday 🚀 Next Gen AI Glasses Unlocked· Status: Locked
+Last Brand Email: 2026-10-08
+Thread Subject: PAID IG/TT Collaboration | @thechriscordero x Halliday 🚀 Next Gen AI Glasses Unlocked
+Status: Locked
 Creator: Chris
-Type: Paid offer· Brand Email: charlotte.ou@kolsummit.com
+Type: Paid offer
+Brand Email: charlotte.ou@kolsummit.com
 
 ## Links
 - [[Chris]]

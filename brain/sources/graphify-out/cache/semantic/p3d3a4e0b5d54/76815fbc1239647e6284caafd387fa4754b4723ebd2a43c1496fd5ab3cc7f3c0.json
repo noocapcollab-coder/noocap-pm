@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_anijam_brand", "label": "Anijam AI", "file_type": "code", "source_file": "brands/anijam.md", "_origin": "semantic"}], "edges": [{"source": "brands_anijam_brand", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/anijam.md", "_origin": "semantic"}], "hyperedges": []}

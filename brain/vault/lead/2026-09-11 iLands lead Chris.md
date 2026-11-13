@@ -7,9 +7,12 @@ Next Step: Follow-ups stopped: Harsh rejected the follow-up
 Platforms: Instagram
 Last Our Email: 2026-09-21
 Follow-ups: 3
-Last Brand Email: 2026-09-11· Thread Subject: 回复：Re: 回复：Re: Paid Collaboration Inquiry – VidMuse· Status: Waiting on brand
+Last Brand Email: 2026-09-11
+Thread Subject: 回复：Re: 回复：Re: Paid Collaboration Inquiry – VidMuse
+Status: Waiting on brand
 Creator: Chris
-Type: Paid offer· Brand Email: myra@enethk.com
+Type: Paid offer
+Brand Email: myra@enethk.com
 
 ## Links
 - [[Chris]]

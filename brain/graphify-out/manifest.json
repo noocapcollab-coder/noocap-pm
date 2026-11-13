@@ -1,619 +1,619 @@
 {
   "sources/brands/3dcreationplatform.md": {
-    "mtime": 1794512891.655686,
-    "seen": 1794513348.305148,
-    "ast_hash": "589dae8578295fa7790796e836756d89",
-    "semantic_hash": "589dae8578295fa7790796e836756d89"
+    "mtime": 1794553375.7622194,
+    "seen": 1794553501.3653643,
+    "ast_hash": "a5367f4925e23bdc27796f0a9ad164ef",
+    "semantic_hash": "a5367f4925e23bdc27796f0a9ad164ef"
   },
   "sources/brands/abacus.md": {
-    "mtime": 1794512891.660656,
-    "seen": 1794513348.3051586,
-    "ast_hash": "5005f8951aaae3c2f1c9932f45d47cc8",
-    "semantic_hash": "5005f8951aaae3c2f1c9932f45d47cc8"
+    "mtime": 1794553375.7664714,
+    "seen": 1794553501.3653722,
+    "ast_hash": "16b7114849e9e2589f7e25762caa9db1",
+    "semantic_hash": "16b7114849e9e2589f7e25762caa9db1"
   },
   "sources/brands/acasis.md": {
-    "mtime": 1794512891.6594095,
-    "seen": 1794513348.3051627,
-    "ast_hash": "0d5c51e2ed9ab5eb25f4de4944649a6d",
-    "semantic_hash": "0d5c51e2ed9ab5eb25f4de4944649a6d"
+    "mtime": 1794553375.7654216,
+    "seen": 1794553501.3653753,
+    "ast_hash": "81a3eb690bcaa07cd40e0d990907273c",
+    "semantic_hash": "81a3eb690bcaa07cd40e0d990907273c"
   },
   "sources/brands/acciowork.md": {
-    "mtime": 1794512891.6604462,
-    "seen": 1794513348.3051653,
-    "ast_hash": "6b9e09ad1197c3f205d3d4de6f8b6355",
-    "semantic_hash": "6b9e09ad1197c3f205d3d4de6f8b6355"
+    "mtime": 1794553375.7663083,
+    "seen": 1794553501.3653765,
+    "ast_hash": "aa349740a31cf2d5390b400f2ea50139",
+    "semantic_hash": "aa349740a31cf2d5390b400f2ea50139"
   },
   "sources/brands/accomplishr.md": {
-    "mtime": 1794512891.6521187,
-    "seen": 1794513348.305167,
-    "ast_hash": "d327b07e3228c4daaf8a3ea0a4754daf",
-    "semantic_hash": "d327b07e3228c4daaf8a3ea0a4754daf"
+    "mtime": 1794553375.7587123,
+    "seen": 1794553501.3653784,
+    "ast_hash": "2381ac1f6e3d7e69839a5fcc301078d9",
+    "semantic_hash": "2381ac1f6e3d7e69839a5fcc301078d9"
   },
   "sources/brands/agencyautopilot.md": {
-    "mtime": 1794512891.6510296,
-    "seen": 1794513348.3051686,
-    "ast_hash": "8200b85bbc68d7ea7d8484dff29bd905",
-    "semantic_hash": "8200b85bbc68d7ea7d8484dff29bd905"
+    "mtime": 1794553375.7576892,
+    "seen": 1794553501.3653796,
+    "ast_hash": "9713ae37685473fb458ab544ef1a0a5a",
+    "semantic_hash": "9713ae37685473fb458ab544ef1a0a5a"
   },
   "sources/brands/aiboosting.md": {
-    "mtime": 1794512891.6493123,
-    "seen": 1794513348.305171,
-    "ast_hash": "43bebf540a2b2380db7568f91733ceee",
-    "semantic_hash": "43bebf540a2b2380db7568f91733ceee"
+    "mtime": 1794553375.7563875,
+    "seen": 1794553501.365381,
+    "ast_hash": "a5e8ce400726fecdcb2abbe8da7d5393",
+    "semantic_hash": "a5e8ce400726fecdcb2abbe8da7d5393"
   },
   "sources/brands/aicoooffice.md": {
-    "mtime": 1794512891.652437,
-    "seen": 1794513348.3051727,
-    "ast_hash": "f9e16818c3a91bce9b6088d6d95afdab",
-    "semantic_hash": "f9e16818c3a91bce9b6088d6d95afdab"
+    "mtime": 1794553375.758944,
+    "seen": 1794553501.3653824,
+    "ast_hash": "7d7c4f349b71a68b20b77e64e56c6db2",
+    "semantic_hash": "7d7c4f349b71a68b20b77e64e56c6db2"
   },
   "sources/brands/aifymedia.md": {
-    "mtime": 1794512891.6544108,
-    "seen": 1794513348.3051746,
-    "ast_hash": "d84d09594ed4df88497294211c55e69e",
-    "semantic_hash": "d84d09594ed4df88497294211c55e69e"
+    "mtime": 1794553375.7610142,
+    "seen": 1794553501.3653839,
+    "ast_hash": "e7bd3400ea6a8aa3164e35fd9e5fc281",
+    "semantic_hash": "e7bd3400ea6a8aa3164e35fd9e5fc281"
   },
   "sources/brands/aigopilot.md": {
-    "mtime": 1794512891.6569748,
-    "seen": 1794513348.305176,
-    "ast_hash": "9418dea8e0cc2e7dbec27c100388bcf7",
-    "semantic_hash": "9418dea8e0cc2e7dbec27c100388bcf7"
+    "mtime": 1794553375.7632513,
+    "seen": 1794553501.365385,
+    "ast_hash": "ea0c49c549a6cc5164d52f62094391eb",
+    "semantic_hash": "ea0c49c549a6cc5164d52f62094391eb"
   },
   "sources/brands/aikonic.md": {
-    "mtime": 1794512891.6558223,
-    "seen": 1794513348.3051775,
-    "ast_hash": "6728a14fdececa285ac1bfb7262bd189",
-    "semantic_hash": "6728a14fdececa285ac1bfb7262bd189"
+    "mtime": 1794553375.7622862,
+    "seen": 1794553501.365386,
+    "ast_hash": "decc978a7e091614373839002bd330ee",
+    "semantic_hash": "decc978a7e091614373839002bd330ee"
   },
   "sources/brands/ainote.md": {
-    "mtime": 1794512891.6515567,
-    "seen": 1794513348.3051794,
-    "ast_hash": "fcc15fb138f8cea31419ffee623a68b0",
-    "semantic_hash": "fcc15fb138f8cea31419ffee623a68b0"
+    "mtime": 1794553375.7582002,
+    "seen": 1794553501.3653872,
+    "ast_hash": "9dcb3ee6ad23e6753a16514f0a8c0fc4",
+    "semantic_hash": "9dcb3ee6ad23e6753a16514f0a8c0fc4"
   },
   "sources/brands/aiqora.md": {
-    "mtime": 1794512891.6605997,
-    "seen": 1794513348.305181,
-    "ast_hash": "6c3a903a1693d2e5d971f012dc239fba",
-    "semantic_hash": "6c3a903a1693d2e5d971f012dc239fba"
+    "mtime": 1794553375.7664163,
+    "seen": 1794553501.3653896,
+    "ast_hash": "d814c5fb5b444ac7e45787881da4c45b",
+    "semantic_hash": "d814c5fb5b444ac7e45787881da4c45b"
   },
   "sources/brands/aisa.md": {
-    "mtime": 1794512891.6603007,
-    "seen": 1794513348.3051822,
-    "ast_hash": "9a933f6ae7a79f48172e10b4d8e0f953",
-    "semantic_hash": "9a933f6ae7a79f48172e10b4d8e0f953"
+    "mtime": 1794553375.7661922,
+    "seen": 1794553501.3653917,
+    "ast_hash": "9c93ed2e8a574f7ad1f82ebc0ee5af71",
+    "semantic_hash": "9c93ed2e8a574f7ad1f82ebc0ee5af71"
   },
   "sources/brands/aistlabs.md": {
-    "mtime": 1794512891.6438658,
-    "seen": 1794513348.3051836,
-    "ast_hash": "b88891ee6c689e30446f3da8e7425b9e",
-    "semantic_hash": "b88891ee6c689e30446f3da8e7425b9e"
+    "mtime": 1794553375.75303,
+    "seen": 1794553501.365393,
+    "ast_hash": "bd287a89bb063c40f768cb970d08dbb6",
+    "semantic_hash": "bd287a89bb063c40f768cb970d08dbb6"
   },
   "sources/brands/aiwriter.md": {
-    "mtime": 1794512891.6531742,
-    "seen": 1794513348.3051858,
-    "ast_hash": "687fd6153b5ed049b8653f14c64cabcb",
-    "semantic_hash": "687fd6153b5ed049b8653f14c64cabcb"
+    "mtime": 1794553375.75991,
+    "seen": 1794553501.365394,
+    "ast_hash": "ecbb02ccbc86cda06cd4417c735125a7",
+    "semantic_hash": "ecbb02ccbc86cda06cd4417c735125a7"
   },
   "sources/brands/alibaba.md": {
-    "mtime": 1794512891.649287,
-    "seen": 1794513348.3051872,
-    "ast_hash": "974b7fc5b2d0da4db152540d4e526fd8",
-    "semantic_hash": "974b7fc5b2d0da4db152540d4e526fd8"
+    "mtime": 1794553375.756367,
+    "seen": 1794553501.365396,
+    "ast_hash": "a726f1b80f468cff0b7694d95e653cdd",
+    "semantic_hash": "a726f1b80f468cff0b7694d95e653cdd"
   },
   "sources/brands/alinea.md": {
-    "mtime": 1794512891.657091,
-    "seen": 1794513348.305189,
-    "ast_hash": "2605afed1c85a89128f920141619f890",
-    "semantic_hash": "2605afed1c85a89128f920141619f890"
+    "mtime": 1794553375.7633953,
+    "seen": 1794553501.3653972,
+    "ast_hash": "a7453c7261f4b4875085f810e1ee0026",
+    "semantic_hash": "a7453c7261f4b4875085f810e1ee0026"
   },
   "sources/brands/alloop.md": {
-    "mtime": 1794512891.6530282,
-    "seen": 1794513348.30519,
-    "ast_hash": "54c3cba2aa4cd7d6ad8484ddd789d283",
-    "semantic_hash": "54c3cba2aa4cd7d6ad8484ddd789d283"
+    "mtime": 1794553375.7597852,
+    "seen": 1794553501.3653991,
+    "ast_hash": "1e61221bd31e2939469f35a48a40e366",
+    "semantic_hash": "1e61221bd31e2939469f35a48a40e366"
   },
   "sources/brands/anijam.md": {
-    "mtime": 1794512891.6520078,
-    "seen": 1794513348.305192,
-    "ast_hash": "c4a8f7fda9513b47038b512286ab25fa",
-    "semantic_hash": "c4a8f7fda9513b47038b512286ab25fa"
+    "mtime": 1794553375.7585988,
+    "seen": 1794553501.3654003,
+    "ast_hash": "45fe01fb4fdff426b28021bc68987529",
+    "semantic_hash": "45fe01fb4fdff426b28021bc68987529"
   },
   "sources/brands/apiqik.md": {
-    "mtime": 1794512891.6532817,
-    "seen": 1794513348.3051934,
-    "ast_hash": "4cfa6c070d8ede9bda60a40e20883498",
-    "semantic_hash": "4cfa6c070d8ede9bda60a40e20883498"
+    "mtime": 1794553375.760001,
+    "seen": 1794553501.3654015,
+    "ast_hash": "3a471135afa78debc759b35a4332ad8d",
+    "semantic_hash": "3a471135afa78debc759b35a4332ad8d"
   },
   "sources/brands/apterno.md": {
-    "mtime": 1794512891.6537135,
-    "seen": 1794513348.3051949,
-    "ast_hash": "c0dfef0fca76a7f500fbede27b08a7f4",
-    "semantic_hash": "c0dfef0fca76a7f500fbede27b08a7f4"
+    "mtime": 1794553375.7603922,
+    "seen": 1794553501.3654027,
+    "ast_hash": "ce36a2011b1bef7bdecb942705681b17",
+    "semantic_hash": "ce36a2011b1bef7bdecb942705681b17"
   },
   "sources/brands/arcads.md": {
-    "mtime": 1794512891.6508355,
-    "seen": 1794513348.3051968,
-    "ast_hash": "cb2b2f5ee9f13b277c197f753f5a7818",
-    "semantic_hash": "cb2b2f5ee9f13b277c197f753f5a7818"
+    "mtime": 1794553375.757511,
+    "seen": 1794553501.3654037,
+    "ast_hash": "ae7c18cd9f9fae68155752024166ec88",
+    "semantic_hash": "ae7c18cd9f9fae68155752024166ec88"
   },
   "sources/brands/arkky.md": {
-    "mtime": 1794512891.6583893,
-    "seen": 1794513348.3051982,
-    "ast_hash": "dec298efeefb1967ebef1ce5fb7d3b1a",
-    "semantic_hash": "dec298efeefb1967ebef1ce5fb7d3b1a"
+    "mtime": 1794553375.7645626,
+    "seen": 1794553501.3654065,
+    "ast_hash": "a1aa370b54611a5e69a6243e05bfeb1a",
+    "semantic_hash": "a1aa370b54611a5e69a6243e05bfeb1a"
   },
   "sources/brands/asana.md": {
-    "mtime": 1794512891.6475549,
-    "seen": 1794513348.3051999,
-    "ast_hash": "046f14ddd4abe750d8d6772fda5a76e4",
-    "semantic_hash": "046f14ddd4abe750d8d6772fda5a76e4"
+    "mtime": 1794553375.7506921,
+    "seen": 1794553501.3654077,
+    "ast_hash": "69c923b5708ab5e03914514c937509a8",
+    "semantic_hash": "69c923b5708ab5e03914514c937509a8"
   },
   "sources/brands/atlabs.md": {
-    "mtime": 1794512891.6570113,
-    "seen": 1794513348.3052008,
-    "ast_hash": "6ede9f46b42f032ad13bebbfc19ee5bf",
-    "semantic_hash": "6ede9f46b42f032ad13bebbfc19ee5bf"
+    "mtime": 1794553375.7633204,
+    "seen": 1794553501.3654087,
+    "ast_hash": "881fb11a0fe25aaadc822fa1f685a9b9",
+    "semantic_hash": "881fb11a0fe25aaadc822fa1f685a9b9"
   },
   "sources/brands/atoms.md": {
-    "mtime": 1794512891.645448,
-    "seen": 1794513348.3052027,
-    "ast_hash": "406f4e4a41e803d6b0f5a83738c334f7",
-    "semantic_hash": "406f4e4a41e803d6b0f5a83738c334f7"
+    "mtime": 1794553375.754438,
+    "seen": 1794553501.3654096,
+    "ast_hash": "ff9759af580bf07813518d1e113701e2",
+    "semantic_hash": "ff9759af580bf07813518d1e113701e2"
   },
   "sources/brands/august.md": {
-    "mtime": 1794512891.6612177,
-    "seen": 1794513348.305204,
-    "ast_hash": "b4ac541251e2308b1726f65a7d7b2363",
-    "semantic_hash": "b4ac541251e2308b1726f65a7d7b2363"
+    "mtime": 1794553375.766956,
+    "seen": 1794553501.3654108,
+    "ast_hash": "629bcd60d9a8c28d7d2383691cff0d74",
+    "semantic_hash": "629bcd60d9a8c28d7d2383691cff0d74"
   },
   "sources/brands/autofull.md": {
-    "mtime": 1794512891.6572893,
-    "seen": 1794513348.3052053,
-    "ast_hash": "bda065f5986403807c0f460da3fc3eee",
-    "semantic_hash": "bda065f5986403807c0f460da3fc3eee"
+    "mtime": 1794553375.7635949,
+    "seen": 1794553501.3654118,
+    "ast_hash": "3f1c07721f0abd9b6d260c71290cc615",
+    "semantic_hash": "3f1c07721f0abd9b6d260c71290cc615"
   },
   "sources/brands/automateconsulting.md": {
-    "mtime": 1794512891.6518824,
-    "seen": 1794513348.3052065,
-    "ast_hash": "c9243e52c1701534c3ffe0000af6bd95",
-    "semantic_hash": "c9243e52c1701534c3ffe0000af6bd95"
+    "mtime": 1794553375.7584715,
+    "seen": 1794553501.3654132,
+    "ast_hash": "155583616b7528e1bc4da723b9edb453",
+    "semantic_hash": "155583616b7528e1bc4da723b9edb453"
   },
   "sources/brands/backlinker.md": {
-    "mtime": 1794512891.6537457,
-    "seen": 1794513348.3052077,
-    "ast_hash": "9c5602f4e36b6907defe026dc5443b98",
-    "semantic_hash": "9c5602f4e36b6907defe026dc5443b98"
+    "mtime": 1794553375.7604148,
+    "seen": 1794553501.3654141,
+    "ast_hash": "1e1cfbdb65c1f4da589f5e812b15c6ee",
+    "semantic_hash": "1e1cfbdb65c1f4da589f5e812b15c6ee"
   },
   "sources/brands/base44.md": {
-    "mtime": 1794512891.6563609,
-    "seen": 1794513348.3052092,
-    "ast_hash": "ddfc6dc34b924c6100d991fc99e523dd",
-    "semantic_hash": "ddfc6dc34b924c6100d991fc99e523dd"
+    "mtime": 1794553375.7627456,
+    "seen": 1794553501.365415,
+    "ast_hash": "0d536a249f6a0c8cfa4b38db9c292142",
+    "semantic_hash": "0d536a249f6a0c8cfa4b38db9c292142"
   },
   "sources/brands/baserow.md": {
-    "mtime": 1794512891.6528497,
-    "seen": 1794513348.30521,
-    "ast_hash": "02a1cbbbb9b6c33272a04e6a3dde276c",
-    "semantic_hash": "02a1cbbbb9b6c33272a04e6a3dde276c"
+    "mtime": 1794553375.7592561,
+    "seen": 1794553501.3654163,
+    "ast_hash": "5a7c10441356b9efee4340947eec2c11",
+    "semantic_hash": "5a7c10441356b9efee4340947eec2c11"
   },
   "sources/brands/besmorycompany.md": {
-    "mtime": 1794512891.656309,
-    "seen": 1794513348.3052113,
-    "ast_hash": "c7678935c71badf32988999b57b1c6e3",
-    "semantic_hash": "c7678935c71badf32988999b57b1c6e3"
+    "mtime": 1794553375.7626987,
+    "seen": 1794553501.3654175,
+    "ast_hash": "834bb3704ec9e5c4645535a7dce6e929",
+    "semantic_hash": "834bb3704ec9e5c4645535a7dce6e929"
   },
   "sources/brands/bitdeer.md": {
-    "mtime": 1794512891.6521676,
-    "seen": 1794513348.3052125,
-    "ast_hash": "bd7930d2a753e98d20e21b1c24222864",
-    "semantic_hash": "bd7930d2a753e98d20e21b1c24222864"
+    "mtime": 1794553375.7587452,
+    "seen": 1794553501.3654187,
+    "ast_hash": "1c7fa97f0a7311d45d747c62bcafcedb",
+    "semantic_hash": "1c7fa97f0a7311d45d747c62bcafcedb"
   },
   "sources/brands/blinknew.md": {
-    "mtime": 1794512891.6552129,
-    "seen": 1794513348.3052135,
-    "ast_hash": "b973b911147d6ca7947d5c46031f70a0",
-    "semantic_hash": "b973b911147d6ca7947d5c46031f70a0"
+    "mtime": 1794553375.7617474,
+    "seen": 1794553501.3654199,
+    "ast_hash": "5c921b8fa85beb9f52d9f24a23084e51",
+    "semantic_hash": "5c921b8fa85beb9f52d9f24a23084e51"
   },
   "sources/brands/bluehost.md": {
-    "mtime": 1794512891.6468499,
-    "seen": 1794513348.3052146,
-    "ast_hash": "60540cb580b1c9c47ad0ff08bd14cfe3",
-    "semantic_hash": "60540cb580b1c9c47ad0ff08bd14cfe3"
+    "mtime": 1794553375.7522066,
+    "seen": 1794553501.3654206,
+    "ast_hash": "a89b22c4a1d9b071517d7d520526ac12",
+    "semantic_hash": "a89b22c4a1d9b071517d7d520526ac12"
   },
   "sources/brands/bluehostframerandsimplilearn.md": {
-    "mtime": 1794512891.660482,
-    "seen": 1794513348.3052163,
-    "ast_hash": "952dd896db5eadd47b177a3e633740d6",
-    "semantic_hash": "952dd896db5eadd47b177a3e633740d6"
+    "mtime": 1794553375.7663336,
+    "seen": 1794553501.3654215,
+    "ast_hash": "7e444a02c53f34c069771296941c4fe3",
+    "semantic_hash": "7e444a02c53f34c069771296941c4fe3"
   },
   "sources/brands/bobby.md": {
-    "mtime": 1794512891.651981,
-    "seen": 1794513348.3052173,
-    "ast_hash": "9af8ae962ccbc96293907c40af6436d2",
-    "semantic_hash": "9af8ae962ccbc96293907c40af6436d2"
+    "mtime": 1794553375.7585664,
+    "seen": 1794553501.3654232,
+    "ast_hash": "cfe10d05578cf5c674df9a0913cf21c8",
+    "semantic_hash": "cfe10d05578cf5c674df9a0913cf21c8"
   },
   "sources/brands/boringfunnels.md": {
-    "mtime": 1794512891.6488285,
-    "seen": 1794513348.3052185,
-    "ast_hash": "7a5075ac0f5bf005786f8afabdde5b8f",
-    "semantic_hash": "7a5075ac0f5bf005786f8afabdde5b8f"
+    "mtime": 1794553375.7559278,
+    "seen": 1794553501.3654244,
+    "ast_hash": "f54653dac739b8cd07c3a0566c50aea6",
+    "semantic_hash": "f54653dac739b8cd07c3a0566c50aea6"
   },
   "sources/brands/botslab.md": {
-    "mtime": 1794512891.6545281,
-    "seen": 1794513348.3052201,
-    "ast_hash": "181285606da2a8616014a69aac2f37ca",
-    "semantic_hash": "181285606da2a8616014a69aac2f37ca"
+    "mtime": 1794553375.7611306,
+    "seen": 1794553501.3654253,
+    "ast_hash": "f9d1748f614310f970f9755c775720be",
+    "semantic_hash": "f9d1748f614310f970f9755c775720be"
   },
   "sources/brands/brandinpro.md": {
-    "mtime": 1794512891.6607401,
-    "seen": 1794513348.3052213,
-    "ast_hash": "e74186817d51892c4b5c112a348ade48",
-    "semantic_hash": "e74186817d51892c4b5c112a348ade48"
+    "mtime": 1794553375.7665544,
+    "seen": 1794553501.3654265,
+    "ast_hash": "b88993f5529e46607f654152853e73c8",
+    "semantic_hash": "b88993f5529e46607f654152853e73c8"
   },
   "sources/brands/breezmeyewear.md": {
-    "mtime": 1794512891.6586735,
-    "seen": 1794513348.3052227,
-    "ast_hash": "712a767b85b735d0c455da138c5261cc",
-    "semantic_hash": "712a767b85b735d0c455da138c5261cc"
+    "mtime": 1794553375.7647934,
+    "seen": 1794553501.3654275,
+    "ast_hash": "25b9691d977c3331b2ae33bcb36ebff9",
+    "semantic_hash": "25b9691d977c3331b2ae33bcb36ebff9"
   },
   "sources/brands/buzzy.md": {
-    "mtime": 1794512891.6469345,
-    "seen": 1794513348.3052294,
-    "ast_hash": "d817467133603317ee390c54c0673cd6",
-    "semantic_hash": "d817467133603317ee390c54c0673cd6"
+    "mtime": 1794553375.7520282,
+    "seen": 1794553501.3654287,
+    "ast_hash": "98f8edda0d0bd2afc9e446e3a964891a",
+    "semantic_hash": "98f8edda0d0bd2afc9e446e3a964891a"
   },
   "sources/brands/bynn.md": {
-    "mtime": 1794512891.6536884,
-    "seen": 1794513348.3052306,
-    "ast_hash": "c08d0285162ed67cea7d0cf41dd45e55",
-    "semantic_hash": "c08d0285162ed67cea7d0cf41dd45e55"
+    "mtime": 1794553375.7603712,
+    "seen": 1794553501.3654299,
+    "ast_hash": "83698b2a57a5835eac9a1409251efe06",
+    "semantic_hash": "83698b2a57a5835eac9a1409251efe06"
   },
   "sources/brands/byteplus.md": {
-    "mtime": 1794512891.6552777,
-    "seen": 1794513348.3052318,
-    "ast_hash": "6356bc360757bfbda0304c29367305dc",
-    "semantic_hash": "6356bc360757bfbda0304c29367305dc"
+    "mtime": 1794553375.7618163,
+    "seen": 1794553501.365431,
+    "ast_hash": "2e074ffb20301ce1ff99bdd8f714c430",
+    "semantic_hash": "2e074ffb20301ce1ff99bdd8f714c430"
   },
   "sources/brands/caiojetsettercostajetsetter.md": {
-    "mtime": 1794512891.6586447,
-    "seen": 1794513348.3052332,
-    "ast_hash": "4cd4db766ed1a4b89b9b911d125d9caa",
-    "semantic_hash": "4cd4db766ed1a4b89b9b911d125d9caa"
+    "mtime": 1794553375.7647638,
+    "seen": 1794553501.365432,
+    "ast_hash": "c2252f4dd87e88e82bc15a0fb150e1c1",
+    "semantic_hash": "c2252f4dd87e88e82bc15a0fb150e1c1"
   },
   "sources/brands/calibra.md": {
-    "mtime": 1794512891.6516116,
-    "seen": 1794513348.3052351,
-    "ast_hash": "f28890093732ebd225040fad35d30fbb",
-    "semantic_hash": "f28890093732ebd225040fad35d30fbb"
+    "mtime": 1794553375.7582533,
+    "seen": 1794553501.3654335,
+    "ast_hash": "441572626d21a3e8c23838b495a81d0b",
+    "semantic_hash": "441572626d21a3e8c23838b495a81d0b"
   },
   "sources/brands/capcut.md": {
-    "mtime": 1794512891.6459846,
-    "seen": 1794513348.305237,
-    "ast_hash": "e822886d7a45baec93d7e355c4dc6df9",
-    "semantic_hash": "e822886d7a45baec93d7e355c4dc6df9"
+    "mtime": 1794553375.754662,
+    "seen": 1794553501.3654346,
+    "ast_hash": "964b11ee2df8ae436eacccdda49573a9",
+    "semantic_hash": "964b11ee2df8ae436eacccdda49573a9"
   },
   "sources/brands/capcutdirectormode.md": {
-    "mtime": 1794512891.6606302,
-    "seen": 1794513348.3052382,
-    "ast_hash": "7eae5f73f28153bcddd6c6b6998a7bad",
-    "semantic_hash": "7eae5f73f28153bcddd6c6b6998a7bad"
+    "mtime": 1794553375.7664452,
+    "seen": 1794553501.3654358,
+    "ast_hash": "112220265b66b7d09aabe9f2df231fcc",
+    "semantic_hash": "112220265b66b7d09aabe9f2df231fcc"
   },
   "sources/brands/capcutvideostudio.md": {
-    "mtime": 1794512891.6602614,
-    "seen": 1794513348.30524,
-    "ast_hash": "045e2c6a84548df224855aad367e5ac9",
-    "semantic_hash": "045e2c6a84548df224855aad367e5ac9"
+    "mtime": 1794553375.766158,
+    "seen": 1794553501.3654373,
+    "ast_hash": "06ff1c6a7afec98c09a1ad41607ef257",
+    "semantic_hash": "06ff1c6a7afec98c09a1ad41607ef257"
   },
   "sources/brands/capcutwebxcodex.md": {
-    "mtime": 1794512891.658963,
-    "seen": 1794513348.3052413,
-    "ast_hash": "3d802fca3c7126ecca8bef992f9a0ffe",
-    "semantic_hash": "3d802fca3c7126ecca8bef992f9a0ffe"
+    "mtime": 1794553375.7650316,
+    "seen": 1794553501.3654382,
+    "ast_hash": "e14627eaf03d319b1a69b280efb4761b",
+    "semantic_hash": "e14627eaf03d319b1a69b280efb4761b"
   },
   "sources/brands/capmind.md": {
-    "mtime": 1794512891.661185,
-    "seen": 1794513348.3052425,
-    "ast_hash": "05407bf86211e071c88c3b77875701e3",
-    "semantic_hash": "05407bf86211e071c88c3b77875701e3"
+    "mtime": 1794553375.7669287,
+    "seen": 1794553501.3654394,
+    "ast_hash": "2428e2a9fe4d437d92f7e0448d7abaf9",
+    "semantic_hash": "2428e2a9fe4d437d92f7e0448d7abaf9"
   },
   "sources/brands/captiono.md": {
-    "mtime": 1794512891.660203,
-    "seen": 1794513348.305244,
-    "ast_hash": "a8e963176e5a082f9aa72f78438498db",
-    "semantic_hash": "a8e963176e5a082f9aa72f78438498db"
+    "mtime": 1794553375.7661319,
+    "seen": 1794553501.3654404,
+    "ast_hash": "3d4cdf90937c0e58abc02b13f7fa6ad1",
+    "semantic_hash": "3d4cdf90937c0e58abc02b13f7fa6ad1"
   },
   "sources/brands/carnage.md": {
-    "mtime": 1794512891.6508992,
-    "seen": 1794513348.3052452,
-    "ast_hash": "d0897ad1a7db0f9a68847bc196e1f60c",
-    "semantic_hash": "d0897ad1a7db0f9a68847bc196e1f60c"
+    "mtime": 1794553375.7575662,
+    "seen": 1794553501.3654418,
+    "ast_hash": "71730dd770de05cb140ab28a44e57d33",
+    "semantic_hash": "71730dd770de05cb140ab28a44e57d33"
   },
   "sources/brands/carpodgo.md": {
-    "mtime": 1794512891.649641,
-    "seen": 1794513348.3052468,
-    "ast_hash": "f6a1393d308c4a625b2ed649d8c85fca",
-    "semantic_hash": "f6a1393d308c4a625b2ed649d8c85fca"
+    "mtime": 1794553375.7566347,
+    "seen": 1794553501.3654428,
+    "ast_hash": "9819ecc1dfa7747412a43bcdf7678698",
+    "semantic_hash": "9819ecc1dfa7747412a43bcdf7678698"
   },
   "sources/brands/cekat.md": {
-    "mtime": 1794512891.6495807,
-    "seen": 1794513348.3052483,
-    "ast_hash": "f8429b804f9835a831599d28c70b69c5",
-    "semantic_hash": "f8429b804f9835a831599d28c70b69c5"
+    "mtime": 1794553375.756589,
+    "seen": 1794553501.3654442,
+    "ast_hash": "2dd6dc7be4a21fa8278d44cee147c364",
+    "semantic_hash": "2dd6dc7be4a21fa8278d44cee147c364"
   },
   "sources/brands/chainbee.md": {
-    "mtime": 1794512891.6610198,
-    "seen": 1794513348.3052497,
-    "ast_hash": "dac6643367e70a943f5c1224adde8f0b",
-    "semantic_hash": "dac6643367e70a943f5c1224adde8f0b"
+    "mtime": 1794553375.7667606,
+    "seen": 1794553501.3654456,
+    "ast_hash": "07d962ecc506f7997bbcac37526b507d",
+    "semantic_hash": "07d962ecc506f7997bbcac37526b507d"
   },
   "sources/brands/chatava.md": {
-    "mtime": 1794512891.6554244,
-    "seen": 1794513348.3052511,
-    "ast_hash": "d64cc7112f1425b7a0debcb63890525e",
-    "semantic_hash": "d64cc7112f1425b7a0debcb63890525e"
+    "mtime": 1794553375.7619448,
+    "seen": 1794553501.3654466,
+    "ast_hash": "927ddf616aad0eaa64bcae5907b2e7d1",
+    "semantic_hash": "927ddf616aad0eaa64bcae5907b2e7d1"
   },
   "sources/brands/chatcut.md": {
-    "mtime": 1794512891.6529598,
-    "seen": 1794513348.3052523,
-    "ast_hash": "790a0a4241cdad4146b175bb3958db86",
-    "semantic_hash": "790a0a4241cdad4146b175bb3958db86"
+    "mtime": 1794553375.759729,
+    "seen": 1794553501.365448,
+    "ast_hash": "7644a255b16c99cb11673e4ad526bd61",
+    "semantic_hash": "7644a255b16c99cb11673e4ad526bd61"
   },
   "sources/brands/chatgpt.md": {
-    "mtime": 1794512891.6465905,
-    "seen": 1794513348.3052542,
-    "ast_hash": "3a26e1a9f230b8a8072adfce9a94f374",
-    "semantic_hash": "3a26e1a9f230b8a8072adfce9a94f374"
+    "mtime": 1794553375.7551525,
+    "seen": 1794553501.365449,
+    "ast_hash": "25fbbedfc475e2796b9ce2fad1098116",
+    "semantic_hash": "25fbbedfc475e2796b9ce2fad1098116"
   },
   "sources/brands/chatpro.md": {
-    "mtime": 1794512891.6535783,
-    "seen": 1794513348.305256,
-    "ast_hash": "bacec7fd0ff8ad66fcbf3e1937602b71",
-    "semantic_hash": "bacec7fd0ff8ad66fcbf3e1937602b71"
+    "mtime": 1794553375.7602706,
+    "seen": 1794553501.3654504,
+    "ast_hash": "e52c3e7144a3f38894f663f77363ca63",
+    "semantic_hash": "e52c3e7144a3f38894f663f77363ca63"
   },
   "sources/brands/chromatic.md": {
-    "mtime": 1794512891.6559026,
-    "seen": 1794513348.3052573,
-    "ast_hash": "bd3bfc462794ea074c708d071c4083b0",
-    "semantic_hash": "bd3bfc462794ea074c708d071c4083b0"
+    "mtime": 1794553375.7623563,
+    "seen": 1794553501.3654513,
+    "ast_hash": "eceeb339e6ed4696f5f8ec4bd5484ae2",
+    "semantic_hash": "eceeb339e6ed4696f5f8ec4bd5484ae2"
   },
   "sources/brands/cinemap.md": {
-    "mtime": 1794512891.6508672,
-    "seen": 1794513348.3052588,
-    "ast_hash": "443da35b746d03d6164d1c7cd7bc2230",
-    "semantic_hash": "443da35b746d03d6164d1c7cd7bc2230"
+    "mtime": 1794553375.757538,
+    "seen": 1794553501.3654525,
+    "ast_hash": "98632847f2349a1b363abc5731d6ecb6",
+    "semantic_hash": "98632847f2349a1b363abc5731d6ecb6"
   },
   "sources/brands/cloudways.md": {
-    "mtime": 1794512891.6589355,
-    "seen": 1794513348.3052602,
-    "ast_hash": "109230fe4ccdfe6c9ff44e3ce4196522",
-    "semantic_hash": "109230fe4ccdfe6c9ff44e3ce4196522"
+    "mtime": 1794553375.765005,
+    "seen": 1794553501.3654537,
+    "ast_hash": "1e70df908c0d2fa26e56e668b97b9f5c",
+    "semantic_hash": "1e70df908c0d2fa26e56e668b97b9f5c"
   },
   "sources/brands/coderabbit.md": {
-    "mtime": 1794512891.65348,
-    "seen": 1794513348.3052619,
-    "ast_hash": "8fc9f219740f9273d8a8e57ba609d034",
-    "semantic_hash": "8fc9f219740f9273d8a8e57ba609d034"
+    "mtime": 1794553375.7601857,
+    "seen": 1794553501.365455,
+    "ast_hash": "4f9d1071889fc441bc870808c81fffa8",
+    "semantic_hash": "4f9d1071889fc441bc870808c81fffa8"
   },
   "sources/brands/cohear.md": {
-    "mtime": 1794512891.6498528,
-    "seen": 1794513348.305263,
-    "ast_hash": "dfda88bf45fb5bce8b35c5931a92280d",
-    "semantic_hash": "dfda88bf45fb5bce8b35c5931a92280d"
+    "mtime": 1794553375.7567556,
+    "seen": 1794553501.3654559,
+    "ast_hash": "4ed27c727dfb63d0efacd30038093dd7",
+    "semantic_hash": "4ed27c727dfb63d0efacd30038093dd7"
   },
   "sources/brands/content24.md": {
-    "mtime": 1794512891.651244,
-    "seen": 1794513348.3052647,
-    "ast_hash": "ba0e4bb6b430a1e5c25f04fb7519f64c",
-    "semantic_hash": "ba0e4bb6b430a1e5c25f04fb7519f64c"
+    "mtime": 1794553375.7578588,
+    "seen": 1794553501.3654568,
+    "ast_hash": "db438b52dab54dc69c232f8f6dbe83ab",
+    "semantic_hash": "db438b52dab54dc69c232f8f6dbe83ab"
   },
   "sources/brands/cozeware.md": {
-    "mtime": 1794512891.6495059,
-    "seen": 1794513348.305266,
-    "ast_hash": "33e5815a553dbba15a0bfc97628591af",
-    "semantic_hash": "33e5815a553dbba15a0bfc97628591af"
+    "mtime": 1794553375.756533,
+    "seen": 1794553501.365458,
+    "ast_hash": "fddcd525b71a3192ab3d1cf04c3db1f1",
+    "semantic_hash": "fddcd525b71a3192ab3d1cf04c3db1f1"
   },
   "sources/brands/cozyla.md": {
-    "mtime": 1794512891.6566794,
-    "seen": 1794513348.305267,
-    "ast_hash": "713ebc89567dc51dae0306ee1b81722c",
-    "semantic_hash": "713ebc89567dc51dae0306ee1b81722c"
+    "mtime": 1794553375.7630298,
+    "seen": 1794553501.365459,
+    "ast_hash": "82c5d1a3763a3673159a4ad31c81b986",
+    "semantic_hash": "82c5d1a3763a3673159a4ad31c81b986"
   },
   "sources/brands/creatify.md": {
-    "mtime": 1794512891.6551073,
-    "seen": 1794513348.3052683,
-    "ast_hash": "b56985d6613265ef503be9caa2946083",
-    "semantic_hash": "b56985d6613265ef503be9caa2946083"
+    "mtime": 1794553375.7616644,
+    "seen": 1794553501.36546,
+    "ast_hash": "ff406a2033d78af03e2112df2b1eb9f3",
+    "semantic_hash": "ff406a2033d78af03e2112df2b1eb9f3"
   },
   "sources/brands/creativeplatform.md": {
-    "mtime": 1794512891.651726,
-    "seen": 1794513348.3052697,
-    "ast_hash": "4318b2c5db808f72a241adb79f9c4679",
-    "semantic_hash": "4318b2c5db808f72a241adb79f9c4679"
+    "mtime": 1794553375.7583952,
+    "seen": 1794553501.3654613,
+    "ast_hash": "c7c6843419799c94e6eb29d04186947c",
+    "semantic_hash": "c7c6843419799c94e6eb29d04186947c"
   },
   "sources/brands/cutbay.md": {
-    "mtime": 1794512891.6538317,
-    "seen": 1794513348.3052711,
-    "ast_hash": "7bf64cec770e7a495f14e4d889aa93a1",
-    "semantic_hash": "7bf64cec770e7a495f14e4d889aa93a1"
+    "mtime": 1794553375.7604685,
+    "seen": 1794553501.365462,
+    "ast_hash": "ff9c2daffb4593b8058bb0c60c4e4273",
+    "semantic_hash": "ff9c2daffb4593b8058bb0c60c4e4273"
   },
   "sources/brands/cutgpt.md": {
-    "mtime": 1794512891.6502504,
-    "seen": 1794513348.3052726,
-    "ast_hash": "ac4c7cb828bf144751ec13de2f5d1e19",
-    "semantic_hash": "ac4c7cb828bf144751ec13de2f5d1e19"
+    "mtime": 1794553375.7570956,
+    "seen": 1794553501.3654633,
+    "ast_hash": "bc22997d51d3c8ed7f9474ee7e0ead93",
+    "semantic_hash": "bc22997d51d3c8ed7f9474ee7e0ead93"
   },
   "sources/brands/cutrover.md": {
-    "mtime": 1794512891.6542044,
-    "seen": 1794513348.3052738,
-    "ast_hash": "decf8cf5702ea8799026b23bbc3698c3",
-    "semantic_hash": "decf8cf5702ea8799026b23bbc3698c3"
+    "mtime": 1794553375.7607915,
+    "seen": 1794553501.3654647,
+    "ast_hash": "3868fd65a5f501cecf1e65f476413ea8",
+    "semantic_hash": "3868fd65a5f501cecf1e65f476413ea8"
   },
   "sources/brands/dating.md": {
-    "mtime": 1794512891.6548707,
-    "seen": 1794513348.3052754,
-    "ast_hash": "3f1864279f1afc584fc1d2cb4fc88f31",
-    "semantic_hash": "3f1864279f1afc584fc1d2cb4fc88f31"
+    "mtime": 1794553375.7614574,
+    "seen": 1794553501.365466,
+    "ast_hash": "11ee57f09288cf34ad41ec42545abb31",
+    "semantic_hash": "11ee57f09288cf34ad41ec42545abb31"
   },
   "sources/brands/datva.md": {
-    "mtime": 1794512891.6509526,
-    "seen": 1794513348.3052769,
-    "ast_hash": "1e691571f18bcb476e53e46d487078f0",
-    "semantic_hash": "1e691571f18bcb476e53e46d487078f0"
+    "mtime": 1794553375.7576153,
+    "seen": 1794553501.3654673,
+    "ast_hash": "2b3a0269f75b68843d524c92046e1fcf",
+    "semantic_hash": "2b3a0269f75b68843d524c92046e1fcf"
   },
   "sources/brands/deeprobotics.md": {
-    "mtime": 1794512891.6575081,
-    "seen": 1794513348.305278,
-    "ast_hash": "527c5b108ee61c77b8acde7f7b155121",
-    "semantic_hash": "527c5b108ee61c77b8acde7f7b155121"
+    "mtime": 1794553375.7637665,
+    "seen": 1794553501.3654687,
+    "ast_hash": "74bf849b4fd81385579c018ff10d7aef",
+    "semantic_hash": "74bf849b4fd81385579c018ff10d7aef"
   },
   "sources/brands/dellxps.md": {
-    "mtime": 1794512891.65775,
-    "seen": 1794513348.3052797,
-    "ast_hash": "0d87443533e4b6a622df229492aa170a",
-    "semantic_hash": "0d87443533e4b6a622df229492aa170a"
+    "mtime": 1794553375.7640212,
+    "seen": 1794553501.3654697,
+    "ast_hash": "eadaa35fcd45d9c3c0f9f4c5f0851efb",
+    "semantic_hash": "eadaa35fcd45d9c3c0f9f4c5f0851efb"
   },
   "sources/brands/demi.md": {
-    "mtime": 1794512891.6484284,
-    "seen": 1794513348.3052807,
-    "ast_hash": "24a6683100d813e5c6e5c4f4e33348f3",
-    "semantic_hash": "24a6683100d813e5c6e5c4f4e33348f3"
+    "mtime": 1794553375.7556248,
+    "seen": 1794553501.3654706,
+    "ast_hash": "33a35bbbc0b092cd5bc24e9f479327ca",
+    "semantic_hash": "33a35bbbc0b092cd5bc24e9f479327ca"
   },
   "sources/brands/desktopvideoeditingworkspace.md": {
-    "mtime": 1794512891.6593528,
-    "seen": 1794513348.3052824,
-    "ast_hash": "f49fea991c0d433f3d63416f8114d58d",
-    "semantic_hash": "f49fea991c0d433f3d63416f8114d58d"
+    "mtime": 1794553375.7653677,
+    "seen": 1794553501.3654726,
+    "ast_hash": "21071f4e1475caa43adc1fdb6f7f368a",
+    "semantic_hash": "21071f4e1475caa43adc1fdb6f7f368a"
   },
   "sources/brands/doba.md": {
-    "mtime": 1794512891.65601,
-    "seen": 1794513348.3052835,
-    "ast_hash": "482b663e12821c22d5bb6e5c596608fe",
-    "semantic_hash": "482b663e12821c22d5bb6e5c596608fe"
+    "mtime": 1794553375.7624483,
+    "seen": 1794553501.3654735,
+    "ast_hash": "a820276eb868afa1108a32d6008af497",
+    "semantic_hash": "a820276eb868afa1108a32d6008af497"
   },
   "sources/brands/domo.md": {
-    "mtime": 1794512891.6519244,
-    "seen": 1794513348.305285,
-    "ast_hash": "c5fa9bf23156341514ce8f886eac0aff",
-    "semantic_hash": "c5fa9bf23156341514ce8f886eac0aff"
+    "mtime": 1794553375.7585113,
+    "seen": 1794553501.3654747,
+    "ast_hash": "5f110aa35a2122a5766b26412c08b76a",
+    "semantic_hash": "5f110aa35a2122a5766b26412c08b76a"
   },
   "sources/brands/dragonnotes.md": {
-    "mtime": 1794512891.651325,
-    "seen": 1794513348.3052862,
-    "ast_hash": "9f89f0f9c4af335424d79bdafac7f6f2",
-    "semantic_hash": "9f89f0f9c4af335424d79bdafac7f6f2"
+    "mtime": 1794553375.7579327,
+    "seen": 1794553501.3654761,
+    "ast_hash": "a23f1324fc4174924ab0ce933b9df7cf",
+    "semantic_hash": "a23f1324fc4174924ab0ce933b9df7cf"
   },
   "sources/brands/dramaland.md": {
-    "mtime": 1794512891.6589084,
-    "seen": 1794513348.3052874,
-    "ast_hash": "f86b47a1769ee23d9fceb1334ba16fef",
-    "semantic_hash": "f86b47a1769ee23d9fceb1334ba16fef"
+    "mtime": 1794553375.7649517,
+    "seen": 1794553501.365477,
+    "ast_hash": "5e9ed14dbffb67b35778f2cbb651f031",
+    "semantic_hash": "5e9ed14dbffb67b35778f2cbb651f031"
   },
   "sources/brands/dreamina.md": {
-    "mtime": 1794512891.6465251,
-    "seen": 1794513348.305289,
-    "ast_hash": "fefdde688ad883f17ca81f36741560a3",
-    "semantic_hash": "fefdde688ad883f17ca81f36741560a3"
+    "mtime": 1794553375.7550933,
+    "seen": 1794553501.365478,
+    "ast_hash": "72a4165b1b53a04d6e47e7f700ecc50d",
+    "semantic_hash": "72a4165b1b53a04d6e47e7f700ecc50d"
   },
   "sources/brands/dreaminaseedance20.md": {
-    "mtime": 1794512891.6611285,
-    "seen": 1794513348.3052912,
-    "ast_hash": "fcdb255eb352d754d5c4bd83acbff36c",
-    "semantic_hash": "fcdb255eb352d754d5c4bd83acbff36c"
+    "mtime": 1794553375.766871,
+    "seen": 1794553501.3654797,
+    "ast_hash": "c28cc01ad1d55ec2559e3e7956d02d8d",
+    "semantic_hash": "c28cc01ad1d55ec2559e3e7956d02d8d"
   },
   "sources/brands/dressx.md": {
-    "mtime": 1794512891.6496098,
-    "seen": 1794513348.3052928,
-    "ast_hash": "34727ce52379739de646fa929ee65498",
-    "semantic_hash": "34727ce52379739de646fa929ee65498"
+    "mtime": 1794553375.75661,
+    "seen": 1794553501.3654804,
+    "ast_hash": "2e8c5272e767ddc70172ae2f01effe83",
+    "semantic_hash": "2e8c5272e767ddc70172ae2f01effe83"
   },
   "sources/brands/drifwin.md": {
-    "mtime": 1794512891.6516914,
-    "seen": 1794513348.305294,
-    "ast_hash": "c4e22a72429ee5d3459410aa34102b30",
-    "semantic_hash": "c4e22a72429ee5d3459410aa34102b30"
+    "mtime": 1794553375.7583222,
+    "seen": 1794553501.3654814,
+    "ast_hash": "0ab719264265c847b2276156254dd5ba",
+    "semantic_hash": "0ab719264265c847b2276156254dd5ba"
   },
   "sources/brands/dubedo.md": {
-    "mtime": 1794512891.6575384,
-    "seen": 1794513348.3052955,
-    "ast_hash": "847720d71dee7f92c1635fadd6ce9b42",
-    "semantic_hash": "847720d71dee7f92c1635fadd6ce9b42"
+    "mtime": 1794553375.7637959,
+    "seen": 1794553501.3654828,
+    "ast_hash": "6781dc7c11557dbbe5eea27ea0c77c78",
+    "semantic_hash": "6781dc7c11557dbbe5eea27ea0c77c78"
   },
   "sources/brands/dymesty.md": {
-    "mtime": 1794512891.6541743,
-    "seen": 1794513348.3052964,
-    "ast_hash": "24731f6ca63e7815b9e5e1e3946af88d",
-    "semantic_hash": "24731f6ca63e7815b9e5e1e3946af88d"
+    "mtime": 1794553375.7607641,
+    "seen": 1794553501.365484,
+    "ast_hash": "a8feb4c32885aff675d83d62a1612cda",
+    "semantic_hash": "a8feb4c32885aff675d83d62a1612cda"
   },
   "sources/brands/dynal.md": {
-    "mtime": 1794512891.6518226,
-    "seen": 1794513348.3052976,
-    "ast_hash": "e83cbd517cd362c360bf5c07eaf32fe9",
-    "semantic_hash": "e83cbd517cd362c360bf5c07eaf32fe9"
+    "mtime": 1794553375.7584267,
+    "seen": 1794553501.3654847,
+    "ast_hash": "5ec733de2b37a7031e213f1a3cc534ab",
+    "semantic_hash": "5ec733de2b37a7031e213f1a3cc534ab"
   },
   "sources/brands/dzine.md": {
-    "mtime": 1794512891.6486316,
-    "seen": 1794513348.3052988,
-    "ast_hash": "87cffcc5d63330c2fe4d9c434bbbc4ff",
-    "semantic_hash": "87cffcc5d63330c2fe4d9c434bbbc4ff"
+    "mtime": 1794553375.7557855,
+    "seen": 1794553501.365486,
+    "ast_hash": "8ace945e1202c8b09bc89ccfca281caf",
+    "semantic_hash": "8ace945e1202c8b09bc89ccfca281caf"
   },
   "sources/brands/easy.md": {
-    "mtime": 1794512891.648666,
-    "seen": 1794513348.3053,
-    "ast_hash": "2a4cea204716aa69b909e35a4fa0cebb",
-    "semantic_hash": "2a4cea204716aa69b909e35a4fa0cebb"
+    "mtime": 1794553375.7558181,
+    "seen": 1794553501.3654869,
+    "ast_hash": "b11155d8baf2becd1a0b4214401de8f3",
+    "semantic_hash": "b11155d8baf2becd1a0b4214401de8f3"
   },
   "sources/brands/eazo.md": {
-    "mtime": 1794512891.652597,
-    "seen": 1794513348.3053012,
-    "ast_hash": "12cb23c75eaec23570349eddcdb1a451",
-    "semantic_hash": "12cb23c75eaec23570349eddcdb1a451"
+    "mtime": 1794553375.759098,
+    "seen": 1794553501.365488,
+    "ast_hash": "48ea79edfa316307872d675e7081d792",
+    "semantic_hash": "48ea79edfa316307872d675e7081d792"
   },
   "sources/brands/eclatira.md": {
-    "mtime": 1794512891.655251,
-    "seen": 1794513348.3053026,
-    "ast_hash": "25c0881e01444afc922b24b67b278ac3",
-    "semantic_hash": "25c0881e01444afc922b24b67b278ac3"
+    "mtime": 1794553375.7617862,
+    "seen": 1794553501.3654892,
+    "ast_hash": "df1d21f4bde92c7778f656c59239ac33",
+    "semantic_hash": "df1d21f4bde92c7778f656c59239ac33"
   },
   "sources/brands/egocitrolabs.md": {
-    "mtime": 1794512891.6545556,
-    "seen": 1794513348.3053038,
-    "ast_hash": "65562f2c9515759bf14663a687ffe5da",
-    "semantic_hash": "65562f2c9515759bf14663a687ffe5da"
+    "mtime": 1794553375.7611558,
+    "seen": 1794553501.36549,
+    "ast_hash": "d0e7c2602497db7d6943d8a3df333a17",
+    "semantic_hash": "d0e7c2602497db7d6943d8a3df333a17"
   },
   "sources/brands/elaaris.md": {
-    "mtime": 1794512891.6571798,
-    "seen": 1794513348.305305,
-    "ast_hash": "2fb9b5f8a2bb8ceba0e0f44eaa0f8142",
-    "semantic_hash": "2fb9b5f8a2bb8ceba0e0f44eaa0f8142"
+    "mtime": 1794553375.7634792,
+    "seen": 1794553501.3654912,
+    "ast_hash": "b38d59314dfb7d6b634c657ca3e20468",
+    "semantic_hash": "b38d59314dfb7d6b634c657ca3e20468"
   },
   "sources/brands/elemove.md": {
-    "mtime": 1794512891.6486044,
-    "seen": 1794513348.3053062,
-    "ast_hash": "b6a56f25eb3ec0c09d2f16bf7ed20e7a",
-    "semantic_hash": "b6a56f25eb3ec0c09d2f16bf7ed20e7a"
+    "mtime": 1794553375.7557638,
+    "seen": 1794553501.3654926,
+    "ast_hash": "6f3835d3b2f8e0f912d197ade9b1a9d5",
+    "semantic_hash": "6f3835d3b2f8e0f912d197ade9b1a9d5"
   },
   "sources/brands/elevencreativebyelevenlabs.md": {
-    "mtime": 1794512891.6579266,
-    "seen": 1794513348.3053074,
-    "ast_hash": "64ae84c06a1924086ca049fcd0f54569",
-    "semantic_hash": "64ae84c06a1924086ca049fcd0f54569"
+    "mtime": 1794553375.7641637,
+    "seen": 1794553501.3654935,
+    "ast_hash": "0c37eeb6f78a97d4853b9e3e70e48282",
+    "semantic_hash": "0c37eeb6f78a97d4853b9e3e70e48282"
   },
   "sources/brands/elevenlabs.md": {
-    "mtime": 1794512891.6461406,
-    "seen": 1794513348.3053086,
+    "mtime": 1794553375.7547786,
+    "seen": 1794553501.3654947,
     "ast_hash": "d4aa69154266f2ba17481eb0ae591c27",
     "semantic_hash": "d4aa69154266f2ba17481eb0ae591c27"
   },
   "sources/brands/elinaken.md": {
-    "mtime": 1794512891.6540813,
-    "seen": 1794513348.3053098,
-    "ast_hash": "ea3dbf9d7101076dd0256aea6ca3f04b",
-    "semantic_hash": "ea3dbf9d7101076dd0256aea6ca3f04b"
+    "mtime": 1794553375.7606792,
+    "seen": 1794553501.3654962,
+    "ast_hash": "112aa5c9c2df4165906794259d350f48",
+    "semantic_hash": "112aa5c9c2df4165906794259d350f48"
   },
   "sources/brands/emergent.md": {
-    "mtime": 1794512891.6452003,
-    "seen": 1794513348.3053112,
+    "mtime": 1794553375.7542317,
+    "seen": 1794553501.3654976,
     "ast_hash": "877eddc75b62d565b8482ba6a797ab81",
     "semantic_hash": "877eddc75b62d565b8482ba6a797ab81"
   },
@@ -624,904 +624,904 @@
     "semantic_hash": "634c74e4119b9d319172719ee48edeea"
   },
   "sources/brands/enterproframiapro.md": {
-    "mtime": 1794512891.6515315,
-    "seen": 1794513348.3053136,
-    "ast_hash": "6bd51d65447005e4150f3f8839abd4fd",
-    "semantic_hash": "6bd51d65447005e4150f3f8839abd4fd"
+    "mtime": 1794553375.7581782,
+    "seen": 1794553501.3654985,
+    "ast_hash": "089d9ac2c3580f5dacd8a5a568decdf8",
+    "semantic_hash": "089d9ac2c3580f5dacd8a5a568decdf8"
   },
   "sources/brands/eshinemedia.md": {
-    "mtime": 1794512891.6512983,
-    "seen": 1794513348.305315,
-    "ast_hash": "9959e296b7f4fc944863cc3656e338e8",
-    "semantic_hash": "9959e296b7f4fc944863cc3656e338e8"
+    "mtime": 1794553375.7579076,
+    "seen": 1794553501.3654997,
+    "ast_hash": "c45751220c0cfa110f4adf9ebc2512ee",
+    "semantic_hash": "c45751220c0cfa110f4adf9ebc2512ee"
   },
   "sources/brands/eurekamind.md": {
-    "mtime": 1794512891.6506963,
-    "seen": 1794513348.3053167,
-    "ast_hash": "73f53cabbf833e7d5495a18164af1a4b",
-    "semantic_hash": "73f53cabbf833e7d5495a18164af1a4b"
+    "mtime": 1794553375.7574475,
+    "seen": 1794553501.3655007,
+    "ast_hash": "c026d212ebda3f8d26223212cca48961",
+    "semantic_hash": "c026d212ebda3f8d26223212cca48961"
   },
   "sources/brands/everblog.md": {
-    "mtime": 1794512891.6491425,
-    "seen": 1794513348.305318,
-    "ast_hash": "984353019d7cd4dba86184112c0c283b",
-    "semantic_hash": "984353019d7cd4dba86184112c0c283b"
+    "mtime": 1794553375.7562518,
+    "seen": 1794553501.3655016,
+    "ast_hash": "abc90b6cf934dfeb1ec352289a32e139",
+    "semantic_hash": "abc90b6cf934dfeb1ec352289a32e139"
   },
   "sources/brands/fahad.md": {
-    "mtime": 1794512891.6493378,
-    "seen": 1794513348.3053193,
-    "ast_hash": "622b3a50cff0f2b1134dbd8451786569",
-    "semantic_hash": "622b3a50cff0f2b1134dbd8451786569"
+    "mtime": 1794553375.7564073,
+    "seen": 1794553501.3655028,
+    "ast_hash": "50ab114c5252ba661e3ccebf8fc4ad2c",
+    "semantic_hash": "50ab114c5252ba661e3ccebf8fc4ad2c"
   },
   "sources/brands/feiyemedia.md": {
-    "mtime": 1794512891.6481616,
-    "seen": 1794513348.3053212,
-    "ast_hash": "73de6eba028e8c56a87bb802f6a8354c",
-    "semantic_hash": "73de6eba028e8c56a87bb802f6a8354c"
+    "mtime": 1794553375.7553785,
+    "seen": 1794553501.3655035,
+    "ast_hash": "e375e451bdba1844040996bbd69ffd0a",
+    "semantic_hash": "e375e451bdba1844040996bbd69ffd0a"
   },
   "sources/brands/fetra.md": {
-    "mtime": 1794512891.6588762,
-    "seen": 1794513348.3053224,
-    "ast_hash": "d420e1e09143ea600bf9604f4efc47c5",
-    "semantic_hash": "d420e1e09143ea600bf9604f4efc47c5"
+    "mtime": 1794553375.764929,
+    "seen": 1794553501.3655045,
+    "ast_hash": "1edf51f8b2a131717aed1b30b54daa41",
+    "semantic_hash": "1edf51f8b2a131717aed1b30b54daa41"
   },
   "sources/brands/figmaupdfrunable.md": {
-    "mtime": 1794512891.657955,
-    "seen": 1794513348.305324,
-    "ast_hash": "3c13a1ee139c1100660a1dd876c3a526",
-    "semantic_hash": "3c13a1ee139c1100660a1dd876c3a526"
+    "mtime": 1794553375.7641928,
+    "seen": 1794553501.3655052,
+    "ast_hash": "cb65ece824a2c08d53de463c40fe9b7d",
+    "semantic_hash": "cb65ece824a2c08d53de463c40fe9b7d"
   },
   "sources/brands/filmora.md": {
-    "mtime": 1794512891.6523776,
-    "seen": 1794513348.305325,
-    "ast_hash": "f71a94db46c6f7e91bbe3f5bcc130f6a",
-    "semantic_hash": "f71a94db46c6f7e91bbe3f5bcc130f6a"
+    "mtime": 1794553375.7588944,
+    "seen": 1794553501.365506,
+    "ast_hash": "3d9ac052ce4efa4979ee8056eb961789",
+    "semantic_hash": "3d9ac052ce4efa4979ee8056eb961789"
   },
   "sources/brands/fireflies.md": {
-    "mtime": 1794512891.657983,
-    "seen": 1794513348.3053267,
-    "ast_hash": "da44e609cee782320b83fd5fafec3ed2",
-    "semantic_hash": "da44e609cee782320b83fd5fafec3ed2"
+    "mtime": 1794553375.76422,
+    "seen": 1794553501.3655071,
+    "ast_hash": "d7431cfb664816983fa875dc44b7e3eb",
+    "semantic_hash": "d7431cfb664816983fa875dc44b7e3eb"
   },
   "sources/brands/firevibe.md": {
-    "mtime": 1794512891.6588106,
-    "seen": 1794513348.305328,
-    "ast_hash": "72924c57f795e404d7588434c9621c21",
-    "semantic_hash": "72924c57f795e404d7588434c9621c21"
+    "mtime": 1794553375.7648807,
+    "seen": 1794553501.3655078,
+    "ast_hash": "ecbd44566ecab54d925a1c80408d6496",
+    "semantic_hash": "ecbd44566ecab54d925a1c80408d6496"
   },
   "sources/brands/fishaudio.md": {
-    "mtime": 1794512891.6476932,
-    "seen": 1794513348.3053293,
-    "ast_hash": "ebc6cb9c073671d3b76ca11acad0db86",
-    "semantic_hash": "ebc6cb9c073671d3b76ca11acad0db86"
+    "mtime": 1794553375.7511039,
+    "seen": 1794553501.365509,
+    "ast_hash": "d0bb73d58fda6117b3e65694eaae6b33",
+    "semantic_hash": "d0bb73d58fda6117b3e65694eaae6b33"
   },
   "sources/brands/fiverr.md": {
-    "mtime": 1794512891.6507735,
-    "seen": 1794513348.3053305,
-    "ast_hash": "fb3db657344a7e8afb9895537cfc55cb",
-    "semantic_hash": "fb3db657344a7e8afb9895537cfc55cb"
+    "mtime": 1794553375.7574737,
+    "seen": 1794553501.3655102,
+    "ast_hash": "09b6afc09df94bef6532a6006b042595",
+    "semantic_hash": "09b6afc09df94bef6532a6006b042595"
   },
   "sources/brands/flashforge.md": {
-    "mtime": 1794512891.6603312,
-    "seen": 1794513348.305332,
-    "ast_hash": "5ca7becb0d75cf0497b672d5d2a4b3e2",
-    "semantic_hash": "5ca7becb0d75cf0497b672d5d2a4b3e2"
+    "mtime": 1794553375.766221,
+    "seen": 1794553501.365511,
+    "ast_hash": "a6abaf85fdc7c84f29cee23ff6a7f830",
+    "semantic_hash": "a6abaf85fdc7c84f29cee23ff6a7f830"
   },
   "sources/brands/flova.md": {
-    "mtime": 1794512891.6466892,
-    "seen": 1794513348.3053336,
-    "ast_hash": "1521e7e2dbaf39916ea223ac7d46b90a",
-    "semantic_hash": "1521e7e2dbaf39916ea223ac7d46b90a"
+    "mtime": 1794553375.752374,
+    "seen": 1794553501.3655117,
+    "ast_hash": "78732db1fb4058204cd8e3432163d908",
+    "semantic_hash": "78732db1fb4058204cd8e3432163d908"
   },
   "sources/brands/flowtica.md": {
-    "mtime": 1794512891.6610978,
-    "seen": 1794513348.3053346,
-    "ast_hash": "8d47bbf3e0282367fb48798c965f5c9e",
-    "semantic_hash": "8d47bbf3e0282367fb48798c965f5c9e"
+    "mtime": 1794553375.7668338,
+    "seen": 1794553501.3655126,
+    "ast_hash": "39b430bf51473953a0d4bb870a703898",
+    "semantic_hash": "39b430bf51473953a0d4bb870a703898"
   },
   "sources/brands/flymy.md": {
-    "mtime": 1794512891.658197,
-    "seen": 1794513348.3053358,
-    "ast_hash": "f1bd5e8e58ae646c499356347d2e4365",
-    "semantic_hash": "f1bd5e8e58ae646c499356347d2e4365"
+    "mtime": 1794553375.7644453,
+    "seen": 1794553501.365514,
+    "ast_hash": "bec28bb4fc276e1943843589a64f2fcf",
+    "semantic_hash": "bec28bb4fc276e1943843589a64f2fcf"
   },
   "sources/brands/fotor.md": {
-    "mtime": 1794512891.648228,
-    "seen": 1794513348.3053372,
-    "ast_hash": "5af05a218831c612f0a5764cccf44bbd",
-    "semantic_hash": "5af05a218831c612f0a5764cccf44bbd"
+    "mtime": 1794553375.7554424,
+    "seen": 1794553501.3655152,
+    "ast_hash": "19ce544766d770274301b712981ad526",
+    "semantic_hash": "19ce544766d770274301b712981ad526"
   },
   "sources/brands/fotoragent.md": {
-    "mtime": 1794512891.656716,
-    "seen": 1794513348.3053381,
-    "ast_hash": "167887419a85e9ed9fc725d5fae14bf3",
-    "semantic_hash": "167887419a85e9ed9fc725d5fae14bf3"
+    "mtime": 1794553375.7630618,
+    "seen": 1794553501.3655162,
+    "ast_hash": "c505d335a8fcd6d55693d1327bbff234",
+    "semantic_hash": "c505d335a8fcd6d55693d1327bbff234"
   },
   "sources/brands/fotric.md": {
-    "mtime": 1794512891.6529953,
-    "seen": 1794513348.3053396,
-    "ast_hash": "3264b9113fdb03d2aa8a7a236cdcfa16",
-    "semantic_hash": "3264b9113fdb03d2aa8a7a236cdcfa16"
+    "mtime": 1794553375.7597578,
+    "seen": 1794553501.3655174,
+    "ast_hash": "97cd2cd9549412ccb65be85438327544",
+    "semantic_hash": "97cd2cd9549412ccb65be85438327544"
   },
   "sources/brands/freebeat.md": {
-    "mtime": 1794512891.6596947,
-    "seen": 1794513348.305341,
-    "ast_hash": "314419709a319bdad247cada88dd05cd",
-    "semantic_hash": "314419709a319bdad247cada88dd05cd"
+    "mtime": 1794553375.7657354,
+    "seen": 1794553501.365518,
+    "ast_hash": "6663e95aaa9f50501b2e49abe09f0bbc",
+    "semantic_hash": "6663e95aaa9f50501b2e49abe09f0bbc"
   },
   "sources/brands/gaming.md": {
-    "mtime": 1794512891.6593833,
-    "seen": 1794513348.3053422,
-    "ast_hash": "0df7752facd4f7ec6bffcf6f06826158",
-    "semantic_hash": "0df7752facd4f7ec6bffcf6f06826158"
+    "mtime": 1794553375.7653933,
+    "seen": 1794553501.3655188,
+    "ast_hash": "fc74337b71cef3328aadf12e42cf253e",
+    "semantic_hash": "fc74337b71cef3328aadf12e42cf253e"
   },
   "sources/brands/gamut.md": {
-    "mtime": 1794512891.644455,
-    "seen": 1794513348.3053434,
-    "ast_hash": "2500b54dc363f9dd96e5d950eb4aa5d0",
-    "semantic_hash": "2500b54dc363f9dd96e5d950eb4aa5d0"
+    "mtime": 1794553375.7534766,
+    "seen": 1794553501.3655198,
+    "ast_hash": "3c96c2fc323d42ccba755c8a04f780d3",
+    "semantic_hash": "3c96c2fc323d42ccba755c8a04f780d3"
   },
   "sources/brands/genpire.md": {
-    "mtime": 1794512891.6599581,
-    "seen": 1794513348.3053448,
-    "ast_hash": "db4039845c19e2647a12202e36b726dd",
-    "semantic_hash": "db4039845c19e2647a12202e36b726dd"
+    "mtime": 1794553375.7659562,
+    "seen": 1794553501.3655212,
+    "ast_hash": "818bec655d2e48af725f5a567616156c",
+    "semantic_hash": "818bec655d2e48af725f5a567616156c"
   },
   "sources/brands/genspark.md": {
-    "mtime": 1794512891.6607966,
-    "seen": 1794513348.3053458,
-    "ast_hash": "ac3edfe3b41534bf3a8f8a7ba768657f",
-    "semantic_hash": "ac3edfe3b41534bf3a8f8a7ba768657f"
+    "mtime": 1794553375.7665858,
+    "seen": 1794553501.365522,
+    "ast_hash": "a8d81c97fb09e4e47be3397759648875",
+    "semantic_hash": "a8d81c97fb09e4e47be3397759648875"
   },
   "sources/brands/getramped.md": {
-    "mtime": 1794512891.6436634,
-    "seen": 1794513348.3053474,
+    "mtime": 1794553375.7528706,
+    "seen": 1794553501.365523,
     "ast_hash": "3e23bd79d827093a0c0926a2327a93c5",
     "semantic_hash": "3e23bd79d827093a0c0926a2327a93c5"
   },
   "sources/brands/gigax.md": {
-    "mtime": 1794512891.6606817,
-    "seen": 1794513348.3053489,
-    "ast_hash": "20a6cf76b1a7bd5191e83605c71668f1",
-    "semantic_hash": "20a6cf76b1a7bd5191e83605c71668f1"
+    "mtime": 1794553375.7665005,
+    "seen": 1794553501.3655243,
+    "ast_hash": "4812d0707a4319d838e0b453c303c927",
+    "semantic_hash": "4812d0707a4319d838e0b453c303c927"
   },
   "sources/brands/globaldragon.md": {
-    "mtime": 1794512891.6550386,
-    "seen": 1794513348.30535,
-    "ast_hash": "b228d74c03f1db7a7729ac971b12c431",
-    "semantic_hash": "b228d74c03f1db7a7729ac971b12c431"
+    "mtime": 1794553375.761601,
+    "seen": 1794553501.3655255,
+    "ast_hash": "373d4c3d28f6b0ef30d46c8706b1f68f",
+    "semantic_hash": "373d4c3d28f6b0ef30d46c8706b1f68f"
   },
   "sources/brands/globalgpt.md": {
-    "mtime": 1794512891.6544487,
-    "seen": 1794513348.3053515,
-    "ast_hash": "af6e039b244f9a5db8468543bb174281",
-    "semantic_hash": "af6e039b244f9a5db8468543bb174281"
+    "mtime": 1794553375.7610593,
+    "seen": 1794553501.3655264,
+    "ast_hash": "db3e6ec90c1be7d4e37c0e461ffdddc5",
+    "semantic_hash": "db3e6ec90c1be7d4e37c0e461ffdddc5"
   },
   "sources/brands/godofprompt.md": {
-    "mtime": 1794512891.658223,
-    "seen": 1794513348.305353,
-    "ast_hash": "30c2f4b4e4a0fc276fad7541b0823441",
-    "semantic_hash": "30c2f4b4e4a0fc276fad7541b0823441"
+    "mtime": 1794553375.7644668,
+    "seen": 1794553501.3655274,
+    "ast_hash": "5145126d12c41a67db31efe1ac2c4f5a",
+    "semantic_hash": "5145126d12c41a67db31efe1ac2c4f5a"
   },
   "sources/brands/gojiberry.md": {
-    "mtime": 1794512891.6495407,
-    "seen": 1794513348.3053544,
-    "ast_hash": "f6205cad25b7b29a9b686c60922fd784",
-    "semantic_hash": "f6205cad25b7b29a9b686c60922fd784"
+    "mtime": 1794553375.7565584,
+    "seen": 1794553501.365528,
+    "ast_hash": "65b275857e4f378022cd32acc657a095",
+    "semantic_hash": "65b275857e4f378022cd32acc657a095"
   },
   "sources/brands/goldenwhaleagency.md": {
-    "mtime": 1794512891.649102,
-    "seen": 1794513348.3053555,
-    "ast_hash": "d7887ddc1d0f3354a56c384d0c3f4023",
-    "semantic_hash": "d7887ddc1d0f3354a56c384d0c3f4023"
+    "mtime": 1794553375.756226,
+    "seen": 1794553501.365529,
+    "ast_hash": "ce0445550d35385f8b59cafffd9061b2",
+    "semantic_hash": "ce0445550d35385f8b59cafffd9061b2"
   },
   "sources/brands/goldjoy.md": {
-    "mtime": 1794512891.65554,
-    "seen": 1794513348.3053567,
-    "ast_hash": "1ed9adf596bebfbe6db699e61112257b",
-    "semantic_hash": "1ed9adf596bebfbe6db699e61112257b"
+    "mtime": 1794553375.7620926,
+    "seen": 1794553501.3655298,
+    "ast_hash": "532c6e597bf62edeac25173ee2aeb2c0",
+    "semantic_hash": "532c6e597bf62edeac25173ee2aeb2c0"
   },
   "sources/brands/gologin.md": {
-    "mtime": 1794512891.6545825,
-    "seen": 1794513348.3053582,
-    "ast_hash": "ba811ba7cf1893ff97cdaced44485553",
-    "semantic_hash": "ba811ba7cf1893ff97cdaced44485553"
+    "mtime": 1794553375.7611802,
+    "seen": 1794553501.3655307,
+    "ast_hash": "8c66ccf37bc0b2773e73539cf4e34d64",
+    "semantic_hash": "8c66ccf37bc0b2773e73539cf4e34d64"
   },
   "sources/brands/grammarly.md": {
-    "mtime": 1794512891.6559274,
-    "seen": 1794513348.3053594,
-    "ast_hash": "45edd111eb2f537755ebaa8537bedfe5",
-    "semantic_hash": "45edd111eb2f537755ebaa8537bedfe5"
+    "mtime": 1794553375.7623804,
+    "seen": 1794553501.3655314,
+    "ast_hash": "36f300be9b7b4d45581896c9ca6b6018",
+    "semantic_hash": "36f300be9b7b4d45581896c9ca6b6018"
   },
   "sources/brands/granola.md": {
-    "mtime": 1794512891.6573172,
-    "seen": 1794513348.3053606,
-    "ast_hash": "9e633475754afa545382ec412cb8de6b",
-    "semantic_hash": "9e633475754afa545382ec412cb8de6b"
+    "mtime": 1794553375.7636197,
+    "seen": 1794553501.3655324,
+    "ast_hash": "201452d35670f0efd28db53520a0989e",
+    "semantic_hash": "201452d35670f0efd28db53520a0989e"
   },
   "sources/brands/greatlearning.md": {
-    "mtime": 1794512891.659508,
-    "seen": 1794513348.305362,
-    "ast_hash": "031ad5aeccb28e01c51ff353c0c78bb4",
-    "semantic_hash": "031ad5aeccb28e01c51ff353c0c78bb4"
+    "mtime": 1794553375.7655272,
+    "seen": 1794553501.3655334,
+    "ast_hash": "8936ef32887e9efa5e53b4eb07568651",
+    "semantic_hash": "8936ef32887e9efa5e53b4eb07568651"
   },
   "sources/brands/gridsocial.md": {
-    "mtime": 1794512891.6548402,
-    "seen": 1794513348.3053632,
-    "ast_hash": "cf9fbd703a0ae5f6f5304020743fbbeb",
-    "semantic_hash": "cf9fbd703a0ae5f6f5304020743fbbeb"
+    "mtime": 1794553375.7614162,
+    "seen": 1794553501.3655343,
+    "ast_hash": "54bd6ae13ab53b9bc4e68b171824cb33",
+    "semantic_hash": "54bd6ae13ab53b9bc4e68b171824cb33"
   },
   "sources/brands/growmaxvaluecapcut.md": {
-    "mtime": 1794512891.6605132,
-    "seen": 1794513348.3053644,
-    "ast_hash": "26ceed8d613c4f94d8598411301da8ea",
-    "semantic_hash": "26ceed8d613c4f94d8598411301da8ea"
+    "mtime": 1794553375.7663643,
+    "seen": 1794553501.3655353,
+    "ast_hash": "d07c67dd4fc0f8391705e8fe53171141",
+    "semantic_hash": "d07c67dd4fc0f8391705e8fe53171141"
   },
   "sources/brands/hailuo.md": {
-    "mtime": 1794512891.6548088,
-    "seen": 1794513348.305366,
-    "ast_hash": "a7be564dd5c5c3deacd4d01a61e7a3d0",
-    "semantic_hash": "a7be564dd5c5c3deacd4d01a61e7a3d0"
+    "mtime": 1794553375.7613626,
+    "seen": 1794553501.3655362,
+    "ast_hash": "267942397d26ab76288a56cc57f5c614",
+    "semantic_hash": "267942397d26ab76288a56cc57f5c614"
   },
   "sources/brands/halliday.md": {
-    "mtime": 1794512891.6474974,
-    "seen": 1794513348.3053672,
-    "ast_hash": "ddf63f348230f45b0162c3a01b3baf75",
-    "semantic_hash": "ddf63f348230f45b0162c3a01b3baf75"
+    "mtime": 1794553375.7519143,
+    "seen": 1794553501.3655372,
+    "ast_hash": "99ce02d6faae632408b08126e83e98f8",
+    "semantic_hash": "99ce02d6faae632408b08126e83e98f8"
   },
   "sources/brands/happyscribe.md": {
-    "mtime": 1794512891.6568255,
-    "seen": 1794513348.3053687,
-    "ast_hash": "c257eb36747b4e2b1d953ccf1769bc57",
-    "semantic_hash": "c257eb36747b4e2b1d953ccf1769bc57"
+    "mtime": 1794553375.7631319,
+    "seen": 1794553501.3655381,
+    "ast_hash": "ba0013a1b8f3bc82f518184af701bb27",
+    "semantic_hash": "ba0013a1b8f3bc82f518184af701bb27"
   },
   "sources/brands/headsupp.md": {
-    "mtime": 1794512891.6493633,
-    "seen": 1794513348.30537,
-    "ast_hash": "711d956c00d7080f0f9407aef212d1a5",
-    "semantic_hash": "711d956c00d7080f0f9407aef212d1a5"
+    "mtime": 1794553375.7564316,
+    "seen": 1794553501.3655388,
+    "ast_hash": "130d0d902c4416351cfcd4d17dfde248",
+    "semantic_hash": "130d0d902c4416351cfcd4d17dfde248"
   },
   "sources/brands/hi3d.md": {
-    "mtime": 1794512891.6549819,
-    "seen": 1794513348.305381,
-    "ast_hash": "4780662ea2267f81dbdd54f0417209ed",
-    "semantic_hash": "4780662ea2267f81dbdd54f0417209ed"
+    "mtime": 1794553375.7615454,
+    "seen": 1794553501.3655396,
+    "ast_hash": "481dfad9dec766e297505192d42df949",
+    "semantic_hash": "481dfad9dec766e297505192d42df949"
   },
   "sources/brands/hi3d30.md": {
-    "mtime": 1794512891.6564128,
-    "seen": 1794513348.3053827,
-    "ast_hash": "dea0c334676c14c679c0bfacc22bc0c2",
-    "semantic_hash": "dea0c334676c14c679c0bfacc22bc0c2"
+    "mtime": 1794553375.7627904,
+    "seen": 1794553501.3655405,
+    "ast_hash": "3d810221aff63a149f34cfaec27fae0a",
+    "semantic_hash": "3d810221aff63a149f34cfaec27fae0a"
   },
   "sources/brands/higgsfield.md": {
-    "mtime": 1794512891.6439905,
-    "seen": 1794513348.305384,
-    "ast_hash": "e71111ca28c08502a6f4897876e28571",
-    "semantic_hash": "e71111ca28c08502a6f4897876e28571"
+    "mtime": 1794553375.753131,
+    "seen": 1794553501.3655417,
+    "ast_hash": "37cd0a5485e913b9c4034d368f5b08bf",
+    "semantic_hash": "37cd0a5485e913b9c4034d368f5b08bf"
   },
   "sources/brands/highlevel.md": {
-    "mtime": 1794512891.6593258,
-    "seen": 1794513348.305385,
-    "ast_hash": "25e0bef9ba18ef6988068314f36e0e9f",
-    "semantic_hash": "25e0bef9ba18ef6988068314f36e0e9f"
+    "mtime": 1794553375.7653384,
+    "seen": 1794553501.3655427,
+    "ast_hash": "0c69866dea720bb15764184f135f5c18",
+    "semantic_hash": "0c69866dea720bb15764184f135f5c18"
   },
   "sources/brands/hisong.md": {
-    "mtime": 1794512891.6565917,
-    "seen": 1794513348.3053865,
-    "ast_hash": "5174f45aab72178d5a3684d15d4d9d8a",
-    "semantic_hash": "5174f45aab72178d5a3684d15d4d9d8a"
+    "mtime": 1794553375.7629182,
+    "seen": 1794553501.3655434,
+    "ast_hash": "05357c60f2a364c9ba8d698a30cdeb59",
+    "semantic_hash": "05357c60f2a364c9ba8d698a30cdeb59"
   },
   "sources/brands/hisongairstudio.md": {
-    "mtime": 1794512891.6572363,
-    "seen": 1794513348.3053877,
-    "ast_hash": "d95d35062033e4f36b7a898f709189fd",
-    "semantic_hash": "d95d35062033e4f36b7a898f709189fd"
+    "mtime": 1794553375.7635443,
+    "seen": 1794553501.3655446,
+    "ast_hash": "5c0277f14939917e0964083eed137fe2",
+    "semantic_hash": "5c0277f14939917e0964083eed137fe2"
   },
   "sources/brands/hitpaw.md": {
-    "mtime": 1794512891.655633,
-    "seen": 1794513348.3053892,
-    "ast_hash": "12539c1dd652977debc7b1682e0b3ba7",
-    "semantic_hash": "12539c1dd652977debc7b1682e0b3ba7"
+    "mtime": 1794553375.7621744,
+    "seen": 1794553501.3655455,
+    "ast_hash": "b4950182bde7e6020f9405ed12fe5255",
+    "semantic_hash": "b4950182bde7e6020f9405ed12fe5255"
   },
   "sources/brands/holafly.md": {
-    "mtime": 1794512891.6556573,
-    "seen": 1794513348.3053904,
-    "ast_hash": "0777211362c6675399be815fae8a6998",
-    "semantic_hash": "0777211362c6675399be815fae8a6998"
+    "mtime": 1794553375.762195,
+    "seen": 1794553501.3655465,
+    "ast_hash": "c4fc256049ec4639741e99c976141291",
+    "semantic_hash": "c4fc256049ec4639741e99c976141291"
   },
   "sources/brands/hollyland.md": {
-    "mtime": 1794512891.651379,
-    "seen": 1794513348.3053913,
-    "ast_hash": "cdcf6718fc0aa377042c8a7f95a2ea52",
-    "semantic_hash": "cdcf6718fc0aa377042c8a7f95a2ea52"
+    "mtime": 1794553375.7580278,
+    "seen": 1794553501.3655472,
+    "ast_hash": "0f9ff1947cd1348c77d8c9e71ebff519",
+    "semantic_hash": "0f9ff1947cd1348c77d8c9e71ebff519"
   },
   "sources/brands/holo.md": {
-    "mtime": 1794512891.6479676,
-    "seen": 1794513348.3053927,
-    "ast_hash": "8f6600acf9773f214bf27bcec77c5f94",
-    "semantic_hash": "8f6600acf9773f214bf27bcec77c5f94"
+    "mtime": 1794553375.7509353,
+    "seen": 1794553501.3655481,
+    "ast_hash": "18214fc0242590e1c0524c08e9fa0cc7",
+    "semantic_hash": "18214fc0242590e1c0524c08e9fa0cc7"
   },
   "sources/brands/hongfeiteam.md": {
-    "mtime": 1794512891.6555152,
-    "seen": 1794513348.305394,
-    "ast_hash": "ee066bb971d5ca05939ae09418b9fe1f",
-    "semantic_hash": "ee066bb971d5ca05939ae09418b9fe1f"
+    "mtime": 1794553375.7620628,
+    "seen": 1794553501.3655488,
+    "ast_hash": "8c721de6a785f7660de79a56d40c3d19",
+    "semantic_hash": "8c721de6a785f7660de79a56d40c3d19"
   },
   "sources/brands/hoox.md": {
-    "mtime": 1794512891.6497211,
-    "seen": 1794513348.3053954,
-    "ast_hash": "ca142c41da85e2fcf1708a41203ed3de",
-    "semantic_hash": "ca142c41da85e2fcf1708a41203ed3de"
+    "mtime": 1794553375.756681,
+    "seen": 1794553501.3655496,
+    "ast_hash": "a943e80677fc74b067ce218617f7cfb5",
+    "semantic_hash": "a943e80677fc74b067ce218617f7cfb5"
   },
   "sources/brands/hostinger.md": {
-    "mtime": 1794512891.6493974,
-    "seen": 1794513348.3053966,
-    "ast_hash": "1590861e83f4a08737d9e0e6a9dd569e",
-    "semantic_hash": "1590861e83f4a08737d9e0e6a9dd569e"
+    "mtime": 1794553375.7564576,
+    "seen": 1794553501.3655505,
+    "ast_hash": "4d2a8279eeccdce646f35cca0168dfeb",
+    "semantic_hash": "4d2a8279eeccdce646f35cca0168dfeb"
   },
   "sources/brands/hubspot.md": {
-    "mtime": 1794512891.65414,
-    "seen": 1794513348.305398,
-    "ast_hash": "175e9eaefeb81c8ab721bccaa4c4d9a0",
-    "semantic_hash": "175e9eaefeb81c8ab721bccaa4c4d9a0"
+    "mtime": 1794553375.7607307,
+    "seen": 1794553501.365552,
+    "ast_hash": "62c99a6e32937fd4f00e545a68e1e1f4",
+    "semantic_hash": "62c99a6e32937fd4f00e545a68e1e1f4"
   },
   "sources/brands/hulalahome.md": {
-    "mtime": 1794512891.6514351,
-    "seen": 1794513348.3053992,
-    "ast_hash": "a67b3bd8436ee4c7313783224cfd3693",
-    "semantic_hash": "a67b3bd8436ee4c7313783224cfd3693"
+    "mtime": 1794553375.7580893,
+    "seen": 1794553501.3655527,
+    "ast_hash": "ab0ab0fcebd4144e29136af562b741f6",
+    "semantic_hash": "ab0ab0fcebd4144e29136af562b741f6"
   },
   "sources/brands/hyper3d.md": {
-    "mtime": 1794512891.6443596,
-    "seen": 1794513348.3054006,
-    "ast_hash": "e61bf19a1509737f8c5ba8a53e988fbb",
-    "semantic_hash": "e61bf19a1509737f8c5ba8a53e988fbb"
+    "mtime": 1794553375.7534027,
+    "seen": 1794553501.3655539,
+    "ast_hash": "dbc4bc4bced88d6b810f55f2624baf76",
+    "semantic_hash": "dbc4bc4bced88d6b810f55f2624baf76"
   },
   "sources/brands/hyper3d3dcreationplatformtripo3d.md": {
-    "mtime": 1794512891.6559584,
-    "seen": 1794513348.3054018,
-    "ast_hash": "79e007d42e8abf37c558f25170258a01",
-    "semantic_hash": "79e007d42e8abf37c558f25170258a01"
+    "mtime": 1794553375.762404,
+    "seen": 1794553501.3655553,
+    "ast_hash": "ea6aedabba717db9ee024f8dfdad474c",
+    "semantic_hash": "ea6aedabba717db9ee024f8dfdad474c"
   },
   "sources/brands/igniton.md": {
-    "mtime": 1794512891.6609685,
-    "seen": 1794513348.3054032,
-    "ast_hash": "f951932b01a2d40039864f8ba71c5ad2",
-    "semantic_hash": "f951932b01a2d40039864f8ba71c5ad2"
+    "mtime": 1794553375.7667086,
+    "seen": 1794553501.3655562,
+    "ast_hash": "4a9bd9f80f8173fbc936d4bede3bec6b",
+    "semantic_hash": "4a9bd9f80f8173fbc936d4bede3bec6b"
   },
   "sources/brands/ilands.md": {
-    "mtime": 1794512891.6601496,
-    "seen": 1794513348.3054044,
-    "ast_hash": "157a5c7aee2e79a9e168ae1fecebe311",
-    "semantic_hash": "157a5c7aee2e79a9e168ae1fecebe311"
+    "mtime": 1794553375.7660818,
+    "seen": 1794553501.3655572,
+    "ast_hash": "72350aefbf07872a9339315bd40cefc9",
+    "semantic_hash": "72350aefbf07872a9339315bd40cefc9"
   },
   "sources/brands/impactdriven.md": {
-    "mtime": 1794512891.6550107,
-    "seen": 1794513348.3054056,
-    "ast_hash": "6d5aefa226fa56648f2c5665eec7406b",
-    "semantic_hash": "6d5aefa226fa56648f2c5665eec7406b"
+    "mtime": 1794553375.761573,
+    "seen": 1794553501.3655584,
+    "ast_hash": "619b241af8f9e780e01e7db028954502",
+    "semantic_hash": "619b241af8f9e780e01e7db028954502"
   },
   "sources/brands/influglobalteam.md": {
-    "mtime": 1794512891.6483648,
-    "seen": 1794513348.3054073,
-    "ast_hash": "08dcbdc1ce224e33c6d8629105746b1c",
-    "semantic_hash": "08dcbdc1ce224e33c6d8629105746b1c"
+    "mtime": 1794553375.755567,
+    "seen": 1794553501.3655593,
+    "ast_hash": "4e518a023019724de1ae371d6306ed57",
+    "semantic_hash": "4e518a023019724de1ae371d6306ed57"
   },
   "sources/brands/influvinemedia.md": {
-    "mtime": 1794512891.6487875,
-    "seen": 1794513348.3054085,
-    "ast_hash": "72ebacf8111d64a97ec0c10d9b0eb876",
-    "semantic_hash": "72ebacf8111d64a97ec0c10d9b0eb876"
+    "mtime": 1794553375.755906,
+    "seen": 1794553501.36556,
+    "ast_hash": "ca0933605b30caabd65b0d7855a56ca6",
+    "semantic_hash": "ca0933605b30caabd65b0d7855a56ca6"
   },
   "sources/brands/infoishai.md": {
-    "mtime": 1794512891.648857,
-    "seen": 1794513348.30541,
-    "ast_hash": "5b3a093d19aa7814cd0511d2860c5074",
-    "semantic_hash": "5b3a093d19aa7814cd0511d2860c5074"
+    "mtime": 1794553375.7559502,
+    "seen": 1794553501.3655608,
+    "ast_hash": "b489afec3828d3855e7ace1c50f15daa",
+    "semantic_hash": "b489afec3828d3855e7ace1c50f15daa"
   },
   "sources/brands/inmo.md": {
-    "mtime": 1794512891.658495,
-    "seen": 1794513348.305411,
-    "ast_hash": "622e3f54b0fd20cc91bdb1826059ed42",
-    "semantic_hash": "622e3f54b0fd20cc91bdb1826059ed42"
+    "mtime": 1794553375.7646372,
+    "seen": 1794553501.3655615,
+    "ast_hash": "4b5d9a0b68ed7ba877ae1aa60dbd4ee0",
+    "semantic_hash": "4b5d9a0b68ed7ba877ae1aa60dbd4ee0"
   },
   "sources/brands/inspo.md": {
-    "mtime": 1794512891.643718,
-    "seen": 1794513348.305415,
-    "ast_hash": "f02d403281fe9112ce483acaa48f18b5",
-    "semantic_hash": "f02d403281fe9112ce483acaa48f18b5"
+    "mtime": 1794553375.7529194,
+    "seen": 1794553501.3655622,
+    "ast_hash": "44fd55349af71ebee29d1bbf03f73eee",
+    "semantic_hash": "44fd55349af71ebee29d1bbf03f73eee"
   },
   "sources/brands/instantly.md": {
-    "mtime": 1794512891.6509774,
-    "seen": 1794513348.305416,
-    "ast_hash": "07d44b1a07482490e2fea5d21f05ddab",
-    "semantic_hash": "07d44b1a07482490e2fea5d21f05ddab"
+    "mtime": 1794553375.7576387,
+    "seen": 1794553501.365563,
+    "ast_hash": "b0d2e35045351c0f1b82f944f1c46fa0",
+    "semantic_hash": "b0d2e35045351c0f1b82f944f1c46fa0"
   },
   "sources/brands/invideo.md": {
-    "mtime": 1794512891.6581407,
-    "seen": 1794513348.3054173,
-    "ast_hash": "cfafcd4d12632fb444ec3117fcd335cb",
-    "semantic_hash": "cfafcd4d12632fb444ec3117fcd335cb"
+    "mtime": 1794553375.7643876,
+    "seen": 1794553501.3655636,
+    "ast_hash": "bebb4e7f88870901d428c1275cc1f82f",
+    "semantic_hash": "bebb4e7f88870901d428c1275cc1f82f"
   },
   "sources/brands/iqoo.md": {
-    "mtime": 1794512891.6515834,
-    "seen": 1794513348.3054185,
-    "ast_hash": "0fae991546bb16666d21ebe6c8126b2b",
-    "semantic_hash": "0fae991546bb16666d21ebe6c8126b2b"
+    "mtime": 1794553375.75823,
+    "seen": 1794553501.3655643,
+    "ast_hash": "051f0c5cc7ede54ae41537b8309767e7",
+    "semantic_hash": "051f0c5cc7ede54ae41537b8309767e7"
   },
   "sources/brands/jellyotter.md": {
-    "mtime": 1794512891.6494708,
-    "seen": 1794513348.30542,
-    "ast_hash": "9df3c16d0308010187f4a63cd5749793",
-    "semantic_hash": "9df3c16d0308010187f4a63cd5749793"
+    "mtime": 1794553375.756511,
+    "seen": 1794553501.3655653,
+    "ast_hash": "b8a9e4fd66a59d458f9bc4594d8aa099",
+    "semantic_hash": "b8a9e4fd66a59d458f9bc4594d8aa099"
   },
   "sources/brands/joylo.md": {
-    "mtime": 1794512891.6473055,
-    "seen": 1794513348.3054214,
-    "ast_hash": "4f04db2dbbee51e68c497581044409e0",
-    "semantic_hash": "4f04db2dbbee51e68c497581044409e0"
+    "mtime": 1794553375.7508106,
+    "seen": 1794553501.3655663,
+    "ast_hash": "fe93caacf4520a96b1c41aa7aeacf58c",
+    "semantic_hash": "fe93caacf4520a96b1c41aa7aeacf58c"
   },
   "sources/brands/kalowave.md": {
-    "mtime": 1794512891.6509283,
-    "seen": 1794513348.3054225,
-    "ast_hash": "38512a19806daf3d69c40d17dea65547",
-    "semantic_hash": "38512a19806daf3d69c40d17dea65547"
+    "mtime": 1794553375.7575905,
+    "seen": 1794553501.365567,
+    "ast_hash": "194dc37fd76e7ae180f21cd8f2bae4b4",
+    "semantic_hash": "194dc37fd76e7ae180f21cd8f2bae4b4"
   },
   "sources/brands/kast.md": {
-    "mtime": 1794512891.6569088,
-    "seen": 1794513348.3054242,
-    "ast_hash": "a39ce79da5fec507fc95e7989688b364",
-    "semantic_hash": "a39ce79da5fec507fc95e7989688b364"
+    "mtime": 1794553375.7631986,
+    "seen": 1794553501.365568,
+    "ast_hash": "11cb580f4776dffecf559009cea3106f",
+    "semantic_hash": "11cb580f4776dffecf559009cea3106f"
   },
   "sources/brands/kimi.md": {
-    "mtime": 1794512891.6540265,
-    "seen": 1794513348.3054254,
-    "ast_hash": "2ea915746d2848e3df2c2aa08116bc5c",
-    "semantic_hash": "2ea915746d2848e3df2c2aa08116bc5c"
+    "mtime": 1794553375.760647,
+    "seen": 1794553501.3655689,
+    "ast_hash": "c5dd7aea100880d66ddcf2ce76927575",
+    "semantic_hash": "c5dd7aea100880d66ddcf2ce76927575"
   },
   "sources/brands/kitchenmuh.md": {
-    "mtime": 1794512891.649249,
-    "seen": 1794513348.3054268,
-    "ast_hash": "2359dadd2d33d2e05fad25a729c4c28a",
-    "semantic_hash": "2359dadd2d33d2e05fad25a729c4c28a"
+    "mtime": 1794553375.7563393,
+    "seen": 1794553501.3655698,
+    "ast_hash": "9e8857297467a8155257dec633bd9516",
+    "semantic_hash": "9e8857297467a8155257dec633bd9516"
   },
   "sources/brands/kiva.md": {
-    "mtime": 1794512891.6553059,
-    "seen": 1794513348.3054283,
-    "ast_hash": "1515fa4c1d09e078c45f949386e74f5c",
-    "semantic_hash": "1515fa4c1d09e078c45f949386e74f5c"
+    "mtime": 1794553375.7618427,
+    "seen": 1794553501.3655705,
+    "ast_hash": "a5bb07d624a3a099a6d5cfa8c592d0a8",
+    "semantic_hash": "a5bb07d624a3a099a6d5cfa8c592d0a8"
   },
   "sources/brands/klap.md": {
-    "mtime": 1794512891.6489525,
-    "seen": 1794513348.3054295,
-    "ast_hash": "b1f7f3b12224732717a3d39cc642533a",
-    "semantic_hash": "b1f7f3b12224732717a3d39cc642533a"
+    "mtime": 1794553375.7560968,
+    "seen": 1794553501.365571,
+    "ast_hash": "b76329e57a16df48f853ab8bb2b67367",
+    "semantic_hash": "b76329e57a16df48f853ab8bb2b67367"
   },
   "sources/brands/klyr.md": {
-    "mtime": 1794512891.6548991,
-    "seen": 1794513348.3054311,
-    "ast_hash": "ae710ecae714022616c8e70f1b9be561",
-    "semantic_hash": "ae710ecae714022616c8e70f1b9be561"
+    "mtime": 1794553375.7614858,
+    "seen": 1794553501.3655722,
+    "ast_hash": "8572ba32738e56150a1abfb5dbcb1a3a",
+    "semantic_hash": "8572ba32738e56150a1abfb5dbcb1a3a"
   },
   "sources/brands/kooko.md": {
-    "mtime": 1794512891.6503127,
-    "seen": 1794513348.305432,
-    "ast_hash": "ec2c46f3ec32323a612c879afec4e89d",
-    "semantic_hash": "ec2c46f3ec32323a612c879afec4e89d"
+    "mtime": 1794553375.7571485,
+    "seen": 1794553501.3655734,
+    "ast_hash": "babcbc134b1537bff3860af7c809d487",
+    "semantic_hash": "babcbc134b1537bff3860af7c809d487"
   },
   "sources/brands/kortex.md": {
-    "mtime": 1794512891.652931,
-    "seen": 1794513348.3054333,
-    "ast_hash": "43b65f4f5d8ee4efa89394ef1b5976ed",
-    "semantic_hash": "43b65f4f5d8ee4efa89394ef1b5976ed"
+    "mtime": 1794553375.7597044,
+    "seen": 1794553501.3655744,
+    "ast_hash": "deb081932742d6b541a5ce0c63963c2d",
+    "semantic_hash": "deb081932742d6b541a5ce0c63963c2d"
   },
   "sources/brands/kylon.md": {
-    "mtime": 1794512891.6434896,
-    "seen": 1794513348.3054345,
-    "ast_hash": "83a59e354c5f188a5ba8a9fa77dfd9dc",
-    "semantic_hash": "83a59e354c5f188a5ba8a9fa77dfd9dc"
+    "mtime": 1794553375.7527227,
+    "seen": 1794553501.365575,
+    "ast_hash": "ddd0eb2e8dbf76d7833d428864899e41",
+    "semantic_hash": "ddd0eb2e8dbf76d7833d428864899e41"
   },
   "sources/brands/lemlist.md": {
-    "mtime": 1794512891.650655,
-    "seen": 1794513348.3054357,
-    "ast_hash": "4bc8ffd90b059e1610b5f47dfa6cfd02",
-    "semantic_hash": "4bc8ffd90b059e1610b5f47dfa6cfd02"
+    "mtime": 1794553375.757415,
+    "seen": 1794553501.365576,
+    "ast_hash": "69a94197b27c629c7d5c6c4706ca8287",
+    "semantic_hash": "69a94197b27c629c7d5c6c4706ca8287"
   },
   "sources/brands/lemonado.md": {
-    "mtime": 1794512891.655571,
-    "seen": 1794513348.3054366,
-    "ast_hash": "c26ac2519517b5649eea46323f87ebf7",
-    "semantic_hash": "c26ac2519517b5649eea46323f87ebf7"
+    "mtime": 1794553375.7621222,
+    "seen": 1794553501.3655767,
+    "ast_hash": "f0a1256a062d395ffc1a61f5b5d39b41",
+    "semantic_hash": "f0a1256a062d395ffc1a61f5b5d39b41"
   },
   "sources/brands/lev8.md": {
-    "mtime": 1794512891.6605418,
-    "seen": 1794513348.3054378,
-    "ast_hash": "cb964afc41ed2bce7680f395e57cf103",
-    "semantic_hash": "cb964afc41ed2bce7680f395e57cf103"
+    "mtime": 1794553375.766391,
+    "seen": 1794553501.3655775,
+    "ast_hash": "bb838be3f904c2678fedbd4b65195bf5",
+    "semantic_hash": "bb838be3f904c2678fedbd4b65195bf5"
   },
   "sources/brands/levoit.md": {
-    "mtime": 1794512891.6591852,
-    "seen": 1794513348.305439,
-    "ast_hash": "ad24bd3568b38e40d1f78a712ca45121",
-    "semantic_hash": "ad24bd3568b38e40d1f78a712ca45121"
+    "mtime": 1794553375.7651858,
+    "seen": 1794553501.3655784,
+    "ast_hash": "3c18c841a8e0a08812517972cd3e0ddb",
+    "semantic_hash": "3c18c841a8e0a08812517972cd3e0ddb"
   },
   "sources/brands/libernovo.md": {
-    "mtime": 1794512891.6511087,
-    "seen": 1794513348.3054402,
-    "ast_hash": "2de3f0a8fb0735088f8ed37c5e20034b",
-    "semantic_hash": "2de3f0a8fb0735088f8ed37c5e20034b"
+    "mtime": 1794553375.7577653,
+    "seen": 1794553501.3655796,
+    "ast_hash": "932da933cd4bcf5b33b44ec35d5ee701",
+    "semantic_hash": "932da933cd4bcf5b33b44ec35d5ee701"
   },
   "sources/brands/linearity.md": {
-    "mtime": 1794512891.658421,
-    "seen": 1794513348.3054416,
-    "ast_hash": "f9ca51112a3b2f985b23a28614cca36e",
-    "semantic_hash": "f9ca51112a3b2f985b23a28614cca36e"
+    "mtime": 1794553375.7645845,
+    "seen": 1794553501.3655808,
+    "ast_hash": "c467e9f2d23a68baaffe8dc8d8cb95b6",
+    "semantic_hash": "c467e9f2d23a68baaffe8dc8d8cb95b6"
   },
   "sources/brands/llmfly.md": {
-    "mtime": 1794512891.6555989,
-    "seen": 1794513348.3054428,
-    "ast_hash": "50d52711f3a1351168d104620fdb4cab",
-    "semantic_hash": "50d52711f3a1351168d104620fdb4cab"
+    "mtime": 1794553375.7621462,
+    "seen": 1794553501.3655815,
+    "ast_hash": "b6d87430571863982445489ca85617fd",
+    "semantic_hash": "b6d87430571863982445489ca85617fd"
   },
   "sources/brands/lomote.md": {
-    "mtime": 1794512891.654486,
-    "seen": 1794513348.305444,
-    "ast_hash": "0d62f3b775ade2dd5c35ac9fd9f2837c",
-    "semantic_hash": "0d62f3b775ade2dd5c35ac9fd9f2837c"
+    "mtime": 1794553375.7610865,
+    "seen": 1794553501.3655827,
+    "ast_hash": "1aef4a826f47b518fdc0a7765c8c6181",
+    "semantic_hash": "1aef4a826f47b518fdc0a7765c8c6181"
   },
   "sources/brands/lovart.md": {
-    "mtime": 1794512891.6475923,
-    "seen": 1794513348.3054454,
-    "ast_hash": "d511ef75d784b91ff742512bd6a300c9",
-    "semantic_hash": "d511ef75d784b91ff742512bd6a300c9"
+    "mtime": 1794553375.751407,
+    "seen": 1794553501.3655834,
+    "ast_hash": "227b07eb4d1e9dbd5a4d779e8375354f",
+    "semantic_hash": "227b07eb4d1e9dbd5a4d779e8375354f"
   },
   "sources/brands/lovart20.md": {
-    "mtime": 1794512891.6536367,
-    "seen": 1794513348.3054466,
-    "ast_hash": "d0837ee43dd0837718c518fb27ba3fa1",
-    "semantic_hash": "d0837ee43dd0837718c518fb27ba3fa1"
+    "mtime": 1794553375.7603273,
+    "seen": 1794553501.3655844,
+    "ast_hash": "bf06fa5cec5f5af45be5f253328bdcc6",
+    "semantic_hash": "bf06fa5cec5f5af45be5f253328bdcc6"
   },
   "sources/brands/lovie.md": {
-    "mtime": 1794512891.6481285,
-    "seen": 1794513348.3054476,
-    "ast_hash": "29d661cc65b97869dcac17d434bdf744",
-    "semantic_hash": "29d661cc65b97869dcac17d434bdf744"
+    "mtime": 1794553375.7553363,
+    "seen": 1794553501.365585,
+    "ast_hash": "199d7802ac9dc769bff5230ec5a75dce",
+    "semantic_hash": "199d7802ac9dc769bff5230ec5a75dce"
   },
   "sources/brands/ltx.md": {
-    "mtime": 1794512891.6596398,
-    "seen": 1794513348.3054492,
-    "ast_hash": "84994f1a8a61302cae17b47cff624672",
-    "semantic_hash": "84994f1a8a61302cae17b47cff624672"
+    "mtime": 1794553375.7656338,
+    "seen": 1794553501.3655858,
+    "ast_hash": "3edaa8ca36b5fc1106c0a1c473da4489",
+    "semantic_hash": "3edaa8ca36b5fc1106c0a1c473da4489"
   },
   "sources/brands/luma.md": {
-    "mtime": 1794512891.6446366,
-    "seen": 1794513348.3054502,
-    "ast_hash": "2465f57b0ea7471439a60a36fa3dbc9c",
-    "semantic_hash": "2465f57b0ea7471439a60a36fa3dbc9c"
+    "mtime": 1794553375.753663,
+    "seen": 1794553501.3655868,
+    "ast_hash": "cf3856d1e28e8ec0a04af2f1b4412f47",
+    "semantic_hash": "cf3856d1e28e8ec0a04af2f1b4412f47"
   },
   "sources/brands/luminary.md": {
-    "mtime": 1794512891.6505194,
-    "seen": 1794513348.3054516,
-    "ast_hash": "04d9832c19b4dfe01ce03e506b2d7521",
-    "semantic_hash": "04d9832c19b4dfe01ce03e506b2d7521"
+    "mtime": 1794553375.7573037,
+    "seen": 1794553501.3655875,
+    "ast_hash": "f7387a6357f5c29a019c1f485297e272",
+    "semantic_hash": "f7387a6357f5c29a019c1f485297e272"
   },
   "sources/brands/macaly.md": {
-    "mtime": 1794512891.6549354,
-    "seen": 1794513348.3054526,
-    "ast_hash": "e83be1d75167c0b9eaf582c8fa920b41",
-    "semantic_hash": "e83be1d75167c0b9eaf582c8fa920b41"
+    "mtime": 1794553375.761521,
+    "seen": 1794553501.3655884,
+    "ast_hash": "dcf3fcc61fecae5634664ee4c42d8e38",
+    "semantic_hash": "dcf3fcc61fecae5634664ee4c42d8e38"
   },
   "sources/brands/magiclight.md": {
-    "mtime": 1794512891.660709,
-    "seen": 1794513348.3054535,
-    "ast_hash": "6f52d5cee46523155df539ae09e1c2ef",
-    "semantic_hash": "6f52d5cee46523155df539ae09e1c2ef"
+    "mtime": 1794553375.7665284,
+    "seen": 1794553501.3655896,
+    "ast_hash": "39469e5756be0dd44016a6dc1e9dcca7",
+    "semantic_hash": "39469e5756be0dd44016a6dc1e9dcca7"
   },
   "sources/brands/mailerfind.md": {
-    "mtime": 1794512891.6546917,
-    "seen": 1794513348.3054547,
-    "ast_hash": "6025a3994ada0122ef74ab162878f4f8",
-    "semantic_hash": "6025a3994ada0122ef74ab162878f4f8"
+    "mtime": 1794553375.7612884,
+    "seen": 1794553501.3655906,
+    "ast_hash": "49d4b0720042595d13be6f69b829d13f",
+    "semantic_hash": "49d4b0720042595d13be6f69b829d13f"
   },
   "sources/brands/makeborne.md": {
-    "mtime": 1794512891.6526685,
-    "seen": 1794513348.3054562,
-    "ast_hash": "d5cbc3cdc69f3326d92fbd52f90a01e6",
-    "semantic_hash": "d5cbc3cdc69f3326d92fbd52f90a01e6"
+    "mtime": 1794553375.7591503,
+    "seen": 1794553501.3655915,
+    "ast_hash": "1eed3d704f5ef90b48448849be5a447f",
+    "semantic_hash": "1eed3d704f5ef90b48448849be5a447f"
   },
   "sources/brands/manus.md": {
-    "mtime": 1794512891.6580954,
-    "seen": 1794513348.3054574,
-    "ast_hash": "19afb09561762ce373dda8258a6a7e39",
-    "semantic_hash": "19afb09561762ce373dda8258a6a7e39"
+    "mtime": 1794553375.764309,
+    "seen": 1794553501.3655941,
+    "ast_hash": "03aafb69bcefbee66c6e1e7f24a2f39c",
+    "semantic_hash": "03aafb69bcefbee66c6e1e7f24a2f39c"
   },
   "sources/brands/manyfast.md": {
-    "mtime": 1794512891.644732,
-    "seen": 1794513348.305459,
-    "ast_hash": "37f3c1a195c9b218663a2b293765b1d0",
-    "semantic_hash": "37f3c1a195c9b218663a2b293765b1d0"
+    "mtime": 1794553375.7537534,
+    "seen": 1794553501.3655953,
+    "ast_hash": "13450accf808606b7966a7755a119333",
+    "semantic_hash": "13450accf808606b7966a7755a119333"
   },
   "sources/brands/marketcalls.md": {
-    "mtime": 1794512891.6560364,
-    "seen": 1794513348.3054605,
-    "ast_hash": "a2fdfed503327d61dc317d2f3204ad72",
-    "semantic_hash": "a2fdfed503327d61dc317d2f3204ad72"
+    "mtime": 1794553375.7624705,
+    "seen": 1794553501.3655968,
+    "ast_hash": "ace843f4c9e4049f7be55a5bd31b3189",
+    "semantic_hash": "ace843f4c9e4049f7be55a5bd31b3189"
   },
   "sources/brands/marlow.md": {
-    "mtime": 1794512891.6485162,
-    "seen": 1794513348.3054624,
-    "ast_hash": "31d1b298180465f9330d747662d97855",
-    "semantic_hash": "31d1b298180465f9330d747662d97855"
+    "mtime": 1794553375.7556896,
+    "seen": 1794553501.3655977,
+    "ast_hash": "c76cf0c236c40186647af63bda2ac13a",
+    "semantic_hash": "c76cf0c236c40186647af63bda2ac13a"
   },
   "sources/brands/medeo.md": {
-    "mtime": 1794512891.6588454,
-    "seen": 1794513348.3054636,
-    "ast_hash": "0ce6b7b33ad8fc0f19522fd2b3b48912",
-    "semantic_hash": "0ce6b7b33ad8fc0f19522fd2b3b48912"
+    "mtime": 1794553375.7649057,
+    "seen": 1794553501.3655987,
+    "ast_hash": "29512f914b4a36de6a27f741db1f6f24",
+    "semantic_hash": "29512f914b4a36de6a27f741db1f6f24"
   },
   "sources/brands/median.md": {
-    "mtime": 1794512891.6553729,
-    "seen": 1794513348.3054647,
-    "ast_hash": "f194abd1b7e97ac847b272e6f4a4514e",
-    "semantic_hash": "f194abd1b7e97ac847b272e6f4a4514e"
+    "mtime": 1794553375.7618983,
+    "seen": 1794553501.3655996,
+    "ast_hash": "2dde557519850ec3430d2a17328bcbbb",
+    "semantic_hash": "2dde557519850ec3430d2a17328bcbbb"
   },
   "sources/brands/meetaugust.md": {
-    "mtime": 1794512891.6601775,
-    "seen": 1794513348.305466,
-    "ast_hash": "66281f415a12f4e11aa0215a96f4c749",
-    "semantic_hash": "66281f415a12f4e11aa0215a96f4c749"
+    "mtime": 1794553375.7661102,
+    "seen": 1794553501.3656008,
+    "ast_hash": "89dbccd0a4e9211f9c7a4f1b8ace0927",
+    "semantic_hash": "89dbccd0a4e9211f9c7a4f1b8ace0927"
   },
   "sources/brands/mgx.md": {
-    "mtime": 1794512891.653239,
-    "seen": 1794513348.305467,
-    "ast_hash": "dab2a543fe755fae5df5ecc91dd920ee",
-    "semantic_hash": "dab2a543fe755fae5df5ecc91dd920ee"
+    "mtime": 1794553375.7599392,
+    "seen": 1794553501.3656018,
+    "ast_hash": "0e24cdbbabeac7d842bf36247b8605c7",
+    "semantic_hash": "0e24cdbbabeac7d842bf36247b8605c7"
   },
   "sources/brands/miaolabradarguard.md": {
-    "mtime": 1794512891.6610715,
-    "seen": 1794513348.3054678,
-    "ast_hash": "ce26d144265640b99a710d012fe3d748",
-    "semantic_hash": "ce26d144265640b99a710d012fe3d748"
+    "mtime": 1794553375.7668097,
+    "seen": 1794553501.365603,
+    "ast_hash": "ee332ad4aeaf8d8a452f5fb80ec69794",
+    "semantic_hash": "ee332ad4aeaf8d8a452f5fb80ec69794"
   },
   "sources/brands/migoo.md": {
-    "mtime": 1794512891.6435912,
-    "seen": 1794513348.3054693,
-    "ast_hash": "42714a1531c93102a7c63f060e2ca601",
-    "semantic_hash": "42714a1531c93102a7c63f060e2ca601"
+    "mtime": 1794553375.7527966,
+    "seen": 1794553501.3656042,
+    "ast_hash": "5beba355a500f4a0dc8d2e6653ac0e86",
+    "semantic_hash": "5beba355a500f4a0dc8d2e6653ac0e86"
   },
   "sources/brands/minimax.md": {
-    "mtime": 1794512891.656627,
-    "seen": 1794513348.3054705,
-    "ast_hash": "3372bc2a1deb2715f8b4c98b949a334a",
-    "semantic_hash": "3372bc2a1deb2715f8b4c98b949a334a"
+    "mtime": 1794553375.762948,
+    "seen": 1794553501.3656049,
+    "ast_hash": "68610fab747cad53775b499672419959",
+    "semantic_hash": "68610fab747cad53775b499672419959"
   },
   "sources/brands/minimaxagentm3.md": {
-    "mtime": 1794512891.6515,
-    "seen": 1794513348.3054714,
-    "ast_hash": "2059640b77ce7385ff7e66c923e2fc3c",
-    "semantic_hash": "2059640b77ce7385ff7e66c923e2fc3c"
+    "mtime": 1794553375.7581456,
+    "seen": 1794553501.3656058,
+    "ast_hash": "31dbdc99712b80d493907c1c3c136c39",
+    "semantic_hash": "31dbdc99712b80d493907c1c3c136c39"
   },
   "sources/brands/minimaxdesign.md": {
-    "mtime": 1794512891.6541133,
-    "seen": 1794513348.3054729,
-    "ast_hash": "4276e4f756cad900b225117d6a4f0814",
-    "semantic_hash": "4276e4f756cad900b225117d6a4f0814"
+    "mtime": 1794553375.7607076,
+    "seen": 1794553501.365607,
+    "ast_hash": "37d03a37f045010d428aab11391b9696",
+    "semantic_hash": "37d03a37f045010d428aab11391b9696"
   },
   "sources/brands/miora.md": {
-    "mtime": 1794512891.6587718,
-    "seen": 1794513348.305474,
-    "ast_hash": "7250704005d4281a62a8739715203e82",
-    "semantic_hash": "7250704005d4281a62a8739715203e82"
+    "mtime": 1794553375.764858,
+    "seen": 1794553501.365608,
+    "ast_hash": "7dd1fc6937dce4993288ce06da640dae",
+    "semantic_hash": "7dd1fc6937dce4993288ce06da640dae"
   },
   "sources/brands/moneyhub.md": {
-    "mtime": 1794512891.653799,
-    "seen": 1794513348.305475,
-    "ast_hash": "93ad23d8227cd75eea2470918c9fe4e8",
-    "semantic_hash": "93ad23d8227cd75eea2470918c9fe4e8"
+    "mtime": 1794553375.760438,
+    "seen": 1794553501.3656087,
+    "ast_hash": "3eaa19e00ca2c7fba3551c645e80f202",
+    "semantic_hash": "3eaa19e00ca2c7fba3551c645e80f202"
   },
   "sources/brands/moonphase.md": {
-    "mtime": 1794512891.6482553,
-    "seen": 1794513348.3054764,
-    "ast_hash": "3361ff4bb1d26818490be7a804e2adba",
-    "semantic_hash": "3361ff4bb1d26818490be7a804e2adba"
+    "mtime": 1794553375.7554665,
+    "seen": 1794553501.3656096,
+    "ast_hash": "eac8b63cea19407a8fba7cba6957f9f9",
+    "semantic_hash": "eac8b63cea19407a8fba7cba6957f9f9"
   },
   "sources/brands/moonphaseflip.md": {
-    "mtime": 1794512891.652274,
-    "seen": 1794513348.3054776,
-    "ast_hash": "e8e813d00f1bccebdd3a21a81601e359",
-    "semantic_hash": "e8e813d00f1bccebdd3a21a81601e359"
+    "mtime": 1794553375.758816,
+    "seen": 1794553501.3656106,
+    "ast_hash": "f27db0bf6af953a55f9896cdcf579d9b",
+    "semantic_hash": "f27db0bf6af953a55f9896cdcf579d9b"
   },
   "sources/brands/moonshot.md": {
-    "mtime": 1794512891.6598103,
-    "seen": 1794513348.3054788,
-    "ast_hash": "c382d1b5016fc9ef31c8149525da812c",
-    "semantic_hash": "c382d1b5016fc9ef31c8149525da812c"
+    "mtime": 1794553375.7658405,
+    "seen": 1794553501.3656116,
+    "ast_hash": "b50854af643e2eb1eff5ccd610eb82fe",
+    "semantic_hash": "b50854af643e2eb1eff5ccd610eb82fe"
   },
   "sources/brands/moprobo.md": {
-    "mtime": 1794512891.6492205,
-    "seen": 1794513348.3054802,
-    "ast_hash": "f12c4474791cd56e4630bef3d6c366f2",
-    "semantic_hash": "f12c4474791cd56e4630bef3d6c366f2"
+    "mtime": 1794553375.7563152,
+    "seen": 1794553501.3656178,
+    "ast_hash": "ab38c1e050aded943632613cd5107ad9",
+    "semantic_hash": "ab38c1e050aded943632613cd5107ad9"
   },
   "sources/brands/moredashads.md": {
-    "mtime": 1794512891.6483095,
-    "seen": 1794513348.3054814,
-    "ast_hash": "8c85e1231e069572048a6e4fceeac787",
-    "semantic_hash": "8c85e1231e069572048a6e4fceeac787"
+    "mtime": 1794553375.7555144,
+    "seen": 1794553501.3656187,
+    "ast_hash": "a683584f2be5387efe90ed9036d06bb3",
+    "semantic_hash": "a683584f2be5387efe90ed9036d06bb3"
   },
   "sources/brands/morphix.md": {
-    "mtime": 1794512891.6511676,
-    "seen": 1794513348.3054829,
-    "ast_hash": "3df8bba8dfb10cff27294ce14f30b595",
-    "semantic_hash": "3df8bba8dfb10cff27294ce14f30b595"
+    "mtime": 1794553375.7578177,
+    "seen": 1794553501.3656194,
+    "ast_hash": "00b1db1fd6b0f55341e69d2977791dfa",
+    "semantic_hash": "00b1db1fd6b0f55341e69d2977791dfa"
   },
   "sources/brands/mosaic.md": {
-    "mtime": 1794512891.6565301,
-    "seen": 1794513348.305484,
-    "ast_hash": "49c3410a26dd3fd7809289215f66fc36",
-    "semantic_hash": "49c3410a26dd3fd7809289215f66fc36"
+    "mtime": 1794553375.7628713,
+    "seen": 1794553501.3656201,
+    "ast_hash": "438f553637b9caf7252da0a4c30d817b",
+    "semantic_hash": "438f553637b9caf7252da0a4c30d817b"
   },
   "sources/brands/movo.md": {
-    "mtime": 1794512891.6592984,
-    "seen": 1794513348.305485,
-    "ast_hash": "8c7d7acd1e3603cf56fb53409325f9dc",
-    "semantic_hash": "8c7d7acd1e3603cf56fb53409325f9dc"
+    "mtime": 1794553375.765308,
+    "seen": 1794553501.365621,
+    "ast_hash": "444fa27affa6bcf2cb0ff12fb874c70e",
+    "semantic_hash": "444fa27affa6bcf2cb0ff12fb874c70e"
   },
   "sources/brands/mrproautomateconsulting.md": {
-    "mtime": 1794512891.6470172,
-    "seen": 1794513348.3054867,
-    "ast_hash": "f0de06d6155eaf76d2c5421ec4c2c8f1",
-    "semantic_hash": "f0de06d6155eaf76d2c5421ec4c2c8f1"
+    "mtime": 1794553375.7514374,
+    "seen": 1794553501.3656218,
+    "ast_hash": "c522c1a6d7632ec6c9702b18027d2c83",
+    "semantic_hash": "c522c1a6d7632ec6c9702b18027d2c83"
   },
   "sources/brands/munchstudio.md": {
-    "mtime": 1794512891.6610444,
-    "seen": 1794513348.3054879,
-    "ast_hash": "d7c164ee6f59aaee6650ab0b47303541",
-    "semantic_hash": "d7c164ee6f59aaee6650ab0b47303541"
+    "mtime": 1794553375.7667816,
+    "seen": 1794553501.3656228,
+    "ast_hash": "597689a084c80d2a0f17f4b7b7fba970",
+    "semantic_hash": "597689a084c80d2a0f17f4b7b7fba970"
   },
   "sources/brands/mvland.md": {
-    "mtime": 1794512891.6496904,
-    "seen": 1794513348.305489,
-    "ast_hash": "fe98324fbe5bf577acf0daa6f97ae9a0",
-    "semantic_hash": "fe98324fbe5bf577acf0daa6f97ae9a0"
+    "mtime": 1794553375.756658,
+    "seen": 1794553501.3656237,
+    "ast_hash": "b5e22e467907b9511c5e2b611ed3dc40",
+    "semantic_hash": "b5e22e467907b9511c5e2b611ed3dc40"
   },
   "sources/brands/mydesigns.md": {
-    "mtime": 1794512891.6612418,
-    "seen": 1794513348.3054905,
-    "ast_hash": "c639be490ad660f1b3756166fe6155af",
-    "semantic_hash": "c639be490ad660f1b3756166fe6155af"
+    "mtime": 1794553375.7670197,
+    "seen": 1794553501.3656247,
+    "ast_hash": "35c81daa974cff73273cbfe23eb423ab",
+    "semantic_hash": "35c81daa974cff73273cbfe23eb423ab"
   },
   "sources/brands/nakodo.md": {
-    "mtime": 1794512891.656386,
-    "seen": 1794513348.3054917,
-    "ast_hash": "5ee864c3607943be964e416174bf6c46",
-    "semantic_hash": "5ee864c3607943be964e416174bf6c46"
+    "mtime": 1794553375.7627661,
+    "seen": 1794553501.3656254,
+    "ast_hash": "4bfcfddcdc751799df05fab9b1be0a5a",
+    "semantic_hash": "4bfcfddcdc751799df05fab9b1be0a5a"
   },
   "sources/brands/nativeworkassistant.md": {
-    "mtime": 1794512891.6565614,
-    "seen": 1794513348.3054926,
-    "ast_hash": "ef43023495f60161da46d73718fe5f69",
-    "semantic_hash": "ef43023495f60161da46d73718fe5f69"
+    "mtime": 1794553375.762893,
+    "seen": 1794553501.3656266,
+    "ast_hash": "897a49a0c02e91b19cb47dfb2f79ee59",
+    "semantic_hash": "897a49a0c02e91b19cb47dfb2f79ee59"
   },
   "sources/brands/newsletterplatform.md": {
-    "mtime": 1794512891.6542904,
-    "seen": 1794513348.3054943,
-    "ast_hash": "23d2b0853f92942f2c5279cf26819b93",
-    "semantic_hash": "23d2b0853f92942f2c5279cf26819b93"
+    "mtime": 1794553375.7608604,
+    "seen": 1794553501.3656278,
+    "ast_hash": "c2d2df11559ce9efe00c3f4501d29748",
+    "semantic_hash": "c2d2df11559ce9efe00c3f4501d29748"
   },
   "sources/brands/newsletterplatformforcreators.md": {
-    "mtime": 1794512891.6539764,
-    "seen": 1794513348.3054957,
-    "ast_hash": "1b98d111cb264d8e9dc3bcbfc52ce9ee",
-    "semantic_hash": "1b98d111cb264d8e9dc3bcbfc52ce9ee"
+    "mtime": 1794553375.7606025,
+    "seen": 1794553501.3656285,
+    "ast_hash": "985395d3397e6fb189c206b87934d8d5",
+    "semantic_hash": "985395d3397e6fb189c206b87934d8d5"
   },
   "sources/brands/noiz.md": {
-    "mtime": 1794512891.6599295,
-    "seen": 1794513348.305497,
-    "ast_hash": "356057f7a0e037261a96d0c3bc467fe0",
-    "semantic_hash": "356057f7a0e037261a96d0c3bc467fe0"
+    "mtime": 1794553375.7659316,
+    "seen": 1794553501.3656297,
+    "ast_hash": "6b88ec54bc8422498dca77376bb2468f",
+    "semantic_hash": "6b88ec54bc8422498dca77376bb2468f"
   },
   "sources/brands/notegpt.md": {
-    "mtime": 1794512891.6531382,
-    "seen": 1794513348.3054981,
-    "ast_hash": "bc20528ac323f24e8e2d94da83417a46",
-    "semantic_hash": "bc20528ac323f24e8e2d94da83417a46"
+    "mtime": 1794553375.7598772,
+    "seen": 1794553501.3656304,
+    "ast_hash": "7da74a10a12eab968a297cf6a1389b11",
+    "semantic_hash": "7da74a10a12eab968a297cf6a1389b11"
   },
   "sources/brands/oasis.md": {
-    "mtime": 1794512891.660944,
-    "seen": 1794513348.3054996,
-    "ast_hash": "fa47b276dad21cd4aa031d29145b6cc0",
-    "semantic_hash": "fa47b276dad21cd4aa031d29145b6cc0"
+    "mtime": 1794553375.7666876,
+    "seen": 1794553501.3656313,
+    "ast_hash": "06d2fd8e185cb734306cd7d25c17b0fd",
+    "semantic_hash": "06d2fd8e185cb734306cd7d25c17b0fd"
   },
   "sources/brands/octuo.md": {
-    "mtime": 1794512891.6523068,
-    "seen": 1794513348.3055007,
-    "ast_hash": "854d4510cabd41756368a27a54dc9e0e",
-    "semantic_hash": "854d4510cabd41756368a27a54dc9e0e"
+    "mtime": 1794553375.7588377,
+    "seen": 1794553501.3656325,
+    "ast_hash": "f830cd5a440806501ebc82062da34b71",
+    "semantic_hash": "f830cd5a440806501ebc82062da34b71"
   },
   "sources/brands/oiioii.md": {
-    "mtime": 1794512891.647172,
-    "seen": 1794513348.305502,
-    "ast_hash": "0a991d668e6b9665882cabb52f32142b",
-    "semantic_hash": "0a991d668e6b9665882cabb52f32142b"
+    "mtime": 1794553375.7518613,
+    "seen": 1794553501.3656332,
+    "ast_hash": "1456e83b3a9679f23776eb591d8edfc1",
+    "semantic_hash": "1456e83b3a9679f23776eb591d8edfc1"
   },
   "sources/brands/okara.md": {
-    "mtime": 1794512891.6562042,
-    "seen": 1794513348.3055031,
-    "ast_hash": "a005173efefb840cbc4739cff2eb0332",
-    "semantic_hash": "a005173efefb840cbc4739cff2eb0332"
+    "mtime": 1794553375.7626195,
+    "seen": 1794553501.3656342,
+    "ast_hash": "7c5acd1b4040b6e29a01d1e77bb06cd6",
+    "semantic_hash": "7c5acd1b4040b6e29a01d1e77bb06cd6"
   },
   "sources/brands/olalabs.md": {
-    "mtime": 1794512891.6557379,
-    "seen": 1794513348.3055046,
-    "ast_hash": "619693cfab2a06575cd5245f55468be5",
-    "semantic_hash": "619693cfab2a06575cd5245f55468be5"
+    "mtime": 1794553375.7622633,
+    "seen": 1794553501.3656352,
+    "ast_hash": "5b8a00a4e05e493eb4cde78f71932c49",
+    "semantic_hash": "5b8a00a4e05e493eb4cde78f71932c49"
   },
   "sources/brands/oleap.md": {
-    "mtime": 1794512891.656104,
-    "seen": 1794513348.305506,
-    "ast_hash": "56125a91a0390d90cb9173c744b76f11",
-    "semantic_hash": "56125a91a0390d90cb9173c744b76f11"
+    "mtime": 1794553375.762523,
+    "seen": 1794553501.3656359,
+    "ast_hash": "d742bc634d0389143a00f68ff94b444a",
+    "semantic_hash": "d742bc634d0389143a00f68ff94b444a"
   },
   "sources/brands/omnirogue.md": {
-    "mtime": 1794512891.6501544,
-    "seen": 1794513348.3055074,
-    "ast_hash": "bc058119579ef6f2299ddc02e50acfdb",
-    "semantic_hash": "bc058119579ef6f2299ddc02e50acfdb"
+    "mtime": 1794553375.7570245,
+    "seen": 1794553501.3656366,
+    "ast_hash": "b9269c50f046d0faa03e8c7da9406c43",
+    "semantic_hash": "b9269c50f046d0faa03e8c7da9406c43"
   },
   "sources/brands/omnisocials.md": {
-    "mtime": 1794512891.65845,
-    "seen": 1794513348.3055086,
-    "ast_hash": "2fbcd00e681ec4508677398614290947",
-    "semantic_hash": "2fbcd00e681ec4508677398614290947"
+    "mtime": 1794553375.7646074,
+    "seen": 1794553501.3656373,
+    "ast_hash": "b006af91c02ed49950b01888347a1193",
+    "semantic_hash": "b006af91c02ed49950b01888347a1193"
   },
   "sources/brands/onaxai.md": {
-    "mtime": 1794512891.6534014,
-    "seen": 1794513348.30551,
-    "ast_hash": "8c7ad93179e6882c292a0777ede72142",
-    "semantic_hash": "8c7ad93179e6882c292a0777ede72142"
+    "mtime": 1794553375.7601626,
+    "seen": 1794553501.3656385,
+    "ast_hash": "e3122b9a178d4a1666d50335b07161ca",
+    "semantic_hash": "e3122b9a178d4a1666d50335b07161ca"
   },
   "sources/brands/oneup.md": {
-    "mtime": 1794512891.6524742,
-    "seen": 1794513348.3055117,
-    "ast_hash": "2db694987b997582dfe65a87b6e33f66",
-    "semantic_hash": "2db694987b997582dfe65a87b6e33f66"
+    "mtime": 1794553375.758991,
+    "seen": 1794553501.3656402,
+    "ast_hash": "1ae501d2b55aed7e19192c321b5ce0a7",
+    "semantic_hash": "1ae501d2b55aed7e19192c321b5ce0a7"
   },
   "sources/brands/openart.md": {
-    "mtime": 1794512891.6494348,
-    "seen": 1794513348.305513,
-    "ast_hash": "59edc4e9813363a43b33a65d08318c35",
-    "semantic_hash": "59edc4e9813363a43b33a65d08318c35"
+    "mtime": 1794553375.7564893,
+    "seen": 1794553501.365641,
+    "ast_hash": "fdc4bcd7de613d4cd33a18c517485fec",
+    "semantic_hash": "fdc4bcd7de613d4cd33a18c517485fec"
   },
   "sources/brands/openbmb.md": {
-    "mtime": 1794512891.6566522,
-    "seen": 1794513348.3055143,
-    "ast_hash": "04f55371f3063f2ad9fe1799221bc79b",
-    "semantic_hash": "04f55371f3063f2ad9fe1799221bc79b"
+    "mtime": 1794553375.7630024,
+    "seen": 1794553501.365642,
+    "ast_hash": "1dc029e3beab445eead9dc0c41c9fb72",
+    "semantic_hash": "1dc029e3beab445eead9dc0c41c9fb72"
   },
   "sources/brands/openpartner.md": {
-    "mtime": 1794512891.652032,
-    "seen": 1794513348.3055155,
-    "ast_hash": "c18dcfde83cfd83b3752fb4ac76e90e8",
-    "semantic_hash": "c18dcfde83cfd83b3752fb4ac76e90e8"
+    "mtime": 1794553375.758627,
+    "seen": 1794553501.365643,
+    "ast_hash": "a6a3bcc41a48bd36a00a1c70928771d6",
+    "semantic_hash": "a6a3bcc41a48bd36a00a1c70928771d6"
   },
   "sources/brands/openui.md": {
-    "mtime": 1794512891.6536095,
-    "seen": 1794513348.305517,
-    "ast_hash": "9a51ce870e43b185582c4afc524abe95",
-    "semantic_hash": "9a51ce870e43b185582c4afc524abe95"
+    "mtime": 1794553375.7603037,
+    "seen": 1794553501.3656437,
+    "ast_hash": "66e18347a5e195c06534e3b21fd7219a",
+    "semantic_hash": "66e18347a5e195c06534e3b21fd7219a"
   },
   "sources/brands/opusclip.md": {
-    "mtime": 1794512891.6574018,
-    "seen": 1794513348.3055182,
-    "ast_hash": "1e97bc426d4c7d0dbaec5f2095276f80",
-    "semantic_hash": "1e97bc426d4c7d0dbaec5f2095276f80"
+    "mtime": 1794553375.7636774,
+    "seen": 1794553501.3656442,
+    "ast_hash": "188dd8ece86e875ca33a3019f7616be3",
+    "semantic_hash": "188dd8ece86e875ca33a3019f7616be3"
   },
   "sources/brands/orilo.md": {
-    "mtime": 1794512891.652061,
-    "seen": 1794513348.3055193,
-    "ast_hash": "d9d3815ef344030800ad211da91255b3",
-    "semantic_hash": "d9d3815ef344030800ad211da91255b3"
+    "mtime": 1794553375.7586584,
+    "seen": 1794553501.3656452,
+    "ast_hash": "ea14f9bf639a938546f52a93954519c6",
+    "semantic_hash": "ea14f9bf639a938546f52a93954519c6"
   },
   "sources/brands/orlino.md": {
     "mtime": 1794512891.657154,
@@ -1530,1070 +1530,1070 @@
     "semantic_hash": "3f26c17cea80fca2933821bcb737dce9"
   },
   "sources/brands/pandasecurity.md": {
-    "mtime": 1794512891.6462276,
-    "seen": 1794513348.3055222,
-    "ast_hash": "3806561dbb48c0fa63bbc6532d595b22",
-    "semantic_hash": "3806561dbb48c0fa63bbc6532d595b22"
+    "mtime": 1794553375.7548409,
+    "seen": 1794553501.365647,
+    "ast_hash": "9252badf9f2b1d1270968a0d7560b0e6",
+    "semantic_hash": "9252badf9f2b1d1270968a0d7560b0e6"
   },
   "sources/brands/pazi.md": {
-    "mtime": 1794512891.647914,
-    "seen": 1794513348.3055234,
-    "ast_hash": "adbaa172d9df0817f7b0c1837602319d",
-    "semantic_hash": "adbaa172d9df0817f7b0c1837602319d"
+    "mtime": 1794553375.751226,
+    "seen": 1794553501.3656483,
+    "ast_hash": "4658d6015b03de9d2136d7e50f4cb49b",
+    "semantic_hash": "4658d6015b03de9d2136d7e50f4cb49b"
   },
   "sources/brands/peeker.md": {
-    "mtime": 1794512891.6522229,
-    "seen": 1794513348.3055248,
-    "ast_hash": "437a6c657e643783e0f537b14fbfe3b9",
-    "semantic_hash": "437a6c657e643783e0f537b14fbfe3b9"
+    "mtime": 1794553375.7587838,
+    "seen": 1794553501.3656495,
+    "ast_hash": "6abd19b83b7f3b31f05ff61df09eea15",
+    "semantic_hash": "6abd19b83b7f3b31f05ff61df09eea15"
   },
   "sources/brands/pepochat.md": {
-    "mtime": 1794512891.6510036,
-    "seen": 1794513348.305526,
-    "ast_hash": "0620584c1f9c4cd5ed3cc543916511d2",
-    "semantic_hash": "0620584c1f9c4cd5ed3cc543916511d2"
+    "mtime": 1794553375.757662,
+    "seen": 1794553501.3656502,
+    "ast_hash": "79a5a752d71dd47c332cdc60f26fd887",
+    "semantic_hash": "79a5a752d71dd47c332cdc60f26fd887"
   },
   "sources/brands/pexo.md": {
-    "mtime": 1794512891.6592393,
-    "seen": 1794513348.3055272,
-    "ast_hash": "d9c9548bf2083e78c2f8c30e06399b1e",
-    "semantic_hash": "d9c9548bf2083e78c2f8c30e06399b1e"
+    "mtime": 1794553375.7652473,
+    "seen": 1794553501.3656511,
+    "ast_hash": "c7c73edac945b375ba9c56ee99f8b18d",
+    "semantic_hash": "c7c73edac945b375ba9c56ee99f8b18d"
   },
   "sources/brands/photogenerator.md": {
-    "mtime": 1794512891.6533728,
-    "seen": 1794513348.3055289,
-    "ast_hash": "a362ea8a10ee92f4c18a3e179e3b874e",
-    "semantic_hash": "a362ea8a10ee92f4c18a3e179e3b874e"
+    "mtime": 1794553375.7601337,
+    "seen": 1794553501.3656523,
+    "ast_hash": "0ea60adafa8ebac7031100c67531750d",
+    "semantic_hash": "0ea60adafa8ebac7031100c67531750d"
   },
   "sources/brands/phylee.md": {
-    "mtime": 1794512891.657635,
-    "seen": 1794513348.30553,
-    "ast_hash": "790940823a09e45a339d32b746a3d912",
-    "semantic_hash": "790940823a09e45a339d32b746a3d912"
+    "mtime": 1794553375.7638679,
+    "seen": 1794553501.365653,
+    "ast_hash": "5069344e3cc35d500bba182c0d028982",
+    "semantic_hash": "5069344e3cc35d500bba182c0d028982"
   },
   "sources/brands/pine.md": {
-    "mtime": 1794512891.6478689,
-    "seen": 1794513348.3055315,
-    "ast_hash": "0c9f314116b2df8840601062af8c3b4c",
-    "semantic_hash": "0c9f314116b2df8840601062af8c3b4c"
+    "mtime": 1794553375.7511818,
+    "seen": 1794553501.3656535,
+    "ast_hash": "ba571da3e481ae8ffe0f83aa3838f71c",
+    "semantic_hash": "ba571da3e481ae8ffe0f83aa3838f71c"
   },
   "sources/brands/ping.md": {
-    "mtime": 1794512891.6595392,
-    "seen": 1794513348.3055325,
-    "ast_hash": "701921d433d600d5373860e18ff7356f",
-    "semantic_hash": "701921d433d600d5373860e18ff7356f"
+    "mtime": 1794553375.7655518,
+    "seen": 1794553501.3656542,
+    "ast_hash": "f6cfc1e77d5832005e5efdd0d9e65652",
+    "semantic_hash": "f6cfc1e77d5832005e5efdd0d9e65652"
   },
   "sources/brands/pippit.md": {
-    "mtime": 1794512891.6539474,
-    "seen": 1794513348.3055334,
-    "ast_hash": "11e9e4578a7565bbecbb0905db5c0118",
-    "semantic_hash": "11e9e4578a7565bbecbb0905db5c0118"
+    "mtime": 1794553375.7605715,
+    "seen": 1794553501.3656552,
+    "ast_hash": "991399a46d657feb1965d950446415e2",
+    "semantic_hash": "991399a46d657feb1965d950446415e2"
   },
   "sources/brands/pippitmarketingstudio.md": {
-    "mtime": 1794512891.6525187,
-    "seen": 1794513348.3055346,
-    "ast_hash": "ed5c39acf4fa9b3f7ef5833c24b06802",
-    "semantic_hash": "ed5c39acf4fa9b3f7ef5833c24b06802"
+    "mtime": 1794553375.7590318,
+    "seen": 1794553501.3656564,
+    "ast_hash": "2a527f58c441cec77781a6bd95128688",
+    "semantic_hash": "2a527f58c441cec77781a6bd95128688"
   },
   "sources/brands/pixverse.md": {
-    "mtime": 1794512891.648737,
-    "seen": 1794513348.305536,
-    "ast_hash": "2459f4181e3850fc8c88c77f7f185bab",
-    "semantic_hash": "2459f4181e3850fc8c88c77f7f185bab"
+    "mtime": 1794553375.75588,
+    "seen": 1794553501.365657,
+    "ast_hash": "bfa2e401c467affd80759a5d135116b4",
+    "semantic_hash": "bfa2e401c467affd80759a5d135116b4"
   },
   "sources/brands/planetarium.md": {
-    "mtime": 1794512891.651408,
-    "seen": 1794513348.3055372,
-    "ast_hash": "cd902273ff88f589dbc87993ebbfffc0",
-    "semantic_hash": "cd902273ff88f589dbc87993ebbfffc0"
+    "mtime": 1794553375.7580593,
+    "seen": 1794553501.3656576,
+    "ast_hash": "8d36b007a0342d57bfa9a5ccb6539735",
+    "semantic_hash": "8d36b007a0342d57bfa9a5ccb6539735"
   },
   "sources/brands/plaud.md": {
-    "mtime": 1794512891.6594815,
-    "seen": 1794513348.3055387,
-    "ast_hash": "a0ec484ee7590900179e14b303c2756e",
-    "semantic_hash": "a0ec484ee7590900179e14b303c2756e"
+    "mtime": 1794553375.765506,
+    "seen": 1794553501.3656585,
+    "ast_hash": "d889305160d7ff588033aedfcdc687cf",
+    "semantic_hash": "d889305160d7ff588033aedfcdc687cf"
   },
   "sources/brands/plugos.md": {
-    "mtime": 1794512891.655064,
-    "seen": 1794513348.3055398,
-    "ast_hash": "11005051ec6a109e1fb52b351b388eba",
-    "semantic_hash": "11005051ec6a109e1fb52b351b388eba"
+    "mtime": 1794553375.7616286,
+    "seen": 1794553501.3656597,
+    "ast_hash": "fbe56061da8303bd056de7220a0267e4",
+    "semantic_hash": "fbe56061da8303bd056de7220a0267e4"
   },
   "sources/brands/pokee.md": {
-    "mtime": 1794512891.6477206,
-    "seen": 1794513348.3055408,
-    "ast_hash": "a029604ee62885e4ab1336d43dd3ce1e",
-    "semantic_hash": "a029604ee62885e4ab1336d43dd3ce1e"
+    "mtime": 1794553375.7510705,
+    "seen": 1794553501.3656604,
+    "ast_hash": "2ca1ae7cb7026806720c8533381c5fc6",
+    "semantic_hash": "2ca1ae7cb7026806720c8533381c5fc6"
   },
   "sources/brands/polar.md": {
-    "mtime": 1794512891.6445343,
-    "seen": 1794513348.3055422,
-    "ast_hash": "da1d4c4e755d29deca600a23b9a1cf1f",
-    "semantic_hash": "da1d4c4e755d29deca600a23b9a1cf1f"
+    "mtime": 1794553375.753546,
+    "seen": 1794553501.3656614,
+    "ast_hash": "1e6375c65299ad70b2a1d489ea2e2b25",
+    "semantic_hash": "1e6375c65299ad70b2a1d489ea2e2b25"
   },
   "sources/brands/pollo.md": {
-    "mtime": 1794512891.6470714,
-    "seen": 1794513348.3055434,
-    "ast_hash": "e4c3a47dd1e07be48aad85ee82fcb1a4",
-    "semantic_hash": "e4c3a47dd1e07be48aad85ee82fcb1a4"
+    "mtime": 1794553375.751365,
+    "seen": 1794553501.365662,
+    "ast_hash": "ca875b01b45fbaaa41b15ed89bd002db",
+    "semantic_hash": "ca875b01b45fbaaa41b15ed89bd002db"
   },
   "sources/brands/polsia.md": {
-    "mtime": 1794512891.644239,
-    "seen": 1794513348.3055446,
-    "ast_hash": "d8a85d7a484d2127a5fc55a0089bd10c",
-    "semantic_hash": "d8a85d7a484d2127a5fc55a0089bd10c"
+    "mtime": 1794553375.7533412,
+    "seen": 1794553501.365663,
+    "ast_hash": "9af1e62de6f4089e60252f864b0198f5",
+    "semantic_hash": "9af1e62de6f4089e60252f864b0198f5"
   },
   "sources/brands/popmaker.md": {
-    "mtime": 1794512891.654607,
-    "seen": 1794513348.3055463,
-    "ast_hash": "5b29277b0897ba8ebd241a5eb7870984",
-    "semantic_hash": "5b29277b0897ba8ebd241a5eb7870984"
+    "mtime": 1794553375.7612047,
+    "seen": 1794553501.3656638,
+    "ast_hash": "9b424915c49b9ff1fb5946b28c3178a7",
+    "semantic_hash": "9b424915c49b9ff1fb5946b28c3178a7"
   },
   "sources/brands/postermywall.md": {
-    "mtime": 1794512891.6578948,
-    "seen": 1794513348.305548,
-    "ast_hash": "18b6de9966a4139b04837eade3fffb27",
-    "semantic_hash": "18b6de9966a4139b04837eade3fffb27"
+    "mtime": 1794553375.7641358,
+    "seen": 1794553501.365665,
+    "ast_hash": "26ef9e55d8ed903ee6af9dbc7c4a72f8",
+    "semantic_hash": "26ef9e55d8ed903ee6af9dbc7c4a72f8"
   },
   "sources/brands/poweredecommerceapplication.md": {
-    "mtime": 1794512891.658589,
-    "seen": 1794513348.3055491,
-    "ast_hash": "9812b9e7dd7fe5602053e041c3aaf1dc",
-    "semantic_hash": "9812b9e7dd7fe5602053e041c3aaf1dc"
+    "mtime": 1794553375.7647119,
+    "seen": 1794553501.3656657,
+    "ast_hash": "5ccaeee472c2809edb554d48c7c3bba4",
+    "semantic_hash": "5ccaeee472c2809edb554d48c7c3bba4"
   },
   "sources/brands/poweredhardwareproduct.md": {
-    "mtime": 1794512891.6511395,
-    "seen": 1794513348.3055503,
-    "ast_hash": "59a7885f5718301fe95276dc928042e2",
-    "semantic_hash": "59a7885f5718301fe95276dc928042e2"
+    "mtime": 1794553375.7577941,
+    "seen": 1794553501.3656669,
+    "ast_hash": "834ab72ba7f16b542b90a11fe7577be3",
+    "semantic_hash": "834ab72ba7f16b542b90a11fe7577be3"
   },
   "sources/brands/poweredvideoeditingtool.md": {
-    "mtime": 1794512891.6546662,
-    "seen": 1794513348.3055515,
-    "ast_hash": "59868b649cd8d7af7486037b52a7fba6",
-    "semantic_hash": "59868b649cd8d7af7486037b52a7fba6"
+    "mtime": 1794553375.7612648,
+    "seen": 1794553501.3656673,
+    "ast_hash": "141d402bb8ce0c2e6f266e86f6f8cb50",
+    "semantic_hash": "141d402bb8ce0c2e6f266e86f6f8cb50"
   },
   "sources/brands/poweredvideogeneratorbrand.md": {
-    "mtime": 1794512891.652815,
-    "seen": 1794513348.3055532,
-    "ast_hash": "4a1dbd83d0eb1c7169f4cb96961f5a2d",
-    "semantic_hash": "4a1dbd83d0eb1c7169f4cb96961f5a2d"
+    "mtime": 1794553375.7592335,
+    "seen": 1794553501.365668,
+    "ast_hash": "d69ef2ac2c0acf1e5be90d71b2668fbd",
+    "semantic_hash": "d69ef2ac2c0acf1e5be90d71b2668fbd"
   },
   "sources/brands/powerguidance.md": {
-    "mtime": 1794512891.651462,
-    "seen": 1794513348.3055546,
-    "ast_hash": "29dd04ec40fca3c59aa3edb900b3744d",
-    "semantic_hash": "29dd04ec40fca3c59aa3edb900b3744d"
+    "mtime": 1794553375.7581167,
+    "seen": 1794553501.365669,
+    "ast_hash": "8a88fe4cd8cacd9b5c23db33d3480bc5",
+    "semantic_hash": "8a88fe4cd8cacd9b5c23db33d3480bc5"
   },
   "sources/brands/predis.md": {
-    "mtime": 1794512891.6502075,
-    "seen": 1794513348.305556,
-    "ast_hash": "eb4260ebf8848c6dabbae170f5cd6b91",
-    "semantic_hash": "eb4260ebf8848c6dabbae170f5cd6b91"
+    "mtime": 1794553375.7570653,
+    "seen": 1794553501.3656702,
+    "ast_hash": "31e98b09740bf16a1f49999d0b72863c",
+    "semantic_hash": "31e98b09740bf16a1f49999d0b72863c"
   },
   "sources/brands/prizmad.md": {
-    "mtime": 1794512891.6538713,
-    "seen": 1794513348.3055573,
-    "ast_hash": "cfb7fdb8ca9909b023b38e86131e74da",
-    "semantic_hash": "cfb7fdb8ca9909b023b38e86131e74da"
+    "mtime": 1794553375.7605064,
+    "seen": 1794553501.365671,
+    "ast_hash": "9d4f2e9107343e849dbed2ccd25fe623",
+    "semantic_hash": "9d4f2e9107343e849dbed2ccd25fe623"
   },
   "sources/brands/procesio.md": {
-    "mtime": 1794512891.6528795,
-    "seen": 1794513348.3055584,
-    "ast_hash": "b5840afcfa3268986510c345cc596899",
-    "semantic_hash": "b5840afcfa3268986510c345cc596899"
+    "mtime": 1794553375.7596385,
+    "seen": 1794553501.3656716,
+    "ast_hash": "5009185ad9151ea5e2b1cb778785a005",
+    "semantic_hash": "5009185ad9151ea5e2b1cb778785a005"
   },
   "sources/brands/procolored.md": {
-    "mtime": 1794512891.6570377,
-    "seen": 1794513348.3055599,
-    "ast_hash": "d69b70210d2204f25009bdebc56c1a27",
-    "semantic_hash": "d69b70210d2204f25009bdebc56c1a27"
+    "mtime": 1794553375.7633483,
+    "seen": 1794553501.3656723,
+    "ast_hash": "25e94a44c14d0a61ac865915cbc36371",
+    "semantic_hash": "25e94a44c14d0a61ac865915cbc36371"
   },
   "sources/brands/promocut.md": {
-    "mtime": 1794512891.6448283,
-    "seen": 1794513348.3055608,
-    "ast_hash": "4608e8e7f83f7ab27418657cf7577806",
-    "semantic_hash": "4608e8e7f83f7ab27418657cf7577806"
+    "mtime": 1794553375.7538078,
+    "seen": 1794553501.3656735,
+    "ast_hash": "ee0f65789ae34743dff4136806ff144f",
+    "semantic_hash": "ee0f65789ae34743dff4136806ff144f"
   },
   "sources/brands/promptedsite.md": {
-    "mtime": 1794512891.653663,
-    "seen": 1794513348.305562,
-    "ast_hash": "fbc79f951fc1212b31f9075b4ec7f1b6",
-    "semantic_hash": "fbc79f951fc1212b31f9075b4ec7f1b6"
+    "mtime": 1794553375.7603505,
+    "seen": 1794553501.3656745,
+    "ast_hash": "957108ad96907ae7c570849641eb9e0f",
+    "semantic_hash": "957108ad96907ae7c570849641eb9e0f"
   },
   "sources/brands/qabunchinfotech.md": {
-    "mtime": 1794512891.6506016,
-    "seen": 1794513348.3055634,
-    "ast_hash": "bc3a8001b1d78caf412f7c49de2c77d6",
-    "semantic_hash": "bc3a8001b1d78caf412f7c49de2c77d6"
+    "mtime": 1794553375.7573736,
+    "seen": 1794553501.3656752,
+    "ast_hash": "5c97507798ad94585ae5d536aa1bd6b1",
+    "semantic_hash": "5c97507798ad94585ae5d536aa1bd6b1"
   },
   "sources/brands/qoder.md": {
-    "mtime": 1794512891.6596136,
-    "seen": 1794513348.3055646,
-    "ast_hash": "991438d7f1de42f88da2e8c6b3e67ce8",
-    "semantic_hash": "991438d7f1de42f88da2e8c6b3e67ce8"
+    "mtime": 1794553375.7656085,
+    "seen": 1794553501.365676,
+    "ast_hash": "4bfd705b53a78d2db2d5bf07de702043",
+    "semantic_hash": "4bfd705b53a78d2db2d5bf07de702043"
   },
   "sources/brands/quickads.md": {
-    "mtime": 1794512891.6489878,
-    "seen": 1794513348.3055658,
-    "ast_hash": "33d34cb4cb10238e69ad5c3e7dfcccda",
-    "semantic_hash": "33d34cb4cb10238e69ad5c3e7dfcccda"
+    "mtime": 1794553375.756146,
+    "seen": 1794553501.365677,
+    "ast_hash": "ea8853f378a8b87e18aaf9c2be652a61",
+    "semantic_hash": "ea8853f378a8b87e18aaf9c2be652a61"
   },
   "sources/brands/quickmagic.md": {
-    "mtime": 1794512891.6581697,
-    "seen": 1794513348.3055673,
-    "ast_hash": "695155d93ccf41c2313b19cb8121b31f",
-    "semantic_hash": "695155d93ccf41c2313b19cb8121b31f"
+    "mtime": 1794553375.764417,
+    "seen": 1794553501.3656778,
+    "ast_hash": "c2ee778a73953b8eea04b625b689c259",
+    "semantic_hash": "c2ee778a73953b8eea04b625b689c259"
   },
   "sources/brands/quityourjobwith.md": {
-    "mtime": 1794512891.660915,
-    "seen": 1794513348.3055685,
-    "ast_hash": "15d2289643b670b2b643842c58854241",
-    "semantic_hash": "15d2289643b670b2b643842c58854241"
+    "mtime": 1794553375.7666605,
+    "seen": 1794553501.3656785,
+    "ast_hash": "7de8a3c0106e7f832869963da3a165d6",
+    "semantic_hash": "7de8a3c0106e7f832869963da3a165d6"
   },
   "sources/brands/quiv.md": {
-    "mtime": 1794512891.654257,
-    "seen": 1794513348.30557,
-    "ast_hash": "b1ebe2f5f8aea29e6f66bdb5a2d041ea",
-    "semantic_hash": "b1ebe2f5f8aea29e6f66bdb5a2d041ea"
+    "mtime": 1794553375.760837,
+    "seen": 1794553501.3656795,
+    "ast_hash": "cfcbfebb39fc9f4846655b60e6608cac",
+    "semantic_hash": "cfcbfebb39fc9f4846655b60e6608cac"
   },
   "sources/brands/readdy.md": {
-    "mtime": 1794512891.6451297,
-    "seen": 1794513348.305571,
-    "ast_hash": "b1e80045ca5df10e10631a52cfd0fd04",
-    "semantic_hash": "b1e80045ca5df10e10631a52cfd0fd04"
+    "mtime": 1794553375.754159,
+    "seen": 1794553501.3656805,
+    "ast_hash": "e1f5a5355829308e06fc3d8e7af86e44",
+    "semantic_hash": "e1f5a5355829308e06fc3d8e7af86e44"
   },
   "sources/brands/recapo.md": {
-    "mtime": 1794512891.659213,
-    "seen": 1794513348.3055725,
-    "ast_hash": "4ee91cbef536e629dbedaf6159ed0052",
-    "semantic_hash": "4ee91cbef536e629dbedaf6159ed0052"
+    "mtime": 1794553375.7652192,
+    "seen": 1794553501.3656812,
+    "ast_hash": "481761e7b2ee64db2dd4fc33ac9b7946",
+    "semantic_hash": "481761e7b2ee64db2dd4fc33ac9b7946"
   },
   "sources/brands/redact.md": {
-    "mtime": 1794512891.656797,
-    "seen": 1794513348.3055737,
-    "ast_hash": "859c54e72f43f1f6d1c797c0801f94eb",
-    "semantic_hash": "859c54e72f43f1f6d1c797c0801f94eb"
+    "mtime": 1794553375.7631087,
+    "seen": 1794553501.3656821,
+    "ast_hash": "2b42ac0165d7076fcc24ef149aa93c45",
+    "semantic_hash": "2b42ac0165d7076fcc24ef149aa93c45"
   },
   "sources/brands/refinar.md": {
-    "mtime": 1794512891.6524112,
-    "seen": 1794513348.3055751,
-    "ast_hash": "86235854aadc261a18baca9ea95c359f",
-    "semantic_hash": "86235854aadc261a18baca9ea95c359f"
+    "mtime": 1794553375.7589228,
+    "seen": 1794553501.3656828,
+    "ast_hash": "4310e2a9400e70c9d4cc906ea53424e7",
+    "semantic_hash": "4310e2a9400e70c9d4cc906ea53424e7"
   },
   "sources/brands/remybyquickads.md": {
-    "mtime": 1794512891.648886,
-    "seen": 1794513348.305576,
-    "ast_hash": "004e3a0d3a97e8d212097c320cda4b49",
-    "semantic_hash": "004e3a0d3a97e8d212097c320cda4b49"
+    "mtime": 1794553375.7560327,
+    "seen": 1794553501.3656843,
+    "ast_hash": "66b3d6647f006f2632124d0ba3337ad7",
+    "semantic_hash": "66b3d6647f006f2632124d0ba3337ad7"
   },
   "sources/brands/renoise.md": {
-    "mtime": 1794512891.653551,
-    "seen": 1794513348.3055778,
-    "ast_hash": "5b5544cfc1928b7e9afbee98410c4d3e",
-    "semantic_hash": "5b5544cfc1928b7e9afbee98410c4d3e"
+    "mtime": 1794553375.7602403,
+    "seen": 1794553501.3656852,
+    "ast_hash": "640a326b9d60562a163e079b70ad2a4a",
+    "semantic_hash": "640a326b9d60562a163e079b70ad2a4a"
   },
   "sources/brands/repdog.md": {
-    "mtime": 1794512891.6516645,
-    "seen": 1794513348.305579,
-    "ast_hash": "995ee4c7e1fc9aa8415ce3b66bdb52aa",
-    "semantic_hash": "995ee4c7e1fc9aa8415ce3b66bdb52aa"
+    "mtime": 1794553375.758298,
+    "seen": 1794553501.365686,
+    "ast_hash": "3a8967ed70b3deb220b58b6ebf022a23",
+    "semantic_hash": "3a8967ed70b3deb220b58b6ebf022a23"
   },
   "sources/brands/riverflow.md": {
-    "mtime": 1794512891.6477926,
-    "seen": 1794513348.3055806,
-    "ast_hash": "aa4d3d139688e59846334ea60f821da5",
-    "semantic_hash": "aa4d3d139688e59846334ea60f821da5"
+    "mtime": 1794553375.75084,
+    "seen": 1794553501.3656876,
+    "ast_hash": "d3a9ddd4e811b2f991a72f14ba2c2ab7",
+    "semantic_hash": "d3a9ddd4e811b2f991a72f14ba2c2ab7"
   },
   "sources/brands/robofy.md": {
-    "mtime": 1794512891.654353,
-    "seen": 1794513348.3055818,
-    "ast_hash": "a3130d7a725979422fa9837edcdf9b5c",
-    "semantic_hash": "a3130d7a725979422fa9837edcdf9b5c"
+    "mtime": 1794553375.760921,
+    "seen": 1794553501.3656883,
+    "ast_hash": "bcf5becf8ce6a9921307d449a1e3f4db",
+    "semantic_hash": "bcf5becf8ce6a9921307d449a1e3f4db"
   },
   "sources/brands/roboneo.md": {
-    "mtime": 1794512891.6595783,
-    "seen": 1794513348.305583,
-    "ast_hash": "c69322589f85b6e34f66a727a3f59c07",
-    "semantic_hash": "c69322589f85b6e34f66a727a3f59c07"
+    "mtime": 1794553375.765579,
+    "seen": 1794553501.365689,
+    "ast_hash": "44d6974a4d14ad1854c9b19ecc3c79c1",
+    "semantic_hash": "44d6974a4d14ad1854c9b19ecc3c79c1"
   },
   "sources/brands/rocketnew.md": {
-    "mtime": 1794512891.6473863,
-    "seen": 1794513348.305585,
-    "ast_hash": "e3122dea00335db820fb976519cf7a06",
-    "semantic_hash": "e3122dea00335db820fb976519cf7a06"
+    "mtime": 1794553375.7507536,
+    "seen": 1794553501.3656898,
+    "ast_hash": "99fdaf41d7cfa4a6c7da7d26a9edfb0c",
+    "semantic_hash": "99fdaf41d7cfa4a6c7da7d26a9edfb0c"
   },
   "sources/brands/rokid.md": {
-    "mtime": 1794512891.6567435,
-    "seen": 1794513348.3055859,
-    "ast_hash": "45396e498f8819e8fd00506355b3095a",
-    "semantic_hash": "45396e498f8819e8fd00506355b3095a"
+    "mtime": 1794553375.7630854,
+    "seen": 1794553501.365691,
+    "ast_hash": "d8302d8690817612546a32f605195a1d",
+    "semantic_hash": "d8302d8690817612546a32f605195a1d"
   },
   "sources/brands/rumbo.md": {
-    "mtime": 1794512891.650628,
-    "seen": 1794513348.3055873,
-    "ast_hash": "38e2e624198c037c945ae1cabaf6b282",
-    "semantic_hash": "38e2e624198c037c945ae1cabaf6b282"
+    "mtime": 1794553375.7573936,
+    "seen": 1794553501.365692,
+    "ast_hash": "a7f17d7e11c5ecb303b9bfff1c073a15",
+    "semantic_hash": "a7f17d7e11c5ecb303b9bfff1c073a15"
   },
   "sources/brands/runable.md": {
-    "mtime": 1794512891.6520894,
-    "seen": 1794513348.3055885,
-    "ast_hash": "0c56736f104d3df6f6541410e70c3d3a",
-    "semantic_hash": "0c56736f104d3df6f6541410e70c3d3a"
+    "mtime": 1794553375.7586844,
+    "seen": 1794553501.3656926,
+    "ast_hash": "d1579d019b40f067a5b2b11c705b8eef",
+    "semantic_hash": "d1579d019b40f067a5b2b11c705b8eef"
   },
   "sources/brands/runableandoutskill.md": {
-    "mtime": 1794512891.6594381,
-    "seen": 1794513348.30559,
-    "ast_hash": "7cefc14768ce464f09fc7cd864834833",
-    "semantic_hash": "7cefc14768ce464f09fc7cd864834833"
+    "mtime": 1794553375.7654467,
+    "seen": 1794553501.3656938,
+    "ast_hash": "5771ef76b5c109f68543197440db14f9",
+    "semantic_hash": "5771ef76b5c109f68543197440db14f9"
   },
   "sources/brands/runninghub.md": {
-    "mtime": 1794512891.6568828,
-    "seen": 1794513348.3055913,
-    "ast_hash": "d1bea50fd7b28febbd91ea2ce38bc3d1",
-    "semantic_hash": "d1bea50fd7b28febbd91ea2ce38bc3d1"
+    "mtime": 1794553375.7631762,
+    "seen": 1794553501.3656945,
+    "ast_hash": "6785b8d49f136694f48f020e223505c6",
+    "semantic_hash": "6785b8d49f136694f48f020e223505c6"
   },
   "sources/brands/runway.md": {
-    "mtime": 1794512891.6463187,
-    "seen": 1794513348.3055928,
-    "ast_hash": "fbf8322c8c5e4f69cbf03c98f9920d65",
-    "semantic_hash": "fbf8322c8c5e4f69cbf03c98f9920d65"
+    "mtime": 1794553375.7549162,
+    "seen": 1794553501.3656952,
+    "ast_hash": "80c4fddfd5946be60155fea209125ad1",
+    "semantic_hash": "80c4fddfd5946be60155fea209125ad1"
   },
   "sources/brands/ryokopro.md": {
-    "mtime": 1794512891.6580427,
-    "seen": 1794513348.3055942,
-    "ast_hash": "c4c00bfde62b44edaa678d1e63b6f1de",
-    "semantic_hash": "c4c00bfde62b44edaa678d1e63b6f1de"
+    "mtime": 1794553375.7642756,
+    "seen": 1794553501.365696,
+    "ast_hash": "e6abbd29596d284e6eb2f0cebab45b90",
+    "semantic_hash": "e6abbd29596d284e6eb2f0cebab45b90"
   },
   "sources/brands/saasconsentmanagementplatformforgdprandprivacycompliance.md": {
-    "mtime": 1794512891.654637,
-    "seen": 1794513348.3055956,
-    "ast_hash": "6de6a69a94cab3b1144d71a35bbd8aed",
-    "semantic_hash": "6de6a69a94cab3b1144d71a35bbd8aed"
+    "mtime": 1794553375.7612348,
+    "seen": 1794553501.365697,
+    "ast_hash": "77169a1b632a3a21062ec05e197a8a90",
+    "semantic_hash": "77169a1b632a3a21062ec05e197a8a90"
   },
   "sources/brands/schol.md": {
-    "mtime": 1794512891.6551356,
-    "seen": 1794513348.305597,
-    "ast_hash": "ff8b8da789ef34092fc8bb504205d716",
-    "semantic_hash": "ff8b8da789ef34092fc8bb504205d716"
+    "mtime": 1794553375.7616875,
+    "seen": 1794553501.365698,
+    "ast_hash": "4ec30d8ec36f3888072064e9aa92a95c",
+    "semantic_hash": "4ec30d8ec36f3888072064e9aa92a95c"
   },
   "sources/brands/sciencepro.md": {
-    "mtime": 1794512891.6570632,
-    "seen": 1794513348.3055992,
-    "ast_hash": "3520ec7d9fc18ad76e58265788cee481",
-    "semantic_hash": "3520ec7d9fc18ad76e58265788cee481"
+    "mtime": 1794553375.7633698,
+    "seen": 1794553501.3656988,
+    "ast_hash": "ce2079071d5ff699f17c63ec28007669",
+    "semantic_hash": "ce2079071d5ff699f17c63ec28007669"
   },
   "sources/brands/scout7.md": {
-    "mtime": 1794512891.6592715,
-    "seen": 1794513348.3056004,
-    "ast_hash": "44f866164b6c0837377f2f56fccafdc4",
-    "semantic_hash": "44f866164b6c0837377f2f56fccafdc4"
+    "mtime": 1794553375.765279,
+    "seen": 1794553501.3657002,
+    "ast_hash": "a4e390e529fff769e43042f4047b04be",
+    "semantic_hash": "a4e390e529fff769e43042f4047b04be"
   },
   "sources/brands/scoutreach.md": {
-    "mtime": 1794512891.6580095,
-    "seen": 1794513348.3056018,
-    "ast_hash": "fa7a5ff754bbab3dd16f26da731dbc93",
-    "semantic_hash": "fa7a5ff754bbab3dd16f26da731dbc93"
+    "mtime": 1794553375.764246,
+    "seen": 1794553501.3657012,
+    "ast_hash": "4b0637fb20dfd42ff86ff5dd254d8a16",
+    "semantic_hash": "4b0637fb20dfd42ff86ff5dd254d8a16"
   },
   "sources/brands/selectra.md": {
-    "mtime": 1794512891.6535096,
-    "seen": 1794513348.305603,
-    "ast_hash": "f7eff8660aa40614dd40164de618d901",
-    "semantic_hash": "f7eff8660aa40614dd40164de618d901"
+    "mtime": 1794553375.7602062,
+    "seen": 1794553501.365702,
+    "ast_hash": "95b4a6a25323b579bbe59ed6c81cbe62",
+    "semantic_hash": "95b4a6a25323b579bbe59ed6c81cbe62"
   },
   "sources/brands/semrush.md": {
-    "mtime": 1794512891.6558745,
-    "seen": 1794513348.3056047,
-    "ast_hash": "2271daf1a913935251e32c711c2e0ade",
-    "semantic_hash": "2271daf1a913935251e32c711c2e0ade"
+    "mtime": 1794553375.7623324,
+    "seen": 1794553501.3657029,
+    "ast_hash": "691be1e04c6c2d6df967c131605c9bec",
+    "semantic_hash": "691be1e04c6c2d6df967c131605c9bec"
   },
   "sources/brands/shay.md": {
-    "mtime": 1794512891.6482842,
-    "seen": 1794513348.3056064,
-    "ast_hash": "a1962e3730e045f4298200d44b47c832",
-    "semantic_hash": "a1962e3730e045f4298200d44b47c832"
+    "mtime": 1794553375.7554932,
+    "seen": 1794553501.3657038,
+    "ast_hash": "b7808e6a38a419fb4c7cfa6cf76efeae",
+    "semantic_hash": "b7808e6a38a419fb4c7cfa6cf76efeae"
   },
   "sources/brands/shotstack.md": {
-    "mtime": 1794512891.6489162,
-    "seen": 1794513348.3056078,
-    "ast_hash": "55e03b3fa451c92a05593957a029923c",
-    "semantic_hash": "55e03b3fa451c92a05593957a029923c"
+    "mtime": 1794553375.756059,
+    "seen": 1794553501.3657048,
+    "ast_hash": "bf3a74e3cb7d6821a60353e0e348aeba",
+    "semantic_hash": "bf3a74e3cb7d6821a60353e0e348aeba"
   },
   "sources/brands/silentfailurewatch.md": {
-    "mtime": 1794512891.6526318,
-    "seen": 1794513348.305609,
-    "ast_hash": "0fe8bd591ec5bdca42fe6095cf4fc894",
-    "semantic_hash": "0fe8bd591ec5bdca42fe6095cf4fc894"
+    "mtime": 1794553375.7591286,
+    "seen": 1794553501.3657055,
+    "ast_hash": "242661bd1f09bd285ba542ed35a09489",
+    "semantic_hash": "242661bd1f09bd285ba542ed35a09489"
   },
   "sources/brands/sirerun.md": {
-    "mtime": 1794512891.6561701,
-    "seen": 1794513348.3056104,
-    "ast_hash": "a12b3b00eb7e04301ded84244ca05d2d",
-    "semantic_hash": "a12b3b00eb7e04301ded84244ca05d2d"
+    "mtime": 1794553375.7625823,
+    "seen": 1794553501.3657062,
+    "ast_hash": "e124ddfcb47a3c418497ecec35402e54",
+    "semantic_hash": "e124ddfcb47a3c418497ecec35402e54"
   },
   "sources/brands/skyrimwristwatch.md": {
-    "mtime": 1794512891.6598482,
-    "seen": 1794513348.3056118,
-    "ast_hash": "f0414c7abbb5fb00f73ad22b0a5faf76",
-    "semantic_hash": "f0414c7abbb5fb00f73ad22b0a5faf76"
+    "mtime": 1794553375.7658663,
+    "seen": 1794553501.365707,
+    "ast_hash": "945082d867ccd7d0fa3a8da9541dd0c4",
+    "semantic_hash": "945082d867ccd7d0fa3a8da9541dd0c4"
   },
   "sources/brands/softr.md": {
-    "mtime": 1794512891.6474419,
-    "seen": 1794513348.305613,
-    "ast_hash": "cdd11f97c22e53f86216ecff5a73cb2d",
-    "semantic_hash": "cdd11f97c22e53f86216ecff5a73cb2d"
+    "mtime": 1794553375.752106,
+    "seen": 1794553501.365708,
+    "ast_hash": "252ffea48ee42f12c839160761cc3345",
+    "semantic_hash": "252ffea48ee42f12c839160761cc3345"
   },
   "sources/brands/solarisstudio.md": {
-    "mtime": 1794512891.6563344,
-    "seen": 1794513348.3056142,
-    "ast_hash": "4567dc158f944e3ab0de3a6a8e28dfd6",
-    "semantic_hash": "4567dc158f944e3ab0de3a6a8e28dfd6"
+    "mtime": 1794553375.7627203,
+    "seen": 1794553501.365709,
+    "ast_hash": "eb64041a4e3e09fbfb0c81c34c49dda7",
+    "semantic_hash": "eb64041a4e3e09fbfb0c81c34c49dda7"
   },
   "sources/brands/soldy.md": {
-    "mtime": 1794512891.6491878,
-    "seen": 1794513348.3056157,
-    "ast_hash": "65192a7b76d9555bd7ef472f5d6d30ed",
-    "semantic_hash": "65192a7b76d9555bd7ef472f5d6d30ed"
+    "mtime": 1794553375.7562885,
+    "seen": 1794553501.36571,
+    "ast_hash": "5294efa7cc40f1c591533609756bc0c2",
+    "semantic_hash": "5294efa7cc40f1c591533609756bc0c2"
   },
   "sources/brands/soundcorebyanker.md": {
-    "mtime": 1794512891.6498094,
-    "seen": 1794513348.3056169,
-    "ast_hash": "8ae5d05ba3d4fcbd1164a460cb97bdce",
-    "semantic_hash": "8ae5d05ba3d4fcbd1164a460cb97bdce"
+    "mtime": 1794553375.756724,
+    "seen": 1794553501.3657112,
+    "ast_hash": "7918141d0a6a46487d43a071dab84890",
+    "semantic_hash": "7918141d0a6a46487d43a071dab84890"
   },
   "sources/brands/sourceful.md": {
-    "mtime": 1794512891.647625,
-    "seen": 1794513348.3056183,
-    "ast_hash": "2a603162f5c7b6d1326b62017d8f7f9a",
-    "semantic_hash": "2a603162f5c7b6d1326b62017d8f7f9a"
+    "mtime": 1794553375.7508817,
+    "seen": 1794553501.3657122,
+    "ast_hash": "9045ee9e523c5a548c0e02d933e24b5f",
+    "semantic_hash": "9045ee9e523c5a548c0e02d933e24b5f"
   },
   "sources/brands/sparkols.md": {
-    "mtime": 1794512891.6569495,
-    "seen": 1794513348.3056195,
-    "ast_hash": "956b423e0239676c5a4b46396f9ccf65",
-    "semantic_hash": "956b423e0239676c5a4b46396f9ccf65"
+    "mtime": 1794553375.76323,
+    "seen": 1794553501.3657131,
+    "ast_hash": "d2e89eb6b19571486365cd2784a1741e",
+    "semantic_hash": "d2e89eb6b19571486365cd2784a1741e"
   },
   "sources/brands/sparkolsagency.md": {
-    "mtime": 1794512891.655985,
-    "seen": 1794513348.3056207,
-    "ast_hash": "02364b826d0a35b665e31b1cd21c23d9",
-    "semantic_hash": "02364b826d0a35b665e31b1cd21c23d9"
+    "mtime": 1794553375.7624261,
+    "seen": 1794553501.365714,
+    "ast_hash": "83d54b007431dbab368c8d5d4ba10b7a",
+    "semantic_hash": "83d54b007431dbab368c8d5d4ba10b7a"
   },
   "sources/brands/sparksite.md": {
-    "mtime": 1794512891.6543849,
-    "seen": 1794513348.305622,
-    "ast_hash": "bf5a3a5e36ee213dd3e6224efa705d4b",
-    "semantic_hash": "bf5a3a5e36ee213dd3e6224efa705d4b"
+    "mtime": 1794553375.760948,
+    "seen": 1794553501.3657153,
+    "ast_hash": "c3f14748eeb56f6c63e8afe20dd8a6c0",
+    "semantic_hash": "c3f14748eeb56f6c63e8afe20dd8a6c0"
   },
   "sources/brands/speakon.md": {
-    "mtime": 1794512891.6449707,
-    "seen": 1794513348.3056235,
-    "ast_hash": "344ad6a874b61f859879151db8bea964",
-    "semantic_hash": "344ad6a874b61f859879151db8bea964"
+    "mtime": 1794553375.7538936,
+    "seen": 1794553501.3657162,
+    "ast_hash": "af249aa3543d4a03fdb3972f2f5bfcba",
+    "semantic_hash": "af249aa3543d4a03fdb3972f2f5bfcba"
   },
   "sources/brands/spira.md": {
-    "mtime": 1794512891.6543267,
-    "seen": 1794513348.3056247,
-    "ast_hash": "70bbd7b17a50294f52c357234ac0a10b",
-    "semantic_hash": "70bbd7b17a50294f52c357234ac0a10b"
+    "mtime": 1794553375.7608943,
+    "seen": 1794553501.365717,
+    "ast_hash": "7cf7bc8b8bdeeb9b27b21d574a764ec9",
+    "semantic_hash": "7cf7bc8b8bdeeb9b27b21d574a764ec9"
   },
   "sources/brands/spytrend.md": {
-    "mtime": 1794512891.6598794,
-    "seen": 1794513348.3056266,
-    "ast_hash": "2381ff48eebdf736b3aea2020d44cbc2",
-    "semantic_hash": "2381ff48eebdf736b3aea2020d44cbc2"
+    "mtime": 1794553375.7658901,
+    "seen": 1794553501.3657176,
+    "ast_hash": "8b94f1ab71ac601675d695f4fe635aec",
+    "semantic_hash": "8b94f1ab71ac601675d695f4fe635aec"
   },
   "sources/brands/stardesk.md": {
-    "mtime": 1794512891.6608303,
-    "seen": 1794513348.3056297,
-    "ast_hash": "19d8165d47d48227a483f07b0a57cdd1",
-    "semantic_hash": "19d8165d47d48227a483f07b0a57cdd1"
+    "mtime": 1794553375.7666137,
+    "seen": 1794553501.365719,
+    "ast_hash": "82cf8f2ac143817951a5086c357bb7bc",
+    "semantic_hash": "82cf8f2ac143817951a5086c357bb7bc"
   },
   "sources/brands/strawberry.md": {
-    "mtime": 1794512891.6578422,
-    "seen": 1794513348.305631,
-    "ast_hash": "24fbb1f15a87062efd14ec1555fdcdc9",
-    "semantic_hash": "24fbb1f15a87062efd14ec1555fdcdc9"
+    "mtime": 1794553375.7640872,
+    "seen": 1794553501.3657203,
+    "ast_hash": "4bb20ab16c64adcf42f818414eaeedf5",
+    "semantic_hash": "4bb20ab16c64adcf42f818414eaeedf5"
   },
   "sources/brands/submagic.md": {
-    "mtime": 1794512891.6516402,
-    "seen": 1794513348.3056324,
-    "ast_hash": "ebd5c3940b42414ee8aa9f8d0e0a1671",
-    "semantic_hash": "ebd5c3940b42414ee8aa9f8d0e0a1671"
+    "mtime": 1794553375.7582774,
+    "seen": 1794553501.365721,
+    "ast_hash": "0c73f6a9fdfc0feac544c79730c4e2ff",
+    "semantic_hash": "0c73f6a9fdfc0feac544c79730c4e2ff"
   },
   "sources/brands/sutyo.md": {
-    "mtime": 1794512891.653057,
-    "seen": 1794513348.3056335,
-    "ast_hash": "e92e0528028a5d6d861e374e80cc479f",
-    "semantic_hash": "e92e0528028a5d6d861e374e80cc479f"
+    "mtime": 1794553375.7598085,
+    "seen": 1794553501.365722,
+    "ast_hash": "3ab64ea3ec7557f79294609c220b0b0f",
+    "semantic_hash": "3ab64ea3ec7557f79294609c220b0b0f"
   },
   "sources/brands/swarms.md": {
-    "mtime": 1794512891.6529043,
-    "seen": 1794513348.3056345,
-    "ast_hash": "34ba883323ee541c0dd8053f65626b35",
-    "semantic_hash": "34ba883323ee541c0dd8053f65626b35"
+    "mtime": 1794553375.7596793,
+    "seen": 1794553501.365723,
+    "ast_hash": "65354ffcb461c3b9803417175d9676ed",
+    "semantic_hash": "65354ffcb461c3b9803417175d9676ed"
   },
   "sources/brands/sweetmyo.md": {
-    "mtime": 1794512891.6510825,
-    "seen": 1794513348.3056357,
-    "ast_hash": "11969a9c9d36b7ce55c764cd37e06784",
-    "semantic_hash": "11969a9c9d36b7ce55c764cd37e06784"
+    "mtime": 1794553375.7577446,
+    "seen": 1794553501.3657238,
+    "ast_hash": "d9cd34df2bbd11a557693134314addaf",
+    "semantic_hash": "d9cd34df2bbd11a557693134314addaf"
   },
   "sources/brands/systemind.md": {
-    "mtime": 1794512891.6504524,
-    "seen": 1794513348.3056364,
-    "ast_hash": "f0c430958d0b621836f5be5b9e592116",
-    "semantic_hash": "f0c430958d0b621836f5be5b9e592116"
+    "mtime": 1794553375.7572603,
+    "seen": 1794553501.365725,
+    "ast_hash": "4011a38598ad4be5fd80c7eb7e56ff8c",
+    "semantic_hash": "4011a38598ad4be5fd80c7eb7e56ff8c"
   },
   "sources/brands/tabbit.md": {
-    "mtime": 1794512891.6572623,
-    "seen": 1794513348.3056376,
-    "ast_hash": "6cfa24f613ebacc00d61feb5377b6489",
-    "semantic_hash": "6cfa24f613ebacc00d61feb5377b6489"
+    "mtime": 1794553375.7635674,
+    "seen": 1794553501.365726,
+    "ast_hash": "c0819af5db77a489ac51e0002cc075f0",
+    "semantic_hash": "c0819af5db77a489ac51e0002cc075f0"
   },
   "sources/brands/talhalabs.md": {
-    "mtime": 1794512891.649989,
-    "seen": 1794513348.3056421,
-    "ast_hash": "9898c5d78b8ab3ceea2fc651e9f8cd3e",
-    "semantic_hash": "9898c5d78b8ab3ceea2fc651e9f8cd3e"
+    "mtime": 1794553375.7568703,
+    "seen": 1794553501.3657272,
+    "ast_hash": "ec3203dbdad67d17bfb59f6d149b2225",
+    "semantic_hash": "ec3203dbdad67d17bfb59f6d149b2225"
   },
   "sources/brands/tapelark.md": {
-    "mtime": 1794512891.6547506,
-    "seen": 1794513348.3056436,
-    "ast_hash": "06e03e19a64fd51165ef2d0874339696",
-    "semantic_hash": "06e03e19a64fd51165ef2d0874339696"
+    "mtime": 1794553375.7613368,
+    "seen": 1794553501.365728,
+    "ast_hash": "9e22fc4ec4a0c13297545df95efd9a43",
+    "semantic_hash": "9e22fc4ec4a0c13297545df95efd9a43"
   },
   "sources/brands/tapnow.md": {
-    "mtime": 1794512891.6590455,
-    "seen": 1794513348.3056443,
-    "ast_hash": "5051819552cb2cc24e1ba5e7f692a503",
-    "semantic_hash": "5051819552cb2cc24e1ba5e7f692a503"
+    "mtime": 1794553375.7650833,
+    "seen": 1794553501.3657289,
+    "ast_hash": "672a3d0d6606c5cba661a11af275d541",
+    "semantic_hash": "672a3d0d6606c5cba661a11af275d541"
   },
   "sources/brands/tapo.md": {
-    "mtime": 1794512891.6490707,
-    "seen": 1794513348.3056452,
-    "ast_hash": "0a4c8a350c3b9ddb24e7b781994b1a84",
-    "semantic_hash": "0a4c8a350c3b9ddb24e7b781994b1a84"
+    "mtime": 1794553375.756199,
+    "seen": 1794553501.3657298,
+    "ast_hash": "978cac6156b9461aaae820ded1c36fb1",
+    "semantic_hash": "978cac6156b9461aaae820ded1c36fb1"
   },
   "sources/brands/teamily.md": {
-    "mtime": 1794512891.6441221,
-    "seen": 1794513348.3056464,
-    "ast_hash": "3bd6316367b9aa776bda8d13752f9b8a",
-    "semantic_hash": "3bd6316367b9aa776bda8d13752f9b8a"
+    "mtime": 1794553375.7532518,
+    "seen": 1794553501.3657308,
+    "ast_hash": "58c70b9b5350bd0779cb193e0a3ae815",
+    "semantic_hash": "58c70b9b5350bd0779cb193e0a3ae815"
   },
   "sources/brands/tecdo.md": {
-    "mtime": 1794512891.6504252,
-    "seen": 1794513348.3056474,
-    "ast_hash": "1c45b877c8a5f3bca958c7b441d0742a",
-    "semantic_hash": "1c45b877c8a5f3bca958c7b441d0742a"
+    "mtime": 1794553375.7572403,
+    "seen": 1794553501.3657312,
+    "ast_hash": "253dfbcea5cbea60fc2658b1f5332536",
+    "semantic_hash": "253dfbcea5cbea60fc2658b1f5332536"
   },
   "sources/brands/techandbrands.md": {
-    "mtime": 1794512891.6591427,
-    "seen": 1794513348.3056483,
-    "ast_hash": "70f203b798921939ecb79be2d636a16f",
-    "semantic_hash": "70f203b798921939ecb79be2d636a16f"
+    "mtime": 1794553375.7651439,
+    "seen": 1794553501.3657324,
+    "ast_hash": "40880fd551c565d0e7253188a7da3def",
+    "semantic_hash": "40880fd551c565d0e7253188a7da3def"
   },
   "sources/brands/techpod.md": {
-    "mtime": 1794512891.6560736,
-    "seen": 1794513348.3056495,
-    "ast_hash": "554a5f9443bcb601ad8eae4f0d2187ed",
-    "semantic_hash": "554a5f9443bcb601ad8eae4f0d2187ed"
+    "mtime": 1794553375.7624996,
+    "seen": 1794553501.3657334,
+    "ast_hash": "862f4c8d43f8dc13633e2bc290d6e50e",
+    "semantic_hash": "862f4c8d43f8dc13633e2bc290d6e50e"
   },
   "sources/brands/templify.md": {
-    "mtime": 1794512891.6582756,
-    "seen": 1794513348.3056505,
-    "ast_hash": "11a971e1c016230a8e29a4770671084b",
-    "semantic_hash": "11a971e1c016230a8e29a4770671084b"
+    "mtime": 1794553375.7644901,
+    "seen": 1794553501.3657343,
+    "ast_hash": "df6de2c4e20913bba3c4112b3c537223",
+    "semantic_hash": "df6de2c4e20913bba3c4112b3c537223"
   },
   "sources/brands/tencent.md": {
-    "mtime": 1794512891.6599042,
-    "seen": 1794513348.3056512,
-    "ast_hash": "28209f5564e851898eeb28f07345b501",
-    "semantic_hash": "28209f5564e851898eeb28f07345b501"
+    "mtime": 1794553375.7659109,
+    "seen": 1794553501.3657355,
+    "ast_hash": "2e35ba0b74b323413942a21acee5f436",
+    "semantic_hash": "2e35ba0b74b323413942a21acee5f436"
   },
   "sources/brands/tencentcloud.md": {
-    "mtime": 1794512891.655486,
-    "seen": 1794513348.3056521,
-    "ast_hash": "10e33a54134347e9a9ab7e10b2584cc3",
-    "semantic_hash": "10e33a54134347e9a9ab7e10b2584cc3"
+    "mtime": 1794553375.762031,
+    "seen": 1794553501.3657367,
+    "ast_hash": "16c52e834cf8835a9038809cf0e3b322",
+    "semantic_hash": "16c52e834cf8835a9038809cf0e3b322"
   },
   "sources/brands/tencentdesignmiora.md": {
-    "mtime": 1794512891.6510541,
-    "seen": 1794513348.3056533,
-    "ast_hash": "15573604c5005cc4c92a0a8030526793",
-    "semantic_hash": "15573604c5005cc4c92a0a8030526793"
+    "mtime": 1794553375.757717,
+    "seen": 1794553501.3657377,
+    "ast_hash": "ac4e86ba7a406a38c2a6d5ffad701df4",
+    "semantic_hash": "ac4e86ba7a406a38c2a6d5ffad701df4"
   },
   "sources/brands/terabox.md": {
-    "mtime": 1794512891.6603587,
-    "seen": 1794513348.3056545,
-    "ast_hash": "feaca8f53c94fd4cd1dfc568f3cbc225",
-    "semantic_hash": "feaca8f53c94fd4cd1dfc568f3cbc225"
+    "mtime": 1794553375.7662501,
+    "seen": 1794553501.3657384,
+    "ast_hash": "a1bac39af97f2131cf6e6c166d025f9a",
+    "semantic_hash": "a1bac39af97f2131cf6e6c166d025f9a"
   },
   "sources/brands/testsprite.md": {
-    "mtime": 1794512891.6542315,
-    "seen": 1794513348.3056555,
-    "ast_hash": "ad1841bddd5ee16315a96bc9f731ee11",
-    "semantic_hash": "ad1841bddd5ee16315a96bc9f731ee11"
+    "mtime": 1794553375.760813,
+    "seen": 1794553501.3657393,
+    "ast_hash": "758ae3e1c3c1757883074a19f467eb46",
+    "semantic_hash": "758ae3e1c3c1757883074a19f467eb46"
   },
   "sources/brands/theacademy.md": {
-    "mtime": 1794512891.65772,
-    "seen": 1794513348.3056564,
-    "ast_hash": "48fe805570ecf00bcdb5a22775aa2f8d",
-    "semantic_hash": "48fe805570ecf00bcdb5a22775aa2f8d"
+    "mtime": 1794553375.7639513,
+    "seen": 1794553501.3657408,
+    "ast_hash": "1d2f4d556fb86d09d03c9d207cbe461e",
+    "semantic_hash": "1d2f4d556fb86d09d03c9d207cbe461e"
   },
   "sources/brands/thecrazyentrepreneur.md": {
-    "mtime": 1794512891.658561,
-    "seen": 1794513348.3056571,
-    "ast_hash": "0b56985ce5636acb19621432f0193ccb",
-    "semantic_hash": "0b56985ce5636acb19621432f0193ccb"
+    "mtime": 1794553375.7646887,
+    "seen": 1794553501.3657415,
+    "ast_hash": "f0dbd08f14eda864871e43332665710d",
+    "semantic_hash": "f0dbd08f14eda864871e43332665710d"
   },
   "sources/brands/thecrazyentrepreneurpoweredecommerceapplication.md": {
-    "mtime": 1794512891.658532,
-    "seen": 1794513348.3056583,
-    "ast_hash": "8ea64afad244fdd8e5689610412a9cd4",
-    "semantic_hash": "8ea64afad244fdd8e5689610412a9cd4"
+    "mtime": 1794553375.7646651,
+    "seen": 1794553501.3657427,
+    "ast_hash": "df167a48cd5a2da1237120f4c3248d7e",
+    "semantic_hash": "df167a48cd5a2da1237120f4c3248d7e"
   },
   "sources/brands/theneuronacademy.md": {
-    "mtime": 1794512891.6611578,
-    "seen": 1794513348.305659,
-    "ast_hash": "473c953c0b0b4b430e10cdf6edd93ca0",
-    "semantic_hash": "473c953c0b0b4b430e10cdf6edd93ca0"
+    "mtime": 1794553375.7668989,
+    "seen": 1794553501.3657436,
+    "ast_hash": "a1365feeda6b583b225452cd288a7298",
+    "semantic_hash": "a1365feeda6b583b225452cd288a7298"
   },
   "sources/brands/thrivecan.md": {
-    "mtime": 1794512891.6503384,
-    "seen": 1794513348.3056602,
-    "ast_hash": "50a8c5460e97bc66c8b4356634e78278",
-    "semantic_hash": "50a8c5460e97bc66c8b4356634e78278"
+    "mtime": 1794553375.7571695,
+    "seen": 1794553501.3657446,
+    "ast_hash": "165b61bd74b2896b1e2c155854d26382",
+    "semantic_hash": "165b61bd74b2896b1e2c155854d26382"
   },
   "sources/brands/tianyuebusinessschool.md": {
-    "mtime": 1794512891.6590784,
-    "seen": 1794513348.3056614,
-    "ast_hash": "ca6a96a62799bf770c8af67c1db3c149",
-    "semantic_hash": "ca6a96a62799bf770c8af67c1db3c149"
+    "mtime": 1794553375.7651072,
+    "seen": 1794553501.3657453,
+    "ast_hash": "5397e5a4a06837b17a8de77b85ff339e",
+    "semantic_hash": "5397e5a4a06837b17a8de77b85ff339e"
   },
   "sources/brands/tianyuefinancialbusinessacademy.md": {
-    "mtime": 1794512891.6587043,
-    "seen": 1794513348.3056626,
-    "ast_hash": "6695f30c1d9a21be74730c82d4a36fb5",
-    "semantic_hash": "6695f30c1d9a21be74730c82d4a36fb5"
+    "mtime": 1794553375.7648158,
+    "seen": 1794553501.3657463,
+    "ast_hash": "28f4b8a003a07bea225491a688b3b5e4",
+    "semantic_hash": "28f4b8a003a07bea225491a688b3b5e4"
   },
   "sources/brands/tiinyhost.md": {
-    "mtime": 1794512891.6485426,
-    "seen": 1794513348.3056638,
-    "ast_hash": "65efe2071ca1341d67cafcfbc5c7b7a1",
-    "semantic_hash": "65efe2071ca1341d67cafcfbc5c7b7a1"
+    "mtime": 1794553375.7557151,
+    "seen": 1794553501.3657472,
+    "ast_hash": "4047f10e36f90eaa71393a8cd39614e2",
+    "semantic_hash": "4047f10e36f90eaa71393a8cd39614e2"
   },
   "sources/brands/tool.md": {
-    "mtime": 1794512891.649751,
-    "seen": 1794513348.3056648,
-    "ast_hash": "f905a1c5a8b61a9f8323e08db27e4f42",
-    "semantic_hash": "f905a1c5a8b61a9f8323e08db27e4f42"
+    "mtime": 1794553375.7567036,
+    "seen": 1794553501.3657482,
+    "ast_hash": "afa22fb966fd57efb08ec1f6c0ce4ad9",
+    "semantic_hash": "afa22fb966fd57efb08ec1f6c0ce4ad9"
   },
   "sources/brands/toolcampaign.md": {
-    "mtime": 1794512891.656282,
-    "seen": 1794513348.3056655,
-    "ast_hash": "cd933cec5f85c25d99a43432eb594134",
-    "semantic_hash": "cd933cec5f85c25d99a43432eb594134"
+    "mtime": 1794553375.762674,
+    "seen": 1794553501.365749,
+    "ast_hash": "4e6e8e2da79e552d0cafa83616766e5f",
+    "semantic_hash": "4e6e8e2da79e552d0cafa83616766e5f"
   },
   "sources/brands/toolcampaigns.md": {
-    "mtime": 1794512891.656251,
-    "seen": 1794513348.3056664,
-    "ast_hash": "45710e69f0543a771e3d9e014f1edffe",
-    "semantic_hash": "45710e69f0543a771e3d9e014f1edffe"
+    "mtime": 1794553375.7626467,
+    "seen": 1794553501.36575,
+    "ast_hash": "cf7591821a47c7ad3098baba63037fb3",
+    "semantic_hash": "cf7591821a47c7ad3098baba63037fb3"
   },
   "sources/brands/tools.md": {
-    "mtime": 1794512891.6525517,
-    "seen": 1794513348.3056676,
-    "ast_hash": "c030239ea58e86858f63a83ace71c5af",
-    "semantic_hash": "c030239ea58e86858f63a83ace71c5af"
+    "mtime": 1794553375.7590625,
+    "seen": 1794553501.365751,
+    "ast_hash": "a5cd8690ca840a4a2f824c408c900e66",
+    "semantic_hash": "a5cd8690ca840a4a2f824c408c900e66"
   },
   "sources/brands/toptal.md": {
-    "mtime": 1794512891.6500683,
-    "seen": 1794513348.3056684,
-    "ast_hash": "5874c90e17dff3ae41b63581d90be489",
-    "semantic_hash": "5874c90e17dff3ae41b63581d90be489"
+    "mtime": 1794553375.7569318,
+    "seen": 1794553501.3657517,
+    "ast_hash": "8ecc4a187a8c5b461656c78518e37a75",
+    "semantic_hash": "8ecc4a187a8c5b461656c78518e37a75"
   },
   "sources/brands/topview.md": {
-    "mtime": 1794512891.643324,
-    "seen": 1794513348.3056693,
-    "ast_hash": "ad303770c7fc1dddf6fca47ffc0e5754",
-    "semantic_hash": "ad303770c7fc1dddf6fca47ffc0e5754"
+    "mtime": 1794553375.752613,
+    "seen": 1794553501.3657525,
+    "ast_hash": "d7d12d78f4e6dd96e3aeb7b7261852fa",
+    "semantic_hash": "d7d12d78f4e6dd96e3aeb7b7261852fa"
   },
   "sources/brands/torrasglass.md": {
-    "mtime": 1794512891.65545,
-    "seen": 1794513348.3056705,
-    "ast_hash": "310a5f570820f9a0a4ede5472044ba19",
-    "semantic_hash": "310a5f570820f9a0a4ede5472044ba19"
+    "mtime": 1794553375.7619975,
+    "seen": 1794553501.3657534,
+    "ast_hash": "804cdef0ad99d0c91a44085cf44e5546",
+    "semantic_hash": "804cdef0ad99d0c91a44085cf44e5546"
   },
   "sources/brands/torrasruggedcaseandultraglassscreenprotector.md": {
-    "mtime": 1794512891.6597195,
-    "seen": 1794513348.3056715,
-    "ast_hash": "2cbad1fde6b996b886be7fc9004ad75d",
-    "semantic_hash": "2cbad1fde6b996b886be7fc9004ad75d"
+    "mtime": 1794553375.7657664,
+    "seen": 1794553501.3657544,
+    "ast_hash": "fbaae6db4a2c939f8f4674c48fda1262",
+    "semantic_hash": "fbaae6db4a2c939f8f4674c48fda1262"
   },
   "sources/brands/toughtongue.md": {
-    "mtime": 1794512891.6483932,
-    "seen": 1794513348.3056722,
-    "ast_hash": "36c5c256dd5bc238c3213c3d8cabc2e0",
-    "semantic_hash": "36c5c256dd5bc238c3213c3d8cabc2e0"
+    "mtime": 1794553375.7555897,
+    "seen": 1794553501.365755,
+    "ast_hash": "84aa83285411ffd6278fcc317933fbaa",
+    "semantic_hash": "84aa83285411ffd6278fcc317933fbaa"
   },
   "sources/brands/tripo.md": {
-    "mtime": 1794512891.649961,
-    "seen": 1794513348.305673,
-    "ast_hash": "7bdebaef5e94e9a6edffdfe984ff78b4",
-    "semantic_hash": "7bdebaef5e94e9a6edffdfe984ff78b4"
+    "mtime": 1794553375.7568448,
+    "seen": 1794553501.3657563,
+    "ast_hash": "c726649db86423c8b89b09ea3272f688",
+    "semantic_hash": "c726649db86423c8b89b09ea3272f688"
   },
   "sources/brands/tripo3d.md": {
-    "mtime": 1794512891.64534,
-    "seen": 1794513348.305674,
-    "ast_hash": "2b50b664a8889237953dafb3c2a7d3fb",
-    "semantic_hash": "2b50b664a8889237953dafb3c2a7d3fb"
+    "mtime": 1794553375.7543547,
+    "seen": 1794553501.365757,
+    "ast_hash": "d23ecf726d36d5475e87b8db0a890bb0",
+    "semantic_hash": "d23ecf726d36d5475e87b8db0a890bb0"
   },
   "sources/brands/tripoapi.md": {
-    "mtime": 1794512891.6600857,
-    "seen": 1794513348.3056748,
-    "ast_hash": "4b7e7a240d2436f7f42eaa8d7c41dd7d",
-    "semantic_hash": "4b7e7a240d2436f7f42eaa8d7c41dd7d"
+    "mtime": 1794553375.7660336,
+    "seen": 1794553501.3657577,
+    "ast_hash": "217afd600e3136ac3054907c08000643",
+    "semantic_hash": "217afd600e3136ac3054907c08000643"
   },
   "sources/brands/tripostudio.md": {
-    "mtime": 1794512891.6551836,
-    "seen": 1794513348.3056755,
-    "ast_hash": "b3ae3f20567e36ece9f95b1994aeb8e4",
-    "semantic_hash": "b3ae3f20567e36ece9f95b1994aeb8e4"
+    "mtime": 1794553375.7617264,
+    "seen": 1794553501.3657584,
+    "ast_hash": "2bfc2e6149c5feef9c95028f4cb6b1f6",
+    "semantic_hash": "2bfc2e6149c5feef9c95028f4cb6b1f6"
   },
   "sources/brands/tulvo.md": {
-    "mtime": 1794512891.6557114,
-    "seen": 1794513348.3056765,
-    "ast_hash": "6a2a29d990be24c3f197f35d2e936880",
-    "semantic_hash": "6a2a29d990be24c3f197f35d2e936880"
+    "mtime": 1794553375.7622411,
+    "seen": 1794553501.3657591,
+    "ast_hash": "dfc833654369ac7d882f2c6283c91147",
+    "semantic_hash": "dfc833654369ac7d882f2c6283c91147"
   },
   "sources/brands/turnfeat.md": {
-    "mtime": 1794512891.6608553,
-    "seen": 1794513348.3056774,
-    "ast_hash": "d4ff1e6071a6a00502541230998bd2f4",
-    "semantic_hash": "d4ff1e6071a6a00502541230998bd2f4"
+    "mtime": 1794553375.7666378,
+    "seen": 1794553501.3657603,
+    "ast_hash": "4dc12bc90f61eac1836dd56c43e7fac3",
+    "semantic_hash": "4dc12bc90f61eac1836dd56c43e7fac3"
   },
   "sources/brands/twinr.md": {
-    "mtime": 1794512891.657804,
-    "seen": 1794513348.3056784,
-    "ast_hash": "0b5a0f37a358f95e3c0d6d2eaa90688c",
-    "semantic_hash": "0b5a0f37a358f95e3c0d6d2eaa90688c"
+    "mtime": 1794553375.7640479,
+    "seen": 1794553501.365761,
+    "ast_hash": "bb3786300457cff4389b9f69291e0d36",
+    "semantic_hash": "bb3786300457cff4389b9f69291e0d36"
   },
   "sources/brands/typeless.md": {
-    "mtime": 1794512891.6527164,
-    "seen": 1794513348.305679,
-    "ast_hash": "452dad863a4963d32983d7d803e49499",
-    "semantic_hash": "452dad863a4963d32983d7d803e49499"
+    "mtime": 1794553375.759188,
+    "seen": 1794553501.3657618,
+    "ast_hash": "d2dc431b791d592417fe3ee42bb8d586",
+    "semantic_hash": "d2dc431b791d592417fe3ee42bb8d586"
   },
   "sources/brands/umevo.md": {
-    "mtime": 1794512891.6574576,
-    "seen": 1794513348.3056798,
-    "ast_hash": "20a772b6861dae8cc2c1e26f1c5854e6",
-    "semantic_hash": "20a772b6861dae8cc2c1e26f1c5854e6"
+    "mtime": 1794553375.763737,
+    "seen": 1794553501.3657625,
+    "ast_hash": "f3fb7c1f3a1810af31b2aefd63e561c3",
+    "semantic_hash": "f3fb7c1f3a1810af31b2aefd63e561c3"
   },
   "sources/brands/unknown.md": {
-    "mtime": 1794512891.648081,
-    "seen": 1794513348.3056808,
-    "ast_hash": "10d7ecf7497a0ca9869f1580e79f7f72",
-    "semantic_hash": "10d7ecf7497a0ca9869f1580e79f7f72"
+    "mtime": 1794553375.7506118,
+    "seen": 1794553501.3657637,
+    "ast_hash": "0a123b3be9e64768b0a716acef15a23d",
+    "semantic_hash": "0a123b3be9e64768b0a716acef15a23d"
   },
   "sources/brands/updf.md": {
-    "mtime": 1794512891.6553986,
-    "seen": 1794513348.3056817,
-    "ast_hash": "fe4f43ee9ecf5130a134180659c7c74c",
-    "semantic_hash": "fe4f43ee9ecf5130a134180659c7c74c"
+    "mtime": 1794553375.7619214,
+    "seen": 1794553501.3657644,
+    "ast_hash": "d952762e044075882cd546fae5997e13",
+    "semantic_hash": "d952762e044075882cd546fae5997e13"
   },
   "sources/brands/upfluence.md": {
-    "mtime": 1794512891.647341,
-    "seen": 1794513348.3056824,
-    "ast_hash": "4c83053631f1fb6cacd5d54113ca7278",
-    "semantic_hash": "4c83053631f1fb6cacd5d54113ca7278"
+    "mtime": 1794553375.751038,
+    "seen": 1794553501.365765,
+    "ast_hash": "a10ed35b026444abb574e16c0749244a",
+    "semantic_hash": "a10ed35b026444abb574e16c0749244a"
   },
   "sources/brands/valchy.md": {
-    "mtime": 1794512891.6433692,
-    "seen": 1794513348.3056834,
+    "mtime": 1794553375.7526448,
+    "seen": 1794553501.3657663,
     "ast_hash": "8062356189bbf7752c6dd0c35847e5fc",
     "semantic_hash": "8062356189bbf7752c6dd0c35847e5fc"
   },
   "sources/brands/velanir.md": {
-    "mtime": 1794512891.6472397,
-    "seen": 1794513348.3056843,
-    "ast_hash": "7525c0f82bf48d16dc5ed27bcda29ab9",
-    "semantic_hash": "7525c0f82bf48d16dc5ed27bcda29ab9"
+    "mtime": 1794553375.7522829,
+    "seen": 1794553501.3657672,
+    "ast_hash": "221e90e3e9023c4a6b2d1dbeaa092c63",
+    "semantic_hash": "221e90e3e9023c4a6b2d1dbeaa092c63"
   },
   "sources/brands/vibecoding.md": {
-    "mtime": 1794512891.6513531,
-    "seen": 1794513348.3056853,
-    "ast_hash": "b62681929e129a51b7103b7cf16b6ba4",
-    "semantic_hash": "b62681929e129a51b7103b7cf16b6ba4"
+    "mtime": 1794553375.7579887,
+    "seen": 1794553501.365768,
+    "ast_hash": "9cf186a2d0da2906d45ea994562cc704",
+    "semantic_hash": "9cf186a2d0da2906d45ea994562cc704"
   },
   "sources/brands/vibeconemergentlabs.md": {
-    "mtime": 1794512891.6564913,
-    "seen": 1794513348.305686,
-    "ast_hash": "48f3c9e12536260a7b0947dac8b4bfa5",
-    "semantic_hash": "48f3c9e12536260a7b0947dac8b4bfa5"
+    "mtime": 1794553375.762841,
+    "seen": 1794553501.3657687,
+    "ast_hash": "616e52d6e71609c32b52b840525e5907",
+    "semantic_hash": "616e52d6e71609c32b52b840525e5907"
   },
   "sources/brands/vibesell.md": {
-    "mtime": 1794512891.650547,
-    "seen": 1794513348.305687,
-    "ast_hash": "0d04d03615a4a5f683b7c50340311191",
-    "semantic_hash": "0d04d03615a4a5f683b7c50340311191"
+    "mtime": 1794553375.757327,
+    "seen": 1794553501.3657694,
+    "ast_hash": "bb85885f5d9a8560f677c18bee61261f",
+    "semantic_hash": "bb85885f5d9a8560f677c18bee61261f"
   },
   "sources/brands/vidagent.md": {
-    "mtime": 1794512891.6512733,
-    "seen": 1794513348.3056881,
-    "ast_hash": "c9c53b23748081923970c18c75118e61",
-    "semantic_hash": "c9c53b23748081923970c18c75118e61"
+    "mtime": 1794553375.757883,
+    "seen": 1794553501.3657703,
+    "ast_hash": "defaeb10da7f3b8a8e961ab6e3589cd5",
+    "semantic_hash": "defaeb10da7f3b8a8e961ab6e3589cd5"
   },
   "sources/brands/videocampaigns.md": {
-    "mtime": 1794512891.656856,
-    "seen": 1794513348.3056889,
-    "ast_hash": "90e26a034e5e85c64fe7404c1134334f",
-    "semantic_hash": "90e26a034e5e85c64fe7404c1134334f"
+    "mtime": 1794553375.7631555,
+    "seen": 1794553501.3657713,
+    "ast_hash": "c810de1c46d1d46a35f3d5aa1a4acb35",
+    "semantic_hash": "c810de1c46d1d46a35f3d5aa1a4acb35"
   },
   "sources/brands/videocollaboration.md": {
-    "mtime": 1794512891.6561365,
-    "seen": 1794513348.3056896,
-    "ast_hash": "3ddcf6b84a8e8e45690daa1032adc270",
-    "semantic_hash": "3ddcf6b84a8e8e45690daa1032adc270"
+    "mtime": 1794553375.7625473,
+    "seen": 1794553501.365772,
+    "ast_hash": "8c2db27534fb456d042aa0a5eada7773",
+    "semantic_hash": "8c2db27534fb456d042aa0a5eada7773"
   },
   "sources/brands/videoduck.md": {
-    "mtime": 1794512891.6502845,
-    "seen": 1794513348.3056903,
-    "ast_hash": "7c34b38b233c15e029db097e9214e3ee",
-    "semantic_hash": "7c34b38b233c15e029db097e9214e3ee"
+    "mtime": 1794553375.7571256,
+    "seen": 1794553501.365773,
+    "ast_hash": "9dbbee9bb1516e67429a25d1e8862ab7",
+    "semantic_hash": "9dbbee9bb1516e67429a25d1e8862ab7"
   },
   "sources/brands/videogenerationtool.md": {
-    "mtime": 1794512891.650491,
-    "seen": 1794513348.3056915,
-    "ast_hash": "00b7ea04b5b303fd3231a26943b60994",
-    "semantic_hash": "00b7ea04b5b303fd3231a26943b60994"
+    "mtime": 1794553375.757282,
+    "seen": 1794553501.365774,
+    "ast_hash": "56fa3e0bcdc6a1f3c36f32dd91a0efa3",
+    "semantic_hash": "56fa3e0bcdc6a1f3c36f32dd91a0efa3"
   },
   "sources/brands/vidmuse.md": {
-    "mtime": 1794512891.6586196,
-    "seen": 1794513348.3056924,
-    "ast_hash": "85c740988d1d39d945d875293727e321",
-    "semantic_hash": "85c740988d1d39d945d875293727e321"
+    "mtime": 1794553375.7647388,
+    "seen": 1794553501.3657746,
+    "ast_hash": "f17481d20fa9a6c4d737dab686542cde",
+    "semantic_hash": "f17481d20fa9a6c4d737dab686542cde"
   },
   "sources/brands/vidnext.md": {
-    "mtime": 1794512891.654724,
-    "seen": 1794513348.3056931,
-    "ast_hash": "59ac59cfed308f3061c93da3076fa1be",
-    "semantic_hash": "59ac59cfed308f3061c93da3076fa1be"
+    "mtime": 1794553375.761313,
+    "seen": 1794553501.3657756,
+    "ast_hash": "79eb23933e1bf3dec3d2884df21a4a1a",
+    "semantic_hash": "79eb23933e1bf3dec3d2884df21a4a1a"
   },
   "sources/brands/viktor.md": {
-    "mtime": 1794512891.6578689,
-    "seen": 1794513348.305694,
-    "ast_hash": "41fed4c18c31bea58bef3cad3040d953",
-    "semantic_hash": "41fed4c18c31bea58bef3cad3040d953"
+    "mtime": 1794553375.7641134,
+    "seen": 1794553501.365776,
+    "ast_hash": "767c3978763f307d9177cb477d5c8760",
+    "semantic_hash": "767c3978763f307d9177cb477d5c8760"
   },
   "sources/brands/vinaai.md": {
-    "mtime": 1794512891.6601188,
-    "seen": 1794513348.3056953,
-    "ast_hash": "6c317b57b52cdb1abb8da5374da8803a",
-    "semantic_hash": "6c317b57b52cdb1abb8da5374da8803a"
+    "mtime": 1794553375.7660573,
+    "seen": 1794553501.3657773,
+    "ast_hash": "bbabcb9b57141b14bdb01231047cf199",
+    "semantic_hash": "bbabcb9b57141b14bdb01231047cf199"
   },
   "sources/brands/vinabot.md": {
-    "mtime": 1794512891.6531117,
-    "seen": 1794513348.3056962,
-    "ast_hash": "1fb583fc0992eff763be06e061042db6",
-    "semantic_hash": "1fb583fc0992eff763be06e061042db6"
+    "mtime": 1794553375.7598546,
+    "seen": 1794553501.365778,
+    "ast_hash": "7f7996c9bf9212e84c316f29e16a45c4",
+    "semantic_hash": "7f7996c9bf9212e84c316f29e16a45c4"
   },
   "sources/brands/vinc.md": {
-    "mtime": 1794512891.6576622,
-    "seen": 1794513348.305697,
-    "ast_hash": "ed383d6eb51ed43458774a52319e27ce",
-    "semantic_hash": "ed383d6eb51ed43458774a52319e27ce"
+    "mtime": 1794553375.7638938,
+    "seen": 1794553501.3657792,
+    "ast_hash": "e52d0c4f65d52aef4926398606ae251f",
+    "semantic_hash": "e52d0c4f65d52aef4926398606ae251f"
   },
   "sources/brands/violoop.md": {
-    "mtime": 1794512891.6583064,
-    "seen": 1794513348.3056982,
-    "ast_hash": "a17537b63eb05282e78c20c68d66e0a7",
-    "semantic_hash": "a17537b63eb05282e78c20c68d66e0a7"
+    "mtime": 1794553375.7645137,
+    "seen": 1794553501.3657799,
+    "ast_hash": "654ae27fb4beb488d4aca218ed073625",
+    "semantic_hash": "654ae27fb4beb488d4aca218ed073625"
   },
   "sources/brands/vivix.md": {
-    "mtime": 1794512891.650574,
-    "seen": 1794513348.3056989,
-    "ast_hash": "f423082ae26e71593bedaecb3a028707",
-    "semantic_hash": "f423082ae26e71593bedaecb3a028707"
+    "mtime": 1794553375.7573526,
+    "seen": 1794553501.3657806,
+    "ast_hash": "a6af3b929c3dc01057ae51359adf2b9b",
+    "semantic_hash": "a6af3b929c3dc01057ae51359adf2b9b"
   },
   "sources/brands/vmake.md": {
-    "mtime": 1794512891.648337,
-    "seen": 1794513348.3056998,
-    "ast_hash": "4726e8c7177d5f37c83061b6ca08778c",
-    "semantic_hash": "4726e8c7177d5f37c83061b6ca08778c"
+    "mtime": 1794553375.7555408,
+    "seen": 1794553501.3657813,
+    "ast_hash": "77169bb345cf505acbba173e313aea92",
+    "semantic_hash": "77169bb345cf505acbba173e313aea92"
   },
   "sources/brands/vmakelabs.md": {
-    "mtime": 1794512891.6519508,
-    "seen": 1794513348.3057005,
-    "ast_hash": "cdd59887031529a8a65bd231f4790297",
-    "semantic_hash": "cdd59887031529a8a65bd231f4790297"
+    "mtime": 1794553375.7585359,
+    "seen": 1794553501.365782,
+    "ast_hash": "e428e4d16e98ae8a8a8655da656b0458",
+    "semantic_hash": "e428e4d16e98ae8a8a8655da656b0458"
   },
   "sources/brands/vocci.md": {
-    "mtime": 1794512891.6600235,
-    "seen": 1794513348.3057015,
-    "ast_hash": "dbc320ab4942f620d36c59a0c0db6e33",
-    "semantic_hash": "dbc320ab4942f620d36c59a0c0db6e33"
+    "mtime": 1794553375.7660058,
+    "seen": 1794553501.365783,
+    "ast_hash": "fcef4ae0670b30ab5f8c7cae304a7daa",
+    "semantic_hash": "fcef4ae0670b30ab5f8c7cae304a7daa"
   },
   "sources/brands/voicecursor.md": {
-    "mtime": 1794512891.6589897,
-    "seen": 1794513348.3057024,
-    "ast_hash": "fbea9baf920f06c8d7829198789c09d7",
-    "semantic_hash": "fbea9baf920f06c8d7829198789c09d7"
+    "mtime": 1794553375.7650537,
+    "seen": 1794553501.3657837,
+    "ast_hash": "39dcd87b9d7b0b5668310d8dd1da37e2",
+    "semantic_hash": "39dcd87b9d7b0b5668310d8dd1da37e2"
   },
   "sources/brands/vrim.md": {
-    "mtime": 1794512891.6533108,
-    "seen": 1794513348.3057034,
-    "ast_hash": "7ff3e1c0ef836841911fd64cff015917",
-    "semantic_hash": "7ff3e1c0ef836841911fd64cff015917"
+    "mtime": 1794553375.7600374,
+    "seen": 1794553501.3657846,
+    "ast_hash": "6212385c9b517ccabe88db8c18c35c50",
+    "semantic_hash": "6212385c9b517ccabe88db8c18c35c50"
   },
   "sources/brands/vyra.md": {
-    "mtime": 1794512891.6572092,
-    "seen": 1794513348.305704,
-    "ast_hash": "d46947cee55a691c710d89fb4c2d5099",
-    "semantic_hash": "d46947cee55a691c710d89fb4c2d5099"
+    "mtime": 1794553375.7635126,
+    "seen": 1794553501.3657854,
+    "ast_hash": "2b3a051ec6c5d4ac5d02511bdf3d9255",
+    "semantic_hash": "2b3a051ec6c5d4ac5d02511bdf3d9255"
   },
   "sources/brands/walala.md": {
-    "mtime": 1794512891.6475348,
-    "seen": 1794513348.3057053,
-    "ast_hash": "c9497f01b0f8acc392a87e813be417c9",
-    "semantic_hash": "c9497f01b0f8acc392a87e813be417c9"
+    "mtime": 1794553375.7524867,
+    "seen": 1794553501.365786,
+    "ast_hash": "9bca51799b91e921dbedf046689728e3",
+    "semantic_hash": "9bca51799b91e921dbedf046689728e3"
   },
   "sources/brands/waterfly.md": {
-    "mtime": 1794512891.6490417,
-    "seen": 1794513348.305706,
-    "ast_hash": "cda72ed164000b00a8668fb707e60004",
-    "semantic_hash": "cda72ed164000b00a8668fb707e60004"
+    "mtime": 1794553375.7561753,
+    "seen": 1794553501.3657866,
+    "ast_hash": "aa4a39b8750b539e54a5a4f1c645981a",
+    "semantic_hash": "aa4a39b8750b539e54a5a4f1c645981a"
   },
   "sources/brands/webzum.md": {
-    "mtime": 1794512891.6498806,
-    "seen": 1794513348.305707,
-    "ast_hash": "b53da5a5c0f946b36e6b4871e407cfee",
-    "semantic_hash": "b53da5a5c0f946b36e6b4871e407cfee"
+    "mtime": 1794553375.7567804,
+    "seen": 1794553501.3657875,
+    "ast_hash": "4d3260d41acc6d758841a469e189566f",
+    "semantic_hash": "4d3260d41acc6d758841a469e189566f"
   },
   "sources/brands/weglot.md": {
-    "mtime": 1794512891.6450503,
-    "seen": 1794513348.305708,
-    "ast_hash": "c22c57fcebd6285008b34e09f0fd4668",
-    "semantic_hash": "c22c57fcebd6285008b34e09f0fd4668"
+    "mtime": 1794553375.754048,
+    "seen": 1794553501.3657885,
+    "ast_hash": "50e8672e87dccd2afb6cbfeb5546b134",
+    "semantic_hash": "50e8672e87dccd2afb6cbfeb5546b134"
   },
   "sources/brands/wisprflowxlovable.md": {
-    "mtime": 1794512891.6583593,
-    "seen": 1794513348.3057091,
-    "ast_hash": "59cf2f4c00d0cc77a0d21e5e711dca38",
-    "semantic_hash": "59cf2f4c00d0cc77a0d21e5e711dca38"
+    "mtime": 1794553375.7645402,
+    "seen": 1794553501.3657892,
+    "ast_hash": "5e663f7f8c812a284954ab4188dad04b",
+    "semantic_hash": "5e663f7f8c812a284954ab4188dad04b"
   },
   "sources/brands/wistar.md": {
-    "mtime": 1794512891.6574314,
-    "seen": 1794513348.3057098,
-    "ast_hash": "c445b04e9f56b03ee31dfac2d75dfad1",
-    "semantic_hash": "c445b04e9f56b03ee31dfac2d75dfad1"
+    "mtime": 1794553375.7637067,
+    "seen": 1794553501.3657901,
+    "ast_hash": "bbf4b2ff7ef17369f6bb0f96e398db16",
+    "semantic_hash": "bbf4b2ff7ef17369f6bb0f96e398db16"
   },
   "sources/brands/wizstar.md": {
-    "mtime": 1794512891.657586,
-    "seen": 1794513348.3057108,
-    "ast_hash": "006319200bb9796a9183059787ca3dd1",
-    "semantic_hash": "006319200bb9796a9183059787ca3dd1"
+    "mtime": 1794553375.7638397,
+    "seen": 1794553501.365791,
+    "ast_hash": "08d50abc4329b3eacb6dc38e5d3f9b5b",
+    "semantic_hash": "08d50abc4329b3eacb6dc38e5d3f9b5b"
   },
   "sources/brands/wollo.md": {
-    "mtime": 1794512891.660993,
-    "seen": 1794513348.3057115,
-    "ast_hash": "74165069a28989e15112bb5a187e2a2d",
-    "semantic_hash": "74165069a28989e15112bb5a187e2a2d"
+    "mtime": 1794553375.7667341,
+    "seen": 1794553501.3657918,
+    "ast_hash": "12db5a261f431a2e7173ec6513fd8c5b",
+    "semantic_hash": "12db5a261f431a2e7173ec6513fd8c5b"
   },
   "sources/brands/wondersharemedia.md": {
-    "mtime": 1794512891.6571276,
-    "seen": 1794513348.3057125,
-    "ast_hash": "055bd227f043c5ed50863d164331d1e5",
-    "semantic_hash": "055bd227f043c5ed50863d164331d1e5"
+    "mtime": 1794553375.763427,
+    "seen": 1794553501.3657925,
+    "ast_hash": "38ed6bb4fc532ff5f577d617e178f3d0",
+    "semantic_hash": "38ed6bb4fc532ff5f577d617e178f3d0"
   },
   "sources/brands/workbuddy.md": {
-    "mtime": 1794512891.6553433,
-    "seen": 1794513348.3057134,
-    "ast_hash": "490b641782d9133dde0f3dd14f7cd87b",
-    "semantic_hash": "490b641782d9133dde0f3dd14f7cd87b"
+    "mtime": 1794553375.7618723,
+    "seen": 1794553501.3657932,
+    "ast_hash": "cf0293edff59ceaa0534e724f7a470c2",
+    "semantic_hash": "cf0293edff59ceaa0534e724f7a470c2"
   },
   "sources/brands/wpvibe.md": {
-    "mtime": 1794512891.6564393,
-    "seen": 1794513348.3057144,
-    "ast_hash": "0eda115d86f3a58e846109cec761762a",
-    "semantic_hash": "0eda115d86f3a58e846109cec761762a"
+    "mtime": 1794553375.7628133,
+    "seen": 1794553501.3657944,
+    "ast_hash": "c965c91e7eaf8b778226aa72e4daf28e",
+    "semantic_hash": "c965c91e7eaf8b778226aa72e4daf28e"
   },
   "sources/brands/xgrids.md": {
-    "mtime": 1794512891.6604176,
-    "seen": 1794513348.305715,
-    "ast_hash": "5f1df1a87f0a5db4daac165765c4483c",
-    "semantic_hash": "5f1df1a87f0a5db4daac165765c4483c"
+    "mtime": 1794553375.7662854,
+    "seen": 1794553501.3657954,
+    "ast_hash": "49576cfcb10154a599cd54759809ec0b",
+    "semantic_hash": "49576cfcb10154a599cd54759809ec0b"
   },
   "sources/brands/xtiles.md": {
-    "mtime": 1794512891.65275,
-    "seen": 1794513348.305716,
-    "ast_hash": "1f7bd04989ec69da84040ef2b818d40e",
-    "semantic_hash": "1f7bd04989ec69da84040ef2b818d40e"
+    "mtime": 1794553375.759211,
+    "seen": 1794553501.3657963,
+    "ast_hash": "7c31be29ba9c8c4d3aead5561ec554a3",
+    "semantic_hash": "7c31be29ba9c8c4d3aead5561ec554a3"
   },
   "sources/brands/yantra.md": {
-    "mtime": 1794512891.6530845,
-    "seen": 1794513348.305717,
-    "ast_hash": "c9d1f8bf6fe8d592563995853b5170f3",
-    "semantic_hash": "c9d1f8bf6fe8d592563995853b5170f3"
+    "mtime": 1794553375.7598314,
+    "seen": 1794553501.365797,
+    "ast_hash": "9ff855b9308187b67c359d79d6863e61",
+    "semantic_hash": "9ff855b9308187b67c359d79d6863e61"
   },
   "sources/brands/yesoulfitness.md": {
-    "mtime": 1794512891.650041,
-    "seen": 1794513348.3057177,
-    "ast_hash": "33b46937db6a2cb8a73920cb64dd9ba7",
-    "semantic_hash": "33b46937db6a2cb8a73920cb64dd9ba7"
+    "mtime": 1794553375.7569106,
+    "seen": 1794553501.3657982,
+    "ast_hash": "0b0fe03ce4a1c51b9b77c325af8a2ae7",
+    "semantic_hash": "0b0fe03ce4a1c51b9b77c325af8a2ae7"
   },
   "sources/brands/yipkin.md": {
-    "mtime": 1794512891.648569,
-    "seen": 1794513348.305719,
-    "ast_hash": "bf747a55f6fb901206ed03e49e4db3da",
-    "semantic_hash": "bf747a55f6fb901206ed03e49e4db3da"
+    "mtime": 1794553375.7557373,
+    "seen": 1794553501.3657992,
+    "ast_hash": "a4811eaaef0added29bf0e226751744c",
+    "semantic_hash": "a4811eaaef0added29bf0e226751744c"
   },
   "sources/brands/zeely.md": {
-    "mtime": 1794512891.6431642,
-    "seen": 1794513348.3057196,
+    "mtime": 1794553375.7525325,
+    "seen": 1794553501.3658,
     "ast_hash": "3d75736372f36809d32d490d53674f49",
     "semantic_hash": "3d75736372f36809d32d490d53674f49"
   },
   "sources/brands/zenbusiness.md": {
-    "mtime": 1794512891.646991,
-    "seen": 1794513348.3057206,
-    "ast_hash": "20b3801ed6380a153c02694e5fd8fb95",
-    "semantic_hash": "20b3801ed6380a153c02694e5fd8fb95"
+    "mtime": 1794553375.7524397,
+    "seen": 1794553501.3658009,
+    "ast_hash": "c24cb4c1fc951058997e8572ba10e4dc",
+    "semantic_hash": "c24cb4c1fc951058997e8572ba10e4dc"
   },
   "sources/brands/zenzap.md": {
-    "mtime": 1794512891.659667,
-    "seen": 1794513348.3057213,
-    "ast_hash": "8d6a1b2378b01f2cd9f054e17d794950",
-    "semantic_hash": "8d6a1b2378b01f2cd9f054e17d794950"
+    "mtime": 1794553375.7656572,
+    "seen": 1794553501.365802,
+    "ast_hash": "f4bf4b152168c78c6dc0d54b1b3aeba4",
+    "semantic_hash": "f4bf4b152168c78c6dc0d54b1b3aeba4"
   },
   "sources/creators/ai-learns.md": {
-    "mtime": 1794512891.6615682,
-    "seen": 1794513348.3057225,
+    "mtime": 1794553375.7673838,
+    "seen": 1794553501.3658028,
     "ast_hash": "28c3a471e4a9efb86d56ab19dd40b25d",
     "semantic_hash": "28c3a471e4a9efb86d56ab19dd40b25d"
   },
   "sources/creators/chris.md": {
-    "mtime": 1794512891.6613822,
-    "seen": 1794513348.3057234,
-    "ast_hash": "740668265d38f2f1f9fcf9f2b0ef55ef",
-    "semantic_hash": "740668265d38f2f1f9fcf9f2b0ef55ef"
+    "mtime": 1794553375.7672155,
+    "seen": 1794553501.3658044,
+    "ast_hash": "2c8bdad729ff437fee060c105e2ec166",
+    "semantic_hash": "2c8bdad729ff437fee060c105e2ec166"
   },
   "sources/creators/david-iya.md": {
-    "mtime": 1794512891.6615198,
-    "seen": 1794513348.3057241,
+    "mtime": 1794553375.7673326,
+    "seen": 1794553501.3658054,
     "ast_hash": "f69844752b80a88e1dd68fab035366cc",
     "semantic_hash": "f69844752b80a88e1dd68fab035366cc"
   },
   "sources/creators/dmytro.md": {
-    "mtime": 1794512891.661552,
-    "seen": 1794513348.305725,
+    "mtime": 1794553375.7673676,
+    "seen": 1794553501.365806,
     "ast_hash": "ff47494d8f617fe092488ec068b6b805",
     "semantic_hash": "ff47494d8f617fe092488ec068b6b805"
   },
   "sources/creators/nicole.md": {
-    "mtime": 1794512891.6615365,
-    "seen": 1794513348.305726,
+    "mtime": 1794553375.7673495,
+    "seen": 1794553501.3658094,
     "ast_hash": "2e2c9575d809e0700543db3a7355b9f4",
     "semantic_hash": "2e2c9575d809e0700543db3a7355b9f4"
   },
@@ -2688,62 +2688,62 @@
     "semantic_hash": "f6f8dd1d25bea5e90750d88b75de3561"
   },
   "sources/lessons/briefs-scripts.md": {
-    "mtime": 1794512891.661691,
-    "seen": 1794513348.3057406,
+    "mtime": 1794553375.7675912,
+    "seen": 1794553501.3658302,
     "ast_hash": "12a070a14d0c7f69354cf2e75076c9b7",
     "semantic_hash": "12a070a14d0c7f69354cf2e75076c9b7"
   },
   "sources/lessons/deals-data.md": {
-    "mtime": 1794512891.6618903,
-    "seen": 1794513348.3057413,
+    "mtime": 1794553375.767746,
+    "seen": 1794553501.3658311,
     "ast_hash": "9a63ba680601e6bb7081143780dda506",
     "semantic_hash": "9a63ba680601e6bb7081143780dda506"
   },
   "sources/lessons/emails.md": {
-    "mtime": 1794512891.662071,
-    "seen": 1794513348.305742,
-    "ast_hash": "51b7b2fc045558071d72ef1cf8bf5b72",
-    "semantic_hash": "51b7b2fc045558071d72ef1cf8bf5b72"
+    "mtime": 1794553375.767513,
+    "seen": 1794553501.365832,
+    "ast_hash": "cddd026e6fd6342e8b5c646487d44986",
+    "semantic_hash": "cddd026e6fd6342e8b5c646487d44986"
   },
   "sources/lessons/other.md": {
-    "mtime": 1794512891.6616251,
-    "seen": 1794513348.3057432,
+    "mtime": 1794553375.7675405,
+    "seen": 1794553501.3658333,
     "ast_hash": "e3e869f75f8b2a7651b926514e69e20d",
     "semantic_hash": "e3e869f75f8b2a7651b926514e69e20d"
   },
   "sources/lessons/payments.md": {
-    "mtime": 1794512891.662179,
-    "seen": 1794513348.305744,
+    "mtime": 1794553375.7678754,
+    "seen": 1794553501.365834,
     "ast_hash": "ccf5a05d768a660632a60576cc6c6812",
     "semantic_hash": "ccf5a05d768a660632a60576cc6c6812"
   },
   "sources/lessons/video-editors.md": {
-    "mtime": 1794512891.661804,
-    "seen": 1794513348.305745,
+    "mtime": 1794553375.7676725,
+    "seen": 1794553501.365835,
     "ast_hash": "c31b26f526f1034dd3102ab3f0c44f90",
     "semantic_hash": "c31b26f526f1034dd3102ab3f0c44f90"
   },
   "sources/lessons/whatsapp.md": {
-    "mtime": 1794512891.6619484,
-    "seen": 1794513348.3057456,
+    "mtime": 1794553375.7677999,
+    "seen": 1794553501.3658357,
     "ast_hash": "d4aa2663ece12370b9bc0e7432e3679b",
     "semantic_hash": "d4aa2663ece12370b9bc0e7432e3679b"
   },
   "sources/pages/lindsay-design-file-motion-graphics.md": {
-    "mtime": 1794512891.6622968,
-    "seen": 1794513348.3057468,
+    "mtime": 1794553375.7679987,
+    "seen": 1794553501.3658364,
     "ast_hash": "3b890b9a872908ca98092b5a126413e9",
     "semantic_hash": "3b890b9a872908ca98092b5a126413e9"
   },
   "sources/pages/valeri-design-file-motion-graphics.md": {
-    "mtime": 1794512891.6624498,
-    "seen": 1794513348.3057477,
+    "mtime": 1794553375.7681153,
+    "seen": 1794553501.365837,
     "ast_hash": "9887937400c874132a80989c395473b5",
     "semantic_hash": "9887937400c874132a80989c395473b5"
   },
   "sources/rules/pm-memory.md": {
-    "mtime": 1794512891.6615925,
-    "seen": 1794513348.3057485,
+    "mtime": 1794553375.7674124,
+    "seen": 1794553501.3658435,
     "ast_hash": "5bfea4e9a125c420723a68e3a4d45f2e",
     "semantic_hash": "5bfea4e9a125c420723a68e3a4d45f2e"
   },
@@ -2754,39 +2754,165 @@
     "semantic_hash": "9827e4305b047f040f2d7164262b3538"
   },
   "sources/brands/orlinoai.md": {
-    "mtime": 1794512891.6576903,
-    "seen": 1794513380.7652144,
-    "ast_hash": "6274a754c34defa03d71b68c854f6ece",
-    "semantic_hash": "6274a754c34defa03d71b68c854f6ece"
+    "mtime": 1794553375.7639196,
+    "seen": 1794553501.3656461,
+    "ast_hash": "78e125c4d8066b5c882c6d5cbd17379c",
+    "semantic_hash": "78e125c4d8066b5c882c6d5cbd17379c"
   },
   "sources/creators/brad.md": {
-    "mtime": 1794512891.6614034,
-    "seen": 1794513380.7653644,
-    "ast_hash": "cdbd788cd880cb5c4722fb8e29305234",
-    "semantic_hash": "cdbd788cd880cb5c4722fb8e29305234"
+    "mtime": 1794553375.767056,
+    "seen": 1794553501.3658037,
+    "ast_hash": "f3bd286a9fca2fe1a05c9bbcc6d77698",
+    "semantic_hash": "f3bd286a9fca2fe1a05c9bbcc6d77698"
   },
   "sources/creators/duncan.md": {
-    "mtime": 1794512891.6613097,
-    "seen": 1794513380.7653677,
-    "ast_hash": "ab8e40e63f7fe5b9ef8479d1c609b66d",
-    "semantic_hash": "ab8e40e63f7fe5b9ef8479d1c609b66d"
+    "mtime": 1794553375.767239,
+    "seen": 1794553501.365807,
+    "ast_hash": "d521f6efd1d8138bf7fd92ee93647ca6",
+    "semantic_hash": "d521f6efd1d8138bf7fd92ee93647ca6"
   },
   "sources/creators/emtech.md": {
-    "mtime": 1794512891.661504,
-    "seen": 1794513380.7653685,
+    "mtime": 1794553375.767308,
+    "seen": 1794553501.3658078,
     "ast_hash": "559a2ffcbd816861c20fc4ba9fc30207",
     "semantic_hash": "559a2ffcbd816861c20fc4ba9fc30207"
   },
   "sources/creators/lindsay.md": {
-    "mtime": 1794512891.66146,
-    "seen": 1794513380.7653692,
-    "ast_hash": "8e4101975286b327d497f902d1e13932",
-    "semantic_hash": "8e4101975286b327d497f902d1e13932"
+    "mtime": 1794553375.767147,
+    "seen": 1794553501.3658087,
+    "ast_hash": "8fff31067dbcf5560132614a40e08b35",
+    "semantic_hash": "8fff31067dbcf5560132614a40e08b35"
   },
   "sources/creators/valeri.md": {
-    "mtime": 1794512891.661487,
-    "seen": 1794513380.7653708,
-    "ast_hash": "b44911b238a5d06bb0bac1697d5788d8",
-    "semantic_hash": "b44911b238a5d06bb0bac1697d5788d8"
+    "mtime": 1794553375.767256,
+    "seen": 1794553501.3658102,
+    "ast_hash": "58715a351f0964fd725525d5eaf6095f",
+    "semantic_hash": "58715a351f0964fd725525d5eaf6095f"
+  },
+  "sources/brands/aries.md": {
+    "mtime": 1794553375.7551768,
+    "seen": 1794553501.365405,
+    "ast_hash": "55d1d06507ad37673ff7b00a2f196956",
+    "semantic_hash": "55d1d06507ad37673ff7b00a2f196956"
+  },
+  "sources/brands/makefun.md": {
+    "mtime": 1794553375.7552054,
+    "seen": 1794553501.3655922,
+    "ast_hash": "b272105ac9e47da20e8e200a85f932bd",
+    "semantic_hash": "b272105ac9e47da20e8e200a85f932bd"
+  },
+  "sources/brands/onepagey.md": {
+    "mtime": 1794553375.755234,
+    "seen": 1794553501.3656392,
+    "ast_hash": "92ba5c1cadd0d312d886bfaf3f639bbf",
+    "semantic_hash": "92ba5c1cadd0d312d886bfaf3f639bbf"
+  },
+  "sources/feedback/brad.md": {
+    "mtime": 1794553375.7701387,
+    "seen": 1794553501.3658276,
+    "ast_hash": "3e04f662cad4443b6875bcd6bf88e6c1",
+    "semantic_hash": "3e04f662cad4443b6875bcd6bf88e6c1"
+  },
+  "sources/feedback/chris.md": {
+    "mtime": 1794553375.7701852,
+    "seen": 1794553501.3658283,
+    "ast_hash": "6381b0c80329e9b2ee354346a29bb758",
+    "semantic_hash": "6381b0c80329e9b2ee354346a29bb758"
+  },
+  "sources/feedback/valeri.md": {
+    "mtime": 1794553375.7701108,
+    "seen": 1794553501.3658292,
+    "ast_hash": "0ad612470e52f8f147f338035b483d85",
+    "semantic_hash": "0ad612470e52f8f147f338035b483d85"
+  },
+  "sources/performance/brad.md": {
+    "mtime": 1794553375.7687032,
+    "seen": 1794553501.3658378,
+    "ast_hash": "7cdb23bdcaf6cbe7eeff722b63fdaa57",
+    "semantic_hash": "7cdb23bdcaf6cbe7eeff722b63fdaa57"
+  },
+  "sources/performance/chris.md": {
+    "mtime": 1794553375.768574,
+    "seen": 1794553501.3658385,
+    "ast_hash": "56fc837fc432c9aa91ce6b8c3beed8ba",
+    "semantic_hash": "56fc837fc432c9aa91ce6b8c3beed8ba"
+  },
+  "sources/performance/david.md": {
+    "mtime": 1794553375.7684906,
+    "seen": 1794553501.365839,
+    "ast_hash": "56de3023d7684aa8b40dd69bdf8ce46e",
+    "semantic_hash": "56de3023d7684aa8b40dd69bdf8ce46e"
+  },
+  "sources/performance/duncan.md": {
+    "mtime": 1794553375.768328,
+    "seen": 1794553501.36584,
+    "ast_hash": "81e9bcd88a8672b235d063329ccd2b53",
+    "semantic_hash": "81e9bcd88a8672b235d063329ccd2b53"
+  },
+  "sources/performance/emtech.md": {
+    "mtime": 1794553375.7687848,
+    "seen": 1794553501.3658404,
+    "ast_hash": "33612fdfda447e39e2772cca01b653ab",
+    "semantic_hash": "33612fdfda447e39e2772cca01b653ab"
+  },
+  "sources/performance/lindsay.md": {
+    "mtime": 1794553375.7684116,
+    "seen": 1794553501.3658412,
+    "ast_hash": "d593d2a8bbba000474d3ccd509ad6361",
+    "semantic_hash": "d593d2a8bbba000474d3ccd509ad6361"
+  },
+  "sources/performance/nicole.md": {
+    "mtime": 1794553375.7686553,
+    "seen": 1794553501.3658416,
+    "ast_hash": "3ac048cabc9ec6c47dc8d1132d93fed6",
+    "semantic_hash": "3ac048cabc9ec6c47dc8d1132d93fed6"
+  },
+  "sources/performance/valeri.md": {
+    "mtime": 1794553375.768214,
+    "seen": 1794553501.3658423,
+    "ast_hash": "0bc3f834bb56553605d6d8479d05258b",
+    "semantic_hash": "0bc3f834bb56553605d6d8479d05258b"
+  },
+  "sources/scripts/ai-learns.md": {
+    "mtime": 1794553375.770059,
+    "seen": 1794553501.3658442,
+    "ast_hash": "c1e6881353772e32b670772022d4e2b4",
+    "semantic_hash": "c1e6881353772e32b670772022d4e2b4"
+  },
+  "sources/scripts/brad.md": {
+    "mtime": 1794553375.768831,
+    "seen": 1794553501.3658447,
+    "ast_hash": "b6fc737d515d1c100da38daf073424eb",
+    "semantic_hash": "b6fc737d515d1c100da38daf073424eb"
+  },
+  "sources/scripts/chris.md": {
+    "mtime": 1794553375.7689283,
+    "seen": 1794553501.3658454,
+    "ast_hash": "a71699e36fe40824981dfdb1d99153b3",
+    "semantic_hash": "a71699e36fe40824981dfdb1d99153b3"
+  },
+  "sources/scripts/david-iya.md": {
+    "mtime": 1794553375.769887,
+    "seen": 1794553501.3658462,
+    "ast_hash": "adeb1551bef93d97839a951a3dd8577b",
+    "semantic_hash": "adeb1551bef93d97839a951a3dd8577b"
+  },
+  "sources/scripts/duncan.md": {
+    "mtime": 1794553375.7694771,
+    "seen": 1794553501.3658469,
+    "ast_hash": "67c45f0fb5d18e9f118e23206c3d60fc",
+    "semantic_hash": "67c45f0fb5d18e9f118e23206c3d60fc"
+  },
+  "sources/scripts/lindsay.md": {
+    "mtime": 1794553375.769029,
+    "seen": 1794553501.3658476,
+    "ast_hash": "fed4027b264025190177e47f1064380f",
+    "semantic_hash": "fed4027b264025190177e47f1064380f"
+  },
+  "sources/scripts/valeri.md": {
+    "mtime": 1794553375.7696748,
+    "seen": 1794553501.365848,
+    "ast_hash": "51333490270ebcbbcabdcb69c64b8e17",
+    "semantic_hash": "51333490270ebcbbcabdcb69c64b8e17"
   }
 }

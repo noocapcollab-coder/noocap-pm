@@ -5,17 +5,20 @@ type: brand
 
 Brand. Works with creators: [[Chris]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Higgsfield.AI is an AI automation and DM platform. They contact us directly through their in-house team (Higgsfield IM Team).
+WHO: Higgsfield / Higgsfield.AI is an AI product/brand. They come to us directly through their IM team, and also work through separate agencies such as AIFY MEDIA.
 
-CONTACTS: Higgsfield IM Team emails from higgsfield.ai@jeevmedia.net. Thread is copied to collab@automateaiconsulting.com. Emails are signed by Higgsfield IM Team.
+CONTACTS: Higgsfield IM Team, higgsfield.ai@jeevmedia.net, brand. Thread CC includes collab@automateaiconsulting.com.
 
-DEALS: Lindsay, 1 Instagram Reel and Link in bio for 7 days, [amount], Paid, payment received 2026-10-15. Lindsay, 1 Instagram Reel and DM automation at [amount] fixed rate per campaign, Price Agreed, no campaign brief yet. Chris, deliverables not yet confirmed, stage Posted, brief received 2026-11-09.
+DEALS:
+Higgsfield.AI x Lindsay | 1 Instagram Reel and DM automation | Rate: [amount]USD | Stage: Posted | Dates: Confirmed fixed rate on October 16, 2026.
+Higgsfield x Lindsay | 1 Instagram Reel + Link in bio for 7 days | Rate: [amount]USD | Stage: Paid | Dates: Paid on October 15, 2026.
+Higgsfield x Chris | Deliverables not known yet | Rate: not known yet | Stage: Posted | Dates: Brief received November 9, 2026.
 
-HOW THEY WORK: Brand sends brief via email. They use an invoice template for billing. No portal or dashboard mentioned. They offer fixed rates only, no performance-based pricing. All future Higgsfield campaigns must be managed directly through them, not through partner agencies. They have declined to introduce or provide contact details for separate agencies managing their campaigns.
+HOW THEY WORK: Deliverables include Instagram Reels, DM automation, and Link in bio. Portal submissions are used for campaigns. Live links must be provided. Future campaigns outside of their direct management may be handled by separate agencies like AIFY MEDIA.
 
-WATCH OUT: Do not accept campaigns managed through partner agencies like AIFY MEDIA without Higgsfield's direct involvement, as this caused payment disputes and confusion on the first Lindsay deal. Higgsfield will not act as intermediary or provide introductions to their partner agencies. All future campaigns must be negotiated and managed directly with Higgsfield IM Team at higgsfield.ai@jeevmedia.net. They only offer fixed rates and will not negotiate performance-based or variable pricing.
+WATCH OUT: Campaigns submitted through certain portals may initially be flagged as ineligible for payment. AIFY MEDIA is a separate agency from Higgsfield IM Team; Higgsfield will not provide introductions to AIFY MEDIA and considers them entirely separate.
 
-OPEN NOW: Chris deal needs script written by Rudraksh; Chris campaign deliverables must be confirmed with brand. Lindsay Price Agreed deal awaits brand brief for the DM automation campaign. All three deals need invoice templates or billing instructions confirmed before payment can be processed.
+OPEN NOW: For the Chris deal, we owe: Rudraksh to write the script.
 
 
 ## Links

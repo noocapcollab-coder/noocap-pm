@@ -8,10 +8,13 @@ Platforms: Instagram, TikTok, YouTube Shorts, Facebook
 Last Our Email: 2026-11-11
 Follow-ups: 0
 Deal: 1 linked
-Last Brand Email: 2026-11-03· Thread Subject: @thechriscordero x RUNWAY AI [Collaboration Inquiry]· Status: Locked
+Last Brand Email: 2026-11-03
+Thread Subject: @thechriscordero x RUNWAY AI [Collaboration Inquiry]
+Status: Locked
 Our Counters: 0
 Creator: Chris
-Type: Paid offer· Brand Email: natalie.brown@houseofmarketers.co.uk
+Type: Paid offer
+Brand Email: natalie.brown@houseofmarketers.co.uk
 
 ## Links
 - [[Chris]]

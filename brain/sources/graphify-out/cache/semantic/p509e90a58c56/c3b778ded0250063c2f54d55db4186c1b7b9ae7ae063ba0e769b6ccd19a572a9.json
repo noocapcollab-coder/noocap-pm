@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_hollyland_hollyland", "label": "Hollyland", "file_type": "concept", "source_file": "brands/hollyland.md"}], "edges": [{"source": "brands_hollyland_hollyland", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/hollyland.md"}], "hyperedges": []}

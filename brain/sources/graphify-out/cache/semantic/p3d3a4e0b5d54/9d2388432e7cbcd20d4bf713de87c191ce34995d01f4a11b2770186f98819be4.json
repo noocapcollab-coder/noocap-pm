@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_fiverr_brand", "label": "Fiverr", "file_type": "code", "source_file": "brands/fiverr.md", "_origin": "semantic"}], "edges": [{"source": "brands_fiverr_brand", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/fiverr.md", "_origin": "semantic"}], "hyperedges": []}

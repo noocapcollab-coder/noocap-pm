@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_lev8_lev8", "label": "Lev8", "file_type": "concept", "source_file": "brands/lev8.md", "_origin": "semantic"}], "edges": [{"source": "brands_lev8_lev8", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/lev8.md", "_origin": "semantic"}], "hyperedges": []}

@@ -1,7 +1,7 @@
 ---
 type: deal
 ---
-Stage: Price Agreed
+Stage: Posted
 Last brand reply 2026-11-02, our last reply 2026-11-09.
 AGREED: Rate [amount]USD per campaign. Deliverables: 1 Instagram Reel and DM automation. Usage rights, payment terms, and delivery dates not confirmed.
 

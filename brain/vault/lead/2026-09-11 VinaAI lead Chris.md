@@ -6,9 +6,12 @@ Next Step: Chris/NOOCAP should respond: accept [amount]or counter-offer. Brand o
 Platforms: Instagram
 Last Our Email: 2026-10-06
 Follow-ups: 3
-Last Brand Email: 2026-09-11· Thread Subject: [IG] Collaboration Opportunity with VinaAI· Status: Waiting on brand
+Last Brand Email: 2026-09-11
+Thread Subject: [IG] Collaboration Opportunity with VinaAI
+Status: Waiting on brand
 Creator: Chris
-Type: Paid offer· Brand Email: evitawijaya@linkwaygl.com
+Type: Paid offer
+Brand Email: evitawijaya@linkwaygl.com
 
 ## Links
 - [[Chris]]

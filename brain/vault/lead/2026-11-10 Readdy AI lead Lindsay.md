@@ -7,9 +7,12 @@ Next Step: Reply with Instagram profile link and clarify deliverables and rate f
 Platforms: Instagram
 Last Our Email: 2026-11-06
 Deal: 1 linked
-Last Brand Email: 2026-11-10· Thread Subject: paid collaboration: Readdy x AutomateAIConsulting· Status: Locked
+Last Brand Email: 2026-11-10
+Thread Subject: paid collaboration: Readdy x AutomateAIConsulting
+Status: Locked
 Creator: Lindsay
-Type: Paid offer· Brand Email: Morgan@readdy.ai
+Type: Paid offer
+Brand Email: Morgan@readdy.ai
 
 ## Links
 - [[Lindsay]]

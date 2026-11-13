@@ -1,14 +1,17 @@
 ---
 type: lead
 ---
-Deliverables: One short-form video cross-posted to TikTok, YouTube Shorts, and Instagram
+Deliverables: Dedicated long-form YouTube video
 Contact Name: Marina
-Next Step: Replied 2026-11-12, waiting on the brand
-Platforms: TikTok, YouTube Shorts, Instagram
+Next Step: New brand: management to reply with pricing
+Platforms: YouTube
 Last Our Email: 2026-11-12
-Last Brand Email: 2026-11-12· Thread Subject: Paid Collab: Become One of the Fotor Agent Creators· Status: Waiting on brand
+Last Brand Email: 2026-11-12
+Thread Subject: Paid YouTube Collaboration Opportunity | Fotor Agent
+Status: Negotiating
 Creator: Lindsay
-Type: Paid offer· Brand Email: marina@fotor.me
+Type: Paid offer
+Brand Email: BloomLogiccollab@sales.jenniefy.com
 
 ## Links
 - [[Fotor]]

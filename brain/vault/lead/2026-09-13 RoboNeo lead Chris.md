@@ -6,9 +6,11 @@ Next Step: Wait for brand to confirm budget and respond to our rates ([amount]fo
 Platforms: TikTok, Instagram, YouTube
 Last Our Email: 2026-09-14
 Last Brand Email: 2026-09-13
-Thread Subject: Paid Collaboration — Create Consistent AI Characters with RoboNeo· Status: Waiting on brand
+Thread Subject: Paid Collaboration — Create Consistent AI Characters with RoboNeo
+Status: Waiting on brand
 Creator: Chris
-Type: Paid offer· Brand Email: olivia@koltank.com
+Type: Paid offer
+Brand Email: olivia@koltank.com
 
 ## Links
 - [[Chris]]

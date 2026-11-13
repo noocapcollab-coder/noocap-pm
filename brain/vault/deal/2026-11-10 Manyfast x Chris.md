@@ -1,8 +1,8 @@
 ---
 type: deal
 ---
-Stage: Price Agreed
-Last brand reply 2026-11-12, our last reply none.
+Stage: Brief Received
+Last brand reply 2026-11-13, our last reply none.
 AGREED: [amount]rate. Deliverables: paid reel highlighting Manyfast product (from idea to user flow, wireframe, Claude Code through MCP to working prototype), comment-keyword DM automation sending promo code to viewers, bio link live for 7 days. Usage rights: not yet confirmed. Payment terms: not yet confirmed (we proposed 50% upon script approval and 50% upon publication if no contract is signed). Start: as early as week of 2026-11-17.
 
 HISTORY:

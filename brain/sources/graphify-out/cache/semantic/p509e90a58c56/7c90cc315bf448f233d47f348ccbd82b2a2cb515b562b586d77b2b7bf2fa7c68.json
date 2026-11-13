@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_scout7_scout7", "label": "Scout7", "file_type": "code", "source_file": "brands/scout7.md"}], "edges": [{"source": "brands_scout7_scout7", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/scout7.md"}], "hyperedges": []}

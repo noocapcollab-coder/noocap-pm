@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_autofull_brand", "label": "AutoFull", "file_type": "code", "source_file": "brands/autofull.md"}], "edges": [{"source": "brands_autofull_brand", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/autofull.md"}], "hyperedges": []}

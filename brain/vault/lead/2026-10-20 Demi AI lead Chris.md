@@ -7,10 +7,13 @@ Next Step: Archive. Brand declined and will reach out if future opportunities ar
 Platforms: TikTok, Instagram, YouTube Shorts, Facebook
 Last Our Email: 2026-10-21
 Follow-ups: 2
-Last Brand Email: 2026-10-20· Thread Subject: Chris - Paid sponsorship opportunity from OMANE Media· Status: Lost
+Last Brand Email: 2026-10-20
+Thread Subject: Chris - Paid sponsorship opportunity from OMANE Media
+Status: Lost
 Our Counters: 0
 Creator: Chris
-Type: Paid offer· Brand Email: mannhe.imori@oman-emedia.com
+Type: Paid offer
+Brand Email: mannhe.imori@oman-emedia.com
 
 ## Links
 - [[Chris]]

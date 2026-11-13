@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_baserow_brand", "label": "Baserow", "file_type": "code", "source_file": "brands/baserow.md"}], "edges": [{"source": "brands_baserow_brand", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/baserow.md"}], "hyperedges": []}

@@ -7,9 +7,12 @@ Next Step: Send revised script with the four specific visual demonstrations Cass
 Platforms: YouTube Shorts
 Last Our Email: 2026-11-11
 Deal: 1 linked
-Last Brand Email: 2026-11-06· Thread Subject: 回复: Paid Tech Sponsorship with SpeakOn AI· Status: Locked
+Last Brand Email: 2026-11-06
+Thread Subject: 回复: Paid Tech Sponsorship with SpeakOn AI
+Status: Locked
 Creator: Chris
-Type: Paid offer· Brand Email: heduodd@gmail.com
+Type: Paid offer
+Brand Email: heduodd@gmail.com
 
 ## Links
 - [[Chris]]

@@ -6,9 +6,11 @@ Next Step: Wait for brand to confirm if [amount]rate works for their budget
 Platforms: Instagram
 Last Our Email: 2026-09-14
 Last Brand Email: 2026-09-14
-Thread Subject: Paid Moonshot collaboration· Status: Waiting on brand
+Thread Subject: Paid Moonshot collaboration
+Status: Waiting on brand
 Creator: Chris
-Type: Paid offer· Brand Email: neha@kaizynn.com
+Type: Paid offer
+Brand Email: neha@kaizynn.com
 
 ## Links
 - [[Chris]]

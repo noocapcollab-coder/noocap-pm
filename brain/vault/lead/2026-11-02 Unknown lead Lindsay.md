@@ -6,9 +6,12 @@ Contact Name: Rajeshwari
 Next Step: Wait for Rajeshwari to get feedback from the brand
 Platforms: Instagram, TikTok
 Deal: 1 linked
-Last Brand Email: 2026-11-02· Thread Subject: Brand Sponsorship Offer· Status: Locked
+Last Brand Email: 2026-11-02
+Thread Subject: Brand Sponsorship Offer
+Status: Locked
 Creator: Lindsay
-Type: Unclear· Brand Email: rajeshwari@jeevmedia.net
+Type: Unclear
+Brand Email: rajeshwari@jeevmedia.net
 
 ## Links
 - [[Lindsay]]

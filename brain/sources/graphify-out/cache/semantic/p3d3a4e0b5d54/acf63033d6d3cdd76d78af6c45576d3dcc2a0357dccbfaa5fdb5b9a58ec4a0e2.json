@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_quickads_quickads", "label": "QuickAds", "file_type": "code", "source_file": "brands/quickads.md", "_origin": "semantic"}], "edges": [{"source": "brands_quickads_quickads", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/quickads.md", "_origin": "semantic"}], "hyperedges": []}

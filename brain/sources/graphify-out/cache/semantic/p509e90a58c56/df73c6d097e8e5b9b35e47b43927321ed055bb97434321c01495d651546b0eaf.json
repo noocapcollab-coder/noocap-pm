@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_greatlearning_brand", "label": "Great Learning", "file_type": "code", "source_file": "brands/greatlearning.md"}], "edges": [{"source": "brands_greatlearning_brand", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/greatlearning.md"}], "hyperedges": []}

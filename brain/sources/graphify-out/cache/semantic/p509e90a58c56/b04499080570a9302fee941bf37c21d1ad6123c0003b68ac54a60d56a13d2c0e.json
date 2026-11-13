@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_alibaba_brand", "label": "Alibaba.com", "file_type": "code", "source_file": "brands/alibaba.md"}], "edges": [{"source": "brands_alibaba_brand", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/alibaba.md"}], "hyperedges": []}

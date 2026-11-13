@@ -6,9 +6,12 @@ Contact Name: Cutrover
 Next Step: Handed to noocapcollab: waiting for the brief
 Platforms: YouTube Shorts, Instagram, TikTok
 Last Our Email: 2026-10-28
-Last Brand Email: 2026-10-28· Thread Subject: CutRover — sponsorship rates and availability — availability (Emily Lewis)· Status: Locked
+Last Brand Email: 2026-10-28
+Thread Subject: CutRover — sponsorship rates and availability — availability (Emily Lewis)
+Status: Locked
 Creator: Lindsay
-Type: Paid offer· Brand Email: assist@volny.cz
+Type: Paid offer
+Brand Email: assist@volny.cz
 
 ## Links
 - [[CutRover]]

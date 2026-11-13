@@ -1,42 +1,44 @@
-# Graph Report - sources  (2026-11-12)
+# Graph Report - sources  (2026-11-13)
 
 ## Corpus Check
-- 466 files · ~77,636 words
+- 487 files · ~97,229 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 523 nodes · 553 edges · 53 communities (10 shown, 43 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.87)
+- 563 nodes · 610 edges · 55 communities (9 shown, 46 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.88)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
 - Chris brand deals
 - Lindsay brand deals
-- Duncan brand deals
 - Valeri brand deals
-- Harsh / Only use WhatsApp templates Meta has approved
+- Duncan brand deals
 - Brad brand deals
+- Harsh / Only use WhatsApp templates Meta has approved
 - Motion Studio House Rules / House Style
-- Nicole / Nicole — Graphics
-- Semrush / Weglot
+- Emtech / Instantly.ai
 - Claude / LINDSAY — DESIGN FILE (Motion Graphics)
-- Dreamina / Katlas Media
-- Higgsfield / AIFY Media
-- Emergent / Gautam Mahajan
-- Gamut / Iddo Gino
-- GetRamped / Celina Otero
+- Joylo / Closedune
+- Halliday / KOL Summit
+- OiiOii / Luminary SM
+- Pollo.AI / MarGrowth
 - Hyper3D / NoxInfluencer
-- INMO / INMO GO3 AR glasses
-- Polsia / Emtech
-- Runway AI / House of Marketers
+- Kylon / Widely
+- Emergent / Gautam Mahajan
+- GetRamped / Celina Otero
+- OneUp / David - what performs
+- SpeakOn AI / NOTTA PTE. LTD.
+- AI Learns / AI Learns - posted scripts
+- David Iya / David Iya - posted scripts
 - PM lessons: Briefs & scripts / PM lessons: Deals & data
 - PM lessons: WhatsApp / PM memory: rules and facts
-- Elina Ken
-- Fahad
-- INFLU Global / AI team
-- Influvine Media
-- AI Learns
-- David Iya
+- Templify
+- The Crazy Entrepreneur
+- AI tool campaign
+- AI tool campaigns
+- AI Video Collaboration
+- David
 - Dmytro
 - [CLIENT] — Graphics (tweaks on top of the house catalogue)
 - [CLIENT] — Style (tweaks on top of the house style)
@@ -56,7 +58,7 @@
 - Lindsay Reels Playbook
 - Valeri — Graphics (tweaks on top of the house catalogue)
 - Valeri — Style (tweaks on top of the house style)
-- PM Lessons: Emails
+- PM lessons: Emails
 - PM Lessons: Other
 - PM Lessons: Payments
 - PM lessons: Video & editors
@@ -65,108 +67,111 @@
 - n8n automations (NOOCAP)
 
 ## God Nodes (most connected - your core abstractions)
-1. `Chris` - 267 edges
-2. `Lindsay` - 207 edges
-3. `Duncan` - 13 edges
-4. `Brad` - 9 edges
-5. `Valeri` - 9 edges
+1. `Chris` - 271 edges
+2. `Lindsay` - 210 edges
+3. `Valeri` - 21 edges
+4. `Duncan` - 15 edges
+5. `Brad` - 13 edges
 6. `Harsh` - 9 edges
-7. `CapCut` - 6 edges
-8. `Luma AI` - 5 edges
-9. `ElevenLabs` - 4 edges
-10. `Teamily` - 4 edges
+7. `Luma AI` - 8 edges
+8. `CapCut` - 7 edges
+9. `Chris - what performs` - 5 edges
+10. `Higgsfield` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Lindsay` --links to--> `Gamut`  [EXTRACTED]
-  creators/lindsay.md → brands/gamut.md
-- `Lindsay` --links to--> `Semrush`  [EXTRACTED]
-  creators/lindsay.md → brands/semrush.md
-- `Lindsay` --links to--> `Weglot`  [EXTRACTED]
-  creators/lindsay.md → brands/weglot.md
-- `Chris` --links to--> `AIFY Media`  [EXTRACTED]
-  creators/chris.md → brands/aifymedia.md
-- `Chris` --links to--> `Atlabs`  [EXTRACTED]
-  creators/chris.md → brands/atlabs.md
+- `Lindsay` --links to--> `Instantly.ai`  [EXTRACTED]
+  creators/lindsay.md → brands/instantly.md
+- `Lindsay` --links to--> `OneUp`  [EXTRACTED]
+  creators/lindsay.md → brands/oneup.md
+- `Lindsay - posted scripts` --links to--> `Lindsay`  [EXTRACTED]
+  scripts/lindsay.md → creators/lindsay.md
+- `Brad` --references--> `Brad - Brand Feedback`  [INFERRED]
+  creators/brad.md → feedback/brad.md
+- `Valeri` --references--> `Valeri - Brand Feedback`  [INFERRED]
+  creators/valeri.md → feedback/valeri.md
 
 ## Import Cycles
 - None detected.
 
 ## Hyperedges (group relationships)
-- **Agency Managed Collaborations** — house_of_marketers, faved, brands_kylon_widely, jeevmedia, partnerly [EXTRACTED 0.90]
+- **Brands Managed by Agencies** — brands_promocut, brands_riverflow, brands_runway, brands_sourceful [EXTRACTED 0.90]
 - **WhatsApp Communication Protocol** — lessons_whatsapp_one_card_per_draft, lessons_whatsapp_add_n_videos_rule, lessons_whatsapp_creator_context_rule, lessons_whatsapp_file_handling_rule, lessons_whatsapp_meta_templates_rule, lessons_whatsapp_one_message_per_thing [EXTRACTED 0.90]
-- **Creator-Brand Partnerships** — creators_chris, creators_lindsay, creators_duncan, brands_zeely, brands_zenbusiness, brands_yesoulfitness [EXTRACTED 1.00]
+- **LeadsRun (IntentRat) Promotion** — scripts_duncan, scripts_lindsay, leadsrun [EXTRACTED 0.95]
+- **Creator Performance Tracking** — performance_brad, performance_chris, performance_duncan, performance_lindsay, performance_valeri [EXTRACTED 1.00]
+- **Creator Script Repository** — scripts_brad, scripts_chris, scripts_duncan, scripts_lindsay [EXTRACTED 1.00]
 - **ElevenLabs Creator Campaigns** — brands_elevenlabs, creators_valeri, creators_chris, creators_duncan [EXTRACTED 1.00]
-- **Luma AI Creator Campaigns** — brands_luma, creators_chris, creators_duncan, creators_brad, creators_lindsay [EXTRACTED 1.00]
 - **Motion Graphics Production Flow** — editing_claude, editing_house_style, editing_house_graphics, editing_lindsay_style, editing_valeri_style [EXTRACTED 1.00]
 - **Standard Motion Graphics Rules** — pages_lindsay-design-file-motion-graphics, pages_valeri-design-file-motion-graphics [EXTRACTED 1.00]
+- **NOOCAP Creators** — creators_brad, creators_chris, creators_duncan, creators_lindsay, creators_valeri [EXTRACTED 1.00]
 - **Project Management Rules & Lessons** — lessons_briefs-scripts, lessons_deals-data, lessons_emails, lessons_payments, lessons_video-editors [EXTRACTED 1.00]
-- **Agency-Brand Representation** — brands_elevenlabs_kudos_narratives, brands_hyper3d_noxinfluencer, brands_kylon_widely, brands_luma_nj_agency [INFERRED 0.80]
+- **AI Video Tools Cluster** — brands_topview, brands_vidagent, brands_vidmuse, brands_videogenerationtool [INFERRED 0.70]
+- **Agency-Brand Representation** — brands_elevenlabs_kudos_narratives [INFERRED 0.80]
+- **AI Tool Brand Collaborations** — brands_readdy, brands_runway, brands_softr, brands_speakon [INFERRED 0.80]
+- **AI Video Generation Tools** — brands_luma, brands_pollo, brands_pixverse, brands_pippit [INFERRED 0.80]
+- **Brand Feedback and Revision Flow** — feedback_brad_brad_feedback [INFERRED 0.80]
 - **Creator Editing Style System** — editing_chris_style, editing_lindsay_graphics, editing_nicole_style, editing_valeri_graphics [INFERRED 0.80]
-- **Tripo Brand Entities** — brands_tripo, brands_tripo3d, brands_tripoapi, brands_tripostudio [INFERRED 0.85]
-- **Flova Brand Variations** — brands_flova [INFERRED 0.90]
-- **Fotor Brand Variations** — brands_fotor, brands_fotoragent [INFERRED 0.90]
+- **Valeri's Voice Agent Tech Stack** — scripts_valeri_xtool, scripts_valeri_timesfm, scripts_valeri_obscura, scripts_valeri_mesh_llm [INFERRED 0.80]
+- **AI 3D Creation Platforms** — brands_hyper3d, brands_hi3d, brands_hi3d30 [INFERRED 0.90]
+- **Tencent Brand Group** — brands_tencent, brands_tencentcloud, brands_tencentdesignmiora [INFERRED 0.90]
+- **Tripo Brand Ecosystem** — brands_tripo, brands_tripo3d, brands_tripoapi, brands_tripostudio [INFERRED 0.90]
 
-## Communities (53 total, 43 thin omitted)
+## Communities (55 total, 46 thin omitted)
 
 ### Community 0 - "Chris brand deals"
 Cohesion: 0.01
-Nodes (207): AI 3D Creation Platform, Abacus AI, ACASIS, Accio Work, AIKONIC, AIQORA AI, AIsa, AistLabs (+199 more)
+Nodes (205): AI 3D Creation Platform, Abacus AI, ACASIS, Accio Work, AIKONIC, AIQORA AI, AIsa, AistLabs (+197 more)
 
 ### Community 1 - "Lindsay brand deals"
 Cohesion: 0.01
-Nodes (191): Accomplishr, Agency Autopilot, AiBoosting, AICOO Office, AigoPilot, AINOTE, Alibaba.com, Anijam AI (+183 more)
+Nodes (189): Accomplishr, Agency Autopilot, AiBoosting, AICOO Office, AigoPilot, AINOTE, Alibaba.com, Anijam AI (+181 more)
 
-### Community 2 - "Duncan brand deals"
-Cohesion: 0.12
-Nodes (16): GlobeInflu, GrowMaxValue, Mediacube, Viral Nation Inc., CapCut, ChatGPT, Fish Audio, Flova AI (+8 more)
+### Community 2 - "Valeri brand deals"
+Cohesion: 0.07
+Nodes (33): Lua Group, The Breadwinners, AIFY Media, Higgsfield, Holo, Kimi, Lovart, Panda Security (+25 more)
 
-### Community 3 - "Valeri brand deals"
-Cohesion: 0.14
-Nodes (14): Buzzy AI, ElevenLabs, Kudos Narratives, Yulia Sheremeteva, Holo, Lovart, Panda Security, Polar (+6 more)
+### Community 3 - "Duncan brand deals"
+Cohesion: 0.06
+Nodes (32): Aries, CapCut, GlobeInflu, GrowMaxValue, Mediacube, ChatGPT, Viral Nation, ElevenLabs (+24 more)
 
-### Community 4 - "Harsh / Only use WhatsApp templates Meta has approved"
+### Community 4 - "Brad brand deals"
+Cohesion: 0.13
+Nodes (18): AdsMarch, Faved, NJ Agency, Buzzy AI, Luma AI, Migoo (in-person session), Migoo, PromoCut (+10 more)
+
+### Community 5 - "Harsh / Only use WhatsApp templates Meta has approved"
 Cohesion: 0.17
 Nodes (13): Harsh, "Add N videos" means new cards, not script notes, Ask Harsh for things only we have, A message about another creator never answers this creator's question, WhatsApp deals get WhatsApp alerts, A file Harsh sends is never dropped, Only use WhatsApp templates Meta has approved, One WhatsApp card per draft (+5 more)
-
-### Community 5 - "Brad brand deals"
-Cohesion: 0.17
-Nodes (12): Kylon, Widely, Luma AI, NJ Agency, Migoo (in-person session), Migoo, PromoCut, Teamily (+4 more)
 
 ### Community 6 - "Motion Studio House Rules / House Style"
 Cohesion: 0.33
 Nodes (6): Motion Studio House Rules, House Graphics Catalogue, House Style, Lindsay Style Tweaks, Valeri Style Tweaks, n8n Automations
 
-### Community 7 - "Nicole / Nicole — Graphics"
+### Community 7 - "Emtech / Instantly.ai"
 Cohesion: 0.50
-Nodes (4): Nicole, Nicole — Graphics, Nicole Style Tweaks, Nicole Reel Pipeline
+Nodes (4): Instantly.ai, Polsia, Emtech, Emtech - what performs
 
-### Community 8 - "Semrush / Weglot"
-Cohesion: 0.67
-Nodes (3): Semrush, Weglot, Faved
-
-### Community 9 - "Claude / LINDSAY — DESIGN FILE (Motion Graphics)"
+### Community 8 - "Claude / LINDSAY — DESIGN FILE (Motion Graphics)"
 Cohesion: 1.00
 Nodes (3): Claude, LINDSAY — DESIGN FILE (Motion Graphics), VALERI — DESIGN FILE (Motion Graphics)
 
 ## Knowledge Gaps
-- **438 isolated node(s):** `David Iya`, `AI Learns`, `Dmytro`, `AI Inspo`, `Instantly.ai` (+433 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 438 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **43 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **459 isolated node(s):** `David Iya`, `AI Learns`, `Dmytro`, `The Crazy Entrepreneur (TCE) / AI-powered e-commerce application`, `Zeely AI` (+454 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 459 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **46 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Chris` connect `Chris brand deals` to `Lindsay brand deals`, `Duncan brand deals`, `Valeri brand deals`, `Brad brand deals`, `Dreamina / Katlas Media`, `Higgsfield / AIFY Media`, `Emergent / Gautam Mahajan`, `GetRamped / Celina Otero`, `Hyper3D / NoxInfluencer`, `INMO / INMO GO3 AR glasses`, `Polsia / Emtech`, `Runway AI / House of Marketers`?**
-  _High betweenness centrality (0.581) - this node is a cross-community bridge._
+- **Why does `Chris` connect `Chris brand deals` to `Lindsay brand deals`, `Valeri brand deals`, `Duncan brand deals`, `Brad brand deals`, `Emtech / Instantly.ai`, `Joylo / Closedune`, `Halliday / KOL Summit`, `OiiOii / Luminary SM`, `Pollo.AI / MarGrowth`, `Hyper3D / NoxInfluencer`, `Kylon / Widely`, `Emergent / Gautam Mahajan`, `GetRamped / Celina Otero`, `SpeakOn AI / NOTTA PTE. LTD.`?**
+  _High betweenness centrality (0.574) - this node is a cross-community bridge._
 - **What connects `David Iya`, `AI Learns`, `Dmytro` to the rest of the system?**
-  _438 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _459 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Chris brand deals` be split into smaller, more focused modules?**
-  _Cohesion score 0.00966183574879227 - nodes in this community are weakly interconnected._
-- **Why does `Lindsay` connect `Lindsay brand deals` to `Duncan brand deals`, `Valeri brand deals`, `Brad brand deals`, `Semrush / Weglot`, `Dreamina / Katlas Media`, `Higgsfield / AIFY Media`, `Gamut / Iddo Gino`, `Hyper3D / NoxInfluencer`?**
-  _High betweenness centrality (0.457) - this node is a cross-community bridge._
+  _Cohesion score 0.00975609756097561 - nodes in this community are weakly interconnected._
+- **Why does `Lindsay` connect `Lindsay brand deals` to `Valeri brand deals`, `Duncan brand deals`, `Brad brand deals`, `Emtech / Instantly.ai`, `OiiOii / Luminary SM`, `Pollo.AI / MarGrowth`, `Hyper3D / NoxInfluencer`, `Kylon / Widely`, `OneUp / David - what performs`, `SpeakOn AI / NOTTA PTE. LTD.`?**
+  _High betweenness centrality (0.442) - this node is a cross-community bridge._
 - **Should `Lindsay brand deals` be split into smaller, more focused modules?**
-  _Cohesion score 0.010471204188481676 - nodes in this community are weakly interconnected._
-- **Why does `Duncan` connect `Duncan brand deals` to `Valeri brand deals`, `Brad brand deals`?**
-  _High betweenness centrality (0.034) - this node is a cross-community bridge._
-- **Should `Duncan brand deals` be split into smaller, more focused modules?**
-  _Cohesion score 0.125 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.010582010582010581 - nodes in this community are weakly interconnected._
+- **Why does `Valeri` connect `Valeri brand deals` to `Duncan brand deals`, `Brad brand deals`?**
+  _High betweenness centrality (0.048) - this node is a cross-community bridge._
+- **Should `Valeri brand deals` be split into smaller, more focused modules?**
+  _Cohesion score 0.06628787878787878 - nodes in this community are weakly interconnected._

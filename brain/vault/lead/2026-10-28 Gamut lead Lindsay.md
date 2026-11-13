@@ -6,9 +6,12 @@ Contact Name: Iddo
 Next Step: Send outline/script by Friday 10/30; deliver video by Friday 11/13 with gamut.so/automateai link.
 Platforms: TikTok
 Deal: 1 linked
-Last Brand Email: 2026-10-28· Thread Subject: Sponsored Video | Gamut.so· Status: Locked
+Last Brand Email: 2026-10-28
+Thread Subject: Sponsored Video | Gamut.so
+Status: Locked
 Creator: Lindsay
-Type: Paid offer· Brand Email: iddo.gino@gamut.so
+Type: Paid offer
+Brand Email: iddo.gino@gamut.so
 
 ## Links
 - [[Gamut]]

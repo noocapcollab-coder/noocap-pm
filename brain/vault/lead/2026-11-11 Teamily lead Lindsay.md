@@ -7,9 +7,12 @@ Next Step: Reply with: rate for short-form video, confirm which platforms we off
 Platforms: TikTok, Instagram, YouTube Shorts
 Last Our Email: 2026-11-10
 Deal: 1 linked
-Last Brand Email: 2026-11-11· Thread Subject: Teamily Paid Collaboration· Status: Locked
+Last Brand Email: 2026-11-11
+Thread Subject: Teamily Paid Collaboration
+Status: Locked
 Creator: Lindsay
-Type: Paid offer· Brand Email: evan@getwidely.com
+Type: Paid offer
+Brand Email: evan@getwidely.com
 
 ## Links
 - [[Lindsay]]

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_workbuddy_workbuddy", "label": "WorkBuddy", "file_type": "document", "source_file": "brands/workbuddy.md"}], "edges": [{"source": "brands_workbuddy_workbuddy", "target": "creators_lindsay_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/workbuddy.md"}], "hyperedges": []}

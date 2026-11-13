@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_aifymedia_brand", "label": "AIFY Media", "file_type": "code", "source_file": "brands/aifymedia.md"}], "edges": [{"source": "brands_aifymedia_brand", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/aifymedia.md"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_lemonado_lemonado", "label": "Lemonado", "file_type": "concept", "source_file": "brands/lemonado.md"}], "edges": [{"source": "brands_lemonado_lemonado", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/lemonado.md"}], "hyperedges": []}

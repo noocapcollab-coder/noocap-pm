@@ -5,17 +5,23 @@ type: brand
 
 Brand. Works with creators: [[Brad]], [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: PromoCut is a software product offering premium access and automation tools. They work through Quil Media, a brand agency (Nicole Rodrigues and Hamza Tariq handle all communication).
+WHO: PromoCut, a product/brand coming through an agency named Quil Media.
 
-CONTACTS: Nicole Rodrigues (nicole@quilmedia.com, agency lead, signs all emails), Hamza Tariq (hamza@quilmedia.com, agency support). Always CC partnerships@ninjaaitools.com. Brand emails come to noocapcollab@gmail.com but route to Nicole as the single point of contact.
+CONTACTS:
+Nicole Rodrigues, nicole@quilmedia.com, Quil Media, signs as Nicole / Best, copy partnerships@ninjaaitools.com, hamza@quilmedia.com
+Hamza Tariq, hamza@quilmedia.com, Quil Media, signs as Hamza, copy partnerships@ninjaaitools.com
 
-DEALS: Brad, 1 Instagram Reel with ManyChat automation reposted to Facebook, TikTok, and YouTube Shorts, script approved, draft due 2026-11-12 / final approval target 2026-11-13 / go-live 2026-11-16. Rate, payment terms, and usage rights not confirmed.
+DEALS:
+PromoCut x Brad: 1 Instagram Reel with ManyChat automation, reposted to Facebook, TikTok, and YouTube Shorts, rate not confirmed, In Production, draft due 2026-11-12, final approval target 2026-11-13, go-live date 2026-11-16.
 
-HOW THEY WORK: Script approval required before production. Brand reviews drafts before publishing. Production requirements from 2026-11-11: follow approved script and brief, demonstrate product clearly, use correct brand name and approved CTA, include required screen recordings or product footage. Send completed draft for review before publishing. Two Apple redeem links provided for PromoCut premium access (codes: 3ANT7FMPTMTHPTNA4W and W6TTNALE8XEJJFET76). No portal, dashboard, or billing details provided yet.
+HOW THEY WORK:
+Script approval required before production. Follow approved script and campaign brief, ensure product demonstration is clearly visible, use correct brand name and approved CTA, include required screen recordings or product footage, and send completed draft for review before publishing. Tool access provided via Apple redeem links for premium access.
 
-WATCH OUT: Quil Media apologized for delays on 2026-11-10; they requested tight timelines after approvals and asked us to prioritize filming and posting. Do not delay production or post-approval steps.
+WATCH OUT:
+None noted.
 
-OPEN NOW: Confirm whether Apple redeem links work for filming demo or if direct account access to noocaptools@gmail.com is still needed. Verify access is live. Proceed to filming immediately to meet 2026-11-12 draft deadline.
+OPEN NOW:
+We owe: confirm whether the Apple redemption link works for filming the demo, confirm receipt and status, and proceed to filming to meet the draft video deadline of 2026-11-12.
 
 
 ## Links

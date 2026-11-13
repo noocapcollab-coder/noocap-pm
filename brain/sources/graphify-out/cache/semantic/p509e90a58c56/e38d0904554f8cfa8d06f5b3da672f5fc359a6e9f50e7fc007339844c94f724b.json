@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_xgrids_xgrids", "label": "XGRIDS", "file_type": "document", "source_file": "brands/xgrids.md"}], "edges": [{"source": "brands_xgrids_xgrids", "target": "creators_chris_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/xgrids.md"}], "hyperedges": []}

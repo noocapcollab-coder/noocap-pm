@@ -6,9 +6,12 @@ Next Step: Wait for brand to confirm if [amount]works for their budget
 Platforms: Instagram
 Last Our Email: 2026-10-06
 Follow-ups: 3
-Last Brand Email: 2026-09-20· Thread Subject: Paid Collaboration Opportunity with Wondershare Media.io· Status: Waiting on brand
+Last Brand Email: 2026-09-20
+Thread Subject: Paid Collaboration Opportunity with Wondershare Media.io
+Status: Waiting on brand
 Creator: Chris
-Type: Paid offer· Brand Email: ninazeng@wondershare.com
+Type: Paid offer
+Brand Email: ninazeng@wondershare.com
 
 ## Links
 - [[Chris]]

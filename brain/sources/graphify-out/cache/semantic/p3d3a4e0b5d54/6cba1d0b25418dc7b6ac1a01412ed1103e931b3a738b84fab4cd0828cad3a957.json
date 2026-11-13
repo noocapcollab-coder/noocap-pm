@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_stardesk_stardesk", "label": "StarDesk", "file_type": "code", "source_file": "brands/stardesk.md", "_origin": "semantic"}], "edges": [{"source": "brands_stardesk_stardesk", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/stardesk.md", "_origin": "semantic"}], "hyperedges": []}

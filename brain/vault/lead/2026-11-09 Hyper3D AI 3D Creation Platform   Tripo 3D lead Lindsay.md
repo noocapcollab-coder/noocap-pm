@@ -6,9 +6,12 @@ Next Step: Send script and model link to Tripo3D client for review of model suit
 Platforms: TikTok, Instagram, YouTube Shorts
 Last Our Email: 2026-11-09
 Deal: 1 linked
-Last Brand Email: 2026-11-09· Thread Subject: Paid Collaboration Invitation | Hyper3D AI 3D Creation Platform· Status: Locked
+Last Brand Email: 2026-11-09
+Thread Subject: Paid Collaboration Invitation | Hyper3D AI 3D Creation Platform
+Status: Locked
 Creator: Lindsay
-Type: Paid offer· Brand Email: cherish@mcn.noxinfluencer.com
+Type: Paid offer
+Brand Email: cherish@mcn.noxinfluencer.com
 
 ## Links
 - [[Hyper3D AI 3D Creation Platform   Tripo 3D]]

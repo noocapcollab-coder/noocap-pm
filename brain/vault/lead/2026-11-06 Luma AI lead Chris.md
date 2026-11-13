@@ -7,9 +7,12 @@ Next Step: Review and sign the agreement; confirm creative workflow choice from 
 Platforms: Instagram
 Last Our Email: 2026-11-10
 Deal: 1 linked
-Last Brand Email: 2026-11-06· Thread Subject: Potential Partnership with Luma AI· Status: Locked
+Last Brand Email: 2026-11-06
+Thread Subject: Potential Partnership with Luma AI
+Status: Locked
 Creator: Chris
-Type: Paid offer· Brand Email: upendra@njagency.co
+Type: Paid offer
+Brand Email: upendra@njagency.co
 
 ## Links
 - [[Chris]]

@@ -8,10 +8,13 @@ Platforms: Instagram
 Last Our Email: 2026-10-15
 Follow-ups: 0
 Deal: 1 linked
-Last Brand Email: 2026-10-16· Thread Subject: Exploring a Potential Collaboration with OiiOii· Status: Locked
+Last Brand Email: 2026-10-16
+Thread Subject: Exploring a Potential Collaboration with OiiOii
+Status: Locked
 Our Counters: 1
 Creator: Chris
-Type: Paid offer· Brand Email: vera@luminarysm.com
+Type: Paid offer
+Brand Email: vera@luminarysm.com
 
 ## Links
 - [[Chris]]

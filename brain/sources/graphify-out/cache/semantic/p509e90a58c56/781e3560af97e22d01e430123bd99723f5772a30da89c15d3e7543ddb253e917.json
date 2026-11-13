@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_flashforge_brand", "label": "Flashforge", "file_type": "code", "source_file": "brands/flashforge.md"}], "edges": [{"source": "brands_flashforge_brand", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/flashforge.md"}], "hyperedges": []}

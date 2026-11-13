@@ -5,9 +5,11 @@ Deliverables: TikTok/Instagram Reel (60s) with product-focused content, link in 
 Next Step: Wait for brand to confirm if rates work with their budget
 Platforms: TikTok, Instagram, YouTube
 Last Our Email: 2026-09-11
-Thread Subject: Paid Partnership Invitation - PLAUD· Status: Waiting on brand
+Thread Subject: Paid Partnership Invitation - PLAUD
+Status: Waiting on brand
 Creator: Chris
-Type: Paid offer· Brand Email: tonydowinfluence@net.noxinfluencer.com
+Type: Paid offer
+Brand Email: tonydowinfluence@net.noxinfluencer.com
 
 ## Links
 - [[Chris]]

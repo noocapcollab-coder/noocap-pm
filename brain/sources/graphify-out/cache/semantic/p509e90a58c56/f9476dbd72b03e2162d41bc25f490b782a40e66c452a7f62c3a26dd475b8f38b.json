@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_gaming_brand", "label": "AI \u00d7 Gaming", "file_type": "code", "source_file": "brands/gaming.md"}], "edges": [{"source": "brands_gaming_brand", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/gaming.md"}], "hyperedges": []}

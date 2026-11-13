@@ -6,9 +6,12 @@ Contact Name: Nathan
 Next Step: Deal complete – monitor campaign performance. Await potential follow-up collaboration inquiry.
 Platforms: YouTube Shorts
 Deal: 1 linked
-Last Brand Email: 2026-10-30· Thread Subject: Lindsay <> Velanir | Collaboration· Status: Locked
+Last Brand Email: 2026-10-30
+Thread Subject: Lindsay <> Velanir | Collaboration
+Status: Locked
 Creator: Lindsay
-Type: Paid offer· Brand Email: nate@velanir.ai
+Type: Paid offer
+Brand Email: nate@velanir.ai
 
 ## Links
 - [[Lindsay]]

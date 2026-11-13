@@ -3,9 +3,12 @@ type: lead
 ---
 Contact Name: Raj
 Next Step: New brand: management to reply with pricing
-Last Brand Email: 2026-11-09· Thread Subject: An AI twin of you, Chris?· Status: New offer
+Last Brand Email: 2026-11-09
+Thread Subject: An AI twin of you, Chris?
+Status: New offer
 Creator: Chris
-Type: Paid offer· Brand Email: raj@geneye.ai
+Type: Paid offer
+Brand Email: raj@geneye.ai
 
 ## Links
 - [[Chris]]

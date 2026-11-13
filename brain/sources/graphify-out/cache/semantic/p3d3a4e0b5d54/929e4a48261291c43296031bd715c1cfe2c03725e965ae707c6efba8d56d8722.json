@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_kooko_kooko", "label": "KooKo", "file_type": "concept", "source_file": "brands/kooko.md", "_origin": "semantic"}], "edges": [{"source": "brands_kooko_kooko", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/kooko.md", "_origin": "semantic"}], "hyperedges": []}

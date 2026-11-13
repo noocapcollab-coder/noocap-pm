@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_luminary_luminary", "label": "Luminary", "file_type": "concept", "source_file": "brands/luminary.md"}], "edges": [{"source": "brands_luminary_luminary", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/luminary.md"}], "hyperedges": []}

@@ -6,9 +6,12 @@ Contact Name: Manny
 Next Step: New brand: management to reply with pricing
 Platforms: Instagram
 Last Our Email: 2026-11-06
-Last Brand Email: 2026-11-06· Thread Subject: Quick note about your content· Status: Negotiating
+Last Brand Email: 2026-11-06
+Thread Subject: Quick note about your content
+Status: Negotiating
 Creator: Chris
-Type: Paid offer· Brand Email: manny.u@abacomputecomp.org
+Type: Paid offer
+Brand Email: manny.u@abacomputecomp.org
 
 ## Links
 - [[Chris]]

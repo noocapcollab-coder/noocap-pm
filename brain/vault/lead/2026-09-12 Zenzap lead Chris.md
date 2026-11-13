@@ -5,9 +5,12 @@ Deliverables: 1 short-form video cross-posted to TikTok + Instagram, link in bio
 Next Step: Wait for brand to confirm if they accept the [amount]counter-offer
 Platforms: TikTok, Instagram
 Last Our Email: 2026-09-14
-Last Brand Email: 2026-09-12· Thread Subject: thechriscordero x Zenzap [Collaboration Inquiry]· Status: Waiting on brand
+Last Brand Email: 2026-09-12
+Thread Subject: thechriscordero x Zenzap [Collaboration Inquiry]
+Status: Waiting on brand
 Creator: Chris
-Type: Paid offer· Brand Email: levi@houseofmarketers.co.uk
+Type: Paid offer
+Brand Email: levi@houseofmarketers.co.uk
 
 ## Links
 - [[Chris]]
