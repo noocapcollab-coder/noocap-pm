@@ -14,6 +14,7 @@ test('gate runs after a new commit or a new lesson, not twice in a row', () => {
   const now = Date.parse('2026-11-13T12:00:00Z');
   const ago = (m) => new Date(now - m * 60000).toISOString();
   assert.equal(gateReason({ last: null, commit: 'abc1234', lessonAt: '', now }), 'commit');
+  assert.equal(gateReason({ last: { at: ago(600), commit: '', lessonAt: '' }, commit: 'abc1234', lessonAt: ago(30), now }), 'commit');
   assert.equal(gateReason({ last: { at: ago(60), commit: 'abc1234', lessonAt: ago(500) }, commit: 'def5678', lessonAt: ago(500), now }), 'commit');
   assert.equal(gateReason({ last: { at: ago(GATE_GAP_MIN.commit - 5), commit: 'abc1234', lessonAt: '' }, commit: 'def5678', lessonAt: '', now }), null);
   assert.equal(gateReason({ last: { at: ago(60), commit: 'abc1234', lessonAt: ago(500) }, commit: 'abc1234', lessonAt: ago(500), now }), null);
