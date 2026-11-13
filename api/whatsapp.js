@@ -351,6 +351,7 @@ async function learnFromReject(st, msg, why) {
   const d = await readDraftById(msg.rejected).catch(() => null);
   const L = await import('../lib/lessons.js');
   const r = await L.learn({ correction: `Harsh rejected this ${d?.kind || ''} email${d?.brand ? ` to ${d.brand}` : ''} because: ${why}\n\nThe rejected email:\n${String(d?.body || '').replace(/<br\s*\/?>/g, '\n').slice(0, 1500)}`, source: 'Draft rejected', example: `${d?.brand || ''} ${d?.kind || ''}: ${d?.subject || ''}`.trim() });
+  try { await (await import('../lib/testbank.js')).caseFromDraft(d || {}, r, { source: 'Draft rejected', reason: why }); } catch { /* the test bank is best-effort */ }
   msg.resolved = 'learned';
   await say(st, r?.added ? `📝 Got it, I'll remember: *${r.added}*` : r?.repeated ? `📝 Noted. That's a lesson I already had (*${r.repeated}*), now seen ${r.times} times, so I'm treating it as a priority.` : '📝 Noted.');
 }
@@ -376,7 +377,7 @@ async function applyEdit(st, id, instruction) {
   if (!body) { await say(st, "⚠️ I couldn't rewrite that one. Try saying the change another way, or edit it in Approvals."); return; }
   await saveDraft(id, { body });
   // Harsh had to change it: what he asked for is a lesson for the next draft like this one
-  try { const L = await import('../lib/lessons.js'); if (L.changedEnough(d.body, body)) await L.learn({ correction: `Harsh changed a ${d.kind || ''} email${d.brand ? ` to ${d.brand}` : ''} before sending. His instruction: "${instruction}".\nBefore:\n${String(d.body || '').replace(/<br\s*\/?>/g, '\n').slice(0, 1200)}\nAfter:\n${String(body).replace(/<br\s*\/?>/g, '\n').slice(0, 1200)}`, source: 'Draft edit', example: `${d.brand || ''} ${d.kind || ''}`.trim() }); } catch { /* learning is best-effort */ }
+  try { const L = await import('../lib/lessons.js'); if (L.changedEnough(d.body, body)) await (await import('../lib/testbank.js')).caseFromDraft(d, await L.learn({ correction: `Harsh changed a ${d.kind || ''} email${d.brand ? ` to ${d.brand}` : ''} before sending. His instruction: "${instruction}".\nBefore:\n${String(d.body || '').replace(/<br\s*\/?>/g, '\n').slice(0, 1200)}\nAfter:\n${String(body).replace(/<br\s*\/?>/g, '\n').slice(0, 1200)}`, source: 'Draft edit', example: `${d.brand || ''} ${d.kind || ''}`.trim() }), { source: 'Draft edit', reason: instruction, after: body }); } catch { /* learning is best-effort */ }
   try {
     const { log } = await import('../lib/briefs.js');
     await log({ event: `Draft edited on WhatsApp: ${d.subject || id}`, outcome: 'Rule', email: { messageId: '' }, details: `By ${st.person.name}: ${instruction}`.slice(0, 1800), area: 'System', source: 'WhatsApp' });

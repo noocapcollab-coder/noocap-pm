@@ -66,8 +66,9 @@ export default async function handler(req, res) {
         const { readDraftById } = await import('../lib/outbox.js');
         const L = await import('../lib/lessons.js');
         const d = await readDraftById(id);
-        if (label === 'reject') { if (String(body.reason || '').trim()) await L.learn({ correction: `Harsh rejected this ${d.kind || ''} email${d.brand ? ` to ${d.brand}` : ''} because: ${body.reason}\n\nThe email:\n${String(d.body || '').replace(/<br\s*\/?>/g, '\n').slice(0, 1500)}`, source: 'Draft rejected', example: `${d.brand || ''} ${d.kind || ''}`.trim() }); return; }
-        if (text && L.changedEnough(d.body, text)) await L.learn({ correction: `Harsh rewrote a ${d.kind || ''} email${d.brand ? ` to ${d.brand}` : ''} before sending.\nBefore:\n${String(d.body || '').replace(/<br\s*\/?>/g, '\n').slice(0, 1200)}\nAfter:\n${String(text).replace(/<br\s*\/?>/g, '\n').slice(0, 1200)}`, source: 'Draft edit', example: `${d.brand || ''} ${d.kind || ''}`.trim() });
+        const T = await import('../lib/testbank.js');
+        if (label === 'reject') { if (String(body.reason || '').trim()) { const r = await L.learn({ correction: `Harsh rejected this ${d.kind || ''} email${d.brand ? ` to ${d.brand}` : ''} because: ${body.reason}\n\nThe email:\n${String(d.body || '').replace(/<br\s*\/?>/g, '\n').slice(0, 1500)}`, source: 'Draft rejected', example: `${d.brand || ''} ${d.kind || ''}`.trim() }); await T.caseFromDraft(d, r, { source: 'Draft rejected', reason: body.reason }); } return; }
+        if (text && L.changedEnough(d.body, text)) await T.caseFromDraft(d, await L.learn({ correction: `Harsh rewrote a ${d.kind || ''} email${d.brand ? ` to ${d.brand}` : ''} before sending.\nBefore:\n${String(d.body || '').replace(/<br\s*\/?>/g, '\n').slice(0, 1200)}\nAfter:\n${String(text).replace(/<br\s*\/?>/g, '\n').slice(0, 1200)}`, source: 'Draft edit', example: `${d.brand || ''} ${d.kind || ''}`.trim() }), { source: 'Draft edit', after: text });
       } catch { /* learning is best-effort */ }
     };
     if (action === 'reject') { await learnFrom('reject'); await rejectDraft(id); return res.status(200).json({ ok: true }); }
