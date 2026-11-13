@@ -50,7 +50,8 @@ test('loop-in reply confirms we take over and asks only for what is missing (Nov
   const a = handoverAckText({ name: 'Jessie', brand: 'AI Inspo', creator: 'Duncan', text: "I'm adding noocapcollab@gmail.com to this thread so they can handle all next steps from here." });
   assert.ok(a.startsWith('Hi Jessie,'));
   assert.ok(/take this collaboration forward from here/.test(a));
-  assert.ok(/the brief and the contract/.test(a));
+  assert.ok(/Could you share the brief and the contract in this thread\?/.test(a));
+  assert.ok(!/Lindsay's team and|(if there is one)/.test(a));
   assert.ok(a.endsWith("Duncan's Team"));
   const b = handoverAckText({ name: '', brand: 'Hyper3D', creator: 'Lindsay', text: 'Adding noocapcollab. The brief is here: https://notion.so/brief-123' });
   assert.ok(b.startsWith('Hi Hyper3D team,'));
