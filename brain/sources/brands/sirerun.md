@@ -4,7 +4,7 @@ Brand. Works with creators: [[Lindsay]].
 
 ## Inbound leads
 - Contact Name: David · Next Step: Quote at [amount]waiting in Approvals · Last Brand Email: 2026-10-15 · Thread Text: From: David from Sire Run, Inc. <affiliates@rewardful.com>
-Date: 2026-10-15Z
+Date: 2026-10-15
 
 Hello,&nbsp;
 &nbsp;

@@ -2,6 +2,13 @@
 
 What brands asked us to change after seeing a cut. Read before editing the next video for the same brand.
 
+## 2026-11-13 CapCut × Chris
+Brand: [[CapCut]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.
+For the 25-second video, please do not show the Dreamina operation interface. You may show the CapCut interface together with the Dreamina logo.
+Mia Brown sent review feedback on the first draft video
+Requested not to show the Dreamina operation interface for the 25-second video
+Can show the CapCut interface together with the Dreamina logo
+
 ## 2026-11-04 CapCut x ChatGPT
 Brand: [[CapCut]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.
 Hook: Use Hook 2. Subtitles: Change "cap cut" to "CapCut" throughout. 0:04–0:12: Demonstrate using CapCut within ChatGPT, rather than ChatGPT directly. 0:24–0:28: Screen shows Chatcut instead of CapCut website—correct this. 0:31–0:35: Replace app interface footage with correct web version. 0:41–0:43: Ending is abrupt and does not clearly show how ChatGPT opens CapCut; demonstrate this process more clearly, perhaps immediately after the hook. Missing demonstration: Show how to copy a prompt and paste it into ChatGPT to import the CapCut plugin. Terminology: Use "ChatGPT" instead of "Codex" throughout the video. Overall concern: On-screen presenter appears to be AI avatar and interface footage seems sourced rather than recorded directly, making video feel insufficiently authentic and carefully produced. Brand requests reshoot with original footage and more polished presentation.

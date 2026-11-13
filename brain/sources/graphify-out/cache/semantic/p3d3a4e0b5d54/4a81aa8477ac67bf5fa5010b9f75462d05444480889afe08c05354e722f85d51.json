@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_hoox_hoox_ai", "label": "Hoox AI", "file_type": "document", "source_file": "brands/hoox.md", "_origin": "semantic"}], "edges": [{"source": "brands_hoox_hoox_ai", "target": "creators_chris_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/hoox.md", "_origin": "semantic"}], "hyperedges": []}

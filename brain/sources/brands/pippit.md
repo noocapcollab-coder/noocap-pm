@@ -8,7 +8,7 @@ Brand. Works with creators: [[Chris]], [[Lindsay]].
 - Deliverables: 1 dedicated short-form video per campaign (IG Reel/TikTok/YT Short) · Contact Name: Jenny · Next Step: Lost: offer [amount]is under our [amount]inimum, not answered · Platforms: Instagram, TikTok, YouTube Shorts · Last Our Email: 2026-10-05 · Last Brand Email: 2026-10-08 · Thread Subject: Paid Collaboration Invitation with Pippit × thechriscordero · Status: Lost · Creator: Chris · Type: Paid offer · Brand Email: vicky.miller@growmaxvalue.com
 - Deliverables: 1 YouTube Shorts with 30-day ad rights and cross-posting · Next Step: Wait for brand to confirm [amount]rate or counter-offer · Platforms: Instagram · Last Our Email: 2026-10-06 · Follow-ups: 3 · Last Brand Email: 2026-09-18 · Thread Subject: thechriscordero x Pippit Campaign IG · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: hezuoyoujian@mcn.noxinfluencer.com
 - Deliverables: 1 dedicated Instagram Reel · Contact Name: Lauren · Next Step: Archive. Chris declined the offer. · Platforms: Instagram · Last Our Email: 2026-09-24 · Last Brand Email: 2026-09-24 · Thread Text: From: "Lauren" <lauren@invite.jellyotter.org>
-Date: 2026-09-10Z
+Date: 2026-09-10
 
 Hi thechriscordero,
 

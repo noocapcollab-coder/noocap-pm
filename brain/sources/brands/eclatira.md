@@ -5,7 +5,7 @@ Brand. Works with creators: [[Chris]], [[Lindsay]].
 ## Inbound leads
 - Contact Name: Moad · Next Step: Quote at [amount]waiting in Approvals · Last Our Email: 2026-11-02 · Follow-ups: 1 · Last Brand Email: 2026-10-20 · Thread Subject: collab? · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: moadrs@eclatirasystem.com
 - Contact Name: Moad · Next Step: Our quote expired unsent after 5 days · Platforms: YouTube Shorts · Last Brand Email: 2026-10-19 · Thread Text: From: Moad RS <smoad@aieclatira.com>
-Date: 2026-10-19Z
+Date: 2026-10-19
 
 Hey there, bumping this in case it got buried. Would love to work together, open to it?
 

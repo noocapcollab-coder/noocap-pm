@@ -41,3 +41,6 @@ OPEN NOW: We owe: clarify whether the redemption link works for filming the demo
 
 ## Inbound leads
 - Next Step: Wait for brand to provide project details · Last Our Email: 2026-10-28 · Last Brand Email: 2026-10-27 · Thread Subject: PromoCut Discord + Potential Paid UGC Opportunity! · Status: Waiting on brand · Creator: Chris · Type: Unclear · Brand Email: renzo.rodriguez@promocut.com
+
+## Decisions from Harsh
+- 2026-11-13: Brand asked: Clarify whether the redemption link works for filming the demo on noocaptools@gmail.com or if direct account access is needed; confirm receipt and status; proceed to filming if access is sufficient · Harsh answered: Brad x promo cut changes

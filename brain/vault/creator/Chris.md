@@ -3,7 +3,7 @@ type: creator
 ---
 # Chris
 
-NOOCAP creator. Brands: [[Unknown]], [[Joylo]], [[Holo]], [[Pine AI]], [[Pollo.AI]], [[Lovart]], [[OiiOii]], [[Halliday]], [[Buzzy AI]], [[Bluehost 2]], [[Flova AI]], [[Topview AI]], [[Kylon]], [[Migoo (in-person session)]], [[GetRamped]], [[AistLabs]], [[Higgsfield]], [[Teamily]], [[Polsia]], [[Hyper3D]], [[Polar]], [[Luma AI]], [[Manyfast]], [[PromoCut]], [[SpeakOn AI]], [[Emergent]], [[Tripo 3D]], [[CapCut]], [[ElevenLabs]], [[Panda Security]], [[Runway AI]], [[Dreamina]], [[Aries]], [[Fotor]], [[Moonphase]], [[Demi AI]], [[FlovaAI]], [[Marlow AI]], [[Tiiny Host]], [[Dzine]], [[PixVerse]], [[Klap]], [[QuickAds]], [[WATERFLY]], [[Tapo]], [[Golden Whale Agency]], [[Soldy]], [[Moprobo]], [[HeadsUpp]], [[OpenArt]], [[JellyOtter (home lifestyle products)]], [[Cekat.ai]], [[MVLAND]], [[Hoox AI]], [[AI tool (agents/workflow platform)]], [[CoHear]], [[Tripo]], [[YESOUL Fitness]], [[Toptal AI]], [[OmniRogue]], [[Predis.ai]], [[CutGPT]], [[VideoDuck]], [[Tec-Do]], [[AI video generation tool]], [[Vivix]], [[EurekaMind]], [[CineMap AI]], [[Carnage]], [[PepoChat]], [[Tencent Design Miora]], [[LiberNovo]], [[VidAgent]], [[Dragon Notes]], [[Hollyland]], [[Planetarium]], [[MiniMax Agent M3]], [[Enter Pro & Framia Pro]], [[iQOO]], [[AI creative platform]], [[Vmake Labs]], [[Bobby AI]], [[OpenPartner]], [[Orilo]], [[bitdeer.ai]], [[Filmora]], [[Eazo]], [[Alloop]], [[Sutyo]], [[Yantra]], [[Vinabot AI]], [[NoteGPT]], [[aiWriter]], [[APIQIK]], [[vrim.ai]], [[PhotoGenerator]], [[OnaxAI]], [[CodeRabbit]], [[Selectra]], [[Renoise]], [[AI Chat Pro]], [[OpenUI]], [[Lovart 2.0]], [[CutBay]], [[Pippit]], [[Kimi]], [[HubSpot]], [[Dymesty]], [[Spira]], [[Spark.site]], [[AIFY Media]], [[Botslab]], [[GoLogin]], [[VidNext]], [[Hailuo]], [[Klyr]], [[Macaly]], [[Hi3D]], [[Impact Driven AI]], [[GlobalDragon]], [[Creatify]], [[Scholé AI]], [[Tripo Studio]], [[Eclatira]], [[Kiva]], [[UPDF]], [[TORRAS Glass]], [[Tencent Cloud]], [[GoldJoy]], [[Lemonado]], [[HitPaw]], [[Holafly]], [[AI 3D Creation Platform]], [[Olalabs]], [[AIKONIC]], [[Chromatic]], [[Grammarly]], [[TechPod]], [[Solaris Studio]], [[Mosaic]], [[MiniMax]], [[Fotor Agent]], [[Sparkols]], [[Atlabs]], [[SciencePro]], [[Alinea]], [[Wondershare Media.io]], [[Orlino AI]], [[Elaaris]], [[Vyra]], [[HISONG AirStudio]], [[Tabbit]], [[AutoFull]], [[Granola AI]], [[EmTech]], [[OpusClip]], [[Wistar]], [[UMEVO]], [[DEEPRobotics]], [[Dubedo (OpenBMB)]], [[Wizstar]], [[Phylee AI]], [[Vinc]], [[OrlinoAi]], [[The AI Academy]], [[Dell XPS 13]], [[Twinr]], [[Strawberry]], [[Viktor]], [[PosterMyWall]], [[ElevenCreative by ElevenLabs]], [[Figma, UPDF, Runable]], [[Fireflies AI]], [[Scoutreach]], [[Ryoko Pro]], [[Manus AI]], [[InVideo]], [[QuickMagic]], [[FlyMy.AI]], [[God of Prompt]], [[Templify (via Abhi Elite Media)]], [[Violoop]], [[Wispr Flow x Lovable]], [[ARKKY]], [[Linearity]], [[OmniSocials]], [[INMO]], [[The Crazy Entrepreneur (TCE) / AI-powered e-commerce application]], [[The Crazy Entrepreneur (AI-powered e-commerce application)]], [[AI-powered e-commerce application]], [[VidMuse]], [[Caio Jetsetter / Costa Jetsetter]], [[Breezm Eyewear]], [[TIANYUE Financial Business Academy]], [[Miora AI]], [[FireVibe AI]], [[Medeo]], [[Fetra AI]], [[Drama.Land]], [[Cloudways]], [[CapCut Web x Codex]], [[Voice Cursor]], [[TapNow AI]], [[Tianyue Business School]], [[Tech and AI brands (unspecified)]], [[Levoit]], [[Recapo]], [[Pexo]], [[Scout7]], [[MOVO AI]], [[HighLevel]], [[Desktop video editing workspace (new platform)]], [[AI × Gaming]], [[ACASIS]], [[Runable and Outskill]], [[PLAUD]], [[Great Learning]], [[Ping!]], [[RoboNeo]], [[Qoder]], [[LTX]], [[Zenzap]], [[freebeat.ai]], [[TORRAS Rugged Case and UltraGlass Screen Protector]], [[Moonshot]], [[SKYRIM WRIST WATCH]], [[SpyTrend]], [[Tencent]], [[Noiz AI]], [[Genpire]], [[Vocci AI]], [[Tripo API]], [[VinaAI]], [[iLands]], [[Meet August]], [[Captiono]], [[CapCut Video Studio]], [[AIsa]], [[Flashforge]], [[TeraBox]], [[XGRIDS]], [[Accio Work]], [[Blue Host, Framer and SimpliLearn]], [[GrowMaxValue / CapCut]], [[Lev8]], [[AIQORA AI]], [[CapCut Director Mode]], [[Abacus AI]], [[Giga X]], [[MagicLight AI]], [[BrandinPro (AI Tool)]], [[Genspark]], [[StarDesk]], [[Turnfeat AI]], [[Quit Your Job With AI]], [[Oasis]], [[Igniton]], [[Wollo AI]], [[Chain Bee]], [[Munch Studio]], [[MiaoLab Radarguard]], [[Flowtica]], [[Dreamina Seedance 2.0]], [[The Neuron Academy]], [[Capmind]], [[August App]], [[MyDesigns]].
+NOOCAP creator. Brands: [[Fotor]], [[Unknown]], [[Joylo]], [[Holo]], [[Pine AI]], [[Pollo.AI]], [[Lovart]], [[OiiOii]], [[Halliday]], [[Buzzy AI]], [[Bluehost 2]], [[Flova AI]], [[Topview AI]], [[Kylon]], [[Migoo (in-person session)]], [[GetRamped]], [[AistLabs]], [[Higgsfield]], [[Teamily]], [[Polsia]], [[Hyper3D]], [[Polar]], [[Luma AI]], [[Manyfast]], [[PromoCut]], [[SpeakOn AI]], [[Emergent]], [[Tripo 3D]], [[CapCut]], [[ElevenLabs]], [[Panda Security]], [[Runway AI]], [[Dreamina]], [[Gologin]], [[TapNow]], [[Rail Akhmetov]], [[Outskill]], [[RunningHub]], [[MotionReels]], [[Aries]], [[Moonphase]], [[Demi AI]], [[FlovaAI]], [[Marlow AI]], [[Tiiny Host]], [[Dzine]], [[PixVerse]], [[Klap]], [[QuickAds]], [[WATERFLY]], [[Tapo]], [[Golden Whale Agency]], [[Soldy]], [[Moprobo]], [[HeadsUpp]], [[OpenArt]], [[JellyOtter (home lifestyle products)]], [[Cekat.ai]], [[MVLAND]], [[Hoox AI]], [[AI tool (agents/workflow platform)]], [[CoHear]], [[Tripo]], [[YESOUL Fitness]], [[Toptal AI]], [[OmniRogue]], [[Predis.ai]], [[CutGPT]], [[VideoDuck]], [[Tec-Do]], [[AI video generation tool]], [[Vivix]], [[EurekaMind]], [[CineMap AI]], [[Carnage]], [[PepoChat]], [[Tencent Design Miora]], [[LiberNovo]], [[VidAgent]], [[Dragon Notes]], [[Hollyland]], [[Planetarium]], [[MiniMax Agent M3]], [[Enter Pro & Framia Pro]], [[iQOO]], [[AI creative platform]], [[Vmake Labs]], [[Bobby AI]], [[OpenPartner]], [[Orilo]], [[bitdeer.ai]], [[Filmora]], [[Eazo]], [[Alloop]], [[Sutyo]], [[Yantra]], [[Vinabot AI]], [[NoteGPT]], [[aiWriter]], [[APIQIK]], [[vrim.ai]], [[PhotoGenerator]], [[OnaxAI]], [[CodeRabbit]], [[Selectra]], [[Renoise]], [[AI Chat Pro]], [[OpenUI]], [[Lovart 2.0]], [[CutBay]], [[Pippit]], [[Kimi]], [[HubSpot]], [[Dymesty]], [[Spira]], [[Spark.site]], [[AIFY Media]], [[Botslab]], [[VidNext]], [[Hailuo]], [[Klyr]], [[Macaly]], [[Hi3D]], [[Impact Driven AI]], [[GlobalDragon]], [[Creatify]], [[Scholé AI]], [[Tripo Studio]], [[Eclatira]], [[Kiva]], [[UPDF]], [[TORRAS Glass]], [[Tencent Cloud]], [[GoldJoy]], [[Lemonado]], [[HitPaw]], [[Holafly]], [[AI 3D Creation Platform]], [[Olalabs]], [[AIKONIC]], [[Chromatic]], [[Grammarly]], [[TechPod]], [[Solaris Studio]], [[Mosaic]], [[MiniMax]], [[Fotor Agent]], [[Sparkols]], [[Atlabs]], [[SciencePro]], [[Alinea]], [[Wondershare Media.io]], [[Orlino AI]], [[Elaaris]], [[Vyra]], [[HISONG AirStudio]], [[Tabbit]], [[AutoFull]], [[Granola AI]], [[EmTech]], [[OpusClip]], [[Wistar]], [[UMEVO]], [[DEEPRobotics]], [[Dubedo (OpenBMB)]], [[Wizstar]], [[Phylee AI]], [[Vinc]], [[OrlinoAi]], [[The AI Academy]], [[Dell XPS 13]], [[Twinr]], [[Strawberry]], [[Viktor]], [[PosterMyWall]], [[ElevenCreative by ElevenLabs]], [[Figma, UPDF, Runable]], [[Fireflies AI]], [[Scoutreach]], [[Ryoko Pro]], [[Manus AI]], [[InVideo]], [[QuickMagic]], [[FlyMy.AI]], [[God of Prompt]], [[Templify (via Abhi Elite Media)]], [[Violoop]], [[Wispr Flow x Lovable]], [[ARKKY]], [[Linearity]], [[OmniSocials]], [[INMO]], [[The Crazy Entrepreneur (TCE) / AI-powered e-commerce application]], [[The Crazy Entrepreneur (AI-powered e-commerce application)]], [[AI-powered e-commerce application]], [[VidMuse]], [[Caio Jetsetter / Costa Jetsetter]], [[Breezm Eyewear]], [[TIANYUE Financial Business Academy]], [[Miora AI]], [[FireVibe AI]], [[Medeo]], [[Fetra AI]], [[Drama.Land]], [[Cloudways]], [[CapCut Web x Codex]], [[Voice Cursor]], [[Tianyue Business School]], [[Tech and AI brands (unspecified)]], [[Levoit]], [[Recapo]], [[Pexo]], [[Scout7]], [[MOVO AI]], [[HighLevel]], [[Desktop video editing workspace (new platform)]], [[AI × Gaming]], [[ACASIS]], [[Runable and Outskill]], [[PLAUD]], [[Great Learning]], [[Ping!]], [[RoboNeo]], [[Qoder]], [[LTX]], [[Zenzap]], [[freebeat.ai]], [[TORRAS Rugged Case and UltraGlass Screen Protector]], [[Moonshot]], [[SKYRIM WRIST WATCH]], [[SpyTrend]], [[Tencent]], [[Noiz AI]], [[Genpire]], [[Vocci AI]], [[Tripo API]], [[VinaAI]], [[iLands]], [[Meet August]], [[Captiono]], [[CapCut Video Studio]], [[AIsa]], [[Flashforge]], [[TeraBox]], [[XGRIDS]], [[Accio Work]], [[Blue Host, Framer and SimpliLearn]], [[GrowMaxValue / CapCut]], [[Lev8]], [[AIQORA AI]], [[CapCut Director Mode]], [[Abacus AI]], [[Giga X]], [[MagicLight AI]], [[BrandinPro (AI Tool)]], [[Genspark]], [[StarDesk]], [[Turnfeat AI]], [[Quit Your Job With AI]], [[Oasis]], [[Igniton]], [[Wollo AI]], [[Chain Bee]], [[Munch Studio]], [[MiaoLab Radarguard]], [[Flowtica]], [[Dreamina Seedance 2.0]], [[The Neuron Academy]], [[Capmind]], [[August App]], [[MyDesigns]].
 
 ## Links
 - [[ACASIS]]
@@ -91,10 +91,10 @@ NOOCAP creator. Brands: [[Unknown]], [[Joylo]], [[Holo]], [[Pine AI]], [[Pollo.A
 - [[GetRamped]]
 - [[Giga X]]
 - [[GlobalDragon]]
-- [[GoLogin]]
 - [[God of Prompt]]
 - [[GoldJoy]]
 - [[Golden Whale Agency]]
+- [[Gologin]]
 - [[Grammarly]]
 - [[Granola AI]]
 - [[Great Learning]]
@@ -151,6 +151,7 @@ NOOCAP creator. Brands: [[Unknown]], [[Joylo]], [[Holo]], [[Pine AI]], [[Pollo.A
 - [[Moonshot]]
 - [[Moprobo]]
 - [[Mosaic]]
+- [[MotionReels]]
 - [[Munch Studio]]
 - [[MyDesigns]]
 - [[Noiz AI]]
@@ -168,6 +169,7 @@ NOOCAP creator. Brands: [[Unknown]], [[Joylo]], [[Holo]], [[Pine AI]], [[Pollo.A
 - [[Orilo]]
 - [[Orlino AI]]
 - [[OrlinoAi]]
+- [[Outskill]]
 - [[PLAUD]]
 - [[Panda Security]]
 - [[PepoChat]]
@@ -189,10 +191,12 @@ NOOCAP creator. Brands: [[Unknown]], [[Joylo]], [[Holo]], [[Pine AI]], [[Pollo.A
 - [[QuickAds]]
 - [[QuickMagic]]
 - [[Quit Your Job With AI]]
+- [[Rail Akhmetov]]
 - [[Recapo]]
 - [[Renoise]]
 - [[RoboNeo]]
 - [[Runable and Outskill]]
+- [[RunningHub]]
 - [[Runway AI]]
 - [[Ryoko Pro]]
 - [[SKYRIM WRIST WATCH]]
@@ -215,7 +219,7 @@ NOOCAP creator. Brands: [[Unknown]], [[Joylo]], [[Holo]], [[Pine AI]], [[Pollo.A
 - [[TORRAS Glass]]
 - [[TORRAS Rugged Case and UltraGlass Screen Protector]]
 - [[Tabbit]]
-- [[TapNow AI]]
+- [[TapNow]]
 - [[Tapo]]
 - [[Teamily]]
 - [[Tec-Do]]

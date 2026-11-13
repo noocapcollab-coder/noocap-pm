@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Submitted
-Last brand reply 2026-11-12, our last reply 2026-11-13.
+Last brand reply 2026-11-13, our last reply 2026-11-13.
 AGREED: [amount]total. 3 short-form videos. Signed contract via GrowMaxValue agency. Usage rights not stated. Payment terms not stated.
 
 HISTORY:
@@ -15,11 +15,11 @@ HISTORY:
 2026-11-10 brand / Mia Brown followed up asking if we are running into difficulties
 2026-11-11 us / Sent CapCut UID 4401089801 and Dreamina UID 7676360876761269265
 2026-11-12 brand / Mia Brown rejected CapCut UID as incorrect, asked us to verify using PC version steps and resubmit
-2026-11-13 us / Sent first draft video for review via Frame.io link
+2026-11-13 us / Sent first draft video for review via Frame.io link, sent revised cut with requested changes
 
 BILLING: not yet
 
-OPEN NOW: Waiting on brand: Review the first draft video.
+OPEN NOW: Waiting on brand: Review the revised video draft and confirm approval or further feedback.
 
 ## Links
 - [[CapCut]]

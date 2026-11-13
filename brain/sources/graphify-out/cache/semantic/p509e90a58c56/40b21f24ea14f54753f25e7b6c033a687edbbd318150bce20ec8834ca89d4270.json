@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_eclicklink_eclicklink", "label": "eclicklink", "file_type": "document", "source_file": "brands/eclicklink.md"}], "edges": [{"source": "brands_eclicklink_eclicklink", "target": "creators_lindsay_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/eclicklink.md"}], "hyperedges": []}

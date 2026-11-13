@@ -1,5 +1,5 @@
 # David - what performs
-Content OS, videos posted since 2026-07-16: 218 posts across platforms, average 5,281 views. Creator: [[David]].
+Content OS, videos posted since 2026-07-16: 224 posts across platforms, average 5,223 views. Creator: [[David]].
 ## 2026-11-03 Comment 7 and I’ll send you all seven links.
 Facebook Short: 245,882 views, 2,405 likes, 2,813 comments, 353 shares, 0 saves.
 ## 2026-09-25 Every Jarvis clip on your feed right now is the same open-source repo 
@@ -31,7 +31,7 @@ Instagram Short: 15,743 views, 165 likes, 211 comments, 0 shares, 0 saves.
 ## 2026-10-01 Comment "REPO" and I'll send you all four links.
 Facebook Short: 15,300 views, 166 likes, 97 comments, 20 shares, 0 saves.
 ## 2026-09-26 Comment "REPO" and I'll DM you all four links.
-Instagram Short: 8,282 views, 124 likes, 155 comments, 0 shares, 0 saves.
+Instagram Short: 8,392 views, 125 likes, 156 comments, 0 shares, 0 saves.
 ## 2026-10-23 Comment 20,000 and I’ll send you the link.
 Facebook Short: 7,945 views, 60 likes, 63 comments, 4 shares, 0 saves.
 ## 2026-09-24 Comment "REPO" and I'll DM you all five links.
@@ -41,12 +41,12 @@ YouTube Short: 7,486 views, 26 likes, 3 comments, 0 shares, 0 saves.
 ## 2026-09-28 Comment “REPO” and I’ll DM you all four links.
 Instagram Short: 5,502 views, 132 likes, 90 comments, 0 shares, 0 saves.
 ## 2026-09-30 Comment “STANFORD” and I’ll send it to you.
-Instagram Short: 5,330 views, 108 likes, 237 comments, 0 shares, 0 saves.
+Instagram Short: 5,413 views, 108 likes, 239 comments, 0 shares, 0 saves.
 ## 2026-11-06 Comment LEADS and I’ll send you the GitHub link plus how I’d set it up
 Facebook Short: 5,221 views, 27 likes, 62 comments, 4 shares, 0 saves.
 ## 2026-09-27 Comment "JARVIS" and I'll send you the repo and the full setup guide.
 Instagram Short: 4,894 views, 110 likes, 186 comments, 0 shares, 0 saves.
 ## 2026-11-08 Comment SYSTEM and I’ll send you the setup guide you can paste into Cl
-Facebook Short: 4,761 views, 24 likes, 67 comments, 7 shares, 0 saves.
+Facebook Short: 4,864 views, 24 likes, 73 comments, 7 shares, 0 saves.
 ## 2026-10-03 Comment REPO and I'll send you all ten links.
 Facebook Short: 4,707 views, 36 likes, 58 comments, 7 shares, 0 saves.

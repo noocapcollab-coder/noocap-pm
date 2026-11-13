@@ -1,17 +1,17 @@
 ---
 type: lead
 ---
-Deliverables: Short-form video (with 30-day ad authorization and cross-posting)
-Contact Name: Marina
+Deliverables: 1 Short-form video
+Contact Name: Joey
 Next Step: New brand: management to reply with pricing
-Platforms: Instagram
-Last Our Email: 2026-11-12
+Platforms: Instagram, TikTok, YouTube Shorts
+Last Our Email: 2026-11-13
 Last Brand Email: 2026-11-13
-Thread Subject: Paid Collab: Become One of the Fotor Agent Creators
+Thread Subject: Let's Collaborate with Fotor Agent – AI Video Creation
 Status: Negotiating
 Creator: Chris
 Type: Paid offer
-Brand Email: marina@fotor.me
+Brand Email: Joey@miroz.co
 
 ## Links
 - [[Chris]]

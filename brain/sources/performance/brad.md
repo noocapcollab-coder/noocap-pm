@@ -8,7 +8,7 @@ Instagram Short: 2,110 views, 19 likes, 3 comments, 0 shares, 0 saves. Brand: [[
 Facebook Short: 1,675 views, 17 likes, 1 comments, 0 shares, 0 saves.
 ## 2026-10-30 👇 Check out my pinned comment for the link to get 2,000 free credits!
 Facebook Short: 1,502 views, 7 likes, 1 comments, 0 shares, 0 saves.
-## 2026-10-30 👇 Comment "STORY" and I'll DM you the link to claim 2,000 free credit
+## 2026-10-30 👇 Comment "STORY" and I'll DM you the link to claim 2,000 free credits
 Instagram Short: 1,421 views, 14 likes, 14 comments, 0 shares, 0 saves.
 ## 2026-11-01 👇 Go here for all the links!
 TikTok Short: 360 views, 17 likes, 1 comments, 6 shares, 20 saves.

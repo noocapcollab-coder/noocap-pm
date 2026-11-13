@@ -23,6 +23,9 @@ None noted.
 OPEN NOW:
 We owe: confirm whether the Apple redemption link works for filming the demo, confirm receipt and status, and proceed to filming to meet the draft video deadline of 2026-11-12.
 
+## Decisions from Harsh
+- 2026-11-13: Brand asked: Clarify whether the redemption link works for filming the demo on noocaptools@gmail.com or if direct account access is needed; confirm receipt and status; proceed to filming if access is sufficient · Harsh answered: Brad x promo cut changes
+
 
 ## Links
 - [[Brad]]

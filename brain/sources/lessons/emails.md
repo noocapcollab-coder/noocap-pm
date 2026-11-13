@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A nudge is dead once the brand answers it, even minutes before it sends
+When: A follow-up, tool-access nudge or check-in has finished its 30-minute hold and is about to send
+Do: Look at the thread itself for a brand email newer than the draft right before sending; if there is one, retire the nudge and read their email
+Never: Never send 'any news on access?' after the brand has written that access is given
+Seen 1 time(s). Source: System check.
+## Never give a brand a code, ID, status or date nobody supplied
+When: Writing any email that would contain a UID, account ID, promo or ad code, link, production status (filming, editing) or an agreed date
+Do: Use only values that appear word for word in the brand's email, the deal, the video card or Harsh's WhatsApp answer. If the brand asked for one we don't have, leave it out of the email and ask Harsh on WhatsApp for it
+Never: Never make up a number or code, never say we are filming when the card is not past 6- To Film, never accept a new post date Harsh has not agreed
+Seen 1 time(s). Source: System check.
 ## An email held for a second read still counts as the brand writing last
 When: The two readers disagree on what a brand email means and the email is held for Harsh
 Do: Record the brand's reply on the deal anyway (Last Brand Reply, Message ID, Follow-ups Sent back to 0) and read the held email before drafting any follow-up on that deal

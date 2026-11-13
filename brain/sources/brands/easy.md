@@ -4,7 +4,7 @@ Brand. Works with creators: [[Lindsay]].
 
 ## Inbound leads
 - Deliverables: Product review · Contact Name: David · Next Step: New brand: management to reply with pricing · Platforms: YouTube · Last Brand Email: 2026-11-11 · Thread Text: From: David Cassar <d@easy.one>
-Date: 2026-11-11Z
+Date: 2026-11-11
 
 Hi Automate,
 

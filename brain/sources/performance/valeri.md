@@ -1,5 +1,5 @@
 # Valeri - what performs
-Content OS, videos posted since 2026-07-16: 191 posts across platforms, average 9,594 views. Creator: [[Valeri]].
+Content OS, videos posted since 2026-07-16: 197 posts across platforms, average 9,997 views. Creator: [[Valeri]].
 ## 2026-08-11 Comment HOLO and I’ll send you the link 👇
 Instagram Short: 317,926 views, 256 likes, 117 comments, 0 shares, 0 saves. Brand: [[Holo]].
 ## 2026-10-23 What if you could find potential web design clients and show them a we
@@ -8,6 +8,8 @@ TikTok Short: 158,400 views, 8,742 likes, 951 comments, 1,622 shares, 8,604 save
 Instagram Short: 152,329 views, 3,487 likes, 3,022 comments, 0 shares, 0 saves.
 ## 2026-10-25 What if you could explore your business data inside an interactive 3D 
 TikTok Short: 111,300 views, 3,687 likes, 21 comments, 1,228 shares, 4,750 saves.
+## 2026-11-11 30 Claude Code plugins, skills, and resources organized by what you ac
+Facebook Short: 98,652 views, 897 likes, 702 comments, 147 shares, 0 saves.
 ## 2026-10-11 Comment KIMI and I'll send you the link 👇
 Facebook Short: 96,576 views, 814 likes, 1,020 comments, 131 shares, 0 saves. Brand: [[Kimi]].
 ## 2026-08-25 Comment KIMI and I'll send you the link 👇
@@ -34,8 +36,12 @@ TikTok Short: 25,800 views, 942 likes, 152 comments, 312 shares, 1,479 saves.
 Instagram Short: 23,612 views, 438 likes, 1,392 comments, 0 shares, 0 saves.
 ## 2026-09-30 What if you could combine free AI quotas from multiple providers into 
 TikTok Short: 21,400 views, 988 likes, 14 comments, 241 shares, 1,118 saves.
+## 2026-11-11 Looking for useful Claude Code plugins, skills, and resources? Here ar
+TikTok Short: 19,100 views, 1,139 likes, 13 comments, 452 shares, 1,619 saves.
 ## 2026-10-23 Claude Code Can Find Clients While You Sleep
-YouTube Short: 18,837 views, 657 likes, 67 comments, 0 shares, 0 saves.
+YouTube Short: 18,857 views, 657 likes, 67 comments, 0 shares, 0 saves.
+## 2026-11-12 An open-source alternative to subscription-based AI creative studios?
+Instagram Short: 15,394 views, 239 likes, 272 comments, 0 shares, 0 saves.
 ## 2026-09-08 Comment “CLONE” and I’ll send you the link.
 Instagram Short: 15,135 views, 387 likes, 309 comments, 0 shares, 0 saves.
 ## 2026-09-03 Comment “QWEN” and I’ll send you the full setup.
@@ -44,9 +50,3 @@ Instagram Short: 13,220 views, 200 likes, 188 comments, 0 shares, 0 saves.
 Instagram Short: 11,853 views, 74 likes, 24 comments, 0 shares, 0 saves.
 ## 2026-07-27 Comment "HERMES" and I'll send you the complete setup guide 👇
 Instagram Short: 11,821 views, 253 likes, 466 comments, 0 shares, 0 saves.
-## 2026-09-09 Comment “LINKS” and I’ll DM you all 7 GitHub repos.
-Instagram Short: 10,838 views, 148 likes, 53 comments, 0 shares, 0 saves.
-## 2026-11-04 Most people still think building a premium website takes weeks, design
-Instagram Short: 10,597 views, 132 likes, 140 comments, 0 shares, 0 saves.
-## 2026-08-26 Comment “TRAINING” and learn how to build AI voice agents you can sell
-Instagram Short: 10,397 views, 41 likes, 10 comments, 0 shares, 0 saves.

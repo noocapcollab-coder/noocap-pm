@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_simplestep_simple_step", "label": "Simple Step", "file_type": "document", "source_file": "brands/simplestep.md"}], "edges": [{"source": "brands_simplestep_simple_step", "target": "creators_lindsay_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/simplestep.md"}], "hyperedges": []}

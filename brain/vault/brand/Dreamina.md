@@ -5,31 +5,20 @@ type: brand
 
 Brand. Works with creators: [[Chris]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Dreamina, an AI video creation product. They come to us directly and through agencies (Viral Vibe, Katlas Media).
+WHO: Dreamina, a product collaborating with creator Chris Cordero for sponsored short videos, coming to us through agencies Viral Vibe and Katlas Media.
 
-CONTACTS:
-Jenny Guo, jenny@viralvibe.llc, Viral Vibe, signs as Jenny BD, mobile +86 17623670242, CC camila@viralvibe.llc, charlotte@viralvibe.llc, emma@viralvibe.llc, collab@chriscordero.net.
-Kepan, outreach@katlasmedia.com, Katlas Media, CC siyu@katlasmedia.com, silvia@katlasmedia.com.
-Vivi, Katlas Media.
-Harsh, Katlas Media.
+CONTACTS: Jenny Guo, jenny@viralvibe.llc, BD at Viral Vibe, signs as Jenny, CCs collab@chriscordero.net, camila@viralvibe.llc, charlotte@viralvibe.llc, emma@viralvibe.llc. Kepan, outreach@katlasmedia.com, at Katlas Media, signs as Kepan, CCs siyu@katlasmedia.com, silvia@katlasmedia.com.
 
 DEALS:
-Dreamina x Chris | 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team) | [amount]USD | Script Approved | Post date requested Nov 15, proposed Nov 23
-Dreamina x Chris | Option 1 full package brief | [amount]USD | Price Agreed | Dates not set
-Dreamina x Chris | Sponsored video featuring Dreamina with required hashtags | [amount]USD | Invoiced | Invoice sent 2026-11-01
+Dreamina x Chris | 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team), [amount] | Script Approved | Post date requested Nov 15 by brand, previously proposed Nov 23 by us.
+Dreamina x Chris | Full package Option 1 | Price Agreed | Rate agreed at [amount].
+Dreamina x Chris | Sponsored video featuring Dreamina with required hashtags | Invoiced | Rate [amount].
 
-HOW THEY WORK:
-Viral Vibe: Script review and video production. Brand provides brief or script feedback, we film and send cut for review.
-Katlas Media: Brief provided via Feishu link (password 023Kdreamina). No script needed for some campaigns: creator films directly from brief and sends cut for review before publishing.
-Invoicing: Raise Stripe invoice in creator account. Katlas Media needs to provide company billing details. Payment methods include bank transfer or PayPal.
+HOW THEY WORK: For the script deal, the brand reviewed and approved a revised script with a Black Friday hook. For the Katlas Media brief deal, no script is needed: once confirmed, Chris films from the brief and sends the cut for review before publishing. Katlas Media brief link: https://winddownclub.feishu.cn/wiki/WliSwqr52i54SrkJglxcRxw7nQ8.
 
-WATCH OUT:
-Never mention other brands in the hook per brand requirements. Do not forget required hashtags on published posts.
+WATCH OUT: Missing hashtags on published posts flagged by the brand on a prior deal; ensure hashtags are included before publishing.
 
-OPEN NOW:
-Deal 1 (Viral Vibe script approved): We owe confirmation of publication date feasibility (Nov 15 vs Nov 23) and the UID.
-Deal 2 (Katlas Media [amount]deal): We owe the contract and brand brief. Waiting on brand to send both so creator can proceed.
-Deal 3 (Katlas Media [amount]invoice): Waiting on brand for payment receipt or transaction confirmation.
+OPEN NOW: For the first deal (Viral Vibe), we owe: send Dreamina UID, provide production progress and video readiness estimate, and confirm publication date. For the Katlas Media deal (price agreed), we owe the contract and brand brief, and we are waiting on the brand to send both so the creator can proceed. For the invoiced deal, we are waiting on the brand for a payment receipt or transaction confirmation of the bank transfer.
 
 
 ## Links

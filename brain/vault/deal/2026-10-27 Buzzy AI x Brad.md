@@ -1,7 +1,7 @@
 ---
 type: deal
 ---
-Stage: Signed
+Stage: Posted
 Last brand reply none, our last reply none.
 AGREED: [amount]. 1 Instagram video for @ninjaaitools. Brand receives 2-month Spark Ads rights from live date; authorization code to be shared by us. Payment 100% upon draft confirmation, before going live. Accepted methods: PayPal, Payoneer, Wise, or wire transfer.
 

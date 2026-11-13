@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_hubpost_hubpost", "label": "HubPost", "file_type": "document", "source_file": "brands/hubpost.md"}], "edges": [{"source": "brands_hubpost_hubpost", "target": "creators_lindsay_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/hubpost.md"}], "hyperedges": []}

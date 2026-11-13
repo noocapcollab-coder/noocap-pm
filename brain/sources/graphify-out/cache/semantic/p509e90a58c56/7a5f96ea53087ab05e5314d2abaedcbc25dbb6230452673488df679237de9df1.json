@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_tapnow_tapnow", "label": "TapNow", "file_type": "document", "source_file": "brands/tapnow.md"}], "edges": [{"source": "brands_tapnow_tapnow", "target": "creators_chris_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/tapnow.md"}], "hyperedges": []}

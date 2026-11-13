@@ -19,7 +19,6 @@ Chris | 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live
 
 HOW THEY WORK:
 Content angle focuses on avoiding repeated explanations to AI by starting with a clear product plan. Demonstration should cover taking a small app idea, organizing requirements in Manyfast, showing the user flow and wireframes, and connecting Claude Code through MCP to build a working prototype as one connected story without a feature-by-feature walkthrough.
-Trial account provided at https://manyfast.io/en/ with login chriscordero@manyfast.io and password R#Wa5U5ks6ZV.
 Tracking link is https://manyfast.io/en/?utm_source=instagram&utm_medium=influencer&utm_campaign=202611_chris&utm_content=reel.
 English Instagram account to tag is @manyfast.official.
 Creator must select a natural comment keyword for the automated DM and place the tracking link in the bio for 7 days.

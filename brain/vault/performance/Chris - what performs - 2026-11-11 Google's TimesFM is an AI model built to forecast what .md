@@ -1,7 +1,7 @@
 ---
 type: performance
 ---
-Facebook Short: 18,746 views, 36 likes, 2 comments, 2 shares, 0 saves.
+Facebook Short: 19,100 views, 37 likes, 3 comments, 2 shares, 0 saves.
 
 ## Links
 - [[Chris - what performs]]

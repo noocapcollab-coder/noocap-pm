@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_emtech_emtech", "label": "EmTech", "file_type": "document", "source_file": "brands/emtech.md", "_origin": "semantic"}], "edges": [{"source": "brands_emtech_emtech", "target": "creators_chris_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/emtech.md", "_origin": "semantic"}], "hyperedges": []}

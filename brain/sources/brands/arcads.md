@@ -4,7 +4,7 @@ Brand. Works with creators: [[Lindsay]].
 
 ## Inbound leads
 - Deliverables: 3 long-form YouTube integrations, plus 25% affiliate commission · Next Step: Replied 2026-11-05, waiting on the brand · Platforms: YouTube · Last Our Email: 2026-11-06 · Last Brand Email: 2026-11-05 · Thread Text: From: collab <collab@automateaiconsulting.com>
-Date: 2026-11-06Z
+Date: 2026-11-06
 
 Hey,
 
@@ -31,7 +31,7 @@ Hey!
 
 We're mostly interested in long form. · Thread Subject: Paid collab offer with Arcads · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: k@arcads.ai
 - Deliverables: Long-form integrations (details to be clarified) · Next Step: Reply with details about long-form integrations capabilities · Last Our Email: 2026-10-29 · Last Brand Email: 2026-10-29 · Thread Text: From: collab <collab@automateaiconsulting.com>
-Date: 2026-10-29Z
+Date: 2026-10-29
 
 Our rates for YouTube integration is [amount].
 

@@ -25,7 +25,7 @@ Last brand reply 2026-10-16, our last reply 2026-09-30.
 
 ## Inbound leads
 - Contact Name: Kevin · Next Step: Reply with timeline for repost going live or update on current status · Platforms: Instagram · Last Brand Email: 2026-10-16 · Thread Text: From: Kevin Kamau <kevin@pazi.ai>
-Date: 2026-10-16Z
+Date: 2026-10-16
 
 Hi Lindsay,
 

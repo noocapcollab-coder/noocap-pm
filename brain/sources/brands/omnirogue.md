@@ -3,13 +3,10 @@
 Brand. Works with creators: [[Chris]], [[Lindsay]].
 
 ## Inbound leads
-- Contact Name: Emma · Next Step: None (deal declined due to budget) · Platforms: YouTube, Instagram, TikTok · Last Brand Email: 2026-11-12 · Thread Text: From: "Emma" <emma@omnirogue.com>
-Date: 2026-11-12Z
-
-Hi Chris,     Thank you so much for sending over your rates and for your patience while we reviewed everything! Your content is great, but your rates are above our budget right now, so we're not able to move forward at the moment.     We'd really love to stay in touch, and if our budget changes, you'll be one of the first people we reach out to. Thank you again for your time!     Talk soon,  Emma  OmniRogue · omnirogue.com · Thread Subject: Early partner invite - OmniRogue x @thechriscordero · Status: Lost · Creator: Chris · Type: Paid offer · Brand Email: emma@omnirogue.com
+- Contact Name: Emma · Next Step: None (deal declined due to budget) · Platforms: YouTube, Instagram, TikTok · Last Our Email: 2026-11-13 · Last Brand Email: 2026-11-12 · Thread Subject: Early partner invite - OmniRogue x @thechriscordero · Status: Lost · Creator: Chris · Type: Paid offer · Brand Email: emma@omnirogue.com
 - Contact Name: Emma · Next Step: Lost: gifted / affiliate only, no fee · Platforms: YouTube Shorts, TikTok, Instagram · Last Brand Email: 2026-10-28 · Thread Subject: Early partner invite - OmniRogue x @AutomateAIConsulting · Status: Lost · Creator: Lindsay · Type: Affiliate · Brand Email: emma@omnirogue.com
 - Deliverables: One short-form video promoting OmniRogue (implied from context; no specific deliverables stated beyond the video). · Contact Name: Emma · Next Step: Wait for brand to confirm budget and terms after marketing director review · Platforms: Instagram, TikTok, YouTube, YouTube Shorts · Last Our Email: 2026-10-26 · Last Brand Email: 2026-10-28 · Thread Text: From: "Emma Blake" <emma@omnirogue.com>
-Date: 2026-10-28Z
+Date: 2026-10-28
 
 Hi Chris,
 

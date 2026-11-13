@@ -4,7 +4,7 @@ Brand. Works with creators: [[Lindsay]].
 
 ## Inbound leads
 - Deliverables: Tutorial video · Next Step: New brand: management to reply with pricing · Platforms: YouTube · Last Brand Email: 2026-11-09 · Thread Text: From: guillaume Bardet <guillaume@gojiberry.ai>
-Date: 2026-11-09Z
+Date: 2026-11-09
 
 Hi there,
 

@@ -4,7 +4,7 @@ Brand. Works with creators: [[Chris]].
 
 ## Inbound leads
 - Deliverables: An honest look at the AI writer that does not censor your fiction (suggested content angle) · Contact Name: Brett · Next Step: No action required—Brett has ended the conversation · Platforms: YouTube, TikTok, Instagram · Last Brand Email: 2026-11-11 · Thread Text: From: "Brett" <brett@aiwriterteam.com>
-Date: 2026-11-11Z
+Date: 2026-11-11
 
 Hey Chris,
 

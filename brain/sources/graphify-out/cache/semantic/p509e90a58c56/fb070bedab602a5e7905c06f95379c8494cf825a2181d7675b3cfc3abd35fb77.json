@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_demi_demi_ai", "label": "Demi AI", "file_type": "document", "source_file": "brands/demi.md"}], "edges": [{"source": "brands_demi_demi_ai", "target": "creators_chris_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/demi.md"}], "hyperedges": []}
