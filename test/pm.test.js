@@ -2015,3 +2015,15 @@ test('an Anthropic spend limit tells Harsh once that brand emails are going unre
   assert.equal(await spendLimitAlert('Claude 529: overloaded', send), false);
   assert.equal(sent.length, 2);
 });
+
+test('an email held by the second reader still stamps who wrote last, so no follow-up chases a brand that just answered (Upfluence, Nov 13)', async () => {
+  const { heldBrandStamps } = await import('../lib/inbox.js');
+  const email = { date: 'Thu, 12 Nov 2026 09:17:00 +0000', messageId: '<CAHKsOKSWp@mail.gmail.com>' };
+  const m = Object.fromEntries(heldBrandStamps(email, { from_role: 'brand' }));
+  assert.equal(m['Last Brand Reply'], '2026-11-12T14:47:00+05:30');
+  assert.equal(m['Follow-ups Sent'], 0);
+  assert.equal(m['Message ID'], '<CAHKsOKSWp@mail.gmail.com>');
+  // Our own side or the creator writing is not a brand reply
+  assert.deepEqual(heldBrandStamps(email, { from_role: 'creator' }), []);
+  assert.deepEqual(heldBrandStamps(email, { from_role: 'us' }), []);
+});
