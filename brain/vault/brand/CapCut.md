@@ -5,29 +5,25 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]], [[Chris]], [[Duncan]].
 ## Brand wiki (from every email with them)
-WHO: CapCut App and Dreamina, a suite of video editing and AI generation tools. Collaborations come directly from the brand or through agencies like GrowMaxValue and GlobeInflu.
+WHO: CapCut App and Dreamina (AI tools), working with us directly and through agencies GrowMaxValue (contacts Sophie Wilson, Mia Brown) and GlobeInflu (contact Alisa).
 
 CONTACTS:
-Sophie Wilson, sophie.wilson@growmaxvalue.com, GrowMaxValue agency, signs contracts, copy collab@automateaiconsulting.com
-Mia Brown, mia.brown@growmaxvalue.com, GrowMaxValue agency
-Victoria Ev, victoria@mediacube.io, Mediacube agency
-Alisa, alisa@globeinflu.com, GlobeInflu agency, signs contracts
+Sophie Wilson, sophie.wilson@growmaxvalue.com, agency GrowMaxValue
+Mia Brown, mia.brown@growmaxvalue.com, agency GrowMaxValue
+Alisa, alisa@globeinflu.com, agency GlobeInflu
+Victoria Ev, victoria@mediacube.io, agency Mediacube (CC: collab@buildroom.ai, alilar@mediacube.io)
 
 DEALS:
-Lindsay | 3 CapCut app videos on Instagram (30-60s) | [amount]| Brief Received | Latest deadline November 27, 2026
-Chris | 3 short-form videos | [amount]| Submitted | Contract signed via GrowMaxValue
-Duncan | 1 short-form YouTube video with 3-month ad code | [amount]| Invoiced | Go-live October 30, 2026
-Brad (Ninja AI Tools campaign) | 3 short-form videos (CapCut x ChatGPT workflow) | [amount]| Submitted | Target date November 15, 2026
+CapCut x Lindsay | 3 promotional videos for CapCut app on Instagram, 30 to 60 seconds each, [amount]package | stage Brief Received | Nov 27 deadline
+CapCut x Chris | 3 short-form videos, [amount]total ([amount]per video) | stage Submitted | publish by Nov 25
+CapCut x Duncan | 1 short-form video, [amount]3-month ad code | stage Invoiced | published Oct 30
+CapCut x Brad | 3 short-form videos, [amount]total ([amount]per video) | stage Submitted | deadline Nov 15
 
-HOW THEY WORK: Script approval required before filming, up to 2 revisions. Videos must be published within 3 days of approval. Ad code authorization applies for 60 days per video. Brand requires CapCut and Dreamina UIDs for app access and credits. Invoices must include both parties company info and payment details in text format. Video titles and thumbnails have exact naming requirements such as Zeely Review.
+HOW THEY WORK: Script approval needed before filming. Up to 2 revisions. Published within 3 days of approval. 60-day ad code authorization per video. Send CapCut UID (found via PC version steps) and Dreamina UID when requested. Invoices must include both parties company info and payment details in text format. Duncan video title must include Zeely AI review, thumbnail must include Zeely Review.
 
-WATCH OUT: Do not use QR codes or links on invoices as finance teams cannot read them. Do not show the Dreamina operation interface for certain cuts; only show the CapCut interface alongside the Dreamina logo. Ensure correct creator UIDs are retrieved using PC version steps. Do not mix up creator scripts across different campaigns.
+WATCH OUT: Do not send incorrect CapCut UIDs; use the PC version steps to verify. Do not mix up creators and scripts across campaigns. Do not show the Dreamina operation interface in the 25-second video (show CapCut interface with Dreamina logo instead). Do not use QR codes or links for payment details on invoices; use plain text.
 
-OPEN NOW:
-Lindsay: We owe Sophie the signed contract and our CapCut Pro answer or our CapCut and Dreamina UIDs.
-Chris: Waiting on brand to review the revised video draft and confirm approval or further feedback.
-Duncan: Awaiting final [amount]payment against Invoice INV-003 from the Mediacube finance team.
-Brad / Ninja AI Tools: Waiting on brand response regarding our request to move to a new campaign with a fresh brief for creator Brad.
+OPEN NOW: For Lindsay deal, we owe Sophie the answer regarding CapCut Pro and credits, plus the CapCut and Dreamina UIDs. For Chris deal, we are waiting on Mia Brown to review the revised video draft. For Duncan deal, we are waiting on Mediacube finance team to process the final [amount]payment for Invoice INV-003. For Brad deal, we are waiting on Alisa to respond to our request for a new campaign and fresh brief.
 
 
 ## Links

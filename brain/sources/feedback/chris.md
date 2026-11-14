@@ -2,12 +2,13 @@
 
 What brands asked us to change after seeing a cut. Read before editing the next video for the same brand.
 
-## 2026-11-13 CapCut × Chris
-Brand: [[CapCut]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.
-For the 25-second video, please do not show the Dreamina operation interface. You may show the CapCut interface together with the Dreamina logo.
-Mia Brown sent review feedback on the first draft video
-Requested not to show the Dreamina operation interface for the 25-second video
-Can show the CapCut interface together with the Dreamina logo
+## 2026-11-14 Dreamina × Chris (Artist Team)
+Brand: [[Dreamina]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.
+Add the Dreamina Marketing Studio watermark to the upper right corner, and insert a screen showing searching for Dreamina. Kindly send over the revised video, script and cover as soon as possible.
+Brand says the video looks really good overall
+Requested adding the Dreamina Marketing Studio watermark to the upper right corner
+Requested inserting a screen showing searching for Dreamina
+Asked to send over the revised video, script, and cover as soon as possible
 
 ## 2026-11-04 CapCut x ChatGPT
 Brand: [[CapCut]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.
@@ -19,3 +20,10 @@ Missing demonstration: show copying prompt into ChatGPT to import CapCut plugin
 Ending too abrupt, needs to show ChatGPT opening CapCut more clearly
 Brand concerned video uses AI avatar and sourced footage rather than original; requests reshoot with authentic footage
 Asks confirmation: will video publish on ninjaaitools?
+
+## 2026-11-13 CapCut × Chris
+Brand: [[CapCut]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.
+For the 25-second video, please do not show the Dreamina operation interface. You may show the CapCut interface together with the Dreamina logo.
+Mia Brown sent review feedback on the first draft video
+Requested not to show the Dreamina operation interface for the 25-second video
+Can show the CapCut interface together with the Dreamina logo

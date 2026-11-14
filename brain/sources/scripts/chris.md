@@ -26,6 +26,26 @@ HOOKS
     - What If Animation: https://github.com/kelano86/what-if-animation
     - Claude Code: https://claude.com/product/claude-code
 
+## 2026-11-14 Claude Video
+Type: PERSONAL. Creator: [[Chris]].
+HOOK 2: 
+    Someone just open-sourced a video model that writes its own soundtrack while it makes the video
+    HOOK 3: 
+    Forget video models. This free AI makes cinematic clips with dialogue, music, and sound effects built in.
+    BODY
+    Watch this. I open the free demo, describe the scene, and drop in a photo for the character along with a voice clip for how they should sound.
+    Then I hit generate.
+    The part that got me is the sound, because the voice, the music and the effects all come out with the picture and stay in sync.
+    And it’s fast enough that a full clip comes back in seconds.
+    The weights are open on Hugging Face too, so developers can build on top of it.
+    It’s called Pika H3 Flex.
+    Want to try it?
+    CTA
+    Comment SOUND below, and I’ll send you the link.
+    SOURCES
+    - Pika H3 Flex (demo): https://huggingface.co/spaces/Pika-Labs/pika-h3-flex
+    - Pika H3 Flex (weights): https://huggingface.co/Pika-Labs/Pika-H3-Flex
+
 ## 2026-11-03 Claude Motion Design
 Type: PERSONAL. Creator: [[Chris]].
 Hook 1:
@@ -62,20 +82,3 @@ Hook 1:
     - Cal.diy: github.com/calcom/cal.diy
     - OpenProject: github.com/opf/openproject
     - VoiceStudio: github.com/debpalash/VoiceStudio
-
-## 2026-10-29 Runway AI 1 × Chris (1)
-Type: SPONSOR. Creator: [[Chris]].
-📋 Brief update 2026-10-13 from Runway
-    - Sub-page: [[Script 2]]
-
-    Full Name: Chris Cordero
-    Link to TikTok Profile: tiktok.com/@thechriscordero
-    This whole ad came from one phone photo of my desk. No studio. No shoot. No crew.
-    I test a lot of AI tools. Hard to tell which ones are worth paying for. So I gave this one a real job. It’s called Runway.
-    Watch this. I upload the photo as a reference, so it knows exactly what the product looks like. Then I write the shot like I’m talking to a DP. Slow push-in. Soft key light.
-    Same photo. Three shots. Studio, lifestyle, close-up. I only changed the prompt. Start to finish, it took minutes.
-    But here’s the game changer. I sent the best still to video with one line. Slow orbit. Now it moves, ready for Reels.
-    The part that got me? The product stayed the product. Same shape. Same logo. Clean. My first close-up missed the angle. I tightened the prompt. Second take landed.
-    Worth it? If you need product content this week, yes. Just be specific. Vague prompt, vague output.
-    I’m on the Standard plan. Every generation uses credits from your plan. Stills use fewer, video uses more. This whole set fit easily inside my monthly credits.
-    Want to try it? Comment RUNWAY below, and I’ll DM you my link and code. 50% off a month of any plan.

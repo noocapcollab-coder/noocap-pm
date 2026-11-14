@@ -3,17 +3,21 @@
 Brand. Works with creators: [[Lindsay]], [[Brad]], [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: Teamily AI is a multi-agent AI collaboration platform enabling users to build and manage multiple AI agents in one shared workspace with real-time multi-user collaboration and workflow automation. Brand works through Widely, an agency representing both Evan and Alyssa.
+WHO: Teamily AI is a multi-agent AI collaboration platform allowing users to build and manage multiple AI agents in one shared workspace, featuring real-time multi-user collaboration and workflow automation. They work with us through the agency Widely.
 
-CONTACTS: Evan at evan@withwidely.com (agency contact, introduced Teamily, may sign emails). Alyssa Salazar at alyssa@withwidely.com (brand side, writes contract and brief details, signs as brand contact). Always reply-all to include noocapcollab@gmail.com when Brad's team is involved. Evan at evan@getwidely.com also receives copies on Brad's deal.
+CONTACTS: Evan at evan@withwidely.com or evan@getwidely.com, and Alyssa Salazar at alyssa@withwidely.com, both from Widely. Must copy partnerships@ninjaaitools.com and noocapcollab@gmail.com.
 
-DEALS: Lindsay, short-form video integration rate TBD (previously [amount]quoted for YouTube, now reconsidering for short-form), inbound inquiry stage, no dates set. Brad, Instagram Reel collaboration rate and deliverables not documented, contract signed by Brad's team but terms not visible, brief received stage awaiting script draft.
+DEALS:
+Teamily x Lindsay: deliverables short-form video collaboration, rate unknown, stage Inbound, dates unknown.
+Teamily AI x Brad: deliverables Instagram Reel, rate unknown, stage Script Sent, dates unknown.
 
-HOW THEY WORK: Brand sends outreach and campaign brief via email. Contracts issued via DocuSign. Brad's team must be copied on reply-all with noocapcollab@gmail.com included. Script drafts and revisions handled via email. Billing details not yet provided by brand for either deal.
+HOW THEY WORK: Contract is sent via DocuSign. Brief is provided by the brand after contract signing. Scripts are sent to the brand for review and approval.
 
-WATCH OUT: DocuSign emails may land in spam; Alyssa has resent once already. Brad's team requires reply-all with noocapcollab@gmail.com copied or emails may be missed.
+WATCH OUT: Ensure noocapcollab@gmail.com is kept in the loop on replies. Brand sends contracts via DocuSign to partnerships@ninjaaitools.com.
 
-OPEN NOW: Lindsay deal: PM must reply to Evan confirming whether [amount]rate applies to short-form format or quote new rate for short-form video integration. Brad deal: waiting on brand to confirm contract receipt, provide campaign brief details, and supply billing information (company name, invoice email, address). Separately, script draft due date needed from Harsh for Alyssa's Nov 9 inquiry.
+OPEN NOW:
+Teamily x Lindsay: We owe a reply to Evan with Lindsay's short-form video rate for a dedicated Teamily video integration.
+Teamily AI x Brad: Waiting on the brand to approve the script or request changes.
 
 ## Deal with [[Lindsay]] (Inbound, opened 2026-11-05)
 Last brand reply none, our last reply none.
@@ -25,15 +29,20 @@ BILLING: not yet
 
 OPEN NOW: We owe: reply to Evan with Lindsay's rate for a dedicated Teamily video integration (short-form format). Waiting on us to confirm whether the [amount]rate or a new rate applies to the short-form scope, then provide response to brand.
 
-## Deal with [[Brad]] (Brief Received, opened 2026-10-20)
-Last brand reply 2026-11-10, our last reply 2026-11-09.
-AGREED: Rate, deliverables, usage rights, payment terms and agreed dates not documented in email chain. Deal marked Signed in system but contract terms not visible in messages provided.
+## Deal with [[Brad]] (Script Sent, opened 2026-10-20)
+Last brand reply 2026-11-10, our last reply 2026-11-14.
+AGREED: Rate, deliverables, usage rights, payment terms and agreed dates not documented in email chain. Deal marked as script sent in system.
 
-HISTORY: 2026-10-20 Brad's team confirmed interest and requested reply-all to include noocapcollab@gmail.com. 2026-10-20 Brad's team asked to confirm contract receipt. 2026-10-20 Alyssa (brand) resent DocuSign contract to partnerships@ninjaaitools.com and advised checking spam. 2026-11-09 us confirmed signed contract sent to brand and requested campaign brief.
+HISTORY:
+2026-10-20 creator: confirmed interest and requested reply all for noocapcollab@gmail.com.
+2026-10-20 creator: asked for contract status.
+2026-10-20 brand: resent DocuSign contract to partnerships@ninjaaitools.com.
+2026-11-09 us: confirmed sending signed contract and requested campaign brief.
+2026-11-14 us: sent script for review.
 
 BILLING: Not yet provided.
 
-OPEN NOW: Waiting on brand: confirmation of contract receipt, campaign brief delivery, and billing details (company name, invoice email, address). We owe nothing at this moment pending brand response.
+OPEN NOW: Waiting on brand: approve the script or request changes.
 
 ## Inbound leads
 - Deliverables: YouTube video (requested by brand); short-form video (offered by creator) · Contact Name: Evan · Next Step: Reply with: rate for short-form video, confirm which platforms we offer, and clarify if Teamily would accept short-form instead of YouTube video · Platforms: TikTok, Instagram, YouTube Shorts · Last Our Email: 2026-11-10 · Deal: 1 linked · Last Brand Email: 2026-11-11 · Thread Subject: Teamily Paid Collaboration · Status: Locked · Creator: Lindsay · Type: Paid offer · Brand Email: evan@getwidely.com

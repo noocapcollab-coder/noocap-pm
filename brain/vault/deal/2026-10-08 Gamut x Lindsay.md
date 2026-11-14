@@ -1,7 +1,7 @@
 ---
 type: deal
 ---
-Stage: Approved
+Stage: Posted
 Last brand reply 2026-11-12, our last reply 2026-11-11.
 AGREED: [amount]rate. Deliverables: one dedicated long-form YouTube video, 8-10 minutes, featuring Gamut as main subject shown in use. Usage rights not confirmed in writing. Payment: [amount](50% on signing, 50% on delivery). Tracking link: gamut.so/automateai. Key features to showcase: agent email inbox, Slack integration, text approvals, templates, multiplayer mode, model switching. Sponsor mention: must say "sponsored by Gamut" first time Gamut mentioned in Part 2.
 

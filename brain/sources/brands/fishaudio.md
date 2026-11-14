@@ -1,6 +1,6 @@
 # Fish Audio
 
-Brand. Works with creators: [[Duncan]].
+Brand. Works with creators: [[Duncan]], [[Lindsay]].
 
 ## Brand wiki (from every email with them)
 WHO:
@@ -24,3 +24,7 @@ Nothing pending. Deal is complete and paid.
 
 ## Deal with [[Duncan]] (Paid, opened 2026-09-29)
 Last brand reply 2026-10-13, our last reply 2026-10-11.
+
+
+## Inbound leads
+- Deliverables: Dedicated 8+ minute YouTube tutorial featuring Fish Creative MCP · Contact Name: Hans · Next Step: New brand: management to reply with pricing · Platforms: YouTube · Last Brand Email: 2026-11-14 · Thread Subject: Paid YouTube Collaboration — Fish Creative MCP · Status: New offer · Creator: Lindsay · Type: Paid offer · Brand Email: hans@39-ai.com

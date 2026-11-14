@@ -3,17 +3,24 @@
 Brand. Works with creators: [[Valeri]], [[Lindsay]], [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: Tripo 3D is a 3D creation software platform. They work through two channels: directly via Zeelot (superlinear.cc), and through JEEVMEDIA, a Dubai-based influencer marketing agency (Rajeshwari Sardar as primary contact).
+WHO: Tripo 3D is a 3D AI modeling product. They manage campaigns through an agency named Jeevmedia (and also work through Zeelot at Superlinear for specific creator outreach).
 
-CONTACTS: Rajeshwari Sardar, rajeshwari@jeevmedia.net, Influencer Marketing Associate at JEEVMEDIA, handles Lindsay deal, signs as brand representative. Zeelot, Zeelot@superlinear.cc, works directly for Tripo on Valeri deal, proposes terms and negotiates rate. CC collab@valchy.ai on Valeri thread, CC collab@automateaiconsulting.com on Lindsay thread.
+CONTACTS:
+Rajeshwari Sardar, rajeshwari@jeevmedia.net, Influencer Marketing Associate at Jeevmedia, signs as Rajeshwari Sardar or Team, copy collab@automateaiconsulting.com
+Zeelot, Zeelot@superlinear.cc, agency contact, signs as Zeelot, copy collab@valchy.ai
 
-DEALS: Valeri, two videos at [amount]each ([amount]total USD), 30-day ad authorization per video with distribution across agreed platforms and usage rights included, Negotiating stage, awaiting contract from brand for review and signature. Lindsay, one IG Reel plus DM Automation plus 90 days boosting plus usage rights plus re-editing/secondary creation rights (brand must approve re-edits before public distribution), Script Sent stage, contract signed 2026-10-09, script submitted 2026-10-21 awaiting brand feedback, payment 100% after video published within 1-7 days.
+DEALS:
+Tripo 3D x Valeri, two videos agreed at [amount]per video ([amount]total), 30-day ad authorization and distribution across agreed platforms included, negotiating stage, dates not confirmed
+Tripo 3D x Lindsay, deliverables: 1 IG Reel, DM Automation, 90 days boosting, usage rights, re-editing/secondary creation rights, rate not specified, payment terms: 100% after video published within 1-7 days, script sent stage, contract signed 2026-10-09
 
-HOW THEY WORK: Brand sends brief document first (Google Docs or Feishu links). We script and send for review. Brand provides feedback via Rajeshwari; script revisions required before production green light. Script must include clear timestamp, VO vs visuals labeling, proper formatting. CTA currently: 500 bonus credits plus 60% off first month on Pro and Max plans via invite code, no discount codes. Re-edits or secondary cuts of content must be sent to NOOCAP for approval before brand publishes. Tripo requires proper script readability and differentiation of visual and voiceover elements. No portal or dashboard mentioned. Invoice to be sent to Rajeshwari Sardar, JEEVMEDIA, IFZA Business Park, Dubai Silicon Oasis, Dubai, UAE, rajeshwari@jeevmedia.net.
+HOW THEY WORK:
+Campaign brief provided via Google Docs or Feishu wiki links. Scripts must be simple to read with proper timestamps and a clear differentiation between voiceover and visuals. Scripts go to the agency/brand for review. CTA requirements: no discount code needed, creators use their invite code to get 500 bonus credits plus 60% off the first month on both Pro and Max plans.
 
-WATCH OUT: Do not use "TRIPOCREW" discount code, brand removed it 2026-10-19. Always format scripts cleanly with timestamps and clear VO/visual separation or revision will be requested. Rajeshwari is slow to collect internal brand feedback; allow extra time and check in gently rather than push hard. Do not assume rate is locked until both sides accept in writing.
+WATCH OUT:
+Valeri's separate Tripo thread was mistakenly attached to Lindsay's deal in the past; ensure threads and creator deals are kept strictly separate.
 
-OPEN NOW: Valeri deal waiting on brand to send contract for NOOCAP to review and sign. Lindsay deal waiting on Rajeshwari to collect and deliver brand team feedback on script sent 2026-10-21 so production can proceed.
+OPEN NOW:
+For Valeri's deal, we are waiting on the brand to provide the contract for review and signature. For Lindsay's deal, we are waiting on Rajeshwari to send the brand team's feedback on the revised script sent on 2026-10-21.
 
 ## Deal with [[Valeri]] (Negotiating, opened 2026-10-16)
 Last brand reply 2026-11-11, our last reply 2026-11-11.
@@ -32,14 +39,23 @@ BILLING: not yet
 OPEN NOW: Waiting on brand to provide contract for review and signature. Waiting on brand: contract and execution.
 
 ## Deal with [[Lindsay]] (Script Sent, opened 2026-09-29)
-Last brand reply 2026-11-10, our last reply 2026-11-10.
-AGREED: Rate not specified. Payment: 100% after video published, within 1-7 days. Deliverables: 1 IG Reel, DM Automation, 90 days boosting, usage rights, re-editing/secondary creation rights (brand must approve re-edits before public distribution). Contract signed by both parties 2026-10-09.
+Last brand reply 2026-11-10, our last reply 2026-11-14.
+AGREED: Rate not specified. Payment: 100% after video published, within 1-7 days. Deliverables: 1 IG Reel, DM Automation, 90 days boosting, usage rights, re-editing/secondary creation rights. Contract signed by both parties 2026-10-09.
 
-HISTORY: 2026-09-23 brand sent contract and brief; we requested re-edits approval clause. 2026-09-24 we agreed to pause scripting pending clause approval. 2026-10-08 brand sent updated contract with clause included. 2026-10-09 we signed and returned contract; requested brief. 2026-10-10 we committed to script delivery by 2026-10-12. 2026-10-12 we sent revised script for review. 2026-10-19 brand requested script format cleanup, removed TRIPOCREW code, provided new CTA (500 bonus credits plus 60% off first month). 2026-10-21 we sent updated script with new CTA. 2026-11-10 brand confirmed still awaiting internal feedback from brand team.
+HISTORY:
+2026-10-08 brand sent updated contract.
+2026-10-09 us signed and returned contract, requested brief.
+2026-10-12 us sent revised script for review.
+2026-10-19 brand requested script changes and new CTA.
+2026-10-21 us sent updated script with new CTA.
+2026-11-02 us checked in on script feedback.
+2026-11-02 brand stated still awaiting brand feedback.
+2026-11-10 brand confirmed still awaiting internal feedback from brand team.
+2026-11-14 us followed up again on script feedback.
 
-BILLING: Brand details confirmed: Rajeshwari Sardar, rajeshwari@jeevmedia.net, JEEVMEDIA IFZA Business Park Dubai Silicon Oasis Dubai UAE. Invoice not yet initiated.
+BILLING: not yet
 
-OPEN NOW: Brand script approval pending. Waiting on brand: Rajeshwari to collect and return brand team feedback on revised script submitted 2026-10-21 so production can proceed.
+OPEN NOW: Waiting on brand: Rajeshwari to send the brand team's feedback on the revised script sent on 2026-10-21.
 
 ## Inbound leads
 - Deliverables: One Instagram video (30-60s), link in bio for 7 days, ad code 30 days, detailed feature introduction · Next Step: Wait for brand to respond to [amount]counter-offer · Platforms: Instagram · Last Our Email: 2026-09-03 · Last Brand Email: 2026-09-03 · Thread Subject: thechriscordero Paid collaboration!!Book your Instagram channel to promote the Tripo3d.ai ---Sally · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: lily@mediamz.com

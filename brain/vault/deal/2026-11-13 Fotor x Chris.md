@@ -10,7 +10,7 @@ HISTORY:
 
 BILLING: not yet
 
-OPEN NOW: What is pending: contract and content brief to be sent to creator. We owe: contract and brief.
+OPEN NOW: Waiting on Fotor. Brand owes: contract and content brief (asked 2026-11-13). We owe: nothing until the brief arrives.
 
 ## Links
 - [[Chris]]

@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Greet the person the email is going to
+When: Writing any email, above all a payment chase that goes to a finance or payments address rather than the usual contact
+Do: Greet whoever is in To by the name they signed with (the payments team's Pavinder, not the campaign contact), and keep the usual contact on Cc
+Never: Never open with the campaign contact's name while the email goes to a different person or team address
+Seen 1 time(s). Source: System check.
 ## A due date in a brand email comes from the brand's terms
 When: Writing a payment chase or reminder that names a due date
 Do: Quote a due date only when the thread or the deal's Payment Terms give it (Net 30 agreed, the brand's own 'paid on 13/11'). When no terms were agreed, ask when we can expect the payment instead. Match the count: two invoices sent = 'the two invoices'.
@@ -39,9 +44,9 @@ Never: Draft a 4th billing reminder, or a reminder hours after our last email.
 Seen 1 time(s). Source: System check.
 ## A claimed payment needs proof
 When: A brand says 'we've already paid' with nothing attached
-Do: Check Stripe, then earlier proof in the deal; if neither, ask for the transfer receipt or reference.
-Never: Mark it paid, or ask again for proof they already sent earlier in the thread.
-Seen 4 time(s). Source: Rulebook.
+Do: Check Stripe, then earlier proof in the deal that is dated on or after THIS invoice; if neither, ask for the transfer receipt or reference.
+Never: Mark it paid, use proof of an earlier payment (a first half, an old invoice) for a later invoice, or ask again for proof they already sent for this invoice.
+Seen 5 time(s). Source: Rulebook.
 ## Upfront money does not close the deal
 When: A payment arrives before the video is posted
 Do: Record it as an upfront part payment and keep the deal open.

@@ -5,17 +5,19 @@ type: brand
 
 Brand. Works with creators: [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: Runway AI is a video generation software company. They come to us through House of Marketers, a UK-based agency that manages their influencer collaborations and handles contract and payment logistics.
+WHO: Runway AI, AI video generation tool, coming through agency House of Marketers.
 
-CONTACTS: Natalie Brown (natalie.brown@houseofmarketers.co.uk) manages creative briefs, script approvals, and posting requirements. Payments team (payments@houseofmarketers.com) processes invoices. Thread copied to collab@chriscordero.net. Contracts sent from agreements@houseofmarketers.legal.
+CONTACTS: Natalie Brown from House of Marketers at natalie.brown@houseofmarketers.co.uk, Ed Robotham at agreements@houseofmarketers.legal, Pavinder from Payments Team at payments@houseofmarketers.com. Chris Cordero email collab@chriscordero.net.
 
-DEALS: Chris Cordero, two Instagram/Facebook/YouTube Shorts/TikTok videos using provided script template, [amount], October deal posted 2026-10-29 and 2026-11-01, invoice sent 2026-10-29, payment due 2026-11-13. November deal same deliverables and rate, contract received 2026-11-11, scripts not yet written.
+DEALS:
+Runway AI x Chris | Chris Cordero IG Collab: Runway - SOW2 / EOY | 921 | Rate: [amount] | Deliverables: 2 videos across IG, TikTok, YouTube Shorts, Facebook | Stage: Invoiced | Posted: 2026-10-29 and 2026-11-01
+Runway AI x Chris | November rerun (same deliverables and cost) | Rate: [amount] | Deliverables: 2 videos | Stage: Posted | Agreement pending signature
 
-HOW THEY WORK: Natalie sends brief and contract. We submit signed contract and script 1 same day. Brand approves scripts and issues promo codes (October: CHRIS50). We submit video 1 draft by next business day after script approval via Frame.io link for review. Brand gives posting checklist: add #MadeWithRunway, tag @runwayapp (Instagram) @runwayml (TikTok/X), mark paid partnership, request ad codes in captions. We post across all platforms and send live links plus Instagram and TikTok ad codes. Brand requests CHRIS50 code and Runway link in bio. Natalie confirms posting requirements met. Invoice sent to payments@houseofmarketers.com with company details: INRO GROUP LIMITED, VAT GB344380212, address 10 Arnold Hill Road Arnold Nottingham NG5 6LJ England. Bank transfer only, no PayPal. Campaign name format: Runway - SOW2 / EOY | 921.
+HOW THEY WORK: Scripts sent for review, discount code provided by brand (CHRIS50). Software code provided for Runway MAX for 1 month plus credits. Videos reviewed via Frame.io. Before posting: use #MadeWithRunway, tag appropriate handles (Instagram @runwayapp, TikTok and X @runwayml, LinkedIn Runway), mark as paid partnership, include caption text "comment RUNWAY and I'll DM you the code", add discount code CHRIS50 and link to Runway in bio for 3 days. Send TikTok Spark Ad codes and Instagram partnership ad codes authorised for 90 days. Invoices sent to payments@houseofmarketers.com. Bank transfer is preferred over PayPal to avoid fees.
 
-WATCH OUT: Do not request multiple promo codes for one creator (brand said they cannot issue two codes). Do not ask for tool access beyond what is already provided (brand clarified we should use existing Runway code provided in email). Timeline expectations are tight: scripts must be turned fast, video drafts delivered day after approval, posting within same week as approval if possible.
+WATCH OUT: Avoid PayPal due to fees. Ensure all mandatory caption requirements, tags, bio links, and ad codes are included as specified.
 
-OPEN NOW: October deal awaits payment confirmation due 2026-11-13. November deal: contract received 2026-11-11 but not yet reviewed by us. Chris's team must pick two new script concepts from brand briefs and write scripts for November campaign. November contract terms must be confirmed before scripts are finalized.
+OPEN NOW: Waiting on brand: Pavinder to confirm payment status of invoice INV-001, and Natalie regarding the November rerun contract signature and new scripts.
 
 
 ## Links

@@ -36,12 +36,12 @@ Seen 1 time(s). Source: System check.
 When: Deciding whether a brand has gone quiet long enough for a follow-up, especially in the same run that just sent a cut or script
 Do: Count the wait from the latest email we sent in the thread (the cut or script just sent included) and only chase 3 days after it
 Never: Never draft a 'have you had a chance to review' follow-up right after we delivered something, counted from an older Last Our Reply
-Seen 2 time(s). Source: System check.
-## No follow-up to the brand while we owe the next cut
-When: A cut went to the brand, they sent changes or asked for a reshoot, and the editor or creator is working on it, even if the creator's card still shows 9- Approval.
+Seen 4 time(s). Source: System check.
+## No follow-up to the brand while we owe the next cut or script
+When: A cut or script went to the brand, they sent changes (or asked for a reshoot or a revised script), and our team is working on it, even if the card or deal stage still says we are waiting on them.
 Do: Treat the EDIT TRACKER row on Changes (or a Next Action like "editor making the brand's changes" or a reshoot) as our move. Send the revised cut when it is done; if it is late, tell Harsh once.
 Never: Never send the brand a check-in that only repeats our last email or promises the cut 'in the next few days'.
-Seen 1 time(s). Source: System check.
+Seen 2 time(s). Source: System check.
 ## A follow-up counts from the brand's newest message, in any inbox
 When: A brand writes on a deal from or to the creator's own inbox (not the noocapcollab thread), e.g. 'sent it to the client for review'
 Do: Record that message on the deal (Last Brand Reply, memory) and wait 3 days from it before a gentle nudge that acknowledges what they said.
@@ -91,7 +91,7 @@ Seen 3 time(s). Source: Rulebook.
 When: Sending any email to a brand
 Do: Reply in the thread the deal already has (Thread ID / Message ID).
 Never: Start a new thread when one exists.
-Seen 2 time(s). Source: Rulebook.
+Seen 3 time(s). Source: Rulebook.
 ## Chase every cut that is with the brand
 When: A cut was sent for approval and the brand is silent
 Do: Follow up on the normal rhythm, even if an earlier reel of the deal is posted.
@@ -106,4 +106,4 @@ Seen 2 time(s). Source: Rulebook.
 When: Writing any email
 Do: Give the thing if we have it, otherwise leave the promise out.
 Never: Write 'shortly', 'within a few hours', 'we'll send it today', [DATE], [name] or invented dates.
-Seen 10 time(s). Source: Rulebook.
+Seen 11 time(s). Source: Rulebook.

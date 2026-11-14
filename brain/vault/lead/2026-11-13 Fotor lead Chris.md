@@ -3,12 +3,12 @@ type: lead
 ---
 Deliverables: 1 Short-form video
 Contact Name: Joey
-Next Step: New brand: management to reply with pricing
+Next Step: Replied 2026-11-13, waiting on the brand
 Platforms: Instagram, TikTok, YouTube Shorts
 Last Our Email: 2026-11-13
 Last Brand Email: 2026-11-13
 Thread Subject: Let's Collaborate with Fotor Agent – AI Video Creation
-Status: Negotiating
+Status: Waiting on brand
 Creator: Chris
 Type: Paid offer
 Brand Email: Joey@miroz.co

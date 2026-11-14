@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: In Production
-Last brand reply 2026-11-13, our last reply 2026-11-13.
+Last brand reply 2026-11-14, our last reply 2026-11-13.
 AGREED: Rate not confirmed. Deliverables: Reel + Story repost. Usage rights not confirmed. Payment terms: Net 30 after approved Reel and Story published and invoice received. No dates confirmed.
 
 HISTORY:
@@ -15,10 +15,11 @@ HISTORY:
 2026-11-11 us Confirmed account email noocaptools@gmail.com and asked brand to add credits and confirm when done.
 2026-11-13 brand Upendra Singh stated that credits have been successfully added to our Luma account and asked for the content to be sent for review once ready.
 2026-11-13 us Chris's team sent a message checking in on access to Luma AI for noocaptools@gmail.com so Chris can start recording.
+2026-11-14 brand Upendra Singh checked in for an update and requested an estimated timeline for completing content production.
 
-BILLING: Not yet.
+BILLING: not yet
 
-OPEN NOW: What is pending after the latest message, and say plainly who owes the next move: We owe: production and submitting the content for review.
+OPEN NOW: Brand asked for an estimated timeline for completing content production. We owe: an estimated timeline for completing the content production.
 
 ## Links
 - [[Chris]]

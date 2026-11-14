@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A cut is 'revised' only if the brand already saw a cut
+When: Writing the email that hands a cut to the brand after our own team or Harsh asked for changes before the brand saw anything
+Do: Call it the cut for their review. Say it is the revised cut with their changes only when the brand saw an earlier cut and asked for those changes
+Never: Never tell a brand 'here is the revised cut with the changes you asked for' when they never saw a cut or asked for changes
+Seen 1 time(s). Source: System check.
 ## A brand approving the cut moves the tracker row to To Post, even when the second reader only argues about the label
 When: A brand writes that the draft or cut is approved ("looks great, approved!", "go ahead and publish"), even while asking for the remaining assets or a final check
 Do: Read it as video_feedback with video_approved: move the EDIT TRACKER row to To Post with Approved At, and stop chasing the brand for feedback on that cut
@@ -11,7 +16,7 @@ Seen 1 time(s). Source: Harsh correction.
 When: Harsh forwards or types fixes with timestamps, shots, avatar, music or captions, often with a second line naming the deal ("Brad x promo cut changes")
 Do: Read messages sent together as one; send cut notes to the named deal's EDIT TRACKER row as Changes so the editor is pinged
 Never: Send cut notes to Rudraksh as script changes, guess the deal from the last card in the chat, or treat a deal label as the answer a brand is waiting for
-Seen 1 time(s). Source: Harsh correction.
+Seen 2 time(s). Source: Harsh correction.
 ## A cut link after script approval is a Draft video email
 When: Someone on WhatsApp or chat hands over an edited video link (Drive, Frame.io) to send to a brand whose script is already approved
 Do: File it as Kind 'Draft video' so the deal moves to Submitted and the board card moves to 9- Approval Brand/Creator, and write one sentence that hands over the cut

@@ -7,15 +7,15 @@ Brand. Works with creators: [[Lindsay]].
 ## Brand wiki (from every email with them)
 WHO: Readdy AI is an AI platform. They come to us directly.
 
-CONTACTS: Harper Collins, harper@readdy.ai, brand contact, signs as Harper, must be copied on all emails.
+CONTACTS: Harper Collins, harper@readdy.ai, brand contact. Thread CC: collab@automateaiconsulting.com.
 
-DEALS: Readdy AI x Lindsay: 1 short video maximum 60 seconds posted on Instagram and TikTok with cover, title and pinned comment, script and first draft reviewed by Readdy before posting, [amount], Approved, Nov 2 to Nov 9 2026.
+DEALS: Readdy AI x Lindsay, 1 short video (max 60s) posted on Instagram and TikTok with cover, title, and pinned comment using Hook 1, [amount], Approved, scheduled for Saturday 2026-11-14.
 
-HOW THEY WORK: Brief format provided via Google Docs. Script approval required via email. First drafts reviewed via Frame.io links (https://f.io/4z1wDGD5). Posting rules: include resource document (https://tips.readdy.co/) in the automated DM. Cooperation Confirmation Letter does not need a physical signature; agreement is confirmed by replying with a specific statement. Billing details provided: PayPal email lindsay@automateaiconsulting.com.
+HOW THEY WORK: Brief provided by brand. Script reviewed and approved by brand. First draft reviewed via Frame.io link. Brand requested to include resource document (https://tips.readdy.co/) in the automated DM. No signature needed on the Cooperation Confirmation Letter; we confirm by replying with their required statement. Brand upgrades creator account to Pro once account email is shared. Billing details provided: INTERACTIVE LINK PTE. LTD., 144 ROBINSON ROAD #12-01 ROBINSON SQUARE SINGAPORE (068908). Invoices must include full company billing details and complete payment information.
 
-WATCH OUT: None listed.
+WATCH OUT: Reply all so the whole team is in the loop.
 
-OPEN NOW: Brand approved the first cut (Hook 1) with no revisions, asked to publish this Saturday or Sunday, and asked for confirmation of the Cooperation Confirmation Letter. We owe: confirmation statement on the Cooperation Confirmation Letter and publishing response.
+OPEN NOW: We owe publishing the video on Saturday, sending the invoice once live, and providing the requested Cooperation Confirmation Letter statement.
 
 
 ## Links

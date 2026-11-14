@@ -3,7 +3,7 @@ type: brand
 ---
 # Fish Audio
 
-Brand. Works with creators: [[Duncan]].
+Brand. Works with creators: [[Duncan]], [[Lindsay]].
 ## Brand wiki (from every email with them)
 WHO:
 Fish Audio.
@@ -27,3 +27,4 @@ Nothing pending. Deal is complete and paid.
 
 ## Links
 - [[Duncan]]
+- [[Lindsay]]

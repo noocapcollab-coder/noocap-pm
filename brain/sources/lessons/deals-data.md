@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A script we offer once the brand sends the brief is not a script we owe
+When: Our side (creator's team or NOOCAP) asks the brand for the contract or brief and says we will start the script once it arrives
+Do: Record the brand as owing the brief and contract; Next Action is waiting on the brand, and follow-ups chase the brief on the normal 3-day rhythm.
+Never: Turn it into 'Send <brand> the Script (promised today)', write 'We owe: contract and brief' in Deal Memory, or tell Harsh a script is due.
+Seen 1 time(s). Source: System check.
 ## Inbox reader lists can arrive as one string
 When: Filing an email from the reader's answer
 Do: Treat summary, we_promised and delivers as lists whatever shape the reader returns

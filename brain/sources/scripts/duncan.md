@@ -2,6 +2,28 @@
 
 The final scripts of videos posted in the last 60 days, as filmed.
 
+## 2026-11-13 Claude Minimalistic Graphics
+Type: PERSONAL. Creator: [[Duncan]].
+If you type /zackdfilms into Claude, it can take one wild idea and build a 3D animated explainer like this one.
+    /before after takes two versions of something and morphs one into the other on screen, and /breakdown is the one I use for products because it pulls the product apart and shows you every piece inside. If you’ve got two locations, /map route builds a 3D map with an animated route running between them, and when you write out a process in plain words, /flowchart animates it into boxes and arrows that connect one step at a time. Pretty freaking cool.
+
+#### CTA
+    Drop MOTION in the comments and I’ll send you all the skills and the setup guide for each.
+
+#### Skill Links
+    All six original skills come from one open-source repo: artemnovitckii/claude-animation-skills
+    In this script
+    - /zach-d-films → skills/zach-d-films
+    - /breakdown → skills/breakdown
+    - /map-route → skills/map-route
+    - /before after → no existing skill found, needs to be built
+    - /flowchart → no existing skill found, needs to be built
+    Cut from the script (still in the repo)
+    - /minimalistic-graphics → skills/minimalistic-graphics
+    - /stick-figure → skills/stick-figure
+    - /graph → skills/graph
+    Note: the real commands use hyphens (/zach-d-films, /map-route), so the on-screen text should match.
+
 ## 2026-11-10 Claude trending cartoon
 Creator: [[Duncan]].
 HOOKS
@@ -226,49 +248,3 @@ Comment PARASITE and I'll send you the full playbook with six more.
     - Old websites:
     - GitHub:
     - Quora: https://www.quora.com
-
-## 2026-11-03 Top 30 Claw Plugins
-Type: PERSONAL. Creator: [[Duncan]].
-Hook 1:
-    This GitHub list drops the 30 best Claude Code plugins, sorted by the job you actually do all day.
-    Hook 2:
-    There are 30 Claude Code plugins on GitHub right now, and almost nobody picks the one that actually fits their job.
-    Body:
-    So here's the deal. All 30 lives on GitHub, grouped by what you actually spend your day on. If you're deep in code, you've got Agent Skills, UIUX Pro Max, and Impeccable. If you're a creator cranking out content, Hyper Frames, Taste, Open Montage, and Humanizer are sitting right there. And if you're running the business side, Marketing Skills, Career Ops, and the full 30 Anthropic skills library all drop in with one command. 
-    That’s 10 of them, and there are 20 more sitting on that same page.
-    CTA:
-    Comment PLUGINS and I’ll send you the link to all 30.
-    
-
-Resources:
-
-    Code like a senior
-    - Karpathy Skills: https://github.com/multica-ai/andrej-karpathy-skills
-    - Matt Pocock Skills: https://github.com/mattpocock/skills
-    - ECC (Everything Claude Code): https://github.com/affaan-m/ECC
-    - Agent Skills (Addy Osmani): https://github.com/addyosmani/agent-skills
-    - Superpowers: https://github.com/obra/superpowers
-    - Ponytail: https://github.com/DietrichGebert/ponytail
-    Research and understanding
-    7. Career Ops: https://github.com/career-ops-hq/career-ops
-    8. REA (Reverse Engineer Anything): https://github.com/morluto/rea
-    9. Graphify: https://github.com/Graphify-Labs/graphify
-    10. Understand Anything: https://github.com/Egonex-AI/Understand-Anything
-    11. Last 30 Days: https://github.com/mvanhorn/last30days-skill
-    12. Agent Reach: https://github.com/Panniantong/Agent-Reach
-    Big projects, fewer tokens
-    13. Headroom: https://github.com/headroomlabs-ai/headroom
-    14. B
-
-## 2026-11-02 Claude AI Agency
-Type: PERSONAL. Creator: [[Duncan]].
-Hook 1:
-    Someone just packaged a full AI agency inside Claude for free, and the agents keep clients coming in while you're off the computer.
-    Hook 2:
-    This free Claude agency setup drops four agents into your workflow that find leads, close the calls, and ship the automations for you.
-    Body:
-    So here's the deal. You install it in Claude, and four agents start running together. The outbound one fires personalized cold emails to hundreds of prospects daily. When a call hits the calendar, your sales agent listens in live and feeds you exactly what to say. Then the workflow agent writes the proposal and ships out the automation your client paid for. You've also got a support agent fielding every reply that comes in. 
-    And you can even leave your laptop open overnight, and the agents just keep going, so you wake up to new leads on your calendar and shipped work in your inbox. Pretty freaking cool.
-    CTA:
-    Comment AGENCY and I'll send you the setup.
-    Resource: https://github.com/alexyc9381/agency-skill

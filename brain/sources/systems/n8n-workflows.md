@@ -47,6 +47,9 @@ Active. Every 3 minutes sends new emails from Chris's brand inbox to the PM (/ap
 ## PM · Inbox / PM · Inbox v2 (sweep)
 Active. Every 3 minutes sends new brand emails from the noocapcollab inbox to the PM (/api/inbox).
 
+## NOOCAP · Contract sweep (weekly)
+Active. Every Sunday 9:30 IST finds contract emails from the last 30 days in noocapcollab and Chris's inbox and hands them to the PM, which adds any contract missing from CONTRACTS.
+
 ## PM · Drive
 Active. Moves files between Google Drive and the PM.
 

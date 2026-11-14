@@ -5,17 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Chris]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Fotor is an AI photo editing and design platform. Marina comes to us directly.
+WHO: Fotor, an online photo editing platform. They come to us directly.
 
-CONTACTS: Marina, marina@fotor.me, represents Fotor. Chris's team signs and writes to them. Must be copied: noocapcollab@gmail.com.
+CONTACTS: Marina, marina@fotor.me, represents Fotor.
 
-DEALS: Chris | video package, 30-day ad authorization, cross-posting, [amount]USD | Price Agreed | Dates: none agreed yet.
+DEALS: Chris, video package with 30-day ad authorization and cross-posting, [amount]USD, stage Price Agreed, dates not specified.
 
-HOW THEY WORK: Contract and content brief to be sent to creator. Creator will create a script and send it for review.
+HOW THEY WORK: We send scripts to them for review.
 
-WATCH OUT: None listed.
+WATCH OUT: None.
 
-OPEN NOW: Contract and content brief to be sent to creator. We owe the contract and brief.
+OPEN NOW: Waiting on Fotor. Brand owes contract and content brief (asked 2026-11-13). We owe nothing until the brief arrives.
 
 
 ## Links

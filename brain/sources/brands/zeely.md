@@ -5,17 +5,17 @@ Brand. Works with creators: [[Duncan]].
 ## Brand wiki (from every email with them)
 WHO: Zeely AI campaign, coming through agency Mediacube.
 
-CONTACTS: Victoria Ev, email victoria@mediacube.io, role Mediacube, signs as Victoria, copied alilar@mediacube.io, collab@buildroom.ai.
+CONTACTS: Victoria Ev, victoria@mediacube.io, Mediacube, signs as Victoria, copy alilar@mediacube.io, collab@buildroom.ai.
 
-DEALS: Duncan, one dedicated short-form video integration on Shorts at @duncanrogoff, [amount] total rate split in two [amount] payments, stage Paid, dates not confirmed.
+DEALS: Duncan, one dedicated short-form video integration for Shorts at @duncanrogoff featuring Zeely AI campaign, [amount] total rate (split 50/50), stage Invoiced.
 
-HOW THEY WORK: Draft video delivery pending brand approval, brand waits for internal brand confirmation before providing feedback, invoice must show Mediacube info, Duncan company info, and payment details as plain text without QR codes or links. Billing details: Company Mediacube Worldwide Ltd, email victoria@mediacube.io, address Makariou III, 134, Ground Floor, 3021 Limassol, Cyprus, country CY, tax ID CY10401840A.
+HOW THEY WORK: Brief received, draft video delivered for brand approval, video published, invoice sent through Duncan's Stripe.
 
-WATCH OUT: QR codes and links do not work for their finance team, invoices must be sent as plain text.
+WATCH OUT: QR codes and links do not work for their finance team, so invoices must show company info and payment details as plain text. The October 23 transfer confirmation was only for the first half of the fee.
 
-OPEN NOW: Confirm receipt of the second half of the payment. We owe: check bank account for the second payment and confirm receipt to the brand.
+OPEN NOW: We owe checking the bank account or Stripe for the second payment of [amount] and confirming receipt to Victoria.
 
-## Deal with [[Duncan]] (Paid, opened 2026-09-28)
+## Deal with [[Duncan]] (Invoiced, opened 2026-09-28)
 Last brand reply 2026-11-13, our last reply 2026-11-06.
 AGREED: rate [amount]for remaining 50% of fee, deliverables one dedicated short-form video integration for Shorts at @duncanrogoff featuring Zeely AI campaign, usage rights not stated, payment terms 50% remaining balance due upon confirmation, no agreed dates confirmed.
 
