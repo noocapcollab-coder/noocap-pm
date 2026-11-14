@@ -2102,3 +2102,12 @@ test('a cut is "revised" for the brand only when the brand already had a cut (Pr
   assert.equal(brandRevised({ revisions: 1, sentBefore: true }), true);
   assert.equal(brandRevised({ revisions: 0, sentBefore: true }), false);
 });
+
+test('notes on cuts with timestamps are video feedback, never script changes (zenbusiness-ugc-notes, Nov 14)', async () => {
+  const { applyTextGuards, notesOnCut } = await import('../lib/inbox.js');
+  const text = 'Hi team,\n\nThanks for the cuts! A few changes before we can approve:\nUGC 1 · 0:12 please show the dashboard for 2 more seconds\nUGC 3 · 0:04s missing the ® after Velo\n\nThanks!';
+  assert.equal(applyTextGuards({ event: 'script_changes', feedback: 'x' }, { text }).event, 'video_feedback');
+  assert.equal(notesOnCut('Please change the hook line in the script, and cut the second paragraph'), false);
+  assert.equal(notesOnCut('Please cut the intro a bit shorter and lead with the pricing'), false);
+  assert.equal(applyTextGuards({ event: 'script_changes' }, { text: 'Can you make the intro of the script shorter?' }).event, 'script_changes');
+});
