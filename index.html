@@ -2015,6 +2015,7 @@
         </div>
         <div class="rz-links"><h4>Posted links that go to the brand ${links.length ? '' : '<small style="color:var(--err);font-weight:400">· none yet</small>'}</h4>
           ${links.map((u) => `<div class="rz-link"><span class="pf">${/instagram/.test(u) ? 'Instagram' : /youtu/.test(u) ? 'YouTube' : /tiktok/.test(u) ? 'TikTok' : 'Link'}</span><a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a></div>`).join('')}
+          ${links.some((u) => /youtu/.test(u)) ? '' : `<div class="rz-link"><span class="pf">YouTube</span><small style="color:var(--muted)">${/youtube|shorts|\byt\b/i.test(d.deliverables || '') ? 'No Short found yet. The PM keeps checking the channel, or add the link yourself' : 'Not part of this deal (the deliverables don\'t include YouTube)'}</small></div>`}
           <div class="rz-link">${links.length ? '<button type="button" class="obtn" data-prev="1">Show the videos here</button>' : ''}<button type="button" class="obtn" data-edit="1">${links.length ? 'Edit links' : 'Add links'}</button></div>
           <div class="rz-embeds" hidden></div>
           <div class="rz-ed" hidden><textarea placeholder="One link per line (Instagram, TikTok, YouTube)">${esc(links.join('\n'))}</textarea><div class="rz-link"><button type="button" class="obtn pri" data-save="1">Save links</button><small style="color:var(--muted)">Saved on the deal and used in the invoice email</small></div></div>
