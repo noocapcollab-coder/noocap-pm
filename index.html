@@ -658,6 +658,22 @@
   .st-p .tag.later { background: var(--line3); }
   .st-p .tag.paid { background: rgba(61,220,151,.15); color: #3ddc97; } .st-p .tag.due { background: rgba(241,107,107,.12); color: var(--err); }
   @media (max-width: 760px) { .st-r { grid-template-columns: 1fr; gap: 4px; } }
+  /* Raise an invoice: checklist + details + one button (Harsh, Nov 15) */
+  .rz { border-top: 1px solid var(--line3); padding: 14px 0; } .rz:first-child { border-top: 0; padding-top: 4px; }
+  .rz-h { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .rz-h b { font-size: 15px; } .rz-h .a { font: 600 15px 'IBM Plex Mono', monospace; }
+  .rz-steps { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+  .rz-steps span { font-size: 12px; padding: 3px 9px; border-radius: 999px; background: var(--line3); color: var(--muted); }
+  .rz-steps span.done { background: rgba(61,220,151,.14); color: #3ddc97; } .rz-steps span.now { background: rgba(240,180,41,.16); color: var(--warn); font-weight: 600; }
+  .rz-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+  .rz-chk { list-style: none; margin: 0; padding: 0; font-size: 13px; } .rz-chk li { padding: 2px 0; } .rz-chk li.no { color: var(--err); }
+  .rz-kv { font-size: 13px; display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 3px 10px; } .rz-kv span { color: var(--muted); } .rz-kv div { overflow-wrap: anywhere; }
+  .rz-mail { margin-top: 10px; } .rz-mail summary { cursor: pointer; font-size: 13px; color: var(--muted); }
+  .rz-mail pre { white-space: pre-wrap; font: 13px/1.5 inherit; background: var(--line3); border-radius: 8px; padding: 10px 12px; margin: 8px 0 0; }
+  .rz-go { margin-top: 12px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; } .rz-go small { color: var(--muted); font-size: 12px; }
+  .rz-go button:disabled { opacity: .4; cursor: not-allowed; filter: grayscale(1); }
+  .rz-go .ok { color: #3ddc97; } .rz-go .bad { color: var(--err); }
+  @media (max-width: 760px) { .rz-grid { grid-template-columns: 1fr; } }
   @media (max-width: 760px) { .inv-tot { grid-template-columns: 1fr 1fr; } .inv-r { grid-template-columns: minmax(0, 1fr) auto; } .inv-r .c { grid-column: 1 / -1; } .inv-r .bt { grid-column: 1 / -1; justify-content: flex-start; } }
   /* ---------- Revenue ---------- */
   #revenue { overflow-y: auto; }
@@ -943,6 +959,7 @@
   <section class="ostats inv-tot" id="invTot" aria-label="Invoice totals"></section>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">By creator <small style="color:var(--muted);font-weight:400">· tap a creator to see only theirs</small></h2><div id="invByCr"><div class="skel"></div></div></section>
   <div id="invChips" class="inv-chips" role="group" aria-label="Filter by creator"></div>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Raise an invoice <small id="rzN" style="color:var(--muted);font-weight:400"></small> <small style="color:var(--muted);font-weight:400">· check the details, then one click raises it in Stripe and emails the brand</small></h2><div id="rzList"><div class="skel"></div></div></section>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Needs you <small id="invTodoN"></small></h2><div id="invTodo"><div class="skel"></div></div></section>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Sent to brands, not paid yet <small id="invWaitN"></small></h2><div id="invWait"><div class="skel"></div></div></section>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">NOOCAP cut to collect <small id="invCutN"></small></h2><div id="invCut"><div class="skel"></div></div></section>
@@ -1962,6 +1979,47 @@
       stData = j; renderInvoices(true);
     } catch (e) { $('invErr').textContent = 'Stripe invoices could not load: ' + e.message; }
   }
+  // Raise an invoice: every deal whose invoice is due or drafted, or whose billing is already in, with the steps it has
+  // gone through, everything that will be on it, and one button that raises it in Stripe and emails the brand.
+  function renderRaise(st) {
+    const box = $('rzList'); if (!box) return;
+    const open = (st.deals || []).filter((d) => d.parts.some((p) => p.status === 'draft' || p.status === 'due' || (p.status === 'later' && d.billing)))
+      .filter((d) => invCreator === 'all' || d.creator === invCreator)
+      .sort((a, z) => (z.checks.every((c) => c.ok || c.k === 'links') - a.checks.every((c) => c.ok || c.k === 'links')));
+    $('rzN').textContent = open.length ? String(open.length) : '';
+    if (!open.length) { box.innerHTML = '<div class="empty">No invoice to raise right now.</div>'; return; }
+    const ok = (d, k) => (d.checks.find((c) => c.k === k) || {}).ok;
+    box.innerHTML = open.map((d, i) => {
+      const part = d.parts.find((p) => p.status === 'draft') || d.parts.find((p) => p.status === 'due') || d.parts.find((p) => p.status === 'later') || d.parts[0];
+      const steps = [['Deal signed', true], ['Video posted', ok(d, 'posted')], ['Billing details in', ok(d, 'billing')], ['Invoice drafted in Stripe', part.status === 'draft' || !!d.draft], ['Sent to brand', part.status === 'sent' || part.status === 'paid'], ['Paid', part.status === 'paid']];
+      const now = steps.findIndex(([, done]) => !done);
+      const blockers = d.checks.filter((c) => !c.ok && c.k !== 'links');
+      const b = d.billing || {};
+      const links = String(d.posted_links || '').split(/\s+/).filter((u) => /^https?:/.test(u));
+      return `<div class="rz" data-i="${i}">
+        <div class="rz-h"><div><b><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.brand)}</a></b> × ${esc(d.creator)} <small style="color:var(--muted)">· ${esc(d.stage || '')}</small></div><span class="a">${usd(part.amount)}</span></div>
+        <div class="rz-steps">${steps.map(([t, done], j) => `<span class="${done ? 'done' : j === now ? 'now' : ''}">${done ? '✓ ' : ''}${t}</span>`).join('')}</div>
+        <div class="rz-grid">
+          <ul class="rz-chk">${d.checks.map((c) => `<li class="${c.ok ? '' : (c.k === 'links' ? '' : 'no')}">${c.ok ? '✅' : c.k === 'links' ? '⚪' : '❌'} ${esc(c.t)}</li>`).join('')}<li style="color:var(--muted)">${esc(part.say || '')}</li></ul>
+          <div class="rz-kv"><span>Billed to</span><div>${esc(b.company || '—')}</div><span>Address</span><div>${esc(b.address || '—')}${b.country ? ' · ' + esc(b.country) : ''}</div><span>Billing email</span><div>${esc(b.email || d.brand_email || '—')}</div>${b.tax_id ? `<span>Tax ID</span><div>${esc(b.tax_id)}</div>` : ''}<span>Deliverables</span><div>${esc(d.deliverables || '—')}</div><span>Posted links</span><div>${links.length ? links.map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\/(www\.)?/, ''))}</a>`).join('<br>') : '—'}</div><span>Terms</span><div>${esc(d.terms || 'not set, full fee')}</div></div>
+        </div>
+        ${d.draft ? `<details class="rz-mail"><summary>The email that goes to ${esc(d.draft.to)}${d.draft.cc ? ' (cc ' + esc(d.draft.cc) + ')' : ''}</summary><pre>${esc(d.draft.subject)}\n\n${esc(d.draft.body)}</pre></details>` : `<div class="rz-mail"><small style="color:var(--muted)">The email is written when you raise it: it replies in the ${esc(d.brand)} thread with the pay link and the PDF${links.length ? ', plus the posted links' : ''}.</small></div>`}
+        <div class="rz-go"><button type="button" class="obtn pri" data-raise="${esc(d.id)}" ${blockers.length ? 'disabled title="' + esc(blockers.map((c) => c.t).join(', ')) + '"' : ''}>Raise &amp; send invoice</button>${blockers.length ? `<small class="bad">Waiting on: ${esc(blockers.map((c) => c.t).join(' · '))}</small>` : `<small>Finalizes ${usd(part.amount)} in ${esc(d.creator)}'s Stripe and emails ${esc(b.company || d.brand)} straight away.</small>`}</div>
+      </div>`;
+    }).join('');
+    box.querySelectorAll('button[data-raise]').forEach((btn) => btn.onclick = async () => {
+      const d = open.find((x) => x.id === btn.dataset.raise); if (!d) return;
+      const part = d.parts.find((p) => p.status === 'draft') || d.parts.find((p) => p.status === 'due') || d.parts[0];
+      if (!confirm(`Raise ${usd(part.amount)} for ${d.brand} × ${d.creator} in ${d.creator}'s Stripe and email it to ${d.billing?.company || d.brand} now?`)) return;
+      const wrap = btn.parentElement; btn.disabled = true; btn.textContent = 'Raising…';
+      try {
+        const r = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ action: 'invoice-raise-send', deal: d.id }) });
+        const j = await r.json(); if (!r.ok) throw new Error(j.error || 'Failed');
+        wrap.innerHTML = `<small class="ok">✓ Invoice raised and sent to ${esc(d.billing?.company || d.brand)}. It moves to "Sent to brands" in a moment.</small>`;
+        setTimeout(() => { stAt = 0; loadStripeInv(true); loadHQ(true); }, 2500);
+      } catch (e) { btn.disabled = false; btn.textContent = 'Raise & send invoice'; wrap.insertAdjacentHTML('beforeend', `<small class="bad">${esc(e.message)}</small>`); }
+    });
+  }
   function renderInvoices(fromStripe) {
     if (!fromStripe) loadStripeInv();
     const c = hqData?.chase; if (!c || !$('invTodo')) return;
@@ -2029,6 +2087,7 @@
       ...raise.map((x, i) => row(x.creator, link(x), x.amount, `video posted ${ago(x.days)}, no invoice yet`, `${x.remind_ok === false ? '' : '<button type="button" class="obtn" data-act="remind">Copy reminder</button>'}<button type="button" class="obtn pri" data-act="sent">Invoice sent</button>`, `data-k="raise" data-i="${i}"`)),
       ...making.map((p) => row(p.creator, link(p), p.amount, `<span style="color:var(--muted)">the PM is on it: ${esc(String(p.say || '').replace(/^Creating the invoice in Stripe$/, 'making the invoice'))}</span>`)),
     ].join('') : '<div class="empty">Nothing to do. 🎉</div>';
+    renderRaise(st);
     const noDeal = c.no_deal || [];
     if (noDeal.length) $('invTodo').innerHTML += `<div style="margin:14px 0 4px;font-size:12px;color:var(--muted)">Not in our emails (WhatsApp or other tools) · not counted above. Mark each one so it leaves this list:</div>${noDeal.map((x, i) => row(x.creator, link(x), x.amount, '<span style="color:var(--muted)">only on the creator\'s board</span>', `<button type="button" class="obtn" data-act="skip" title="Handled outside the PM, stop showing it">Hide</button><button type="button" class="obtn" data-act="sent">Invoice sent</button><button type="button" class="obtn pri" data-act="paid">Paid</button>`, `data-k="nodeal" data-i="${i}"`)).join('')}`;
 
