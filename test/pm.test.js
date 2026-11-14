@@ -2095,3 +2095,10 @@ test('a past-due chase written after 18:30 UTC on the due date is not retired as
   assert.equal(writtenBeforeDue('2026-11-11T18:36:00.000Z', '2026-11-13'), true);
   assert.equal(writtenBeforeDue(null, '2026-11-13'), false);
 });
+
+test('a cut is "revised" for the brand only when the brand already had a cut (PromoCut x Brad, Nov 14)', async () => {
+  const { brandRevised } = await import('../lib/brandsend.js');
+  assert.equal(brandRevised({ revisions: 1, sentBefore: false }), false);
+  assert.equal(brandRevised({ revisions: 1, sentBefore: true }), true);
+  assert.equal(brandRevised({ revisions: 0, sentBefore: true }), false);
+});
