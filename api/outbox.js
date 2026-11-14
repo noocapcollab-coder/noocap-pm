@@ -38,6 +38,10 @@ export default async function handler(req, res) {
       const I = await import('../lib/invoicing.js');
       return res.status(200).json(await I.raiseInvoiceNow(body.deal, body.amount));
     }
+    if (action === 'deal-links') {
+      const I = await import('../lib/invoicing.js');
+      return res.status(200).json(await I.setPostedLinks(body.deal, body.links));
+    }
     if (action === 'invoice-raise-send') {
       const I = await import('../lib/invoicing.js');
       const out = await withRun('Send', `Invoice raised from the Invoices page`, () => I.raiseAndSend(body.deal), { trigger: 'Dashboard', summarize: () => ({ did: ['Invoice raised in Stripe and sent to the brand'] }) });

@@ -671,6 +671,15 @@
   .rz-mail { margin-top: 10px; } .rz-mail summary { cursor: pointer; font-size: 13px; color: var(--muted); }
   .rz-mail pre { white-space: pre-wrap; font: 13px/1.5 inherit; background: var(--line3); border-radius: 8px; padding: 10px 12px; margin: 8px 0 0; }
   .rz-go { margin-top: 12px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; } .rz-go small { color: var(--muted); font-size: 12px; }
+  .rz-links { margin-top: 12px; border: 1px solid var(--line3); border-radius: 10px; padding: 10px 12px; }
+  .rz-links h4 { margin: 0 0 6px; font: 600 13px 'Space Grotesk', sans-serif; }
+  .rz-link { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding: 4px 0; font-size: 13px; }
+  .rz-link .pf { font: 11px 'IBM Plex Mono', monospace; padding: 2px 7px; border-radius: 6px; background: var(--line3); color: var(--muted); }
+  .rz-link a { overflow-wrap: anywhere; }
+  .rz-embeds { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+  .rz-embeds iframe { width: 300px; height: 540px; border: 0; border-radius: 10px; background: #fff; }
+  .rz-links textarea { width: 100%; min-height: 64px; margin-top: 8px; font: 13px 'IBM Plex Mono', monospace; background: transparent; color: inherit; border: 1px solid var(--line); border-radius: 8px; padding: 8px; box-sizing: border-box; }
+  .rz-ck { display: flex; gap: 8px; align-items: center; font-size: 13px; margin-top: 10px; }
   .rz-go button:disabled { opacity: .4; cursor: not-allowed; filter: grayscale(1); }
   .rz-go .ok { color: #3ddc97; } .rz-go .bad { color: var(--err); }
   @media (max-width: 760px) { .rz-grid { grid-template-columns: 1fr; } }
@@ -2002,12 +2011,36 @@
         <div class="rz-steps">${steps.map(([t, done], j) => `<span class="${done ? 'done' : j === now ? 'now' : ''}">${done ? '✓ ' : ''}${t}</span>`).join('')}</div>
         <div class="rz-grid">
           <ul class="rz-chk">${d.checks.map((c) => `<li class="${c.ok ? '' : (c.k === 'links' ? '' : 'no')}">${c.ok ? '✅' : c.k === 'links' ? '⚪' : '❌'} ${esc(c.t)}</li>`).join('')}<li style="color:var(--muted)">${esc(part.say || '')}</li></ul>
-          <div class="rz-kv"><span>Billed to</span><div>${esc(b.company || '—')}</div><span>Address</span><div>${esc(b.address || '—')}${b.country ? ' · ' + esc(b.country) : ''}</div><span>Billing email</span><div>${esc(b.email || d.brand_email || '—')}</div>${b.tax_id ? `<span>Tax ID</span><div>${esc(b.tax_id)}</div>` : ''}<span>Deliverables</span><div>${esc(d.deliverables || '—')}</div><span>Posted links</span><div>${links.length ? links.map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\/(www\.)?/, ''))}</a>`).join('<br>') : '—'}</div><span>Terms</span><div>${esc(d.terms || 'not set, full fee')}</div></div>
+          <div class="rz-kv"><span>Billed to</span><div>${esc(b.company || '—')}</div><span>Address</span><div>${esc(b.address || '—')}${b.country ? ' · ' + esc(b.country) : ''}</div><span>Billing email</span><div>${esc(b.email || d.brand_email || '—')}</div>${b.tax_id ? `<span>Tax ID</span><div>${esc(b.tax_id)}</div>` : ''}<span>Deliverables</span><div>${esc(d.deliverables || '—')}</div><span>Posted links</span><div>${links.length ? `${links.length} link${links.length > 1 ? 's' : ''}, check them below` : '—'}</div><span>Terms</span><div>${esc(d.terms || 'not set, full fee')}</div></div>
+        </div>
+        <div class="rz-links"><h4>Posted links that go to the brand ${links.length ? '' : '<small style="color:var(--err);font-weight:400">· none yet</small>'}</h4>
+          ${links.map((u) => `<div class="rz-link"><span class="pf">${/instagram/.test(u) ? 'Instagram' : /youtu/.test(u) ? 'YouTube' : /tiktok/.test(u) ? 'TikTok' : 'Link'}</span><a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a></div>`).join('')}
+          <div class="rz-link">${links.length ? '<button type="button" class="obtn" data-prev="1">Show the videos here</button>' : ''}<button type="button" class="obtn" data-edit="1">${links.length ? 'Edit links' : 'Add links'}</button></div>
+          <div class="rz-embeds" hidden></div>
+          <div class="rz-ed" hidden><textarea placeholder="One link per line (Instagram, TikTok, YouTube)">${esc(links.join('\n'))}</textarea><div class="rz-link"><button type="button" class="obtn pri" data-save="1">Save links</button><small style="color:var(--muted)">Saved on the deal and used in the invoice email</small></div></div>
+          ${links.length ? '<label class="rz-ck"><input type="checkbox" data-ok="1"> I checked these are the right videos</label>' : ''}
         </div>
         ${d.draft ? `<details class="rz-mail"><summary>The email that goes to ${esc(d.draft.to)}${d.draft.cc ? ' (cc ' + esc(d.draft.cc) + ')' : ''}</summary><pre>${esc(d.draft.subject)}\n\n${esc(d.draft.body)}</pre></details>` : `<div class="rz-mail"><small style="color:var(--muted)">The email is written when you raise it: it replies in the ${esc(d.brand)} thread with the pay link and the PDF${links.length ? ', plus the posted links' : ''}.</small></div>`}
-        <div class="rz-go"><button type="button" class="obtn pri" data-raise="${esc(d.id)}" ${blockers.length ? 'disabled title="' + esc(blockers.map((c) => c.t).join(', ')) + '"' : ''}>Raise &amp; send invoice</button>${blockers.length ? `<small class="bad">Waiting on: ${esc(blockers.map((c) => c.t).join(' · '))}</small>` : `<small>Finalizes ${usd(part.amount)} in ${esc(d.creator)}'s Stripe and emails ${esc(b.company || d.brand)} straight away.</small>`}</div>
+        <div class="rz-go"><button type="button" class="obtn pri" data-raise="${esc(d.id)}" ${blockers.length ? 'disabled title="' + esc(blockers.map((c) => c.t).join(', ')) + '"' : links.length ? 'disabled data-needck="1" title="Tick that you checked the links first"' : ''}>Raise &amp; send invoice</button>${blockers.length ? `<small class="bad">Waiting on: ${esc(blockers.map((c) => c.t).join(' · '))}</small>` : `<small>Finalizes ${usd(part.amount)} in ${esc(d.creator)}'s Stripe and emails ${esc(b.company || d.brand)} straight away.</small>`}</div>
       </div>`;
     }).join('');
+    const embedUrl = (u) => { let m = u.match(/instagram\.com\/(?:reel|p|reels)\/([\w-]+)/); if (m) return `https://www.instagram.com/reel/${m[1]}/embed`; m = u.match(/(?:youtube\.com\/(?:shorts\/|watch\?v=)|youtu\.be\/)([\w-]{6,})/); if (m) return `https://www.youtube.com/embed/${m[1]}`; m = u.match(/tiktok\.com\/.*video\/(\d+)/); if (m) return `https://www.tiktok.com/embed/v2/${m[1]}`; return null; };
+    box.querySelectorAll('.rz').forEach((card) => {
+      const d = open[+card.dataset.i]; const urls = String(d.posted_links || '').split(/\s+/).filter((u) => /^https?:/.test(u));
+      const pv = card.querySelector('[data-prev]'); const em = card.querySelector('.rz-embeds');
+      if (pv) pv.onclick = () => { if (!em.hidden) { em.hidden = true; em.innerHTML = ''; pv.textContent = 'Show the videos here'; return; } em.innerHTML = urls.map((u) => embedUrl(u) ? `<iframe src="${esc(embedUrl(u))}" loading="lazy" allowfullscreen></iframe>` : '').join('') || '<small style="color:var(--muted)">These links can\'t be previewed here, open them above.</small>'; em.hidden = false; pv.textContent = 'Hide the videos'; };
+      const ed = card.querySelector('[data-edit]'); const box2 = card.querySelector('.rz-ed');
+      if (ed) ed.onclick = () => { box2.hidden = !box2.hidden; };
+      const sv = card.querySelector('[data-save]');
+      if (sv) sv.onclick = async () => {
+        const val = box2.querySelector('textarea').value.split(/\s+/).filter((u) => /^https?:\/\//.test(u)).join('\n');
+        sv.disabled = true; sv.textContent = 'Saving…';
+        try { const r = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ action: 'deal-links', deal: d.id, links: val }) }); const j = await r.json(); if (!r.ok) throw new Error(j.error || 'Failed'); d.posted_links = val; renderRaise(stData || st); }
+        catch (e) { sv.disabled = false; sv.textContent = 'Save links'; alert(e.message); }
+      };
+      const ck = card.querySelector('[data-ok]'); const go = card.querySelector('button[data-needck]');
+      if (ck && go) ck.onchange = () => { go.disabled = !ck.checked; };
+    });
     box.querySelectorAll('button[data-raise]').forEach((btn) => btn.onclick = async () => {
       const d = open.find((x) => x.id === btn.dataset.raise); if (!d) return;
       const part = d.parts.find((p) => p.status === 'draft') || d.parts.find((p) => p.status === 'due') || d.parts[0];
