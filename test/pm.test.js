@@ -2111,3 +2111,10 @@ test('notes on cuts with timestamps are video feedback, never script changes (ze
   assert.equal(notesOnCut('Please cut the intro a bit shorter and lead with the pricing'), false);
   assert.equal(applyTextGuards({ event: 'script_changes' }, { text: 'Can you make the intro of the script shorter?' }).event, 'script_changes');
 });
+
+test('a follow-up wait counts real days since our email, not IST calendar days (ElevenLabs x Duncan, Nov 14)', async () => {
+  const { elapsedDays } = await import('../lib/heartbeat.js');
+  assert.equal(elapsedDays('2026-11-11T14:19:00.000Z', Date.parse('2026-11-13T18:35:00.000Z')), 2);
+  assert.equal(elapsedDays('2026-11-11T14:19:00.000Z', Date.parse('2026-11-14T14:20:00.000Z')), 3);
+  assert.equal(elapsedDays(null), null);
+});
