@@ -2118,3 +2118,23 @@ test('a follow-up wait counts real days since our email, not IST calendar days (
   assert.equal(elapsedDays('2026-11-11T14:19:00.000Z', Date.parse('2026-11-14T14:20:00.000Z')), 3);
   assert.equal(elapsedDays(null), null);
 });
+
+test('System check Nov 14 night: a process guide stays brand_reply even when a later guard would call it approved (AI Inspo x Duncan)', async () => {
+  const { applyTextGuards } = await import('../lib/inbox.js');
+  const text = "Hi ,\n\nHere is the Google Drive folder containing all the detailed collaboration information.\n\n【Collaboration Confirmed】\n1. Product: one video promoting AI Inspo\n\nSTEP-BY-STEP Collaboration Guide】\n1.Payment Information\nPlease provide your payment information.\n3.Script Preparation\nPlease write the script based on the production guide and materials we provide.\n4.Script Approval\nPlease send us the script for review.\n5.Filming & Editing\nPlease proceed with filming and editing according to the approved script and production guide.\n6.Video Review\nOnce the video is completed, please send us the first draft for review.\n\nBest regards,\nJessie";
+  for (const ev of ['script_approved', 'brief', 'script_changes', 'brand_reply']) {
+    const x = applyTextGuards({ event: ev, from_role: 'brand' }, { text });
+    assert.notEqual(x.event, 'script_approved', `${ev} became script_approved`);
+  }
+  // a real approval still counts
+  const ok = applyTextGuards({ event: 'script_approved', from_role: 'brand' }, { text: 'The script looks great, approved! Please proceed with filming.' });
+  assert.equal(ok.event, 'script_approved');
+});
+
+test('System check Nov 14 night: an email of the same kind sent minutes ago blocks a second draft (Teamily AI x Brad)', async () => {
+  const { sentWithinHours } = await import('../lib/heartbeat.js');
+  const now = Date.parse('2026-11-14T12:15:07Z');
+  assert.equal(sentWithinHours('2026-11-14T12:14:00.000Z', 12, now), true);
+  assert.equal(sentWithinHours('2026-11-13T23:00:00.000Z', 12, now), false);
+  assert.equal(sentWithinHours(null, 12, now), false);
+});
