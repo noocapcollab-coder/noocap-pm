@@ -43,3 +43,13 @@ test('every platform in the deliverables needs its link, "no TikTok" does not co
   const c = platformChecks({ deliverables: '1 short video on Instagram and YouTube Shorts (no TikTok, per Harper\'s Oct 27 email)', postedLinks: 'https://www.instagram.com/reel/DfvNh_pGUud/' });
   assert.deepEqual(c.map((x) => [x.k, x.ok]), [['link-youtube', false], ['link-instagram', true]]);
 });
+
+test('the real Readdy Short: title skips the brand, the description names it', async () => {
+  const { shortFromPage } = await import('../lib/postedlinks.js');
+  const html = '"title":{"simpleText":"Start a Website Agency With This AI Tool"} "shortDescription":"You can use Readdy AI to turn outdated business websites into modern website concepts" "publishDate":"2026-11-14T13:50:46-08:00"';
+  const p = shortFromPage('A93bIb5wbPM', html);
+  assert.equal(p.url, 'https://www.youtube.com/shorts/A93bIb5wbPM');
+  assert.deepEqual(matchPosts([p], { brand: 'Readdy AI', postDate: '2026-11-14' }).map((x) => x.url), ['https://www.youtube.com/shorts/A93bIb5wbPM']);
+  const feed = '<entry><yt:videoId>A93bIb5wbPM</yt:videoId><title>Start a Website Agency With This AI Tool</title><published>2026-11-14T21:50:46+00:00</published><media:description>You can use Readdy AI to turn outdated business websites...</media:description></entry>';
+  assert.deepEqual(matchPosts(parseYoutubeFeed(feed), { brand: 'Readdy AI', postDate: '2026-11-14' }).map((x) => x.url), ['https://www.youtube.com/shorts/A93bIb5wbPM']);
+});
