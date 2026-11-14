@@ -2079,3 +2079,19 @@ test('our "send the contract and brief and we will start the script" is not a sc
   assert.deepEqual(I.scriptPromiseKept(['Script'], 'creator', latest).promised, []);
   assert.deepEqual(I.scriptPromiseKept(['Script', 'signed contract'], 'noocap', "We'll send the revised script tomorrow and the signed contract today.").promised, ['Script', 'signed contract']);
 });
+
+test('a follow-up auto-sent earlier in the same heartbeat counts as our newest email (JEEVMEDIA x Lindsay, Nov 14)', async () => {
+  const { latestOurEmail } = await import('../lib/heartbeat.js');
+  const deal = { lastOur: '2026-11-09T12:00:00.000Z', lastBrand: '2026-11-09T10:00:00.000Z' };
+  assert.equal(latestOurEmail(deal, null, '2026-11-13T23:54:00.000Z'), '2026-11-13T23:54:00.000Z');
+  assert.equal(latestOurEmail(deal, '2026-11-10T08:00:00.000Z', '2026-11-13T23:54:00.000Z'), '2026-11-13T23:54:00.000Z');
+  assert.equal(latestOurEmail(deal, null, '2026-11-01T00:00:00.000Z'), '2026-11-09T12:00:00.000Z');
+});
+
+test('a past-due chase written after 18:30 UTC on the due date is not retired as before-due (Runway AI x Chris, Nov 14)', async () => {
+  const { writtenBeforeDue } = await import('../lib/heartbeat.js');
+  assert.equal(writtenBeforeDue('2026-11-13T18:36:24.000Z', '2026-11-13'), false);
+  assert.equal(writtenBeforeDue('2026-11-13T10:00:00.000Z', '2026-11-13'), true);
+  assert.equal(writtenBeforeDue('2026-11-11T18:36:00.000Z', '2026-11-13'), true);
+  assert.equal(writtenBeforeDue(null, '2026-11-13'), false);
+});
