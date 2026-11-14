@@ -37,3 +37,9 @@ test('the real Readdy reel (Nov 14, lindsay.ai) matches the Readdy AI deal', () 
     { url: 'https://www.instagram.com/reel/Dfp3JEAil-H/', text: 'PS2-style AI videos... @higgsfield.ai MCP with Seedance', at: '2026-11-12T19:59:17.000Z' }];
   assert.deepEqual(matchPosts(posts, { brand: 'Readdy AI', postDate: '2026-11-14' }).map((p) => p.url), ['https://www.instagram.com/reel/DfvNh_pGUud/']);
 });
+
+test('every platform in the deliverables needs its link, "no TikTok" does not count', async () => {
+  const { platformChecks } = await import('../lib/invoicing.js');
+  const c = platformChecks({ deliverables: '1 short video on Instagram and YouTube Shorts (no TikTok, per Harper\'s Oct 27 email)', postedLinks: 'https://www.instagram.com/reel/DfvNh_pGUud/' });
+  assert.deepEqual(c.map((x) => [x.k, x.ok]), [['link-youtube', false], ['link-instagram', true]]);
+});
