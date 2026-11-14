@@ -1985,9 +1985,10 @@
     const box = $('rzList'); if (!box) return;
     const open = (st.deals || []).filter((d) => d.parts.some((p) => p.status === 'draft' || p.status === 'due' || (p.status === 'later' && d.billing)))
       .filter((d) => invCreator === 'all' || d.creator === invCreator)
-      .sort((a, z) => (z.checks.every((c) => c.ok || c.k === 'links') - a.checks.every((c) => c.ok || c.k === 'links')));
+      .sort((a, z) => ((z.checks || []).every((c) => c.ok || c.k === 'links') - (a.checks || []).every((c) => c.ok || c.k === 'links')));
     $('rzN').textContent = open.length ? String(open.length) : '';
     if (!open.length) { box.innerHTML = '<div class="empty">No invoice to raise right now.</div>'; return; }
+    for (const d of open) d.checks = d.checks || [];
     const ok = (d, k) => (d.checks.find((c) => c.k === k) || {}).ok;
     box.innerHTML = open.map((d, i) => {
       const part = d.parts.find((p) => p.status === 'draft') || d.parts.find((p) => p.status === 'due') || d.parts.find((p) => p.status === 'later') || d.parts[0];
@@ -2087,7 +2088,7 @@
       ...raise.map((x, i) => row(x.creator, link(x), x.amount, `video posted ${ago(x.days)}, no invoice yet`, `${x.remind_ok === false ? '' : '<button type="button" class="obtn" data-act="remind">Copy reminder</button>'}<button type="button" class="obtn pri" data-act="sent">Invoice sent</button>`, `data-k="raise" data-i="${i}"`)),
       ...making.map((p) => row(p.creator, link(p), p.amount, `<span style="color:var(--muted)">the PM is on it: ${esc(String(p.say || '').replace(/^Creating the invoice in Stripe$/, 'making the invoice'))}</span>`)),
     ].join('') : '<div class="empty">Nothing to do. 🎉</div>';
-    renderRaise(st);
+    try { renderRaise(st); } catch (e) { $('rzList').innerHTML = `<div class="empty">Couldn't show this section: ${esc(e.message)}. Reload the page.</div>`; }
     const noDeal = c.no_deal || [];
     if (noDeal.length) $('invTodo').innerHTML += `<div style="margin:14px 0 4px;font-size:12px;color:var(--muted)">Not in our emails (WhatsApp or other tools) · not counted above. Mark each one so it leaves this list:</div>${noDeal.map((x, i) => row(x.creator, link(x), x.amount, '<span style="color:var(--muted)">only on the creator\'s board</span>', `<button type="button" class="obtn" data-act="skip" title="Handled outside the PM, stop showing it">Hide</button><button type="button" class="obtn" data-act="sent">Invoice sent</button><button type="button" class="obtn pri" data-act="paid">Paid</button>`, `data-k="nodeal" data-i="${i}"`)).join('')}`;
 
