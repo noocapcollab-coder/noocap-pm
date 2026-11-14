@@ -26,6 +26,18 @@ export default async function handler(req, res) {
       return res.status(200).json(await sendCutsToBrands({ rowId: id.length === 32 ? id : undefined }));
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?ytcheck=Lindsay: can the PM read this creator's YouTube Shorts, and which way (API key, feed or page)?
+  if (req.query?.ytcheck) {
+    try {
+      const P = await import('../lib/postedlinks.js');
+      const where = P.POSTED_LINK_CREATORS[String(req.query.ytcheck)];
+      if (!where?.youtubeChannel) return res.status(400).json({ error: 'no YouTube channel for that creator' });
+      const out = {};
+      if (process.env.YOUTUBE_API_KEY) { try { const l = await P.youtubeApiPosts(where.youtubeChannel, process.env.YOUTUBE_API_KEY); out.api = { ok: true, count: l.length, latest: l.slice(0, 3).map((x) => ({ url: x.url, at: x.at, title: x.text.slice(0, 60) })) }; } catch (e) { out.api = { ok: false, error: e.message }; } } else out.api = { ok: false, error: 'YOUTUBE_API_KEY not set' };
+      try { const all = await P.youtubePosts(where.youtubeChannel); out.used = all.length; if (req.query.brand) out.match = P.matchPosts(all, { brand: String(req.query.brand), postDate: String(req.query.date || '') }).map((x) => x.url); } catch (e) { out.chain_error = e.message; }
+      return res.status(200).json(out);
+    } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // ?wiki=now: build a batch of brand wiki pages right away
   if (req.query?.wiki === 'now') {
     if (!hookAllowed(req)) return res.status(401).json({ error: HOOK_ERROR });
