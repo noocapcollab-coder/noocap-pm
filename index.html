@@ -1581,7 +1581,7 @@
     const unpaid = xs.filter((v) => !v.paid), paid = xs.filter((v) => v.paid).sort((a, z) => String(z.paidDate).localeCompare(String(a.paidDate)));
     const row = (v) => {
       const i = rv.videos.indexOf(v);
-      const tag = (v.dealOnly ? '<span class="tag muted">no video card yet</span>' : v.orphan ? '<span class="tag muted">revenue row</span>' : `<span class="tag ${/posted/i.test(v.status) ? 'go' : ''}">${esc(String(v.status).replace(/^\d+-\s*/, ''))}</span>`)
+      const tag = (v.dealOnly ? '<span class="tag muted" title="Agreed in the Brand Deals Pipeline, no video card on the creator board yet">deal, no card yet</span>' : v.orphan ? '<span class="tag muted" title="Only in the Revenue sheet, its video card wasn\'t found on a board">revenue sheet only</span>' : `<span class="tag ${/posted/i.test(v.status) ? 'go' : ''}">${esc(String(v.status).replace(/^\d+-\s*/, ''))}</span>`)
         + (v.deal ? `<a class="tag info" href="${esc(v.deal.url)}" target="_blank" rel="noopener" title="Open the brand deal">deal · ${esc(v.deal.stage)}</a>` : '');
       const amt = `<label class="amt ${v.amountFrom === 'deal' ? 'fromdeal' : ''}"><span>$</span><input type="number" min="0" step="50" inputmode="decimal" value="${v.amount ?? ''}" placeholder="amount" data-amt="${i}" aria-label="Amount USD">${v.amountFrom === 'deal' ? '<em>from deal</em>' : ''}</label>`;
       const use = !v.amount && v.suggested ? `<button type="button" class="btn sm use" data-use="${i}">use ${usd(v.suggested)}</button>` : '';
