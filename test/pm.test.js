@@ -2150,3 +2150,14 @@ test('writeEmail guard: no "here is" for a file the email does not carry (Dreami
   assert.ok(!/Here is/.test(dropAttachClaims(bad)));
   assert.equal(claimsMissingAttachment("Hi Kat,\n\nHere's a quick update on timing: Lindsay films Monday.\n", {}, 'Reply'), false);
 });
+
+// ---------- script writer hand-off lands on the flagged card (CapCut x Chris, Nov 15) ----------
+test('Send to Script Writer on card (2) never moves or notes video 1 and leaves the deal alone', async () => {
+  const { scriptPingTarget } = await import('../lib/inbox.js');
+  const deal = { brand: 'CapCut', creator: 'Chris', linkedVideo: 'https://app.notion.com/p/CapCut-Chris-40f508e99dda81d0b637f7d05510295d' };
+  const card2 = 'https://www.notion.so/CapCut-Chris-2-413508e99dda81a1aed5f60f8b7ea0ab';
+  assert.deepEqual(scriptPingTarget(deal, card2), { target: card2, touchDeal: false });
+  // the deal's own card, or no card given (WhatsApp / email path): the old behaviour
+  assert.equal(scriptPingTarget(deal, 'https://www.notion.so/40f508e99dda81d0b637f7d05510295d').touchDeal, true);
+  assert.deepEqual(scriptPingTarget(deal, null), { target: deal.linkedVideo, touchDeal: true });
+});
