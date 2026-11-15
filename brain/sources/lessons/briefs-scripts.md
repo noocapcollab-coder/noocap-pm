@@ -42,3 +42,9 @@ When: A deal covers 2+ reels, or a brief arrives for the next reel
 Do: Make a card per reel; put the next reel's brief on its own card.
 Never: Put reel 2's brief on reel 1's finished card.
 Seen 3 time(s). Source: Rulebook.
+
+## A new brief per video in a package
+When: A brand sends separate briefs for later videos ("Second brief: <link>", "Third brief: <link>"), even inside an email about something else
+Do: Put each link in the Brief field of its own card (Brand × Creator (2), (3)…). If that card already has a script written from an older brief, set Send to Script Writer to "Brief changed" so the script is redone from the right brief. Add the brand's go-live date to those cards.
+Never: Copy video 1's brief onto every card of a package, or leave a script written from the wrong brief at Internal Review.
+Seen 1 time(s). Source: Harsh, Nov 15 (CapCut × Chris via GrowMaxValue: Mia's Nov 14 email sent two new briefs; all three cards carried video 1's link and the scripts for 2 and 3 were written from it).
