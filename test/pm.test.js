@@ -2138,3 +2138,15 @@ test('System check Nov 14 night: an email of the same kind sent minutes ago bloc
   assert.equal(sentWithinHours('2026-11-13T23:00:00.000Z', 12, now), false);
   assert.equal(sentWithinHours(null, 12, now), false);
 });
+
+test('writeEmail guard: no "here is" for a file the email does not carry (Dreamina x Chris, Nov 14)', async () => {
+  const { claimsMissingAttachment, dropAttachClaims } = await import('../lib/outbox.js');
+  const bad = "Hi Jenny,\n\nHere is the cover image and caption for your final review.\n\nBest,\nChris's Team";
+  assert.equal(claimsMissingAttachment(bad, {}, 'Reply'), true);
+  assert.equal(claimsMissingAttachment(bad, { caption: 'x' }, 'Reply'), false);
+  assert.equal(claimsMissingAttachment('Hi,\n\nHere is the cut: https://f.io/x\n', {}, 'Reply'), false);
+  assert.equal(claimsMissingAttachment(bad, {}, 'Script'), false);
+  assert.equal(claimsMissingAttachment('Hi Jenny,\n\nThanks for the update, we will go ahead.\n', {}, 'Reply'), false);
+  assert.ok(!/Here is/.test(dropAttachClaims(bad)));
+  assert.equal(claimsMissingAttachment("Hi Kat,\n\nHere's a quick update on timing: Lindsay films Monday.\n", {}, 'Reply'), false);
+});
