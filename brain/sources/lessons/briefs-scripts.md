@@ -48,3 +48,9 @@ When: A brand sends separate briefs for later videos ("Second brief: <link>", "T
 Do: Put each link in the Brief field of its own card (Brand × Creator (2), (3)…). If that card already has a script written from an older brief, set Send to Script Writer to "Brief changed" so the script is redone from the right brief. Add the brand's go-live date to those cards.
 Never: Copy video 1's brief onto every card of a package, or leave a script written from the wrong brief at Internal Review.
 Seen 1 time(s). Source: Harsh, Nov 15 (CapCut × Chris via GrowMaxValue: Mia's Nov 14 email sent two new briefs; all three cards carried video 1's link and the scripts for 2 and 3 were written from it).
+
+## Every brief link goes to the script writer
+When: A brief comes with more than one link (a brief doc plus a Drive folder of assets, slides, a product link)
+Do: Send the script writer all of them, labelled, with the brief document first; the card's Brief field holds the brief document, not the assets folder. Put every link on the card page.
+Never: Send only the first link, or only the folder.
+Seen 1 time(s). Source: Harsh, Nov 15 (AI Inspo × Duncan: Jessie sent a Google Doc brief and a Drive folder on Nov 11; Rudraksh only got the folder).

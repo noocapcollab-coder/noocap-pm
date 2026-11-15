@@ -12,3 +12,11 @@ test('other numbered forms, and plain links are ignored', () => {
   assert.deepEqual(numberedBriefs('Brief 2: https://a.com/x\nVideo 3 brief - https://b.com/y').map((b) => b.n), [2, 3]);
   assert.deepEqual(numberedBriefs('Here is the brief: https://a.com/x\nOur site https://b.com'), []);
 });
+
+test('every brief link reaches the script writer, the doc first (AI Inspo x Duncan)', async () => {
+  const { briefLinkLines } = await import('../lib/briefs.js');
+  const t = briefLinkLines(['https://drive.google.com/drive/folders/1fyUHXezuz6Y-lX8otvPtYnpPxc3KsAg6?usp=sharing', 'https://docs.google.com/document/d/1IOfSNbddcTQt_YLu67G4GwB9tf4ZSn1pVaZ30pAuBeA/edit?usp=sharing']);
+  assert.match(t, /2 links/);
+  assert.ok(t.indexOf('Brief doc') < t.indexOf('Drive folder'));
+  assert.equal(briefLinkLines(['https://a.com/x']), 'Brief: https://a.com/x');
+});
