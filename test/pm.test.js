@@ -1375,6 +1375,16 @@ test('a brand email in the creator inbox finds its deal by the brand contact, no
   assert.equal(dealByContact([{ ...deals[1], stage: 'Paid' }], 'cherish@mcn.noxinfluencer.com', 'Lindsay'), null);
 });
 
+test('an agency contact pitching another product on a new thread is not a reply on the old deal (OiiOii / Framia Pro x Chris, Nov 15)', async () => {
+  const { dealByContact } = await import('../lib/leads.js');
+  const deals = [{ id: 'oiioii', brand: 'OiiOii', creator: 'Chris', stage: 'Price Agreed', brandEmail: 'vera@luminarysm.com', threadSubject: 'Exploring a Potential Collaboration with OiiOii' }];
+  assert.equal(dealByContact(deals, '"Vera Vera" <vera@luminarysm.com>', 'Chris', 'Re: Instagram Partnership Opportunity – Framia Pro'), null);
+  assert.equal(dealByContact(deals, 'vera@luminarysm.com', 'Chris', 'Re: Exploring a Potential Collaboration with OiiOii')?.id, 'oiioii');
+  assert.equal(dealByContact(deals, 'vera@luminarysm.com', 'Chris', 'OiiOii contract and brief')?.id, 'oiioii');
+  assert.equal(dealByContact(deals, 'vera@luminarysm.com', 'Chris', 'Quick question')?.id, 'oiioii');
+  assert.equal(dealByContact(deals, 'vera@luminarysm.com', 'Chris')?.id, 'oiioii');
+});
+
 test('a WhatsApp message naming another creator is not the answer to this creator\'s brand question (ElevenLabs x Duncan, Nov 9)', async () => {
   const { infoAskFor, namesOtherCreator } = await import('../api/whatsapp.js');
   const at = new Date().toISOString();
