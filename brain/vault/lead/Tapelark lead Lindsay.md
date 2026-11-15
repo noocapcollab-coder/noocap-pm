@@ -1,7 +1,7 @@
 ---
 type: lead
 ---
-Next Step: Wait for brand to accept [amount]rate or counter-offer
+Next Step: Wait for brand to accept [amount] rate or counter-offer
 Platforms: YouTube Shorts, Instagram, TikTok
 Last Our Email: 2026-11-02
 Follow-ups: 1

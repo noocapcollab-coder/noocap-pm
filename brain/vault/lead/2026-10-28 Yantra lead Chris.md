@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: Concept & script written by Chris from brief, 2 rounds of revisions
-Next Step: Wait for brand to confirm they accept the [amount]rate and timeline
+Next Step: Wait for brand to confirm they accept the [amount] rate and timeline
 Platforms: Instagram
 Last Our Email: 2026-10-28
 Last Brand Email: 2026-10-28

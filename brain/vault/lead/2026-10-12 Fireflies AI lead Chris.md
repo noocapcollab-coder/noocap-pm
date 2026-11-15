@@ -3,7 +3,7 @@ type: lead
 ---
 Deliverables: 1 dedicated short-form video cross-posted across Instagram Reels, TikTok, YouTube Shorts, LinkedIn; 30- or 60-day paid usage rights and whitelisting
 Contact Name: Lynn
-Next Step: Lost: brand's last offer [amount]is under the [amount]lowball line
+Next Step: Lost: brand's last offer [amount] is under the [amount] lowball line
 Platforms: TikTok, Instagram
 Last Our Email: 2026-10-12
 Follow-ups: 0

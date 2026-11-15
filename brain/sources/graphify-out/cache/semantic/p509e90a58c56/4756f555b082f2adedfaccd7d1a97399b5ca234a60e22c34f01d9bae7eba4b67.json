@@ -1,1 +1,1 @@
-{"nodes": [{"id": "creators_valeri_valeri", "label": "Valeri", "file_type": "code", "source_file": "creators/valeri.md"}], "edges": [], "hyperedges": []}
+{"nodes": [{"id": "creators_valeri_valeri", "label": "Valeri", "file_type": "code", "source_file": "creators/valeri.md"}, {"id": "creators_valeri", "label": "Valeri", "file_type": "document", "source_file": "creators/valeri.md"}], "edges": [], "hyperedges": []}

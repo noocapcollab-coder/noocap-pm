@@ -5,21 +5,19 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]], [[Brad]], [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: Teamily AI is a multi-agent AI collaboration platform allowing users to build and manage multiple AI agents in one shared workspace, featuring real-time multi-user collaboration and workflow automation. They work with us through the agency Widely.
+WHO: Teamily AI is a multi-agent AI collaboration platform that allows users to build and manage multiple AI agents in one shared workspace, featuring real-time multi-user collaboration and workflow automation. They work through the agency Widely.
 
-CONTACTS: Evan at evan@withwidely.com or evan@getwidely.com, and Alyssa Salazar at alyssa@withwidely.com, both from Widely. Must copy partnerships@ninjaaitools.com and noocapcollab@gmail.com.
+CONTACTS: Evan at evan@withwidely.com or evan@getwidely.com; Alyssa Salazar at alyssa@withwidely.com; partnerships@ninjaaitools.com. Copy evan@withwidely.com, partnerships@ninjaaitools.com, and evan@getwidely.com. Sign as Lindsay's Team or Brad's Team.
 
 DEALS:
-Teamily x Lindsay: deliverables short-form video collaboration, rate unknown, stage Inbound, dates unknown.
-Teamily AI x Brad: deliverables Instagram Reel, rate unknown, stage Script Sent, dates unknown.
+Teamily x Lindsay: short-form video collaboration, rate unknown, stage Inbound.
+Teamily AI x Brad: Instagram Reel collaboration, rate and deliverables unstated, stage Script Sent, contract signed October 2026.
 
-HOW THEY WORK: Contract is sent via DocuSign. Brief is provided by the brand after contract signing. Scripts are sent to the brand for review and approval.
+HOW THEY WORK: Contract sent via DocuSign to partnerships@ninjaaitools.com. Campaign brief is provided by the brand. Scripts are submitted for brand review and approval.
 
-WATCH OUT: Ensure noocapcollab@gmail.com is kept in the loop on replies. Brand sends contracts via DocuSign to partnerships@ninjaaitools.com.
+WATCH OUT: None documented.
 
-OPEN NOW:
-Teamily x Lindsay: We owe a reply to Evan with Lindsay's short-form video rate for a dedicated Teamily video integration.
-Teamily AI x Brad: Waiting on the brand to approve the script or request changes.
+OPEN NOW: For Lindsay, we owe a reply to Evan with Lindsay's rate for a dedicated Teamily short-form video integration. For Brad, we are waiting on the brand to approve the script or request changes.
 
 
 ## Links

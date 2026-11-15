@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Never say 'here is' something the email does not carry
+When: A brand asks for a file, image, caption, link or document we don't have on the deal yet
+Do: Only write 'here is X' or 'attached is X' when X is attached or pasted in the email. If we don't have it, ask Harsh for it and draft the reply once it arrives.
+Never: Draft 'Here is the cover image and caption' (or any 'please find attached') with nothing attached, and never label a request as the brand only acknowledging receipt.
+Seen 1 time(s). Source: System check.
+## An email that just went out is never drafted a second time
+When: The PM is about to write a script, follow-up or other email on a deal where one of the same kind was sent in the last few hours
+Do: Check PM OUTBOX for a Sent row of the same kind on the deal before drafting. A sent row means the job is done, even if the deal fields have not caught up yet.
+Never: Write a second copy of the same email minutes after the first auto-sent because the deal's Script Sent Date or Last Our Reply was not updated yet.
+Seen 1 time(s). Source: System check.
 ## A nudge is dead once the brand answers it, even minutes before it sends
 When: A follow-up, tool-access nudge or check-in has finished its 30-minute hold and is about to send
 Do: Look at the thread itself for a brand email newer than the draft right before sending; if there is one, retire the nudge and read their email

@@ -1,1 +1,1 @@
-{"nodes": [{"id": "brands_wistar_wistar", "label": "Wistar", "file_type": "document", "source_file": "brands/wistar.md"}], "edges": [], "hyperedges": []}
+{"nodes": [{"id": "brands_wistar_wistar", "label": "Wistar", "file_type": "document", "source_file": "brands/wistar.md"}, {"id": "brands_wistar", "label": "Wistar", "file_type": "document", "source_file": "brands/wistar.md"}], "edges": [{"source": "brands_wistar", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/wistar.md"}], "hyperedges": []}

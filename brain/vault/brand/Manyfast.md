@@ -5,32 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: Manyfast is an AI-powered product planning platform that helps users organize requirements, user flows, and wireframes, and connect them to AI coding tools like Claude Code through MCP to build working prototypes. They come to us directly.
+WHO: Manyfast is a platform where you start with a product plan that both you and your AI coding tool can work from, showing user flows, wireframes, and connecting to Claude Code through MCP to build a working prototype. We deal with them directly.
 
-CONTACTS:
-Seungjoo Lee, also known as Konan, konan@manyfast.io, brand contact for content, script, product questions, and revisions, signs as Seungjoo Lee (Konan).
-Leo, leo@manyfast.io, CEO for contract review and signature.
-Jun, Seungjoo Lee's referral, jun@manyfast.io, operations lead for invoices and payment arrangements.
-Chris Cordero, collab@chriscordero.net, creator.
-NOOCAP team, noocapcollab@gmail.com, agency managing brand emails and submissions.
+CONTACTS: Seungjoo Lee (Konan) handles content, script, revisions, and product support at konan@manyfast.io. Leo is CEO at leo@manyfast.io for contracts if we have one. Jun (Seungjoo Lee referred) handles invoices and payment arrangements at jun@manyfast.io. Chris Cordero is the creator at collab@chriscordero.net (must be copied). NOOCAP is on the thread via noocapcollab@gmail.com.
 
-DEALS:
-Chris | 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days | [amount]USD | Brief Received | Start week of 2026-11-17, promo code CHRIS30 active until February 1, 2027.
+DEALS: Chris | 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days | Rate: [amount] USD | Stage: Script Sent | Proposed publication date: 2026-11-28.
 
-HOW THEY WORK:
-Content angle focuses on avoiding repeated explanations to AI by starting with a clear product plan. Demonstration should cover taking a small app idea, organizing requirements in Manyfast, showing the user flow and wireframes, and connecting Claude Code through MCP to build a working prototype as one connected story without a feature-by-feature walkthrough.
-Tracking link is https://manyfast.io/en/?utm_source=instagram&utm_medium=influencer&utm_campaign=202611_chris&utm_content=reel.
-English Instagram account to tag is @manyfast.official.
-Creator must select a natural comment keyword for the automated DM and place the tracking link in the bio for 7 days.
-Promo code is CHRIS30 for 30 percent off the first month of the Pro monthly plan, entered at checkout.
-No standard contract template exists from the brand; our contract goes to leo@manyfast.io, or we proceed on email terms.
-Invoices go exclusively to jun@manyfast.io, mentioning referral by Seungjoo Lee (Konan). All content, script, revisions, and product support stay on thread with Konan at konan@manyfast.io.
+HOW THEY WORK: Trial account provided at https://manyfast.io/en/ (login chriscordero@manyfast.io). Angle: tired of repeatedly explaining and correcting the same things when building with AI; start with a clear product plan. Demo idea: take a small app idea, organize requirements and specs in Manyfast, show user flow and wireframes, then connect Claude Code through MCP to build a working prototype. Promo code: CHRIS30 (30 percent off first month of Pro monthly plan, expires Feb 1, 2027). Tracking link: https://manyfast.io/en/?utm_source=instagram&utm_medium=influencer&utm_campaign=202611_chris&utm_content=reel. Instagram account: @manyfast.official. Brand has no standard contract template; if we have one, send to leo@manyfast.io. Send invoices and coordinate payment only with Jun at jun@manyfast.io (mention Seungjoo Lee referred). Keep content, script, revisions, and product support with Seungjoo on the email thread.
 
-WATCH OUT:
-Always reply all to the email thread to keep all team members on CC. Keep content and script discussions with Konan at konan@manyfast.io and financial matters strictly with Jun at jun@manyfast.io.
+WATCH OUT: Do not leave the creator team off the CC line; always use Reply All. Keep content, script, revisions, and product questions on the main thread with Seungjoo, while payment and invoices go exclusively to Jun.
 
-OPEN NOW:
-Chris and team owe the initial concept or script, first video draft, and proposed posting date to Konan.
+OPEN NOW: Manyfast x Chris deal is at Script Sent stage; we sent the script PDF on 2026-11-15 with a proposed publication date of 2026-11-28, and we are waiting on the brand to approve the script or provide feedback.
 
 
 ## Links

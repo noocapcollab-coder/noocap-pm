@@ -6,7 +6,7 @@ Mistakes the PM made once and the rule that came out of each.
 When: A brand email mentions script review, approval or filming as steps still to come, before any script was sent
 Do: Count a script as approved only when the brand approves a script we actually sent (Script Sent Date or a sent Script email). 'Upon our approval', 'send us the script for review' and a step-by-step guide are instructions: answer what they ask for now.
 Never: Set Script Approved, move a card to 6 or draft a tool-access email when no script has been sent.
-Seen 2 time(s). Source: System check.
+Seen 3 time(s). Source: System check.
 ## Include the script link in the draft email
 When: Sending a script to the brand for review
 Do: Add the Google Drive or Frame.io link to the script in the email body so the brand can access it immediately.
@@ -42,15 +42,3 @@ When: A deal covers 2+ reels, or a brief arrives for the next reel
 Do: Make a card per reel; put the next reel's brief on its own card.
 Never: Put reel 2's brief on reel 1's finished card.
 Seen 3 time(s). Source: Rulebook.
-
-## A new brief per video in a package
-When: A brand sends separate briefs for later videos ("Second brief: <link>", "Third brief: <link>"), even inside an email about something else
-Do: Put each link in the Brief field of its own card (Brand × Creator (2), (3)…). If that card already has a script written from an older brief, set Send to Script Writer to "Brief changed" so the script is redone from the right brief. Add the brand's go-live date to those cards.
-Never: Copy video 1's brief onto every card of a package, or leave a script written from the wrong brief at Internal Review.
-Seen 1 time(s). Source: Harsh, Nov 15 (CapCut × Chris via GrowMaxValue: Mia's Nov 14 email sent two new briefs; all three cards carried video 1's link and the scripts for 2 and 3 were written from it).
-
-## Every brief link goes to the script writer
-When: A brief comes with more than one link (a brief doc plus a Drive folder of assets, slides, a product link)
-Do: Send the script writer all of them, labelled, with the brief document first; the card's Brief field holds the brief document, not the assets folder. Put every link on the card page.
-Never: Send only the first link, or only the folder.
-Seen 1 time(s). Source: Harsh, Nov 15 (AI Inspo × Duncan: Jessie sent a Google Doc brief and a Drive folder on Nov 11; Rudraksh only got the folder).

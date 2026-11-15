@@ -3,7 +3,7 @@ type: lead
 ---
 Deliverables: 1 Instagram Reel, 60-day ad code usage, 7-day bio link placement
 Contact Name: Astrid
-Next Step: Quote at [amount]waiting in Approvals
+Next Step: Quote at [amount] waiting in Approvals
 Platforms: Instagram
 Last Our Email: 2026-11-02
 Follow-ups: 1

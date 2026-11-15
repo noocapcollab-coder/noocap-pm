@@ -8,7 +8,7 @@ Hook 1: 100 buyers will judge your business idea before you spend a single dolla
     Hook 2: Did you know Claude can test your business idea on 100 buyers before you spend a dollar? It's basically 11 free Claude skills. 
     Body:
     Each buyer gets their own income and their own doubts, then says yes or no and exactly why.
-    So pitch a [amount]dog-walking service and hear the real objection before you print one flyer.
+    So pitch a [amount] dog-walking service and hear the real objection before you print one flyer.
     Next, an offer builder answers those doubts with a guarantee, then re-tests it on the same buyers.
     Then a CFO works out your real margin and when you break even.
     And a board built on ideas from Hormozi, Thiel and Steve Jobs pressure-tests the whole plan.

@@ -2,7 +2,7 @@
 type: lead
 ---
 Contact Name: Anna
-Next Step: Wait for Maxiom to return with brand team's feedback on the [amount]and [amount]rate options
+Next Step: Wait for Maxiom to return with brand team's feedback on the [amount] and [amount] rate options
 Platforms: YouTube
 Last Our Email: 2026-10-26
 Follow-ups: 1

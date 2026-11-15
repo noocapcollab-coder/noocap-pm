@@ -1,7 +1,7 @@
 ---
 type: lead
 ---
-Deliverables: Performance-based pay ([amount]per 1,000 views plus [amount]per paying customer)
+Deliverables: Performance-based pay ([amount] per 1,000 views plus [amount] per paying customer)
 Contact Name: Arsen
 Next Step: Archive or close thread as the brand declined our flat fee in favour of performance-only pay.
 Platforms: YouTube Shorts, Instagram, TikTok

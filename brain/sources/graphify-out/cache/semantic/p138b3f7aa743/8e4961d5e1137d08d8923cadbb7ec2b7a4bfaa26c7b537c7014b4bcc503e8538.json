@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_heistcut_heistcut", "label": "HeistCut", "file_type": "document", "source_file": "brands/heistcut.md", "_origin": "semantic"}], "edges": [{"source": "brands_heistcut_heistcut", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/heistcut.md", "_origin": "semantic"}], "hyperedges": []}

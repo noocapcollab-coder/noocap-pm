@@ -11,7 +11,7 @@ CONTACTS: Camila Molares, camila.molares@luagroup.com, Lua Group, Senior Request
 
 DEALS:
 Panda Security x Chris | Price Agreed | Email
-Panda Security x Valeri | horizontal video, vertical video, and cover photo for 1000 EUR, UGC only and not posted on creator's own pages | Price Agreed | Email
+Panda Security x Valeri | horizontal video, vertical video, and cover photo for [amount], UGC only and not posted on creator's own pages | Price Agreed | Email
 
 HOW THEY WORK: Content must be UGC and not posted on creator pages.
 

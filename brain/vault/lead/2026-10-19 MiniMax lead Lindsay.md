@@ -3,7 +3,7 @@ type: lead
 ---
 Deliverables: YouTube Dedicated Review / Integrated Segment; Short-form Video (YouTube Shorts / Instagram Reels / TikTok)
 Contact Name: Kassy
-Next Step: Close deal at [amount]waiting in Approvals
+Next Step: Close deal at [amount] waiting in Approvals
 Platforms: YouTube Shorts, Instagram, TikTok
 Last Our Email: 2026-10-26
 Follow-ups: 1

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_vocci", "label": "Vocci AI", "file_type": "document", "source_file": "brands/vocci.md"}], "edges": [{"source": "brands_vocci", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/vocci.md"}], "hyperedges": []}

@@ -1,5 +1,5 @@
 # Valeri - what performs
-Content OS, videos posted since 2026-07-17: 198 posts across platforms, average 9,960 views. Creator: [[Valeri]].
+Content OS, videos posted since 2026-07-18: 195 posts across platforms, average 10,080 views. Creator: [[Valeri]].
 ## 2026-08-11 Comment HOLO and I’ll send you the link 👇
 Instagram Short: 317,926 views, 256 likes, 117 comments, 0 shares, 0 saves. Brand: [[Holo]].
 ## 2026-10-23 What if you could find potential web design clients and show them a we
@@ -39,7 +39,7 @@ TikTok Short: 21,400 views, 988 likes, 14 comments, 241 shares, 1,118 saves.
 ## 2026-11-11 Looking for useful Claude Code plugins, skills, and resources? Here ar
 TikTok Short: 19,100 views, 1,139 likes, 13 comments, 452 shares, 1,619 saves.
 ## 2026-10-23 Claude Code Can Find Clients While You Sleep
-YouTube Short: 18,886 views, 658 likes, 67 comments, 0 shares, 0 saves.
+YouTube Short: 18,943 views, 659 likes, 67 comments, 0 shares, 0 saves.
 ## 2026-11-12 An open-source alternative to subscription-based AI creative studios?
 Instagram Short: 15,394 views, 239 likes, 272 comments, 0 shares, 0 saves.
 ## 2026-09-08 Comment “CLONE” and I’ll send you the link.

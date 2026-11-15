@@ -2,7 +2,7 @@
 type: lead
 ---
 Contact Name: Claire
-Next Step: Confirm receipt of [amount]USD wire transfer payment (processing, allow 2-3 business days)
+Next Step: Confirm receipt of [amount] USD wire transfer payment (processing, allow 2-3 business days)
 Platforms: Instagram, TikTok
 Last Our Email: 2026-10-23
 Last Brand Email: 2026-10-23

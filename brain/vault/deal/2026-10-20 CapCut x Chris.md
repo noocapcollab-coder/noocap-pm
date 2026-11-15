@@ -3,7 +3,7 @@ type: deal
 ---
 Stage: Submitted
 Last brand reply 2026-11-12, our last reply 2026-11-13.
-AGREED: Rate [amount]per video (total [amount]for three videos); 100% payment due within 7 days after each video publication, once 7-day performance metrics and payment documentation (W-9/W-8, payment details, invoice) are provided. Deliverable: CapCut x ChatGPT workflow video demonstrating full process. Product naming CapCut x ChatGPT confirmed. Usage rights not confirmed. Original target 2026-11-03.
+AGREED: Rate [amount] per video (total [amount] for three videos); 100% payment due within 7 days after each video publication, once 7-day performance metrics and payment documentation (W-9/W-8, payment details, invoice) are provided. Deliverable: CapCut x ChatGPT workflow video demonstrating full process. Product naming CapCut x ChatGPT confirmed. Usage rights not confirmed. Original target 2026-11-03.
 
 HISTORY:
 2026-11-02 us: committed to video delivery by 2026-11-03

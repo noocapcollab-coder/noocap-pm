@@ -12,7 +12,7 @@ Rajeshwari Sardar, rajeshwari@jeevmedia.net, Influencer Marketing Associate at J
 Zeelot, Zeelot@superlinear.cc, agency contact, signs as Zeelot, copy collab@valchy.ai
 
 DEALS:
-Tripo 3D x Valeri, two videos agreed at [amount]per video ([amount]total), 30-day ad authorization and distribution across agreed platforms included, negotiating stage, dates not confirmed
+Tripo 3D x Valeri, two videos agreed at [amount] per video ([amount] total), 30-day ad authorization and distribution across agreed platforms included, negotiating stage, dates not confirmed
 Tripo 3D x Lindsay, deliverables: 1 IG Reel, DM Automation, 90 days boosting, usage rights, re-editing/secondary creation rights, rate not specified, payment terms: 100% after video published within 1-7 days, script sent stage, contract signed 2026-10-09
 
 HOW THEY WORK:

@@ -1,1 +1,1 @@
-{"nodes": [{"id": "lessons_other", "label": "PM Lessons: Other", "file_type": "document", "source_file": "lessons/other.md"}], "edges": [], "hyperedges": []}
+{"nodes": [{"id": "lessons_other", "label": "PM Lessons: Other", "file_type": "document", "source_file": "lessons/other.md"}, {"id": "lessons_other", "label": "PM lessons: Other", "file_type": "document", "source_file": "lessons/other.md"}], "edges": [], "hyperedges": []}

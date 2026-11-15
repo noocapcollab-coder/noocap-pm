@@ -7,7 +7,7 @@ WHO: Fotor, an online photo editing platform. They come to us directly.
 
 CONTACTS: Marina, marina@fotor.me, represents Fotor.
 
-DEALS: Chris, video package with 30-day ad authorization and cross-posting, [amount]USD, stage Price Agreed, dates not specified.
+DEALS: Chris, video package with 30-day ad authorization and cross-posting, [amount] USD, stage Price Agreed, dates not specified.
 
 HOW THEY WORK: We send scripts to them for review.
 
@@ -20,7 +20,7 @@ Last brand reply none, our last reply none.
 AGREED: Rate: [amount]. Deliverables: video package. Usage rights: 30-day ad authorization and cross-posting. Payment terms: not specified. Dates: none agreed yet.
 
 HISTORY:
-2026-11-13 creator: Agreed to [amount]for video package with 30-day ad authorization and cross-posting, and asked for contract and brief.
+2026-11-13 creator: Agreed to [amount] for video package with 30-day ad authorization and cross-posting, and asked for contract and brief.
 
 BILLING: not yet
 

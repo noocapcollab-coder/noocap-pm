@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: Instagram Reels + 60 days ad code, YouTube video + 60 days ad code, TikTok video + 60 days ad code
-Next Step: Chris to confirm if [amount]rate is acceptable or counter-offer
+Next Step: Chris to confirm if [amount] rate is acceptable or counter-offer
 Platforms: Instagram, YouTube, TikTok
 Last Our Email: 2026-10-06
 Follow-ups: 3

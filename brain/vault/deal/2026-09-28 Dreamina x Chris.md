@@ -4,7 +4,7 @@ type: deal
 Stage: Invoiced
 Last brand reply 2026-11-08, our last reply 2026-11-08.
 AGREED:
-Rate 3000. Deliverables: sponsored video for Chris featuring Dreamina product, published with required hashtags. Usage rights not documented. Payment terms: bank transfer. Specific publishing dates not confirmed in writing.
+Rate [amount]. Deliverables: sponsored video for Chris featuring Dreamina product, published with required hashtags. Usage rights not documented. Payment terms: bank transfer. Specific publishing dates not confirmed in writing.
 
 HISTORY:
 2026-09-28 brand: Initial contact from Dreamina
@@ -25,7 +25,7 @@ BILLING:
 Invoice INV-003_Chris_Cordero_Dreamina.pdf sent 2026-11-01. Katlas Media, outreach@katlasmedia.com. Bank transfer. Status: processing, receipt not yet provided, expected within 3-5 days of 2026-11-08.
 
 OPEN NOW:
-Waiting on brand: payment receipt or transaction confirmation from bank transfer. Brand also proposed new Dreamina campaign at 3000 rate pending creator confirmation.
+Waiting on brand: payment receipt or transaction confirmation from bank transfer. Brand also proposed new Dreamina campaign at [amount] rate pending creator confirmation.
 
 ## Links
 - [[Chris]]

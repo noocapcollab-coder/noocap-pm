@@ -5,17 +5,22 @@ type: brand
 
 Brand. Works with creators: [[Chris]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: OiiOii is a brand reaching out to creators through the agency Luminary SM.
+WHO: OiiOii is a brand coming to us through Luminary SM (agency).
 
-CONTACTS: Vera, vera@luminarysm.com, Luminary SM, signs as Vera, copy noocapcollab@gmail.com.
+CONTACTS:
+Vera, vera@luminarysm.com, Luminary SM, signs as Vera or Vera Vera, must be copied.
 
-DEALS: Chris, one customized reel, 30-day ad code authorization, sharing official link through Instagram DM, 3-month usage authorization including social reposting, paid advertising, native boosting, and derivative editing, content live on profile for 12 months without deletion, official link in profile and video description and pinned comment, full payment within 15 days after content goes live, rate [amount], stage Price Agreed, dates that matter: rate offered Oct 14, accepted Oct 15 2026.
+DEALS:
+OiiOii x Chris | One customized reel, 30-day ad code, 3-month usage rights (reposting, paid ads, native boosting, derivative editing), live for 12 months, profile/description/pinned comment link, payment in 15 days | Stage: Price Agreed | Rate: [amount] USD | Dates: Rate accepted Oct 15 2026.
 
-HOW THEY WORK: Vera submits the proposal to the OiiOii brand team for approval, after which Vera will send the contract and campaign brief.
+HOW THEY WORK:
+Wait for OiiOii brand team approval, then Vera sends the contract and campaign brief.
 
-WATCH OUT: We wrongly claimed in follow-ups on November 2 and November 11 that we sent the brief and contract on October 19, when actually we asked Vera for them on October 19 and are still waiting on the brand team's approval.
+WATCH OUT:
+We previously made a mistake in follow-up emails by claiming we had sent the brief and contract on October 19th, when in fact we have not received or sent any contract or brief yet.
 
-OPEN NOW: Waiting on brand: OiiOii's approval, then Vera sends the contract and brief. Three follow-ups sent, over to Harsh.
+OPEN NOW:
+Waiting on brand: OiiOii's brand team approval, then Vera needs to send the contract and brief. Next move is over to Vera / the brand.
 
 
 ## Links

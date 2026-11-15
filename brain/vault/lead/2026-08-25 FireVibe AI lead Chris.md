@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: 1 dedicated short-form video
-Next Step: Wait for brand to confirm they accept the [amount]counter-offer
+Next Step: Wait for brand to confirm they accept the [amount] counter-offer
 Platforms: YouTube, Instagram, TikTok
 Last Our Email: 2026-08-26
 Last Brand Email: 2026-08-25

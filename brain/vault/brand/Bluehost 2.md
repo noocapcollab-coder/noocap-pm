@@ -9,8 +9,8 @@ WHO: Bluehost features Bluehost AI products. They come to us through an agency n
 
 CONTACTS: Smahi Grover, smahi@creator.co, agency Creator.co (for Erick); Erick Alvergue, Creator.co. We sign; collab@chriscordero.net must be copied.
 
-DEALS: Chris | 1 Instagram Reel (under 60s) featuring one Bluehost AI product, Instagram only, via Creator.co | [amount]USD | Price Agreed | Draft within 7 days of product access, publish within 3 days of approval, live by Dec 31, 2026.
-Chris | 1 video on one agreed platform (Reels, TikTok, Shorts, or YouTube) featuring one Bluehost AI product, via Creator.co | [amount]USD | Lost | Timeline: draft within 7 days of product access, Bluehost review with up to 2 revisions, publish within 3 days of approval, live by Dec 31, 2026.
+DEALS: Chris | 1 Instagram Reel (under 60s) featuring one Bluehost AI product, Instagram only, via Creator.co | [amount] USD | Price Agreed | Draft within 7 days of product access, publish within 3 days of approval, live by Dec 31, 2026.
+Chris | 1 video on one agreed platform (Reels, TikTok, Shorts, or YouTube) featuring one Bluehost AI product, via Creator.co | [amount] USD | Lost | Timeline: draft within 7 days of product access, Bluehost review with up to 2 revisions, publish within 3 days of approval, live by Dec 31, 2026.
 
 HOW THEY WORK: Delivery and contract/offer come through the Creator.co platform (5% processing fee deducted). Brief PDF is on the video card.
 

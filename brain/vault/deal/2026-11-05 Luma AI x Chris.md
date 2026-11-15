@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: In Production
-Last brand reply 2026-11-14, our last reply 2026-11-13.
+Last brand reply 2026-11-14, our last reply 2026-11-15.
 AGREED: Rate not confirmed. Deliverables: Reel + Story repost. Usage rights not confirmed. Payment terms: Net 30 after approved Reel and Story published and invoice received. No dates confirmed.
 
 HISTORY:

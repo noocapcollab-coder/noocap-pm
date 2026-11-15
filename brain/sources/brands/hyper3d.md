@@ -17,7 +17,7 @@ OPEN NOW: Brand reviewed the script sent November 3rd and reported it does not m
 
 ## Deal with [[Lindsay]] (Script Sent, opened 2026-10-30)
 Last brand reply 2026-11-13, our last reply 2026-11-07.
-AGREED: rate 1100, deliverables 1 sponsored short-form video per brief, usage rights not confirmed, payment terms not confirmed, target delivery November 5th.
+AGREED: rate [amount], deliverables 1 sponsored short-form video per brief, usage rights not confirmed, payment terms not confirmed, target delivery November 5th.
 
 HISTORY:
 2026-10-26 us sent signed contract.

@@ -1,7 +1,7 @@
 ---
 type: lead
 ---
-Next Step: Chris to confirm if [amount]works or counter-offer
+Next Step: Chris to confirm if [amount] works or counter-offer
 Platforms: Instagram
 Last Our Email: 2026-10-03
 Follow-ups: 3

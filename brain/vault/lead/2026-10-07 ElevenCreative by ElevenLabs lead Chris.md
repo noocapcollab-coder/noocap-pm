@@ -3,7 +3,7 @@ type: lead
 ---
 Deliverables: 1 short-form video with script, 2 rounds of revisions, multi-platform posting
 Contact Name: Alisa
-Next Step: Lost: offer [amount]is under our [amount]inimum, not answered
+Next Step: Lost: offer [amount] is under our [amount] inimum, not answered
 Platforms: Instagram, TikTok, YouTube Shorts, Facebook
 Last Our Email: 2026-10-07
 Follow-ups: 0

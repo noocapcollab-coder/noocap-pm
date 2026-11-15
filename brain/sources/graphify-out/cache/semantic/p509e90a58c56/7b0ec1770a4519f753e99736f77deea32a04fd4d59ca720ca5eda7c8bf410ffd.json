@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_walala", "label": "Walala.ai", "file_type": "document", "source_file": "brands/walala.md"}], "edges": [{"source": "brands_walala", "target": "creators_brad", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/walala.md"}], "hyperedges": []}

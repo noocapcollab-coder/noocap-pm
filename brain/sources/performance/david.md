@@ -1,5 +1,5 @@
 # David - what performs
-Content OS, videos posted since 2026-07-17: 224 posts across platforms, average 5,223 views. Creator: [[David]].
+Content OS, videos posted since 2026-07-18: 232 posts across platforms, average 5,100 views. Creator: [[David]].
 ## 2026-11-03 Comment 7 and I’ll send you all seven links.
 Facebook Short: 245,882 views, 2,405 likes, 2,813 comments, 353 shares, 0 saves.
 ## 2026-09-25 Every Jarvis clip on your feed right now is the same open-source repo 
@@ -30,14 +30,14 @@ Instagram Short: 27,859 views, 554 likes, 247 comments, 0 shares, 0 saves. Brand
 Instagram Short: 15,743 views, 165 likes, 211 comments, 0 shares, 0 saves.
 ## 2026-10-01 Comment "REPO" and I'll send you all four links.
 Facebook Short: 15,300 views, 166 likes, 97 comments, 20 shares, 0 saves.
+## 2026-10-19 Claude Motion Turns Any File Into an Animated Explainer Video
+YouTube Short: 8,832 views, 28 likes, 3 comments, 0 shares, 0 saves.
 ## 2026-09-26 Comment "REPO" and I'll DM you all four links.
 Instagram Short: 8,392 views, 125 likes, 156 comments, 0 shares, 0 saves.
 ## 2026-10-23 Comment 20,000 and I’ll send you the link.
 Facebook Short: 7,945 views, 60 likes, 63 comments, 4 shares, 0 saves.
 ## 2026-09-24 Comment "REPO" and I'll DM you all five links.
 Facebook Short: 7,628 views, 86 likes, 39 comments, 10 shares, 0 saves.
-## 2026-10-19 Claude Motion Turns Any File Into an Animated Explainer Video
-YouTube Short: 7,486 views, 26 likes, 3 comments, 0 shares, 0 saves.
 ## 2026-09-28 Comment “REPO” and I’ll DM you all four links.
 Instagram Short: 5,502 views, 132 likes, 90 comments, 0 shares, 0 saves.
 ## 2026-09-30 Comment “STANFORD” and I’ll send it to you.

@@ -5,20 +5,20 @@ type: brand
 
 Brand. Works with creators: [[Chris]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Dreamina, an AI video creation product. They work with us directly and through an agency named Katlas Media (also interacting via ViralVibe LLC).
+WHO: Dreamina is an AI-powered marketing and video creation tool. They come to us through agencies, specifically Viral Vibe and Katlas Media.
 
-CONTACTS: Jenny Guo, jenny@viralvibe.llc, BD at ViralVibe LLC (signs as Jenny, BD), copy Camila (camila@viralvibe.llc), Charlotte (charlotte@viralvibe.llc), Emma (emma@viralvibe.llc), and collab@chriscordero.net. Kepan, outreach@katlasmedia.com, representing Katlas Media, copy Siyu (siyu@katlasmedia.com) and Silvia (silvia@katlasmedia.com).
+CONTACTS: Jenny Guo (jenny@viralvibe.llc, mobile +86 17623670242) is a BD at Viral Vibe, signs as Jenny, and writes to us. Thread CC for Viral Vibe includes collab@chriscordero.net, camila@viralvibe.llc, charlotte@viralvibe.llc, and emma@viralvibe.llc. Kepan (outreach@katlasmedia.com) is a contact at Katlas Media. Thread CC for Katlas Media includes siyu@katlasmedia.com and silvia@katlasmedia.com. 
 
 DEALS:
-Dreamina x Chris | 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team), [amount] | Submitted | Nov 15 or Nov 23, 2026.
-Dreamina x Chris | Sponsored video for Chris featuring Dreamina, published with required hashtags | Price Agreed | Rate [amount]for full package (Option 1).
-Dreamina x Chris | Sponsored video for Chris featuring Dreamina, published with required hashtags | Invoiced | Rate: [amount] | Invoiced 2026-11-01.
+Dreamina x Chris | 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team) | [amount] | Submitted | Post date requested Nov 15, previously proposed Nov 23
+Dreamina x Chris | full package Option 1 | [amount] | Price Agreed | Dates not set
+Dreamina x Chris | sponsored video featuring Dreamina | [amount] | Invoiced | Invoice sent Nov 1, 2026
 
-HOW THEY WORK: For standard campaigns, submit script for review, get approval, receive UID and account setup/credit support for production, film video, send edited video link for review, apply requested edits (such as adding Dreamina Marketing Studio watermark and search screen), and provide final cover image and caption for final review. For Katlas Media brief campaigns, no script is needed: creator films directly from the brief and sends the cut for review before publishing. Katlas Media needs company billing details and payment method (PayPal or bank transfer).
+HOW THEY WORK: For Viral Vibe, scripts and UIDs are reviewed, videos are filmed, edited video links are sent for review, cover images and captions are sent via PDF for final review, and brand logos and watermark transparency must follow exact specifications. For Katlas Media, briefs are provided via Feishu wiki, no script is needed, and completed videos are sent for review before publishing. Katlas Media payments use bank transfer and Stripe invoices raised in the creator's account.
 
-WATCH OUT: Avoid mentioning any other brands in the hook. Ensure required hashtags are always included in published posts.
+WATCH OUT: None stated in the material.
 
-OPEN NOW: For the ViralVibe deal, we owe the cover image and caption for the final review. For the Katlas Media price agreed deal, we owe the contract and brand brief, and are waiting on the brand to send both so the creator can proceed. For the invoiced deal, we are waiting on the brand for the payment receipt or transaction confirmation from the bank transfer.
+OPEN NOW: Across the Viral Vibe deal, we owe to make the requested revisions to the video watermark and cover image logo and send them to the brand. Across the Katlas Media price agreed deal, we owe the contract and brand brief, while we are waiting on the brand to send both so the creator can proceed. Across the Katlas Media invoiced deal, we are waiting on the brand for a payment receipt or transaction confirmation from the bank transfer, and the brand also proposed a new Dreamina campaign at the [amount] rate pending creator confirmation.
 
 
 ## Links

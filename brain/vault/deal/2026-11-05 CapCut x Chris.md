@@ -3,7 +3,7 @@ type: deal
 ---
 Stage: Submitted
 Last brand reply 2026-11-14, our last reply 2026-11-13.
-AGREED: [amount]total. 3 short-form videos. Signed contract via GrowMaxValue agency. Usage rights not stated. Payment terms not stated.
+AGREED: [amount] total. 3 short-form videos. Signed contract via GrowMaxValue agency. Usage rights not stated. Payment terms not stated.
 
 HISTORY:
 2026-11-05 us / Brief received from CapCut, contract signed via GrowMaxValue agency

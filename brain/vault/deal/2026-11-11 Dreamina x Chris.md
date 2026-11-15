@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Submitted
-Last brand reply 2026-11-14, our last reply 2026-11-14.
+Last brand reply 2026-11-15, our last reply 2026-11-15.
 AGREED: Rate: [amount]. Deliverables: 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team). Usage rights and payment terms not yet confirmed in writing. Post date: brand requested Nov 15, we previously proposed Nov 23 (no final confirmation).
 
 HISTORY:
@@ -15,10 +15,12 @@ HISTORY:
 2026-11-14 brand Jenny Guo requested video edits and revised video, script, and cover.
 2026-11-14 us NOOCAP sent revised video cut link.
 2026-11-14 brand Jenny Guo acknowledged revised video and requested cover image and caption for final review.
+2026-11-15 us NOOCAP sent cover image and caption PDF for final review.
+2026-11-15 brand Jenny Guo requested video watermark transparency fix and Dreamina Marketing Studio logo on cover.
 
 BILLING: not yet
 
-OPEN NOW: We owe: cover image and caption for the final review.
+OPEN NOW: We owe: to make requested revisions to the video watermark and cover image logo and send them to the brand.
 
 ## Links
 - [[Chris]]

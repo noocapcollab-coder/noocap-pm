@@ -7,7 +7,7 @@ WHO: SpeakOn AI is an AI note-taking and task management tool. They contact us d
 
 CONTACTS: Cassie, heduodd@gmail.com, SpeakOn AI contact/billing. Emails signed by Cassie. Thread copied to collab@chriscordero.net.
 
-DEALS: Chris, two vertical short-form videos (20-30s, 9:16, 1080x1920) for Instagram Reels plus optional TikTok and YouTube Shorts, each video [amount]USD. Each includes split-screen hero shot (0-6s) and hands-on agent demonstration (7s+). Video one script sent, post date November 12 no longer viable due to Chris attending Adobe MAX. Video two invoiced upon posting. First [amount]paid via Stripe on 2026-11-01. Second [amount]to invoice when second video posts.
+DEALS: Chris, two vertical short-form videos (20-30s, 9:16, 1080x1920) for Instagram Reels plus optional TikTok and YouTube Shorts, each video [amount] USD. Each includes split-screen hero shot (0-6s) and hands-on agent demonstration (7s+). Video one script sent, post date November 12 no longer viable due to Chris attending Adobe MAX. Video two invoiced upon posting. First [amount] paid via Stripe on 2026-11-01. Second [amount] to invoice when second video posts.
 
 HOW THEY WORK: Brief sent first, script drafted and sent for approval, brand requests revisions via email thread, video links and ads code and invoice sent upon posting. Billing handled by invoice to NOTTA PTE. LTD., 9 Raffles Place #26-01 Republic Plaza Singapore 048619. Company details confirmed in email, invoice details not yet confirmed in writing.
 
@@ -17,7 +17,7 @@ OPEN NOW: Revised script incorporating all four visual demonstrations must be se
 
 ## Deal with [[Chris]] (Script Sent, opened 2026-09-27)
 Last brand reply 2026-11-11, our last reply 2026-11-11.
-AGREED: [amount]for one vertical short-form video (20,30s, 9:16, 1080 x 1920) for Instagram Reels; optional TikTok and YouTube Shorts. Split-screen hero shot (0,6s) and hands-on agent demonstration (7s+). Brand receives video links, ads code, and invoice upon posting. Usage rights and payment terms not confirmed in writing.
+AGREED: [amount] for one vertical short-form video (20,30s, 9:16, 1080 x 1920) for Instagram Reels; optional TikTok and YouTube Shorts. Split-screen hero shot (0,6s) and hands-on agent demonstration (7s+). Brand receives video links, ads code, and invoice upon posting. Usage rights and payment terms not confirmed in writing.
 
 HISTORY:
 2026-11-05 brand asked if we reviewed brief, requested timeline for first draft, raised communication concerns.

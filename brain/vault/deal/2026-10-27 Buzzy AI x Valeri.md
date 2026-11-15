@@ -3,7 +3,7 @@ type: deal
 ---
 Stage: Signed
 Last brand reply none, our last reply none.
-AGREED: [amount]flat rate. Deliverable: 1 Instagram video for valeridoesai account. Brand receives 2-month Spark Ads rights from live date; authorization code to be shared by creator. Payment: 100% upon draft video confirmation, before going live. Accepted payment methods: PayPal, Payoneer, Wise, or wire transfer.
+AGREED: [amount] flat rate. Deliverable: 1 Instagram video for valeridoesai account. Brand receives 2-month Spark Ads rights from live date; authorization code to be shared by creator. Payment: 100% upon draft video confirmation, before going live. Accepted payment methods: PayPal, Payoneer, Wise, or wire transfer.
 
 HISTORY: not known yet
 
