@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { isDealCardTitle, cardScriptOwed } from '../lib/heartbeat.js';
+import { isDealCardTitle, cardScriptOwed, hexId } from '../lib/heartbeat.js';
 import { scriptCardUrls } from '../lib/outbox.js';
 import { buildMime } from '../lib/mime.js';
 
@@ -37,4 +37,10 @@ test('an email can carry several PDFs', () => {
   const raw = Buffer.from(buildMime({ to: 'a@b.com', subject: 's', text: 't', html: 'h', attachment: [{ filename: '1.pdf', mimeType: 'application/pdf', data: 'QQ==' }, { filename: '2.pdf', mimeType: 'application/pdf', data: 'Qg==' }] }), 'base64url').toString();
   assert.match(raw, /filename="1\.pdf"/);
   assert.match(raw, /filename="2\.pdf"/);
+});
+
+test('a card id is read right from a link with a number in its title', () => {
+  assert.equal(hexId('https://app.notion.com/p/CapCut-Lindsay-2-416508e99dda81569ac7df4572c40c97'), '416508e99dda81569ac7df4572c40c97');
+  assert.equal(hexId('https://app.notion.com/p/CapCut-Lindsay-3-416508e99dda812caddee2f535c11ff7'), '416508e99dda812caddee2f535c11ff7');
+  assert.equal(hexId('416508e9-9dda-8156-9ac7-df4572c40c97'), '416508e99dda81569ac7df4572c40c97');
 });
