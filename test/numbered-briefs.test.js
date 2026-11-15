@@ -1,0 +1,14 @@
+// CapCut x Chris (Nov 14): Mia sent "Second brief:" and "Third brief:" links; each must land on its own card.
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { numberedBriefs } from '../lib/briefs.js';
+
+test('Mia\'s numbered briefs map to videos 2 and 3', () => {
+  const t = "Here are the briefs for the second video and the third video.\nSecond brief：https://sparklinggroup.feishu.cn/wiki/Kjc8wjZ9vimTewkSjJFcAY3Knvf?from=from_copylink\nThird brief：https://sparklinggroup.feishu.cn/wiki/G2TwwD39eiKs5PkAbNFc3SJgnEh?from=from_copylink";
+  assert.deepEqual(numberedBriefs(t).map((b) => [b.n, b.link.slice(-40)]), [[2, 'Kjc8wjZ9vimTewkSjJFcAY3Knvf?from=from_copylink'.slice(-40)], [3, 'G2TwwD39eiKs5PkAbNFc3SJgnEh?from=from_copylink'.slice(-40)]]);
+});
+
+test('other numbered forms, and plain links are ignored', () => {
+  assert.deepEqual(numberedBriefs('Brief 2: https://a.com/x\nVideo 3 brief - https://b.com/y').map((b) => b.n), [2, 3]);
+  assert.deepEqual(numberedBriefs('Here is the brief: https://a.com/x\nOur site https://b.com'), []);
+});
