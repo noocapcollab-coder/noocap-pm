@@ -53,3 +53,12 @@ test('the real Readdy Short: title skips the brand, the description names it', a
   const feed = '<entry><yt:videoId>A93bIb5wbPM</yt:videoId><title>Start a Website Agency With This AI Tool</title><published>2026-11-14T21:50:46+00:00</published><media:description>You can use Readdy AI to turn outdated business websites...</media:description></entry>';
   assert.deepEqual(matchPosts(parseYoutubeFeed(feed), { brand: 'Readdy AI', postDate: '2026-11-14' }).map((x) => x.url), ['https://www.youtube.com/shorts/A93bIb5wbPM']);
 });
+
+test('findPostedLinks declares hadIg before using it (Gamut x Lindsay TDZ crash, Nov 15)', async () => {
+  const { readFileSync } = await import('node:fs');
+  const src = readFileSync(new URL('../lib/postedlinks.js', import.meta.url), 'utf8');
+  const body = src.slice(src.indexOf('export async function findPostedLinks'));
+  const decl = body.indexOf('const hadIg');
+  const firstUse = body.search(/[^ ]hadIg\b|\(hadIg\b|!hadIg\b/);
+  assert.ok(decl > 0 && decl < body.indexOf('hadIg ?'), 'hadIg is read before it is declared');
+});
