@@ -2192,3 +2192,35 @@ test('Tool access: skipped when the brand already shared a trial login, and gree
   assert.equal(greetingName('Yulia Ivanova <yulia@kudosnarratives.com>', ''), 'Yulia');
   assert.equal(greetingName('<x@y.com>', ''), '');
 });
+
+// ---------- no second tool-access ask when the thread already had one (Emergent x Chris, Nov 16) ----------
+test('Tool access: skipped when our earlier email in the thread already asked for noocaptools access', async () => {
+  const { accessAlreadyAsked } = await import('../lib/inbox.js');
+  const emergent = "📨 2026-08-06 · us (NOOCAP) · Re: Emergent X thechriscordero Paid Collab!\nHi Naman,\n\nCould you also please provide us access to the Pro version of the tool so we can proceed with the video production?\n\nPlease grant access to the following email address: noocaptools@gmail.com\n\nThank you\n\n📨 2026-08-06 · brand (Naman Khandelwal <naman@emergent.sh>) · Re: Emergent X thechriscordero Paid Collab!\nyes added\n\n📨 2026-11-16 · brand (\"Karan Varyani\" <karan.v@emergent.sh>) · Re: Emergent X thechriscordero Paid Collab!\nScript looks good to proceed with production.";
+  assert.equal(accessAlreadyAsked(emergent), true);
+  assert.equal(accessAlreadyAsked("📨 2026-11-01 · Chris's team · Re: X\nOur filming account is noocaptools@gmail.com"), true);
+  // a brand line mentioning the address is not our ask; no mention at all = ask
+  assert.equal(accessAlreadyAsked("📨 2026-11-16 · brand (Rajeshwari <r@jeevmedia.net>) · Re: Brand Sponsorship Offer\nLindsay's script has been approved by the brand."), false);
+  assert.equal(accessAlreadyAsked(''), false);
+});
+
+// ---------- no payment chase while a brand's "we paid" claim waits for proof (Zeely AI x Duncan, Nov 16) ----------
+test('Payment chase: held while the brand says it paid and we wait for the receipt', async () => {
+  const { paymentClaimPending } = await import('../lib/heartbeat.js');
+  const zeely = { nextAction: 'Brand says it paid but sent no proof: waiting for their payment confirmation (Stripe invoice still shows sent, not paid)', memory: '', lastBrand: '2026-11-13T12:15:00.000Z', lastOur: '2026-11-06T20:38:00.000Z' };
+  assert.equal(paymentClaimPending(zeely), true);
+  // we asked for the receipt after their claim and they went quiet: chasing may resume
+  assert.equal(paymentClaimPending({ ...zeely, lastOur: '2026-11-14T10:00:00.000Z' }), false);
+  // an ordinary unpaid invoice is chased as before
+  assert.equal(paymentClaimPending({ nextAction: 'Waiting for payment', memory: 'OPEN NOW: Waiting on brand: payment of INV-004', lastBrand: '2026-11-05', lastOur: '2026-11-06' }), false);
+});
+
+// ---------- a WhatsApp brief for a brand whose deal is finished gets its own deal (Higgsfield x Chris, Nov 16) ----------
+test('WhatsApp new brief: never offered as an addition to a Posted, Invoiced or Paid deal', async () => {
+  const { isFinishedStage } = await import('../api/whatsapp.js');
+  assert.equal(isFinishedStage('Posted'), true);
+  assert.equal(isFinishedStage('Paid'), true);
+  assert.equal(isFinishedStage('Invoiced'), true);
+  assert.equal(isFinishedStage('Script Approved'), false);
+  assert.equal(isFinishedStage('Price Agreed'), false);
+});

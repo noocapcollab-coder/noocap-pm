@@ -674,9 +674,13 @@ async function maybeNewDeal(st, text, forwarded) {
   if (x?.kind === 'script_feedback') return offerScriptNotes(st, t, x, deals, roster);
   if (!x?.is_brand_deal || x.kind === 'other') return false;
   const already = x.creator && deals.find((d) => d.creator === x.creator && d.brand.toLowerCase().replace(/[^a-z0-9]/g, '').includes(String(x.brand || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 6)));
-  const head = `🆕 *New brand deal: ${x.brand || 'brand?'} × ${x.creator || 'whose?'}*\n• ${x.gist}${x.due ? `\n• Due: ${x.due}` : ''}${already ? `\n• ${x.creator} already has a "${already.brand}" deal (${already.stage}), so I'd add this brief to it` : ''}`;
+  // A brief for a brand whose deal is already Posted, Invoiced or Paid is a new deal of its own (rule 42). The offer said
+  // "I'd add this brief to it" for Chris's Posted Higgsfield deal (Nov 16), Harsh tapped "Not a deal" and had to forward
+  // the brief three times; filing it then opened a new deal anyway.
+  const finished = already && isFinishedStage(already.stage);
+  const head = `🆕 *New brand deal: ${x.brand || 'brand?'} × ${x.creator || 'whose?'}*\n• ${x.gist}${x.due ? `\n• Due: ${x.due}` : ''}${already ? (finished ? `\n• ${x.creator}'s earlier "${already.brand}" deal is ${already.stage}, so this brief gets a deal of its own` : `\n• ${x.creator} already has a "${already.brand}" deal (${already.stage}), so I'd add this brief to it`) : ''}`;
   const unwrapped = t.replace(/https?:\/\/(?:www\.)?google\.com\/url\?q=([^&\s]+)[^\s]*/gi, (m, q) => { try { return decodeURIComponent(q); } catch { return m; } });
-  const entry = { role: 'assistant', content: head, meta: 'deal-confirm', dealText: unwrapped.slice(0, 9000), brand: x.brand, creator: x.creator || null, dealId: already?.id || null, at: new Date().toISOString() };
+  const entry = { role: 'assistant', content: head, meta: 'deal-confirm', dealText: unwrapped.slice(0, 9000), brand: x.brand, creator: x.creator || null, dealId: (!finished && already?.id) || null, at: new Date().toISOString() };
   // Saved BEFORE the buttons go out, so a tap a few seconds later finds it (Higgsfield × Chris, Nov 16)
   if (!x.creator) entry.whose = true;
   st.messages.push(entry);
@@ -818,3 +822,6 @@ async function fileNewDeal(st, channel = 'WhatsApp') {
   const done = r.action === 'needs_help' ? `⚠️ I couldn't file it: ${r.why || 'unknown reason'}.` : `✅ Filed *${p.brand} × ${p.creator}*.${r.action === 'updated' ? ' The brief was added to the existing deal and card.' : ` New deal (marked Needs Check so you can add the rate) and a card on the board with the brief. Rudraksh has been told.`}${channel === 'WhatsApp' ? `\nHandled on WhatsApp: I won't email the brand. When the cut is ready I'll send you the link here to pass on.` : `\nHandled on email: add the brand's email on the deal so I can follow up.`}${''}${link ? `\n${link}` : ''}`;
   await say(st, done);
 }
+
+// Posted, Invoiced, Paid or Lost: a new brief for this brand opens its own deal (rule 42, Higgsfield x Chris, Nov 16)
+export function isFinishedStage(stage) { return /^(posted|invoiced|paid|lost|closed)/i.test(String(stage || '').trim()); }
