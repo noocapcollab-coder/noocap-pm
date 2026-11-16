@@ -120,3 +120,6 @@ Seen 11 time(s). Source: Rulebook.
 
 ## A video sent for approval is chased until the brand answers (Harsh, Nov 16)
 Once a cut (first or revised) goes to the brand, the PM follows up every 3 days, weekends included, with no cap, until they approve, ask for changes or say go ahead and post. Two things used to stop it: an editor-tracker row left on "Changes" from an older round (ZenBusiness × Lindsay, 11 days quiet) now only pauses the chase if the changes were asked after our latest cut; and a follow-up the second check held as "too soon" (ElevenLabs × Duncan) is retired after a day and a fresh one written, with the 3-day rule spelled out for the second check.
+
+## A name Harsh uses may be the agency, not the brand (Nov 16)
+"Narrativegroup gave me that contract" got "you don't have a deal or lead under Narrativegroup", though HoneyBook (MyCo) × Chris came from Dori at narrativegroup.co. Before saying a name is unknown, the PM looks it up as a brand AND as an agency or contact (email domains, CC, billing company, subjects) and searches the second brain, then says which brand it is and how they are connected.
