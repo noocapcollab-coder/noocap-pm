@@ -19,3 +19,7 @@ test('blocks are rewritten without read-only fields', () => {
   assert.deepEqual(w, { type: 'paragraph', paragraph: { rich_text: [{ type: 'text', text: { content: 'hi' }, annotations: { bold: true } }], color: 'default' } });
   assert.equal(writable({ type: 'child_page', child_page: { title: 'x' } }), null);
 });
+test('null fields Notion returns are dropped before writing (icon: null)', () => {
+  const w = writable({ type: 'paragraph', paragraph: { rich_text: [], icon: null, color: 'default' } });
+  assert.equal('icon' in w.paragraph, false);
+});
