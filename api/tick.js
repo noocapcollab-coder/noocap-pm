@@ -47,13 +47,13 @@ export default async function handler(req, res) {
       const deal = deals[0] || { creator, brand: 'Test brand', finalRate: 1000, invoiceNumber: 'INV-TEST' };
       const samples = { bank: 'Our finance team only pays by bank transfer, can you share the bank details?', paypal: "We can't pay through Stripe, do you have PayPal?", none: 'Thanks, we will pay this week.' };
       const asks = Object.fromEntries(Object.entries(samples).map(([k, t]) => [k, G.asksOtherPayment(t)]));
-      const email = (want) => { if (!row) return null; const det = G.detailsFor(row, want) || G.detailsFor(row, 'any'); return G.paymentDetailsEmail({ name: 'Sophie', creator, amount: deal.invoiceAmount || deal.finalRate, number: String(deal.invoiceNumber || '').split(/,\s*/).pop() || '', details: det, want }); };
+      const email = (want) => { if (!row) return null; const pk = G.pickDetails(row, want); return G.paymentDetailsEmail({ name: 'Sophie', creator, amount: deal.invoiceAmount || deal.finalRate, number: String(deal.invoiceNumber || '').split(/,\s*/).pop() || '', details: pk.details, want: pk.sent, asked: want, instead: pk.instead }); };
       const guard = deals[0] ? (await G.checkInvoice(deals[0], { amount: Number(deal.invoiceAmount || deal.finalRate) || undefined })).problems : [];
       return res.status(200).json({
         creator, verified: !!real && !real.unverified, row_url: row?.url, note: real && !real.unverified ? 'live' : 'preview only: Verified is not ticked, so the real flow would ping Harsh instead of drafting',
         detection: asks,
         bank_reply: email('Bank transfer'), paypal_reply: email('PayPal'),
-        invoice_footer: await I.invoiceText({ creator }),
+        invoice_footer_stripe: await I.invoiceText({ creator }), invoice_footer_platform_pdf: await I.invoiceText({ creator }, { withPayment: true }),
         stray_check_on_bank_reply: email('Bank transfer') ? G.strayPaymentDetails(email('Bank transfer'), G.paymentText(row)) : null,
         deal_checked: deals[0] ? `${deals[0].brand} × ${creator} (${deals[0].stage})` : null,
         guard: guard.map((g) => `${g.ok ? 'OK' : g.block ? 'STOP' : 'WARN'} ${g.t}`),

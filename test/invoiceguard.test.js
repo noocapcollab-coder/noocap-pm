@@ -68,3 +68,19 @@ test('only the details they asked for are sent, word for word from the table', (
   assert.match(body, /Account number \/ IBAN: 000123/);
   assert.deepEqual(strayPaymentDetails(body, paymentText(row)), []);
 });
+
+import { pickDetails } from '../lib/invoiceguard.js';
+test('PayPal asked but only a bank on file: the email says so instead of calling bank lines PayPal', () => {
+  const row = { 'Bank Name': 'Chase', 'Account Number / IBAN': '000123' };
+  const p = pickDetails(row, 'PayPal');
+  assert.equal(p.sent, 'Bank transfer'); assert.equal(p.instead, true);
+  const body = paymentDetailsEmail({ name: 'Sophie', creator: 'Chris', details: p.details, want: p.sent, asked: 'PayPal', instead: p.instead });
+  assert.match(body, /Chris doesn't take PayPal, so here are Chris's bank details instead/);
+});
+test('platforms: a brand naming other platforms stops it, emails naming none only warn', () => {
+  const d = { finalRate: 0, deliverables: 'Instagram reel + YouTube Short' };
+  const silent = '📨 2026-11-01 · brand (Harper <h@x.ai>) · Re\nThanks, billing details below.';
+  const other = '📨 2026-11-01 · brand (Harper <h@x.ai>) · Re\nOne TikTok video please.';
+  assert.equal(invoiceProblems({ deal: d, convo: silent }).find((x) => x.k === 'platforms').block, false);
+  assert.equal(invoiceProblems({ deal: d, convo: other }).find((x) => x.k === 'platforms').block, true);
+});
