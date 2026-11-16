@@ -82,3 +82,6 @@ After INV-001 (bank details that weren't Chris's), "Pavinder" for Natalia, and T
 - The billed-to company must be one the brand wrote.
 - Posted links must be single posts on the right platform, not used on another deal; YouTube ones must be on the creator's channel and posted after the deal began.
 A contradiction stops the invoice; something that can't be checked shows as ⚠️ on the Invoices page for Harsh to tick.
+
+## Pay link first, bank or PayPal only when the brand asks (Harsh, Nov 16)
+Invoices go out with the Stripe pay link only. When a brand replies that they pay only by bank transfer, wire or PayPal, the PM drafts a reply with the creator's details from the verified row of Creator Payment Details (only the kind they asked for), with the invoice number as the payment reference. It always waits for Harsh's tap. If the row isn't verified yet, Harsh gets a Discord ping, the deal's Next Action says so, and the reply is drafted on the first run after he ticks Verified. Sending them doesn't reset the invoice dates.

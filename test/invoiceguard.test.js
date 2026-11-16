@@ -50,3 +50,21 @@ test('bank or PayPal lines that are not the verified ones are caught', () => {
 test('fees are read however they are written', () => {
   for (const t of ['$1,200', '1200 USD', 'USD 1,200', '$1.2k', 'US$1200']) assert.ok(amountsIn(t).has(1200), t);
 });
+
+import { asksOtherPayment, detailsFor, paymentDetailsEmail } from '../lib/invoiceguard.js';
+test('a brand that can only pay by bank or PayPal is recognised', () => {
+  assert.equal(asksOtherPayment('Our finance team only pays by bank transfer, could you share the bank details?'), 'Bank transfer');
+  assert.equal(asksOtherPayment('We can\'t pay through Stripe, do you have PayPal?'), 'PayPal');
+  assert.equal(asksOtherPayment('Can you send wire or PayPal info?'), 'any');
+  assert.equal(asksOtherPayment('Thanks, we will pay the invoice this week.'), null);
+});
+test('only the details they asked for are sent, word for word from the table', () => {
+  const row = { 'Account Holder Name': 'Chris Cordero', 'Bank Name': 'Chase', 'Account Number / IBAN': '000123', 'Routing / SWIFT / IFSC / Sort Code': '021000021', 'PayPal Email': 'chris@x.com' };
+  assert.equal(detailsFor(row, 'PayPal'), 'PayPal: chris@x.com');
+  assert.ok(!/PayPal/.test(detailsFor(row, 'Bank transfer')) && /000123/.test(detailsFor(row, 'Bank transfer')));
+  const body = paymentDetailsEmail({ name: 'Natalia', creator: 'Chris', amount: 3600, number: 'INV-002', details: detailsFor(row, 'Bank transfer'), want: 'Bank transfer' });
+  assert.match(body, /^Hi Natalia,/);
+  assert.match(body, /INV-002/);
+  assert.match(body, /Account number \/ IBAN: 000123/);
+  assert.deepEqual(strayPaymentDetails(body, paymentText(row)), []);
+});
