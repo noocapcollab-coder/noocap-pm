@@ -858,6 +858,7 @@
   .inv-grp{display:flex;justify-content:space-between;align-items:baseline;margin:16px 0 2px;padding-bottom:4px;border-bottom:1px solid var(--line,#2a2f3a);font:600 14px 'Space Grotesk',sans-serif}
   .inv-grp small{color:var(--muted);font-weight:400}
   @media (max-width:640px){.inv-cr .hide{display:none}}
+.rz-bill{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:8px}.rz-bill label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}.rz-bill input{padding:7px 9px;border-radius:8px;border:1px solid var(--line,#333);background:transparent;color:inherit;font:inherit;font-size:13px}.rz-bill .rz-link{grid-column:1/-1}.rz-go{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 </style>
 </head>
 <body>
@@ -2014,6 +2015,17 @@
           <ul class="rz-chk">${d.checks.map((c) => `<li class="${c.ok || c.k === 'links' || c.block === false ? '' : 'no'}">${c.ok ? '✅' : c.k === 'links' ? '⚪' : c.block === false ? '⚠️' : '❌'} ${esc(c.t)}</li>`).join('')}<li style="color:var(--muted)">${esc(part.say || '')}</li></ul>
           <div class="rz-kv"><span>Billed to</span><div>${esc(b.company || '—')}</div><span>Address</span><div>${esc(b.address || '—')}${b.country ? ' · ' + esc(b.country) : ''}</div><span>Billing email</span><div>${esc(b.email || d.brand_email || '—')}</div>${b.tax_id ? `<span>Tax ID</span><div>${esc(b.tax_id)}</div>` : ''}<span>Deliverables</span><div>${esc(d.deliverables || '—')}</div><span>Posted links</span><div>${links.length ? `${links.length} link${links.length > 1 ? 's' : ''}, check them below` : '—'}</div><span>Terms</span><div>${esc(d.terms || 'not set, full fee')}</div></div>
         </div>
+        <div class="rz-links"><h4>Billing details ${b.company ? '' : '<small style="color:var(--err);font-weight:400">· none yet</small>'} <button type="button" class="obtn" data-bedit="1" style="margin-left:6px">${b.company ? 'Edit' : 'Add billing details'}</button></h4>
+          <div class="rz-bill" hidden>
+            <label>Company name<input data-b="company" value="${esc(b.company || '')}" placeholder="Registered company name, as the brand wrote it"></label>
+            <label>Billing email<input data-b="email" value="${esc(b.email || d.brand_email || '')}" placeholder="finance@brand.com"></label>
+            <label>Address<input data-b="address" value="${esc(b.address || '')}" placeholder="Street, city, postcode"></label>
+            <label>Country code<input data-b="country" value="${esc(b.country || '')}" maxlength="2" placeholder="US"></label>
+            <label>VAT / Tax ID<input data-b="tax_id" value="${esc(b.tax_id || '')}" placeholder="optional"></label>
+            <label>Contact name<input data-b="contact" value="${esc(b.contact || '')}" placeholder="who the email greets (optional)"></label>
+            <div class="rz-link"><button type="button" class="obtn pri" data-bsave="1">Save billing details</button><small style="color:var(--muted)">Copy them exactly from the brand's email. They go on the invoice as billed-to.</small></div>
+          </div>
+        </div>
         <div class="rz-links"><h4>Posted links that go to the brand ${links.length ? '' : '<small style="color:var(--err);font-weight:400">· none yet</small>'}</h4>
           ${links.map((u) => `<div class="rz-link"><span class="pf">${/instagram/.test(u) ? 'Instagram' : /youtu/.test(u) ? 'YouTube' : /tiktok/.test(u) ? 'TikTok' : 'Link'}</span><a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a></div>`).join('')}
           ${links.some((u) => /youtu/.test(u)) ? '' : `<div class="rz-link"><span class="pf">YouTube</span><small style="color:var(--muted)">${/youtube|shorts|\byt\b/i.test(d.deliverables || '') ? 'No Short found yet. The PM keeps checking the channel, or add the link yourself' : 'Not part of this deal (the deliverables don\'t include YouTube)'}</small></div>`}
@@ -2023,7 +2035,7 @@
           ${links.length || warns.length ? `<label class="rz-ck"><input type="checkbox" data-ok="1"> I checked ${links.length ? 'these are the right videos' : ''}${links.length && warns.length ? ' and ' : ''}${warns.length ? 'the ⚠️ items myself' : ''}</label>` : ''}
         </div>
         ${d.draft ? `<details class="rz-mail"><summary>The email that goes to ${esc(d.draft.to)}${d.draft.cc ? ' (cc ' + esc(d.draft.cc) + ')' : ''}</summary><pre>${esc(d.draft.subject)}\n\n${esc(d.draft.body)}</pre></details>` : `<div class="rz-mail"><small style="color:var(--muted)">The email is written when you raise it: it replies in the ${esc(d.brand)} thread with the pay link and the PDF${links.length ? ', plus the posted links' : ''}.</small></div>`}
-        <div class="rz-go"><button type="button" class="obtn pri" data-raise="${esc(d.id)}" ${blockers.length ? 'disabled title="' + esc(blockers.map((c) => c.t).join(', ')) + '"' : (links.length || warns.length) ? 'disabled data-needck="1" title="Tick that you checked the links and the ⚠️ items first"' : ''}>Raise &amp; send invoice</button>${blockers.length ? `<small class="bad">Waiting on: ${esc(blockers.map((c) => c.t).join(' · '))}</small>` : `<small>Finalizes ${usd(part.amount)} in ${esc(d.creator)}'s Stripe and emails ${esc(b.company || d.brand)} straight away.</small>`}</div>
+        ${(() => { const lock = blockers.length ? 'disabled title="' + esc(blockers.map((c) => c.t).join(', ')) + '"' : (links.length || warns.length) ? 'disabled data-needck="1" title="Tick that you checked the links and the ⚠️ items first"' : ''; return `<div class="rz-go"><button type="button" class="obtn pri" data-raise="${esc(d.id)}" data-mode="link" ${lock}>Send with Stripe pay link</button><button type="button" class="obtn" data-raise="${esc(d.id)}" data-mode="bank" ${d.bank_ready ? lock : 'disabled title="No verified bank or PayPal details for ' + esc(d.creator) + ' yet"'}>Send with bank details</button>${blockers.length ? `<small class="bad">Waiting on: ${esc(blockers.map((c) => c.t).join(' · '))}</small>` : `<small>Both make the invoice PDF in ${esc(d.creator)}'s Stripe for ${usd(part.amount)} and email ${esc(b.company || d.brand)} straight away. Pay link: they pay online. Bank details: ${d.bank_ready ? esc(d.creator) + '\'s verified details from Creator Payment Details go on the PDF and in the email, no pay link' : 'add and verify ' + esc(d.creator) + '\'s row in Creator Payment Details first'}.</small>`}</div>`; })()}
       </div>`;
     }).join('');
     const embedUrl = (u) => { let m = u.match(/instagram\.com\/(?:reel|p|reels)\/([\w-]+)/); if (m) return `https://www.instagram.com/reel/${m[1]}/embed`; m = u.match(/(?:youtube\.com\/(?:shorts\/|watch\?v=)|youtu\.be\/)([\w-]{6,})/); if (m) return `https://www.youtube.com/embed/${m[1]}`; m = u.match(/tiktok\.com\/.*video\/(\d+)/); if (m) return `https://www.tiktok.com/embed/v2/${m[1]}`; return null; };
@@ -2040,20 +2052,30 @@
         try { const r = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ action: 'deal-links', deal: d.id, links: val }) }); const j = await r.json(); if (!r.ok) throw new Error(j.error || 'Failed'); d.posted_links = val; renderRaise(stData || st); }
         catch (e) { sv.disabled = false; sv.textContent = 'Save links'; alert(e.message); }
       };
-      const ck = card.querySelector('[data-ok]'); const go = card.querySelector('button[data-needck]');
-      if (ck && go) ck.onchange = () => { go.disabled = !ck.checked; };
+      const ck = card.querySelector('[data-ok]'); const gos = [...card.querySelectorAll('button[data-needck]')];
+      if (ck && gos.length) ck.onchange = () => { gos.forEach((g) => { g.disabled = !ck.checked; }); };
+      const be = card.querySelector('[data-bedit]'); const bf = card.querySelector('.rz-bill');
+      if (be) be.onclick = () => { bf.hidden = !bf.hidden; };
+      const bs = card.querySelector('[data-bsave]');
+      if (bs) bs.onclick = async () => {
+        const billing = Object.fromEntries([...bf.querySelectorAll('[data-b]')].map((i) => [i.dataset.b, i.value.trim()]));
+        bs.disabled = true; bs.textContent = 'Saving…';
+        try { const r = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ action: 'deal-billing', deal: d.id, billing }) }); const j = await r.json(); if (!r.ok) throw new Error(j.error || 'Failed'); stAt = 0; loadStripeInv(true); }
+        catch (e) { bs.disabled = false; bs.textContent = 'Save billing details'; alert(e.message); }
+      };
     });
     box.querySelectorAll('button[data-raise]').forEach((btn) => btn.onclick = async () => {
       const d = open.find((x) => x.id === btn.dataset.raise); if (!d) return;
       const part = d.parts.find((p) => p.status === 'draft') || d.parts.find((p) => p.status === 'due') || d.parts[0];
-      if (!confirm(`Raise ${usd(part.amount)} for ${d.brand} × ${d.creator} in ${d.creator}'s Stripe and email it to ${d.billing?.company || d.brand} now?`)) return;
-      const wrap = btn.parentElement; btn.disabled = true; btn.textContent = 'Raising…';
+      const bank = btn.dataset.mode === 'bank';
+      if (!confirm(`Raise ${usd(part.amount)} for ${d.brand} × ${d.creator} in ${d.creator}'s Stripe and email it to ${d.billing?.company || d.brand} now, ${bank ? `with ${d.creator}'s bank details (no pay link)` : 'with the Stripe pay link'}?`)) return;
+      const wrap = btn.parentElement; const label = btn.textContent; wrap.querySelectorAll('button').forEach((b) => { b.disabled = true; }); btn.textContent = 'Sending…';
       try {
-        const r = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ action: 'invoice-raise-send', deal: d.id }) });
+        const r = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ action: 'invoice-raise-send', deal: d.id, mode: bank ? 'bank' : 'link' }) });
         const j = await r.json(); if (!r.ok) throw new Error(j.error || 'Failed');
-        wrap.innerHTML = `<small class="ok">✓ Invoice raised and sent to ${esc(d.billing?.company || d.brand)}. It moves to "Sent to brands" in a moment.</small>`;
+        wrap.innerHTML = `<small class="ok">✓ Invoice sent to ${esc(d.billing?.company || d.brand)} ${bank ? 'with the bank details' : 'with the Stripe pay link'}. It moves to "Sent to brands" in a moment.</small>`;
         setTimeout(() => { stAt = 0; loadStripeInv(true); loadHQ(true); }, 2500);
-      } catch (e) { btn.disabled = false; btn.textContent = 'Raise & send invoice'; wrap.insertAdjacentHTML('beforeend', `<small class="bad">${esc(e.message)}</small>`); }
+      } catch (e) { wrap.querySelectorAll('button').forEach((b) => { b.disabled = false; }); btn.textContent = label; wrap.insertAdjacentHTML('beforeend', `<small class="bad">${esc(e.message)}</small>`); }
     });
   }
   function renderInvoices(fromStripe) {

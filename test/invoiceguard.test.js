@@ -84,3 +84,9 @@ test('platforms: a brand naming other platforms stops it, emails naming none onl
   assert.equal(invoiceProblems({ deal: d, convo: silent }).find((x) => x.k === 'platforms').block, false);
   assert.equal(invoiceProblems({ deal: d, convo: other }).find((x) => x.k === 'platforms').block, true);
 });
+
+test('billing details typed by Harsh on the Invoices page pass as his, not as unknown', () => {
+  const p = invoiceProblems({ deal: { finalRate: 0 }, bill: { company_name: 'Brokegirls, Inc.', by: 'Harsh (Invoices page)', at: '2026-11-16' }, convo: '📨 2026-11-01 · brand (A <a@b.co>) · Re\nhello' });
+  const b = p.find((x) => x.k === 'billing-source');
+  assert.equal(b.ok, true); assert.match(b.t, /entered by you/);
+});
