@@ -72,3 +72,13 @@ When: Writing an invoice email
 Do: One sentence and the payment details.
 Never: Add extra paragraphs or filler.
 Seen 1 time(s). Source: Rulebook.
+
+## The invoice guard: nothing wrong goes to a brand (Harsh, Nov 16)
+After INV-001 (bank details that weren't Chris's), "Pavinder" for Natalia, and TikTok on Readdy, every invoice is checked against what the brand and creator wrote before it is raised or sent (lib/invoiceguard.js):
+- Payment details come only from the **Creator Payment Details** table in Notion (NOOCAP MASTER SYSTEM), and only from a row Harsh ticked **Verified** with a Source. Details typed in chat or WhatsApp are saved there unverified and never printed. The AI never writes the verified fields. Any bank or PayPal line in an invoice email that isn't the verified one stops it.
+- Money emails greet only a name that signed one of the brand's emails, else "Hi there,".
+- Platforms on the deal must be ones the brand's emails mention.
+- The amount must match the agreed fee (and the part's %), the revenue sheet must agree, and the fee should appear in the emails (a warning to tick if it was agreed on a call).
+- The billed-to company must be one the brand wrote.
+- Posted links must be single posts on the right platform, not used on another deal; YouTube ones must be on the creator's channel and posted after the deal began.
+A contradiction stops the invoice; something that can't be checked shows as ⚠️ on the Invoices page for Harsh to tick.

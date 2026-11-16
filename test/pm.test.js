@@ -772,13 +772,11 @@ test('a hand-filed deal with no email thread is treated as a WhatsApp deal (Buzz
   assert.match(h, /waOnce\('Posted'/);
 });
 
-test('payment details are printed as text on the invoice when the deal or creator has them (Mediacube)', async () => {
-  const I = await import('../lib/invoicing.js');
-  assert.equal(I.paymentDetails({ paymentDetails: 'Bank: X\nIBAN: Y', creator: 'Duncan' }), 'Bank: X\nIBAN: Y');
-  process.env.PAYMENT_DETAILS_DUNCAN = 'Bank: Z\\nSWIFT: Q';
-  assert.equal(I.paymentDetails({ creator: 'Duncan' }), 'Bank: Z\nSWIFT: Q');
-  delete process.env.PAYMENT_DETAILS_DUNCAN;
-  assert.equal(I.paymentDetails({ creator: 'Duncan' }), '');
+test('payment details are printed only from verified Creator Payment Details rows, never from the deal or Vercel (INV-001, Nov 16)', async () => {
+  const G = await import('../lib/invoiceguard.js');
+  assert.equal(G.paymentText({ 'Bank Name': 'X', 'Account Number / IBAN': 'Y' }), 'Bank: X\nAccount number / IBAN: Y');
+  const src = (await import('node:fs')).readFileSync(new URL('../lib/invoicing.js', import.meta.url), 'utf8');
+  assert.doesNotMatch(src.slice(src.indexOf('export async function paymentDetails'), src.indexOf('export async function paymentDetails') + 400), /PAYMENT_DETAILS_|deal\?\.paymentDetails/);
 });
 
 test('a duplicate inbox delivery held by another run is not logged as a failure', async () => {
