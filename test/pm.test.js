@@ -1405,7 +1405,9 @@ test('no follow-up to the brand while we owe the revised cut (CapCut x Chris, No
   assert.equal(ourMoveText('Brad reshooting the video with original footage', 'Chris'), true);
   assert.equal(ourMoveText('Waiting for the brand to review the revised cut', 'Chris'), false);
   const hb = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
-  assert.match(hb, /status === 'Changes' : false;\n\s*const ourMove = changesOpen \|\|/);
+  assert.match(hb, /changesAfterCut\(await findIntakeRows\(deal\)[^\n]*\n\s*const ourMove = changesOpen \|\|/);
+  const { changesAfterCut } = await import('../lib/heartbeat.js');
+  assert.equal(changesAfterCut([{ status: 'Changes', changesAt: '2026-11-09T10:00:00Z' }], '2026-11-08T10:00:00Z'), true);
 });
 
 test('posting hold: the brand clearing it, and the once-only markers', async () => {

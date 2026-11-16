@@ -17,3 +17,10 @@ test('a system auto-rejection stops blocking new drafts after a day', async () =
   assert.ok(autoRejected({ properties: { Error: { rich_text: [{ plain_text: 'Auto-rejected by system check: drafted 2.4 days after...' }] } } }));
   assert.ok(!autoRejected({ properties: { Error: { rich_text: [] } } }));
 });
+
+import { changesAfterCut } from '../lib/heartbeat.js';
+test('a row left on Changes from an older round does not stop the chase after a newer cut (ZenBusiness, Nov 16)', () => {
+  const rows = [{ status: 'Changes', changesAt: '2026-11-02T20:57:00.000Z' }, { status: 'Send to Brand', changesAt: null }];
+  assert.equal(changesAfterCut(rows, '2026-11-09T05:37:00.000Z'), false);
+  assert.equal(changesAfterCut([{ status: 'Changes', changesAt: '2026-11-10T09:00:00.000Z' }], '2026-11-09T05:37:00.000Z'), true);
+});
