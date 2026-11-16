@@ -2182,3 +2182,15 @@ test('Script-ready WhatsApp PDF never goes for card (2)/(3) of an email deal, st
   assert.equal(cardOfEmailDeal({ title: 'Higgsfield.AI × Lindsay (2)', creator: 'Lindsay' }, [email, wa]), false);
   assert.equal(cardOfEmailDeal({ title: 'CapCut × Chris (2)', creator: 'Chris' }, [email]), false);
 });
+
+// ---------- no tool-access ask after the brand gave an account; greet by signed name (Manyfast x Chris, Nov 16) ----------
+test('Tool access: skipped when the brand already shared a trial login, and greets the signed name', async () => {
+  const { brandGaveAccount, greetingName } = await import('../lib/inbox.js');
+  assert.equal(brandGaveAccount('2026-11-11 Brand confirmed move forward; sent trial account; shared product angle and tracking link.'), true);
+  assert.equal(brandGaveAccount('', 'Login: https://manyfast.io/en/\nEmail: chriscordero@manyfast.io\nPassword: R#Wa5U5ks6ZV'), true);
+  assert.equal(brandGaveAccount('2026-11-10 brand approved script with one note.'), false);
+  const text = 'Thanks again—looking forward to seeing the video!\n\nBest,\nSeungjoo Lee (Konan)\nManyfast';
+  assert.equal(greetingName('"이승주" <konan@manyfast.io>', text), 'Seungjoo');
+  assert.equal(greetingName('Yulia Ivanova <yulia@kudosnarratives.com>', ''), 'Yulia');
+  assert.equal(greetingName('<x@y.com>', ''), '');
+});
