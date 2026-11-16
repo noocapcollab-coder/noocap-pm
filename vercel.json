@@ -38,6 +38,9 @@
     "api/brain.js": {
       "maxDuration": 300,
       "includeFiles": "brain/{sources/*/*.md,graphify-out/graph.json,site/brain-data.json}"
+    },
+    "api/trials.js": {
+      "maxDuration": 60
     }
   },
   "crons": [

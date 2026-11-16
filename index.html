@@ -859,6 +859,16 @@
   .inv-grp small{color:var(--muted);font-weight:400}
   @media (max-width:640px){.inv-cr .hide{display:none}}
 .rz-bill{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:8px}.rz-bill label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}.rz-bill input{padding:7px 9px;border-radius:8px;border:1px solid var(--line,#333);background:transparent;color:inherit;font:inherit;font-size:13px}.rz-bill .rz-link{grid-column:1/-1}.rz-go{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .tr-h{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.tr-h img{width:40px;height:40px;border-radius:50%;object-fit:cover}.tr-u{font-size:12px;color:var(--muted)}
+  .tr-f{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted)}
+  .tr-ms{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}.tr-m{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:3px;min-width:0}
+  .tr-m .l{font-size:11px;color:var(--muted)}.tr-m b{font:600 20px 'Space Grotesk',sans-serif;font-variant-numeric:tabular-nums}.tr-m .s{font-size:11px;color:#8a8e97;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .tr-top{font-size:13px;color:var(--soft)}.tr-top a,.tr-b a{color:var(--accent)}
+  .tr-bs{display:flex;flex-direction:column;gap:6px}.tr-b{border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+  .tr-b summary{cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto auto auto auto;gap:14px;align-items:baseline;font-size:13px}
+  .tr-t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tr-d{color:var(--muted);font-size:12px}.tr-b table{margin-top:8px}
+  @media (max-width:900px){.tr-ms{grid-template-columns:repeat(3,minmax(0,1fr))}.tr-b summary{grid-template-columns:1fr auto}.tr-b summary .tr-d,.tr-b summary .num:last-child{display:none}}
+  @media (max-width:520px){.tr-ms{grid-template-columns:repeat(2,minmax(0,1fr))}.tr-f{margin-left:0}}
 </style>
 </head>
 <body>
@@ -885,6 +895,7 @@
     <div class="lbl">Agency workflow</div>
     <button data-v="hq" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Schedule &amp; team</button>
     <button data-v="team" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14.8c1.9.7 3.1 2.4 3.5 5.2"/></svg>Editors</button>
+    <button data-v="trials" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 9.5v5l4-2.5z"/></svg>Trial reels</button>
   </div>
   <div class="grp">
     <div class="lbl">Behind the scenes</div>
@@ -1015,6 +1026,17 @@
   <div class="err" id="spErr" style="font-size:13px"></div>
 </div></section>
 
+<!-- ============ Trial reels ============ -->
+<section class="view" id="trials"><div class="ov">
+  <div class="ov-head">
+    <div><div class="k" id="trWhen">Instagram trial reels we post through Zernio · shown to non-followers first</div><h1>Trial reels</h1></div>
+  </div>
+  <section class="ostats" id="trStats" aria-label="Trial reel totals"><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div></section>
+  <div id="trBody"><div class="skel"></div><div class="skel"></div></div>
+  <div class="ofoot" style="font-size:12px;color:var(--muted)">Views and reach come from Instagram through Zernio and refresh a few times a day. Hook variants of the same video are grouped together, best variant first. Instagram does not report follows per trial reel to outside tools, so "followers gained" is the account's follower count now minus the count on the day of its first trial reel, which also includes growth from regular posts.</div>
+  <div class="err" id="trErr" style="font-size:13px"></div>
+</div></section>
+
 <!-- ============ Brain ============ -->
 <section class="view" id="brain"><div class="ov brain-ov">
   <div class="ov-head">
@@ -1132,6 +1154,7 @@
   <button data-v="billing" type="button"><span class="i">🧾</span>Invoices</button>
   <button data-v="brain" type="button"><span class="i">✺</span>Brain</button>
   <button data-v="spend" type="button"><span class="i">▭</span>Tools</button>
+  <button data-v="trials" type="button"><span class="i">▶</span>Trials</button>
   <button data-v="flow" type="button"><span class="i">⇢</span>System</button>
   <button data-v="chat" type="button"><span class="i">✦</span>Chat</button>
   <button data-v="approvals" type="button"><span class="i">✉</span>Approvals<span class="badge" data-count hidden>0</span></button>
@@ -1177,7 +1200,7 @@
   // ---------- tabs ----------
   let view = 'overview';
   function show(v) {
-    if (!['overview', 'hq', 'team', 'billing', 'leads', 'followups', 'pricing', 'active', 'deals', 'revenue', 'outreach', 'brain', 'spend', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
+    if (!['overview', 'hq', 'team', 'billing', 'leads', 'followups', 'pricing', 'active', 'deals', 'revenue', 'outreach', 'brain', 'spend', 'trials', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
     if (v === 'deals') v = 'leads'; // the old Brand deals board is now Leads + Active brands
     view = v;
     document.querySelectorAll('.view').forEach((el) => el.classList.toggle('on', el.id === v));
@@ -1190,6 +1213,7 @@
     if (v === 'flow' && !flowData) loadFlow();
     if (v === 'revenue') rv ? renderRevenue() : loadRevenue();
     if (v === 'spend') sp ? renderSpend() : loadSpend();
+    if (v === 'trials') { if (tr) renderTrials(); loadTrials(); }
     if (v === 'outreach') { if (orData) renderOutreach(); loadOutreach(); }
     if (v === 'brain') loadBrain();
     if (v === 'followups') fu ? renderFollowups() : loadFollowups();
@@ -1204,7 +1228,7 @@
   }
   document.querySelectorAll('[data-v]').forEach((b) => b.onclick = () => show(b.dataset.v));
   window.addEventListener('hashchange', () => show(location.hash.slice(1)));
-  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else if (view === 'spend') loadSpend(true); else if (view === 'outreach') loadOutreach(); else if (view === 'followups') loadFollowups(true); else if (view === 'team') loadEditorMonth(true); else if (view === 'runs') loadRuns(); else if (view === 'pricing') loadPricing(true); else loadHQ(true); };
+  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else if (view === 'spend') loadSpend(true); else if (view === 'trials') loadTrials(true); else if (view === 'outreach') loadOutreach(); else if (view === 'followups') loadFollowups(true); else if (view === 'team') loadEditorMonth(true); else if (view === 'runs') loadRuns(); else if (view === 'pricing') loadPricing(true); else loadHQ(true); };
   document.querySelectorAll('.ov [data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
 
   // =====================================================================
@@ -1316,6 +1340,61 @@
       <section class="ocard"><h2>Every tool <small>${plural(sp.tools.length, 'row')} · INR at ₹${sp.rate} = $1, yearly plans spread over 12 months</small><a class="more" href="${esc(sp.notion)}" target="_blank" rel="noopener">Edit in Notion ↗</a></h2>
       ${rows ? `<div class="tscroll"><table><tr><th>Tool</th><th>Category</th><th>Paid for</th><th class="num">Cost</th><th class="num">Per month</th><th>Renews</th><th>Status</th></tr>${rows}</table></div>` : '<div class="empty">No tools yet. Add them in Notion.</div>'}</section></div>`;
   }
+
+
+  // =====================================================================
+  // Trial reels: Instagram trial reels posted through Zernio, per creator (GET /api/trials)
+  let tr = null, trLoading = false;
+  async function loadTrials(fresh) {
+    if (trLoading) return; trLoading = true;
+    $('trErr').textContent = '';
+    try {
+      const r = await fetch('/api/trials' + (fresh ? '?fresh=1' : ''), { headers: headers() });
+      if (r.status === 401) { trLoading = false; return needPassword(); }
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error || 'Could not load trial reels');
+      tr = j; renderTrials();
+    } catch (e) { $('trErr').textContent = e.message; if (!tr) { $('trStats').innerHTML = ''; $('trBody').innerHTML = '<div class="empty">Trial reel numbers could not load. Hit refresh to try again.</div>'; } }
+    trLoading = false;
+  }
+  function renderTrials() {
+    if (!tr) return;
+    const k = (x) => x == null ? '—' : Number(x) >= 10000 ? (Number(x) / 1000).toFixed(Number(x) >= 100000 ? 0 : 1).replace(/\.0$/, '') + 'k' : Number(x).toLocaleString('en-US');
+    const day = (d) => d ? new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' }) : '';
+    const signed = (x) => x == null ? '—' : (x > 0 ? '+' : '') + k(x);
+    const t = tr.totals;
+    $('trWhen').textContent = `Instagram trial reels we post through Zernio · ${plural(t.creators, 'creator')} · updated ${since(tr.generated_at)}`;
+    const stat = (l, v, s, st = '') => `<div class="ostat"><span class="l">${l}</span><span class="v" style="${st}">${v}</span><span class="s">${s}</span></div>`;
+    $('trStats').innerHTML = stat('Views', k(t.views), `${k(t.reach)} accounts reached`, 'color:var(--accent)')
+      + stat('Trial reels', t.reels, `${t.reels7d} in the last 7 days`)
+      + stat('Views per reel', t.reels ? k(Math.round(t.views / t.reels)) : '—', 'average across creators')
+      + stat('Followers gained', signed(t.followersGained), 'since each account\'s first trial', t.followersGained > 0 ? 'color:var(--ok)' : '')
+      + stat('Saves', k(t.saves), `${k(t.shares)} shares`)
+      + stat('Comments', k(t.comments), 'mostly CTA keywords');
+    const spark = (pts) => {
+      if (!pts || pts.length < 2) return '';
+      const ys = pts.map((p) => p.followers), lo = Math.min(...ys), hi = Math.max(...ys), w = 160, h = 36;
+      const xy = pts.map((p, i) => `${(i / (pts.length - 1) * w).toFixed(1)},${(h - 3 - (hi === lo ? 0.5 : (p.followers - lo) / (hi - lo)) * (h - 6)).toFixed(1)}`).join(' ');
+      return `<svg class="tr-spark" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" aria-label="Followers from ${pts[0].date} to ${pts[pts.length - 1].date}"><polyline points="${xy}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
+    };
+    const link = (r, txt) => r && r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">${txt}</a>` : txt;
+    const cards = tr.creators.map((c) => {
+      const mini = (l, v, s = '') => `<div class="tr-m"><span class="l">${l}</span><b>${v}</b>${s ? `<span class="s">${s}</span>` : ''}</div>`;
+      const batches = c.batchList.map((b) => `<details class="tr-b"><summary><span class="tr-t">${esc(b.title)}</span><span class="tr-d">${day(b.postedAt)} · ${plural(b.count, 'hook', 'hooks')}</span><span class="num">${k(b.views)} views</span><span class="num tr-best">${b.views ? 'best ' + link(b.best, k(b.best.views)) : '<span style="color:var(--muted)">just posted, numbers come in a few hours</span>'}</span><span class="num">${k(b.saves)} saves</span></summary>
+        <div class="tscroll"><table><tr><th>Variant</th><th>Posted</th><th class="num">Views</th><th class="num">Reach</th><th class="num">Likes</th><th class="num">Comments</th><th class="num">Shares</th><th class="num">Saves</th><th class="num">Avg watch</th><th class="num">Skip rate</th></tr>
+        ${b.reels.map((r, i) => `<tr><td class="nm">${link(r, i === 0 ? 'Best variant ↗' : 'Variant ' + (i + 1) + ' ↗')}</td><td>${day(r.at)}</td><td class="num">${k(r.views)}</td><td class="num">${k(r.reach)}</td><td class="num">${k(r.likes)}</td><td class="num">${k(r.comments)}</td><td class="num">${k(r.shares)}</td><td class="num">${k(r.saves)}</td><td class="num">${r.avgWatchSec == null ? '—' : r.avgWatchSec + 's' + (r.lengthSec ? ' / ' + r.lengthSec + 's' : '')}</td><td class="num">${r.skipRate == null ? '—' : r.skipRate + '%'}</td></tr>`).join('')}</table></div></details>`).join('');
+      return `<section class="ocard tr-c">
+        <div class="tr-h">${c.picture ? `<img src="${esc(c.picture)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}<div><h2 style="margin:0">${esc(c.name)}</h2><a class="tr-u" href="https://www.instagram.com/${esc(c.username)}/" target="_blank" rel="noopener">@${esc(c.username)}</a></div>
+          <div class="tr-f">${spark(c.followerTrend)}<span>${c.followers == null ? '' : k(c.followers) + ' followers'}</span></div></div>
+        ${c.reels ? `<div class="tr-ms">${mini('Views', k(c.views), k(c.reach) + ' reached')}${mini('Trial reels', c.reels, plural(c.batches, 'video'))}${mini('Per reel', k(c.perReel), 'average views')}${mini('Followers gained', signed(c.followersGained), c.followersStartDate ? 'since ' + day(c.followersStartDate) : 'tracking just started')}${mini('Saves', k(c.saves), k(c.shares) + ' shares')}${mini('Comments', k(c.comments), k(c.likes) + ' likes')}</div>
+        ${c.best ? `<div class="tr-top">Top trial so far: ${link(c.best, esc(captionTitle(c.best.caption)) + ' ↗')} · <b>${k(c.best.views)}</b> views · posted ${day(c.best.at)}</div>` : ''}
+        <div class="tr-bs">${batches}</div>` : '<div class="empty">Connected, but no trial reels posted through Zernio yet.</div>'}
+      </section>`;
+    }).join('');
+    const waiting = (tr.waiting || []).length ? `<div class="ofoot" style="margin:0">Not connected to Zernio yet: ${tr.waiting.map(esc).join(', ')}. Their trial reels will show here once their Instagram is connected.</div>` : '';
+    $('trBody').innerHTML = `<div style="display:flex;flex-direction:column;gap:16px">${cards || '<div class="empty">No Instagram accounts are connected in Zernio yet.</div>'}${waiting}</div>`;
+  }
+  const captionTitle = (txt) => { const f = String(txt || '').split('\n').map((x) => x.trim()).find(Boolean) || 'Untitled reel'; return f.length > 90 ? f.slice(0, 87) + '…' : f; };
 
 
   // =====================================================================
