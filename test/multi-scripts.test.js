@@ -72,3 +72,13 @@ test('invoice emails never send themselves', () => {
   assert.ok(ALWAYS_ASK.includes('Invoice') && ALWAYS_ASK.includes('Billing details'));
   assert.ok(!AUTO_KINDS.includes('Invoice') && !AUTO_KINDS.includes('Billing details'));
 });
+
+import { cardBelongsToDeal } from '../lib/heartbeat.js';
+test('a card belongs only to the deal with its brand email (CapCut × Chris: Mia vs Alisa)', () => {
+  const mia = { brandEmail: 'mia.brown@growmaxvalue.com', threadCc: 'collab@chriscordero.net' };
+  const alisa = { brandEmail: 'alisa@globeinflu.com', threadCc: '' };
+  assert.equal(cardBelongsToDeal('mia.brown@growmaxvalue.com', mia), true);
+  assert.equal(cardBelongsToDeal('mia.brown@growmaxvalue.com', alisa), false);
+  assert.equal(cardBelongsToDeal('sophie.wilson@growmaxvalue.com', mia), true);
+  assert.equal(cardBelongsToDeal('', alisa), true);
+});
