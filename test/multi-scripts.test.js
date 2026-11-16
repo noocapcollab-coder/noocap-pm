@@ -66,3 +66,9 @@ test('every link shape gives the same card id', () => {
   const id = '416508e99dda81569ac7df4572c40c97';
   for (const u of [c2, `${c2}?pvs=204`, 'https://www.notion.so/416508e99dda81569ac7df4572c40c97', '416508e9-9dda-8156-9ac7-df4572c40c97', 'https://app.notion.com/p/416508e99dda81569ac7df4572c40c97#abc']) assert.equal(pageIdOf(u), id, u);
 });
+
+import { AUTO_KINDS, ALWAYS_ASK } from '../lib/heartbeat.js';
+test('invoice emails never send themselves', () => {
+  assert.ok(ALWAYS_ASK.includes('Invoice') && ALWAYS_ASK.includes('Billing details'));
+  assert.ok(!AUTO_KINDS.includes('Invoice') && !AUTO_KINDS.includes('Billing details'));
+});
