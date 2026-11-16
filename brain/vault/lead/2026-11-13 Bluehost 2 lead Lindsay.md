@@ -1,7 +1,7 @@
 ---
 type: lead
 ---
-Deliverables: 1 short-form video (single-platform within [amount]–[amount] USD range)
+Deliverables: 1 short-form video (single-platform within [amount]–[amount]USD range)
 Contact Name: Bianca
 Next Step: New brand: management to reply with pricing
 Platforms: Instagram, TikTok, YouTube Shorts

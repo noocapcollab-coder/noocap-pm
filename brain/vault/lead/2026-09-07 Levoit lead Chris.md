@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: 1 Instagram Reel (20–60 seconds), 7-day bio link, 30-day advertising authorization (Ad Code)
-Next Step: Chris's team to decide on counter-offer or acceptance of [amount] vs. original [amount] ask
+Next Step: Chris's team to decide on counter-offer or acceptance of [amount]vs. original [amount]ask
 Platforms: Instagram
 Last Our Email: 2026-10-06
 Follow-ups: 3

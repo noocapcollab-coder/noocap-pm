@@ -20,11 +20,7 @@ Last brand reply none, our last reply none.
 
 
 ## Inbound leads
-- Contact Name: Nabil · Next Step: No action needed unless Lindsay wants to discuss this separately · Deal: 1 linked · Last Brand Email: 2026-11-12 · Thread Text: From: Nabil <nabilyimerbiz@gmail.com>
-Date: 2026-11-12
-
-Lindsay, is selling your own program something you want this year, or
-not the focus rn? · Thread Subject: Brand Sponsorship Offer · Status: Locked · Creator: Lindsay · Type: Paid offer · Brand Email: nabilyimerbiz@gmail.com
+- Contact Name: Rajeshwari · Next Step: No action needed unless Lindsay wants to discuss this separately · Deal: 1 linked · Last Brand Email: 2026-11-12 · Thread Subject: Brand Sponsorship Offer · Status: Locked · Creator: Lindsay · Type: Paid offer · Brand Email: rajeshwari@jeevmedia.net
 - Contact Name: Luke · Next Step: No action needed—this is not a brand collaboration opportunity. · Last Brand Email: 2026-11-06 · Thread Text: From: Luke Sipka <luke@sipkaoutreach.com>
 Date: 2026-11-06
 

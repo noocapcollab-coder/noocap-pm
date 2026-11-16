@@ -1,7 +1,7 @@
 ---
 type: performance
 ---
-YouTube Short: 4,701 views, 186 likes, 49 comments, 0 shares, 0 saves.
+YouTube Short: 4,725 views, 187 likes, 49 comments, 0 shares, 0 saves.
 
 ## Links
 - [[Lindsay - what performs]]

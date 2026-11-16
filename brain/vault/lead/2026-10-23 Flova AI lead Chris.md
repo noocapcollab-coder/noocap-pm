@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: 1 Instagram Reel, campaign link share via Instagram DM, 30-day ad authorization
-Next Step: Quote at [amount] waiting in Approvals
+Next Step: Quote at [amount]waiting in Approvals
 Platforms: Instagram
 Last Our Email: 2026-10-24
 Last Brand Email: 2026-10-23

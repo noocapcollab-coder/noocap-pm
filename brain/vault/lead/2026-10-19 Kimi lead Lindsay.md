@@ -2,7 +2,7 @@
 type: lead
 ---
 Contact Name: Lexi
-Next Step: Wait for brand to confirm they accept the [amount] rate or provide feedback
+Next Step: Wait for brand to confirm they accept the [amount]rate or provide feedback
 Platforms: YouTube Shorts, Instagram, TikTok
 Last Our Email: 2026-10-26
 Follow-ups: 1

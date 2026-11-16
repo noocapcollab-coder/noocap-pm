@@ -2,7 +2,7 @@
 type: lead
 ---
 Contact Name: Lexi
-Next Step: Quote at [amount] waiting in Approvals
+Next Step: Quote at [amount]waiting in Approvals
 Last Our Email: 2026-10-26
 Last Brand Email: 2026-10-26
 Thread Subject: Collaboration Inquiry | Kimi× AutomateAIConsulting | GrowMaxValue Agency

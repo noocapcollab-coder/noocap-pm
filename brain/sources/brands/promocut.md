@@ -3,27 +3,20 @@
 Brand. Works with creators: [[Brad]], [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: PromoCut is an app that comes through Quil Media agency.
+WHO: PromoCut is an app offering editing and translation features. They come to us through their agency, Quil Media.
 
-CONTACTS:
-Nicole Rodrigues, nicole@quilmedia.com, Quil Media agency, signs as Nicole
-Hamza Tariq, hamza@quilmedia.com, Quil Media agency, signs off or provides links, copied on thread
-partnerships@ninjaaitools.com, copied on thread
+CONTACTS: Nicole Rodrigues, nicole@quilmedia.com, Quil Media agency. Hamza Tariq, hamza@quilmedia.com, Quil Media agency. Copied: partnerships@ninjaaitools.com. Signed off as Brad's Team.
 
-DEALS:
-PromoCut x Brad: 1 Instagram Reel with ManyChat automation, reposted to Facebook, TikTok, and YouTube Shorts, rate not confirmed, stage Submitted, draft due Nov 12 2026, final approval target Nov 13 2026, go-live date Nov 16 2026
+DEALS: Brad x PromoCut: 1 Instagram Reel with ManyChat automation, reposted to Facebook, TikTok, and YouTube Shorts, submitted stage, draft due November 12 2026, final approval target November 13 2026, go-live date November 16 2026. Rate, payment terms, and usage rights not confirmed.
 
-HOW THEY WORK:
-Script approval via email. Draft videos are reviewed via Frame.io links. Product access is provided via Apple redeem links.
+HOW THEY WORK: Script approval by brand, follow approved script and campaign brief, ensure product demonstration is clearly visible, use correct brand name and approved CTA, include required screen recordings or product footage, send completed draft for review before publishing. Product access via Apple redeem links provided by the brand (codes provided include 3ANT7FMPTMTHPTNA4W and W6TTNALE8XEJJFET76). Draft reviews shared via Frame.io links (https://f.io/XGWrdOpT).
 
-WATCH OUT:
-None noted.
+WATCH OUT: None stated.
 
-OPEN NOW:
-Waiting on brand for review of the submitted draft video and final approval.
+OPEN NOW: We owe revised video draft incorporating brand feedback (less B-roll and more screen recordings of product demonstrations for editing and translation features).
 
 ## Deal with [[Brad]] (Submitted, opened 2026-11-04)
-Last brand reply 2026-11-14, our last reply 2026-11-14.
+Last brand reply 2026-11-16, our last reply 2026-11-14.
 AGREED: 1 Instagram Reel with ManyChat automation, reposted to Facebook, TikTok, and YouTube Shorts. Draft video due 2026-11-12, final approval target 2026-11-13, go-live date 2026-11-16. Rate, payment terms, and usage rights not confirmed.
 
 HISTORY:
@@ -33,11 +26,12 @@ HISTORY:
 2026-11-11 us requested product access; brand provided Apple redeem links
 2026-11-12 brand requested progress update
 2026-11-13 us submitted video draft for review
-2026-11-14 brand acknowledged receipt and stated they will provide an update once they hear back
+2026-11-14 brand acknowledged receipt of draft
+2026-11-16 brand sent feedback requesting less B-roll and more screen recordings of product demonstrations
 
 BILLING: not yet
 
-OPEN NOW: Waiting on brand: review of the submitted draft video and final approval.
+OPEN NOW: We owe: revised video draft incorporating brand feedback.
 
 ## Inbound leads
 - Next Step: Wait for brand to provide project details · Last Our Email: 2026-10-28 · Last Brand Email: 2026-10-27 · Thread Subject: PromoCut Discord + Potential Paid UGC Opportunity! · Status: Waiting on brand · Creator: Chris · Type: Unclear · Brand Email: renzo.rodriguez@promocut.com

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_riverside", "label": "Riverside", "file_type": "document", "source_file": "brands/riverside.md"}], "edges": [{"source": "brands_riverside", "target": "creators_duncan", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/riverside.md"}], "hyperedges": []}

@@ -42,6 +42,3 @@ When: A deal covers 2+ reels, or a brief arrives for the next reel
 Do: Make a card per reel; put the next reel's brief on its own card.
 Never: Put reel 2's brief on reel 1's finished card.
 Seen 3 time(s). Source: Rulebook.
-
-## A script never goes to the brand twice (CapCut × Lindsay, Nov 16)
-Scripts 2 and 3 went to Sophie at 2:44 IST in the bundled email and again at 3:24. The card links carry the title ("CapCut-Lindsay-2-4165…") and the id reader glued the "2" onto the page id, so the cards looked unsent. Now one reader (`pageIdOf` in lib/notion.js) is used everywhere, and the last check before any Script email leaves refuses it when every card in it already went to the brand in the last 14 days, unless it is a revised script.

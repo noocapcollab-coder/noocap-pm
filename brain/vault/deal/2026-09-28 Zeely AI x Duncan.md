@@ -3,7 +3,7 @@ type: deal
 ---
 Stage: Invoiced
 Last brand reply 2026-11-13, our last reply 2026-11-06.
-AGREED: rate [amount] for remaining 50% of fee, deliverables one dedicated short-form video integration for Shorts at @duncanrogoff featuring Zeely AI campaign, usage rights not stated, payment terms 50% remaining balance due upon confirmation, no agreed dates confirmed.
+AGREED: rate [amount]for remaining 50% of fee, deliverables one dedicated short-form video integration for Shorts at @duncanrogoff featuring Zeely AI campaign, usage rights not stated, payment terms 50% remaining balance due upon confirmation, no agreed dates confirmed.
 
 HISTORY:
 2026-10-23 brand first payment transfer confirmation sent.

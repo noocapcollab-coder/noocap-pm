@@ -3,20 +3,34 @@ type: brand
 ---
 # Manyfast
 
-Brand. Works with creators: [[Chris]].
+Brand. Works with creators: [[Duncan]], [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: Manyfast is a platform where you start with a product plan that both you and your AI coding tool can work from, showing user flows, wireframes, and connecting to Claude Code through MCP to build a working prototype. We deal with them directly.
+WHO
+Manyfast is a software tool for organizing product requirements, user flows, and wireframes, and connecting to Claude Code through MCP to build working prototypes. They come to us directly.
 
-CONTACTS: Seungjoo Lee (Konan) handles content, script, revisions, and product support at konan@manyfast.io. Leo is CEO at leo@manyfast.io for contracts if we have one. Jun (Seungjoo Lee referred) handles invoices and payment arrangements at jun@manyfast.io. Chris Cordero is the creator at collab@chriscordero.net (must be copied). NOOCAP is on the thread via noocapcollab@gmail.com.
+CONTACTS
+Seungjoo Lee, also known as Konan, konan@manyfast.io, brand contact for content, script, revisions, and product support.
+Leo, leo@manyfast.io, CEO who reviews and signs contracts if needed.
+Jun, jun@manyfast.io, Operations Lead for billing and payment arrangements referencing Seungjoo Lee.
+Chris Cordero, creator, collab@chriscordero.net.
+Duncan, creator, collab@buildroom.ai.
+NOOCAP team, noocapcollab@gmail.com.
 
-DEALS: Chris | 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days | Rate: [amount] USD | Stage: Script Sent | Proposed publication date: 2026-11-28.
+DEALS
+Manyfast x Chris | 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days | [amount]| Script Approved | Publication date 2026-11-28
+Manyfast x Duncan | 1 short-form video, cross-posted to Instagram, TikTok, and Facebook | Rate not known | Brief Received | Dates not known
 
-HOW THEY WORK: Trial account provided at https://manyfast.io/en/ (login chriscordero@manyfast.io). Angle: tired of repeatedly explaining and correcting the same things when building with AI; start with a clear product plan. Demo idea: take a small app idea, organize requirements and specs in Manyfast, show user flow and wireframes, then connect Claude Code through MCP to build a working prototype. Promo code: CHRIS30 (30 percent off first month of Pro monthly plan, expires Feb 1, 2027). Tracking link: https://manyfast.io/en/?utm_source=instagram&utm_medium=influencer&utm_campaign=202611_chris&utm_content=reel. Instagram account: @manyfast.official. Brand has no standard contract template; if we have one, send to leo@manyfast.io. Send invoices and coordinate payment only with Jun at jun@manyfast.io (mention Seungjoo Lee referred). Keep content, script, revisions, and product support with Seungjoo on the email thread.
+HOW THEY WORK
+Content contact is Seungjoo Lee konan@manyfast.io. Billing contact is Jun jun@manyfast.io. Contracts if any go to CEO leo@manyfast.io, otherwise agreements stand on email threads. Trial accounts are provided for creators to explore the product. Promo code is CHRIS30 for 30 percent off the first month of the Pro monthly plan, expiring February 1, 2027. Tracking link is https://manyfast.io/en/?utm_source=instagram&utm_medium=influencer&utm_campaign=202611_chris&utm_content=reel. English Instagram account to tag is @manyfast.official.
 
-WATCH OUT: Do not leave the creator team off the CC line; always use Reply All. Keep content, script, revisions, and product questions on the main thread with Seungjoo, while payment and invoices go exclusively to Jun.
+WATCH OUT
+Always reply all to email threads so no team members are accidentally left off CC. Keep all content, script, revisions, and product questions with Seungjoo, and keep invoices and payment arrangements separate with Jun.
 
-OPEN NOW: Manyfast x Chris deal is at Script Sent stage; we sent the script PDF on 2026-11-15 with a proposed publication date of 2026-11-28, and we are waiting on the brand to approve the script or provide feedback.
+OPEN NOW
+Manyfast x Chris: We owe sending the initial invoice for [amount]to jun@manyfast.io and sharing the expected video draft date.
+Manyfast x Duncan: We owe Rudraksh writing the script.
 
 
 ## Links
 - [[Chris]]
+- [[Duncan]]

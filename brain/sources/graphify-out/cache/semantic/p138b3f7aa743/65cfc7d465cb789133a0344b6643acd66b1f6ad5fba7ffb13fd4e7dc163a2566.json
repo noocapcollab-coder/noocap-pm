@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_aiqora_aiqora_ai", "label": "AIQORA AI", "file_type": "document", "source_file": "brands/aiqora.md", "_origin": "semantic"}], "edges": [{"source": "brands_aiqora_aiqora_ai", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/aiqora.md", "_origin": "semantic"}], "hyperedges": []}

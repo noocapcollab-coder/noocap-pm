@@ -3,21 +3,25 @@
 Brand. Works with creators: [[Valeri]], [[Chris]], [[Duncan]].
 
 ## Brand wiki (from every email with them)
-WHO: ElevenLabs is an AI creative platform. They come to us through Kudos Narratives, their agency, via Yulia Sheremeteva.
+WHO: ElevenLabs, an AI audio technology platform. They come to us through their agency, Kudos Narratives.
 
-CONTACTS: Yulia Sheremeteva (yulia@kudosnarratives.com) is the main contact at Kudos Narratives. Emails are CC'd to collab@valchy.ai, contact@valchy.ai, collab@buildroom.ai depending on creator. Yulia signs all messages and invoices go to hey@kudosnarratives.com with CC to yulia@kudosnarratives.com.
+CONTACTS: Yulia Sheremeteva, yulia@kudosnarratives.com, Kudos Narratives. Lazarenkova Margarita, hey@kudosnarratives.com, Kudos Narratives finance. CCs include contact@valchy.ai, valeri@valchy.ai, collab@valchy.ai, collab@buildroom.ai.
 
 DEALS:
-Valeri: [amount], deliverables not specified, 100% prepay after script approval before publication. Paid 2026-11-07. Invoice INV-001 sent 2026-10-31.
-Chris: Brief received 2026-11-09, script in progress, stage brief received. Rate and deliverables not agreed in writing yet.
-Duncan November (Huedini campaign): 1 video with crossposting to Instagram and TikTok, rate not confirmed in writing, posting date Nov 13 subject to brand approval. Brand reviewing for ElevenLabs final sign-off before posting.
-Duncan October (Recast campaign): [amount], 50/50 split ([amount] upfront, [amount] on post), one revision round, results report 7 days after go-live. Posted 2026-10-29. Invoice sent 2026-10-30, submitted to finance 2026-11-02, status pending.
+ElevenLabs x Valeri | Rate: [amount] | Deliverables: not specified | Stage: Posted | Dates: published 2026-10-31, republished 2026-11-11
+ElevenLabs x Chris | Rate: not known yet | Deliverables: not known yet | Stage: Brief Received | Dates: brief received 2026-11-09
+ElevenLabs x Duncan (November) | Rate: not confirmed | Deliverables: 1 short video (Huedini campaign), crossposting to Instagram and TikTok | Stage: Approved | Dates: script approved 2026-11-07, draft sent 2026-11-10
+ElevenLabs x Duncan (October) | Rate: [amount] | Deliverables: 1 short video, crossposting to Instagram, TikTok, YouTube Shorts, Facebook, results report 7 days after go-live | Stage: Invoiced | Dates: invoiced 2026-10-30, posted 2026-10-29
 
-HOW THEY WORK: Brand sends Notion brief links. We send script for review via email. Brand approves script with notes in Google Doc if needed, then we send video draft via file link. Brand reviews video and requests post caption as separate element. Brand submits both video and caption to ElevenLabs team for final approval before we post. Posting requires brand sign-off. We post across Facebook, Instagram, TikTok, YouTube Shorts. Brand collects performance data via Airtable form at https://base.kudosnarratives.com/c/v6sri5mymDRzsd5T-pvZsg or we provide screenshots of insights. Tool access granted on noocaptools@gmail.com email address. Invoices raised by hand, sent via email with Stripe pay link if needed. Brand's finance processes payments manually, can take up to 7 business days.
+HOW THEY WORK: Briefs are received via email or Notion links. Scripts are sent for approval; ElevenLabs reviews video drafts and post captions together. For the Huedini campaign, publishing is pending official public release of the feature and brand go-ahead. Analytics and performance insights are due 7 days after go-live. Billing details: Kudos Narratives Ltd., 71-75 Shelton Street, Covent Garden, London, England, WC2H 9JQ, GB, Tax ID: Company No 14412282, hey@kudosnarratives.com. Invoices are issued by hand and submitted to their finance team.
 
-WATCH OUT: Duncan October Instagram post link became inaccessible after posting. Brand escalated twice before we clarified the post was on Facebook initially and republished to Instagram 2026-11-11. Rule: confirm post status immediately if brand reports link dead, offer restoration from Recently Deleted or manual data entry. Always verify posting across all agreed platforms before invoicing. Valeri's original Instagram post was deleted; we republished on Facebook and new Instagram Reel 2026-11-11 after two missed follow-ups. Brand must approve republished content.
+WATCH OUT: Published sponsored content must remain accessible; original Valeri post became inaccessible and had to be republished, triggering a brand escalation. Do not submit videos to ElevenLabs without post captions, as they require both together for approval.
 
-OPEN NOW: Duncan November: Brand awaiting ElevenLabs final approval on video and caption before confirming posting date and next steps. We owe nothing until brand responds. Valeri Posted: We owe analytics and insights by 2026-11-18 (one week from repost date 2026-11-11). Chris: Rudraksh writing script, we owe complete draft.
+OPEN NOW:
+ElevenLabs x Valeri: We owe analytics and insights after one week from the 2026-11-11 republication (due around 2026-11-18).
+ElevenLabs x Chris: Rudraksh is writing the script; we owe the complete script draft.
+ElevenLabs x Duncan (November): Waiting on brand notification of Huedini public release for publishing clearance, and a payment status update.
+ElevenLabs x Duncan (October): Waiting on brand finance team to process the [amount]invoice.
 
 ## Deal with [[Valeri]] (Posted, opened 2026-11-11)
 Last brand reply 2026-11-11, our last reply 2026-11-11.
@@ -48,23 +52,20 @@ BILLING: not known yet
 
 OPEN NOW: Rudraksh writing the script. We owe: complete script draft.
 
-## Deal with [[Duncan]] (Submitted, opened 2026-11-04)
-Last brand reply 2026-11-11, our last reply 2026-11-11.
-AGREED: rate not confirmed, 1 short video for Huedini campaign with crossposting to Instagram and TikTok, usage rights not confirmed, payment terms not confirmed, November 13 posting date subject to brand approval before publishing.
-
-HISTORY: 2026-11-04 us sent script to brand for review. 2026-11-04 brand forwarding script to ElevenLabs team. 2026-11-07 brand approved script with one note in Google Doc, flagged Huedini launch delay, advised against publishing without sign-off. 2026-11-07 us requested ElevenLabs access on noocaptools@gmail.com. 2026-11-10 brand confirmed access granted. 2026-11-10 us sent video draft. 2026-11-10 brand approved video, requested post caption. 2026-11-11 us sent post caption to brand. 2026-11-11 brand reacted positively to caption.
-
-BILLING: billing details on file, invoice status not yet submitted.
-
-OPEN NOW: Waiting on brand: Brand will submit video and caption to ElevenLabs for final approval and provide next steps on posting date and any revisions needed.
+## Deal with [[Duncan]] (Approved, opened 2026-11-04)
+Last brand reply 2026-11-16, our last reply 2026-11-16.
+AGREED: rate not confirmed, 1 short video for Huedini campaign with crossposting to Instagram and TikTok, usage rights not confirmed, payment terms not confirmed, posting date pending official feature release and brand go-ahead.
+HISTORY: 2026-11-04 us sent script to brand. 2026-11-04 brand forwarded script to ElevenLabs. 2026-11-07 brand approved script with note, flagged launch delay. 2026-11-07 us requested tool access. 2026-11-10 brand confirmed access, us sent video draft. 2026-11-10 brand requested caption. 2026-11-11 us sent post caption to brand. 2026-11-16 us followed up on caption review and payment status. 2026-11-16 brand confirmed video and caption approval, noted feature not yet public, and stated finance follow-up sent regarding payment. 2026-11-16 us replied to brand regarding payment update request.
+BILLING: billing details on file, invoice status not yet.
+OPEN NOW: Waiting on brand: notification of Huedini public release for publishing clearance, and payment status update.
 
 ## Deal with [[Duncan]] (Invoiced, opened 2026-10-23)
 Last brand reply 2026-11-06, our last reply 2026-11-02.
-AGREED: [amount] total. One short video, crossposting to Instagram and TikTok, one revision round, results report 7 days after go-live. 50% upfront on signing ([amount]), 50% after video posted.
+AGREED: [amount]total. One short video, crossposting to Instagram and TikTok, one revision round, results report 7 days after go-live. 50% upfront on signing ([amount]), 50% after video posted.
 
 HISTORY: 2026-10-23 brand confirmed rate and deliverables. 2026-10-23 us agreed to 50/50 payment split and Recast brief. 2026-10-24 us sent script for approval. 2026-10-26 brand approved script. 2026-10-26 us sent video first cut and draft caption. 2026-10-26 brand approved video, sent to ElevenLabs. 2026-10-27 brand approved video for go-live. 2026-10-29 us posted video live across Facebook, Instagram, YouTube Shorts, TikTok and sent invoice. 2026-11-02 brand confirmed invoice submitted to finance, processing up to 7 business days. 2026-11-05 brand reports Instagram post link not accessible. 2026-11-06 brand requests confirmation of Instagram post status and performance data.
 
-BILLING: Invoice sent 2026-10-30 to hey@kudosnarratives.com, CC yulia@kudosnarratives.com. Kudos Narratives company details on file. Full [amount] invoice submitted to brand's finance 2026-11-02, status pending.
+BILLING: Invoice sent 2026-10-30 to hey@kudosnarratives.com, CC yulia@kudosnarratives.com. Kudos Narratives company details on file. Full [amount]invoice submitted to brand's finance 2026-11-02, status pending.
 
 OPEN NOW: Instagram post status unclear as of 2026-11-05 - brand cannot access link and needs to collect performance data. Brand asks if post was removed and requests either restoration from Recently Deleted folder or manual entry of insights via link provided. We owe: immediate confirmation whether Instagram post still exists, explanation of why link is inaccessible, and either restored post with insights screenshots or manual performance data entry.
 

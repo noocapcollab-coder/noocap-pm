@@ -1,8 +1,8 @@
 ---
 type: deal
 ---
-Stage: Script Sent
-Last brand reply 2026-11-10, our last reply 2026-11-14.
+Stage: Script Approved
+Last brand reply 2026-11-16, our last reply 2026-11-14.
 AGREED: Rate not specified. Payment: 100% after video published, within 1-7 days. Deliverables: 1 IG Reel, DM Automation, 90 days boosting, usage rights, re-editing/secondary creation rights. Contract signed by both parties 2026-10-09.
 
 HISTORY:
@@ -11,14 +11,14 @@ HISTORY:
 2026-10-12 us sent revised script for review.
 2026-10-19 brand requested script changes and new CTA.
 2026-10-21 us sent updated script with new CTA.
-2026-11-02 us checked in on script feedback.
 2026-11-02 brand stated still awaiting brand feedback.
 2026-11-10 brand confirmed still awaiting internal feedback from brand team.
 2026-11-14 us followed up again on script feedback.
+2026-11-16 brand approved script and asked when to expect the video draft.
 
 BILLING: not yet
 
-OPEN NOW: Waiting on brand: Rajeshwari to send the brand team's feedback on the revised script sent on 2026-10-21.
+OPEN NOW: We owe: timeline for when the video draft will be sent for review.
 
 ## Links
 - [[Lindsay]]

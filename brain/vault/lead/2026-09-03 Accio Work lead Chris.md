@@ -1,7 +1,7 @@
 ---
 type: lead
 ---
-Next Step: Chris should confirm or counter the [amount] offer (originally asked [amount])
+Next Step: Chris should confirm or counter the [amount]offer (originally asked [amount])
 Platforms: Instagram
 Last Our Email: 2026-10-06
 Follow-ups: 3

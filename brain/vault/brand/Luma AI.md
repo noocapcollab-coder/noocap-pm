@@ -5,20 +5,23 @@ type: brand
 
 Brand. Works with creators: [[Chris]], [[Duncan]], [[Brad]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Luma AI comes through NJ Agency (for Chris), Faved (for Duncan), and directly (for Brad).
+WHO: Luma AI comes to us through an agency named NJ Agency for Chris and through a platform named Faved for Duncan. Brad is also working with them.
 
-CONTACTS: Upendra Singh, upendra@njagency.co, Campaign Head at NJ Agency, signs; Nick Jangra, Founder at NJ Agency; Faved, creators@faved.com, platform; collab@chriscordero.net, collab@buildroom.ai, copied.
+CONTACTS: Upendra Singh, upendra@njagency.co, Campaign Head at NJ Agency; Nick Jangra, Founder at NJ Agency. Faved support, creators@faved.com, at Faved.
 
 DEALS:
-Luma AI x Chris | Reel + Story repost | Net 30 after approved Reel and Story published and invoice received | In Production
-Luma AI x Duncan | draft script, 60-day usage for paid/dark ads on IG/TikTok/others, YouTube crossposting allowed (no YouTube paid ad rights/codes) | Signed
-Luma AI x Brad | one video (script approved) | Posted
+Chris: Reel + Story repost, rate not confirmed, stage Submitted, started 2026-11-05.
+Duncan: draft script, rate not stated, stage Signed, started 2026-10-31.
+Brad: one video, rate not known, stage Posted, started 2026-10-16.
 
-HOW THEY WORK: Account must be created on Luma using noocaptools@gmail.com, credits added by brand before production to avoid watermarked videos; script approval required; draft submission for review. Duncan deal via Faved platform page (replies by email to Faved are not seen by brand).
+HOW THEY WORK: For Chris, script PDF sent for review, account created on Luma using noocaptools@gmail.com, credits added by brand, content sent for review via frame.io link. For Duncan, Faved deals require answering on the Faved page.
 
-WATCH OUT: Do not start Luma video production using a free account as it generates watermarked videos; wait until credits are added. For Duncan, replies by email to Faved are not seen by the brand so answers must go on the Faved page.
+WATCH OUT: For Chris, do not start video production using a free account, as it will generate watermarked videos; wait until credits are added. For Duncan, we cannot grant YouTube ad rights or provide YouTube partnership or ad codes (crossposting to YouTube is fine, but paid ad rights for YouTube are excluded). For Duncan, replies by email to Faved are not seen by the brand, so we must answer on the Faved page.
 
-OPEN NOW: For Chris, we owe an estimated timeline for completing content production (already informed brand we will share the video by Monday). For Duncan, we owe sign contract, confirm acceptance of usage rights terms, and submit draft script. For Brad, we owe nothing right now pending Brad's filming.
+OPEN NOW:
+Chris: Waiting on brand to review the video.
+Duncan: We owe: Sign contract, confirm acceptance of usage rights terms (60-day for Instagram, TikTok, other paid ads and dark ads; YouTube crossposting allowed but no YouTube paid ad rights or ad codes), and submit draft script.
+Brad: Brad to film the video per the approved script. We owe nothing right now pending Brad's filming.
 
 
 ## Links

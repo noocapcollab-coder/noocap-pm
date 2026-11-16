@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: Concept & script written by Chris from brand brief, 2 rounds of revisions
-Next Step: Wait for Kari/Sutyo to confirm if [amount] works for their budget
+Next Step: Wait for Kari/Sutyo to confirm if [amount]works for their budget
 Platforms: YouTube
 Last Our Email: 2026-10-28
 Last Brand Email: 2026-10-28

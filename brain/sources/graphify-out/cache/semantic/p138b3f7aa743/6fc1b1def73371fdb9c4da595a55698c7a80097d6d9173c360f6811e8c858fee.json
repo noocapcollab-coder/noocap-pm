@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_marvis", "label": "Marvis", "file_type": "document", "source_file": "brands/marvis.md", "_origin": "semantic"}], "edges": [{"source": "brands_marvis", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/marvis.md", "_origin": "semantic"}], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_web4", "label": "WEB4", "file_type": "document", "source_file": "brands/web4.md", "_origin": "semantic"}], "edges": [{"source": "brands_web4", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/web4.md", "_origin": "semantic"}], "hyperedges": []}

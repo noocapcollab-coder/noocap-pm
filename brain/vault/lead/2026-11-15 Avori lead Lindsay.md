@@ -2,10 +2,11 @@
 type: lead
 ---
 Contact Name: Trayvondre
-Next Step: New brand: management to reply with pricing
+Next Step: Replied 2026-11-16, waiting on the brand
+Last Our Email: 2026-11-16
 Last Brand Email: 2026-11-15
 Thread Subject: The Perfect Partnership 🤝 (Avori X Automate AI Consulting)
-Status: New offer
+Status: Waiting on brand
 Creator: Lindsay
 Type: Paid offer
 Brand Email: tray@getavori.com

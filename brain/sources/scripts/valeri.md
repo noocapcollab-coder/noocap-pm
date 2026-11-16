@@ -25,6 +25,26 @@ Hook A
     Sources:
     - lxe/phoneuse
 
+## 2026-11-16 Apple Design
+Creator: [[Valeri]].
+Hook A :
+    Somebody just dropped a Claude skill that makes your websites look like they cost [amount].
+    Hook B :
+    Somebody dropped a free GitHub repo that teaches Claude to design like Apple.
+    Body:
+    So basically most AI-built sites still look the same, with purple gradients and glowing buttons everywhere.
+    Then someone went through Apple’s WWDC talks and packed 17 design principles into one skill Claude follows every time it builds UI.
+    So you get springy animations and translucent layers with real depth, which honestly feels completely different.
+    But here’s the crazy part — point it at something you already shipped, and it reviews it like an Apple designer.
+    It’s called apple-design by Emil Kowalski, completely free with over 35,000 stars. Boom.
+    CTA: 
+    Comment APPLE and I’ll send you the install. Let’s go.
+    Resource links
+    - Repo: https://github.com/emilkowalski/skills
+    - apple-design SKILL.md: https://github.com/emilkowalski/skills/blob/main/skills/apple-design/SKILL.md
+    - Install: npx skills add https://github.com/emilkowalski/skills --skill apple-design
+    - Skill breakdown (rules + use cases): https://open-design.ai/skills/apple-design/
+
 ## 2026-11-10 Open-source Higgsfield
 Type: PERSONAL. Creator: [[Valeri]].
 Hook A — Founder Flex ★ BEST:
@@ -202,19 +222,3 @@ Hook A:
     - AI Engineer – talk page
     - Transcript – sozai.app
     - Business Insider via AOL
-
-## 2026-11-02 Roast Room GitHub tool - Claude
-Type: PERSONAL. Creator: [[Valeri]].
-Hook 1
-    You can now have AI versions of Jeff Bezos and Alex Hormozi argue over your next business decision, and it’s completely free.
-    Hook 2
-    Before you raise your prices, let AI versions of seven of the biggest names in business fight about it first.
-    Body
-    So you type in the decision you’re stuck on, like whether to raise your coaching price, and seven AI advisors built from the public work of people like Warren Buffett and Gary Vee debate it until they score every option and hand you a verdict as a PDF.
-    It’s called Roast Room, it runs inside Claude Code, and you just tell Claude to clone it and start the room.
-    Its a full council eats a real chunk of your usage, so save it for the big calls.
-    And just think about it, if you already have Claude, that’s a boardroom you could never book a meeting with, for nothing extra.
-    CTA
-    Comment BOARD below and I’ll send you the link.
-    resource:
-- https://github.com/nateherkai/roast-room

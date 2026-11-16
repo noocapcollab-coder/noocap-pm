@@ -3,7 +3,7 @@ type: lead
 ---
 Deliverables: 1 short-form video, multi-platform posting (TikTok, Instagram Reels, YouTube Shorts, Facebook Reels), Bio Link (7 days), Ad Code (30 days), re-editing rights (30 days)
 Contact Name: Zoe
-Next Step: Counter at [amount] waiting in Approvals
+Next Step: Counter at [amount]waiting in Approvals
 Platforms: TikTok
 Last Our Email: 2026-11-02
 Follow-ups: 1

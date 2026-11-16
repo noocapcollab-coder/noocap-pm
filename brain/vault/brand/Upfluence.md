@@ -5,28 +5,30 @@ type: brand
 
 Brand. Works with creators: [[Duncan]].
 ## Brand wiki (from every email with them)
-WHO: Upfluence, creator software with AI influencer marketing assistant Jaice. They come to us directly.
+WHO: Upfluence is a software platform providing an AI influencer marketing assistant (Jaice) that helps brands source creators, automate outreach, and manage campaigns through chat. They come to us directly.
 
 CONTACTS:
-Tanya, role/agency not specified, signs as Tanya.
-Manambintsoa Rabetrano (Manambit), manam.rabetrano+mkt@upfluence.com, Upfluence, signs as Manambintsoa Rabetrano / Manambit.
-Upfluence Collabs Team, collabs@upfluence.com, Upfluence, signs as Upfluence Collabs Team.
-We must copy: noocapcollab@gmail.com and collab@buildroom.ai.
+Upfluence Collabs Team, collabs@upfluence.com, brand, signs as Upfluence Collabs Team or Upfluence, must copy collab@buildroom.ai
+Tanya, brand
+William, brand
+Manambintsoa Rabetrano (Manambit), manam.rabetrano+mkt@upfluence.com, brand
+Duncan Rogoff, creator
+Duncan's Team / NOOCAP, noocapcollab@gmail.com, our agency, signs as Duncan's Team or NOOCAP Media
 
 DEALS:
-Duncan | 2x YouTube Shorts (syndicated to TikTok, Facebook, Instagram), 2x Instagram Stories (minimum 2 frames each) | Stage: Submitted | Rate and usage rights not confirmed | Dates: script approved Nov 4 2026, first draft submitted Nov 10 2026, first draft approved Nov 12 2026.
+Duncan | 2x YouTube Shorts (syndicated to TikTok, Facebook, Instagram), 2x Instagram Stories (minimum 2 frames each) | Rate not confirmed | Stage: Posted | Dates: script approved Nov 4, first draft submitted Nov 10, first draft approved Nov 12, first video published Nov 16, 2026
 
 HOW THEY WORK:
-Brief format and script review handled via Upfluence contribution drafting link: https://creators.upfluence.com/contribution/upfluence-creator-for-ai-tools-and-mcp-duncan-rogoff-ai-automation-10838846/create-draft
-Draft videos reviewed via drafting link and Frame.io (https://f.io/RbixKTFC).
-Must include tracking link when publishing.
-Content must focus on Upfluence AI and value over hype (concrete pain points like time saved, replies, sales).
+Brief and draft submission link: https://creators.upfluence.com/contribution/upfluence-creator-for-ai-tools-and-mcp-duncan-rogoff-ai-automation-10838846/create-draft
+Instagram Stories connection link for stats sync: https://creators.upfluence.com/stories-invitation
+Billing settings link for Upfluence Pay: https://creators.upfluence.com/account/settings/billing
+Script and drafts must be submitted through their drafting link for review before publishing. Tracking links must be included in the content. Remaining deliverables must be uploaded through the drafting link for a final check prior to posting.
 
 WATCH OUT:
-Always Reply All to keep noocapcollab@gmail.com in the loop so the team does not miss updates.
+Always Reply All to include noocapcollab@gmail.com so the entire team stays in the loop. Do not send manual invoices because they use Upfluence Pay exclusively.
 
 OPEN NOW:
-We owe the upload of the second YouTube Short and 2 IG Stories through the Upfluence drafting link. Waiting on the brand for a final check before publishing with the tracking link and their billing details.
+Waiting on brand: brief or confirmation for the second video script, and clarification that no manual invoice is required since they use Upfluence Pay. We owe them the upload of the remaining assets (1 YouTube Short syndicated across platforms and 2 IG Stories) through their drafting link once ready, and connection of Instagram to the creator space if not already done.
 
 
 ## Links

@@ -2,7 +2,7 @@
 type: lead
 ---
 Contact Name: David
-Next Step: Quote at [amount] waiting in Approvals
+Next Step: Quote at [amount]waiting in Approvals
 Platforms: Instagram
 Last Our Email: 2026-10-26
 Follow-ups: 2

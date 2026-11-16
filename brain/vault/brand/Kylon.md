@@ -15,7 +15,7 @@ HOW THEY WORK: They request video drafts via links such as Frame.io. They prefer
 
 WATCH OUT: Do not publish content related to Kylon without waiting for their review and approval first. Community promotions (like Skool community shares) are not included in standard YouTube deals and require a separate package/rate.
 
-OPEN NOW: Waiting on brand for payment of the [amount] invoice by November 22, 2026; NOOCAP owes no next move.
+OPEN NOW: Waiting on brand for payment of the [amount]invoice by November 22, 2026; NOOCAP owes no next move.
 
 
 ## Links

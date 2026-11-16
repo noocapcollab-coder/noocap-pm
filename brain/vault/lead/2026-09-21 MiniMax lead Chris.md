@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: 1 dedicated video
-Next Step: Wait for brand to confirm if [amount] rate works for their budget
+Next Step: Wait for brand to confirm if [amount]rate works for their budget
 Platforms: Instagram, TikTok, YouTube
 Last Our Email: 2026-10-06
 Follow-ups: 3

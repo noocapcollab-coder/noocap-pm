@@ -3,7 +3,7 @@ type: lead
 ---
 Deliverables: 1 dedicated YouTube video featuring Topview Drama, showcasing its features and how it simplifies AI-powered short-form content creation
 Contact Name: yiqi
-Next Step: Quote at [amount] waiting in Approvals
+Next Step: Quote at [amount]waiting in Approvals
 Platforms: YouTube
 Last Our Email: 2026-10-26
 Follow-ups: 2

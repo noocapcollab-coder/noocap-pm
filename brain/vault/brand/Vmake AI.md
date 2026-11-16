@@ -5,17 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Vmake AI, an AI video creation tool, coming through agency SSG.
+WHO: Vmake AI, an AI product, coming to us through the agency SSG MCN.
 
-CONTACTS: Ana, ana@ssgmcn.com, from agency SSG.
+CONTACTS: Ana from SSG MCN, email ana@ssgmcn.com, who signs as Ana. Copy ana@ssgmcn.com.
 
-DEALS: Lindsay, deliverables not yet specified, rate not yet specified, stage Price Agreed.
+DEALS: Lindsay | Deliverables: Not yet specified, Rate: Not yet specified | Price Agreed | Dates: Not yet specified.
 
-HOW THEY WORK: not yet specified.
+HOW THEY WORK: Not yet specified.
 
-WATCH OUT: none.
+WATCH OUT: Nothing noted yet.
 
-OPEN NOW: Waiting on brand: contract and brand brief.
+OPEN NOW: We owe the completed contract information form to ana@ssgmcn.com.
 
 
 ## Links

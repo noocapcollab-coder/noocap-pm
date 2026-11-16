@@ -5,17 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Duncan]].
 ## Brand wiki (from every email with them)
-WHO: AI Inspo, a product promoted via sponsored videos, coming to us directly through their business email.
+WHO: AI Inspo is an AI product/tool. They come to us directly.
 
-CONTACTS: Jessie, business@vivavideotech.com, AI Inspo Team, signs off as Jessie, must be copied with collab@buildroom.ai.
+CONTACTS: Jessie, business@vivavideotech.com, AI Inspo Team; luckyjessie.
 
-DEALS: Duncan, one Instagram reel (collab post with AI Inspo account) plus DM, cross post on Facebook and TikTok, [amount] Brief Received, delivery targeted before November 18, 2026.
+DEALS: Duncan | one Instagram reel (collab post with AI Inspo official account) plus DM, cross post on Facebook and TikTok | [amount]| Brief Received | Target dates: final video before November 18, 2026.
 
-HOW THEY WORK: We test the product beta version, write the script based on their guide and materials, send the script for review and approval, film and edit, send the first draft for review and final version for approval, then post. They require full legal name for contract, contract email, and PayPal details.
+HOW THEY WORK: Register on their official website (ai-inspo.com) to get an account ID starting with 4 so they can add testing credits; write the script based on production guide and materials; send the script for review; film and edit according to the approved script; send the first draft for review, then the final version for approval; post the video. Contract details require full legal name, email for receiving contract, PayPal name, and PayPal email.
 
-WATCH OUT: None listed.
+WATCH OUT: Testing credits cannot be added using an email address alone; they require the AI Inspo account ID starting with 4. They switched from their beta website (pre.ai-inspo.com) to the official website (ai-inspo.com).
 
-OPEN NOW: We owe Jessie Duncan's full legal name, contract email, PayPal details, the beta account ID (we provided the email), and the script.
+OPEN NOW: We owe: Send Duncan's AI Inspo account ID (from ai-inspo.com) and script to Jessie.
 
 
 ## Links

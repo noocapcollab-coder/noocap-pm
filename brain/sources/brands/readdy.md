@@ -30,7 +30,7 @@ Waiting on brand: payment for the invoiced deal.
 
 ## Deal with [[Lindsay]] (Invoiced, opened 2026-10-30)
 Last brand reply 2026-11-14, our last reply 2026-11-15.
-AGREED: Rate: [amount]. Deliverables: 1 short video (max 60s) posted on Instagram and YouTube Shorts, not TikTok, with cover, title and pinned comment. Script and first draft reviewed by Readdy before posting. Usage rights: not specified. Payment terms: not specified. Agreed dates: video publishing scheduled for Saturday (2026-11-14).
+AGREED: Rate: 1200. Deliverables: 1 short video (max 60s) posted on Instagram and YouTube Shorts, not TikTok, with cover, title and pinned comment. Script and first draft reviewed by Readdy before posting. Usage rights: not specified. Payment terms: not specified. Agreed dates: video publishing scheduled for Saturday (2026-11-14).
 HISTORY:
 2026-10-30 us accepted deal details.
 2026-11-03 us sent script.

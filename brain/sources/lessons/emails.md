@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Sign as the creator the brand is now working with
+When: A deal's video moved to another creator (a mix-up, a swap) and the PM writes to the brand
+Do: Sign and refer to the one creator the brand was last told about ("Brad's Team" once we told them Brad shoots it), and flag the deal so its Creator field can be corrected.
+Never: Name one creator in the body and sign with another creator's team, which repeats the mix-up the brand already complained about.
+Seen 1 time(s). Source: System check.
+## No tool-access ask when the brand already gave us an account
+When: A brand approves a script and the PM is about to ask for access to their tool on noocaptools@gmail.com
+Do: Read the thread first: if the brand already shared a login or trial account (email and password), or an earlier email of ours already asked for access on noocaptools@gmail.com (any earlier campaign in the same thread, the account stays on), skip the tool-access email. Greet the contact by the name they sign with, never by a non-Latin display name.
+Never: Ask for access the brand already gave, or greet someone by their email display name ("Hi 이승주") when they sign as "Seungjoo".
+Seen 2 time(s). Source: System check.
 ## Never say 'here is' something the email does not carry
 When: A brand asks for a file, image, caption, link or document we don't have on the deal yet
 Do: Only write 'here is X' or 'attached is X' when X is attached or pasted in the email. If we don't have it, ask Harsh for it and draft the reply once it arrives.

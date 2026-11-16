@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_trypost", "label": "TryPost", "file_type": "document", "source_file": "brands/trypost.md"}], "edges": [{"source": "brands_trypost", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/trypost.md"}], "hyperedges": []}

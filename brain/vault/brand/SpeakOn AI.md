@@ -5,17 +5,20 @@ type: brand
 
 Brand. Works with creators: [[Chris]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: SpeakOn AI is an AI note-taking and task management tool. They contact us directly through Cassie at their company NOTTA PTE. LTD.
+WHO: SpeakOn AI, a tech product, comes to us directly.
 
-CONTACTS: Cassie, heduodd@gmail.com, SpeakOn AI contact/billing. Emails signed by Cassie. Thread copied to collab@chriscordero.net.
+CONTACTS: Cassie, email heduodd@gmail.com, represents SpeakOn AI and NOTTA PTE. LTD. CC collab@chriscordero.net.
 
-DEALS: Chris, two vertical short-form videos (20-30s, 9:16, 1080x1920) for Instagram Reels plus optional TikTok and YouTube Shorts, each video [amount] USD. Each includes split-screen hero shot (0-6s) and hands-on agent demonstration (7s+). Video one script sent, post date November 12 no longer viable due to Chris attending Adobe MAX. Video two invoiced upon posting. First [amount] paid via Stripe on 2026-11-01. Second [amount] to invoice when second video posts.
+DEALS: SpeakOn AI x Chris: Two videos at [amount]each ([amount]total). First video: [amount]vertical short-form video (20,30s, 9:16, 1080 x 1920) for Instagram Reels, optional TikTok and YouTube Shorts, split-screen hero shot (0,6s), hands-on agent demonstration (7s+). Stage: Script Sent. Dates: First video paid on 2026-11-01, second video due in about a month.
 
-HOW THEY WORK: Brief sent first, script drafted and sent for approval, brand requests revisions via email thread, video links and ads code and invoice sent upon posting. Billing handled by invoice to NOTTA PTE. LTD., 9 Raffles Place #26-01 Republic Plaza Singapore 048619. Company details confirmed in email, invoice details not yet confirmed in writing.
+HOW THEY WORK: Brand requires video links, ads code, and an invoice upon posting. Billing details: Company: NOTTA PTE. LTD., Email: heduodd@gmail.com, Address: 9 Raffles Place, #26-01, Republic Plaza, Singapore 048619, Country: SG, Contact: Cassie.
 
-WATCH OUT: Do not assume invoice details are confirmed in writing even when company address and contact provided by email. Revised script must include all four visual demonstration requirements: SpeakON button press and note generation with readable output, voice-added detail result, Notion sync and task comparison with readable screens showing both sources and comparison output, confirmation step before saving.
+WATCH OUT: First video payment was wrongly marked paid on 22 Oct before anything was received. Cassie raised communication concerns regarding responsiveness.
 
-OPEN NOW: Revised script incorporating all four visual demonstrations must be sent to Cassie for approval. New confirmed post date to replace November 12 must be set and sent to Cassie. Cassie awaiting revised script as of 2026-11-11.
+OPEN NOW: Waiting on brand: Review the updated script and confirm approval.
+
+## Decisions from Harsh
+- 2026-11-16: Brand asked: Send the revised script incorporating the four visual demonstration requirements · Harsh answered: https://higgsfield-ai.notion.site/higgsfield-short-drama-greenscreen ·  · Chris x higgsfield
 
 
 ## Links

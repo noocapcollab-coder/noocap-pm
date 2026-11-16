@@ -3,10 +3,10 @@ type: deal
 ---
 Stage: Submitted
 Last brand reply 2026-11-03, our last reply 2026-11-09.
-AGREED: [amount] dedicated video + [amount] creative assets (3 short-form videos in formats 9x16, 4x5, 16x9). Payment scheduled July 14, net terms via Awin, received mid-August. Deliverables: one long-form YouTube integration video and three creative asset videos with ZenBusiness Velo branding. Usage rights and final delivery date not confirmed in emails.
+AGREED: [amount]dedicated video + [amount]creative assets (3 short-form videos in formats 9x16, 4x5, 16x9). Payment scheduled July 14, net terms via Awin, received mid-August. Deliverables: one long-form YouTube integration video and three creative asset videos with ZenBusiness Velo branding. Usage rights and final delivery date not confirmed in emails.
 
 HISTORY:
-2026-07-02 brand confirmed [amount] total fee and net payment terms.
+2026-07-02 brand confirmed [amount]total fee and net payment terms.
 2026-07-11 brand sent initial brief on ZenBusiness Velo and LLC formation.
 2026-07-15 us submitted script draft.
 2026-07-24 brand approved dedicated video script, requested paid media asset scripts in three formats.

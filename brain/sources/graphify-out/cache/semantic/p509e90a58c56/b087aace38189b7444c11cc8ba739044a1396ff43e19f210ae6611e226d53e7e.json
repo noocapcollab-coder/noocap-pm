@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_avori_avori", "label": "Avori", "file_type": "document", "source_file": "brands/avori.md"}], "edges": [{"source": "brands_avori_avori", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/avori.md"}], "hyperedges": []}

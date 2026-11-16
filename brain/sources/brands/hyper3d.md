@@ -3,21 +3,21 @@
 Brand. Works with creators: [[Lindsay]], [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: Hyper3D, an AI 3D creation platform (Tripo3D), coming through agency NoxInfluencer.
+WHO: Hyper3D, an AI 3D creation platform (Tripo3D). They come to us through an agency named NoxInfluencer.
 
-CONTACTS: Cherish, cherish@mcn.noxinfluencer.com, NoxInfluencer/Hyper3D agency representative, signs as Brand, copy collab@automateaiconsulting.com.
+CONTACTS: Cherish, cherish@mcn.noxinfluencer.com, NoxInfluencer agency. We sign as Lindsay Gonzales. We must copy collab@automateaiconsulting.com on all replies and use Reply All so everyone is in the loop.
 
-DEALS: Hyper3D x Lindsay | 1 sponsored short-form video per brief (focus on Tripo CLI, API, Agent-related workflows), [amount] | Stage: Script Sent | Target delivery November 5th, 2026.
+DEALS: Lindsay | 1 sponsored short-form video per brief | [amount] | stage Script Sent | target delivery November 5th, signed contract October 26th 2026.
 
-HOW THEY WORK: Brief and campaigns are shared via Feishu links and email; communication must stay on email with reply all to include collab@automateaiconsulting.com; sign up for Tripo API using the provided login email; scripts and initial model renders must be sent for review to check suitability and avoid rework.
+HOW THEY WORK: Communication must stay on email. Briefs are provided via Feishu links. Script review and model links are checked by the client to avoid production rework. The API account must be registered using the correct matching email. Production focus is on Tripo CLI, API, and AI Agent integration workflows.
 
-WATCH OUT: Do not move communication to WhatsApp. Ensure the API account is registered using the correct login email provided to the brand. Ensure scripts strictly match the client's brief (focus on CLI, API, Agent workflows) and include initial model renders to avoid rework.
+WATCH OUT: Do not move communication to WhatsApp. Always use Reply All and keep collab@automateaiconsulting.com on the thread so the team stays on the loop. Ensure the API account is registered with the correct email matching the project. Scripts must closely match the specific brief provided by the client (focusing on Tripo CLI, API, and Agent workflows) to avoid rejection and rework.
 
-OPEN NOW: Brand reviewed the script sent November 3rd and reported it does not match their brief, and that the API account was not registered using the same email. Waiting on us: rework the script based on the brief, ensure API account uses the correct email, and resend for approval.
+OPEN NOW: The brand rejected the initial script stating it does not match their brief and noted the API account was not registered using the correct email. We owe the updated script reworked according to their brief and confirmation of the correct API account registration.
 
 ## Deal with [[Lindsay]] (Script Sent, opened 2026-10-30)
-Last brand reply 2026-11-13, our last reply 2026-11-07.
-AGREED: rate [amount], deliverables 1 sponsored short-form video per brief, usage rights not confirmed, payment terms not confirmed, target delivery November 5th.
+Last brand reply 2026-11-16, our last reply 2026-11-07.
+AGREED: rate 1100, deliverables 1 sponsored short-form video per brief, usage rights not confirmed, payment terms not confirmed, target delivery November 5th.
 
 HISTORY:
 2026-10-26 us sent signed contract.

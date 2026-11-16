@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: YouTube review video of INMO GO3 AR glasses
-Next Step: Wait for brand to accept or counter the [amount] rate for 1 YouTube review
+Next Step: Wait for brand to accept or counter the [amount]rate for 1 YouTube review
 Platforms: YouTube
 Last Our Email: 2026-08-20
 Last Brand Email: 2026-08-20

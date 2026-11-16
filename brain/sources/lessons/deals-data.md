@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## An agency contact pitching another product is a new lead, not a reply on their old deal
+When: A brand or agency contact who already has a live deal writes on a new thread about a different product or campaign (new subject naming another brand, "partnership opportunity", a rate question)
+Do: Treat it as a new inquiry: file it on its own lead or deal for that product, take the rate or terms question to Harsh, and leave the old deal's stage, Next Action and memory as they were
+Never: Match it to the old deal only because the sender's address is the same, or set the old deal to Waiting on us with the other product's terms
+Seen 1 time(s). Source: System check.
 ## A script we offer once the brand sends the brief is not a script we owe
 When: Our side (creator's team or NOOCAP) asks the brand for the contract or brief and says we will start the script once it arrives
 Do: Record the brand as owing the brief and contract; Next Action is waiting on the brand, and follow-ups chase the brief on the normal 3-day rhythm.

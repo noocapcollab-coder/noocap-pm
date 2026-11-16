@@ -1,0 +1,1 @@
+{"nodes": [{"id": "scripts_lindsay_lindsay", "label": "Lindsay", "file_type": "concept", "source_file": "scripts/lindsay.md"}], "edges": [{"source": "scripts_lindsay_lindsay", "target": "creators_lindsay_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "scripts/lindsay.md"}], "hyperedges": []}

@@ -1,1 +1,1 @@
-{"nodes": [{"id": "brands_vinc_vinc", "label": "Vinc", "file_type": "document", "source_file": "brands/vinc.md"}], "edges": [], "hyperedges": []}
+{"nodes": [{"id": "brands_vinc_vinc", "label": "Vinc", "file_type": "document", "source_file": "brands/vinc.md"}, {"id": "brands_vinc", "label": "Vinc", "file_type": "document", "source_file": "brands/vinc.md"}], "edges": [{"source": "brands_vinc", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/vinc.md"}], "hyperedges": []}

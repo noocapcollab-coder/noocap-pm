@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_khrosco_khros_co", "label": "Khros Co", "file_type": "document", "source_file": "brands/khrosco.md", "_origin": "semantic"}], "edges": [{"source": "brands_khrosco_khros_co", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/khrosco.md", "_origin": "semantic"}], "hyperedges": []}

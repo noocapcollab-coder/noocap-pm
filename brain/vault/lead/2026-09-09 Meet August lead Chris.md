@@ -3,7 +3,7 @@ type: lead
 ---
 Deliverables: 1 dedicated video (IG Reel/TikTok/YT Short) with usage rights
 Contact Name: Charlotte
-Next Step: Chris to decide if [amount] offer meets his rate or decline; brand waiting for confirmation
+Next Step: Chris to decide if [amount]offer meets his rate or decline; brand waiting for confirmation
 Platforms: Instagram, TikTok, YouTube
 Last Our Email: 2026-10-06
 Follow-ups: 3

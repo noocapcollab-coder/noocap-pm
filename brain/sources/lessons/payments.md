@@ -46,7 +46,7 @@ Seen 1 time(s). Source: System check.
 When: A brand says 'we've already paid' with nothing attached
 Do: Check Stripe, then earlier proof in the deal that is dated on or after THIS invoice; if neither, ask for the transfer receipt or reference.
 Never: Mark it paid, use proof of an earlier payment (a first half, an old invoice) for a later invoice, or ask again for proof they already sent for this invoice.
-Seen 5 time(s). Source: Rulebook.
+Seen 6 time(s). Source: Rulebook.
 ## Upfront money does not close the deal
 When: A payment arrives before the video is posted
 Do: Record it as an upfront part payment and keep the deal open.
@@ -54,9 +54,9 @@ Never: Mark the whole deal Paid.
 Seen 1 time(s). Source: Rulebook.
 ## Brand asked for the invoice = raise it
 When: A brand asks for the invoice
-Do: Draft the invoice right away (Brad is invoiced by hand, never flag his Stripe).
+Do: Draft the invoice right away, To the address the brand named for invoices (Brad is invoiced by hand, never flag his Stripe). If the fee is missing on the deal, ask Harsh once for it instead of writing a reply.
 Never: Reply that it will come later.
-Seen 1 time(s). Source: Rulebook.
+Seen 2 time(s). Source: Rulebook.
 ## Retire a before-due reminder after the due date
 When: A payment chase is waiting and the due date passes
 Do: Replace it with a real past-due chase.
@@ -72,16 +72,3 @@ When: Writing an invoice email
 Do: One sentence and the payment details.
 Never: Add extra paragraphs or filler.
 Seen 1 time(s). Source: Rulebook.
-
-## The invoice guard: nothing wrong goes to a brand (Harsh, Nov 16)
-After INV-001 (bank details that weren't Chris's), "Pavinder" for Natalia, and TikTok on Readdy, every invoice is checked against what the brand and creator wrote before it is raised or sent (lib/invoiceguard.js):
-- Payment details come only from the **Creator Payment Details** table in Notion (NOOCAP MASTER SYSTEM), and only from a row Harsh ticked **Verified** with a Source. Details typed in chat or WhatsApp are saved there unverified and never printed. The AI never writes the verified fields. Any bank or PayPal line in an invoice email that isn't the verified one stops it.
-- Money emails greet only a name that signed one of the brand's emails, else "Hi there,".
-- Platforms on the deal must be ones the brand's emails mention.
-- The amount must match the agreed fee (and the part's %), the revenue sheet must agree, and the fee should appear in the emails (a warning to tick if it was agreed on a call).
-- The billed-to company must be one the brand wrote.
-- Posted links must be single posts on the right platform, not used on another deal; YouTube ones must be on the creator's channel and posted after the deal began.
-A contradiction stops the invoice; something that can't be checked shows as ⚠️ on the Invoices page for Harsh to tick.
-
-## Pay link first, bank or PayPal only when the brand asks (Harsh, Nov 16)
-Invoices go out with the Stripe pay link only. When a brand replies that they pay only by bank transfer, wire or PayPal, the PM drafts a reply with the creator's details from the verified row of Creator Payment Details (only the kind they asked for), with the invoice number as the payment reference. It always waits for Harsh's tap. If the row isn't verified yet, Harsh gets a Discord ping, the deal's Next Action says so, and the reply is drafted on the first run after he ticks Verified. Sending them doesn't reset the invoice dates.

@@ -1,36 +1,68 @@
 # Manyfast
 
-Brand. Works with creators: [[Chris]].
+Brand. Works with creators: [[Duncan]], [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: Manyfast is a platform where you start with a product plan that both you and your AI coding tool can work from, showing user flows, wireframes, and connecting to Claude Code through MCP to build a working prototype. We deal with them directly.
+WHO
+Manyfast is a software tool for organizing product requirements, user flows, and wireframes, and connecting to Claude Code through MCP to build working prototypes. They come to us directly.
 
-CONTACTS: Seungjoo Lee (Konan) handles content, script, revisions, and product support at konan@manyfast.io. Leo is CEO at leo@manyfast.io for contracts if we have one. Jun (Seungjoo Lee referred) handles invoices and payment arrangements at jun@manyfast.io. Chris Cordero is the creator at collab@chriscordero.net (must be copied). NOOCAP is on the thread via noocapcollab@gmail.com.
+CONTACTS
+Seungjoo Lee, also known as Konan, konan@manyfast.io, brand contact for content, script, revisions, and product support.
+Leo, leo@manyfast.io, CEO who reviews and signs contracts if needed.
+Jun, jun@manyfast.io, Operations Lead for billing and payment arrangements referencing Seungjoo Lee.
+Chris Cordero, creator, collab@chriscordero.net.
+Duncan, creator, collab@buildroom.ai.
+NOOCAP team, noocapcollab@gmail.com.
 
-DEALS: Chris | 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days | Rate: [amount] USD | Stage: Script Sent | Proposed publication date: 2026-11-28.
+DEALS
+Manyfast x Chris | 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days | [amount]| Script Approved | Publication date 2026-11-28
+Manyfast x Duncan | 1 short-form video, cross-posted to Instagram, TikTok, and Facebook | Rate not known | Brief Received | Dates not known
 
-HOW THEY WORK: Trial account provided at https://manyfast.io/en/ (login chriscordero@manyfast.io). Angle: tired of repeatedly explaining and correcting the same things when building with AI; start with a clear product plan. Demo idea: take a small app idea, organize requirements and specs in Manyfast, show user flow and wireframes, then connect Claude Code through MCP to build a working prototype. Promo code: CHRIS30 (30 percent off first month of Pro monthly plan, expires Feb 1, 2027). Tracking link: https://manyfast.io/en/?utm_source=instagram&utm_medium=influencer&utm_campaign=202611_chris&utm_content=reel. Instagram account: @manyfast.official. Brand has no standard contract template; if we have one, send to leo@manyfast.io. Send invoices and coordinate payment only with Jun at jun@manyfast.io (mention Seungjoo Lee referred). Keep content, script, revisions, and product support with Seungjoo on the email thread.
+HOW THEY WORK
+Content contact is Seungjoo Lee konan@manyfast.io. Billing contact is Jun jun@manyfast.io. Contracts if any go to CEO leo@manyfast.io, otherwise agreements stand on email threads. Trial accounts are provided for creators to explore the product. Promo code is CHRIS30 for 30 percent off the first month of the Pro monthly plan, expiring February 1, 2027. Tracking link is https://manyfast.io/en/?utm_source=instagram&utm_medium=influencer&utm_campaign=202611_chris&utm_content=reel. English Instagram account to tag is @manyfast.official.
 
-WATCH OUT: Do not leave the creator team off the CC line; always use Reply All. Keep content, script, revisions, and product questions on the main thread with Seungjoo, while payment and invoices go exclusively to Jun.
+WATCH OUT
+Always reply all to email threads so no team members are accidentally left off CC. Keep all content, script, revisions, and product questions with Seungjoo, and keep invoices and payment arrangements separate with Jun.
 
-OPEN NOW: Manyfast x Chris deal is at Script Sent stage; we sent the script PDF on 2026-11-15 with a proposed publication date of 2026-11-28, and we are waiting on the brand to approve the script or provide feedback.
+OPEN NOW
+Manyfast x Chris: We owe sending the initial invoice for [amount]to jun@manyfast.io and sharing the expected video draft date.
+Manyfast x Duncan: We owe Rudraksh writing the script.
 
-## Deal with [[Chris]] (Script Sent, opened 2026-11-10)
-Last brand reply 2026-11-13, our last reply 2026-11-15.
-AGREED: Rate: [amount]. Deliverables: 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days. Usage rights: not specified. Payment terms: 50% upon script approval, 50% once video is published if no contract is signed. Agreed dates: proposed publication date 2026-11-28.
+## Deal with [[Duncan]] (Brief Received, opened 2026-11-16)
+Last brand reply 2026-11-16, our last reply none.
+AGREED:
+Rate: not known yet
+Deliverables: 1 short-form video, cross-posted to Instagram, TikTok, and Facebook
+Usage rights: not known yet
+Payment terms: not known yet
+Agreed dates: not known yet
 
 HISTORY:
-2026-11-10 Chris agreed to [amount] including DM automation and bio link; asked for contract and brief.
+2026-11-16 us: Brief filed for Manyfast and Duncan
+
+BILLING:
+not yet
+
+OPEN NOW:
+We owe: Rudraksh writing the script
+
+## Deal with [[Chris]] (Script Approved, opened 2026-11-10)
+Last brand reply 2026-11-16, our last reply 2026-11-15.
+AGREED: Rate: [amount]. Deliverables: 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days. Usage rights: not specified. Payment terms: 50% upon script approval, 50% once video is published if no contract is signed. Agreed dates: publication date 2026-11-28.
+
+HISTORY:
+2026-11-10 Chris agreed to [amount]including DM automation and bio link; asked for contract and brief.
 2026-11-11 Brand confirmed move forward; sent trial account; shared product angle and tracking link.
 2026-11-11 Chris confirmed ready; asked brand to send contract and brief to thread.
 2026-11-12 Brand gave billing and content contact emails; asked when to expect script and posting date.
 2026-11-12 Chris requested reply all, brand brief on thread, and stated payment terms.
-2026-11-13 Brand confirmed agreement to [amount] trial details, creative brief, promo code CHRIS30, tracking link, and 50/50 payment terms.
+2026-11-13 Brand confirmed agreement to [amount]trial details, creative brief, promo code CHRIS30, tracking link, and 50/50 payment terms.
 2026-11-15 Us sent the script PDF for review with a proposed publication date of 2026-11-28.
+2026-11-16 Brand approved the script with minor adjustments, confirmed 2026-11-28 date, and requested initial invoice.
 
-BILLING: Brand billing contact is jun@manyfast.io (referencing Seungjoo Lee / Konan). No company billing details or invoices yet.
+BILLING: Brand billing contact is jun@manyfast.io (referencing Seungjoo Lee / Konan). No company billing address yet. Initial invoice for [amount]requested.
 
-OPEN NOW: Waiting on brand: approve the script or provide feedback.
+OPEN NOW: We owe: send the initial invoice for [amount]to jun@manyfast.io and share the expected video draft date.
 
 ## Inbound leads
 - Deliverables: Comment-keyword DM automation setup, bio link placement, trial account exploration and content creation · Next Step: Handed to noocapcollab: waiting for the brief · Platforms: Instagram · Last Our Email: 2026-11-15 · Last Brand Email: 2026-11-10 · Thread Subject: Paid Reel collaboration — Manyfast × Chris · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: konan@manyfast.io

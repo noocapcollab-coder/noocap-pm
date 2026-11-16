@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: 1 Instagram Reel with script, 2 revisions, 7-day performance recap; repost to TikTok or YouTube Shorts; 1 Instagram Story with link; link in bio for 7 days
-Next Step: Wait for brand to confirm if [amount] works with their budget
+Next Step: Wait for brand to confirm if [amount]works with their budget
 Platforms: Instagram, TikTok, YouTube Shorts
 Last Our Email: 2026-10-31
 Last Brand Email: 2026-10-30

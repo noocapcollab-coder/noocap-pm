@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: 1 IG reel + 30 day code + 30 day usage rights
-Next Step: Wait for brand to confirm [amount] rate
+Next Step: Wait for brand to confirm [amount]rate
 Platforms: Instagram
 Last Our Email: 2026-09-10
 Last Brand Email: 2026-09-10
