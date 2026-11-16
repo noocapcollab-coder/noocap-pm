@@ -2226,3 +2226,13 @@ test('WhatsApp new brief: never offered as an addition to a Posted, Invoiced or 
   assert.equal(isFinishedStage('Script Approved'), false);
   assert.equal(isFinishedStage('Price Agreed'), false);
 });
+
+test('a brand chasing the editor\'s revisions is never a WhatsApp ask for Harsh (Dreamina x Chris, Nov 16)', async () => {
+  const { teamWorkOnly } = await import('../lib/owed.js');
+  assert.equal(teamWorkOnly('Make the requested revisions to the video watermark and cover image logo and send them to the brand.'), true);
+  assert.equal(teamWorkOnly('Send the revised cut'), true);
+  // a date for the work, or something only we have, still goes to Harsh
+  assert.equal(teamWorkOnly('when can we expect the video draft'), false);
+  assert.equal(teamWorkOnly('Share the live link of the first video and the 60-day ad code'), false);
+  assert.equal(teamWorkOnly(''), false);
+});
