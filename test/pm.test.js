@@ -2236,3 +2236,17 @@ test('a brand chasing the editor\'s revisions is never a WhatsApp ask for Harsh 
   assert.equal(teamWorkOnly('Share the live link of the first video and the 60-day ad code'), false);
   assert.equal(teamWorkOnly(''), false);
 });
+
+test('a follow-up goes to the brand contact who wrote last in the conversation (ZenBusiness x Lindsay, Nov 16)', async () => {
+  const { latestBrandSender, transcriptLine } = await import('../lib/memory.js');
+  const tx = [
+    transcriptLine({ who: 'brand (Ronnie Choi <ronnie.choi@zenbusiness.com>)', date: '2026-10-22', subject: 'Re: Paid Collab', text: 'feedback' }),
+    transcriptLine({ who: 'us (NOOCAP)', date: '2026-11-01', subject: 'Re: Paid Collab', text: 'following up' }),
+    transcriptLine({ who: 'brand (Natalie Swanson <natalie.swanson@zenbusiness.com>)', date: '2026-11-03', subject: 'Re: Paid Collab', text: 'Please see the below feedback.' }),
+    transcriptLine({ who: 'us (NOOCAP)', date: '2026-11-05', subject: 'Re: Paid Collab', text: 'round 3' }),
+  ].join('\n\n');
+  assert.equal(latestBrandSender(tx), 'natalie.swanson@zenbusiness.com');
+  // the escaped form Notion shows on the page reads the same
+  assert.equal(latestBrandSender('📨 2026-11-03 · brand (Natalie Swanson \\<natalie.swanson@zenbusiness.com>) · Re: x'), 'natalie.swanson@zenbusiness.com');
+  assert.equal(latestBrandSender('📨 2026-11-05 · us (NOOCAP) · Re: x'), '');
+});
