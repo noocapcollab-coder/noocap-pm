@@ -33,6 +33,12 @@ export default async function handler(req, res) {
     try { const { approveAndSend } = await import('../lib/outbox.js'); return res.status(200).json(await approveAndSend(String(req.query.sendoutbox), {})); }
     catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?cleancard=<card id>[&dry=1]: show only the approved script on a video card, the rest kept in Card history (Nov 16)
+  if (req.query?.cleancard) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const C = await import('../lib/cardclean.js'); return res.status(200).json(await C.cleanCardToApprovedScript(String(req.query.cleancard).replace(/-/g, ''), { dryRun: req.query.dry === '1' })); }
+    catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // ?paytest=Chris: dry run of the invoice payment flow for one creator (Nov 16). Reads only: nothing is drafted or sent.
   if (req.query?.paytest) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
