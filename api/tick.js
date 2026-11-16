@@ -33,6 +33,32 @@ export default async function handler(req, res) {
     try { const { approveAndSend } = await import('../lib/outbox.js'); return res.status(200).json(await approveAndSend(String(req.query.sendoutbox), {})); }
     catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?paytest=Chris: dry run of the invoice payment flow for one creator (Nov 16). Reads only: nothing is drafted or sent.
+  if (req.query?.paytest) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const G = await import('../lib/invoiceguard.js');
+      const I = await import('../lib/invoicing.js');
+      const { openDeals } = await import('../lib/briefs.js');
+      const creator = String(req.query.paytest);
+      const row = await G.verifiedRow(creator);
+      const deals = (await openDeals({ withClosed: true })).filter((d) => d.creator === creator && ['Posted', 'Invoiced'].includes(d.stage));
+      const deal = deals[0] || { creator, brand: 'Test brand', finalRate: 1000, invoiceNumber: 'INV-TEST' };
+      const samples = { bank: 'Our finance team only pays by bank transfer, can you share the bank details?', paypal: "We can't pay through Stripe, do you have PayPal?", none: 'Thanks, we will pay this week.' };
+      const asks = Object.fromEntries(Object.entries(samples).map(([k, t]) => [k, G.asksOtherPayment(t)]));
+      const email = (want) => { if (!row || row.unverified) return null; const det = G.detailsFor(row, want) || G.detailsFor(row, 'any'); return G.paymentDetailsEmail({ name: 'Sophie', creator, amount: deal.invoiceAmount || deal.finalRate, number: String(deal.invoiceNumber || '').split(/,\s*/).pop() || '', details: det, want }); };
+      const guard = deals[0] ? (await G.checkInvoice(deals[0], { amount: Number(deal.invoiceAmount || deal.finalRate) || undefined })).problems : [];
+      return res.status(200).json({
+        creator, verified: !!row && !row.unverified, row_url: row?.url,
+        detection: asks,
+        bank_reply: email('Bank transfer'), paypal_reply: email('PayPal'),
+        invoice_footer: await I.invoiceText({ creator }),
+        stray_check_on_bank_reply: email('Bank transfer') ? G.strayPaymentDetails(email('Bank transfer'), (await G.creatorPayment(creator)).text) : null,
+        deal_checked: deals[0] ? `${deals[0].brand} × ${creator} (${deals[0].stage})` : null,
+        guard: guard.map((g) => `${g.ok ? 'OK' : g.block ? 'STOP' : 'WARN'} ${g.t}`),
+      });
+    } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // ?ytcheck=Lindsay: can the PM read this creator's YouTube Shorts, and which way (API key, feed or page)?
   if (req.query?.ytcheck) {
     try {
