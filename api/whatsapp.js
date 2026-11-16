@@ -608,6 +608,17 @@ async function showDrafts(st, text) {
 // Brad / Emtech / Chris send their own deal info ("Here's the Luma info, brief, due Oct 21") and Harsh forwards it here.
 // The PM works out whose deal it is and which brand, shows that with buttons, and on ✅ files it exactly like a brief
 // email: a deal row (Brief Received, Needs Check), a card on the creator's board with the brief, and Rudraksh pinged.
+// A tap that arrives before the offer's own save finishes: look again in the saved chat a few times before giving up
+async function findPending(st, finder) {
+  for (let i = 0; i < 3; i++) {
+    const p = finder(st);
+    if (p) return p;
+    await new Promise((r) => setTimeout(r, 2500));
+    const { mergeMessages } = await import('../lib/whatsapp.js');
+    st.messages = mergeMessages(st.messages, (await loadState(st.person, { fresh: true })).messages);
+  }
+  return finder(st);
+}
 const pendingDeal = (st) => [...st.messages].reverse().slice(0, 12).find((x) => x.meta === 'deal-confirm' && !x.resolved && Date.now() - Date.parse(x.at) < 6 * 36e5);
 
 async function maybeNewDeal(st, text, forwarded) {
@@ -654,13 +665,16 @@ async function maybeNewDeal(st, text, forwarded) {
   const head = `🆕 *New brand deal: ${x.brand || 'brand?'} × ${x.creator || 'whose?'}*\n• ${x.gist}${x.due ? `\n• Due: ${x.due}` : ''}${already ? `\n• ${x.creator} already has a "${already.brand}" deal (${already.stage}), so I'd add this brief to it` : ''}`;
   const unwrapped = t.replace(/https?:\/\/(?:www\.)?google\.com\/url\?q=([^&\s]+)[^\s]*/gi, (m, q) => { try { return decodeURIComponent(q); } catch { return m; } });
   const entry = { role: 'assistant', content: head, meta: 'deal-confirm', dealText: unwrapped.slice(0, 9000), brand: x.brand, creator: x.creator || null, dealId: already?.id || null, at: new Date().toISOString() };
+  // Saved BEFORE the buttons go out, so a tap a few seconds later finds it (Higgsfield × Chris, Nov 16)
+  if (!x.creator) entry.whose = true;
+  st.messages.push(entry);
+  await saveState(st);
   if (!x.creator) {
     entry.whose = true;
     await sendText(st.person.number, `${head}\n\nWhose deal is this? Reply with the creator's name (${roster.join(', ')}).`);
   } else {
     await sendButtons(st.person.number, `${head}\n\nFile it? I'll ${already ? 'add the brief to that deal and its card' : `open the deal, make the card on ${x.creator}'s board with the brief`} and tell Rudraksh.\n\n*WhatsApp* = ${x.creator} handles the brand, so I never email them. *Email* = we run it from our inbox.\nWrong creator? Just reply with the right name.`, [{ id: 'dealwa', title: '✅ File · WhatsApp' }, { id: 'dealmail', title: '📧 File · Email' }, { id: 'dealno', title: '✖️ Not a deal' }]);
   }
-  st.messages.push(entry);
   return true;
 }
 
@@ -700,6 +714,7 @@ async function offerMoreVideos(st, t, x, deals, roster) {
   const entry = { role: 'assistant', meta: 'more-confirm', brand: deal?.brand || x.brand, creator, videos, missing, at: new Date().toISOString() };
   st.messages.push(entry);
   await showMore(st, entry, roster);
+  await saveState(st);
   return true;
 }
 async function showMore(st, entry, roster) {
@@ -717,7 +732,7 @@ async function showMore(st, entry, roster) {
   }
 }
 async function addMoreVideos(st) {
-  const p = pendingMore(st);
+  const p = await findPending(st, pendingMore);
   if (!p) { await say(st, 'Those videos are no longer waiting. Send them again.'); return; }
   if (!p.creator) { await say(st, 'Whose videos are they? Reply with the creator\'s name.'); return; }
   p.resolved = 'adding'; await saveState(st);
@@ -746,17 +761,18 @@ async function offerScriptNotes(st, t, x, deals, roster) {
   const creator = x.creator || deal?.creator || null;
   const entry = { role: 'assistant', meta: 'notes-confirm', notes: t.slice(0, 6000), brand: deal?.brand || x.brand, creator, at: new Date().toISOString() };
   entry.content = `✏️ *Script feedback: ${entry.brand || 'brand?'} × ${creator || 'whose?'}*\n• ${x.gist}`;
+  st.messages.push(entry);
+  await saveState(st); // saved before the buttons go out, so a quick tap finds it
   if (!creator) {
     entry.whose = true;
     await sendText(st.person.number, `${entry.content}\n\nWhose script is this? Reply with the creator's name (${roster.join(', ')}).`);
   } else {
     await sendButtons(st.person.number, `${entry.content}\n\nSend it to Rudraksh? I'll ping him on Discord with the notes, add them to the video card and move the card back to Script Draft.\nWrong creator? Just reply with the right name.`, [{ id: 'noteson', title: '✏️ Send to Rudraksh' }, { id: 'notesno', title: '✖️ Don\'t send' }]);
   }
-  st.messages.push(entry);
   return true;
 }
 async function sendScriptNotes(st) {
-  const p = pendingNotes(st);
+  const p = await findPending(st, pendingNotes);
   if (!p) { await say(st, 'Those notes are no longer waiting. Forward them again.'); return; }
   if (!p.creator) { await say(st, 'Whose script is it? Reply with the creator\'s name.'); return; }
   p.resolved = 'sending'; await saveState(st);
@@ -770,7 +786,7 @@ async function sendScriptNotes(st) {
 }
 
 async function askWhose(st) {
-  const p = pendingDeal(st);
+  const p = await findPending(st, pendingDeal);
   if (!p) { await say(st, 'That deal is no longer waiting. Forward it again.'); return; }
   const { BOARDS } = await import('../lib/tools.js');
   p.whose = true; p.creator = null; p.dealId = null;
@@ -778,7 +794,7 @@ async function askWhose(st) {
 }
 
 async function fileNewDeal(st, channel = 'WhatsApp') {
-  const p = pendingDeal(st);
+  const p = await findPending(st, pendingDeal);
   if (!p) { await say(st, 'That deal is no longer waiting. Forward it again.'); return; }
   if (!p.creator) { await askWhose(st); return; }
   p.resolved = 'filing';
