@@ -44,6 +44,15 @@ async function later(fn) {
   }
 }
 
+async function withDeadline(m, run) {
+  let done = false;
+  const timer = setTimeout(async () => {
+    if (done) return;
+    try { const p = personByNumber(m.from); if (p) await sendText(p.number, "⚠️ That one took too long and I couldn't finish it. Send it again and I'll pick it up."); } catch { /* nothing more to do */ }
+  }, 280000);
+  try { return await run; } finally { done = true; clearTimeout(timer); }
+}
+
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     const q = req.query || {};
@@ -69,7 +78,10 @@ export default async function handler(req, res) {
   if (!incoming.length) return res.status(200).end(); // delivery / read receipts
 
   // Side by side, so messages that arrive in one delivery can see each other and be read as one (readBurst)
-  const work = async () => { await Promise.all(incoming.map((m) => handleMessage(m).catch((err) => console.error('WhatsApp message failed', err.message)))); };
+  // A run that is cut off by the time limit used to leave the message with no answer at all (Higgsfield × Chris,
+  // Nov 16, 12:15: timed out after 60 s, Harsh got nothing). The limit is now 300 s, and a message still running
+  // near the limit tells Harsh it didn't finish instead of going quiet.
+  const work = async () => { await Promise.all(incoming.map((m) => withDeadline(m, handleMessage(m)).catch((err) => console.error('WhatsApp message failed', err.message)))); };
   const inline = await later(work);
   if (inline) await work();
   return res.status(200).end();

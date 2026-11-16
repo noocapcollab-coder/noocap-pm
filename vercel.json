@@ -26,7 +26,7 @@
       "maxDuration": 60
     },
     "api/whatsapp.js": {
-      "maxDuration": 60,
+      "maxDuration": 300,
       "includeFiles": "brain/{sources/*/*.md,graphify-out/graph.json}"
     },
     "api/daily.js": {
