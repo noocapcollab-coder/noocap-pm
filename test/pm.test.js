@@ -2171,3 +2171,14 @@ test('Send to Script Writer on card (2) never moves or notes video 1 and leaves 
   assert.equal(scriptPingTarget(deal, 'https://www.notion.so/40f508e99dda81d0b637f7d05510295d').touchDeal, true);
   assert.deepEqual(scriptPingTarget(deal, null), { target: deal.linkedVideo, touchDeal: true });
 });
+
+// ---------- sibling cards of an email deal are not orphan scripts (CapCut x Lindsay (2)/(3), Nov 16) ----------
+test('Script-ready WhatsApp PDF never goes for card (2)/(3) of an email deal, still goes for WhatsApp deals', async () => {
+  const { cardOfEmailDeal } = await import('../lib/heartbeat.js');
+  const email = { brand: 'CapCut', creator: 'Lindsay', threadId: '1a1cadfa732fd290', channel: 'Email', linkedVideo: 'https://app.notion.com/p/CapCut-Lindsay-415508e99dda81aa8f7cd2b1b1c0aa01' };
+  const wa = { brand: 'Higgsfield.AI', creator: 'Lindsay', threadId: '', channel: 'WhatsApp', linkedVideo: 'https://app.notion.com/p/x-415508e99dda812eaedccdfbd165398d' };
+  assert.equal(cardOfEmailDeal({ title: 'CapCut × Lindsay (2)', creator: 'Lindsay' }, [email, wa]), true);
+  assert.equal(cardOfEmailDeal({ title: 'CapCut × Lindsay (3)', creator: 'Lindsay' }, [email]), true);
+  assert.equal(cardOfEmailDeal({ title: 'Higgsfield.AI × Lindsay (2)', creator: 'Lindsay' }, [email, wa]), false);
+  assert.equal(cardOfEmailDeal({ title: 'CapCut × Chris (2)', creator: 'Chris' }, [email]), false);
+});
