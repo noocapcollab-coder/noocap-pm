@@ -123,3 +123,6 @@ Once a cut (first or revised) goes to the brand, the PM follows up every 3 days,
 
 ## A name Harsh uses may be the agency, not the brand (Nov 16)
 "Narrativegroup gave me that contract" got "you don't have a deal or lead under Narrativegroup", though HoneyBook (MyCo) × Chris came from Dori at narrativegroup.co. Before saying a name is unknown, the PM looks it up as a brand AND as an agency or contact (email domains, CC, billing company, subjects) and searches the second brain, then says which brand it is and how they are connected.
+
+## Every round of brand changes goes to the editor and back to the brand (Harsh, Nov 16)
+"There can be multiple changes of brand, we can't ignore those, it should be shared with the brand anyhow." Round 2, 3 and later are handled like round 1: the changes are posted in the editor's Discord thread as soon as the email is read, each round stamps "Brand Changes At" on the edit tracker row, and the revised cut is emailed to the brand when the editor is done, even though Frame.io keeps the same link for every version. A cut is only skipped as a repeat when the brand already got one email per round plus the first cut.
