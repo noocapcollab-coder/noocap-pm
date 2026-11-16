@@ -24,3 +24,9 @@ test('a row left on Changes from an older round does not stop the chase after a 
   assert.equal(changesAfterCut(rows, '2026-11-09T05:37:00.000Z'), false);
   assert.equal(changesAfterCut([{ status: 'Changes', changesAt: '2026-11-10T09:00:00.000Z' }], '2026-11-09T05:37:00.000Z'), true);
 });
+
+import { latestChangeRound } from '../lib/brandsend.js';
+test('round 2 of brand changes counts from its own time, not round 1 (Dreamina × Chris, Nov 16)', () => {
+  assert.equal(latestChangeRound({ changesAt: '2026-11-14T09:18:00.000Z', brandChangesAt: '2026-11-15T11:00:00.000Z' }), '2026-11-15T11:00:00.000Z');
+  assert.equal(latestChangeRound({ changesAt: '2026-11-14T09:18:00.000Z' }), '2026-11-14T09:18:00.000Z');
+});
