@@ -2380,3 +2380,17 @@ test('content money words reach the script writer, deal money never does (CapCut
   for (const l of ['Our budget for this campaign is $500', 'The fee is 50% upfront', 'Your rate works for us', 'We will pay on posting', 'Budget is 800 USD'])
     assert.equal(forScriptWriter(`head\n${l}`), 'head', l);
 });
+
+test('safety net: an ask the PM did nothing about is reported (Nov 17)', async () => {
+  const { missedAsks } = await import('../lib/inbox.js');
+  const nov16 = 'Hi, your video has passed the review. Please publish it as required as soon as possible. Kindly let me know immediately after posting and share the 60-day adcode with me.';
+  // what the PM did on Nov 16 before the fix: filed it as a script approval
+  assert.deepEqual(missedAsks(nov16, { event: 'script_approved', from_role: 'brand' }, 'Deal Script Approved, video 6- To Film'), ['approved a video or asked us to publish', 'asked for the ad code']);
+  // handled properly: nothing to report
+  assert.deepEqual(missedAsks(nov16, { event: 'video_feedback', from_role: 'brand' }, 'Deal Approved, Video Intake set to To Post'), []);
+  const nov17 = 'Hi, please publish it as soon as possible.\n\nHere are the revision notes for the second script: the hook should focus on budget pressure.';
+  assert.deepEqual(missedAsks(nov17, { event: 'script_changes', from_role: 'brand' }, 'Script changes sent to Rudraksh · video approved: CapCut × Chris set to To Post'), []);
+  assert.deepEqual(missedAsks(nov17, { event: 'brand_reply', from_role: 'brand' }, 'Harsh notified'), ['approved a video or asked us to publish', 'sent notes on a script']);
+  assert.deepEqual(missedAsks('Can you send the invoice with your bank details?', { event: 'brand_reply', from_role: 'brand' }, 'Left unread for Harsh to reply [unread thread:1]'), []);
+  assert.deepEqual(missedAsks(nov16, { event: 'brand_reply', from_role: 'noocap' }, ''), []);
+});
