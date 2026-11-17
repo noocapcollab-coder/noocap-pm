@@ -1251,8 +1251,9 @@ test('heartbeat: script/video approval waits use the 3-day gap even after a bran
   const fs = await import('node:fs');
   const hb = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
   assert.match(hb, /const holdDays = cardWaits \|\| waitStage === 'Script Sent' \|\| waitStage === 'Submitted' \? 3 : 7;/);
-  assert.match(hb, /const SCRIPT_FOLLOW_UPS = 5;/);
   assert.match(hb, /const SCRIPT_FOLLOW_GAP = 3;/);
+  // Nov 17: once agreed, a script, brief or contract the brand owes us is chased until they answer
+  assert.match(hb, /const maxChase = cutWait \|\| scriptWait \? Infinity : MAX_FOLLOW_UPS;/);
   assert.match(hb, /const gapNow = cutWait \|\| scriptWait \? SCRIPT_FOLLOW_GAP : followGap/);
   assert.match(hb, /daysSince\(lastMail\.at\) >= holdDays/);
 });
@@ -2472,4 +2473,16 @@ test('product price talk reaches the script writer (Teamily AI x Brad, Nov 17)',
   assert.equal(forScriptWriter(`head\n${l}`), `head\n${l}`);
   assert.equal(forScriptWriter('head\nThe price for this collab is 1,500 USD'), 'head');
   assert.equal(forScriptWriter('head\nOur budget for this is tight'), 'head');
+});
+
+// Nov 17: Tripo 3D x Valeri sat at Negotiating after we accepted $650 and asked for the contract; Valchy x Valeri had no
+// email dates at all. Neither was chased.
+test('heartbeat: accepted offer awaiting contract is chased; dateless deals count from creation', async () => {
+  const hb = await import('../lib/heartbeat.js');
+  const mem = 'AGREED: x<br /><br />HISTORY:<br />2026-10-12 us / NOOCAP counter-offered $800 per video.<br />2026-11-11 brand / Zeelot proposed $650 per video.<br />2026-11-11 us / NOOCAP accepted $650 per video and requested contract.<br /><br />BILLING: not yet';
+  assert.equal(hb.weAcceptedAndAsked(mem), true);
+  assert.equal(hb.weAcceptedAndAsked(mem.replace('2026-11-11 us / NOOCAP accepted $650 per video and requested contract.', '2026-11-12 brand sent the contract.')), false);
+  assert.equal(hb.weAcceptedAndAsked('HISTORY:<br />2026-11-11 us countered at $900.'), false);
+  assert.equal(hb.latestOurEmail({ created: '2026-11-05T18:05:00.000Z' }, null, null), '2026-11-05T18:05:00.000Z');
+  assert.equal(hb.latestOurEmail({ lastOur: '2026-11-10', created: '2026-11-05' }, null, null), '2026-11-10');
 });
