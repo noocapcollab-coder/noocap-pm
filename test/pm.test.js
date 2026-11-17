@@ -2486,3 +2486,15 @@ test('heartbeat: accepted offer awaiting contract is chased; dateless deals coun
   assert.equal(hb.latestOurEmail({ created: '2026-11-05T18:05:00.000Z' }, null, null), '2026-11-05T18:05:00.000Z');
   assert.equal(hb.latestOurEmail({ lastOur: '2026-11-10', created: '2026-11-05' }, null, null), '2026-11-10');
 });
+
+// System check Nov 17 night: test bank zeely-second-half-sent-no-proof-nov13 broke after the 14:54 commits because
+// "was also sent" did not count as a payment claim; the AI reader alone decided and it said brand_reply
+test('payment claim: "the second half of the payment was also sent" is a claim (Zeely x Duncan, Nov 13)', async () => {
+  const I = await import('../lib/inbox.js');
+  const text = "Hi  Duncan's Team,\n\nI see that the second half of the payment was also sent, could you please check it on your side?\n\nBest,\nVictoria";
+  assert.equal(I.isPaymentClaimed(text), true);
+  assert.equal(I.isPaymentClaimed('The payment has also been sent today'), true);
+  assert.equal(I.isPaymentClaimed('The payment will be sent next week'), false);
+  const x = I.applyTextGuards({ event: 'brand_reply', from_role: 'brand', needs_reply: true }, { text });
+  assert.equal(x.event, 'payment_confirmed');
+});
