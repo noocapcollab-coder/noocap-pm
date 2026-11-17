@@ -2350,3 +2350,24 @@ test('a thread subject naming YouTube does not contradict a brief for Instagram,
   assert.deepEqual(platformsIn(bodies), []);
   assert.ok(typeof checkInvoice === 'function');
 });
+
+test('a video approval is never lost to a script event in the same email (CapCut x Chris, Nov 16-17)', async () => {
+  const { applyTextGuards, videoApprovalIn, pickScriptCards } = await import('../lib/inbox.js');
+  const nov16 = 'Hi, your video has passed the review. Please publish it as required as soon as possible.\n\nKindly let me know immediately after posting and share the 60-day adcode with me.';
+  const nov17 = 'Hi, please publish it as soon as possible. Our client is waiting for your release.\n\nHere are the revision notes for the second script: The hook should focus on budget pressure.\n\nFor the third script, please use this new brief.';
+  assert.ok(videoApprovalIn(nov16));
+  assert.ok(videoApprovalIn(nov17));
+  assert.ok(!videoApprovalIn('Here is the script, please review it and let us know.'));
+  assert.ok(!videoApprovalIn('The script has been approved, please film the video.'));
+  const a = applyTextGuards({ event: 'script_approved', from_role: 'brand' }, { text: nov16 });
+  assert.equal(a.event, 'video_feedback'); assert.equal(a.video_approved, true);
+  const b = applyTextGuards({ event: 'script_changes', from_role: 'brand', feedback: 'Second script: hook on budget pressure' }, { text: nov17 });
+  assert.equal(b.event, 'script_changes'); assert.equal(b.also_video_approved, true);
+  // our own email never approves anything
+  assert.ok(!applyTextGuards({ event: 'brand_reply', from_role: 'noocap' }, { text: nov16 }).also_video_approved);
+  // script notes go to the cards still at scripting, never the filmed video
+  const cards = [{ url: 'v1', num: 9 }, { url: 'v2', num: 5 }, { url: 'v3', num: 5 }, { url: 'v4', num: 7 }];
+  assert.deepEqual(pickScriptCards(cards), ['v2', 'v3']);
+  assert.deepEqual(pickScriptCards([{ url: 'v1', num: 5 }, { url: 'v2', num: 5 }]), ['v1']);
+  assert.deepEqual(pickScriptCards([{ url: 'v1', num: 10 }]), []);
+});
