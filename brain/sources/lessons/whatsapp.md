@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A queued WhatsApp message is sent once
+When: Asks and contract alerts queued while the chat was closed go out at the morning round-up or when the chat reopens
+Do: Send each queued message once and mark it sent so no later run sends it again; before sending, check the same text has not already gone out since it was queued.
+Never: Send the same ask or contract alert again on every heartbeat.
+Seen 1 time(s). Source: System check.
+## A file sent in the WhatsApp chat goes only to the brand named with it
+When: Harsh or Pratham drops a contract or file into the WhatsApp chat, with or without a caption, and sometimes names the brand in the next message
+Do: Match the file to a deal only from the brand named in the caption or the very next message, the file name, or the brand's name as whole words in the contract text. If the file name names a different company than the deal (Automate AI Consulting x Auremere is Lindsay's), or the brand is unclear, ask which brand and wait.
+Never: Auto-send a signed contract to a deal matched by a few letters inside the contract text, or to a deal of a different creator than the one whose company is on the file.
+Seen 1 time(s). Source: System check.
 ## One WhatsApp card per draft
 When: A draft is shown to Harsh or Pratham on WhatsApp
 Do: Send the draft card once; if the person writes again about the same draft, answer in text or act on it
@@ -41,7 +51,7 @@ Seen 1 time(s). Source: Rulebook.
 When: A brand asks for ad codes, a UID, an account email, a contract, files, alone or together with a script
 Do: Ask Harsh on WhatsApp, then draft from his answer word for word.
 Never: Draft a promise email instead.
-Seen 7 time(s). Source: Rulebook.
+Seen 8 time(s). Source: Rulebook.
 ## One WhatsApp message per thing
 When: Alerting Harsh
 Do: Send each thing once. Discord pm alerts are mirrored to WhatsApp, so never send both.

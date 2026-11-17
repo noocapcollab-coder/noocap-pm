@@ -5,30 +5,27 @@ type: brand
 
 Brand. Works with creators: [[Duncan]], [[Chris]].
 ## Brand wiki (from every email with them)
-WHO
-Manyfast is a software tool for organizing product requirements, user flows, and wireframes, and connecting to Claude Code through MCP to build working prototypes. They come to us directly.
+WHO: Manyfast provides an AI development platform that turns product ideas into user flows, wireframes, and working prototypes connected to Claude Code through MCP. They come to us directly. Their marketing agency is Slate Media Co., Ltd.
 
-CONTACTS
-Seungjoo Lee, also known as Konan, konan@manyfast.io, brand contact for content, script, revisions, and product support.
-Leo, leo@manyfast.io, CEO who reviews and signs contracts if needed.
-Jun, jun@manyfast.io, Operations Lead for billing and payment arrangements referencing Seungjoo Lee.
-Chris Cordero, creator, collab@chriscordero.net.
-Duncan, creator, collab@buildroom.ai.
-NOOCAP team, noocapcollab@gmail.com.
+CONTACTS:
+Seungjoo Lee (Konan) - konan@manyfast.io - Content and production discussions / Brand contact
+Jun (이동준) - jun@manyfast.io - Operations Lead and payments contact
+Leo - leo@manyfast.io - CEO (for contract review if needed)
+NOOCAP Team - noocapcollab@gmail.com - signs and must be copied
 
-DEALS
-Manyfast x Chris | 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days | [amount]| Script Approved | Publication date 2026-11-28
-Manyfast x Duncan | 1 short-form video, cross-posted to Instagram, TikTok, and Facebook | Rate not known | Brief Received | Dates not known
+DEALS:
+Manyfast x Duncan | 1 short-form video cross-posted to Instagram, TikTok, and Facebook | [amount] | Invoiced | Payment terms: 100% upfront
+Manyfast x Chris | 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days | [amount] | Invoiced | Payment terms: 50% upon script approval, 50% after publication (publication date: 2026-11-28)
 
-HOW THEY WORK
-Content contact is Seungjoo Lee konan@manyfast.io. Billing contact is Jun jun@manyfast.io. Contracts if any go to CEO leo@manyfast.io, otherwise agreements stand on email threads. Trial accounts are provided for creators to explore the product. Promo code is CHRIS30 for 30 percent off the first month of the Pro monthly plan, expiring February 1, 2027. Tracking link is https://manyfast.io/en/?utm_source=instagram&utm_medium=influencer&utm_campaign=202611_chris&utm_content=reel. English Instagram account to tag is @manyfast.official.
+HOW THEY WORK:
+Content, script, revisions, and product support are handled directly with Seungjoo (Konan). Invoices, billing details, and payment arrangements are handled directly with Jun. They do not have a standard contract template; creator contracts must be sent to their CEO Leo for review and signature, otherwise they proceed on terms confirmed in the email thread. Creators are given trial account access (e.g., https://manyfast.io/en/) to explore the platform before developing scripts. Videos should reflect the creator's style while showcasing the product value, user flow, wireframes, and working prototype. Promotion codes and tracking links are provided per deal (e.g., CHRIS30 for 30 percent off the first month of the Pro monthly plan). Comment-keyword automation is used to send viewers the code and signup link, paired with a bio link. English Instagram account is @manyfast.official. Invoices must be issued in the name of their marketing agency, Slate Media Co., Ltd., and sent to jun@manyfast.io with a Stripe or PayPal payment link.
 
-WATCH OUT
-Always reply all to email threads so no team members are accidentally left off CC. Keep all content, script, revisions, and product questions with Seungjoo, and keep invoices and payment arrangements separate with Jun.
+WATCH OUT:
+Do not mix up contacts: keep content and script discussions with Seungjoo (Konan) and payment matters strictly with Jun at jun@manyfast.io. Do not bill invoices to Manyfast directly; they must always be billed to their marketing agency, Slate Media Co., Ltd.
 
-OPEN NOW
-Manyfast x Chris: We owe sending the initial invoice for [amount]to jun@manyfast.io and sharing the expected video draft date.
-Manyfast x Duncan: We owe Rudraksh writing the script.
+OPEN NOW:
+Waiting on brand for Manyfast x Duncan: payment of invoice INV-005 ([amount]) via Stripe.
+Waiting on brand for Manyfast x Chris: payment of the initial 50% invoice ([amount]) via Stripe, and awaiting the first video draft review ahead of the November 28 publication date.
 
 
 ## Links

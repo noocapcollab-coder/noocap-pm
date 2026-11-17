@@ -1,8 +1,8 @@
 ---
 type: deal
 ---
-Stage: Submitted
-Last brand reply 2026-11-16, our last reply 2026-11-16.
+Stage: Approved
+Last brand reply 2026-11-17, our last reply 2026-11-16.
 AGREED: [amount]total. 3 short-form videos. Signed contract via GrowMaxValue agency. Usage rights not stated. Payment terms not stated.
 
 HISTORY:
@@ -16,10 +16,11 @@ HISTORY:
 2026-11-14 brand / Mia Brown confirmed video submitted for review, shared second and third briefs, set publishing deadline to Nov 25 Beijing Time
 2026-11-16 us / Sent scripts for videos two and three for brand review and approval
 2026-11-16 brand / Mia Brown approved first video, shared posting instructions and requirements
+2026-11-17 brand / Mia Brown urged publishing the first video, provided revision notes and updated briefs for scripts two and three
 
 BILLING: not yet
 
-OPEN NOW: We owe: Publish the first video, notify the brand, share the 60-day adcode, and follow up on scripts for videos two and three.
+OPEN NOW: We owe: Publish the first video, notify the brand, share the 60-day adcode, and update scripts for videos two and three based on the latest brand feedback.
 
 ## Links
 - [[CapCut]]

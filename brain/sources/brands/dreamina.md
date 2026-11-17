@@ -3,30 +3,27 @@
 Brand. Works with creators: [[Chris]], [[Lindsay]].
 
 ## Brand wiki (from every email with them)
-WHO
-Dreamina, an AI video creation product. They come to us both directly and through agencies, specifically Katlas Media and Viral Vibe.
+WHO: Dreamina is an AI video generation product. They come to us both directly and through agencies, specifically Viral Vibe and Katlas Media.
 
-CONTACTS
-Jenny Guo, jenny@viralvibe.llc, Viral Vibe (BD), signs as Jenny, CCs camila@viralvibe.llc, charlotte@viralvibe.llc, emma@viralvibe.llc, collab@chriscordero.net.
-Kepan, outreach@katlasmedia.com, Katlas Media, signs as Kepan, CCs siyu@katlasmedia.com, silvia@katlasmedia.com.
-Vivi, outreach@katlasmedia.com, Katlas Media.
+CONTACTS:
+Jenny Guo, jenny@viralvibe.llc, BD at Viral Vibe, signs as Jenny, copies camila@viralvibe.llc, charlotte@viralvibe.llc, emma@viralvibe.llc, collab@chriscordero.net
+Kepan, outreach@katlasmedia.com, Katlas Media, signs as Kepan, copies siyu@katlasmedia.com, silvia@katlasmedia.com
+Vivi, Katlas Media
+Harsh, Katlas Media
 
-DEALS
-Dreamina x Chris | 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team) | [amount] | Submitted | Post date Nov 15 requested by brand, previously proposed Nov 23
-Dreamina x Chris | Full package (Option 1) | [amount] | Price Agreed | Dates not set
-Dreamina x Chris | Sponsored video for Chris featuring Dreamina, published with required hashtags | [amount] | Invoiced | Invoice sent 2026-11-01
+DEALS:
+Dreamina x Chris, 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team), [amount], Approved, post date requested Nov 15
+Dreamina x Chris, full package (Option 1), [amount], Price Agreed
+Dreamina x Chris, sponsored video for Chris featuring Dreamina product, [amount], Invoiced, invoice sent 2026-11-01
 
-HOW THEY WORK
-For direct campaigns, send scripts for review, finalize the Dreamina UID, film, and send edited video links for review. For Katlas Media campaigns, no script is needed: creators film directly from the brand brief and send the cut for review before publishing. Watermark requirements include a transparent background without a white box, and the Dreamina Marketing Studio logo on the cover. Deliverables require required hashtags on published posts.
+HOW THEY WORK: For pre-made video posting campaigns, creators publish videos already produced by Dreamina with a 7-day bio link for DMChat and a 60-day ad code. For production campaigns, creators film from the brief, send the cut for review before publishing, add the required hashtags, and include the provided UTM link. Katlas Media needs to provide company billing details, and prefers bank transfer or PayPal.
 
-WATCH OUT
-Do not mention any other brands in the hooks. Ensure the Dreamina Marketing Studio logo is used on covers rather than the regular logo, and keep watermarks transparent without white boxes behind them.
+WATCH OUT: Missing required hashtags on published posts led to flags from the brand. Always verify hashtags before publishing.
 
-OPEN NOW
-For the Submitted deal (Viral Vibe), we owe the brand the requested video edits to fix the watermark transparency and update the cover image logo. For the Price Agreed deal (Katlas Media), we owe the contract and are waiting on the brand to send both the contract and the brand brief. For the Invoiced deal (Katlas Media), we are waiting on the brand to send the payment receipt or transaction confirmation for the [amount] bank transfer.
+OPEN NOW: We owe publishing the video with the UTM link and sending the live link and deliverables for the approved [amount] deal. For the price-agreed [amount] deal, we owe the contract and brand brief, and we are waiting on the brand to send both. For the [amount] invoiced deal, we are waiting on the brand for the payment receipt or transaction confirmation from the bank transfer.
 
-## Deal with [[Chris]] (Submitted, opened 2026-11-11)
-Last brand reply 2026-11-16, our last reply 2026-11-16.
+## Deal with [[Chris]] (Approved, opened 2026-11-11)
+Last brand reply 2026-11-17, our last reply 2026-11-17.
 AGREED: Rate: [amount]. Deliverables: 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team). Usage rights and payment terms not yet confirmed in writing. Post date: brand requested Nov 15, we previously proposed Nov 23 (no final confirmation).
 
 HISTORY:
@@ -37,12 +34,13 @@ HISTORY:
 2026-11-14 brand requested cover image and caption.
 2026-11-15 us sent cover and caption PDF.
 2026-11-15 brand requested watermark transparency and cover logo fixes.
-2026-11-16 brand followed up for response on revisions.
-2026-11-16 us sent revised cut with watermark and cover logo updates.
+2026-11-16 us sent revised cut with watermark and cover logo updates, and brand approved the video.
+2026-11-16 brand requested updated cover image and caption for final review.
+2026-11-17 us sent updated cover, brand approved and asked to publish using provided UTM link.
 
 BILLING: not yet
 
-OPEN NOW: Waiting on brand to review the video
+OPEN NOW: We owe: publishing the video with the UTM link and sending the live link and deliverables.
 
 ## Deal with [[Chris]] (Price Agreed, opened 2026-11-08)
 Last brand reply 2026-11-11, our last reply 2026-11-11.
@@ -86,6 +84,8 @@ OPEN NOW:
 Waiting on brand: payment receipt or transaction confirmation from bank transfer. Brand also proposed new Dreamina campaign at 3000 rate pending creator confirmation.
 
 ## Inbound leads
+- Deliverables: 1 Instagram Collaborative Reel, 30 Days of Ad Code, 30 Days of Link in Bio · Contact Name: Dyuti · Next Step: New brand: management to reply with pricing · Platforms: Instagram · Last Brand Email: 2026-11-17 · Thread Subject: PAID CAMPAIGN OPPORTUNITY | DREAMINA · Status: Negotiating · Creator: Chris · Type: Paid offer · Brand Email: dh@jeevmedia.net
+- Deliverables: 1 Collab Reel, 30 Days Ad Code, 30 Days Link in Bio · Contact Name: Namira · Next Step: New brand: management to reply with pricing · Platforms: Instagram · Last Brand Email: 2026-11-17 · Thread Subject: Paid Collaboration Opportunity | Dreamina · Status: New offer · Creator: Lindsay · Type: Paid offer · Brand Email: ns@jeevmedia.net
 - Next Step: Replied 2026-11-09, waiting on the brand · Platforms: Instagram, TikTok, YouTube Shorts, YouTube · Last Our Email: 2026-11-09 · Last Brand Email: 2026-11-06 · Thread Subject: 🔥 Paid Collaboration with Dreamina AI · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: cynthia@bloomlogic.com.cn
 - Deliverables: 1 reel + 7-day bio link + 1-month ad code · Contact Name: Jenny · Next Step: Submit script for approval by 11/11; begin video production on 11/12 after script approval · Platforms: Instagram · Last Our Email: 2026-11-16 · Deal: 1 linked · Last Brand Email: 2026-11-11 · Thread Subject: Paid Collaboration Invitation with Dreamina × thechriscordero · Status: Locked · Creator: Chris · Notes: PM double-check: skipped as spam on Nov 2 because of the template placeholder. Dreamina already pays Chris, so this may be a new campaign. Added back by hand on Nov 2. · Type: Paid offer · Brand Email: jenny@viralvibe.llc
 - Deliverables: Video content published on Instagram, YouTube Shorts, and other platforms · Next Step: Wait for brand to process payment via bank transfer and share transaction receipt · Platforms: Instagram, YouTube Shorts · Last Our Email: 2026-11-02 · Thread Subject: Paid Collaboration with Dreamina · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: outreach@katlasmedia.com

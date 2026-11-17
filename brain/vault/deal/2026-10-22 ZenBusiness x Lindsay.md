@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Submitted
-Last brand reply 2026-11-03, our last reply 2026-11-09.
+Last brand reply 2026-11-03, our last reply 2026-11-17.
 AGREED: [amount]dedicated video + [amount]creative assets (3 short-form videos in formats 9x16, 4x5, 16x9). Payment scheduled July 14, net terms via Awin, received mid-August. Deliverables: one long-form YouTube integration video and three creative asset videos with ZenBusiness Velo branding. Usage rights and final delivery date not confirmed in emails.
 
 HISTORY:
@@ -15,7 +15,7 @@ HISTORY:
 2026-10-28 us resubmitted all three videos with requested changes.
 2026-11-03 brand (Natalie Swanson) provided additional feedback: trademark symbols missing after Velo in all three videos, spelling and capitalization corrections needed.
 2026-11-05 us resubmitted revised videos (round 3) via file link.
-2026-11-09 us sent follow-up check-in on round 3 videos.
+2026-11-17 us sent follow-up check-in on round 3 videos.
 
 BILLING: not yet. Billing details requested 2026-11-01; brand has not provided company name, invoice email, or address.
 

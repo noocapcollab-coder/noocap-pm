@@ -2,6 +2,18 @@
 
 The final scripts of videos posted in the last 60 days, as filmed.
 
+## 2026-11-17 TOP 5 PLUGINS FOR CLAUDE
+Type: PERSONAL. Creator: [[David Iya]].
+Hook 1:
+These are the top 5 AI plugins that you need to install in Claude Code right now.
+    Hook 2:
+Did you hit a Claude Code usage limit more than twice last week, because there's a free plugin that just moves you onto another model when that happens?
+    Body:
+Number one is Ponytail, which trims what Claude Code outputs so you typically use around half the tokens, and number two is FreeLLM API, which moves you onto one of like 600 free models when you hit a limit. Number three, AgentReach, pulls data off sites like LinkedIn and Reddit for you, and number four gives Claude Code like 60 animation styles for explainer videos. But number five is the one I’d honestly install first, because NVIDIA’s SkillSpectre checks a skill for hidden malware before you add it, a bit like a security check at the door.
+    CTA:
+Comment "SEND" and I'll get you all five links and the order I'd install them in.
+    - Sub-page: [[The Top 5 Claude Code Plugins (All 5 Links + The Order I'd Install Them)]]
+
 ## 2026-11-14 Astryx, Meta's own internal design library
 Type: PERSONAL. Creator: [[David Iya]].
 Hook 1:
@@ -162,46 +174,3 @@ Hook 1:
     So comment “SYSTEM” and I’ll send you the exact setup guide, which you can just paste into Claude Code and it’ll set the whole thing up for you.
     NOTES FOR REVIEW: I couldn't verify the Build Partner plugin or the Improve System skill online, so please confirm the plugin name, the exact command spelling and the install step before filming. CTA keyword changed from the reference's "improve" to "SYSTEM" so it doesn't copy the reference CTA. Voice modeled on the 7-day posted set (6 scripts).
     - Sub-page: [[The Self-Improving Claude Code Setup: Improve System (Paste-In Setup Guide)]]
-
-## 2026-11-05 HARVEY
-Type: PERSONAL. Creator: [[David Iya]].
-Hook 1:
-    There’s a Claude Code agent whose only job is getting you clients, and it’s honestly the closest thing I’ve seen to replacing a lead gen agency.
-    Hook 2:
-    Lead gen agencies charge like a few thousand a month, and this one Claude Code agent basically does their whole job for you.
-    Body:
-    So you open it in Claude Code and describe your offer and the kind of client you want, and it goes out and finds companies that fit and reads through each one’s website to rank which are probably worth your time.
-    It’s called Harvey, and the part I like is that every cold email it writes references something real from that company’s site, so it reads like you actually sat down and did the research yourself.
-    And then when people reply it reads those too and keeps following up with the warm ones until there’s a call on your calendar, so since I run an agency on the side, this is probably the one I’d steal first.
-    CTA:
-So comment "LEADS" and I'll get you the GitHub link and how I'd set it up.
-    - Sub-page: [[Harvey: The Claude Code Agent That Finds You Clients (GitHub Link + Setup)]]
-
-## 2026-11-05 Claude killed Opus 5.5
-Type: PERSONAL. Creator: [[David Iya]].
-Hook 1:
-    Claude might’ve just killed Claude, because Opus 5.5 feels like a completely different model than it was at launch, and there’s a reason this keeps happening with every AI company.
-    Hook 2:
-If Opus 5.5 has felt worse lately, there’s usually a reason behind it, and once you understand it you’ll stop getting caught off guard every time a model changes.
-    Body:
-    So typically a new model launches and tops pretty much every benchmark, and a lot of people upgrade to the [amount]ax plan for it, and then a few weeks later the complaints start showing up on Reddit, which is exactly where Opus 5.5 is right now.
-    And usually the model itself hasn’t been swapped out, but the things around it change, like the system prompt or how much it’s allowed to think by default, and a couple of times labs have actually had to admit that bugs on their end were making answers worse for weeks before anyone caught it.
-    So what I do is keep a handful of tasks I ran in launch week and rerun them every so often, because then you’re comparing real outputs side by side, and if you’re paying like [amount]a month you should be the one who knows when something changed.
-    CTA:
-Comment 1 if Opus 5.5 still feels the same for you or 2 if you’ve noticed it slipping, and tell me which task you’d rerun first.
-    - Sub-page: [[Is Your AI Model Getting Worse? The Drift Test Kit (Prompts + Setup)]]
-
-## 2026-11-04 CLAUDE VIRAL REELS
-Type: PERSONAL. Creator: [[David Iya]].
-Hook 1:
-    Everyone posting daily seems to know exactly which hooks are working right now, and it’s really just one skill in Claude Code doing the research for them.
-    Hook 2:
-    The creators blowing up in your niche are pulling their hooks from reels that are already outperforming, and there’s a Claude skill that finds all of them for you.
-    Body:
-    So you give the skill one topic, say real estate or meal prep, and it goes through Instagram and finds the reels that are doing a lot better than what those accounts usually get.
-    And then it grabs the opening line from every one of those reels and drops them into a Notion database, so you’ve got a running list of hooks that are working this week.
-    From there you pick the ones that fit you, rewrite them in your own words, and your next few videos are basically planned before you even open the app.
-    I run most of my research out of Claude Code anyway, so if you’re posting every day this is probably the first thing I’d set up.
-    CTA:
-    Comment "VIRAL" and I'll send you the skill and the full setup.
-    - Sub-page: [[The Viral Hook Finder: Claude Code Skill + Full Setup]]

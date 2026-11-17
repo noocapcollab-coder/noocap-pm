@@ -28,4 +28,4 @@ BILLING: not yet
 OPEN NOW: Brand brief and contract to be shared by the brand. Waiting on brand:
 
 ## Inbound leads
-- Deliverables: One dedicated custom Reel posted across Instagram, YouTube, TikTok, and Facebook · Next Step: Wait for brand to send brief and product link. · Platforms: Instagram, TikTok, YouTube, Facebook · Last Our Email: 2026-11-16 · Thread Subject: Instagram Partnership Opportunity – Framia Pro · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: vera@luminarysm.com
+- Deliverables: 1x 60-second vertical video (with boosting rights, or shorter usage / no boosting for [amount]) · Contact Name: Jovin · Next Step: New brand: management to reply with pricing · Platforms: Instagram, TikTok, YouTube Shorts · Last Our Email: 2026-11-17 · Last Brand Email: 2026-11-17 · Thread Subject: Paid collaboration | GTA 6 clipping with Framia · Status: Negotiating · Creator: Chris · Type: Paid offer · Brand Email: jovin@converge.ai

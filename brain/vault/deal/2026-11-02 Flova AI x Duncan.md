@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Submitted
-Last brand reply 2026-11-02, our last reply 2026-11-14.
+Last brand reply 2026-11-02, our last reply 2026-11-17.
 AGREED: one short-form video for TikTok, Instagram Reels, YouTube Shorts, and Facebook Reels. Rate, usage rights, payment terms, and delivery date not yet confirmed.
 HISTORY:
 2026-10-20 Duncan's team offered to share updated scripts and contract confirmation.
@@ -14,7 +14,7 @@ HISTORY:
 2026-11-02 Duncan's team provided screenshots confirming short-form video was agreed.
 2026-11-02 us delivered short-form video via Frame.io for review.
 2026-11-05 us followed up requesting feedback on video.
-2026-11-10 us sent second follow-up on video review.
+2026-11-10 us sent follow-up on video review.
 BILLING: not yet
 OPEN NOW: Video submitted for brand review on November 2 via Frame.io. Waiting on brand: feedback, approval, or revisions on the short-form video. Rate, usage rights, payment terms, and final delivery confirmation still pending.
 

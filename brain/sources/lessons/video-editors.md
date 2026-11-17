@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## One brand email can carry two asks, and both get acted on
+When: A brand email does more than one thing, like approving video 1 while sending notes on scripts 2 and 3
+Do: Act on every ask in it: the approved video's tracker row goes to To Post and the script notes go to the script cards. Anything not acted on goes to Harsh in #pm and the email stays unread
+Never: File the whole email under one event and drop the other ask
+Seen 2 time(s). Source: Harsh correction.
+## One ping per card, and check what fires before changing anything by hand
+When: Claude or the team makes a card, moves a row or queues a message by hand
+Do: First work out which PM or n8n step reacts to that change (new sponsor card = Rudraksh is pinged on the next run) and let that one step do the announcing
+Never: Queue a second ping for something an automation will already announce
+Seen 1 time(s). Source: Claude.
 ## A script-writer flag belongs to the card it was picked on
 When: Send to Script Writer (Script changes, Brief changed, Concept changed) is picked on one card of a deal with several videos
 Do: Move, note and link only that card. Leave the other videos' cards, and the deal's Next Action, as they are unless the flagged card is the deal's own linked video.
@@ -16,7 +26,7 @@ Seen 1 time(s). Source: System check.
 When: A brand writes that the draft or cut is approved ("looks great, approved!", "go ahead and publish"), even while asking for the remaining assets or a final check
 Do: Read it as video_feedback with video_approved: move the EDIT TRACKER row to To Post with Approved At, and stop chasing the brand for feedback on that cut
 Never: Never hold a video approval just because the second reader calls it a plain brand_reply, and never leave the row on With Brand after the brand approved it
-Seen 1 time(s). Source: Harsh correction.
+Seen 3 time(s). Source: Harsh correction.
 ## Notes on an edited cut go to the editor, never the script writer
 When: Harsh forwards or types fixes with timestamps, shots, avatar, music or captions, often with a second line naming the deal ("Brad x promo cut changes")
 Do: Read messages sent together as one; send cut notes to the named deal's EDIT TRACKER row as Changes so the editor is pinged

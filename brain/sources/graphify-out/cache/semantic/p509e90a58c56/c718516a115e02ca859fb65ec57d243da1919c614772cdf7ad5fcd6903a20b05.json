@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_videoduck_videoduck", "label": "VideoDuck", "file_type": "document", "source_file": "brands/videoduck.md"}], "edges": [{"source": "brands_videoduck_videoduck", "target": "creators_chris_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/videoduck.md"}], "hyperedges": []}

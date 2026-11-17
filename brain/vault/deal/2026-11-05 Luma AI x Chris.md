@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Submitted
-Last brand reply 2026-11-14, our last reply 2026-11-16.
+Last brand reply 2026-11-17, our last reply 2026-11-17.
 AGREED: Rate not confirmed. Deliverables: Reel + Story repost. Usage rights not confirmed. Payment terms: Net 30 after approved Reel and Story published and invoice received. No dates confirmed.
 
 HISTORY:
@@ -18,10 +18,11 @@ HISTORY:
 2026-11-14 brand Upendra Singh asked for estimated timeline for completing content production.
 2026-11-15 us Chris's team replied stating we will share the video by Monday.
 2026-11-16 us Chris's team shared the video link for brand review.
+2026-11-17 brand Upendra Singh confirmed receiving the video and forwarded it to their team for review.
 
 BILLING: not yet
 
-OPEN NOW: Waiting on brand to review the video.
+OPEN NOW: Waiting on brand for video feedback.
 
 ## Links
 - [[Chris]]

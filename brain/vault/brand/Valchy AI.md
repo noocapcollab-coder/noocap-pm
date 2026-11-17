@@ -5,17 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Valeri]].
 ## Brand wiki (from every email with them)
-WHO: Valchy AI is an AI video generation agent. They came to us through Partnerly (an agency).
+WHO: Valchy AI, an AI video generation agent, coming through the agency Partnerly.
 
-CONTACTS: Kico at kico@partnerly.us (brand side, signs emails). Copy kico@partnerly.us on all replies. Delivery goes to noocapcollab@gmail.com (Valeri's team handles creation).
+CONTACTS: Kico, kico@partnerly.us, Partnerly, signs as Partnerly or Kico, copy kico@partnerly.us.
 
-DEALS: Valeri, rate and deliverables confirmed at Price Agreed stage, stage is Price Agreed, no dates set yet.
+DEALS: Valeri | rate and deliverables confirmed | Price Agreed | no dates specified.
 
-HOW THEY WORK: Not yet established. Waiting on contract and brand brief to learn their process.
+HOW THEY WORK: none stated.
 
-WATCH OUT: None on record.
+WATCH OUT: none stated.
 
-OPEN NOW: Send contract and brand brief to kico@partnerly.us and noocapcollab@gmail.com. We owe the next move.
+OPEN NOW: Waiting on brand: to send the contract and brand brief.
 
 
 ## Links

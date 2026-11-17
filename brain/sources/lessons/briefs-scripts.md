@@ -2,6 +2,21 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## No money for the team, but the brief's own content words still reach the script writer
+When: A brand note uses a money word about the video itself (budget pressure, Black Friday price on the end card, it cost me a coffee, paid partnership label)
+Do: Send that line to the script writer. Anything the money filter does hold back goes to Harsh in #pm so nothing disappears silently
+Never: Drop a content note because it contains the word budget, price or cost
+Seen 1 time(s). Source: Harsh correction.
+## A deal past the brief always has a video card
+When: A deal reaches Brief Received or later, including deals opened by the system check or by hand
+Do: Make the card with the brief, link it in the deal's Linked Video and tell the script writer once
+Never: Leave a deal with a brief and no card, so nobody is writing the script
+Seen 1 time(s). Source: Harsh correction.
+## Script notes go to the card still being scripted, never to a filmed video
+When: A deal has several videos and the brand sends script notes or a script approval
+Do: Put the notes on the sibling cards at status 5 or lower (CapCut x Chris (2), (3)) and ping the script writer with those cards
+Never: Move a card that is filmed, with the brand or approved back to 4 or 6, or put the next script's notes on it
+Seen 1 time(s). Source: Harsh correction.
 ## A brand describing its review process is not an approval
 When: A brand email mentions script review, approval or filming as steps still to come, before any script was sent
 Do: Count a script as approved only when the brand approves a script we actually sent (Script Sent Date or a sent Script email). 'Upon our approval', 'send us the script for review' and a step-by-step guide are instructions: answer what they ask for now.
@@ -41,4 +56,4 @@ Seen 3 time(s). Source: Rulebook.
 When: A deal covers 2+ reels, or a brief arrives for the next reel
 Do: Make a card per reel; put the next reel's brief on its own card.
 Never: Put reel 2's brief on reel 1's finished card.
-Seen 3 time(s). Source: Rulebook.
+Seen 4 time(s). Source: Rulebook.

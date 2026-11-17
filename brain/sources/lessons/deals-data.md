@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A sign link on the brand's own domain is a contract, and every contract gets acknowledged
+When: A brand sends a contract to sign, as a file, an e-sign service link or a link on their own site (agreements.<agency>.com/sign/...)
+Do: Save it in CONTRACTS as Needs signing, send it to Harsh and Pratham on WhatsApp, and send the brand the fixed contract_ack reply at once
+Never: Treat it as a plain brand reply because the link is not DocuSign or PandaDoc, or leave the brand with no answer
+Seen 2 time(s). Source: Harsh correction.
+## A brief after an agreed price always opens a deal, wherever it lands
+When: A brand that agreed a rate sends the brief (or a creator forwards a brand email) in the creator's own inbox
+Do: Open the deal at Brief Received with the agreed rate, the brief link and the brand's Message-ID, create the video card, and when the brand chases, ask Harsh for the date. A creator forwarding a brand email to noocapcollab is our side handing it over, never 'our reply to the brand'.
+Never: Leave the lead at 'Waiting on brand' after the brief came, or count the creator's forward as having answered the brand.
+Seen 1 time(s). Source: System check.
 ## An agency contact pitching another product is a new lead, not a reply on their old deal
 When: A brand or agency contact who already has a live deal writes on a new thread about a different product or campaign (new subject naming another brand, "partnership opportunity", a rate question)
 Do: Treat it as a new inquiry: file it on its own lead or deal for that product, take the rate or terms question to Harsh, and leave the old deal's stage, Next Action and memory as they were

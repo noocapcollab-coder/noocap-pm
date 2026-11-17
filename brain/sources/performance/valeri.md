@@ -1,7 +1,7 @@
 # Valeri - what performs
-Content OS, videos posted since 2026-07-19: 195 posts across platforms, average 10,085 views. Creator: [[Valeri]].
+Content OS, videos posted since 2026-07-20: 195 posts across platforms, average 10,085 views. Creator: [[Valeri]].
 ## 2026-08-11 Comment HOLO and I’ll send you the link 👇
-Instagram Short: 317,926 views, 256 likes, 117 comments, 0 shares, 0 saves. Brand: [[Holo]].
+Instagram Short: 317,926 views, 256 likes, 117 comments, 0 shares, 0 saves. Brand: [[Holo AI]].
 ## 2026-10-23 What if you could find potential web design clients and show them a we
 TikTok Short: 158,400 views, 8,742 likes, 951 comments, 1,622 shares, 8,604 saves.
 ## 2026-09-01 Comment AGENT and I'll send you all 4 GitHub repos 👇
@@ -15,7 +15,7 @@ Facebook Short: 96,576 views, 814 likes, 1,020 comments, 131 shares, 0 saves. Br
 ## 2026-08-25 Comment KIMI and I'll send you the link 👇
 Facebook Short: 87,219 views, 596 likes, 687 comments, 95 shares, 0 saves. Brand: [[Kimi]].
 ## 2026-10-01 Comment “HOLO” and I’ll send you the link.
-Instagram Short: 81,703 views, 98 likes, 46 comments, 0 shares, 0 saves. Brand: [[Holo]].
+Instagram Short: 81,703 views, 98 likes, 46 comments, 0 shares, 0 saves. Brand: [[Holo AI]].
 ## 2026-10-25 Comment “DASHBOARD” and I’ll send you the step-by-step guide. 👇🎮
 Instagram Short: 62,887 views, 813 likes, 1,660 comments, 0 shares, 0 saves.
 ## 2026-10-30 Comment “LEADS” and I’ll DM you my setup guide plus the outreach messa

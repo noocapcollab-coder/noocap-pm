@@ -1,5 +1,5 @@
 # Duncan - what performs
-Content OS, videos posted since 2026-07-19: 283 posts across platforms, average 11,653 views. Creator: [[Duncan]].
+Content OS, videos posted since 2026-07-20: 281 posts across platforms, average 11,716 views. Creator: [[Duncan]].
 ## 2026-08-25 Check the pinned comment below for the GitHub repo link 👇
 TikTok Short: 400,400 views, 26,000 likes, 170 comments, 2,568 shares, 19,633 saves.
 ## 2026-10-25 What if you could turn a PDF, report, or pitch deck into an animated e

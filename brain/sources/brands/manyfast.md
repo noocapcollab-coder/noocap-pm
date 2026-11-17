@@ -3,66 +3,73 @@
 Brand. Works with creators: [[Duncan]], [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO
-Manyfast is a software tool for organizing product requirements, user flows, and wireframes, and connecting to Claude Code through MCP to build working prototypes. They come to us directly.
+WHO: Manyfast provides an AI development platform that turns product ideas into user flows, wireframes, and working prototypes connected to Claude Code through MCP. They come to us directly. Their marketing agency is Slate Media Co., Ltd.
 
-CONTACTS
-Seungjoo Lee, also known as Konan, konan@manyfast.io, brand contact for content, script, revisions, and product support.
-Leo, leo@manyfast.io, CEO who reviews and signs contracts if needed.
-Jun, jun@manyfast.io, Operations Lead for billing and payment arrangements referencing Seungjoo Lee.
-Chris Cordero, creator, collab@chriscordero.net.
-Duncan, creator, collab@buildroom.ai.
-NOOCAP team, noocapcollab@gmail.com.
+CONTACTS:
+Seungjoo Lee (Konan) - konan@manyfast.io - Content and production discussions / Brand contact
+Jun (이동준) - jun@manyfast.io - Operations Lead and payments contact
+Leo - leo@manyfast.io - CEO (for contract review if needed)
+NOOCAP Team - noocapcollab@gmail.com - signs and must be copied
 
-DEALS
-Manyfast x Chris | 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days | [amount]| Script Approved | Publication date 2026-11-28
-Manyfast x Duncan | 1 short-form video, cross-posted to Instagram, TikTok, and Facebook | Rate not known | Brief Received | Dates not known
+DEALS:
+Manyfast x Duncan | 1 short-form video cross-posted to Instagram, TikTok, and Facebook | [amount] | Invoiced | Payment terms: 100% upfront
+Manyfast x Chris | 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days | [amount] | Invoiced | Payment terms: 50% upon script approval, 50% after publication (publication date: 2026-11-28)
 
-HOW THEY WORK
-Content contact is Seungjoo Lee konan@manyfast.io. Billing contact is Jun jun@manyfast.io. Contracts if any go to CEO leo@manyfast.io, otherwise agreements stand on email threads. Trial accounts are provided for creators to explore the product. Promo code is CHRIS30 for 30 percent off the first month of the Pro monthly plan, expiring February 1, 2027. Tracking link is https://manyfast.io/en/?utm_source=instagram&utm_medium=influencer&utm_campaign=202611_chris&utm_content=reel. English Instagram account to tag is @manyfast.official.
+HOW THEY WORK:
+Content, script, revisions, and product support are handled directly with Seungjoo (Konan). Invoices, billing details, and payment arrangements are handled directly with Jun. They do not have a standard contract template; creator contracts must be sent to their CEO Leo for review and signature, otherwise they proceed on terms confirmed in the email thread. Creators are given trial account access (e.g., https://manyfast.io/en/) to explore the platform before developing scripts. Videos should reflect the creator's style while showcasing the product value, user flow, wireframes, and working prototype. Promotion codes and tracking links are provided per deal (e.g., CHRIS30 for 30 percent off the first month of the Pro monthly plan). Comment-keyword automation is used to send viewers the code and signup link, paired with a bio link. English Instagram account is @manyfast.official. Invoices must be issued in the name of their marketing agency, Slate Media Co., Ltd., and sent to jun@manyfast.io with a Stripe or PayPal payment link.
 
-WATCH OUT
-Always reply all to email threads so no team members are accidentally left off CC. Keep all content, script, revisions, and product questions with Seungjoo, and keep invoices and payment arrangements separate with Jun.
+WATCH OUT:
+Do not mix up contacts: keep content and script discussions with Seungjoo (Konan) and payment matters strictly with Jun at jun@manyfast.io. Do not bill invoices to Manyfast directly; they must always be billed to their marketing agency, Slate Media Co., Ltd.
 
-OPEN NOW
-Manyfast x Chris: We owe sending the initial invoice for [amount]to jun@manyfast.io and sharing the expected video draft date.
-Manyfast x Duncan: We owe Rudraksh writing the script.
+OPEN NOW:
+Waiting on brand for Manyfast x Duncan: payment of invoice INV-005 ([amount]) via Stripe.
+Waiting on brand for Manyfast x Chris: payment of the initial 50% invoice ([amount]) via Stripe, and awaiting the first video draft review ahead of the November 28 publication date.
 
-## Deal with [[Duncan]] (Brief Received, opened 2026-11-16)
-Last brand reply 2026-11-16, our last reply none.
+## Deal with [[Duncan]] (Invoiced, opened 2026-11-16)
+Last brand reply 2026-11-17, our last reply 2026-11-17.
 AGREED:
-Rate: not known yet
+Rate: 1600
 Deliverables: 1 short-form video, cross-posted to Instagram, TikTok, and Facebook
 Usage rights: not known yet
-Payment terms: not known yet
+Payment terms: 100% upfront
 Agreed dates: not known yet
 
 HISTORY:
 2026-11-16 us: Brief filed for Manyfast and Duncan
+2026-11-17 brand: Emailed checking in on brief and asking for trial account email address
+2026-11-17 brand: Sent payment clarification asking for a payment link and to coordinate billing with Jun
+2026-11-17 us: Emailed Jun asking for agency billing details for the invoice with a Stripe link
+2026-11-17 brand: Provided agency billing details (Slate Media Co., Ltd.)
+2026-11-17 us: Sent invoice INV-005 ([amount]) with Stripe payment link to Jun
 
 BILLING:
-not yet
+Company: Slate Media Co., Ltd.
+Invoice email: jun@manyfast.io
+Address: Room 417, 4F, Seoul Startup Hub Annex, 21 Baekbeom-ro 31-gil, Mapo-gu, Seoul, Republic of Korea
+Tax ID: 790-86-01367
+Invoice status: sent (INV-005)
 
 OPEN NOW:
-We owe: Rudraksh writing the script
+Waiting on brand: Payment of invoice INV-005 via Stripe
 
-## Deal with [[Chris]] (Script Approved, opened 2026-11-10)
-Last brand reply 2026-11-16, our last reply 2026-11-15.
-AGREED: Rate: [amount]. Deliverables: 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days. Usage rights: not specified. Payment terms: 50% upon script approval, 50% once video is published if no contract is signed. Agreed dates: publication date 2026-11-28.
+## Deal with [[Chris]] (Invoiced, opened 2026-11-10)
+Last brand reply 2026-11-17, our last reply 2026-11-17.
+AGREED: Rate: [amount]. Deliverables: 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days. Usage rights: not specified. Payment terms: 50% upon script approval, 50% once video is published. Agreed dates: publication date 2026-11-28.
 
 HISTORY:
-2026-11-10 Chris agreed to [amount]including DM automation and bio link; asked for contract and brief.
-2026-11-11 Brand confirmed move forward; sent trial account; shared product angle and tracking link.
-2026-11-11 Chris confirmed ready; asked brand to send contract and brief to thread.
-2026-11-12 Brand gave billing and content contact emails; asked when to expect script and posting date.
-2026-11-12 Chris requested reply all, brand brief on thread, and stated payment terms.
-2026-11-13 Brand confirmed agreement to [amount]trial details, creative brief, promo code CHRIS30, tracking link, and 50/50 payment terms.
-2026-11-15 Us sent the script PDF for review with a proposed publication date of 2026-11-28.
-2026-11-16 Brand approved the script with minor adjustments, confirmed 2026-11-28 date, and requested initial invoice.
+2026-11-12 us: proposed payment terms and requested brief.
+2026-11-13 brand: confirmed rate, deliverables, promo code, tracking link, and payment terms.
+2026-11-15 us: sent script PDF for review and proposed publication date of 2026-11-28.
+2026-11-16 brand: approved script with minor adjustments, confirmed publication date, and requested initial invoice.
+2026-11-17 brand: followed up on initial invoice and script confirmation.
+2026-11-17 brand: requested invoice through their marketing agency and asked for Stripe/PayPal link.
+2026-11-17 us: requested agency billing details from brand to issue initial invoice.
+2026-11-17 brand: provided agency billing details (Slate Media Co., Ltd.) and requested invoice with Stripe link.
+2026-11-17 us: sent initial 50% invoice ([amount]) with Stripe link to Jun, billed to Slate Media Co., Ltd.
 
-BILLING: Brand billing contact is jun@manyfast.io (referencing Seungjoo Lee / Konan). No company billing address yet. Initial invoice for [amount]requested.
+BILLING: Brand has given agency billing details (Slate Media Co., Ltd., jun@manyfast.io, Seoul address, tax ID 790-86-01367). Invoice status: initial 50% invoice sent.
 
-OPEN NOW: We owe: send the initial invoice for [amount]to jun@manyfast.io and share the expected video draft date.
+OPEN NOW: Waiting on brand: payment of the initial 50% invoice ([amount]) and draft review.
 
 ## Inbound leads
-- Deliverables: Comment-keyword DM automation setup, bio link placement, trial account exploration and content creation · Next Step: Handed to noocapcollab: waiting for the brief · Platforms: Instagram · Last Our Email: 2026-11-15 · Last Brand Email: 2026-11-10 · Thread Subject: Paid Reel collaboration — Manyfast × Chris · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: konan@manyfast.io
+- Deliverables: Comment-keyword DM automation setup, bio link placement, trial account exploration and content creation · Next Step: Handed to noocapcollab: waiting for the brief · Platforms: Instagram · Last Our Email: 2026-11-17 · Last Brand Email: 2026-11-17 · Thread Subject: Paid Reel collaboration — Manyfast × Chris · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: jun@manyfast.io

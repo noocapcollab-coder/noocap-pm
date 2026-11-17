@@ -1,8 +1,8 @@
 ---
 type: deal
 ---
-Stage: Price Agreed
-Last brand reply none, our last reply 2026-11-16.
+Stage: Brief Received
+Last brand reply 2026-11-17, our last reply 2026-11-16.
 AGREED:
 Rate: per deal fields
 Deliverables: per deal fields

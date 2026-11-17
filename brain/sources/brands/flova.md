@@ -3,25 +3,21 @@
 Brand. Works with creators: [[Duncan]], [[Lindsay]], [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: Flova AI, an AI video tool with a Skills community where creators share reusable workflows. They come to us directly.
+WHO: Flova AI, an AI video tool with a Skills community on their homepage. They come to us directly.
 
-CONTACTS:
-谢宇晨 Niko, xieyuchen@flova.ai, brand, signs as Niko, copy collab@buildroom.ai.
+CONTACTS: Niko (谢宇晨, xieyuchen@flova.ai), brand representative. Thread CC: collab@buildroom.ai.
 
 DEALS:
-Duncan | One short-form video for TikTok, Instagram Reels, YouTube Shorts, and Facebook Reels | Submitted | Rate, usage rights, payment terms, and delivery date not yet confirmed.
+Flova AI x Duncan: one short-form video for TikTok, Instagram Reels, YouTube Shorts, and Facebook Reels; rate, usage rights, payment terms, and delivery date not yet confirmed; stage Submitted; video delivered November 2, 2026.
 
-HOW THEY WORK:
-Drafts are reviewed via Frame.io.
+HOW THEY WORK: Drafts are reviewed via Frame.io.
 
-WATCH OUT:
-The brand previously claimed the agreement was for a dedicated long-form YouTube video (8 to 15 minutes) based on their brief, leading to a dispute where Duncan's team had to provide screenshots confirming short-form was agreed.
+WATCH OUT: The brand previously disputed the deliverable format, mistakenly claiming the brief specified a long-form YouTube video (8 to 15 minutes) instead of the agreed short-form video. Duncan's team provided screenshots confirming short-form was agreed.
 
-OPEN NOW:
-Short-form video submitted for brand review on November 2 via Frame.io. Waiting on the brand for feedback, approval, or revisions. Rate, usage rights, payment terms, and final delivery confirmation are still pending. Brand owes the next move.
+OPEN NOW: Video submitted for brand review on November 2, 2026 via Frame.io. Waiting on the brand for feedback, approval, or revisions on the short-form video, as well as confirmation of rate, usage rights, payment terms, and final delivery.
 
 ## Deal with [[Duncan]] (Submitted, opened 2026-11-02)
-Last brand reply 2026-11-02, our last reply 2026-11-14.
+Last brand reply 2026-11-02, our last reply 2026-11-17.
 AGREED: one short-form video for TikTok, Instagram Reels, YouTube Shorts, and Facebook Reels. Rate, usage rights, payment terms, and delivery date not yet confirmed.
 HISTORY:
 2026-10-20 Duncan's team offered to share updated scripts and contract confirmation.
@@ -33,11 +29,12 @@ HISTORY:
 2026-11-02 Duncan's team provided screenshots confirming short-form video was agreed.
 2026-11-02 us delivered short-form video via Frame.io for review.
 2026-11-05 us followed up requesting feedback on video.
-2026-11-10 us sent second follow-up on video review.
+2026-11-10 us sent follow-up on video review.
 BILLING: not yet
 OPEN NOW: Video submitted for brand review on November 2 via Frame.io. Waiting on brand: feedback, approval, or revisions on the short-form video. Rate, usage rights, payment terms, and final delivery confirmation still pending.
 
 ## Inbound leads
+- Deliverables: YouTube Dedicated Video, YouTube Integration, or YouTube Shorts · Next Step: Replied 2026-11-17, waiting on the brand · Platforms: YouTube, YouTube Shorts · Last Our Email: 2026-11-17 · Last Brand Email: 2026-11-17 · Thread Subject: Collaboration Invitation: Flova AI x Automate AI Consulting · Status: Waiting on brand · Creator: Lindsay · Type: Unclear · Brand Email: emily@sparkols.com
 - Deliverables: 1 × YouTube Dedicated Video + 1 × YouTube Short, with 1 month non-exclusive content usage rights including reposting and paid advertising across Flova's social channels, YouTube Partnership Ads access enabled for 1 month · Contact Name: Hilary · Next Step: Replied 2026-11-02, waiting on the brand · Platforms: YouTube, YouTube Shorts · Last Our Email: 2026-11-02 · Last Brand Email: 2026-11-01 · Thread Subject: YouTube Collaboration Opportunity | Flova AI · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: hilary@letop.tech
 - Deliverables: 1 dedicated YouTube video (format not yet agreed) · Next Step: Needs you: wants video to feature Flova logo and on-screen mention of Flova AI; may request inclusion of Flova Skill demo and platform walkthrough if production scope increases · Quote at [amount]waiting in Approvals · Platforms: Instagram · Last Our Email: 2026-10-21 · Last Brand Email: 2026-10-23 · Thread Subject: Flova AI × Lindsay | Paid Creative Collaboration · Status: Negotiating · Creator: Lindsay · Type: Paid offer · Brand Email: ekko.liu@solbridgemedia.com
 - Deliverables: 1 Instagram Reel, campaign link share via Instagram DM, 30-day ad authorization · Next Step: Quote at [amount]waiting in Approvals · Platforms: Instagram · Last Our Email: 2026-10-24 · Last Brand Email: 2026-10-23 · Thread Subject: Instagram Collaboration Opportunity with Flova & AI Brands · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: maoyuteng@flova.ai

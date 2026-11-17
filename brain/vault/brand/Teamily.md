@@ -5,19 +5,19 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]], [[Brad]], [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: Teamily / Teamily AI is a multi-agent AI collaboration platform that allows users to build and manage multiple AI agents in one shared workspace, featuring real-time multi-user collaboration and workflow automation. They come to us through the agency Widely.
+WHO: Teamily or Teamily AI, a multi-agent AI collaboration platform that allows users to build and manage multiple AI agents in one shared workspace, featuring real-time multi-user collaboration and workflow automation. They come to us through an agency named Widely.
 
-CONTACTS: Evan, evan@withwidely.com, Influencer Marketing Manager at Widely, signs as Evan or Enchi Guang. Alyssa Salazar, alyssa@withwidely.com, at Widely. CC addresses used across threads include collab@automateaiconsulting.com, alyssa.salazar@videoplusinc.ai, evan.g@videoplusinc.ai, evan@getwidely.com, and partnerships@ninjaaitools.com. Copy all relevant thread participants when replying.
+CONTACTS: Alyssa Salazar, alyssa@withwidely.com, Influencer Marketing Manager at Widely, signs as Alyssa, copy alyssa.salazar@videoplusinc.ai, evan.g@videoplusinc.ai, evan@withwidely.com, evan@getwidely.com, partnerships@ninjaaitools.com. Enchi Guang (also known as Evan), evan@withwidely.com, Influencer Marketing Manager at Widely, signs as Evan.
 
-DEALS: 
-Teamily x Lindsay | Dedicated YouTube integration and community promotion package | Negotiating | Dates not documented.
-Teamily AI x Brad | Instagram Reel | Stage: Script Sent | Dates not documented.
+DEALS:
+Teamily x Lindsay | YouTube integration and community promotion package | Rate unknown, deliverables unknown | Negotiating | Dates: Nov 5, 2026 inquiry, Nov 16, 2026 interest confirmed.
+Teamily AI x Brad | Instagram Reel | Rate, deliverables, usage rights, payment terms and agreed dates not documented | Script Sent | Dates: Oct 20, 2026 contract sent, Nov 14, 2026 script sent, Nov 17, 2026 script feedback received.
 
-HOW THEY WORK: Campaign briefs are provided by the brand. Contracts are sent via DocuSign to partnerships@ninjaaitools.com. Scripts are submitted as PDF attachments for brand review and approval.
+HOW THEY WORK: Scripts are submitted for review. Brand provides detailed script feedback covering specific product demonstrations, workflow triggers, client interactions, UI/UX accuracy, and human approval steps. Always reply all, including noocapcollab@gmail.com and the specified thread CCs. Contracts are sent via DocuSign to partnerships@ninjaaitools.com.
 
-WATCH OUT: Do not send invoices or payment follow-ups for Teamily until details are confirmed; note that payment for the separate Kylon campaign is handled by Alyssa. Ensure noocapcollab@gmail.com is always kept on copy.
+WATCH OUT: Always remember to reply all so noocapcollab@gmail.com stays in the loop. DocuSign contract emails can end up in spam folders. Do not assume automatic agent updates in scripts; show the real trigger (client edits or comments, Send to Agent or message in shared project, agent updates, and reviewer checks). Show the client participating through their own Teamily account rather than a simulation from our account.
 
-OPEN NOW: For Lindsay, we owe a reply with pricing and rate details for the YouTube integration and community promotion package. For Brad, we are waiting on the brand to approve the script or request changes.
+OPEN NOW: We owe: Send Lindsay's pricing for the Teamily YouTube integration and community promotion package. We owe: Send revised script for Brad incorporating brand feedback.
 
 
 ## Links

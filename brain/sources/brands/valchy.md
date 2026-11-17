@@ -3,25 +3,26 @@
 Brand. Works with creators: [[Valeri]].
 
 ## Brand wiki (from every email with them)
-WHO: Valchy AI is an AI video generation agent. They came to us through Partnerly (an agency).
+WHO: Valchy AI, an AI video generation agent, coming through the agency Partnerly.
 
-CONTACTS: Kico at kico@partnerly.us (brand side, signs emails). Copy kico@partnerly.us on all replies. Delivery goes to noocapcollab@gmail.com (Valeri's team handles creation).
+CONTACTS: Kico, kico@partnerly.us, Partnerly, signs as Partnerly or Kico, copy kico@partnerly.us.
 
-DEALS: Valeri, rate and deliverables confirmed at Price Agreed stage, stage is Price Agreed, no dates set yet.
+DEALS: Valeri | rate and deliverables confirmed | Price Agreed | no dates specified.
 
-HOW THEY WORK: Not yet established. Waiting on contract and brand brief to learn their process.
+HOW THEY WORK: none stated.
 
-WATCH OUT: None on record.
+WATCH OUT: none stated.
 
-OPEN NOW: Send contract and brand brief to kico@partnerly.us and noocapcollab@gmail.com. We owe the next move.
+OPEN NOW: Waiting on brand: to send the contract and brand brief.
 
 ## Deal with [[Valeri]] (Price Agreed, opened 2026-11-05)
-Last brand reply none, our last reply none.
+Last brand reply none, our last reply 2026-11-17.
 AGREED: rate and deliverables confirmed in deal stage (Price Agreed); usage rights and payment terms not yet stated in emails; no dates specified.
 
 HISTORY:
 2026-11-05 Valeri's team confirmed interest and added noocapcollab@gmail.com to handle delivery.
+2026-11-17 us (NOOCAP) followed up for the contract and brand brief.
 
 BILLING: not yet.
 
-OPEN NOW: We owe contract and brand brief. We owe the next move.
+OPEN NOW: Waiting on brand: to send the contract and brand brief.

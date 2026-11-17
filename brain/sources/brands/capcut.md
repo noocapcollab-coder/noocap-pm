@@ -1,30 +1,30 @@
 # CapCut
 
-Brand. Works with creators: [[Lindsay]], [[Chris]], [[Duncan]].
+Brand. Works with creators: [[Lindsay]], [[Chris]], [[Duncan]], [[Brad]].
 
 ## Brand wiki (from every email with them)
-WHO: CapCut, a video editing app and creative tools suite. Deals come both directly and through agencies, specifically GrowMaxValue Agency (contacts Sophie Wilson, Mia Brown) and GlobeInflu (contact Alisa), as well as MediaCube (contact Victoria Ev) for a Zeely AI campaign.
+WHO: CapCut App and Dreamina (AI tools), working directly and through agencies GrowMaxValue (Sophie Wilson, Mia Brown) and GlobeInflu (Alisa).
 
-CONTACTS: Sophie Wilson, sophie.wilson@growmaxvalue.com, GrowMaxValue Agency, signs on behalf of brand, copy collab@automateaiconsulting.com; Mia Brown, mia.brown@growmaxvalue.com, GrowMaxValue Agency, role BD; Victoria Ev, victoria@mediacube.io, MediaCube, role campaign manager, copy collab@buildroom.ai and alilar@mediacube.io; Alisa, alisa@globeinflu.com, GlobeInflu, role Business Development Manager.
+CONTACTS: Sophie Wilson, sophie.wilson@growmaxvalue.com, GrowMaxValue agency, signs as Sophie, CC collab@automateaiconsulting.com. Mia Brown, mia.brown@growmaxvalue.com, GrowMaxValue agency, signs as Mia Brown | BD, CC collab@chriscordero.net. Victoria Ev, victoria@mediacube.io, Mediacube agency, signs as Victoria, CC collab@buildroom.ai and alilar@mediacube.io. Alisa, alisa@globeinflu.com, GlobeInflu agency, signs as Alisa, Business Development Manager.
 
 DEALS:
-CapCut x Lindsay: 3 promotional videos for CapCut APP on Instagram, 30 to 60 seconds each, [amount]Script Sent, deadline November 27, 2026.
-CapCut x Chris: 3 short-form videos via GrowMaxValue, [amount]([amount]per video), Submitted, publishing deadline November 25, 2026 (Beijing Time).
-CapCut x Duncan: 1 short-form video with 3-month ad code for CapCut / Zeely AI review, [amount]Invoiced, go-live October 30, 2026.
-CapCut x Brad (via GlobeInflu / Ninja AI Tools): CapCut x ChatGPT workflow video, [amount]Submitted, deadline November 15, 2026. Note: separate deal originally mixed up with Chris.
+CapCut x Lindsay | 3 promotional videos for CapCut APP on Instagram, 30 to 60 seconds each, [amount]| Script Sent | Nov 27, 2026 deadline.
+CapCut x Chris | 3 short-form videos, [amount]total | Approved | Nov 25, 2026 deadline.
+CapCut x Duncan | 1 short-form video for CapCut with 3-month ad code, [amount]| Invoiced | Go-live 2026-10-30.
+CapCut x Brad | 3 videos (Ninja AI Tools campaign), [amount]per video (total [amount]) | Submitted | Publish window Nov 23 to 27, 2026.
 
-HOW THEY WORK: Scripts require approval before filming with up to 2 revisions allowed. Drafts are reviewed via links such as Frame.io. UID collection is required for CapCut Pro/credits and Dreamina Pro/credits (PC version UID required for CapCut). Mandatory posting rules include specific CTAs (e.g., tap the link in bio to try Dreamina and CapCut PC), mandatory hashtags (#CapCutDidThat #Dreamina #Smallbusinessmarketing #BlackFridayMarketing), UTM links placed in profile, and strict content restrictions (no weapons, alcohol, tobacco, gambling, politics, religion, third-party logos, or unlicenced background music). Invoices must include both parties company info and payment details in text format, avoiding QR codes or links. Video titles and thumbnails have exact naming requirements where specified by the brand.
+HOW THEY WORK: Script approval needed before filming, up to 2 revisions. Publishing deadlines must be met strictly. Ad codes (60-day authorization) required upon posting. Videos must include specific CTAs, UTM links, and hashtags depending on the campaign. Strict content rules: no inappropriate images, cleavage, revealing clothes, violence, profanity, cursing in background music, weapons, alcohol, tobacco, gambling, politics, religion, public affairs, gender/sexuality/social status/region stereotypes, competitor content, third-party logos, or unlicensed background music. Invoices for Mediacube must include Mediacube Worldwide Ltd info (Makariou III, 134 GROUND FLOOR 3021, Limassol, Cyprus, Tax ID: CY10401840A) and our company info and payment details in text format (no QR codes or links). Duncan video title must include "Zeely AI review" and thumbnail must include "Zeely Review".
 
-WATCH OUT: Never mix up creators and scripts across campaigns (as happened when Chris's script was mistakenly assigned to Brad). Never use QR codes or links for billing details on invoices as finance teams reject them. Never show third-party logos, weapon simulations, or unlicenced background music in videos.
+WATCH OUT: Do not mix up creators and scripts (e.g., sending Chris's script/video for Brad). Do not use AI avatars or third-party source footage that lacks authenticity. Ensure all specific hashtags, UTM links, and profile bio link instructions are followed exactly as stated in the latest brief.
 
 OPEN NOW:
-CapCut x Lindsay: Brand asked if all three scripts are for the same brief and if production and publishing can be completed by November 27. We owe a reply confirming the script and timeline details.
-CapCut x Chris: We owe publishing the first video, notifying the brand, sharing the 60-day adcode, and following up on scripts for videos two and three.
-CapCut x Duncan: Awaiting the final [amount]payment against Invoice INV-003 from the brand finance team per their commitment.
-CapCut x Brad: Waiting on brand response to request for a new campaign and fresh brief for creator Brad.
+CapCut x Lindsay: Waiting on brand to review the clarified script details and schedule.
+CapCut x Chris: We owe publishing the first video, notifying the brand, sharing the 60-day adcode, and updating scripts for videos two and three based on the latest brand feedback.
+CapCut x Duncan: Awaiting [amount]final payment against Invoice INV-003 by brand finance team.
+CapCut x Brad: We owe response to brand about whether Brad can proceed using the original brief and script.
 
 ## Deal with [[Lindsay]] (Script Sent, opened 2026-11-11)
-Last brand reply 2026-11-16, our last reply 2026-11-16.
+Last brand reply 2026-11-16, our last reply 2026-11-17.
 AGREED: [amount]for three CapCut app videos on Instagram, 30 to 60 seconds each. Script approval before filming, up to 2 revisions, publish within 3 days of approval, 60-day ad code authorization per video. Latest publication deadline November 27.
 
 HISTORY:
@@ -34,14 +34,14 @@ HISTORY:
 2026-11-14 us sent the signed contract.
 2026-11-16 us sent the video scripts for approval.
 2026-11-16 brand asked whether all three scripts are for the same brief and if production and publishing can be completed by November 27.
+2026-11-17 us clarified that each script covers a different brief and confirmed the November 27 deadline can be met.
 
 BILLING: not yet.
 
-OPEN NOW: Brand asked if all three scripts are for the same brief and if production and publishing can be completed by November 27.
-We owe: a reply confirming the script and timeline details.
+OPEN NOW: Waiting on brand: review the clarified script details and schedule.
 
-## Deal with [[Chris]] (Submitted, opened 2026-11-05)
-Last brand reply 2026-11-16, our last reply 2026-11-16.
+## Deal with [[Chris]] (Approved, opened 2026-11-05)
+Last brand reply 2026-11-17, our last reply 2026-11-16.
 AGREED: [amount]total. 3 short-form videos. Signed contract via GrowMaxValue agency. Usage rights not stated. Payment terms not stated.
 
 HISTORY:
@@ -55,10 +55,11 @@ HISTORY:
 2026-11-14 brand / Mia Brown confirmed video submitted for review, shared second and third briefs, set publishing deadline to Nov 25 Beijing Time
 2026-11-16 us / Sent scripts for videos two and three for brand review and approval
 2026-11-16 brand / Mia Brown approved first video, shared posting instructions and requirements
+2026-11-17 brand / Mia Brown urged publishing the first video, provided revision notes and updated briefs for scripts two and three
 
 BILLING: not yet
 
-OPEN NOW: We owe: Publish the first video, notify the brand, share the 60-day adcode, and follow up on scripts for videos two and three.
+OPEN NOW: We owe: Publish the first video, notify the brand, share the 60-day adcode, and update scripts for videos two and three based on the latest brand feedback.
 
 ## Deal with [[Duncan]] (Invoiced, opened 2026-11-01)
 Last brand reply 2026-11-09, our last reply 2026-11-09.
@@ -79,8 +80,8 @@ BILLING: Mediacube Worldwide Ltd, Makariou III 134 Ground Floor, 3021 Limassol, 
 
 OPEN NOW: Awaiting [amount]final payment against Invoice INV-003. Waiting on brand: process final payment within next few days per their 2026-11-09 commitment.
 
-## Deal with [[Chris]] (Submitted, opened 2026-10-20)
-Last brand reply 2026-11-12, our last reply 2026-11-16.
+## Deal with [[Brad]] (Submitted, opened 2026-10-20)
+Last brand reply 2026-11-17, our last reply 2026-11-16.
 AGREED: Rate [amount]per video (total [amount]for three videos); 100% payment due within 7 days after each video publication, once 7-day performance metrics and payment documentation (W-9/W-8, payment details, invoice) are provided. Deliverable: CapCut x ChatGPT workflow video demonstrating full process. Product naming CapCut x ChatGPT confirmed. Usage rights not confirmed. Original target 2026-11-03.
 
 HISTORY:
@@ -91,15 +92,16 @@ HISTORY:
 2026-11-12 brand: requested Brad's video draft; noted 2026-11-15 publish deadline; offered to switch campaign if needed
 2026-11-13 us: requested to move to a new campaign with a fresh brief for creator Brad instead of adapting Chris's script
 2026-11-16 us: followed up on request to proceed with a new campaign and fresh brief for Brad
+2026-11-17 brand: asked if it is possible to continue with the original brief and script for Brad to publish as soon as possible
 
 BILLING: not yet
 
-OPEN NOW: Waiting on brand: Response to request for a new campaign and fresh brief for creator Brad.
+OPEN NOW: We owe: Response to brand about whether Brad can proceed using the original brief and script.
 
 ## Inbound leads
-- Deliverables: 1x TikTok video or Instagram Reel or YouTube + 7 days bio link + 30 days ads code · Contact Name: Sophie · Next Step: Reply with rates for TikTok, Instagram, and YouTube · Platforms: Instagram, TikTok, YouTube · Last Our Email: 2026-11-13 · Deal: 1 linked · Last Brand Email: 2026-11-12 · Thread Subject: Collaboration Opportunity with CapCut 🎁 · Status: Locked · Creator: Lindsay · Type: Paid offer · Brand Email: avery@bioby.ai
+- Deliverables: 1 YouTube video (integrated, dedicated, or Short) + link placement · Contact Name: Sophie · Next Step: Reply with rate card and availability · Platforms: YouTube, YouTube Shorts · Last Our Email: 2026-11-13 · Deal: 1 linked · Last Brand Email: 2026-11-17 · Thread Subject: Paid Sponsorship Opportunity with CapCut PC 💻🚀 (YouTube) · Status: Locked · Creator: Lindsay · Type: Paid offer · Brand Email: shirley.w@growmaxvalue.com
 - Deliverables: Three short-form videos for CapCut promotion with deadline November 27 · Contact Name: Sophie · Next Step: Deal declined. Archive or follow up if brand increases budget. · Platforms: YouTube Shorts · Last Our Email: 2026-11-12 · Last Brand Email: 2026-11-12 · Thread Subject: Paid collab — CapCut · Black Friday & Q4 Campaigns · Status: Lost · Creator: Lindsay · Type: Paid offer · Brand Email: SorenDai@superlinear.cc
-- Deliverables: 1 × 45–60 second CapCut tutorial Reel for Instagram · Contact Name: Vivian · Next Step: New brand: management to reply with pricing · Platforms: Instagram · Last Our Email: 2026-11-16 · Last Brand Email: 2026-11-16 · Thread Subject: Paid Collaboration Opportunity – CapCut Tutorial Campaign🚀 · Status: Negotiating · Creator: Chris · Type: Paid offer · Brand Email: vivianmiller@juyundigital.com
+- Deliverables: 1 × 45–60 second CapCut tutorial Reel for Instagram · Contact Name: Vivian · Next Step: Replied 2026-11-16, waiting on the brand · Platforms: Instagram · Last Our Email: 2026-11-16 · Last Brand Email: 2026-11-16 · Thread Subject: Paid Collaboration Opportunity – CapCut Tutorial Campaign🚀 · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: vivianmiller@juyundigital.com
 - Deliverables: One short-form video/reel cross-posted to YouTube Shorts, Instagram and TikTok · Contact Name: Paul · Next Step: New brand: management to reply with pricing · Platforms: YouTube Shorts, Instagram, TikTok · Last Our Email: 2026-11-03 · Last Brand Email: 2026-11-04 · Thread Subject: Lindsay Gonzales - Partnering with Capcut · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: cyan@ssgmcn.com
 - Deliverables: 1 short-form video cross-posted to accounts, 60-day ad rights · Contact Name: Liora · Next Step: No action needed; keep Gillian's contact for future opportunities · Platforms: Instagram, TikTok, YouTube Shorts · Last Our Email: 2026-11-03 · Last Brand Email: 2026-11-04 · Thread Subject: 🚀Paid Collaboration Opportunity with CapCut · Status: Lost · Creator: Chris · Type: Paid offer · Brand Email: gillian@ssgcollab.com
 - Deliverables: 365-day ad codes, 30-day content usage rights, DM automation or Link in Bio placement · Contact Name: Elio · Next Step: Wait for brand (via Elio) to confirm which placement option (DM automation or Link in Bio) they want and final approval from headquarters · Platforms: YouTube Shorts, Instagram, TikTok · Last Our Email: 2026-10-23 · Last Brand Email: 2026-10-30 · Thread Subject: 回复：回复：CapCut | Collaboration Opportunity · Status: Negotiating · Creator: Lindsay · Type: Paid offer · Brand Email: spicy@ssgmcn.com

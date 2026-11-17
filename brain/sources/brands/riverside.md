@@ -3,25 +3,20 @@
 Brand. Works with creators: [[Duncan]].
 
 ## Brand wiki (from every email with them)
-WHO: Riverside, a brand/product, coming to us directly.
+WHO: Riverside is a recording and video software platform. They come to us directly.
 
-CONTACTS:
-Jackie Cohen, jackie.cohen@riverside.fm, role not specified, signs as Jackie Cohen, must be copied on all emails.
+CONTACTS: Jackie Cohen, jackie.cohen@riverside.fm, brand contact. CC collab@buildroom.ai.
 
-DEALS:
-Duncan | deliverables and rate per deal fields | Price Agreed | dates not yet agreed.
+DEALS: Duncan, deliverables and rate are to be confirmed, stage is Brief Received, dates are not yet set.
 
-HOW THEY WORK:
-Process: brand to send contract and brief.
+HOW THEY WORK: Brand will send the contract and brief. Once received, we start on the scripting. Use Reply All going forward.
 
-WATCH OUT:
-None specified yet.
+WATCH OUT: None listed.
 
-OPEN NOW:
-Waiting on brand to send the contract and brief. Brand owes the next move.
+OPEN NOW: Waiting on brand to send the contract and brief. Brand owes the next move.
 
-## Deal with [[Duncan]] (Price Agreed, opened 2026-11-16)
-Last brand reply none, our last reply 2026-11-16.
+## Deal with [[Duncan]] (Brief Received, opened 2026-11-16)
+Last brand reply 2026-11-17, our last reply 2026-11-16.
 AGREED:
 Rate: per deal fields
 Deliverables: per deal fields

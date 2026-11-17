@@ -4,7 +4,7 @@ Brand. Works with creators: [[Lindsay]].
 
 ## Inbound leads
 - Contact Name: Yaman · Next Step: Lost: gifted / affiliate only, no fee · Platforms: YouTube · Last Brand Email: 2026-10-28 · Thread Text: From: Yaman Jalal <yaman@refinar.ai>
-Date: 2026-10-28
+Date: 2026-10-28T10:28:46.000Z
 
 Hi Lindsay,
 

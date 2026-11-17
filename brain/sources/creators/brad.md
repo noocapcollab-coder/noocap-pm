@@ -1,3 +1,3 @@
 # Brad
 
-NOOCAP creator. Brands: [[Unknown]], [[Buzzy AI]], [[Walala.ai]], [[Topview AI]], [[Migoo (in-person session)]], [[Teamily]], [[Luma AI]], [[PromoCut]].
+NOOCAP creator. Brands: [[Unknown]], [[Buzzy AI]], [[Walala.ai]], [[Topview AI]], [[Migoo (in-person session)]], [[Teamily]], [[Luma AI]], [[PromoCut]], [[CapCut]].

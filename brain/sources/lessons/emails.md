@@ -2,6 +2,21 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Keep chasing an interested brand until they answer
+When: A brand has agreed (we accepted their rate, or the creator said yes) and owes us the contract, brief or script approval
+Do: Follow up every 3 days until they answer. A contract or brief follow-up 3+ days after our last email is never too early.
+Never: Never stop after a set number of follow-ups, never let a stale stage (Negotiating) or an empty Last Our Reply stop the chase, and never hold a contract follow-up as too soon.
+Seen 1 time(s). Source: Harsh correction.
+## Chris's inbox is collab@chriscordero.net, and a Message-ID is never an address
+When: Building To or Cc for any email, from a thread where a brand mistyped one of our inboxes or where a Message-ID slipped into the address list
+Do: Use our real inboxes (collab@chriscordero.net, collab@buildroom.ai, partnerships@ninjaaitools.com, collab@automateaiconsulting.com, collab@valchy.ai) and drop anything @mail.gmail.com
+Never: Copy a brand's typo of our address (ollab@chriscordero.net) or a Message-ID into Thread CC
+Seen 1 time(s). Source: Harsh correction.
+## A tool-access email never replaces an answer to the brand's question
+When: A brand approves the script and in the same email asks something else (when the video draft comes, a date, a file)
+Do: Hold the tool-access email and send the brand's question to Harsh first; when his answer comes, put the access ask in the same reply.
+Never: Draft or send 'thanks for approving, please give access on noocaptools@gmail.com' as the only reply to an email that asked us a question.
+Seen 1 time(s). Source: System check.
 ## Sign as the creator the brand is now working with
 When: A deal's video moved to another creator (a mix-up, a swap) and the PM writes to the brand
 Do: Sign and refer to the one creator the brand was last told about ("Brad's Team" once we told them Brad shoots it), and flag the deal so its Creator field can be corrected.
@@ -121,18 +136,9 @@ Seen 1 time(s). Source: Rulebook.
 When: Writing or editing a brand email
 Do: Send to whoever at THIS brand wrote last in THIS thread.
 Never: Use another brand's address, or apply a message about one brand to another brand's draft.
-Seen 2 time(s). Source: Rulebook.
+Seen 3 time(s). Source: Rulebook.
 ## No filler promises or placeholders
 When: Writing any email
 Do: Give the thing if we have it, otherwise leave the promise out.
 Never: Write 'shortly', 'within a few hours', 'we'll send it today', [DATE], [name] or invented dates.
-Seen 11 time(s). Source: Rulebook.
-
-## A video sent for approval is chased until the brand answers (Harsh, Nov 16)
-Once a cut (first or revised) goes to the brand, the PM follows up every 3 days, weekends included, with no cap, until they approve, ask for changes or say go ahead and post. Two things used to stop it: an editor-tracker row left on "Changes" from an older round (ZenBusiness × Lindsay, 11 days quiet) now only pauses the chase if the changes were asked after our latest cut; and a follow-up the second check held as "too soon" (ElevenLabs × Duncan) is retired after a day and a fresh one written, with the 3-day rule spelled out for the second check.
-
-## A name Harsh uses may be the agency, not the brand (Nov 16)
-"Narrativegroup gave me that contract" got "you don't have a deal or lead under Narrativegroup", though HoneyBook (MyCo) × Chris came from Dori at narrativegroup.co. Before saying a name is unknown, the PM looks it up as a brand AND as an agency or contact (email domains, CC, billing company, subjects) and searches the second brain, then says which brand it is and how they are connected.
-
-## Every round of brand changes goes to the editor and back to the brand (Harsh, Nov 16)
-"There can be multiple changes of brand, we can't ignore those, it should be shared with the brand anyhow." Round 2, 3 and later are handled like round 1: the changes are posted in the editor's Discord thread as soon as the email is read, each round stamps "Brand Changes At" on the edit tracker row, and the revised cut is emailed to the brand when the editor is done, even though Frame.io keeps the same link for every version. A cut is only skipped as a repeat when the brand already got one email per round plus the first cut.
+Seen 12 time(s). Source: Rulebook.
