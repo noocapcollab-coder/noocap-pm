@@ -14,7 +14,11 @@
     "unpdf": "^1.8.1"
   },
   "scripts": {
-    "test": "GEMINI_API_KEY= PM_AI_PROVIDER= node --test test/*.test.js",
-    "vercel-build": "GEMINI_API_KEY= PM_AI_PROVIDER= node --test test/*.test.js"
+    "test": "npm run -s lint && GEMINI_API_KEY= PM_AI_PROVIDER= node --test test/*.test.js",
+    "vercel-build": "GEMINI_API_KEY= PM_AI_PROVIDER= node --test test/*.test.js",
+    "lint": "eslint --no-eslintrc --env es2022,node --parser-options=sourceType:module,ecmaVersion:latest --rule 'no-undef:error' lib api"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1"
   }
 }
