@@ -34,6 +34,12 @@ export default async function handler(req, res) {
     catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
   // ?cleancard=<card id>[&dry=1]: show only the approved script on a video card, the rest kept in Card history (Nov 16)
+  // ?sendtemplate=<dealId>&key=video_eta[&from=Name <email>]: send one fixed reply into a deal's thread (Nov 17)
+  if (req.query?.sendtemplate) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const R = await import('../lib/replytemplates.js'); return res.status(200).json(await R.sendTemplateToDeal(String(req.query.sendtemplate), String(req.query.key || ''), { from: String(req.query.from || '') })); }
+    catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   if (req.query?.cleancard) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
     try { const C = await import('../lib/cardclean.js'); return res.status(200).json(await C.cleanCardToApprovedScript(String(req.query.cleancard).replace(/-/g, ''), { dryRun: req.query.dry === '1' })); }
