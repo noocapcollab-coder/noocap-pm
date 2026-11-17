@@ -2413,3 +2413,21 @@ test('a deal past the brief with no video card is flagged (CodeRabbit x Chris, N
   ]);
   assert.deepEqual(out.map((d) => d.brand), ['CodeRabbit']);
 });
+
+test('automatic sends hold filler, placeholders and flagged drafts (lesson seen 12 times)', async () => {
+  const { autoHoldReason } = await import('../lib/outbox.js');
+  const ok = { why: 'Fixed reply', body: 'Hi Mia,\n\nThanks, the script will be with you in 2 to 3 working days.\n\nBest,\nChris\'s Team', creator: 'Chris' };
+  assert.equal(autoHoldReason(ok), null);
+  assert.match(autoHoldReason({ ...ok, body: 'Hi Mia,\n\nWe will publish it right away.\n\nBest,\nChris\'s Team' }), /promises to send/);
+  assert.match(autoHoldReason({ ...ok, body: 'Hi Mia,\n\nThe video goes live on [date].\n\nBest,\nChris\'s Team' }), /placeholder/);
+  assert.match(autoHoldReason({ ...ok, why: 'Needs you: the second reader flagged it · Follow-up' }), /second reader/);
+});
+
+test('one WhatsApp message per thing (lesson seen 4 times)', async () => {
+  const { alreadySent } = await import('../lib/whatsapp.js');
+  const now = new Date().toISOString();
+  const st = { messages: [{ role: 'assistant', at: now, content: '📝 Script ready: FABLE 5.2 × Lindsay\nHere is the PDF' }] };
+  assert.ok(alreadySent(st, '📝 Script ready: FABLE 5.2 × Lindsay\nno deal to send it from'));
+  assert.ok(!alreadySent(st, '💬 Brand reply: CapCut × Chris\nMia asked for the ad code'));
+  assert.ok(!alreadySent({ messages: [{ role: 'assistant', at: new Date(Date.now() - 2 * 36e5).toISOString(), content: '📝 Script ready: FABLE 5.2 × Lindsay' }] }, '📝 Script ready: FABLE 5.2 × Lindsay'));
+});
