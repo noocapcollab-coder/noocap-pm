@@ -2341,3 +2341,12 @@ test('a greeting to the person the email goes to is kept even before they signed
   assert.equal(fixGreeting('Hi Jun,\n\nCould you share…', convo, 'jun@manyfast.io').changed, false);
   assert.equal(fixGreeting('Hi Mark,\n\nCould you share…', convo, 'jun@manyfast.io').changed, true);
 });
+
+test('a thread subject naming YouTube does not contradict a brief for Instagram, TikTok and Facebook', async () => {
+  const { checkInvoice } = await import('../lib/invoiceguard.js').catch(() => ({}));
+  const { platformsIn, brandLines } = await import('../lib/invoiceguard.js');
+  const convo = '📨 2026-11-17 · brand ("Jun" <jun@manyfast.io>) · Re: Paid YouTube collaboration — Manyfast × Duncan\nHi Duncan and team,\n\nPlease issue the invoice in the name of our agency.';
+  const bodies = brandLines(convo).map((l) => l.replace(/^📨[^\n]*\n/, '')).join('\n');
+  assert.deepEqual(platformsIn(bodies), []);
+  assert.ok(typeof checkInvoice === 'function');
+});
