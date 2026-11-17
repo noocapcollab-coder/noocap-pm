@@ -2267,3 +2267,16 @@ test('a queued WhatsApp message is sent once: the merge drops its pending copy a
   const fresh = { role: 'assistant', meta: 'pending-ask', content: '🙋 Manyfast × Duncan is asking', at: '2026-11-17T03:40:00Z' };
   assert.equal(pendingAlreadySent({ messages: [fresh, sent] }, fresh), false);
 });
+
+// System check Nov 17: the Atoms agreement ("Automate AI Consulting x Auremere") auto-sent to Holo AI x Chris because
+// "holo" turned up across word breaks once the contract text was squashed into one string
+test('a signed contract is matched to a brand only by whole words in its text', async () => {
+  const { matchDeal } = await import('../lib/contracts.js');
+  const deals = [
+    { id: 'holo', brand: 'Holo AI', creator: 'Chris', stage: 'Negotiating', brandEmail: 'anitadundovic@arch.agency' },
+    { id: 'atoms', brand: 'Atoms', creator: 'Lindsay', stage: 'Signed', brandEmail: 'may@atoms.dev' },
+  ];
+  const text = 'This Agreement is made between Auremere Pte Ltd and Automate AI Consulting. Anyone who logs in to the platform agrees to these terms.';
+  assert.equal(matchDeal({ caption: 'here you go', filename: 'Automate AI Consulting x Auremere - Agreement (signed).pdf', text }, deals), null);
+  assert.equal(matchDeal({ filename: 'contract.pdf', text: 'Agreement between Holo AI Inc. and Chris Cordero' }, deals)?.id, 'holo');
+});
