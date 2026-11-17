@@ -2402,3 +2402,14 @@ test('video approval wording from Dreamina x Chris (Nov 16)', async () => {
   assert.ok(!videoApprovalIn('Once the video is approved we will process the payment.'));
   assert.ok(!videoApprovalIn('Your script is approved, please film the video.'));
 });
+
+test('a deal past the brief with no video card is flagged (CodeRabbit x Chris, Nov 17)', async () => {
+  const { dealsWithoutCard } = await import('../lib/heartbeat.js');
+  const out = dealsWithoutCard([
+    { brand: 'CodeRabbit', stage: 'Brief Received', linkedVideo: '' },
+    { brand: 'HoneyBook', stage: 'Brief Received', linkedVideo: 'https://app.notion.com/p/x' },
+    { brand: 'Teamily', stage: 'Negotiating', linkedVideo: '' },
+    { brand: 'Paused one', stage: 'Script Approved', linkedVideo: '', paused: true },
+  ]);
+  assert.deepEqual(out.map((d) => d.brand), ['CodeRabbit']);
+});
