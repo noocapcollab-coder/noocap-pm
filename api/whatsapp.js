@@ -505,10 +505,17 @@ async function signedContract(st, file, hint = '', answering = false) {
   if (!answering && !C.looksLikeContract(file.filename, text, hint)) return false;
   const { openDeals } = await import('../lib/briefs.js');
   const deals = await openDeals({ withClosed: true }).catch(() => []);
-  const deal = C.matchDeal({ caption: hint, filename: answering ? '' : file.filename, text: answering ? '' : text }, deals);
+  let deal = C.matchDeal({ caption: hint, filename: answering ? '' : file.filename, text: answering ? '' : text }, deals);
+  // A contract only goes out on its own when the brand is named in the caption, the file name or Harsh's answer.
+  // Found only inside the contract text, it's a guess: ask first (Nov 16: the Atoms agreement went to Holo AI's agency).
+  const named = deal && (answering || [hint, file.filename].some((s) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '').includes(C.brandKey(deal.brand))));
+  const guess = deal && !named ? deal : null;
+  if (guess) deal = null;
   if (!deal) {
     if (answering) return false; // not a brand name: let the message be handled normally
-    const ask = `📎 Got *${file.filename}*. Which brand is this signed contract for? Reply with the brand name (e.g. "Atoms") and I'll email it to them right away.`;
+    const ask = guess
+      ? `📎 Got *${file.filename}*. It looks like the *${guess.brand} × ${guess.creator}* contract, but the brand isn't in the file name or your message, so I haven't sent it. Reply with the brand name (e.g. "${guess.brand}") and I'll email it to them right away.`
+      : `📎 Got *${file.filename}*. Which brand is this signed contract for? Reply with the brand name (e.g. "Atoms") and I'll email it to them right away.`;
     await sendText(st.person.number, ask);
     st.messages.push({ role: 'assistant', content: ask, meta: 'contract-ask', file, at: new Date().toISOString() });
     return true;
