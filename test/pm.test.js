@@ -2302,3 +2302,21 @@ test('a signed contract only goes out on its own when every safety check passes'
   // A bare first name in the text is not proof of who the contract is for
   assert.deepEqual(creatorsNamed('Chris from our team will review this agreement'), []);
 });
+
+// Harsh, Nov 17: fixed replies for the brand messages that keep coming back
+test('fixed replies go only at the right stage, before the brand deadline, and once per thread', async () => {
+  const { BUILT_IN, templateBlock, fillTemplate, addWorkingDays } = await import('../lib/replytemplates.js');
+  const t = (k) => ({ ...BUILT_IN.find((x) => x.key === k), active: true });
+  assert.equal(templateBlock(t('video_eta'), { stage: 'Script Approved', today: '2026-11-17' }), '');
+  assert.match(templateBlock(t('video_eta'), { stage: 'Submitted', today: '2026-11-17' }), /deal is at Submitted/);
+  assert.match(templateBlock(t('video_eta'), { stage: 'Script Approved', deadline: '2026-11-19', today: '2026-11-17' }), /deadline/);
+  assert.equal(templateBlock(t('video_eta'), { stage: 'Script Approved', deadline: '2026-11-28', today: '2026-11-17' }), '');
+  assert.match(templateBlock(t('video_eta'), { stage: 'Script Approved', today: '2026-11-17', sentRecently: true }), /already went/);
+  assert.match(templateBlock({ ...t('script_review_ack'), active: false }, { stage: 'Script Sent', today: '2026-11-17' }), /no active/);
+  assert.equal(addWorkingDays('2026-11-20', 2), '2026-11-24'); // Friday + 2 working days = Tuesday
+  const body = fillTemplate(t('video_eta').body, { from: 'Rajeshwari Sardar <rajeshwari@jeevmedia.net>', deal: { creator: 'Lindsay', brand: 'X' } });
+  assert.match(body, /^Hi Rajeshwari,/);
+  assert.match(body, /Lindsay's Team$/);
+  assert.match(fillTemplate(t('script_eta').body, { from: 'partnerships@brand.com', deal: { creator: 'Chris' } }), /^Hi there,/);
+  for (const x of BUILT_IN) assert.doesNotMatch(x.body, /—|–|\bnot just\b|\bisn't\b[^.]*\bit's\b/); // Harsh's writing rules
+});
