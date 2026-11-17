@@ -2439,3 +2439,12 @@ test('a brand chasing team work still gets the fixed timing reply (CodeRabbit x 
   assert.equal(templateForWork('Send the first draft video'), 'video_eta');
   assert.equal(templateForWork('Share the ad code'), null);
 });
+
+test('a brand signing page on its own domain counts as a contract (Runway x Chris, Nov 17)', async () => {
+  const { ownSignLinks, contractIn } = await import('../lib/inbox.js');
+  const t = 'Hey Team,\n\nI believe the payment issues is now in hand.\n\nCould you sign the contract for the next campaign please: https://agreements.houseofmarketers.com/sign/_ZnD0Me1plcRpNbQeU7kT6_9TriTNgF3\n\nThanks!';
+  assert.deepEqual(ownSignLinks(t), ['https://agreements.houseofmarketers.com/sign/_ZnD0Me1plcRpNbQeU7kT6_9TriTNgF3']);
+  assert.ok(contractIn({ text: t, attachments: [] })?.links?.length);
+  assert.deepEqual(ownSignLinks('Here is the brief: https://docs.example.com/brief/123'), []);
+  assert.deepEqual(ownSignLinks('Sign up here: https://app.example.com/signup'), []);
+});
