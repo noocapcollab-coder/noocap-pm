@@ -2394,3 +2394,11 @@ test('safety net: an ask the PM did nothing about is reported (Nov 17)', async (
   assert.deepEqual(missedAsks('Can you send the invoice with your bank details?', { event: 'brand_reply', from_role: 'brand' }, 'Left unread for Harsh to reply [unread thread:1]'), []);
   assert.deepEqual(missedAsks(nov16, { event: 'brand_reply', from_role: 'noocap' }, ''), []);
 });
+
+test('video approval wording from Dreamina x Chris (Nov 16)', async () => {
+  const { videoApprovalIn } = await import('../lib/inbox.js');
+  assert.ok(videoApprovalIn('Thanks! The video looks good now and is approved. Please update the cover image and caption.'));
+  assert.ok(videoApprovalIn('Great work, everything is approved on our side.'));
+  assert.ok(!videoApprovalIn('Once the video is approved we will process the payment.'));
+  assert.ok(!videoApprovalIn('Your script is approved, please film the video.'));
+});
