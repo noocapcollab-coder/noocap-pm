@@ -2320,3 +2320,24 @@ test('fixed replies go only at the right stage, before the brand deadline, and o
   assert.match(fillTemplate(t('script_eta').body, { from: 'partnerships@brand.com', deal: { creator: 'Chris' } }), /^Hi there,/);
   for (const x of BUILT_IN) assert.doesNotMatch(x.body, /—|–|\bnot just\b|\bisn't\b[^.]*\bit's\b/); // Harsh's writing rules
 });
+
+// Harsh, Nov 17 (Manyfast x Chris): the 50% upfront invoice can't be blocked by "video not posted"
+test('the upfront share is invoiced before the video is posted, for its share only', async () => {
+  const { dueNow, raiseChecks } = await import('../lib/invoicing.js');
+  const d = { creator: 'Chris', stage: 'Script Approved', finalRate: 1500, paymentTerms: '50% upon script approval, 50% after publication', stripeInvoices: '', deliverables: '1 dedicated Instagram Reel', threadId: 't', messageRfc: 'm', brandEmail: 'jun@manyfast.io' };
+  assert.deepEqual(dueNow(d), { part: 'upfront', pct: 50, amount: 750 });
+  const checks = raiseChecks(d, { bill: { company_name: 'Slate Media Co., Ltd.' }, connected: true });
+  assert.ok(checks.every((c) => c.ok), checks.filter((c) => !c.ok).map((c) => c.t).join(', '));
+  // once the upfront invoice is out, the rest waits for the posted video
+  const after = { ...d, stripeInvoices: 'upfront | in_1 | sent | 750' };
+  assert.equal(dueNow(after).part, 'final');
+  assert.equal(dueNow(after).amount, 750);
+  assert.ok(raiseChecks(after, { bill: { company_name: 'X' }, connected: true }).some((c) => !c.ok && c.k === 'posted'));
+});
+
+test('a greeting to the person the email goes to is kept even before they signed anything', async () => {
+  const { fixGreeting } = await import('../lib/invoiceguard.js');
+  const convo = '📨 2026-11-17 · brand ("이승주" <konan@manyfast.io>) · Re: x\nHi Chris and team,\n\nBest,\nSeungjoo (Konan)';
+  assert.equal(fixGreeting('Hi Jun,\n\nCould you share…', convo, 'jun@manyfast.io').changed, false);
+  assert.equal(fixGreeting('Hi Mark,\n\nCould you share…', convo, 'jun@manyfast.io').changed, true);
+});

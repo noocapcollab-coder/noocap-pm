@@ -40,6 +40,19 @@ export default async function handler(req, res) {
     try { const R = await import('../lib/replytemplates.js'); return res.status(200).json(await R.sendTemplateToDeal(String(req.query.sendtemplate), String(req.query.key || ''), { from: String(req.query.from || '') })); }
     catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?raisedraft=<dealId>: draft the invoice due now (upfront share first) in the creator's Stripe and put its email in
+  // Approvals, nothing sent (Nov 17: Harsh sees every invoice before it goes)
+  if (req.query?.raisedraft) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const I = await import('../lib/invoicing.js');
+      const { openDeals } = await import('../lib/briefs.js');
+      const deal = (await openDeals({ withClosed: true })).find((d) => d.id.replace(/-/g, '') === String(req.query.raisedraft).replace(/-/g, ''));
+      if (!deal) return res.status(404).json({ error: 'deal not found' });
+      const now = I.dueNow(deal);
+      return res.status(200).json({ due: now, ...(await I.raiseInvoiceNow(deal.id, now.amount, { notify: false, part: now.part, pct: now.pct })) });
+    } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   if (req.query?.cleancard) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
     try { const C = await import('../lib/cardclean.js'); return res.status(200).json(await C.cleanCardToApprovedScript(String(req.query.cleancard).replace(/-/g, ''), { dryRun: req.query.dry === '1' })); }
