@@ -26,6 +26,12 @@ export default async function handler(req, res) {
       return res.status(200).json(await sendCutsToBrands({ rowId: id.length === 32 ? id : undefined }));
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?unanswered=1: deals whose newest email is from the brand (read only). Hook only.
+  if (req.query?.unanswered) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const U = await import('../lib/unanswered.js'); return res.status(200).json(await U.unanswered({ days: Number(req.query.days) || 10 })); }
+    catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // ?contractping=<CONTRACTS row id>: send that contract to WhatsApp and #pm-alerts again (a row added by hand). Hook only.
   if (req.query?.contractping) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });

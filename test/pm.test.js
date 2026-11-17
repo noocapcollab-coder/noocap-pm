@@ -2448,3 +2448,11 @@ test('a brand signing page on its own domain counts as a contract (Runway x Chri
   assert.deepEqual(ownSignLinks('Here is the brief: https://docs.example.com/brief/123'), []);
   assert.deepEqual(ownSignLinks('Sign up here: https://app.example.com/signup'), []);
 });
+
+test('the newest email in a deal record says who wrote last', async () => {
+  const { lastEntry } = await import('../lib/unanswered.js');
+  const t = '📨 2026-11-17 · us (NOOCAP) · Re: Holo\nHi Anita, here are the details.\n\n📨 2026-11-17 · brand ("Dori Zussmann" <dori@narrativegroup.co>) · Re: HoneyBook\nThanks for sharing the signed contract! The next step is to get the script please.';
+  const e = lastEntry(t);
+  assert.equal(e.side, 'brand'); assert.match(e.text, /next step is to get the script/);
+  assert.equal(lastEntry('📨 2026-11-17 · Chris\'s team · Re: X\nHi').side, 'ours');
+});
