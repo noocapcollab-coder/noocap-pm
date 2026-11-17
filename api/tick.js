@@ -53,6 +53,12 @@ export default async function handler(req, res) {
       return res.status(200).json({ due: now, ...(await I.raiseInvoiceNow(deal.id, now.amount, { notify: false, part: now.part, pct: now.pct })) });
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?rejectoutbox=<PM OUTBOX page id>: reject a draft Harsh told Claude to drop (an invoice draft also leaves Stripe)
+  if (req.query?.rejectoutbox) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const { rejectDraft } = await import('../lib/outbox.js'); await rejectDraft(String(req.query.rejectoutbox)); return res.status(200).json({ ok: true }); }
+    catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   if (req.query?.cleancard) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
     try { const C = await import('../lib/cardclean.js'); return res.status(200).json(await C.cleanCardToApprovedScript(String(req.query.cleancard).replace(/-/g, ''), { dryRun: req.query.dry === '1' })); }
