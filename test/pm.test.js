@@ -2498,3 +2498,14 @@ test('payment claim: "the second half of the payment was also sent" is a claim (
   const x = I.applyTextGuards({ event: 'brand_reply', from_role: 'brand', needs_reply: true }, { text });
   assert.equal(x.event, 'payment_confirmed');
 });
+
+// System check Nov 17 night: CapCut BD-46 moved from Chris to Brad while a reply signed "Chris's Team" waited
+test('send guard: signature must match the deal creator (CapCut x Brad, Nov 17)', async () => {
+  const O = await import('../lib/outbox.js');
+  assert.equal(O.signatureMismatch("Hi Alisa,<br /><br />Thanks.<br /><br />Best,<br />Chris's Team", 'Brad'), 'Chris');
+  assert.equal(O.signatureMismatch("Hi Alisa,\n\nBest,\nBrad's Team", 'Brad'), null);
+  assert.equal(O.signatureMismatch("Hi,\n\nBest,\nValeri's Team", 'Valeri'), null);
+  assert.equal(O.signatureMismatch("Hi,\n\nBest,\nNOOCAP", 'Brad'), null);
+  assert.equal(O.signatureMismatch("Hi,\n\nBest,\nDavid Iya's Team", 'David Iya'), null);
+  assert.equal(O.signatureMismatch("Hi,\n\nBest,\nValerie's Team", 'Valeri'), null);
+});
