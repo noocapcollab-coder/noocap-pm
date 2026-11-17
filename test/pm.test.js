@@ -2456,3 +2456,20 @@ test('the newest email in a deal record says who wrote last', async () => {
   assert.equal(e.side, 'brand'); assert.match(e.text, /next step is to get the script/);
   assert.equal(lastEntry('📨 2026-11-17 · Chris\'s team · Re: X\nHi').side, 'ours');
 });
+
+test('typos of our own inboxes and Message-IDs never reach To or Cc (HoneyBook x Chris, Nov 17)', async () => {
+  const { fixAddressList, cleanCc } = await import('../lib/outbox.js');
+  const { threadCcFrom } = await import('../lib/briefs.js');
+  assert.equal(fixAddressList('ollab@chriscordero.net, CAEsMoLQCVr73sbjTepX3q+vdYvAcEqEMbqwLVzN2LjhphY082A@mail.gmail.com, yulia@kudosnarratives.com'), 'collab@chriscordero.net, yulia@kudosnarratives.com');
+  assert.equal(threadCcFrom({ from: 'Dori <dori@narrativegroup.co>', to: 'ollab@chriscordero.net, noocapcollab@gmail.com' }), 'collab@chriscordero.net');
+  assert.equal(cleanCc('ollab@chriscordero.net', 'dori@narrativegroup.co', 'noocapcollab', 'Chris'), 'collab@chriscordero.net');
+  assert.equal(fixAddressList('mia.brown@growmaxvalue.com'), 'mia.brown@growmaxvalue.com');
+});
+
+test('product price talk reaches the script writer (Teamily AI x Brad, Nov 17)', async () => {
+  const { forScriptWriter } = await import('../lib/briefs.js');
+  const l = '8. Changing the price in Studio will not make every agent revise its work on its own. Clarify whether the client edits the price directly.';
+  assert.equal(forScriptWriter(`head\n${l}`), `head\n${l}`);
+  assert.equal(forScriptWriter('head\nThe price for this collab is 1,500 USD'), 'head');
+  assert.equal(forScriptWriter('head\nOur budget for this is tight'), 'head');
+});
