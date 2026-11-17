@@ -2371,3 +2371,12 @@ test('a video approval is never lost to a script event in the same email (CapCut
   assert.deepEqual(pickScriptCards([{ url: 'v1', num: 5 }, { url: 'v2', num: 5 }]), ['v1']);
   assert.deepEqual(pickScriptCards([{ url: 'v1', num: 10 }]), []);
 });
+
+test('content money words reach the script writer, deal money never does (CapCut x Chris, Nov 17)', async () => {
+  const { forScriptWriter } = await import('../lib/briefs.js');
+  const keep = ['1. The hook should focus on budget pressure and marketing challenges, then introduce Dreamina and CapCut PC',
+    '2. Put the Black Friday price on the end card', '3. Say the whole ad cost me about a coffee', '4. Add the paid partnership label'];
+  assert.deepEqual(forScriptWriter(['Script changes:', ...keep].join('\n')).split('\n').slice(1), keep);
+  for (const l of ['Our budget for this campaign is $500', 'The fee is 50% upfront', 'Your rate works for us', 'We will pay on posting', 'Budget is 800 USD'])
+    assert.equal(forScriptWriter(`head\n${l}`), 'head', l);
+});
