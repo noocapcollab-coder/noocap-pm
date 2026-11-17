@@ -498,31 +498,34 @@ function pendingContract(st) {
 // A signed contract dropped into the chat goes to the brand by itself (lib/contracts.js). Returns true when handled.
 async function signedContract(st, file, hint = '', answering = false) {
   const C = await import('../lib/contracts.js');
+  // The contract text is read every time, also when Harsh answers "which brand?", so the creator check always runs
   let text = '';
-  if (!answering && /pdf/i.test(`${file.mime} ${file.filename}`)) {
+  if (/pdf/i.test(`${file.mime} ${file.filename}`)) {
     try { const W = await import('../lib/whatsapp.js'); const got = await W.downloadMedia(file.mediaId); const { pdfText } = await import('../lib/pdftext.js'); text = (await pdfText(got.data, 20000)) || ''; } catch { /* name and caption still work */ }
   }
   if (!answering && !C.looksLikeContract(file.filename, text, hint)) return false;
   const { openDeals } = await import('../lib/briefs.js');
   const deals = await openDeals({ withClosed: true }).catch(() => []);
-  let deal = C.matchDeal({ caption: hint, filename: answering ? '' : file.filename, text: answering ? '' : text }, deals);
-  // A contract only goes out on its own when the brand is named in the caption, the file name or Harsh's answer.
-  // Found only inside the contract text, it's a guess: ask first (Nov 16: the Atoms agreement went to Holo AI's agency).
-  const named = deal && (answering || [hint, file.filename].some((s) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '').includes(C.brandKey(deal.brand))));
-  const guess = deal && !named ? deal : null;
-  if (guess) deal = null;
-  if (!deal) {
-    if (answering) return false; // not a brand name: let the message be handled normally
-    const ask = guess
-      ? `📎 Got *${file.filename}*. It looks like the *${guess.brand} × ${guess.creator}* contract, but the brand isn't in the file name or your message, so I haven't sent it. Reply with the brand name (e.g. "${guess.brand}") and I'll email it to them right away.`
-      : `📎 Got *${file.filename}*. Which brand is this signed contract for? Reply with the brand name (e.g. "Atoms") and I'll email it to them right away.`;
-    await sendText(st.person.number, ask);
-    st.messages.push({ role: 'assistant', content: ask, meta: 'contract-ask', file, at: new Date().toISOString() });
-    return true;
+  // Which deal: on an answer, only Harsh's words pick it; otherwise caption, file name and contract text
+  const deal = C.matchDeal({ caption: hint, filename: answering ? '' : file.filename, text: answering ? '' : text }, deals);
+  if (!deal && answering) return false; // not a brand name: let the message be handled normally
+  // Safety checks before anything goes to a brand on its own (lib/contracts.js contractChecks). Nov 16: the Atoms
+  // agreement (Lindsay's) went to Holo AI x Chris's agency, who had never sent us a contract.
+  let why = [];
+  if (deal) {
+    const T = await import('../lib/contracttrack.js');
+    const openRows = await T.openContracts().catch(() => []);
+    why = C.contractChecks(deal, { caption: hint, filename: file.filename, text, answered: answering, openRows });
   }
-  if (!deal.brandEmail || !(deal.threadId || deal.messageRfc)) {
-    st.messages.push({ role: 'assistant', content: '', meta: 'contract-done', at: new Date().toISOString() });
-    await say(st, `📎 This looks like the *${deal.brand} × ${deal.creator}* contract, but that deal has no email thread with the brand to reply in, so I haven't sent it. Send it from Gmail this time.`);
+  if (!deal || why.length) {
+    const hard = deal && C.hardStop(why);
+    const ask = !deal
+      ? `📎 Got *${file.filename}*. Which brand is this signed contract for? Reply with the brand name (e.g. "Atoms") and I'll check it and email it to them.`
+      : hard
+        ? `🛑 I haven't sent *${file.filename}*: ${why.filter((w) => C.hardStop([w])).join('; ')}. If it really goes to ${deal.brand}, send it from Gmail.`
+        : `📎 Got *${file.filename}*. It looks like the *${deal.brand} × ${deal.creator}* contract (to ${deal.brandEmail}), but I haven't sent it: ${why.join('; ')}. Reply with the brand name (e.g. "${deal.brand}") and I'll send it.`;
+    await sendText(st.person.number, ask);
+    st.messages.push({ role: 'assistant', content: ask, meta: hard ? 'contract-done' : 'contract-ask', file: hard ? undefined : file, at: new Date().toISOString() });
     return true;
   }
   try {

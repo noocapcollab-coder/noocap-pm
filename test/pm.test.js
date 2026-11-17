@@ -2280,3 +2280,25 @@ test('a signed contract is matched to a brand only by whole words in its text', 
   assert.equal(matchDeal({ caption: 'here you go', filename: 'Automate AI Consulting x Auremere - Agreement (signed).pdf', text }, deals), null);
   assert.equal(matchDeal({ filename: 'contract.pdf', text: 'Agreement between Holo AI Inc. and Chris Cordero' }, deals)?.id, 'holo');
 });
+
+// Harsh, Nov 17: "build steps so that the PM won't send the contract to the wrong brand"
+test('a signed contract only goes out on its own when every safety check passes', async () => {
+  const { contractChecks, hardStop, creatorsNamed } = await import('../lib/contracts.js');
+  const holo = { id: 'holo', brand: 'Holo AI', creator: 'Chris', brandEmail: 'anitadundovic@arch.agency', threadId: 't-holo' };
+  const atoms = { id: 'atoms', brand: 'Atoms', creator: 'Lindsay', brandEmail: 'may@atoms.dev', threadId: 't-atoms' };
+  const text = 'This Agreement is made between Auremere Holdings and Party B (Influencer): Automate AI Consulting.';
+  const rows = [{ dealIds: ['atoms'], threadId: 't-atoms' }];
+  assert.deepEqual(creatorsNamed(text), ['Lindsay']);
+  // The Nov 16 mistake: Lindsay's contract for Holo AI x Chris is a hard stop, even if Harsh names Holo
+  const w1 = contractChecks(holo, { caption: 'send to holo', filename: 'x.pdf', text, answered: true, openRows: rows });
+  assert.ok(hardStop(w1) && w1.some((w) => /for Lindsay/.test(w)));
+  // Brand only guessed (not in caption or file name): ask
+  assert.ok(contractChecks(atoms, { caption: 'here you go', filename: 'Automate AI Consulting x Auremere.pdf', text, openRows: rows }).some((w) => /isn't named/.test(w)));
+  // Brand named, creator matches, contract waiting: goes
+  assert.deepEqual(contractChecks(atoms, { caption: 'share this with atoms', filename: 'a.pdf', text, openRows: rows }), []);
+  // No contract from the brand waiting for a signature: ask, unless Harsh named the brand in his answer
+  assert.ok(contractChecks(atoms, { caption: 'atoms', filename: 'a.pdf', text, openRows: [] }).some((w) => /hasn't sent us a contract/.test(w)));
+  assert.deepEqual(contractChecks(atoms, { caption: 'atoms', filename: 'a.pdf', text, answered: true, openRows: [] }), []);
+  // A bare first name in the text is not proof of who the contract is for
+  assert.deepEqual(creatorsNamed('Chris from our team will review this agreement'), []);
+});
