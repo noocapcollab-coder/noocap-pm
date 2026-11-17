@@ -26,6 +26,12 @@ export default async function handler(req, res) {
       return res.status(200).json(await sendCutsToBrands({ rowId: id.length === 32 ? id : undefined }));
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?bankcheck=1: is bank transfer switched on in each creator's Stripe (read only). Hook only.
+  if (req.query?.bankcheck) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const I = await import('../lib/invoicing.js'); return res.status(200).json(await I.bankTransferReport()); }
+    catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // ?unanswered=1: deals whose newest email is from the brand (read only). Hook only.
   if (req.query?.unanswered) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
