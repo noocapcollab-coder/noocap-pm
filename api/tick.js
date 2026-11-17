@@ -50,7 +50,9 @@ export default async function handler(req, res) {
       const deal = (await openDeals({ withClosed: true })).find((d) => d.id.replace(/-/g, '') === String(req.query.raisedraft).replace(/-/g, ''));
       if (!deal) return res.status(404).json({ error: 'deal not found' });
       const now = I.dueNow(deal);
-      return res.status(200).json({ due: now, ...(await I.raiseInvoiceNow(deal.id, now.amount, { notify: false, part: now.part, pct: now.pct })) });
+      // &due=YYYY-MM-DD: the date the brand asked the invoice to be due (ElevenLabs, Nov 17: Net 1, due Nov 18)
+      const dueDays = req.query.due ? Math.max(1, Math.ceil((Date.parse(String(req.query.due)) - Date.now()) / 864e5)) : 0;
+      return res.status(200).json({ due: now, ...(await I.raiseInvoiceNow(deal.id, now.amount, { notify: false, part: now.part, pct: now.pct, dueDays })) });
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
   // ?rejectoutbox=<PM OUTBOX page id>: reject a draft Harsh told Claude to drop (an invoice draft also leaves Stripe)
