@@ -2431,3 +2431,11 @@ test('one WhatsApp message per thing (lesson seen 4 times)', async () => {
   assert.ok(!alreadySent(st, '💬 Brand reply: CapCut × Chris\nMia asked for the ad code'));
   assert.ok(!alreadySent({ messages: [{ role: 'assistant', at: new Date(Date.now() - 2 * 36e5).toISOString(), content: '📝 Script ready: FABLE 5.2 × Lindsay' }] }, '📝 Script ready: FABLE 5.2 × Lindsay'));
 });
+
+test('a brand chasing team work still gets the fixed timing reply (CodeRabbit x Chris, Nov 17)', async () => {
+  const { templateForWork } = await import('../lib/inbox.js');
+  assert.equal(templateForWork('Send the draft script'), 'script_eta');
+  assert.equal(templateForWork('Make the requested revisions to the watermark'), 'revision_eta');
+  assert.equal(templateForWork('Send the first draft video'), 'video_eta');
+  assert.equal(templateForWork('Share the ad code'), null);
+});
