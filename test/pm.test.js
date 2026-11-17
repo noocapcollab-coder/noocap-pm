@@ -2250,3 +2250,20 @@ test('a follow-up goes to the brand contact who wrote last in the conversation (
   assert.equal(latestBrandSender('📨 2026-11-03 · brand (Natalie Swanson \\<natalie.swanson@zenbusiness.com>) · Re: x'), 'natalie.swanson@zenbusiness.com');
   assert.equal(latestBrandSender('📨 2026-11-05 · us (NOOCAP) · Re: x'), '');
 });
+
+// System check Nov 17: flushPending changed a queued message's meta/at/wid, the merge kept the saved 'pending' copy as
+// a different message, and every 10-minute run sent the same asks and contract alerts again (03:37, 03:47, 03:57 UTC)
+test('a queued WhatsApp message is sent once: the merge drops its pending copy and a re-queued copy is not resent', async () => {
+  const { mergeMessages, pendingKey, pendingAlreadySent } = await import('../lib/whatsapp.js');
+  const queued = { role: 'assistant', meta: 'pending-doc', content: '📄 Contract: HoneyBook × Chris', at: '2026-11-16T20:27:47.729Z' };
+  const sent = { ...queued, pk: pendingKey(queued), meta: 'alert', wid: 'wamid.1', at: '2026-11-17T03:37:57.517Z' };
+  const merged = mergeMessages([sent], [queued]);
+  assert.equal(merged.length, 1);
+  assert.equal(merged[0].meta, 'alert');
+  // A queued copy that came back next to the already-sent one is recognised as sent
+  const st = { messages: [{ ...queued }, sent] };
+  assert.equal(pendingAlreadySent(st, st.messages[0]), true);
+  // A genuinely new queued message is still sent
+  const fresh = { role: 'assistant', meta: 'pending-ask', content: '🙋 Manyfast × Duncan is asking', at: '2026-11-17T03:40:00Z' };
+  assert.equal(pendingAlreadySent({ messages: [fresh, sent] }, fresh), false);
+});
