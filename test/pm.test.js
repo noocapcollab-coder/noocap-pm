@@ -2595,3 +2595,11 @@ test('billingFromText reads company details the brand wrote out (Gamut x Lindsay
   assert.equal(billingFromText('Thanks, the video looks great, Acme Inc is happy', 'a@b.com'), null);
   assert.equal(billingFromText('Can you send the invoice?', 'a@b.com'), null);
 });
+
+test('billing_on_approval template exists, goes at Approved, and asks for company details with the ASAP line', async () => {
+  const { BUILT_IN, templateBlock } = await import('../lib/replytemplates.js');
+  const t = BUILT_IN.find((x) => x.key === 'billing_on_approval');
+  assert.ok(t && /as soon as possible/.test(t.body) && /billing details/.test(t.body));
+  assert.equal(templateBlock({ ...t, active: true }, { stage: 'Approved', today: '2026-11-18', sentRecently: false }), '');
+  assert.match(templateBlock({ ...t, active: true }, { stage: 'Script Sent', today: '2026-11-18', sentRecently: false }), /deal is at/);
+});
