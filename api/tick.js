@@ -38,6 +38,12 @@ export default async function handler(req, res) {
     try { const I = await import('../lib/inbox.js'); return res.status(200).json(await I.resendEditorImage({ brand: req.query.brand, creator: req.query.creator, dry: !!req.query.dry })); }
     catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?drivecheck=1: which cards the Drive folders step would work on next, in order (read only). Hook only.
+  if (req.query?.drivecheck) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const D = await import('../lib/drive.js'); const errors = []; const c = await D.cardsNeedingFolders(errors); return res.status(200).json({ errors, cards: c.map((x) => ({ creator: x.creator, title: x.title, rawOnly: !!x.rawOnly })) }); }
+    catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // ?bankcheck=1: is bank transfer switched on in each creator's Stripe (read only). Hook only.
   if (req.query?.bankcheck) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
