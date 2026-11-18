@@ -2509,3 +2509,13 @@ test('send guard: signature must match the deal creator (CapCut x Brad, Nov 17)'
   assert.equal(O.signatureMismatch("Hi,\n\nBest,\nDavid Iya's Team", 'David Iya'), null);
   assert.equal(O.signatureMismatch("Hi,\n\nBest,\nValerie's Team", 'Valeri'), null);
 });
+
+test('"we will publish it immediately" is a filler promise too, so an automatic send holds it (test bank capcut-chris-cleared-to-post-nov16)', async () => {
+  const { autoHoldReason, checkDraft } = await import('../lib/outbox.js');
+  const ok = { why: 'Fixed reply', body: '', creator: 'Chris' };
+  for (const line of ['We will publish it immediately.', "We'll get it live straight away.", 'I will share the link ASAP.']) {
+    assert.match(autoHoldReason({ ...ok, body: `Hi Mia,\n\n${line}\n\nBest,\nChris's Team` }) || '', /promises to send/, line);
+  }
+  // a brand asking for something "immediately" is not our promise
+  assert.equal(checkDraft({ body: "Hi Mia,\n\nThanks for confirming the video can go live immediately after approval. It is attached here.\n\nBest,\nChris's Team" }).issues.length, 0);
+});
