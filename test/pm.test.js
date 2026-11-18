@@ -2603,3 +2603,10 @@ test('billing_on_approval template exists, goes at Approved, and asks for compan
   assert.equal(templateBlock({ ...t, active: true }, { stage: 'Approved', today: '2026-11-18', sentRecently: false }), '');
   assert.match(templateBlock({ ...t, active: true }, { stage: 'Script Sent', today: '2026-11-18', sentRecently: false }), /deal is at/);
 });
+
+test('isHandover catches "I have also looped in noocapcollab to take it over" (Igniters Media x Chris, Nov 18)', async () => {
+  const { isHandover } = await import('../lib/inbox.js');
+  const email = { to: 'hello@ignitersmedia.com, noocapcollab@gmail.com', cc: '', text: 'Please send over the contract and brand brief, and we will take it from here. I have also looped in noocapcollab@gmail.com to take it over from here moving forward.\n\nThanks,\nChris' };
+  assert.equal(isHandover(email, { from_role: 'creator', brand: 'Igniters Media' }), true);
+  assert.equal(isHandover({ ...email, to: 'hello@ignitersmedia.com' }, { from_role: 'creator', brand: 'Igniters Media' }), false);
+});
