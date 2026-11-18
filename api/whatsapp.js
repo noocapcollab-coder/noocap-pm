@@ -387,8 +387,9 @@ async function onText(st, text, quotedText = '') {
     .map((x) => ({ role: x.role, content: x.content }));
   const { ask } = await import('../lib/ask.js');
   // The last file they sent (within 6 hours) can go out with an email: "send this contract to Atoms × Lindsay"
-  const sentFile = [...st.messages].reverse().find((x) => x.role === 'user' && x.file && Date.now() - Date.parse(x.at) < 6 * 36e5)?.file || null;
-  const r = await ask({ channel: 'whatsapp', save: false, chatId: st.chatId, messages: history, person: st.person.name, file: sentFile });
+  const fileMsg = [...st.messages].reverse().find((x) => x.role === 'user' && x.file && Date.now() - Date.parse(x.at) < 6 * 36e5) || null;
+  const sentFile = fileMsg?.file || null;
+  const r = await ask({ channel: 'whatsapp', save: false, chatId: st.chatId, messages: history, person: st.person.name, file: sentFile, fileAt: fileMsg?.at || null });
   const reply = r.data.reply || `⚠️ ${r.data.error || 'Something went wrong, try again.'}`;
   const pending = r.data.pending || [];
   if (pending.length) {

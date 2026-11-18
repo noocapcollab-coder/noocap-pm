@@ -26,6 +26,12 @@ export default async function handler(req, res) {
       return res.status(200).json(await sendCutsToBrands({ rowId: id.length === 32 ? id : undefined }));
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?editorimage=1&brand=..&creator=..: the last WhatsApp image goes to that video's editor. Hook only.
+  if (req.query?.editorimage) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const I = await import('../lib/inbox.js'); return res.status(200).json(await I.resendEditorImage({ brand: req.query.brand, creator: req.query.creator })); }
+    catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // ?bankcheck=1: is bank transfer switched on in each creator's Stripe (read only). Hook only.
   if (req.query?.bankcheck) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
