@@ -219,7 +219,10 @@ async function onButton(st, id) {
     return;
   }
   if (action === 'reject') {
-    const { rejectDraft } = await import('../lib/outbox.js');
+    const { rejectDraft, readDraftById } = await import('../lib/outbox.js');
+    // Never say "Nothing was sent" about an email that already went (a Send tapped just before this Reject)
+    const before = await readDraftById(arg).catch(() => null);
+    if (before?.status === 'Sent') { await say(st, `⚠️ Too late to reject: this email was already sent to ${before.to || 'the brand'}${before.subject ? ` · "${before.subject}"` : ''}. Tell me what to send to correct it.`); return; }
     await rejectDraft(arg);
     // One tap tells the PM what was wrong, so it learns without anyone typing (or swipe-reply with your own words)
     const r = await sendButtons(st.person.number, '✖️ Rejected. Nothing was sent.\nWhat was wrong? Tap one, or swipe-reply with your own words, and I won\'t make that mistake again.', [
