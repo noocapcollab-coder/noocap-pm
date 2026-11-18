@@ -107,6 +107,7 @@ export default async function handler(req, res) {
     // processed then, instead of being marked seen and lost
     if (!c.ok) { results.push({ subject: email.subject, action: 'error', busy: true, why: 'busy: another run is handling it, retry later' }); continue; }
     try {
+      await (await import('../lib/gmailfiles.js')).hydrateAttachments(email);
       results.push({ subject: email.subject, ...(await handleInboxEmail(email)) });
     } catch (e) {
       const msg = String(e.message || e).slice(0, 300);

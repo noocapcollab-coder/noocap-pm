@@ -2675,3 +2675,14 @@ test('the loop-in reply (Harsh\'s fixed wording) is not held for its own "straig
   assert.equal(autoHoldReason({ body, creator: 'Duncan', why: "Loop-in reply: Duncan's team handed Fotor to us; confirming we take it from here and asking for the brief and contract" }), null);
   assert.ok(autoHoldReason({ body, creator: 'Duncan', why: 'Reply to the brand' }));
 });
+
+test('big attachments are fetched from Gmail parts by name; the card has no Source email section (Nov 19)', async () => {
+  const { partsWithFiles, needsFetch } = await import('../lib/gmailfiles.js');
+  const payload = { parts: [{ mimeType: 'text/plain', body: {} }, { filename: 'Influencer Brief - AI Video Fest (1).pdf', mimeType: 'application/pdf', body: { attachmentId: 'ANG', size: 168966 } }] };
+  assert.deepEqual(partsWithFiles(payload).map((p) => p.filename), ['Influencer Brief - AI Video Fest (1).pdf']);
+  assert.equal(needsFetch({ filename: 'a.pdf', size: 5e6 }), true);
+  assert.equal(needsFetch({ filename: 'a.pdf', size: 5e6, data: 'x' }), false);
+  const { pageBody } = await import('../lib/briefs.js');
+  const blocks = pageBody({ x: { summary: ['A point'] }, email: { from: 'Karan <k@e.sh>', subject: 'S', date: 'D' }, links: [], uploads: [], docText: '' });
+  assert.ok(!JSON.stringify(blocks).includes('Source email'));
+});
