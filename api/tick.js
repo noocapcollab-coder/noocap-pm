@@ -26,6 +26,12 @@ export default async function handler(req, res) {
       return res.status(200).json(await sendCutsToBrands({ rowId: id.length === 32 ? id : undefined }));
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?dedupeimages=<intake row id>: delete repeated PM image posts in that editor thread, keep the newest. Hook only.
+  if (req.query?.dedupeimages) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const E = await import('../lib/editorthreads.js'); const { findIntakeRowByBrand } = await import('../lib/intake.js'); const row = await findIntakeRowByBrand(String(req.query.dedupeimages), req.query.creator); if (!row) return res.status(404).json({ error: 'no row' }); return res.status(200).json(await E.dedupeEditorImages(row.id)); }
+    catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // ?editorimage=1&brand=..&creator=..: the last WhatsApp image goes to that video's editor. Hook only.
   if (req.query?.editorimage) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
