@@ -223,6 +223,17 @@ test('when the brand asks for the invoice it is raised right away, not after pos
   assert.equal(partDue({ stage: 'Script Sent', invoiceRequested: true }, 'final', ''), false);
 });
 
+test('split terms: the final share waits for the video to be live, even after the upfront invoice (Manyfast, Nov 18)', async () => {
+  const { partDue } = await import('../lib/invoicing.js');
+  const terms = '50% upon script approval, 50% after publication';
+  const base = { stage: 'Invoiced', invoiceRequested: true, stripeInvoices: 'upfront | in_1 | sent | 750\nfinal | in_2 | draft | 750' };
+  assert.equal(partDue(base, 'final', terms), false);
+  assert.equal(partDue({ ...base, linksSent: '2026-11-28' }, 'final', terms), true);
+  assert.equal(partDue({ ...base, postedLinks: 'https://www.instagram.com/reel/x/' }, 'final', terms), true);
+  assert.equal(partDue({ ...base, stage: 'Posted' }, 'final', terms), true);
+  assert.equal(partDue({ ...base, stage: 'Script Approved' }, 'upfront', terms), true);
+});
+
 test('while the AI is paused, no AI call is made and emails are left for later', async () => {
   const prev = process.env.AI_PAUSED_UNTIL;
   process.env.AI_PAUSED_UNTIL = new Date(Date.now() + 864e5).toISOString();
@@ -2518,4 +2529,12 @@ test('"we will publish it immediately" is a filler promise too, so an automatic 
   }
   // a brand asking for something "immediately" is not our promise
   assert.equal(checkDraft({ body: "Hi Mia,\n\nThanks for confirming the video can go live immediately after approval. It is attached here.\n\nBest,\nChris's Team" }).issues.length, 0);
+});
+
+test('an invoice email that carries the live links counts as the links email (Readdy AI, Nov 18)', async () => {
+  const { carriesPostedLinks } = await import('../lib/outbox.js');
+  const links = 'https://www.instagram.com/reel/DfvNh_pGUud/\nhttps://www.youtube.com/shorts/A93bIb5wbPM';
+  assert.equal(carriesPostedLinks('The Readdy video is live:<br />Instagram: https://www.instagram.com/reel/DfvNh_pGUud/<br />Here is the invoice for $1,200.', links), true);
+  assert.equal(carriesPostedLinks('Here is the invoice for $1,200. Please pay using this link: https://invoice.stripe.com/i/x', links), false);
+  assert.equal(carriesPostedLinks('Here is the invoice.', ''), false);
 });
