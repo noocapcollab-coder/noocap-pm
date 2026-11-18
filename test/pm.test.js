@@ -2538,3 +2538,11 @@ test('an invoice email that carries the live links counts as the links email (Re
   assert.equal(carriesPostedLinks('Here is the invoice for $1,200. Please pay using this link: https://invoice.stripe.com/i/x', links), false);
   assert.equal(carriesPostedLinks('Here is the invoice.', ''), false);
 });
+
+test('a draft with a filler promise is rewritten once (CapCut x Chris test bank case, Nov 18)', async () => {
+  const { needsFillerRewrite, NO_FILLER } = await import('../lib/outbox.js');
+  assert.equal(needsFillerRewrite("Thanks Mia! We'll get it published as soon as possible and share the link right away."), true);
+  assert.equal(needsFillerRewrite('Thanks Mia! We will publish it immediately.'), true);
+  assert.equal(needsFillerRewrite('Thanks Mia, we will share the live link and the ad code in this thread.'), false);
+  assert.equal(needsFillerRewrite('We will publish it right away.', `x ${NO_FILLER}`), false);
+});
