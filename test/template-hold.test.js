@@ -39,3 +39,12 @@ test('an AI-written reply with the same line is still marked Needs you', async (
   const why = create.body.properties.Why.rich_text.map((t) => t.text?.content || '').join('');
   assert.ok(/^Needs you: .*promises to send/.test(why), why);
 });
+
+test('"the cover image and caption are attached" is an attachment claim when nothing is attached', async () => {
+  const { claimsMissingAttachment, dropAttachClaims } = await import('../lib/outbox.js');
+  const body = 'Hi Jenny,\n\nThanks for the approval. The cover image and caption are attached for your review.\n\nBest,\nChris\'s Team';
+  assert.equal(claimsMissingAttachment(body, {}, 'Reply'), true);
+  assert.ok(!/attached/.test(dropAttachClaims(body)));
+  assert.equal(claimsMissingAttachment('Hi Jenny,\n\nCould you confirm whether the caption is attached to the post?\n\nBest', {}, 'Reply'), false);
+  assert.equal(claimsMissingAttachment('Hi Jenny,\n\nPlease see attached the brief you asked about.\n\nBest', {}, 'Reply'), true);
+});
