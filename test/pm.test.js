@@ -2561,3 +2561,14 @@ test('a draft with a filler promise is rewritten once (CapCut x Chris test bank 
   assert.equal(needsFillerRewrite('Thanks Mia, we will share the live link and the ad code in this thread.'), false);
   assert.equal(needsFillerRewrite('We will publish it right away.', `x ${NO_FILLER}`), false);
 });
+
+// Nov 18: Dreamina x Chris, the brand said "please publish" and nobody asked for billing details until after posting
+test('invoicing: billing details are asked as soon as the video is approved', async () => {
+  const I = await import('../lib/invoicing.js');
+  const deal = { stage: 'Approved', brandEmail: 'jenny@viralvibe.llc', finalRate: 1500, billing: '' };
+  assert.equal(I.earlyBillingAsk(deal, []), true);
+  assert.equal(I.earlyBillingAsk({ ...deal, stage: 'Submitted' }, []), false);
+  assert.equal(I.earlyBillingAsk({ ...deal, channel: 'WhatsApp' }, []), false);
+  assert.equal(I.earlyBillingAsk(deal, [{ part: 'final', id: 'in_1', status: 'draft' }]), false);
+  assert.equal(I.earlyBillingAsk({ ...deal, finalRate: 0 }, []), false);
+});
