@@ -2632,3 +2632,10 @@ test('a link from another campaign never stays in a written email (test bank tri
   const facts = JSON.stringify({ frameio: 'https://f.io/AbC123', pay_link: 'https://invoice.stripe.com/i/acct_1/xyz' });
   assert.deepEqual(foreignLinks('Here is the cut: https://f.io/AbC123. Pay here: https://www.invoice.stripe.com/i/acct_1/xyz', facts), []);
 });
+
+test('Invoices never carry the creator\'s own billing address or Tax ID (Harsh, Nov 18, Chris)', async () => {
+  const { paymentText } = await import('../lib/invoiceguard.js');
+  const t = paymentText({ 'Account Holder Name': 'Christopher Allen', 'Bank Name': 'Middlesex Federal Savings', 'Billing Address': '715 N Patterson Park Ave, Baltimore MD 21205', 'Tax ID': '99-1222704', 'Legal / Company Name': 'CORD Creations' });
+  assert.ok(/Middlesex/.test(t));
+  assert.ok(!/Patterson|99-1222704/.test(t));
+});
