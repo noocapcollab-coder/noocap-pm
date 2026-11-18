@@ -2572,3 +2572,14 @@ test('invoicing: billing details are asked as soon as the video is approved', as
   assert.equal(I.earlyBillingAsk(deal, [{ part: 'final', id: 'in_1', status: 'draft' }]), false);
   assert.equal(I.earlyBillingAsk({ ...deal, finalRate: 0 }, []), false);
 });
+
+test('invoiceOrder puts approved or posted deals with no billing ahead of payment checks', async () => {
+  const { invoiceOrder } = await import('../lib/invoicing.js');
+  const deals = [
+    { brand: 'Paid check', stage: 'Invoiced', stripeInvoices: 'final | in_1 | sent | 1000' },
+    { brand: 'Quiet', stage: 'Script Sent' },
+    { brand: 'Dreamina', stage: 'Posted', billing: '' },
+    { brand: 'Asked', stage: 'Submitted', invoiceRequested: true },
+  ];
+  assert.deepEqual(invoiceOrder(deals).map((d) => d.brand), ['Asked', 'Dreamina', 'Paid check', 'Quiet']);
+});
