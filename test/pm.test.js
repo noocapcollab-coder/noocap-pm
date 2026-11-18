@@ -2610,3 +2610,25 @@ test('isHandover catches "I have also looped in noocapcollab to take it over" (I
   assert.equal(isHandover(email, { from_role: 'creator', brand: 'Igniters Media' }), true);
   assert.equal(isHandover({ ...email, to: 'hello@ignitersmedia.com' }, { from_role: 'creator', brand: 'Igniters Media' }), false);
 });
+
+test('any fill-in left in square brackets is a placeholder, so an automatic send holds it (test bank capcut-chris-cleared-to-post-nov16, Nov 18)', async () => {
+  const { autoHoldReason, checkDraft, needsFillerRewrite } = await import('../lib/outbox.js');
+  const ok = { why: 'Fixed reply', body: '', creator: 'Chris' };
+  for (const line of ['The ad code is [adcode is].', 'Our UID is [INSERT UID].', 'It goes live on [post date].']) {
+    assert.match(autoHoldReason({ ...ok, body: `Hi Mia,\n\n${line}\n\nBest,\nChris's Team` }) || '', /placeholder/, line);
+    assert.equal(needsFillerRewrite(`Hi Mia,\n\n${line}`), true, line);
+  }
+  // a markdown link and a numbered reference are not fill-ins
+  assert.equal(checkDraft({ body: "Hi Mia,\n\nHere is the [revised cut](https://f.io/abc) and video [2] notes.\n\nBest,\nChris's Team" }).issues.length, 0);
+});
+
+test('a link from another campaign never stays in a written email (test bank tripo-lindsay-account-email-wrong-link-nov18)', async () => {
+  const { foreignLinks, dropForeignLinks } = await import('../lib/outbox.js');
+  const bad = "Hi Rajeshwari,\n\nThanks for following up.\nhttps://higgsfield-ai.notion.site/astra-6-2-x-higgsfield-game-vi\n\nLindsay X Higgsfield\n\nBest,\nLindsay's Team";
+  const allowed = JSON.stringify({}) + "\nHi Team, could you please share the registered email ID of Lindsay's Tripo account?";
+  assert.deepEqual(foreignLinks(bad, allowed), ['higgsfield-ai.notion.site/astra-6-2-x-higgsfield-game-vi']);
+  assert.doesNotMatch(dropForeignLinks(bad, allowed), /higgsfield-ai/);
+  // links the email was given (facts, the brand's own thread) stay, written with or without www and a trailing dot
+  const facts = JSON.stringify({ frameio: 'https://f.io/AbC123', pay_link: 'https://invoice.stripe.com/i/acct_1/xyz' });
+  assert.deepEqual(foreignLinks('Here is the cut: https://f.io/AbC123. Pay here: https://www.invoice.stripe.com/i/acct_1/xyz', facts), []);
+});
