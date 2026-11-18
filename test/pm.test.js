@@ -2583,3 +2583,15 @@ test('invoiceOrder puts approved or posted deals with no billing ahead of paymen
   ];
   assert.deepEqual(invoiceOrder(deals).map((d) => d.brand), ['Asked', 'Dreamina', 'Paid check', 'Quiet']);
 });
+
+test('billingFromText reads company details the brand wrote out (Gamut x Lindsay, Nov 18)', async () => {
+  const { billingFromText } = await import('../lib/invoicing.js');
+  const text = 'Hi team,\n\nSure, here are our billing details for the invoice:\n\nDatawizz Inc. (operating Gamut)\n360 Pine Street, Suite 400\nSan Francisco, CA 94104, USA\nEIN: 33-4477838\n\nPlease send the invoice for the second payment ($2,000) to iddo.gino@gamut.so together with the live link, and we\'ll get it paid.\n\nThanks!\nIddo';
+  const b = billingFromText(text, 'Iddo Gino <iddo.gino@gamut.so>');
+  assert.equal(b.company_name, 'Datawizz Inc. (operating Gamut)');
+  assert.equal(b.address, '360 Pine Street, Suite 400, San Francisco, CA 94104, USA');
+  assert.equal(b.tax_id, 'EIN 33-4477838');
+  assert.equal(b.email, 'iddo.gino@gamut.so');
+  assert.equal(billingFromText('Thanks, the video looks great, Acme Inc is happy', 'a@b.com'), null);
+  assert.equal(billingFromText('Can you send the invoice?', 'a@b.com'), null);
+});
