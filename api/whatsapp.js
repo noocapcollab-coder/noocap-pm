@@ -563,10 +563,28 @@ export function namesOtherCreator(text, creator) {
   const own = CREATOR_WORDS[String(creator).split(/\s+/)[0].toLowerCase()] || creator;
   return !named.includes(own);
 }
+// A "Creator x Brand" label naming another brand is never the answer to this brand's question either: Harsh's
+// "<higgsfield link> / Lindsay X Higgsfield" (not a swipe-reply) was taken as the answer to the Tripo 3D × Lindsay
+// account-email ask 96 minutes earlier and the Higgsfield link went to Rajeshwari at JEEVMEDIA (system check, Nov 18)
+export function labelNamesOtherBrand(text, brand) {
+  const want = brandKey(brand);
+  if (want.length < 3) return false;
+  const t = String(text || '');
+  const pairs = [...t.matchAll(/([A-Za-z][\w.&'-]*(?:\s+[A-Za-z][\w.&'-]*){0,2})\s+(?:x|×)\s+([A-Za-z][\w.&'-]*(?:\s+[A-Za-z][\w.&'-]*){0,2})/gi)];
+  for (const m of pairs) {
+    for (const [a, b] of [[m[1], m[2]], [m[2], m[1]]]) {
+      const words = a.toLowerCase().match(/[a-z]+/g) || [];
+      if (!words.some((w) => CREATOR_WORDS[w])) continue;
+      const k = brandKey(b.replace(/\b(brand|deal|video|videos|reel|reels|campaign|brief)\b.*$/i, ''));
+      if (k.length >= 3 && !k.includes(want) && !want.includes(k)) return true;
+    }
+  }
+  return false;
+}
 const teamNotes = (text = '') => /^\s*[\w .&'-]{2,40}\s+(x|×)\s+[\w .&'-]{2,40}\s+(changes|fixes|edits|feedback|notes|revisions?)\s*$/im.test(String(text)) || looksLikeCutNotesSync(text);
 export function infoAskFor(st, replyTo, text = '') {
   if (replyTo?.meta === 'info-ask' && replyTo.infoAsk && !replyTo.resolved) return replyTo;
-  const forOther = (x) => namesOtherCreator(text, x?.infoAsk?.creator);
+  const forOther = (x) => namesOtherCreator(text, x?.infoAsk?.creator) || labelNamesOtherBrand(text, x?.infoAsk?.brand);
   const open = [...st.messages].reverse().filter((x) => x.role === 'assistant' && x.meta === 'info-ask' && x.infoAsk && !x.resolved && Date.now() - Date.parse(x.at) < 3 * 864e5);
   // A swipe on the alert that followed the question, or a message that names the brand ("this is emergent ad code …")
   if (replyTo && open.length) { const q = open.find((x) => replyTo.content && brandKey(replyTo.content).includes(brandKey(x.infoAsk.brand || ''))); if (q && brandKey(q.infoAsk.brand || '').length >= 3 && !forOther(q)) return q; }

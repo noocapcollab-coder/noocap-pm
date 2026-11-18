@@ -1410,6 +1410,21 @@ test('a WhatsApp message naming another creator is not the answer to this creato
   assert.equal(infoAskFor(st, ask, 'Chris checked it, it is live'), ask);
 });
 
+test('a WhatsApp "Lindsay X Higgsfield" note is not the answer to the Tripo 3D × Lindsay ask (system check, Nov 18)', async () => {
+  const { infoAskFor, labelNamesOtherBrand: namesOtherBrand } = await import('../api/whatsapp.js');
+  const at = new Date(Date.now() - 96 * 60e3).toISOString();
+  const ask = { role: 'assistant', meta: 'info-ask', at, content: "🙋 Tripo 3D × Lindsay is asking for: Lindsay's registered Tripo account email ID", infoAsk: { brand: 'Tripo 3D', creator: 'Lindsay', dealId: 't1', need: 'account email' } };
+  const st = { messages: [ask] };
+  const text = 'https://higgsfield-ai.notion.site/astra-6-2-x-higgsfield-game-vi\nLindsay X Higgsfield';
+  assert.equal(namesOtherBrand(text, 'Tripo 3D'), true);
+  assert.equal(infoAskFor(st, null, text), null);
+  assert.equal(namesOtherBrand('Lindsay x Tripo 3D: lindsay@example.com', 'Tripo 3D'), false);
+  assert.equal(namesOtherBrand('lindsay@example.com', 'Tripo 3D'), false);
+  assert.equal(infoAskFor(st, null, 'lindsay@example.com'), ask);
+  // A swipe-reply straight onto the question still answers it
+  assert.equal(infoAskFor(st, ask, text), ask);
+});
+
 test('no follow-up to the brand while we owe the revised cut (CapCut x Chris, Nov 9)', async () => {
   const fs = await import('node:fs');
   const { ourMoveText } = await import('../lib/heartbeat.js');
