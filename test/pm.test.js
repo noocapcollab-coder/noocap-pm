@@ -2639,3 +2639,10 @@ test('Invoices never carry the creator\'s own billing address or Tax ID (Harsh, 
   assert.ok(/Middlesex/.test(t));
   assert.ok(!/Patterson|99-1222704/.test(t));
 });
+
+test('a fixed reply with Harsh\'s "as soon as possible" line is not held; an AI draft with it still is', async () => {
+  const { autoHoldReason, BUILT_IN } = { ...(await import('../lib/outbox.js')), ...(await import('../lib/replytemplates.js')) };
+  const body = BUILT_IN.find((t) => t.key === 'billing_on_approval').body.replace('{name}', 'Jenny').replace('{creator}', 'Chris');
+  assert.equal(autoHoldReason({ body, creator: 'Chris', why: 'Fixed reply (sent by hand) [template:billing_on_approval]: Dreamina × Chris' }), null);
+  assert.ok(autoHoldReason({ body, creator: 'Chris', why: 'Reply to the brand' }));
+});
