@@ -29,7 +29,7 @@ export default async function handler(req, res) {
   // ?editorimage=1&brand=..&creator=..: the last WhatsApp image goes to that video's editor. Hook only.
   if (req.query?.editorimage) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
-    try { const I = await import('../lib/inbox.js'); return res.status(200).json(await I.resendEditorImage({ brand: req.query.brand, creator: req.query.creator })); }
+    try { const I = await import('../lib/inbox.js'); return res.status(200).json(await I.resendEditorImage({ brand: req.query.brand, creator: req.query.creator, dry: !!req.query.dry })); }
     catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
   // ?bankcheck=1: is bank transfer switched on in each creator's Stripe (read only). Hook only.
