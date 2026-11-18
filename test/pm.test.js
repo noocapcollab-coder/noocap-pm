@@ -2655,3 +2655,14 @@ test('second reader "wrong person" is dropped when the cut goes to a brand conta
   assert.equal(dropKnownContactFlags(['Wrong person: addressed to someone at another brand'], 'x@other.com', { brandEmail: 'jun@manyfast.io' }, convo).length, 1);
   assert.equal(dropKnownContactFlags(['Invented fact: date Nov 30'], 'konan@manyfast.io', {}, convo).length, 1);
 });
+
+test('a cut greeting Seungjoo goes To konan@, not to Jun the billing contact (Manyfast x Chris, Nov 18)', async () => {
+  const { greetedAddress, dropKnownContactFlags } = await import('../lib/outbox.js');
+  const convo = '📨 2026-11-17 · brand (이승주 <konan@manyfast.io>) · Re: Paid Reel\nHi Chris and team,\nPlease keep all content and production communication here with me.\n\nBest,\nSeungjoo (Konan)\n\n📨 2026-11-17 · brand (Jun <jun@manyfast.io>) · Re: Paid Reel\nHere are our billing details.\nJun';
+  const body = 'Hi Seungjoo,<br /><br />Here is the first video draft: https://f.io/x<br /><br />Best,<br />Chris\'s Team';
+  assert.equal(greetedAddress(body, convo), 'konan@manyfast.io');
+  assert.equal(greetedAddress('Hi team,', convo), null);
+  // addressed to Jun but greeting Seungjoo: the flag stays
+  assert.equal(dropKnownContactFlags(['Wrong person: addressed to Jun but it greets Seungjoo'], 'jun@manyfast.io', { brandEmail: 'jun@manyfast.io' }, convo, body).length, 1);
+  assert.equal(dropKnownContactFlags(['Wrong person: addressed to Seungjoo but the latest message was from Jun'], 'konan@manyfast.io', { brandEmail: 'jun@manyfast.io' }, convo, body).length, 0);
+});
