@@ -2666,3 +2666,12 @@ test('a cut greeting Seungjoo goes To konan@, not to Jun the billing contact (Ma
   assert.equal(dropKnownContactFlags(['Wrong person: addressed to Jun but it greets Seungjoo'], 'jun@manyfast.io', { brandEmail: 'jun@manyfast.io' }, convo, body).length, 1);
   assert.equal(dropKnownContactFlags(['Wrong person: addressed to Seungjoo but the latest message was from Jun'], 'konan@manyfast.io', { brandEmail: 'jun@manyfast.io' }, convo, body).length, 0);
 });
+
+test('the loop-in reply (Harsh\'s fixed wording) is not held for its own "straight away" line (Fotor x Duncan, night check Nov 18)', async () => {
+  const { autoHoldReason, checkDraft } = await import('../lib/outbox.js');
+  const { handoverAckText } = await import('../lib/inbox.js');
+  const body = handoverAckText({ name: 'Zoey', brand: 'Fotor', creator: 'Duncan' });
+  assert.ok(checkDraft({ body, creator: 'Duncan' }).issues.length > 0); // the filler check alone would hold it
+  assert.equal(autoHoldReason({ body, creator: 'Duncan', why: "Loop-in reply: Duncan's team handed Fotor to us; confirming we take it from here and asking for the brief and contract" }), null);
+  assert.ok(autoHoldReason({ body, creator: 'Duncan', why: 'Reply to the brand' }));
+});
