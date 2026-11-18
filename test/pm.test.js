@@ -2646,3 +2646,12 @@ test('a fixed reply with Harsh\'s "as soon as possible" line is not held; an AI 
   assert.equal(autoHoldReason({ body, creator: 'Chris', why: 'Fixed reply (sent by hand) [template:billing_on_approval]: Dreamina × Chris' }), null);
   assert.ok(autoHoldReason({ body, creator: 'Chris', why: 'Reply to the brand' }));
 });
+
+test('second reader "wrong person" is dropped when the cut goes to a brand contact already in the thread (Manyfast x Chris, Nov 18)', async () => {
+  const { dropKnownContactFlags } = await import('../lib/outbox.js');
+  const convo = '📨 2026-11-16 · brand (이승주 <konan@manyfast.io>) · Re: Paid Reel\nThanks for the script\n\n📨 2026-11-17 · brand (Jun <jun@manyfast.io>) · Re: Paid Reel\nInvoice please';
+  const p = ['Wrong person: email is addressed to Seungjoo (konan@manyfast.io), but the latest message was from Jun (jun@manyfast.io) or it should go to Seungjoo as the content contact, but wait,'];
+  assert.deepEqual(dropKnownContactFlags(p, 'konan@manyfast.io', { brandEmail: 'jun@manyfast.io' }, convo), []);
+  assert.equal(dropKnownContactFlags(['Wrong person: addressed to someone at another brand'], 'x@other.com', { brandEmail: 'jun@manyfast.io' }, convo).length, 1);
+  assert.equal(dropKnownContactFlags(['Invented fact: date Nov 30'], 'konan@manyfast.io', {}, convo).length, 1);
+});
