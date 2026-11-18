@@ -1,16 +1,17 @@
 ---
 type: deal
 ---
-Stage: Price Agreed
-Last brand reply none, our last reply none.
-AGREED: rate, deliverables, usage rights, payment terms and any agreed dates are not yet confirmed in writing. Stage shows Price Agreed but specific terms have not been stated in emails.
+Stage: Script Approved
+Last brand reply 2026-11-18, our last reply none.
+AGREED: rate, deliverables, usage rights, payment terms and agreed dates are not yet confirmed in the provided text.
 
 HISTORY:
-2026-11-05 Chris's team requested noocapcollab@gmail.com be added to all future email threads.
+2026-11-05: creator requested noocapcollab@gmail.com be included in email threads.
+2026-11-18: brand asked for a response regarding content approval after script approval.
 
 BILLING: not yet
 
-OPEN NOW: We need to confirm all deal terms in writing with Panda Security brand contact. The stage says Price Agreed but we lack documented rate, deliverables, usage rights, payment terms, and dates. We owe: sending deal summary to confirm.
+OPEN NOW: Brand is waiting to receive the content for approval following script approval. We owe: providing the content to the brand for approval.
 
 ## Links
 - [[Chris]]

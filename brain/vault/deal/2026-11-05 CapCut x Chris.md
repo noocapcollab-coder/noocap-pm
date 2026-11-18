@@ -2,8 +2,8 @@
 type: deal
 ---
 Stage: Approved
-Last brand reply 2026-11-17, our last reply 2026-11-16.
-AGREED: [amount]total. 3 short-form videos. Signed contract via GrowMaxValue agency. Usage rights not stated. Payment terms not stated.
+Last brand reply 2026-11-18, our last reply 2026-11-18.
+AGREED: [amount]. 3 short-form videos. Signed contract via GrowMaxValue agency. Usage rights and payment terms not stated.
 
 HISTORY:
 2026-11-05 us / Brief received from CapCut, contract signed via GrowMaxValue agency
@@ -17,10 +17,12 @@ HISTORY:
 2026-11-16 us / Sent scripts for videos two and three for brand review and approval
 2026-11-16 brand / Mia Brown approved first video, shared posting instructions and requirements
 2026-11-17 brand / Mia Brown urged publishing the first video, provided revision notes and updated briefs for scripts two and three
+2026-11-18 us / Confirmed plans to publish the first video and prepare revised scripts for videos two and three
+2026-11-18 brand / Mia Brown urged immediate publishing of the first video and requested estimated posting time
 
 BILLING: not yet
 
-OPEN NOW: We owe: Publish the first video, notify the brand, share the 60-day adcode, and update scripts for videos two and three based on the latest brand feedback.
+OPEN NOW: We owe: Publish the first video, provide estimated posting time, notify the brand upon posting, share the 60-day adcode, and provide revised scripts for videos two and three.
 
 ## Links
 - [[CapCut]]

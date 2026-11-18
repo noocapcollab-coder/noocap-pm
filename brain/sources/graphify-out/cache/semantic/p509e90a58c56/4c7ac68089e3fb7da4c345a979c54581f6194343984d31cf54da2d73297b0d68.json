@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_wondersharefilmora", "label": "Wondershare Filmora", "file_type": "document", "source_file": "brands/wondersharefilmora.md"}], "edges": [{"source": "brands_wondersharefilmora", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/wondersharefilmora.md"}], "hyperedges": []}

@@ -2,20 +2,17 @@
 
 What brands asked us to change after seeing a cut. Read before editing the next video for the same brand.
 
-## 2026-11-13 CapCut × Chris
-Brand: [[CapCut]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.
-For the 25-second video, please do not show the Dreamina operation interface. You may show the CapCut interface together with the Dreamina logo.
-Mia Brown sent review feedback on the first draft video
-Requested not to show the Dreamina operation interface for the 25-second video
-Can show the CapCut interface together with the Dreamina logo
+## 2026-11-17 Emergent × Chris
+Brand: [[Emergent]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.
+At second 15-16, when saying 'I built an app around that on Emergent', either say it or show the wordmark logo. Emergent should also be mentioned earlier in the video.
+Brand requested edits to the video draft
+Emergent should be mentioned earlier in the video
+Around 15-16s: say 'on Emergent' or show logo
 
 ## 2026-11-14 Dreamina × Chris (Artist Team)
-Brand: [[Dreamina]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 2.
-1. The watermark throughout the video must have a transparent background, without the white box behind it. 2. The watermark on the cover must be the Dreamina Marketing Studio logo, not the regular Dreamina logo.
-Brand requested two corrections on the video and cover image
-Watermark throughout video needs a transparent background without white box
-Cover watermark must be the Dreamina Marketing Studio logo
-Brand requested updated materials today for publication
+Brand: [[Dreamina]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 3.
+Revise the hashtags to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner
+Brand asked to revise hashtags for the video to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner
 
 ## 2026-11-04 CapCut x ChatGPT
 Brand: [[CapCut]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.
@@ -27,3 +24,10 @@ Missing demonstration: show copying prompt into ChatGPT to import CapCut plugin
 Ending too abrupt, needs to show ChatGPT opening CapCut more clearly
 Brand concerned video uses AI avatar and sourced footage rather than original; requests reshoot with authentic footage
 Asks confirmation: will video publish on ninjaaitools?
+
+## 2026-11-13 CapCut × Chris
+Brand: [[CapCut]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.
+For the 25-second video, please do not show the Dreamina operation interface. You may show the CapCut interface together with the Dreamina logo.
+Mia Brown sent review feedback on the first draft video
+Requested not to show the Dreamina operation interface for the 25-second video
+Can show the CapCut interface together with the Dreamina logo

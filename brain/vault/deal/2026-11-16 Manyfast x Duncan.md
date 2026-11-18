@@ -1,7 +1,7 @@
 ---
 type: deal
 ---
-Stage: Invoiced
+Stage: Paid
 Last brand reply 2026-11-17, our last reply 2026-11-17.
 AGREED:
 Rate: 1600

@@ -2,26 +2,25 @@
 type: deal
 ---
 Stage: Invoiced
-Last brand reply 2026-10-28, our last reply 2026-11-07.
-AGREED: Two videos total. First video published September (title not specified in emails). Second video "How to vibe code a secure app (With Real Logins & Permissions)" published 2026-10-23. Rate for these two videos not stated in deal fields or confirmed in emails. Deliverables: long-form sponsored video content targeting Ops, IT roles, managers. Usage rights: not stated. Payment terms: not stated. A third video on Claude MCP topic offered at [amount](special rate, not yet agreed by brand).
+Last brand reply 2026-11-18, our last reply 2026-11-07.
+AGREED: Two videos total. First video published September. Second video published 2026-10-23. Rate, usage rights, and payment terms not stated in deal fields or confirmed in emails. Third video proposed at [amount](not yet agreed).
 
 HISTORY:
-2026-09-22 brand requested Claude code icon visibility adjustment
-2026-09-22 us confirmed done
-2026-10-01 brand sent detailed creative brief for vibe coding video, requested publish target of next week
-2026-10-08 us sent script for approval by Friday
-2026-10-17 brand requested title change to "How to vibe code a secure app (With Real Logins & Permissions)"
-2026-10-19 us enabled comments, made changes, committed to record/edit/post by Friday 2026-10-23
-2026-10-20 us sent talking head draft and b-roll
-2026-10-21 brand requested full edited video, description, timestamps, thumbnail for Thursday publish; us replied Friday earliest due to editor turnaround
-2026-10-22 us sent invoices for both videos and proposed [amount]rate for third video (Claude MCP topic)
-2026-10-23 us delivered final edited video and description; video published same day
-2026-10-28 us sent invoices; brand out of office, promised follow-up with accountant and budget check upon return
+2026-09-22 us confirmed requested icon adjustment
+2026-10-01 brand sent brief for vibe coding video
+2026-10-08 us sent script for approval
+2026-10-17 brand requested title change
+2026-10-19 us committed to record/edit/post by Friday 2026-10-23
+2026-10-21 us and brand discussed timeline for editing and publishing
+2026-10-22 us sent invoices for two videos and proposed [amount]rate for third video
+2026-10-23 us delivered final edited video and description; video published
+2026-10-28 us sent invoices; brand promised follow-up with accountant upon return from OoO
 2026-11-07 us followed up on invoice payment status
+2026-11-18 brand apologized for delay and cc'd Tim to process invoices
 
-BILLING: Invoices sent 2026-10-28 for two videos. Company and invoice email for Softr: katerina@softr.io (contact only, not full billing details). Payment status: pending.
+BILLING: Invoices sent 2026-10-28 for two videos. Full company billing address and details not yet provided; contact is Kat Simonova (katerina@softr.io) and Tim. Status: pending.
 
-OPEN NOW: Waiting on brand: Payment for two invoices sent 2026-10-28. Kat said end of week 2026-10-28 she
+OPEN NOW: Waiting on brand: Tim to process invoice payment.
 
 ## Links
 - [[Lindsay]]

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_growthschool", "label": "Growthschool", "file_type": "document", "source_file": "brands/growthschool.md"}], "edges": [{"source": "brands_growthschool", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/growthschool.md"}], "hyperedges": []}

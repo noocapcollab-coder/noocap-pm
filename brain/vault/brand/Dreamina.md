@@ -5,24 +5,20 @@ type: brand
 
 Brand. Works with creators: [[Chris]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Dreamina is an AI video generation product. They come to us both directly and through agencies, specifically Viral Vibe and Katlas Media.
+WHO: Dreamina is an AI video tool and marketing studio, working with creators on sponsored content. They come to us both directly and through agencies (specifically Viral Vibe and Katlas Media).
 
-CONTACTS:
-Jenny Guo, jenny@viralvibe.llc, BD at Viral Vibe, signs as Jenny, copies camila@viralvibe.llc, charlotte@viralvibe.llc, emma@viralvibe.llc, collab@chriscordero.net
-Kepan, outreach@katlasmedia.com, Katlas Media, signs as Kepan, copies siyu@katlasmedia.com, silvia@katlasmedia.com
-Vivi, Katlas Media
-Harsh, Katlas Media
+CONTACTS: Jenny Guo, jenny@viralvibe.llc, agency (Viral Vibe), signs as Jenny, BD. Camila, camila@viralvibe.llc, Viral Vibe. Charlotte, charlotte@viralvibe.llc, Viral Vibe. Emma, emma@viralvibe.llc, Viral Vibe. Kepan, outreach@katlasmedia.com, agency (Katlas Media), signs as Kepan. Siyu, siyu@katlasmedia.com, Katlas Media. Silvia, silvia@katlasmedia.com, Katlas Media. Chris Cordero, collab@chriscordero.net, creator.
 
 DEALS:
-Dreamina x Chris, 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team), [amount], Approved, post date requested Nov 15
-Dreamina x Chris, full package (Option 1), [amount], Price Agreed
-Dreamina x Chris, sponsored video for Chris featuring Dreamina product, [amount], Invoiced, invoice sent 2026-11-01
+Dreamina x Chris | 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team) | [amount] | Posted | Nov 2026
+Dreamina x Chris | Rate [amount]for full package | Price Agreed | Ongoing
+Dreamina x Chris | Sponsored video published with required hashtags | [amount] | Invoiced | Nov 2026
 
-HOW THEY WORK: For pre-made video posting campaigns, creators publish videos already produced by Dreamina with a 7-day bio link for DMChat and a 60-day ad code. For production campaigns, creators film from the brief, send the cut for review before publishing, add the required hashtags, and include the provided UTM link. Katlas Media needs to provide company billing details, and prefers bank transfer or PayPal.
+HOW THEY WORK: Brief format is provided via links (e.g., Feishu wiki). For some campaigns, no script is needed: creator films from the brief and sends the cut for review before publishing. Drafts are reviewed via Frame.io links or direct email threads. Required assets often include specific watermarks (like Dreamina Marketing Studio), cover images, and captions with exact hashtag lists (#Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner) and UTM links.
 
-WATCH OUT: Missing required hashtags on published posts led to flags from the brand. Always verify hashtags before publishing.
+WATCH OUT: Missing hashtags on published posts led to flags from the brand. Brand requires strict adherence to publishing deadlines and watermark specifications (transparent backgrounds, correct logo versions).
 
-OPEN NOW: We owe publishing the video with the UTM link and sending the live link and deliverables for the approved [amount] deal. For the price-agreed [amount] deal, we owe the contract and brand brief, and we are waiting on the brand to send both. For the [amount] invoiced deal, we are waiting on the brand for the payment receipt or transaction confirmation from the bank transfer.
+OPEN NOW: For the posted [amount]deal (Viral Vibe), we owe publishing the video with the UTM link and hashtag updates, sending the live link, and following up for billing details. For the price agreed and invoiced Katlas Media deals, we are waiting on the brand to provide the contract, formal brief, payment receipt or transaction confirmation for the [amount]invoice, and we recently provided the 9-digit ACH routing number (211370150) that they requested.
 
 
 ## Links

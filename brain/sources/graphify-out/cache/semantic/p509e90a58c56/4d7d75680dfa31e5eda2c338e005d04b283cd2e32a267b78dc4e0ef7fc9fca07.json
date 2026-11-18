@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_reahandbook", "label": "REA Handbook", "file_type": "document", "source_file": "brands/reahandbook.md"}], "edges": [{"source": "brands_reahandbook", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/reahandbook.md"}], "hyperedges": []}

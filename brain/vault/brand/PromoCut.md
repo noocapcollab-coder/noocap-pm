@@ -5,17 +5,22 @@ type: brand
 
 Brand. Works with creators: [[Brad]], [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: PromoCut is an app offering editing and translation features. They come to us through their agency, Quil Media.
+WHO: PromoCut, a brand handled through their agency Quil Media.
 
-CONTACTS: Nicole Rodrigues, nicole@quilmedia.com, Quil Media agency. Hamza Tariq, hamza@quilmedia.com, Quil Media agency. Copied: partnerships@ninjaaitools.com. Signed off as Brad's Team.
+CONTACTS:
+Nicole Rodrigues, nicole@quilmedia.com, Quil Media agency
+Hamza Tariq, hamza@quilmedia.com, Quil Media agency
+partnerships@ninjaaitools.com, copied on thread
 
-DEALS: Brad x PromoCut: 1 Instagram Reel with ManyChat automation, reposted to Facebook, TikTok, and YouTube Shorts, submitted stage, draft due November 12 2026, final approval target November 13 2026, go-live date November 16 2026. Rate, payment terms, and usage rights not confirmed.
+DEALS:
+PromoCut x Brad | 1 Instagram Reel with ManyChat automation, reposted to Facebook, TikTok, and YouTube Shorts | Submitted | Draft due 2026-11-12, final approval 2026-11-13, go-live 2026-11-16
 
-HOW THEY WORK: Script approval by brand, follow approved script and campaign brief, ensure product demonstration is clearly visible, use correct brand name and approved CTA, include required screen recordings or product footage, send completed draft for review before publishing. Product access via Apple redeem links provided by the brand (codes provided include 3ANT7FMPTMTHPTNA4W and W6TTNALE8XEJJFET76). Draft reviews shared via Frame.io links (https://f.io/XGWrdOpT).
+HOW THEY WORK:
+Script is sent for review and approval. Video drafts are reviewed via Frame.io links. Requirements include following the approved script, ensuring product demonstrations are clearly visible, using the correct brand name and approved CTA, and including required screen recordings or product footage. Access to the Pro Plan is provided via Apple redeem links or web version.
 
-WATCH OUT: None stated.
+WATCH OUT: Regional access issues occurred with the app and website; access needs to be granted to noocaptools@gmail.com for the Pro Plan.
 
-OPEN NOW: We owe revised video draft incorporating brand feedback (less B-roll and more screen recordings of product demonstrations for editing and translation features).
+OPEN NOW: Waiting on brand to grant Pro Plan access to noocaptools@gmail.com.
 
 ## Decisions from Harsh
 - 2026-11-13: Brand asked: Clarify whether the redemption link works for filming the demo on noocaptools@gmail.com or if direct account access is needed; confirm receipt and status; proceed to filming if access is sufficient · Harsh answered: Brad x promo cut changes

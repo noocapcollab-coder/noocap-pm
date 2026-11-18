@@ -5,18 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: Emergent is an AI app builder platform. They come to us directly.
+WHO: Emergent makes an AI app builder platform. They come to us directly.
 
-CONTACTS: Kritika Bhatia, kritika@emergent.sh, Brand Manager, signs, copy Kritika or others; Aditi Deepak, aditi.d@emergent.sh, Brand Manager; Madhav Bihani, madhav.b@emergent.sh; Naman Khandelwal, naman@emergent.sh, Creator Partnerships, signs, copy Naman; Karan Varyani, karan.v@emergent.sh, signs, CC Gautam; Gautam Mahajan, gautam@emergent.sh, CC Gautam.
+CONTACTS: Aditi Deepak (aditi.d@emergent.sh, Brand), Madhav Bihani (madhav.b@emergent.sh), Kritika Bhatia (kritika@emergent.sh, Brand Manager), Naman Khandelwal (naman@emergent.sh, main POC), Karan Varyani (karan.v@emergent.sh), Gautam Mahajan (gautam@emergent.sh). Sign as Chris's Team or NOOCAP. CC gautam@emergent.sh and karan.v@emergent.sh as applicable per thread.
 
-DEALS:
-Chris | New video plus usage rights for existing Instagram video (https://www.instagram.com/p/DacjigGsxEa/) | [amount] | Submitted | Agreed Nov 2, 2026.
+DEALS: Emergent x Chris | agreed: new video plus usage rights for existing Instagram video (https://www.instagram.com/p/DacjigGsxEa/), rate: [amount] | stage: Approved | dates: brief received Nov 11 2026, approved revised draft Nov 18 2026.
 
-HOW THEY WORK: They provide briefs via Google Docs. Scripts are sent for review and approval before video production starts. Video drafts are reviewed. UTM links or specific CTAs and trigger words are provided by the brand for posting.
+HOW THEY WORK: Scripts are reviewed and approved over email. Video drafts are reviewed via Frame.io links. They want Emergent introduced earlier in videos and the wordmark logo shown. They provide UTM links for posting. Tool access email for their Pro version is noocaptools@gmail.com.
 
-WATCH OUT: Sending incorrect ad codes causes delays. Do not commit to specific timeframes like before I finished my coffee in scripts. Do not use generic terms like an AI app builder when referring to the tool; name Emergent directly.
+WATCH OUT: Do not use generic terms like an AI app builder in scripts, name Emergent directly. Do not commit to specific timeframes like before finishing my coffee.
 
-OPEN NOW: Waiting on brand review of the video draft sent on Nov 17, 2026.
+OPEN NOW: We owe: Render CTAs and post the video with the provided UTM link (https://app.emergent.sh/?utm_shift=redirect&via=thechriscorder-influencer).
 
 
 ## Links

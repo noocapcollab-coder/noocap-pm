@@ -1,6 +1,6 @@
 # Flova AI
 
-Brand. Works with creators: [[Duncan]], [[Lindsay]], [[Chris]].
+Brand. Works with creators: [[Duncan]], [[Chris]], [[Lindsay]].
 
 ## Brand wiki (from every email with them)
 WHO: Flova AI, an AI video tool with a Skills community on their homepage. They come to us directly.
@@ -34,6 +34,7 @@ BILLING: not yet
 OPEN NOW: Video submitted for brand review on November 2 via Frame.io. Waiting on brand: feedback, approval, or revisions on the short-form video. Rate, usage rights, payment terms, and final delivery confirmation still pending.
 
 ## Inbound leads
+- Deliverables: 3 TikToks each month · Next Step: New brand: management to reply with pricing · Platforms: TikTok · Last Brand Email: 2026-11-18 · Thread Subject: A TikTok collaboration with Flova · Status: New offer · Creator: Chris · Type: Gifted · Brand Email: lijinliang@flova.ai
 - Deliverables: YouTube Dedicated Video, YouTube Integration, or YouTube Shorts · Next Step: Replied 2026-11-17, waiting on the brand · Platforms: YouTube, YouTube Shorts · Last Our Email: 2026-11-17 · Last Brand Email: 2026-11-17 · Thread Subject: Collaboration Invitation: Flova AI x Automate AI Consulting · Status: Waiting on brand · Creator: Lindsay · Type: Unclear · Brand Email: emily@sparkols.com
 - Deliverables: 1 × YouTube Dedicated Video + 1 × YouTube Short, with 1 month non-exclusive content usage rights including reposting and paid advertising across Flova's social channels, YouTube Partnership Ads access enabled for 1 month · Contact Name: Hilary · Next Step: Replied 2026-11-02, waiting on the brand · Platforms: YouTube, YouTube Shorts · Last Our Email: 2026-11-02 · Last Brand Email: 2026-11-01 · Thread Subject: YouTube Collaboration Opportunity | Flova AI · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: hilary@letop.tech
 - Deliverables: 1 dedicated YouTube video (format not yet agreed) · Next Step: Needs you: wants video to feature Flova logo and on-screen mention of Flova AI; may request inclusion of Flova Skill demo and platform walkthrough if production scope increases · Quote at [amount]waiting in Approvals · Platforms: Instagram · Last Our Email: 2026-10-21 · Last Brand Email: 2026-10-23 · Thread Subject: Flova AI × Lindsay | Paid Creative Collaboration · Status: Negotiating · Creator: Lindsay · Type: Paid offer · Brand Email: ekko.liu@solbridgemedia.com

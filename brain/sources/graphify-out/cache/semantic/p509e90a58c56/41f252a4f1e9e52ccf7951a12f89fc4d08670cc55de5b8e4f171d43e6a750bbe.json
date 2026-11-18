@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_hbada", "label": "HBADA", "file_type": "document", "source_file": "brands/hbada.md"}], "edges": [{"source": "brands_hbada", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/hbada.md"}], "hyperedges": []}

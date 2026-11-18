@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_3dplatform_brand", "label": "AI 3D Platform", "file_type": "document", "source_file": "brands/3dplatform.md"}], "edges": [{"source": "brands_3dplatform_brand", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/3dplatform.md"}], "hyperedges": []}

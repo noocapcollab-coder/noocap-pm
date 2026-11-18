@@ -14,6 +14,49 @@ Number one is Ponytail, which trims what Claude Code outputs so you typically us
 Comment "SEND" and I'll get you all five links and the order I'd install them in.
     - Sub-page: [[The Top 5 Claude Code Plugins (All 5 Links + The Order I'd Install Them)]]
 
+## 2026-11-18 ASK CLAUDE YOUR SECRET
+Type: PERSONAL. Creator: [[David Iya]].
+On-screen text:
+    Claude knows you better than you do 👀
+    Hook 1:
+There’s a test going around right now where you ask Claude what it’s figured out about you, and people who try it say it brings up things they never actually told it.
+    Hook 2:
+Claude can show you where your life is headed in five years if nothing changes, and it does it using only what you’ve told it in your chats.
+    Body:
+So the one everyone’s sharing is where Claude maps out your next five years assuming nothing changes, and then a second version where you fix the thing that’s held you back the longest, with both laid out side by side. But that one typically lands harder after two warm-up prompts, so the first asks Claude to name five things it’s worked out about you that you never actually said, and to be blunt about it, and the second asks how you make decisions and what you keep putting off. You need memory switched on in Claude, and it works in ChatGPT too, but it’s only reading your chats, so it’ll probably get some of it wrong.
+    CTA:
+Comment “SECRET” and I’ll get you all three prompts written out so you can paste them in.
+    - Sub-page: [[Ask Claude What It Knows About You: The 3 Prompts (Copy + Paste)]]
+
+## 2026-11-17 CLAUDE KILLED INSTAGRAM
+Type: PERSONAL. Creator: [[David Iya]].
+On-Screen Hook:
+    Claude just killed Instagram 💀
+    Hook 1:
+Claude just killed Instagram, because it can now basically run your entire Instagram content for you.
+    Hook 2:
+Someone just dropped a free Claude skill that runs your entire Instagram for you.
+    Body:
+So it’s really like 11 smaller skills in one pack, and each one handles its own piece, so one drafts posts from a library of hook formats and another goes through your profile and suggests what to fix. But the one I’d actually start with is virality, because it goes through the reels doing best in your niche and works out why their hooks landed, and then it writes you an original script built on that, in your voice. Then the planning skill maps out your week around that script, which typically saves the most time, and setup is just giving Claude the link.
+    CTA:
+Comment “REELS” and I’ll get you the skill pack.
+    SKILL NAME: Instagram Agent Skill 
+    - Sub-page: [[The Instagram Agent Skill Pack: Let Claude Run Your Content (Repo + Setup + Order to Use)]]
+
+## 2026-11-17 CLAUDE KILLED DAY TRADERS
+Type: PERSONAL. Creator: [[David Iya]].
+On-Screen Hook 1:
+    Claude just killed day trading 📉
+    Hook 1:
+Claude just killed day trading, because you can now run full-on market research right inside Claude.
+    Hook 2:
+Someone built a set of Claude skills that scans thousands of charts for setups and then backtests your strategy against years of past market data.
+    Body:
+So there are really two parts to this, and the first is the daily research, where one skill goes through thousands of charts looking for setups while another keeps an eye on the news as it breaks, and the others fill in the rest of the prep. The second part is backtesting, which takes your strategy and tests it against years of past market data, so you get a sense of how it would have held up before any real money goes in. It won’t place any trades for you and nothing like this can guarantee a result, so it’s really the prep work you do before making your own call, and setup is just giving Claude the link and asking it to install the skills.
+    CTA:
+Comment “CHARTS” and I’ll get you the link plus the setup I’d run in Claude.
+    - Sub-page: [[The Day Trader Skill Pack: Market Research and Trade Prep in Claude (Repo + Setup)]]
+
 ## 2026-11-14 Astryx, Meta's own internal design library
 Type: PERSONAL. Creator: [[David Iya]].
 Hook 1:
@@ -144,33 +187,3 @@ Hook 1:
     So comment "DESKTOP" and I'll get you the repo and how I'd hook it into Claude Code.
     NOTES FOR REVIEW: Fact fix: the transcript says it reads the apps' source code, but Agent Desktop reads the OS accessibility tree (macOS AX, Windows UI Automation, Linux AT-SPI). 198k to 31k is about 84%, so the hook says "like 80%". The benchmark is Vercel's own simulated test. Please confirm the GitHub link before filming. CTA keyword changed from the reference's "Vercel" to "DESKTOP". Voice modeled on the 7-day posted set (6 scripts).
     - Sub-page: [[Agent Desktop: Let Claude Code Use Your Desktop Apps Without Screenshots (Repo + Setup)]]
-
-## 2026-11-09 200+ Motion Graphics repo
-Type: PERSONAL. Creator: [[David Iya]].
-Hook 1:
-    Someone just built a site with 200+ animations made entirely in Claude, and you can copy the prompt behind any of them.
-    Hook 2:
-    Everyone’s been posting motion graphics they made with Claude lately, and there’s a site that shows you the exact prompt behind like 200 of them.
-    Body:
-    So you can filter the whole gallery by style, like product UI or kinetic type, and you’re typically not scrolling for long before you find something close to what you need.
-    And then you open the one you like and the prompt’s sitting right next to it, so you copy it and run it in Claude Code with your own project details swapped in to get the actual video file out. It’s called Prompt Motion, and I think it makes the most sense to grab one transition you’d actually use this week and build from that, because trying to save all 200 of them is probably where most people stall.
-    CTA:
-    So comment "PROMPTS" and I'll get you the gallery link.
-    NOTES FOR REVIEW: Duncan's planner has the same reference video (Claude Motion Graphics library, also posting 2026-11-07). Hooks, angle and CTA here are kept separate from his, but it's worth deciding whether both should go out the same day. Count kept at "more than 200" (the site's own blog references around 230 examples). This sits close to last week's Orbit effects video, so I avoided its reusable-template framing. Voice modeled on the 7-day posted set (6 scripts).
-    - Sub-page: [[Prompt Motion: 200+ Claude Motion Graphics With the Prompts Behind Them (Link + How to Use)]]
-
-## 2026-11-06 Claude code auto-systemizer
-Type: PERSONAL. Creator: [[David Iya]].
-Hook 1:
-    Someone built a Claude Code skill that makes Claude get a bit better every time you use it.
-    Hook 2:
-    Claude Code keeps a copy of every session you run right on your own machine, and I think most people never actually look at what's sitting in there.
-    Body:
-    So every Claude Code session gets saved as a file locally, and that history is really a record of every time Claude got something wrong and how you actually like to work.
-    [ON SCREEN: local session folder path, e.g. ~/.claude/projects]
-    The skill I use is called Improve System, and it goes through those sessions and flags the mistakes I keep repeating along with the skills I should probably be writing.
-    And the part I like most is that it spots the stuff I do by hand every day that typically takes a couple of hours, and then suggests an automation that would handle it in like a few minutes, so I'm not sitting there guessing what to build because it pulls that straight out of my sessions and writes the skill for me.
-    CTA:
-    So comment “SYSTEM” and I’ll send you the exact setup guide, which you can just paste into Claude Code and it’ll set the whole thing up for you.
-    NOTES FOR REVIEW: I couldn't verify the Build Partner plugin or the Improve System skill online, so please confirm the plugin name, the exact command spelling and the install step before filming. CTA keyword changed from the reference's "improve" to "SYSTEM" so it doesn't copy the reference CTA. Voice modeled on the 7-day posted set (6 scripts).
-    - Sub-page: [[The Self-Improving Claude Code Setup: Improve System (Paste-In Setup Guide)]]

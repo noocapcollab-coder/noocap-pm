@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_thechatr", "label": "TheChatr AI", "file_type": "document", "source_file": "brands/thechatr.md"}], "edges": [{"source": "brands_thechatr", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/thechatr.md"}], "hyperedges": []}

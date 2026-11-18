@@ -2,6 +2,26 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A fixed reply in Harsh's own words sends on its own, timing line included
+When: Saving a Reply Templates reply (Why has [template:...]) such as billing_on_approval
+Do: Hold a fixed reply only for a leftover placeholder or a made-up code; let it auto-send otherwise, and record the deal's ask (Billing Request Sent) only when the copy really went
+Never: Mark a fixed reply Needs you for its own timing line, or count a copy still waiting in Approvals as sent
+Seen 1 time(s). Source: System check.
+## Content emails go to the content contact, money emails to the billing contact
+When: A brand splits contacts (one person for script and video, another for invoices and payment)
+Do: Send scripts, cuts and content follow-ups To the content contact (the person the email greets); send invoices and payment chases to the billing email; keep the other on Cc
+Never: Never let a billing contact replying about an invoice take over the deal's Brand Email for content emails
+Seen 1 time(s). Source: Harsh correction.
+## Every loop-in gets our take-over reply
+When: A creator (or their team) loops noocapcollab into a brand thread, in any wording: loop in, looped in, cc'd, added, take it over
+Do: Open the deal and send the fixed loop-in reply from noocapcollab: we'll take it forward from here, please share the brief and contract in this thread
+Never: Never treat a loop-in as 'still a lead, brand hasn't agreed' because the wording was past tense or slightly different
+Seen 1 time(s). Source: Harsh correction.
+## Reply to the correct person in their own thread
+When: Drafting a reply to a brand thread
+Do: Double-check the deal's recipient history and send replies only to the person who wrote the last message in the correct brand thread.
+Never: Send an email to the wrong contact or mix up threads when multiple conversations exist
+Seen 1 time(s). Source: Draft rejected.
 ## Keep chasing an interested brand until they answer
 When: A brand has agreed (we accepted their rate, or the creator said yes) and owes us the contract, brief or script approval
 Do: Follow up every 3 days until they answer. A contract or brief follow-up 3+ days after our last email is never too early.
@@ -21,7 +41,7 @@ Seen 1 time(s). Source: System check.
 When: A deal's video moved to another creator (a mix-up, a swap) and the PM writes to the brand
 Do: Sign and refer to the one creator the brand was last told about ("Brad's Team" once we told them Brad shoots it), and flag the deal so its Creator field can be corrected.
 Never: Name one creator in the body and sign with another creator's team, which repeats the mix-up the brand already complained about.
-Seen 1 time(s). Source: System check.
+Seen 2 time(s). Source: System check.
 ## No tool-access ask when the brand already gave us an account
 When: A brand approves a script and the PM is about to ask for access to their tool on noocaptools@gmail.com
 Do: Read the thread first: if the brand already shared a login or trial account (email and password), or an earlier email of ours already asked for access on noocaptools@gmail.com (any earlier campaign in the same thread, the account stays on), skip the tool-access email. Greet the contact by the name they sign with, never by a non-Latin display name.
@@ -31,7 +51,7 @@ Seen 2 time(s). Source: System check.
 When: A brand asks for a file, image, caption, link or document we don't have on the deal yet
 Do: Only write 'here is X' or 'attached is X' when X is attached or pasted in the email. If we don't have it, ask Harsh for it and draft the reply once it arrives.
 Never: Draft 'Here is the cover image and caption' (or any 'please find attached') with nothing attached, and never label a request as the brand only acknowledging receipt.
-Seen 1 time(s). Source: System check.
+Seen 2 time(s). Source: System check.
 ## An email that just went out is never drafted a second time
 When: The PM is about to write a script, follow-up or other email on a deal where one of the same kind was sent in the last few hours
 Do: Check PM OUTBOX for a Sent row of the same kind on the deal before drafting. A sent row means the job is done, even if the deal fields have not caught up yet.
@@ -141,4 +161,4 @@ Seen 3 time(s). Source: Rulebook.
 When: Writing any email
 Do: Give the thing if we have it, otherwise leave the promise out.
 Never: Write 'shortly', 'within a few hours', 'we'll send it today', [DATE], [name] or invented dates.
-Seen 12 time(s). Source: Rulebook.
+Seen 14 time(s). Source: Rulebook.

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_aeocky_brand", "label": "Aeocky", "file_type": "document", "source_file": "brands/aeocky.md"}], "edges": [{"source": "brands_aeocky_brand", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/aeocky.md"}], "hyperedges": []}

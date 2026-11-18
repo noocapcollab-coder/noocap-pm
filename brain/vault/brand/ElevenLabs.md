@@ -5,27 +5,25 @@ type: brand
 
 Brand. Works with creators: [[Valeri]], [[Chris]], [[Duncan]].
 ## Brand wiki (from every email with them)
-WHO: ElevenLabs, an AI audio and tech company. They come to us through their agency, Kudos Narratives.
+WHO: ElevenLabs is an AI audio and voice synthesis company. They work with us through their agency, Kudos Narratives.
 
-CONTACTS: Yulia Sheremeteva writes to us from yulia@kudosnarratives.com, representing Kudos Narratives/ElevenLabs. She signs off as Yulia Sheremeteva. Other agency or brand emails involved in threads include invoices@kudosnarratives.com and hey@kudosnarratives.com.
+CONTACTS: Yulia Sheremeteva (yulia@kudosnarratives.com) is our primary contact at Kudos Narratives. Harsh (no email provided) handles finance-related confirmations. Invoices must be sent to invoices@kudosnarratives.com.
 
 DEALS:
-ElevenLabs x Valeri | Rate: [amount] | Stage: Posted | Deliverables and usage: not stated | Dates: published 2026-10-31, republished 2026-11-11
-ElevenLabs x Chris | Rate/Deliverables: not known yet | Stage: Brief Received | Dates: brief received 2026-11-09
-ElevenLabs x Duncan | Rate: [amount] | Stage: Approved | Deliverables: 1 short video (Huedini campaign) with crossposting to Instagram and TikTok | Dates: script approved 2026-11-07, go-live pending feature release
-ElevenLabs x Duncan | Rate: [amount] | Stage: Invoiced | Deliverables: 1 short video, crossposting to Instagram and TikTok, one revision round, results report 7 days after go-live | Dates: posted and invoiced 2026-10-30
-ElevenLabs x Valeri | Rate: [amount] | Stage: Paid | Deliverables and usage: not specified | Dates: paid 2026-11-07, invoice sent 2026-10-31
+Valeri: Rate [amount], deliverables and dates pending, stage Posted.
+Chris: Rate pending, deliverables pending, stage Brief Received, due date pending.
+Duncan: [amount], 1 short video (Huedini campaign) crossposted to Instagram/TikTok, stage Invoiced, due 2026-11-18.
+Duncan (previous): [amount], 1 short video, stage Invoiced.
 
-HOW THEY WORK: Briefs are shared via Notion links or direct emails. Scripts go to the brand for approval, and they may forward them to ElevenLabs. Videos and captions require brand/ElevenLabs approval before posting. Crossposting is required for certain campaigns (Instagram and TikTok, or multiple platforms). Performance analytics and insights reports are required 7 days after go-live, sometimes submitted via external forms (e.g., Kudos Narratives base form). Invoices must be issued to Kudos Narratives Ltd with full bank details (account holder name, bank name, account number or IBAN, SWIFT/BIC or routing number), in USD, with requested payment terms (such as Net 1 Business Day to trigger urgent priority in their finance system), sent to invoices@kudosnarratives.com.
+HOW THEY WORK: Briefs are shared via Notion links. Scripts and video drafts require approval via email. They use an internal platform (base.kudosnarratives.com) for reporting performance data. Invoices must be sent to invoices@kudosnarratives.com and include bank details (account holder name, bank name, IBAN/account number, SWIFT/BIC), USD currency, and specifically labeled Net 1 Business Day terms to be flagged as Urgent in their system.
 
-WATCH OUT: Missing or inaccessible links cause immediate escalations and final notices from the agency regarding paid sponsored content. Links must remain active and accessible. Invoices must include explicit bank details and specific terms requested by their finance team to avoid payment delays.
+WATCH OUT: Missing, deleted, or inaccessible links are a major issue; posts must remain live and accessible for reporting. If a link breaks, the brand requires immediate restoration or manual submission of performance data via their reporting portal.
 
 OPEN NOW:
-ElevenLabs x Valeri: We owe analytics and insights after one week from 2026-11-11 (due around 2026-11-18). No other pending items.
-ElevenLabs x Chris: Rudraksh is writing the script. We owe the complete script draft.
-ElevenLabs x Duncan (Huedini campaign): We owe the revised invoice sent to invoices@kudosnarratives.com. Waiting on brand for notification of Huedini public release for publishing clearance and payment processing.
-ElevenLabs x Duncan (October campaign): Full invoice submitted to brand's finance on 2026-11-02, status pending payment confirmation.
-ElevenLabs x Valeri ([amount]deal): Payment completed on 2026-11-07. No action required.
+Valeri: We owe analytics and insights for the November 11 Instagram post one week post-publication (due 2026-11-18).
+Chris: We owe a complete script draft to the brand.
+Duncan (Huedini): Waiting on brand to pay invoice INV-006 and confirm the Huedini feature public release for publishing clearance.
+Duncan (Previous): Status pending payment for original invoice.
 
 
 ## Links

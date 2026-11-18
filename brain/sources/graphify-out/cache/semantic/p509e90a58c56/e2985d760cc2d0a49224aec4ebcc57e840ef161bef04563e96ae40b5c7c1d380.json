@@ -1,0 +1,1 @@
+{"nodes": [{"id": "lessons_emails", "label": "PM lessons: Emails", "file_type": "document", "source_file": "lessons/emails.md"}], "edges": [{"source": "lessons_emails", "target": "harsh", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "lessons/emails.md"}], "hyperedges": []}

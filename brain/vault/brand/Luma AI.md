@@ -5,27 +5,20 @@ type: brand
 
 Brand. Works with creators: [[Chris]], [[Duncan]], [[Brad]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Luma AI is an artificial intelligence video generation platform. They engage us through agencies, specifically NJ Agency and Faved.
+WHO: Luma AI comes to us directly and through the agency Faved.
 
-CONTACTS: Upendra Singh (upendra@njagency.co), Campaign Head at NJ Agency; CC collab@chriscordero.net for Chris deals. Faved (creators@faved.com) handles logistics for Duncan.
+CONTACTS: Upendra Singh, upendra@njagency.co, Campaign Head at NJ Agency, signs as NJ Agency, copy collab@chriscordero.net. Faved, creators@faved.com, platform, copy collab@buildroom.ai.
 
 DEALS:
-Chris: Reel + Story repost, stage Submitted, awaiting feedback.
-Duncan: Draft script/video, stage Signed, pending contract and script.
-Brad: One video, stage Posted, script approved.
+Chris: Reel + Story repost, rate not confirmed, stage Approved, agreement signed Nov 9 2026, script approved Nov 10 2026, video submitted Nov 16 2026, video approved Nov 18 2026.
+Duncan: draft script, rate not stated, stage Signed, deal-cevsvd on Faved, contract sent Nov 2 2026.
+Brad: one video, rate not known yet, stage Posted, script approved Oct 21 2026.
 
-HOW THEY WORK:
-NJ Agency: Script approval required. We must create a Luma account using a specific email provided by us (noocaptools@gmail.com). We are strictly forbidden from starting production on free accounts to avoid watermarks; we must wait for credits to be added to the account by the agency. Once production is complete, content is sent via Frame.io for review.
-Faved: All communication and contract signing must occur through the Faved portal. Emails sent to Faved are not tracked; check the Faved page for updates.
+HOW THEY WORK: For Chris, create account on Luma using noocaptools@gmail.com and wait for credits before production so videos are not watermarked. Review script, submit video via frame.io, follow posting instructions with CTA, comment to dm automation, bio link https://lumalabs.ai/thechriscordero, story with link sticker, tag @lumalabsai. For Duncan, reply on the Faved page since email replies are not seen by the brand. For Duncan usage rights, agree to 60-day usage rights for paid ads, dark ads, and whitelisting across Instagram, TikTok, and other platforms, but exclude YouTube ad rights and partnership ad codes (crossposting to YouTube is allowed).
 
-WATCH OUT:
-Do not use free Luma AI accounts for production as they generate watermarks. Wait for credits to be loaded.
-For Duncan, exclude YouTube ad rights and YouTube ad codes from the agreement.
+WATCH OUT: Do not start any video production using the free account for Luma as it generates watermarked videos; wait until credits have been added. For Duncan, replies by email to Faved are not seen by the brand so we must answer on the Faved page. Do not grant YouTube ad rights or provide YouTube partnership/ad codes for Duncan.
 
-OPEN NOW:
-Chris: Waiting for the agency to provide feedback on the video link sent via Frame.io.
-Duncan: We must sign the contract, confirm the usage rights limitation (no YouTube ad rights or codes), and submit the draft script via the Faved portal.
-Brad: No pending actions required by the agency at this time.
+OPEN NOW: For Chris, we owe: Publish the Reel and Story with the specified CTA, link, and tagging, then share the live links and screenshot with the brand. For Duncan, we owe: Sign contract, confirm acceptance of usage rights terms (60-day for Instagram/TikTok/other paid ads and dark ads; YouTube crossposting allowed but no YouTube paid ad rights or ad codes), and submit draft script. For Brad, Brad to film the video per the approved script and we owe nothing right now pending Brad's filming.
 
 
 ## Links

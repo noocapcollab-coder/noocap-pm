@@ -1,0 +1,1 @@
+{"nodes": [{"id": "lessons_videoeditors", "label": "PM lessons: Video & editors", "file_type": "document", "source_file": "lessons/video-editors.md"}], "edges": [{"source": "lessons_videoeditors", "target": "harsh", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "lessons/video-editors.md"}], "hyperedges": []}

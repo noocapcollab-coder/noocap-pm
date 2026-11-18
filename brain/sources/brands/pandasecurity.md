@@ -3,30 +3,33 @@
 Brand. Works with creators: [[Chris]], [[Valeri]].
 
 ## Brand wiki (from every email with them)
-WHO: Panda Security is a cybersecurity brand. They come to us through Lua Group.
+WHO: Panda Security is a security software brand. They come to us through the agency Lua Group.
 
-CONTACTS: Camila Molares, camila.molares@luagroup.com, Lua Group, Senior Request Manager. Francisca Vitória, francisca.vitoria@luagroup.com, Lua Group. Lucia Fernández, lucia.fernandez@luagroup.com, Lua Group.
+CONTACTS: Camila Molares, camila.molares@luagroup.com, Senior Request Manager at Lua Group, signs as Camila. Francisca Vitoria, francisca.vitoria@luagroup.com, at Lua Group. Lucia Fernandez, lucia.fernandez@luagroup.com, at Lua Group.
 
 DEALS:
-Panda Security x Chris | Price Agreed | Email
-Panda Security x Valeri | horizontal video, vertical video, and cover photo for 1000 EUR, UGC only and not posted on creator's own pages | Price Agreed | Email
+Chris: deliverables, rate, usage rights, payment terms and dates not yet confirmed, Script Approved, 2026-11-05 to 2026-11-18.
+Valeri: horizontal video, vertical video, and cover photo for 1,000 EUR (UGC only, not posted on creator's pages), Price Agreed, 2026-10-01 to 2026-11-12.
 
-HOW THEY WORK: Content must be UGC and not posted on creator pages.
+HOW THEY WORK: Content must be UGC and not posted on the creator's own pages. Creator's team requested noocapcollab@gmail.com be included in email threads.
 
-WATCH OUT: None.
+WATCH OUT: None stated.
 
-OPEN NOW: Panda Security x Chris: We need to confirm all deal terms in writing, as the stage says Price Agreed but we lack documented rate, deliverables, usage rights, payment terms, and dates. We owe sending a deal summary to confirm. Panda Security x Valeri: Waiting on brand (Francisca or Panda Security) to confirm selection and send creative brief. We owe nothing at this time.
+OPEN NOW:
+Chris: Brand is waiting to receive the content for approval following script approval. We owe providing the content to the brand for approval.
+Valeri: Waiting on brand (Francisca or Panda Security) to confirm selection and send the creative brief. We owe nothing at this time.
 
-## Deal with [[Chris]] (Price Agreed, opened 2026-11-05)
-Last brand reply none, our last reply none.
-AGREED: rate, deliverables, usage rights, payment terms and any agreed dates are not yet confirmed in writing. Stage shows Price Agreed but specific terms have not been stated in emails.
+## Deal with [[Chris]] (Script Approved, opened 2026-11-05)
+Last brand reply 2026-11-18, our last reply none.
+AGREED: rate, deliverables, usage rights, payment terms and agreed dates are not yet confirmed in the provided text.
 
 HISTORY:
-2026-11-05 Chris's team requested noocapcollab@gmail.com be added to all future email threads.
+2026-11-05: creator requested noocapcollab@gmail.com be included in email threads.
+2026-11-18: brand asked for a response regarding content approval after script approval.
 
 BILLING: not yet
 
-OPEN NOW: We need to confirm all deal terms in writing with Panda Security brand contact. The stage says Price Agreed but we lack documented rate, deliverables, usage rights, payment terms, and dates. We owe: sending deal summary to confirm.
+OPEN NOW: Brand is waiting to receive the content for approval following script approval. We owe: providing the content to the brand for approval.
 
 ## Deal with [[Valeri]] (Price Agreed, opened 2026-10-01)
 Last brand reply 2026-11-12, our last reply 2026-11-12.

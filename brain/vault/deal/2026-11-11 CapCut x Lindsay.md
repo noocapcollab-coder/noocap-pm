@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Script Sent
-Last brand reply 2026-11-16, our last reply 2026-11-17.
+Last brand reply 2026-11-18, our last reply 2026-11-18.
 AGREED: [amount]for three CapCut app videos on Instagram, 30 to 60 seconds each. Script approval before filming, up to 2 revisions, publish within 3 days of approval, 60-day ad code authorization per video. Latest publication deadline November 27.
 
 HISTORY:
@@ -13,10 +13,12 @@ HISTORY:
 2026-11-16 us sent the video scripts for approval.
 2026-11-16 brand asked whether all three scripts are for the same brief and if production and publishing can be completed by November 27.
 2026-11-17 us clarified that each script covers a different brief and confirmed the November 27 deadline can be met.
+2026-11-18 brand sent script revision feedback and updated Black Friday CTA and comment instructions.
+2026-11-18 us told the brand that revised scripts will be sent within 2 to 3 working days.
 
 BILLING: not yet.
 
-OPEN NOW: Waiting on brand: review the clarified script details and schedule.
+OPEN NOW: We owe: send the revised scripts based on the brand's feedback.
 
 ## Links
 - [[CapCut]]

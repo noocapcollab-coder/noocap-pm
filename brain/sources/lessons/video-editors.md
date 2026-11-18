@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Drive links appear within 10 minutes of To Film
+When: A card moves to 6- To Film
+Do: Make the Raw Footage, Assets and Edited Vid links on the next heartbeat.
+Never: Never leave a To Film card without links for more than one heartbeat.
+Seen 1 time(s). Source: Harsh correction.
+## Images sent with change notes go to the editor too
+When: Harsh forwards change notes on WhatsApp with an image (a logo, a screenshot of the shot to fix)
+Do: Send the image to the editor with the notes: into their Discord thread, under the notes on the intake row and on the video card.
+Never: Never pass on only the words when the message carried an image the editor needs.
+Seen 1 time(s). Source: Harsh correction.
 ## One brand email can carry two asks, and both get acted on
 When: A brand email does more than one thing, like approving video 1 while sending notes on scripts 2 and 3
 Do: Act on every ask in it: the approved video's tracker row goes to To Post and the script notes go to the script cards. Anything not acted on goes to Harsh in #pm and the email stays unread

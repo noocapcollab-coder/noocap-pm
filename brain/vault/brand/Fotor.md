@@ -3,21 +3,37 @@ type: brand
 ---
 # Fotor
 
-Brand. Works with creators: [[Chris]], [[Lindsay]].
+Brand. Works with creators: [[Duncan]], [[Chris]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Fotor is an all-in-one photo and video editing platform by Everimaging Co., Ltd. They come to us directly.
+WHO: Fotor, an app and video tool by Everimaging Co., Ltd. They come to us directly.
 
-CONTACTS: Marina Xu, marina@fotor.me, brand contact, signs as Fotor, must be copied on all threads. Chris Cordero, creator. collab@chriscordero.net, creator team, must be copied.
+CONTACTS:
+Zoey, zoey@fotor.me, brand, signs, copy zoey@fotor.me
+Marina Xu, marina@fotor.me, brand, signs, copy collab@chriscordero.net
 
-DEALS: Chris, 1 dedicated video posted on Instagram and TikTok, [amount]USD, Brief Received, November 2026.
+DEALS:
+Fotor x Duncan: one video with cross-posting to Instagram Reels, TikTok, and Facebook, [amount]Price Agreed, no dates agreed.
+Fotor x Chris: 1 dedicated video posted on Instagram and TikTok with 30-day ad authorization and cross-posting, [amount]Brief Received, no dates agreed.
 
-HOW THEY WORK: Brand provides access link, code, contract, and two video concepts via Google Docs briefs. Creator chooses a concept, writes the script based on the chosen direction, and sends it to the brand for review. Payment terms were not specified in the deal agreement.
+HOW THEY WORK:
+Brand provides an access link and code.
+Access link: https://www.fotor.com/video/
+Code: F-OlzhZMA
+Brand provides two video concepts/briefs for the creator to choose from, and the creator writes the script based on the chosen direction.
+Briefs for Chris:
+All-in-one: https://docs.google.com/document/d/1u5z5J4rqT-t_U-WLHlm8r7WJvDTRf6IW4ZHWSMBECjI/edit?tab=t.0#heading=h.80g3wcy9lk8i
+Talking Head: https://docs.google.com/document/d/1ZMj9SiZNvs6cL3JVqmnCqZcGiwMhMR-SqIMinkgHU-I/edit?tab=t.0#heading=h.80g3wcy9lk8i
+Scripts are sent via email for review within 2 to 3 working days.
 
-WATCH OUT: None listed.
+WATCH OUT:
+Nothing noted yet.
 
-OPEN NOW: We owe: review the concepts and brief, and send back our chosen concept and script to Marina.
+OPEN NOW:
+For Fotor x Duncan: We need the brand to send the contract and brand brief to noocapcollab@gmail.com; brand owes the contract and brief.
+For Fotor x Chris: We owe reviewing the two briefs, selecting a concept, and sending the script to the brand.
 
 
 ## Links
 - [[Chris]]
+- [[Duncan]]
 - [[Lindsay]]

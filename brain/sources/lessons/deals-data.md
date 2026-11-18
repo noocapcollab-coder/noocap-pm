@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Live links sent with the invoice count as the links email
+When: A deal's live links went to the brand inside another email (usually the invoice email) and a Posted links step comes up
+Do: Treat the links as sent: fill Links Sent Date from that email and draft nothing more about the links. If a reminder is due, it is a payment chase, written as one.
+Never: Draft a Posted links email for links the brand already has, or put another email's body (a payment chase) under the Posted links kind.
+Seen 1 time(s). Source: System check.
 ## A sign link on the brand's own domain is a contract, and every contract gets acknowledged
 When: A brand sends a contract to sign, as a file, an e-sign service link or a link on their own site (agreements.<agency>.com/sign/...)
 Do: Save it in CONTRACTS as Needs signing, send it to Harsh and Pratham on WhatsApp, and send the brand the fixed contract_ack reply at once

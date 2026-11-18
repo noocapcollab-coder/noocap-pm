@@ -2,6 +2,42 @@
 
 The final scripts of videos posted in the last 60 days, as filmed.
 
+## 2026-11-17 5 THINGS FABLE CAN DO
+Creator: [[Duncan]].
+On-Screen Hook:
+Claude Fable 5.2 built its own operating system
+    Hook 1:
+Anthropic dropped Claude Fable 5.2, and five of the tests they ran should not be possible for one AI model.
+    Hook 2:
+Fable 5.2 pulled off five things no single model should be able to do. Three have been in my head all week.
+    Body:
+    One, an empty folder goes in, Fable runs over a thousand sub-agents for eight days, and out comes an operating system that boots on a laptop.
+    Two, Anthropic gave it a single paragraph and it designed three working electronic devices, each ready for manufacturing in under a day.
+    Three, a thousand Fable agents turned the proof of Fermat’s Last Theorem into computer-checked math in 30 hours.
+    Four, on a robot test it scored 64.9%, way ahead of the next best model at 39.4%.
+    And five, it finished a black hole calculation from 2003 that nobody had completed in 23 years.
+    CTA:
+Drop "FABLE" in the comments and I'll send you the full breakdown on all five.
+
+## 2026-11-17 7 DAYS 7 AI CERTIFICATES
+Creator: [[Duncan]].
+On-Screen Hook:
+7 Anthropic certificates in 7 days
+    Hook 1:
+    Seven free Anthropic certificates in seven days, and they get harder every day, so by day seven you’re ahead of 99% of people using AI.
+    Hook 2:
+    Anthropic is giving out free certificates right now, and if you stack seven of them this week you’ll be ahead of 99% of people using AI.
+    Body:
+    Day one is Claude 101, zero coding, and you walk away with your first Anthropic certificate.
+    Day two is AI Fluency, which teaches you how to actually work alongside AI.
+    Day three is Building Effective Human-Agent Teams, a quick one on handing real work to AI agents.
+    Day four is where it gets real, because Claude Code 101 has you writing code for the first time.
+    Day five is Claude Code in Action, where you use it on a real codebase.
+    By day six you’re building your own MCP server in the Intro to MCP course.
+    And day seven is MCP: Advanced Topics, which is how Claude Code talks to every other app, and it’s easily the hardest. Pretty freaking cool.
+    CTA:
+Drop "COURSE" in the comments and I'll send you the links to all seven.
+
 ## 2026-11-13 Claude Minimalistic Graphics
 Type: PERSONAL. Creator: [[Duncan]].
 If you type /zackdfilms into Claude, it can take one wild idea and build a 3D animated explainer like this one.
@@ -23,6 +59,27 @@ If you type /zackdfilms into Claude, it can take one wild idea and build a 3D an
     - /stick-figure → skills/stick-figure
     - /graph → skills/graph
     Note: the real commands use hyphens (/zach-d-films, /map-route), so the on-screen text should match.
+
+## 2026-11-17 Claude effects
+Type: PERSONAL. Creator: [[Duncan]].
+Hook:
+If you type /effects glass widgets into Claude Code, it floats glass panels right next to you like this, and that’s just one of seven effects packed into this one skill.
+    Body:
+So here’s the deal. You drop your talking-head footage into Claude Code and one slash command builds the motion graphics right around you. /effects orbit sends your old video thumbnails spinning around your head. /effects spotlight kills the background so you stay bright in frame, and another command ticks off a checklist beside you as you talk. If you want something louder, one slams you between news headlines with a single word stuck on screen and another pops iPhone toggles on under your chin, plus there’s a timeline that runs across the bottom with a bright playhead. Pretty freaking cool. 
+    It’s all one skill with seven commands, and it works on whatever cut you’ve already filmed.
+    CTA:
+Comment EFFECTS and I'll send you the skill.
+    - Repo: https://github.com/artemnovitckii/claude-animation-skills
+    - README mirror with commands, install steps and render times: https://skillsllm.com/skill/claude-animation-skills
+    - Live demos of each skill: https://novitckii.com/resources/animation-skills/
+
+## 2026-11-18 Claude Opus 5.5 DESIGN (REPOST)
+Type: REPOST, TRIALS. Creator: [[Duncan]].
+#### HOOK OPTIONS
+    - BEST: You can turn Claude Opus 5.5 into a complete design genius with these five free plugins, and almost nobody has installed all five.
+    - Claude Opus 5.5 still builds that generic AI look out of the box, and five free plugins fix it.
+    - These five free plugins are the reason my Claude Opus 5.5 builds stopped looking AI-made.
+    - Most people run Claude Opus 5.5 with zero design plugins, and here are the five I’d install first.
 
 ## 2026-11-10 Claude trending cartoon
 Creator: [[Duncan]].
@@ -128,78 +185,3 @@ Type: PERSONAL. Creator: [[Duncan]].
 - https://leads.run/
 
     THE REFERENCE SAYS “INTENTRAT” AS THE RESOURCE- WHICH I DID NOT RECEIVE THROUGH COMMENTING, AS WELL AS IT DOESN’T EXIST ANYWHERE OVER GOOGLE SEARCH TOO. SO, THE RESOURCE IS REPLACED WITH LEADS.RUN- WHICH IS BASICALLY THE SAME THING APART FROM THE PRICING FACTS (NOT PUBLISHED ANYWHERE).
-
-## 2026-11-06 Replica Skill
-Type: PERSONAL. Creator: [[Duncan]].
-HOOK 1:
-    Someone built a Claude skill whose only job is to read every bad App Store review of the app you’re cloning and turn them into fixes for your version.
-    HOOK 2:
-    There’s a free Claude skill pack where one skill’s only job is reading what users hate about the app you’re cloning.
-    BODY
-    So here’s the deal. You paste the GitHub link into Claude, and it installs eleven skills. Give the first one an app’s URL and it maps every screen, flow, and data model. Then one rebuilds it screen by screen, and another tests it for bugs. The one that got me reads real reviews from the App Store and Reddit, ranks what users hate most, and turns it into fixes for your version. Pretty freaking cool. It rebuilds features and flows only, never the original’s code or branding. It’s called Replica.
-    CTA
-    Comment CLONE and I’ll send you the repo link plus access to Claude Code Club.
-    Reources:
-    - Replica skill repo
-    - Replica README (raw)
-    - Replica wiki
-
-## 2026-11-05 ATTICUS
-Type: PERSONAL. Creator: [[Duncan]].
-#### HOOK
-    Hook 1: You can now turn your Mac into Jarvis, and the tool that does it is completely free and open source.
-    Hook 2: There’s a free app that turns your Mac into Jarvis. One shortcut, one voice command, and your Mac just does the thing.
-
-#### BODY
-    So you hit a shortcut, say what you want out loud, and your Mac handles it. It’ll open any app, move your windows around, or dig up a file buried in some random folder. Pretty freaking cool.
-    The app is called Atticus, and it can actually see your screen, so if you’re sitting on an email you just say “reply to this” and it writes the reply for you.
-    You can even teach it your own commands. Set up something like “focus mode” once, and from then on just saying those words pulls up your to-do list and closes everything that distracts you.
-    There are a couple of things to know before you grab it, though. It needs either a paid Claude plan or a local model running in the background, and right now it only works on macOS 26.
-
-#### CTA
-    Drop “MAC” in the comments and I’ll send over the install walkthrough.
-    
-
-RESOURCES:
-    - GitHub repo: https://github.com/SaarthurR/atticus-mac
-    - Official site: https://saarthurr.github.io/atticus-mac/
-    - Install command (run in Terminal):
-```
-  curl -fsSL https://raw.githubusercontent.com/SaarthurR/atticus-mac/main/install.sh | bash
-```
-
-## 2026-11-04 CLAUDE BOARD OF COUNCIL
-Type: PERSONAL. Creator: [[Duncan]].
-#### HOOK
-    Hook 1: 
-    Claude just let me clone Alex Hormozi’s brain, plus four other killer business minds, and now I run every decision past them before I make it.
-    Hook 2: Someone built a slash command for Claude that turns any real-world expert into your personal board of advisors.
-
-#### BODY
-    Here’s the deal. You type one slash command, drop in a name, and Claude pulls from over 100 of that person’s videos, interviews, and books. It learns their frameworks, their rules, even the way they phrase things.
-    So when I’m sitting there stuck on pricing or an offer, I just ask my board. And they answer in character, with real quotes pulled straight from their videos.
-    I’ve got Naval, Codie Sanchez, Alex Hormozi, Leila Hormozi, and Sara Blakely in mine. Pretty freaking cool.
-    You can even clone yourself and sit at the table with them. Then they all sit around a table and argue your decision out. And it runs on your Claude plan, no API key needed. Done.
-
-#### CTA
-    Drop “council” in the comments and I’ll send you the GitHub repo.
-    Resource link: https://github.com/nateherkai/roast-room
-
-## 2026-11-04 STOP BUILDING AI AGENTS
-Type: PERSONAL. Creator: [[Duncan]].
-HOOK 1:
-    Two of Anthropic’s own engineers got on stage and told people to stop building AI agents, and what they use instead is way simpler.
-    HOOK 2
-    Most people have ten half-built AI agents that each do one job badly. Anthropic’s own team runs one agent with a folder for every job.
-
-#### BODY
-    So here’s the deal. Instead of a new agent for every task, they run one Claude with a skill for each job, which is basically a folder of instructions.
-    Start by writing down what “done” looks like, so Claude checks its own work before you ever see it. Then have it interview you about how you actually do the job, and save that into the skill along with your best past examples.
-    And when it gets something wrong, you fix one line in the skill instead of arguing in the chat, so every future run picks up the fix. Pretty freaking cool.
-
-#### CTA
-    Comment FOLDER and I’ll send you the three prompts I use to build one.
-    Resources:
-    - AI Engineer – talk page
-    - Transcript – sozai.app
-    - Business Insider via AOL

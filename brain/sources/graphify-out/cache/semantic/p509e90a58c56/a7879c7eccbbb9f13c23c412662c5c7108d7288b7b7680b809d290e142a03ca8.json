@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_spacesheep", "label": "Spacesheep", "file_type": "document", "source_file": "brands/spacesheep.md"}], "edges": [{"source": "brands_spacesheep", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/spacesheep.md"}], "hyperedges": []}

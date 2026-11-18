@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Invoiced
-Last brand reply 2026-11-17, our last reply 2026-11-17.
+Last brand reply 2026-11-17, our last reply 2026-11-18.
 AGREED: Rate: [amount]. Deliverables: 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days. Usage rights: not specified. Payment terms: 50% upon script approval, 50% once video is published. Agreed dates: publication date 2026-11-28.
 
 HISTORY:
@@ -15,6 +15,7 @@ HISTORY:
 2026-11-17 us: requested agency billing details from brand to issue initial invoice.
 2026-11-17 brand: provided agency billing details (Slate Media Co., Ltd.) and requested invoice with Stripe link.
 2026-11-17 us: sent initial 50% invoice ([amount]) with Stripe link to Jun, billed to Slate Media Co., Ltd.
+2026-11-18 us: sent first video draft on Frame.io for review.
 
 BILLING: Brand has given agency billing details (Slate Media Co., Ltd., jun@manyfast.io, Seoul address, tax ID 790-86-01367). Invoice status: initial 50% invoice sent.
 

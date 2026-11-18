@@ -3,7 +3,7 @@ type: brand
 ---
 # Flova AI
 
-Brand. Works with creators: [[Duncan]], [[Lindsay]], [[Chris]].
+Brand. Works with creators: [[Duncan]], [[Chris]], [[Lindsay]].
 ## Brand wiki (from every email with them)
 WHO: Flova AI, an AI video tool with a Skills community on their homepage. They come to us directly.
 

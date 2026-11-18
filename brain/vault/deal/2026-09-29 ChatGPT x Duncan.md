@@ -2,22 +2,22 @@
 type: deal
 ---
 Stage: Invoiced
-Last brand reply 2026-11-12, our last reply 2026-11-16.
-AGREED: rate [amount]deliverables not specified, usage rights not specified, payment terms net upon invoice submission, no agreed completion dates.
+Last brand reply 2026-11-18, our last reply 2026-11-18.
+AGREED: rate [amount]deliverables not specified, usage rights not specified, payment terms net upon invoice submission, no agreed dates.
 
-HISTORY: 
-2026-11-05 brand (Delton) requested Switch to ChatGPT invoice not received since September. 
-2026-11-05 us sent invoice INV-004 for [amount]with Stripe payment link. 
-2026-11-09 us followed up on open invoice INV-004. 
-2026-11-10 brand (Delton) confirmed receipt of invoice and submitted to AP Team for processing via Trolley service. 
-2026-11-12 brand (Delton) requested Vendor Form completion for Trolley payment service. 
-2026-11-12 us confirmed Vendor Form completed and submitted. 
-2026-11-16 us followed up on payment timing following Vendor Form submission. 
-2026-11-16 brand (Ashay) sent automated out of office reply.
+HISTORY:
+2026-11-05 brand (Delton) requested Switch to ChatGPT invoice not received since September.
+2026-11-05 us sent invoice INV-004 for [amount].
+2026-11-09 us followed up on open invoice INV-004.
+2026-11-10 brand (Delton) confirmed receipt of invoice and submitted to AP for processing via Trolley service.
+2026-11-12 brand (Delton) requested Vendor Form completion for Trolley payment.
+2026-11-12 us confirmed Vendor Form completed and submitted.
+2026-11-16 us followed up on payment.
+2026-11-18 brand (Delton) updated AP that Vendor Form was completed and requested payment ASAP.
 
-BILLING: Brand contact Delton Alves dalves@viralnation.com, company Viral Nation, billing details on file. Invoice INV-004 for [amount]sent 2026-11-05, status awaiting AP processing via Trolley service.
+BILLING: Brand has given billing details (company: Viral Nation, invoice email: dalves@viralnation.com). Invoice INV-004 for [amount]sent 2026-11-05, status pending with AP Team for Trolley payment.
 
-OPEN NOW: Invoice INV-004 ([amount]) awaiting AP Team processing via Trolley service after Vendor Form completion. Waiting on brand: payment processing.
+OPEN NOW: We owe: Trolley Vendor Form completion.
 
 ## Links
 - [[ChatGPT]]

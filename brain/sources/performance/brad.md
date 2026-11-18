@@ -1,5 +1,5 @@
 # Brad - what performs
-Content OS, videos posted since 2026-07-20: 18 posts across platforms, average 3,253 views. Creator: [[Brad]].
+Content OS, videos posted since 2026-07-21: 18 posts across platforms, average 3,257 views. Creator: [[Brad]].
 ## 2026-11-01 👇 Comment “WEBSITES” below and I'll DM you all the links!
 Instagram Short: 34,912 views, 873 likes, 743 comments, 0 shares, 0 saves.
 ## 2026-11-10 👇 Comment "WEBSITES" and I'll send the links to your DMs
@@ -15,7 +15,7 @@ Facebook Short: 1,675 views, 17 likes, 1 comments, 0 shares, 0 saves.
 ## 2026-10-30 👇 Check out my pinned comment for the link to get 2,000 free credits!
 Facebook Short: 1,502 views, 7 likes, 1 comments, 0 shares, 0 saves.
 ## 2026-11-16 3 Brand New Websites You Won't Believe Are FREE 🤯
-YouTube Short: 1,374 views, 35 likes, 0 comments, 0 shares, 0 saves.
+YouTube Short: 1,450 views, 36 likes, 0 comments, 0 shares, 0 saves.
 ## 2026-11-13 👇 Comment BUZZY and I'll DM you the link
 Instagram Short: 1,281 views, 12 likes, 4 comments, 0 shares, 0 saves. Brand: [[Buzzy AI]].
 ## 2026-11-13 👇 Check my pinned comment for the link
@@ -25,7 +25,7 @@ TikTok Short: 360 views, 17 likes, 1 comments, 6 shares, 20 saves.
 ## 2026-10-28 🔗 Try Luma Workflows through the link in my bio!
 TikTok Short: 267 views, 5 likes, 0 comments, 2 shares, 4 saves. Brand: [[Luma AI]].
 ## 2026-11-13 Turn One Photo Into Multiple Video Ads 🤯
-YouTube Short: 261 views, 1 likes, 1 comments, 0 shares, 0 saves.
+YouTube Short: 259 views, 1 likes, 1 comments, 0 shares, 0 saves.
 ## 2026-11-01 🤯 10 Crazy AI Websites You Never Heard Of!
 YouTube Short: 258 views, 4 likes, 1 comments, 0 shares, 0 saves.
 ## 2026-10-30 👇 Find the link in my bio to claim 2,000 free credits!
