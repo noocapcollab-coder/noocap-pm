@@ -80,6 +80,13 @@ export default async function handler(req, res) {
   // own thread with its CCs. Nothing is sent (Nov 19: brand emails left unanswered all week)
   // ?stripepaid=<days> (read only): every invoice in each creator's Stripe from the last N days, paid and still open,
   // so Harsh can see which payments really came in (Nov 19: Revenue rows sat under Awaiting payment after Stripe paid)
+  // ?wanote=1 (POST {text}): send Harsh one WhatsApp message Claude wrote for him (Nov 19: payment confirmations to forward)
+  if (req.query?.wanote) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    const text = String(req.body?.text || '').trim();
+    if (!text) return res.status(400).json({ error: 'text needed' });
+    try { const W = await import('../lib/whatsapp.js'); return res.status(200).json(await W.sendContract({ text: text.slice(0, 3500), label: 'note' })); } catch (e) { return res.status(500).json({ error: String(e.message).slice(0, 200) }); }
+  }
   if (req.query?.stripepaid) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
     try {
