@@ -2789,3 +2789,15 @@ test('a Stripe payment gives Harsh a note to forward to the creator (Harsh, Nov 
   assert.match(t, /Paid invoice: https:\/\/invoice\.stripe\.com\/x/);
   assert.ok(!/Forward this to/.test(t));
 });
+
+test('a payment Stripe confirms gets the fixed thank-you, no ask to Harsh (Harsh, Nov 19)', async () => {
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  assert.match(src, /export async function paymentThanks/);
+  assert.match(src, /fromBrand && \(stripePaid \|\| proof\.length\)\) \{ try \{ rev \+= ` · \$\{await paymentThanks\(deal, email\)\}`/);
+  const inv = fs.readFileSync(new URL('../lib/invoicing.js', import.meta.url), 'utf8');
+  assert.match(inv, /\^Brand says it paid/);
+  const { templateBlock } = await import('../lib/replytemplates.js');
+  assert.equal(templateBlock({ active: true, stages: ['Paid'] }, { stage: 'Paid', today: '2026-11-19', sentRecently: false }), '');
+  assert.match(templateBlock({ active: true, stages: ['Paid'] }, { stage: 'Paid', today: '2026-11-19', sentRecently: 'sent' }), /already went/);
+});

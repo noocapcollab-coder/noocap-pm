@@ -105,6 +105,22 @@ export default async function handler(req, res) {
       return res.status(200).json(out);
     } catch (e) { return res.status(500).json({ error: String(e.message).slice(0, 200) }); }
   }
+  // ?paythanks=<dealId> (&dry=1 to only look): send the fixed payment thank-you in the brand's thread, only when Stripe
+  // shows the deal paid (Nov 19: ElevenLabs x Duncan, finance said it paid and Stripe agreed)
+  if (req.query?.paythanks) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const { openDeals } = await import('../lib/briefs.js');
+      const deal = (await openDeals({ withClosed: true })).find((d) => String(d.id).replace(/-/g, '') === String(req.query.paythanks).replace(/-/g, ''));
+      if (!deal) return res.status(404).json({ error: 'deal not found' });
+      const I = await import('../lib/invoicing.js');
+      const st = await I.stripeState(deal).catch((e) => ({ known: false, error: e.message }));
+      const look = { deal: `${deal.brand} × ${deal.creator}`, stage: deal.stage, thread: !!deal.threadId, to: deal.brandEmail, stripePaid: !!(st.known && st.allPaid) };
+      if (req.query.dry || !look.stripePaid) return res.status(200).json({ ...look, sent: false });
+      const { paymentThanks } = await import('../lib/inbox.js');
+      return res.status(200).json({ ...look, result: await paymentThanks(deal) });
+    } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   if (req.query?.draftreply) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
     try {
