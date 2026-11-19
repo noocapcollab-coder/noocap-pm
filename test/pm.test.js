@@ -2808,3 +2808,19 @@ test('a brand saying it paid, written into the deal memory, is not payment proof
   assert.equal(earlierProof(mem, '', '2026-10-30'), false);
   assert.equal(earlierProof('2026-11-20 brand sent the transfer confirmation (receipt attached)', '', '2026-10-30'), true);
 });
+
+test('a wrapped "wrote:" line and a broken-up link never become the brand\'s question (Fotor x Duncan, Luma AI x Lindsay, Nov 19)', async () => {
+  const { latestPart, brandAsks } = await import('../lib/briefs.js');
+  // Gmail wrapped "wrote:" onto its own line, so our quoted "Could you share the brief" was picked as Fotor's question
+  const fotor = 'Hi Duncan\'s Team,\n\nThanks so much!\nDeliverables: 1 dedicated video.\n\nBest,\nZoey | Fotor Team\n\nOn Thu, Nov 19, 2026 at 4:20 PM noocap collab <noocapcollab@gmail.com>\nwrote:\n\n> Hi Zoey,\n>\n> Could you share the brief and the contract in this thread? Once we have\n> them, we\'ll start on the script straight away.\n';
+  const latest = latestPart(fotor);
+  assert.ok(!/Could you share/.test(latest));
+  assert.equal(brandAsks(latest).length, 0);
+  // a quoted line is never the brand's own question, even without an "On … wrote" header
+  assert.equal(brandAsks('Thanks!\n> Could you share the brief and the contract in this thread?').length, 0);
+  // a Google link wrapped across two lines left "d/12PP…/edit?" behind as a "question"
+  const luma = 'Hey Team,\n\nHere\'s the content brief: https://docs.google.com/presentation/\nd/12PPK0Sgf1dHRyuYwsDI5xxdnH8jPZRSF-sPLC7BvwV0/edit?usp=drivesdk\n\nPlease review it and share your script for approval.\n';
+  assert.ok(!brandAsks(latestPart(luma)).some((q) => /edit\?|\/d\//.test(q)));
+  // real questions still count
+  assert.equal(brandAsks('Thanks for the update. When can we expect the script?').length, 1);
+});
