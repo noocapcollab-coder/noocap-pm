@@ -2771,6 +2771,7 @@ test('"null" from the model is never a Next Action (SpeakOn x Chris, Nov 19)', a
   assert.equal(ourAskText('Waiting for null'), null);
   assert.equal(ourAskText(null), null);
   assert.equal(ourAskText('Cassie to approve the updated script'), 'Cassie to approve the updated script');
+});
 
 test('a video is ready for the brand 4 days before its publish deadline (CapCut x Lindsay, Nov 19)', async () => {
   const { readyBy } = await import('../lib/briefs.js');
