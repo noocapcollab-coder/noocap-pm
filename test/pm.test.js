@@ -2801,3 +2801,10 @@ test('a payment Stripe confirms gets the fixed thank-you, no ask to Harsh (Harsh
   assert.equal(templateBlock({ active: true, stages: ['Paid'] }, { stage: 'Paid', today: '2026-11-19', sentRecently: false }), '');
   assert.match(templateBlock({ active: true, stages: ['Paid'] }, { stage: 'Paid', today: '2026-11-19', sentRecently: 'sent' }), /already went/);
 });
+
+test('a brand saying it paid, written into the deal memory, is not payment proof (ElevenLabs x Duncan, Nov 19)', async () => {
+  const { earlierProof } = await import('../lib/inbox.js');
+  const mem = 'HISTORY: 2026-11-02 brand confirmed invoice submitted to finance. 2026-11-19 brand stated finance confirmed invoice paid.<br /><br />BILLING: Invoice sent 2026-10-30. Brand states invoice paid as of 2026-11-19.';
+  assert.equal(earlierProof(mem, '', '2026-10-30'), false);
+  assert.equal(earlierProof('2026-11-20 brand sent the transfer confirmation (receipt attached)', '', '2026-10-30'), true);
+});
