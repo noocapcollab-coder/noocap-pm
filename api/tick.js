@@ -87,6 +87,12 @@ export default async function handler(req, res) {
       return res.status(200).json({ from: email.from, files: files.map((f) => f.filename), result: note });
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?scriptgates=<creator>: why each deal's script has or hasn't gone (read only)
+  if (req.query?.scriptgates) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const H = await import('../lib/heartbeat.js'); return res.status(200).json(await H.scriptGates(String(req.query.scriptgates))); }
+    catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   if (req.query?.contractping) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
     try { const T = await import('../lib/contracttrack.js'); return res.status(200).json(await T.announceContract(String(req.query.contractping).replace(/[^0-9a-f-]/gi, ''))); }
