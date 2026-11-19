@@ -2707,3 +2707,13 @@ test('a brand email that asks something stays unread when nothing was sent or dr
   assert.equal(keepUnread({ needs_reply: true }, 'Brief updated · reply drafted'), false);
   assert.equal(keepUnread({ needs_reply: false, we_owe: null }, 'thanks noted'), false);
 });
+
+test('publish_date_confirm uses the card POST DATE and nothing else (Luma x Chris, Nov 19)', async () => {
+  const { BUILT_IN, fillTemplate, fmtDay } = await import('../lib/replytemplates.js');
+  const t = BUILT_IN.find((x) => x.key === 'publish_date_confirm');
+  assert.equal(fmtDay('2026-11-21'), 'Saturday, November 21');
+  const b = fillTemplate(t.body, { from: 'Upendra Singh <upendra@njagency.co>', deal: { creator: 'Chris' }, postDate: 'Saturday, November 21' });
+  assert.match(b, /^Hi Upendra,/);
+  assert.match(b, /goes live on Saturday, November 21/);
+  assert.ok(!/\{post_date\}/.test(b));
+});
