@@ -2764,3 +2764,11 @@ test('only the newest queued WhatsApp ask per deal goes out (Luma x Chris, Nov 1
   oneQueuedAskPerDeal(msgs);
   assert.deepEqual(msgs.map((m) => m.meta), ['stale-ask', 'pending-ask', 'pending-ask']);
 });
+
+test('"null" from the model is never a Next Action (SpeakOn x Chris, Nov 19)', async () => {
+  const { ourAskText } = await import('../lib/inbox.js');
+  assert.equal(ourAskText('null'), null);
+  assert.equal(ourAskText('Waiting for null'), null);
+  assert.equal(ourAskText(null), null);
+  assert.equal(ourAskText('Cassie to approve the updated script'), 'Cassie to approve the updated script');
+});
