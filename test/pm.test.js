@@ -2728,3 +2728,13 @@ test('one send per draft: a fresh claim from another send blocks a second send (
   assert.equal(sendClaimState(claimText('xyz', now - 1000), undefined, now), 'taken');
   assert.equal(sendClaimState(claimText('xyz', now - 4 * 60 * 1000), 'abc', now), 'free');
 });
+
+test('an image-only brand email is read from its picture (Katlas receipt for Dreamina x Chris, Nov 19)', async () => {
+  const { messageImages } = await import('../lib/inbox.js');
+  const text = '[cid:2106b540]\n________________________________\nFrom: noocap collab <noocapcollab@gmail.com>\nSent: Wednesday, 18 November 2026 21:07\nSubject: Re: Paid Collaboration with Dreamina\n\nHey Katlas,\n\nHere\'s 9 Digit ACH Routing number 211370150\n\nThank you\n';
+  const img = { filename: 'Outlook-zi1nnziv.jpg', mimeType: 'image/jpg', data: Buffer.alloc(40000).toString('base64') };
+  const got = messageImages({ text, attachments: [img, { filename: 'logo.png', mimeType: 'image/png', data: Buffer.alloc(2000).toString('base64') }] });
+  assert.equal(got.length, 1);
+  assert.equal(got[0].mimeType, 'image/jpeg');
+  assert.equal(messageImages({ text: 'Hi team, '.repeat(40), attachments: [img] }).length, 0);
+});
