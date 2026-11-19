@@ -2869,3 +2869,14 @@ test('deals paid upfront reach the script step (Manyfast x Duncan, Nov 20)', asy
   assert.match(src, /const ordered = \[\.\.\.upfrontPaid,/);
   assert.match(src, /if \(deal\.upfrontOnly\) continue;/);
 });
+
+test('a card back at 5 with a new script version goes again; an unchanged one does not (CapCut x Chris, Nov 20)', async () => {
+  const { revisedCards } = await import('../lib/heartbeat.js');
+  const a = 'a'.repeat(32), b = 'b'.repeat(32), c = 'c'.repeat(32);
+  const cards = [{ id: a, num: 5, title: 'CapCut × Chris (2)' }, { id: b, num: 5, title: 'CapCut × Chris (3)' }, { id: c, num: 12, title: 'CapCut × Chris' }];
+  const vers = { sent: new Map([[a, '111111111111'], [b, '222222222222'], [c, '333333333333']]), pending: new Set() };
+  const cur = { [a]: '999999999999', [b]: '222222222222', [c]: '000000000000' };
+  assert.deepEqual(revisedCards(cards, vers, cur).map((x) => x.title), ['CapCut × Chris (2)']);
+  assert.deepEqual(revisedCards(cards, { ...vers, pending: new Set([a]) }, cur), []);
+  assert.deepEqual(revisedCards(cards, { sent: new Map(), pending: new Set() }, cur), []);
+});

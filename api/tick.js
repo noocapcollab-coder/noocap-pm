@@ -93,6 +93,25 @@ export default async function handler(req, res) {
     try { const H = await import('../lib/heartbeat.js'); return res.status(200).json(await H.scriptGates(String(req.query.scriptgates))); }
     catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?scriptdraft=<dealId>&cards=<cardId,cardId>: put the revised scripts of these cards into Approvals as ONE Script
+  // email (waits for Harsh's Send, never sent here). For scripts sent before versions were tracked (Nov 20)
+  if (req.query?.scriptdraft) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const { openDeals } = await import('../lib/briefs.js');
+      const deal = (await openDeals({ withClosed: true })).find((d) => String(d.id).replace(/-/g, '') === String(req.query.scriptdraft).replace(/-/g, ''));
+      if (!deal) return res.status(404).json({ error: 'deal not found' });
+      const { notion, titleOf } = await import('../lib/notion.js');
+      const cards = [];
+      for (const id of String(req.query.cards || '').split(',').filter(Boolean)) { const pg = await notion('GET', `/pages/${id.trim()}`); cards.push({ url: pg.url, title: titleOf(pg) }); }
+      if (!cards.length) return res.status(400).json({ error: 'cards needed' });
+      const O = await import('../lib/outbox.js');
+      const titles = cards.map((c) => c.title);
+      const mail = await O.writeEmail({ kind: 'Script', deal, facts: { video_titles: titles, script_count: cards.length, revised: true, note: `${cards.length} revised script PDFs are attached, one per video (${titles.join(', ')}). Say the updated scripts are attached and ask them to approve or share feedback on each. Do not describe the scripts.` } });
+      const r = await O.createDraft({ kind: 'Script', deal, subject: mail.subject, body: mail.body, attach: 'Script PDF', video: cards[0].url, context: `Script cards: ${cards.map((c) => c.url).join(' ')}`, why: `Revised scripts for ${titles.join(', ')} are back at Script Approval (Harsh, Nov 20). Waiting for your Send.`, notify: true, sameAs: cards.map((c) => c.url).join(' ') });
+      return res.status(200).json({ deal: `${deal.brand} × ${deal.creator}`, titles, draft: r.id || r, created: r.created, body: mail.body });
+    } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   if (req.query?.contractping) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
     try { const T = await import('../lib/contracttrack.js'); return res.status(200).json(await T.announceContract(String(req.query.contractping).replace(/[^0-9a-f-]/gi, ''))); }
