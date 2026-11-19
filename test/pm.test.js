@@ -2780,3 +2780,11 @@ test('a video is ready for the brand 4 days before its publish deadline (CapCut 
   assert.equal(r.readyLabel, 'Monday, November 23');
   assert.equal(readyBy(''), null);
 });
+
+test('a Stripe payment gives Harsh a note to forward to the creator (Harsh, Nov 19)', async () => {
+  const { paidForwardText } = await import('../lib/invoicing.js');
+  const t = paidForwardText({ brand: 'Manyfast', creator: 'Duncan' }, { amount_paid: 160000, number: 'INV-005', customer_name: 'Slate Media Co., Ltd.', status_transitions: { paid_at: Date.parse('2026-11-18T06:00:00Z') / 1000 }, hosted_invoice_url: 'https://invoice.stripe.com/x' }, 'extra');
+  assert.match(t, /Payment received: Manyfast × Duncan/);
+  assert.match(t, /Hi Duncan, Manyfast's payment of \$1,600 .* November 18 \(invoice INV-005, paid by Slate Media Co\., Ltd\.\)/);
+  assert.match(t, /Paid invoice: https:\/\/invoice\.stripe\.com\/x/);
+});
