@@ -112,6 +112,24 @@ export default async function handler(req, res) {
       return res.status(200).json({ deal: `${deal.brand} × ${deal.creator}`, titles, draft: r.id || r, created: r.created, body: mail.body });
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?statusopts=1: each creator board's Status options with colour and group (read only), for adding a new status
+  if (req.query?.statusopts) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const { BOARDS } = await import('../lib/tools.js'); const { notion } = await import('../lib/notion.js');
+      const out = {};
+      for (const b of BOARDS) {
+        try {
+          const ds = await notion('GET', `/data_sources/${b.ds}`);
+          const st = Object.values(ds.properties || {}).find((p) => p.name === 'Status');
+          if (!st) { out[b.creator] = 'no Status'; continue; }
+          const groupOf = {}; for (const g of st.status?.groups || []) for (const id of g.option_ids || []) groupOf[id] = g.name;
+          out[b.creator] = { ds: b.ds, type: st.type, options: (st.status?.options || st.select?.options || []).map((o) => ({ name: o.name, color: o.color, group: groupOf[o.id] || null })) };
+        } catch (e) { out[b.creator] = 'error: ' + String(e.message).slice(0, 100); }
+      }
+      return res.status(200).json(out);
+    } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   if (req.query?.contractping) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
     try { const T = await import('../lib/contracttrack.js'); return res.status(200).json(await T.announceContract(String(req.query.contractping).replace(/[^0-9a-f-]/gi, ''))); }
