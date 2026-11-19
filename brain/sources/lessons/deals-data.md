@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Every deal is checked within a couple of heartbeats
+When: The heartbeat's deal emails step runs out of time before the end of the deal list
+Do: Start the next run at the deal the last run stopped before, and show 'N of M deals, next: ...' in the step
+Never: Leave the deals past one run's reach to wait hours for a rotating start to drift onto them
+Seen 1 time(s). Source: System check.
 ## Live links sent with the invoice count as the links email
 When: A deal's live links went to the brand inside another email (usually the invoice email) and a Posted links step comes up
 Do: Treat the links as sent: fill Links Sent Date from that email and draft nothing more about the links. If a reminder is due, it is a payment chase, written as one.
@@ -56,7 +61,7 @@ Seen 2 time(s). Source: System check.
 When: A brand whose deal is posted, invoiced or paid invites the creator to a new campaign in the same thread, even inside an email about payment and without asking for a rate
 Do: Open a deal of its own at Inbound (same thread, Needs Check), ask Harsh on WhatsApp whether the creator joins, and keep the payment news on the old deal
 Never: Fold the invite into the finished deal's memory or Next Action, or treat it as a brief on the old deal
-Seen 2 time(s). Source: System check.
+Seen 3 time(s). Source: System check.
 ## A rate ask on a finished deal is a new inquiry
 When: A brand whose deal is already Posted, Invoiced or Paid writes in the same thread asking for our rate for something new (another video, an event, a session).
 Do: Open a separate deal at Inbound for the new ask with the thread's IDs, and put the rate question to Harsh. Leave the finished deal's memory and stage as they were.

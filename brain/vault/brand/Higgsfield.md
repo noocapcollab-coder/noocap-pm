@@ -3,30 +3,28 @@ type: brand
 ---
 # Higgsfield
 
-Brand. Works with creators: [[Chris]], [[Lindsay]].
+Brand. Works with creators: [[Lindsay]], [[Chris]].
 ## Brand wiki (from every email with them)
-WHO
-Higgsfield is an AI video platform. They operate both directly via the Higgsfield IM Team and through third party agencies such as AIFY MEDIA.
+WHO: Higgsfield.AI is an AI video generation platform. They engage creators both directly and through their partner agency, AIFY MEDIA.
 
-CONTACTS
-Higgsfield IM Team: higgsfield.ai@jeevmedia.net. This is the primary contact for direct campaigns. Always CC collab@automateaiconsulting.com.
+CONTACTS: Higgsfield IM Team (higgsfield.ai@jeevmedia.net) is the primary contact for direct campaigns. CC collab@automateaiconsulting.com on all brand email communications.
 
-DEALS
-Higgsfield x Chris: Short drama greenscreen video. Stage: Posted.
-Higgsfield x Chris: Short drama greenscreen video. Stage: Posted.
-Higgsfield x Lindsay: 1 Instagram Reel and DM automation. Rate: [amount]USD fixed per campaign. Stage: Posted.
-Higgsfield x Lindsay: 1 Instagram Reel + Link in bio for 7 days. Rate: [amount]USD. Stage: Paid (2026-10-15).
+DEALS:
+Higgsfield x Lindsay: 1 video, rate TBD, stage Brief Received.
+Higgsfield x Chris: Short drama greenscreen video, rate TBD, stage Posted.
+Higgsfield x Chris: Deliverables/Rate TBD, stage Posted.
+Higgsfield.AI x Lindsay: 1 Instagram Reel and DM automation, [amount]USD fixed rate, stage Posted.
+Higgsfield x Lindsay: 1 Instagram Reel and Link in Bio (7 days), [amount]USD, stage Paid.
 
-HOW THEY WORK
-Direct campaigns with Higgsfield are managed via email. They have a strict policy regarding portal submissions and link uploads; campaigns are ineligible for payment if not submitted through their specified portal. They do not provide variable pricing based on views or performance. For campaigns managed by separate agencies like AIFY MEDIA, they will not facilitate introductions and require us to manage those relationships independently.
+HOW THEY WORK: They manage campaigns through direct email threads. For direct Higgsfield campaigns, the agreed rate for Lindsay is [amount]USD per campaign. They emphasize that they are a separate entity from AIFY MEDIA and will not facilitate introductions or provide contact details for other agencies.
 
-WATCH OUT
-Do not expect introductions to third party agencies like AIFY MEDIA. Higgsfield maintains they are an entirely separate entity and will not act as an intermediary. Ensure all campaign links and proofs are submitted via their portal, as failure to do so will lead to payment disputes.
+WATCH OUT: Do not confuse Higgsfield.AI (Jeev Media) with AIFY MEDIA; these are separate agencies. Campaigns managed by AIFY MEDIA must be handled directly with that agency. In the past, payment was disputed when content was submitted via a portal rather than the brand's preferred direct channel. Always confirm rates before beginning production.
 
-OPEN NOW
-Higgsfield x Chris (1st deal): Rudraksh to write the script.
-Higgsfield x Chris (2nd deal): Rudraksh to write the script.
-Higgsfield x Lindsay (ChatGPT & Wan 3.0): We need to reach out directly to AIFY MEDIA to finalize the brief and contract since Higgsfield will not provide an introduction.
+OPEN NOW:
+Higgsfield x Lindsay: We owe a script draft from Rudraksh.
+Higgsfield x Chris (Drama/Greenscreen): We owe a script draft from Rudraksh.
+Higgsfield x Chris (Second deal): We owe a script draft from Rudraksh.
+Higgsfield.AI x Lindsay: We plan to contact AIFY MEDIA directly regarding the ChatGPT and Wan 3.0 campaign.
 
 
 ## Links

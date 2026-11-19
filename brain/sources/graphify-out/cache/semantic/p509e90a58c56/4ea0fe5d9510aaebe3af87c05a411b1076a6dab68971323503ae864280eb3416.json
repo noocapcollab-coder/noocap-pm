@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_vina_vina_ai", "label": "Vina AI", "file_type": "document", "source_file": "brands/vina.md"}], "edges": [{"source": "brands_vina_vina_ai", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/vina.md"}], "hyperedges": []}

@@ -5,23 +5,25 @@ type: brand
 
 Brand. Works with creators: [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: CodeRabbit, an AI code reviewer tool. They come through an agency named DevTools Academy.
+WHO: CodeRabbit AI code reviewer, coming through DevTools Academy agency.
 
 CONTACTS:
-Riya T, riya@devtoolsacademy.com, Head of Growth at DevTools Academy, signs as RT, must be copied.
-Ankur, ankur@devtoolsacademy.com, agency, must be copied.
-coderabbit@devtoolsacademy.com, brand email, must be copied.
-collab@chriscordero.net, Chris email, must be copied.
-noocapcollab@gmail.com, NOOCAP email, must be copied on future emails.
+Riya T, riya@devtoolsacademy.com, Head of Growth at DevTools Academy, signs as RT.
+Ankur, ankur@devtoolsacademy.com, copied.
+CodeRabbit team, coderabbit@devtoolsacademy.com, copied.
+Chris Cordero, collab@chriscordero.net, creator.
 
 DEALS:
-Chris | 1 short-form video (Instagram Reel/TikTok) with 2 months of ad rights, paid partnership label and partnership ad code | [amount]USD | Brief Received | agreed Nov 2026
+Chris | 1 short-form video (Instagram Reel/TikTok) with 2 months of ad rights, paid partnership label, and partnership ad code | [amount] | Script Sent | Agreed Oct 2026.
 
-HOW THEY WORK: Draft script must be sent via email thread for review.
+HOW THEY WORK:
+Brief sent by brand after quote. Script reviewed via email thread.
 
-WATCH OUT: Always REPLY ALL.
+WATCH OUT:
+None noted.
 
-OPEN NOW: We owe: draft script within 2 to 3 working days (promised Nov 17, 2026).
+OPEN NOW:
+Waiting on brand: Riya T to approve the script or request changes.
 
 
 ## Links

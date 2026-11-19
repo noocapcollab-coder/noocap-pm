@@ -2,6 +2,21 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A deal paid upfront still sends its script when the card reaches Script Approval
+When: A deal is already Paid or Invoiced (upfront payment) and its video card moves to 5- Script Approval
+Do: Send the script email the same way as any other deal, the same day
+Never: Never skip or delay the script because the deal stage is already Paid or Invoiced
+Seen 1 time(s). Source: Harsh correction.
+## A brief is not a contract, even when the email mentions the agreement
+When: A brand email carries a PDF and talks about a contract or agreement
+Do: Treat it as a contract only when the file is named or written as one, or the brand says it is the contract to sign. If the email calls the file a brief or says the agreement comes later ("once you confirm, I will share the formal agreement"), it is a brief: file it on the deal's card and answer what the brand asked (usually a date for Harsh).
+Never: Send "thanks for sending the contract, we'll review and sign it" or a Contract alert for a brief.
+Seen 1 time(s). Source: System check.
+## The brand's brief file always lands on the card and reaches the script writer
+When: A brand sends the brief as a PDF, Word or slides file, in any email of the thread
+Do: Attach the file on the video card inside the brief and tell the script writer it's there; if the email with the file was held or too big, fetch it from Gmail
+Never: Never write a 'Source email' section (sender, subject, date) on a card, and never leave the brief file only in Gmail
+Seen 1 time(s). Source: Harsh correction.
 ## No money for the team, but the brief's own content words still reach the script writer
 When: A brand note uses a money word about the video itself (budget pressure, Black Friday price on the end card, it cost me a coffee, paid partnership label)
 Do: Send that line to the script writer. Anything the money filter does hold back goes to Harsh in #pm so nothing disappears silently

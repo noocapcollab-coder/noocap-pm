@@ -5,23 +5,18 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO
-Softr is a no code platform for building web applications and internal tools from data sources like Airtable or Google Sheets. They work with us directly.
+WHO: Softr is a no code platform for building web apps from databases. They work with us directly.
 
-CONTACTS
-Kat Simonova (katerina@softr.io) is the primary point of contact for project management and briefs. Tim (tim@softr.io) handles invoice processing. All emails must CC collab@automateaiconsulting.com and lindsay@automateaiconsulting.com.
+CONTACTS: Kat Simonova (katerina@softr.io) is the Growth Marketer; she is the main point of contact for strategy and approvals. Tim Fisher (tim@softr.io) handles accounts payable. Copy all communications to them and collab@automateaiconsulting.com.
 
-DEALS
-Softr x Lindsay: Two videos delivered and published (Sept 2026 and Oct 2026). Stage: Invoiced.
+DEALS: 
+Softr x Lindsay: Two videos delivered (September and October 2026). Rate/currency not explicitly confirmed in records. Stage: Invoiced. 
 
-HOW THEY WORK
-Videos must focus on Ops, IT teams, and non technical business users rather than AI or automation agencies. Content must avoid positioning Softr as a tool to sell apps/services as an agency. Videos should emphasize solving business pain points like disconnected systems, manual processes, and security/permissions. Scripts require approval before filming. Final deliverables include the edited video, thumbnail, description, and time stamps. Descriptions must be optimized for AEO, include one primary CTA, and use specific UTM links provided by Kat. The Softr video must be the only video published on the day it goes live.
+HOW THEY WORK: Softr provides specific briefs including target audiences (Ops, IT, and internal team members), pain points to address, and required UTM parameters. They do not want creators to position Softr as a tool for AI/automation agencies to sell services; they prefer a focus on internal business apps, client portals, and security (logins/permissions). We must submit script, thumbnail, description, and time stamps for review. Descriptions must be optimized for AEO (question led timestamps, keywords). Only one main CTA is allowed in the description. Softr videos must be the only content published by the creator on the day of release.
 
-WATCH OUT
-Do not position Softr as a tool for agencies to make money building apps for others. Do not use thumbnails focusing on dollar amounts or earnings. Avoid having multiple CTAs in the first few lines of the video description.
+WATCH OUT: Avoid positioning Softr as a tool for agency services or selling apps. Do not include multiple CTAs in descriptions; use only the one provided by the brand. The brand prefers to see the final edited video, including screen recordings, before approval.
 
-OPEN NOW
-Waiting on brand: Tim to process the outstanding invoices for the two videos.
+OPEN NOW: Waiting on Tim Fisher to process the single invoice covering the two completed videos.
 
 
 ## Links

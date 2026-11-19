@@ -2,24 +2,20 @@
 type: deal
 ---
 Stage: Invoiced
-Last brand reply 2026-11-17, our last reply 2026-11-18.
-AGREED: Rate: [amount]. Deliverables: 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days. Usage rights: not specified. Payment terms: 50% upon script approval, 50% once video is published. Agreed dates: publication date 2026-11-28.
+Last brand reply 2026-11-19, our last reply 2026-11-19.
+AGREED: Rate: [amount]. Deliverables: 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days. Usage rights: not specified. Payment terms: 50% upon script approval, 50% once video is published. Agreed dates: publication date rescheduled to 2026-11-30.
 
 HISTORY:
-2026-11-12 us: proposed payment terms and requested brief.
-2026-11-13 brand: confirmed rate, deliverables, promo code, tracking link, and payment terms.
-2026-11-15 us: sent script PDF for review and proposed publication date of 2026-11-28.
-2026-11-16 brand: approved script with minor adjustments, confirmed publication date, and requested initial invoice.
-2026-11-17 brand: followed up on initial invoice and script confirmation.
-2026-11-17 brand: requested invoice through their marketing agency and asked for Stripe/PayPal link.
-2026-11-17 us: requested agency billing details from brand to issue initial invoice.
-2026-11-17 brand: provided agency billing details (Slate Media Co., Ltd.) and requested invoice with Stripe link.
-2026-11-17 us: sent initial 50% invoice ([amount]) with Stripe link to Jun, billed to Slate Media Co., Ltd.
-2026-11-18 us: sent first video draft on Frame.io for review.
+2026-11-16 brand: approved script and confirmed billing/payment process.
+2026-11-17 brand: provided billing details for Slate Media Co., Ltd.
+2026-11-17 us: sent initial 50% invoice ([amount]) via Stripe.
+2026-11-18 us: sent first video draft for review.
+2026-11-19 brand: requested specific edits to draft and proposed moving publication date to 2026-11-30 or later.
+2026-11-19 us: confirmed editor is working on requested edits and accepted publication date of 2026-11-30.
 
-BILLING: Brand has given agency billing details (Slate Media Co., Ltd., jun@manyfast.io, Seoul address, tax ID 790-86-01367). Invoice status: initial 50% invoice sent.
+BILLING: Brand has provided agency billing details (Slate Media Co., Ltd., jun@manyfast.io, Seoul address, tax ID 790-86-01367). Invoice status: initial 50% invoice sent.
 
-OPEN NOW: Waiting on brand: payment of the initial 50% invoice ([amount]) and draft review.
+OPEN NOW: We owe: send the revised video draft incorporating the brand's feedback.
 
 ## Links
 - [[Chris]]

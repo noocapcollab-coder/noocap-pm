@@ -4,7 +4,7 @@ Brand. Works with creators: [[Lindsay]].
 
 ## Inbound leads
 - Contact Name: Alex · Next Step: New brand: management to reply with pricing · Platforms: TikTok, Instagram, YouTube Shorts · Last Brand Email: 2026-11-17 · Thread Text: From: Alex John <alex@largefiletransfer.com>
-Date: 2026-11-17T12:28:45.000Z
+Date: 2026-11-17
 
 Hi Automate AI Consulting,
 

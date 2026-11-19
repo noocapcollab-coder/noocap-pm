@@ -1,25 +1,23 @@
 ---
 type: deal
 ---
-Stage: Signed
-Last brand reply 2026-11-17, our last reply 2026-11-17.
-AGREED: rate [amount], 1 dedicated YouTube video (English) + sponsorship slot in late November, publication window November 23 to December 7 2026 (adjustable), usage rights and payment terms per signed contract, amounts subject to email discussions per company policy.
+Stage: Brief Received
+Last brand reply 2026-11-19, our last reply 2026-11-19.
+AGREED: [amount], 1 dedicated YouTube video (English) with a sponsorship slot, late November 2026.
 
 HISTORY:
 2026-11-02 us sent contract with tool access request.
-2026-11-04 brand replied Atoms tool registration required before access granted.
-2026-11-10 brand followed up requesting contract review and sign-off.
+2026-11-04 brand replied Atoms tool registration required.
 2026-11-11 brand resent contract with instructions and brief.
-2026-11-11 Lindsay's team confirmed will send revised contract and requested Reply All.
-2026-11-12 brand acknowledged.
-2026-11-16 brand followed up on the status of the revised contract.
-2026-11-16 us asked brand to reshare the contract and campaign brief, and sent four build options.
-2026-11-17 brand asked for audience details before choosing a build direction.
-2026-11-17 us sent revised signed contract and replied with audience details and recommended build option.
+2026-11-16 brand followed up on contract status.
+2026-11-17 brand asked for audience details.
+2026-11-17 us sent signed contract, audience details, and build proposal.
+2026-11-19 brand shared feedback and script requirements.
+2026-11-19 us confirmed receipt and committed to delivering revised script in 2-3 working days.
 
 BILLING: not yet
 
-OPEN NOW: Waiting on brand: review the signed contract and confirm the build option.
+OPEN NOW: We owe: the revised script and build plan based on the brand's suggestions.
 
 ## Links
 - [[Atoms]]

@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A WhatsApp question or contract waiting for a closed chat is saved even when the nudge fails
+When: A brand asks for something only Harsh or Pratham has, or a contract arrives, while their WhatsApp chat has been quiet for 24 hours
+Do: Queue the question or contract in the chat first, then try the nudge template, and report a failed nudge without dropping what was queued
+Never: Let a failed pm_needs_you nudge throw away the queued question, so the person never hears the brand asked
+Seen 1 time(s). Source: System check.
 ## Every revised cut on a WhatsApp deal reaches Harsh with its Frame.io link
 When: An editor finishes a cut (first or revised) for a WhatsApp deal, or Harsh asks for 'the link' / 'the updated link'
 Do: Send Harsh the Frame.io link on WhatsApp for every round, named by round; when asked for the link, answer with the Frame.io link from EDIT TRACKER
@@ -31,7 +36,7 @@ Seen 1 time(s). Source: System check.
 When: Asks and contract alerts queued while the chat was closed go out at the morning round-up or when the chat reopens
 Do: Send each queued message once and mark it sent so no later run sends it again; before sending, check the same text has not already gone out since it was queued.
 Never: Send the same ask or contract alert again on every heartbeat.
-Seen 1 time(s). Source: System check.
+Seen 2 time(s). Source: System check.
 ## A file sent in the WhatsApp chat goes only to the brand named with it
 When: Harsh or Pratham drops a contract or file into the WhatsApp chat, with or without a caption, and sometimes names the brand in the next message
 Do: Match the file to a deal only from the brand named in the caption or the very next message, the file name, or the brand's name as whole words in the contract text. If the file name names a different company than the deal (Automate AI Consulting x Auremere is Lindsay's), or the brand is unclear, ask which brand and wait.
@@ -61,7 +66,7 @@ Seen 1 time(s). Source: System check.
 When: The 24-hour WhatsApp window is closed and the PM needs to reach Harsh or Pratham
 Do: Use a template name that exists and is approved in Meta; if a send fails with 'Template name does not exist', fall back to an approved template and raise it in #pm-alerts once.
 Never: Ship a new template name in code before Meta approves it, or let failed pushes fail silently.
-Seen 18 time(s). Source: System check.
+Seen 19 time(s). Source: System check.
 ## Brand requests at night are kept
 When: A brand asks for something while WhatsApp is quiet or closed
 Do: Queue the question and deliver it with the next message or the morning round-up.

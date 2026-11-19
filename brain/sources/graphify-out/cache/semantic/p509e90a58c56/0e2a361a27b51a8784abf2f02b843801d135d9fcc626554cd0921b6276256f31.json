@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_starnettalent_starnet_talent", "label": "Starnet Talent", "file_type": "document", "source_file": "brands/starnettalent.md"}], "edges": [{"source": "brands_starnettalent_starnet_talent", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/starnettalent.md"}], "hyperedges": []}

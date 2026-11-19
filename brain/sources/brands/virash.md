@@ -3,20 +3,20 @@
 Brand. Works with creators: [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: Virash AI comes through an agency named Metelink.
+WHO: Virash AI is an AI video generator that turns product images into promotional videos using templates. They come to us through an agency named Metelink.
 
-CONTACTS: Amber, email amber@metelink.co, agency Metelink, must be copied ninjaaitools@gmail.com.
+CONTACTS: Amber, email amber@metelink.co, represents Metelink/Virash AI. Thread CC includes ninjaaitools@gmail.com.
 
-DEALS: Chris, deliverables not yet, rate not yet, currency not yet, stage Submitted, dates not yet.
+DEALS: Chris, deliverables not yet, rate not yet, stage Approved, dates not yet.
 
-HOW THEY WORK: Drafts are reviewed via Frame.io.
+HOW THEY WORK: Drafts are reviewed via Frame.io links. Once approved, we post the video using the provided caption and hashtags, and send the ad code for 60 days.
 
-WATCH OUT: not yet.
+WATCH OUT: None stated.
 
-OPEN NOW: Waiting on brand to review the updated video link sent via Frame.io.
+OPEN NOW: We owe posting the video today and sending the ad code for 60 days after posting.
 
-## Deal with [[Chris]] (Submitted, opened 2026-11-18)
-Last brand reply 2026-11-18, our last reply 2026-11-18.
+## Deal with [[Chris]] (Approved, opened 2026-11-18)
+Last brand reply 2026-11-19, our last reply 2026-11-18.
 AGREED:
 Rate: not yet
 Deliverables: not yet
@@ -29,9 +29,11 @@ HISTORY:
 2026-11-18 us: Asked brand for a screenshot or timestamp of the clip to replace.
 2026-11-18 brand: Sent timestamp 00:18 to 00:20 and three images requesting replacement with Virash template videos.
 2026-11-18 us: Sent the updated video link via Frame.io.
+2026-11-19 creator: Emailed brand asking for approval on video, cover, caption, and tracking link to post today.
+2026-11-19 brand: Approved the video, provided caption and hashtags, and asked us to post today and send the ad code for 60 days.
 
 BILLING:
 not yet
 
 OPEN NOW:
-Waiting on brand: review the updated video link.
+We owe: post the video today and send the ad code for 60 days after posting.

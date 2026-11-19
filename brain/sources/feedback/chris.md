@@ -2,6 +2,23 @@
 
 What brands asked us to change after seeing a cut. Read before editing the next video for the same brand.
 
+## 2026-11-04 CapCut x ChatGPT
+Brand: [[CapCut]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.
+Hook: Use Hook 2. Subtitles: Change "cap cut" to "CapCut" throughout. 0:04–0:12: Demonstrate using CapCut within ChatGPT, rather than ChatGPT directly. 0:24–0:28: Screen shows Chatcut instead of CapCut website—correct this. 0:31–0:35: Replace app interface footage with correct web version. 0:41–0:43: Ending is abrupt and does not clearly show how ChatGPT opens CapCut; demonstrate this process more clearly, perhaps immediately after the hook. Missing demonstration: Show how to copy a prompt and paste it into ChatGPT to import the CapCut plugin. Terminology: Use "ChatGPT" instead of "Codex" throughout the video. Overall concern: On-screen presenter appears to be AI avatar and interface footage seems sourced rather than recorded directly, making video feel insufficiently authentic and carefully produced. Brand requests reshoot with original footage and more polished presentation.
+Brand requests substantial revisions to submitted video cut
+Specific feedback: use Hook 2, fix 'cap cut' to 'CapCut' in subtitles
+Multiple interface corrections needed (ChatGPT in CapCut, not ChatGPT directly; remove 'Chatcut', use web interface)
+Missing demonstration: show copying prompt into ChatGPT to import CapCut plugin
+Ending too abrupt, needs to show ChatGPT opening CapCut more clearly
+Brand concerned video uses AI avatar and sourced footage rather than original; requests reshoot with authentic footage
+Asks confirmation: will video publish on ninjaaitools?
+
+## 2026-11-18 Manyfast × Chris
+Brand: [[Manyfast]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.
+1. More screen time for wireframe and prototype, show clear transition from wireframe to matching finished UI, followed by Favorites feature, make screens larger and transition more impactful. 2. Text corrections: 'cloud code' -> 'Claude Code' (at 6s, 16s), 'CHRISH30' -> 'CHRIS30' (at 32s), update offer to '30% off your first month of the Pro monthly plan' everywhere.
+Brand provided feedback on video draft (more screen time for wireframe/prototype, specific text corrections)
+Brand requested to move publication date from Nov 28 to Nov 30 or later
+
 ## 2026-11-17 Emergent × Chris
 Brand: [[Emergent]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.
 At second 15-16, when saying 'I built an app around that on Emergent', either say it or show the wordmark logo. Emergent should also be mentioned earlier in the video.
@@ -13,17 +30,6 @@ Around 15-16s: say 'on Emergent' or show logo
 Brand: [[Dreamina]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 3.
 Revise the hashtags to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner
 Brand asked to revise hashtags for the video to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner
-
-## 2026-11-04 CapCut x ChatGPT
-Brand: [[CapCut]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.
-Hook: Use Hook 2. Subtitles: Change "cap cut" to "CapCut" throughout. 0:04–0:12: Demonstrate using CapCut within ChatGPT, rather than ChatGPT directly. 0:24–0:28: Screen shows Chatcut instead of CapCut website—correct this. 0:31–0:35: Replace app interface footage with correct web version. 0:41–0:43: Ending is abrupt and does not clearly show how ChatGPT opens CapCut; demonstrate this process more clearly, perhaps immediately after the hook. Missing demonstration: Show how to copy a prompt and paste it into ChatGPT to import the CapCut plugin. Terminology: Use "ChatGPT" instead of "Codex" throughout the video. Overall concern: On-screen presenter appears to be AI avatar and interface footage seems sourced rather than recorded directly, making video feel insufficiently authentic and carefully produced. Brand requests reshoot with original footage and more polished presentation.
-Brand requests substantial revisions to submitted video cut
-Specific feedback: use Hook 2, fix 'cap cut' to 'CapCut' in subtitles
-Multiple interface corrections needed (ChatGPT in CapCut, not ChatGPT directly; remove 'Chatcut', use web interface)
-Missing demonstration: show copying prompt into ChatGPT to import CapCut plugin
-Ending too abrupt, needs to show ChatGPT opening CapCut more clearly
-Brand concerned video uses AI avatar and sourced footage rather than original; requests reshoot with authentic footage
-Asks confirmation: will video publish on ninjaaitools?
 
 ## 2026-11-13 CapCut × Chris
 Brand: [[CapCut]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.

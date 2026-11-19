@@ -4,7 +4,7 @@ Brand. Works with creators: [[Lindsay]].
 
 ## Inbound leads
 - Contact Name: Charles · Next Step: New brand: management to reply with pricing · Last Brand Email: 2026-11-16 · Thread Text: From: Charles Perez <charles@getweb4mail.com>
-Date: 2026-11-16T14:00:01.000Z
+Date: 2026-11-16
 
 Hi Automate,
 

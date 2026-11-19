@@ -4,7 +4,7 @@ Brand. Works with creators: [[Lindsay]].
 
 ## Inbound leads
 - Next Step: New brand: management to reply with pricing · Last Brand Email: 2026-11-17 · Thread Text: From: bodrulislamfahadfreelancer@gmail.com
-Date: 2026-11-17T20:07:55.000Z
+Date: 2026-11-17
 
 Hi Lindsay,
 

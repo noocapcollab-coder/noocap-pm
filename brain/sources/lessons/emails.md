@@ -2,6 +2,36 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A quoted line or a broken-up link is never the brand's question
+When: Reading what a brand asks in its newest email
+Do: Cut the quoted history at a wrapped 'On ... wrote:' line and at the first '>' line, and ignore leftover pieces of links, before taking a question from the email
+Never: Show Harsh our own quoted question, or a link fragment like 'd/12PP.../edit?', as the brand's question
+Seen 2 time(s). Source: System check.
+## Trial and tool accounts brands ask for go to noocaptools@gmail.com
+When: A brand asks which email to use for a trial account, Pro access, credits or a tool login for the creator
+Do: Give noocaptools@gmail.com
+Never: Never give the creator's personal or business email (like duncan@buildroom.ai) for a trial account
+Seen 1 time(s). Source: Harsh correction.
+## One send per draft: an email that is already being sent can't be sent again
+When: Any send of a PM OUTBOX draft (Send in Approvals, WhatsApp send, sendoutbox hook, auto-send)
+Do: Each send writes its own claim into Error, waits 2 seconds and reads it back; only the send whose claim is still there goes ahead, and a fresh claim (under 3 minutes) blocks any other send
+Never: Never send a draft that another send has already claimed, and Claude never calls sendoutbox on a draft sitting in Approvals without first checking Harsh hasn't already pressed Send
+Seen 1 time(s). Source: Harsh correction.
+## Publish-date confirmations send on their own
+When: The brand has approved the content and asks us to confirm we're ready to publish or when it goes live
+Do: Send the fixed reply publish_date_confirm with the video card's POST DATE, no approval needed
+Never: Never hold this for Harsh, never write a date that isn't the card's POST DATE, never send it when the card has no date
+Seen 1 time(s). Source: Harsh correction.
+## A brand email nobody answered stays unread
+When: A brand email asks something of us (a question, a date, a confirmation, a reply) and the PM sends no reply and drafts none
+Do: Leave it unread in noocapcollab Gmail so Harsh sees who is waiting, and only mark read once a reply went out or is in Approvals
+Never: Never mark a waiting brand email read just because it was filed, logged or already seen by another run
+Seen 1 time(s). Source: Harsh correction.
+## A brand chasing a promised posting gets a time from Harsh, never 'today' or 'finishing touches'
+When: A brand asks when the approved video goes live, or chases a posting we said would happen today
+Do: Give the posting time Harsh supplied, otherwise ask Harsh on WhatsApp for it before replying
+Never: Write 'we will post it today/tomorrow/soon', 'we are posting it today', 'we're getting it posted right now', 'we are putting the finishing touches' or 'we're finalizing the video' without a time Harsh gave
+Seen 2 time(s). Source: System check.
 ## A fixed reply in Harsh's own words sends on its own, timing line included
 When: Saving a Reply Templates reply (Why has [template:...]) such as billing_on_approval
 Do: Hold a fixed reply only for a leftover placeholder or a made-up code; let it auto-send otherwise, and record the deal's ask (Billing Request Sent) only when the copy really went
@@ -33,10 +63,10 @@ Do: Use our real inboxes (collab@chriscordero.net, collab@buildroom.ai, partners
 Never: Copy a brand's typo of our address (ollab@chriscordero.net) or a Message-ID into Thread CC
 Seen 1 time(s). Source: Harsh correction.
 ## A tool-access email never replaces an answer to the brand's question
-When: A brand approves the script and in the same email asks something else (when the video draft comes, a date, a file)
+When: A brand approves the script (or reminds us it approved it) and asks something else: when the video draft or content comes, a date, a file
 Do: Hold the tool-access email and send the brand's question to Harsh first; when his answer comes, put the access ask in the same reply.
 Never: Draft or send 'thanks for approving, please give access on noocaptools@gmail.com' as the only reply to an email that asked us a question.
-Seen 1 time(s). Source: System check.
+Seen 2 time(s). Source: System check.
 ## Sign as the creator the brand is now working with
 When: A deal's video moved to another creator (a mix-up, a swap) and the PM writes to the brand
 Do: Sign and refer to the one creator the brand was last told about ("Brad's Team" once we told them Brad shoots it), and flag the deal so its Creator field can be corrected.
@@ -116,7 +146,7 @@ Seen 1 time(s). Source: System check.
 When: Replying in a thread where the brand's latest email changes the subject (hands payment to a colleague, pitches a new brand, asks a rate)
 Do: Read the newest message first. Greet and address whoever wrote it, answer exactly what it asks, and send a rate or new-brand question to Harsh (it opens its own Inbound deal).
 Never: Answer an older question nobody asked again, greet someone who did not write, or skip the question the brand actually asked.
-Seen 4 time(s). Source: System check.
+Seen 6 time(s). Source: System check.
 ## Copy the deal's full Thread CC on every draft
 When: Writing any email to a brand, including a resend from a creator's inbox
 Do: Put every address in the deal's Thread CC into Cc, plus noocapcollab when the brand was asked to reply all.
@@ -161,4 +191,4 @@ Seen 3 time(s). Source: Rulebook.
 When: Writing any email
 Do: Give the thing if we have it, otherwise leave the promise out.
 Never: Write 'shortly', 'within a few hours', 'we'll send it today', [DATE], [name] or invented dates.
-Seen 14 time(s). Source: Rulebook.
+Seen 16 time(s). Source: Rulebook.

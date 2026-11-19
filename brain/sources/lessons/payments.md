@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## When Stripe shows the brand's payment arrived, thank them without asking Harsh
+When: A brand says it paid, or the PM was waiting on proof, and the creator's Stripe shows the invoice paid (or a real receipt came)
+Do: Send the fixed payment_received_thanks reply in the brand's thread on its own, once, and drop any 'send us the proof' draft
+Never: Never ask Harsh whether to thank a brand whose Stripe invoice is paid, and never count the brand's own 'we paid' (even rewritten into the deal memory) as proof
+Seen 1 time(s). Source: Harsh correction.
+## Money paid in Stripe is marked Paid everywhere: deal and Revenue sheet
+When: The Stripe check finds an invoice paid
+Do: Mark the deal Paid and tick the matching Revenue row Paid with the payment date, so the dashboard moves it out of Awaiting payment
+Never: Never leave a Revenue row under Awaiting payment once Stripe shows the invoice paid
+Seen 1 time(s). Source: Harsh correction.
 ## Creator's billing address and Tax ID stay off invoices
 When: Raising or emailing an invoice for a creator whose Creator Payment Details has a Billing Address or Tax ID
 Do: Use those only for contracts; the invoice carries the brand's details, the amount and the pay link (bank details only when the brand asks)
@@ -41,7 +51,7 @@ Seen 2 time(s). Source: System check.
 When: Drafting an invoice email for a Stripe invoice, from WhatsApp or from the heartbeat
 Do: Before drafting, look for an Approvals row with the same Stripe invoice id that is waiting or already sent; if there is one, draft nothing. With split terms (part upfront, part after publication) the final invoice waits until the video is live, whatever the stage or an earlier invoice request says.
 Never: Draft a second invoice or payment-chase email for an invoice that already has one, or put two cards for one invoice in front of Harsh.
-Seen 3 time(s). Source: System check.
+Seen 4 time(s). Source: System check.
 ## Chase payment where the brand said invoices go
 When: A brand names a finance or accounts address for invoices, or asks for reminders in the invoice thread
 Do: Send invoices and every payment chase to that address, in the thread where the invoice went, with the usual contact on Cc.

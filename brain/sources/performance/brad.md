@@ -1,5 +1,5 @@
 # Brad - what performs
-Content OS, videos posted since 2026-07-21: 18 posts across platforms, average 3,257 views. Creator: [[Brad]].
+Content OS, videos posted since 2026-07-22: 18 posts across platforms, average 3,258 views. Creator: [[Brad]].
 ## 2026-11-01 👇 Comment “WEBSITES” below and I'll DM you all the links!
 Instagram Short: 34,912 views, 873 likes, 743 comments, 0 shares, 0 saves.
 ## 2026-11-10 👇 Comment "WEBSITES" and I'll send the links to your DMs
@@ -15,7 +15,7 @@ Facebook Short: 1,675 views, 17 likes, 1 comments, 0 shares, 0 saves.
 ## 2026-10-30 👇 Check out my pinned comment for the link to get 2,000 free credits!
 Facebook Short: 1,502 views, 7 likes, 1 comments, 0 shares, 0 saves.
 ## 2026-11-16 3 Brand New Websites You Won't Believe Are FREE 🤯
-YouTube Short: 1,450 views, 36 likes, 0 comments, 0 shares, 0 saves.
+YouTube Short: 1,463 views, 39 likes, 0 comments, 0 shares, 0 saves.
 ## 2026-11-13 👇 Comment BUZZY and I'll DM you the link
 Instagram Short: 1,281 views, 12 likes, 4 comments, 0 shares, 0 saves. Brand: [[Buzzy AI]].
 ## 2026-11-13 👇 Check my pinned comment for the link

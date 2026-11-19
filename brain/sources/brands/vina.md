@@ -3,4 +3,4 @@
 Brand. Works with creators: [[Chris]].
 
 ## Inbound leads
-- Deliverables: 1 Instagram Reel / 1 dedicated YouTube video · Contact Name: Felixlhh · Next Step: New brand: management to reply with pricing · Platforms: Instagram, YouTube · Last Brand Email: 2026-11-18 · Thread Subject: Paid Collaboration Opportunity with VinaAI · Status: Negotiating · Creator: Chris · Type: Paid offer · Brand Email: felixlhh@net.noxinfluencer.com
+- Deliverables: 1 Instagram Reel / 1 dedicated YouTube video · Contact Name: James · Next Step: New brand: management to reply with pricing · Platforms: Instagram, YouTube · Last Our Email: 2026-11-18 · Last Brand Email: 2026-11-19 · Thread Subject: Paid collab: Vina AI x thechriscordero · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: james.devteam@mcn.noxinfluencer.com

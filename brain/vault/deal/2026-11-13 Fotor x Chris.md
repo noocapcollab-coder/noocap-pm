@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Brief Received
-Last brand reply 2026-11-18, our last reply 2026-11-18.
+Last brand reply 2026-11-19, our last reply 2026-11-18.
 AGREED: [amount]for 1 dedicated video for Fotor posted on Instagram and TikTok. Usage rights: 30-day ad authorization and cross-posting. Payment terms: not specified. Dates: none agreed yet.
 
 HISTORY:
@@ -12,10 +12,11 @@ HISTORY:
 2026-11-17 brand: Acknowledged our message confirming we are reviewing everything.
 2026-11-17 us: Sent the signed contract.
 2026-11-18 brand: Confirmed receipt of signed contract and requested choice of brief to begin script drafting.
+2026-11-19 brand: Asked if we have any other creators to recommend for the campaign to explore more options.
 
 BILLING: not yet
 
-OPEN NOW: We owe: review the two briefs, select a concept, and send the script to the brand.
+OPEN NOW: We owe: review the two briefs, select a concept, and send the script to the brand (and optionally respond regarding creator recommendations).
 
 ## Links
 - [[Chris]]

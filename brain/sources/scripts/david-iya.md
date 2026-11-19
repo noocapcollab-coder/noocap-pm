@@ -2,6 +2,18 @@
 
 The final scripts of videos posted in the last 60 days, as filmed.
 
+## 2026-11-18 OPEN JARVIS - 2
+Type: PERSONAL. Creator: [[David Iya]].
+Hook 1:
+Stanford just made Siri look like a toy, because they put out an open source Jarvis that runs on your own laptop and you never pay a subscription for it.
+    Hook 2:
+Everyone’s posting Jarvis clips while Stanford quietly open sourced a version that lives on your laptop and can read your Gmail back to you out loud.
+    Body:
+So you hand the GitHub link to Claude Code and ask it to do the install, and it typically sets the whole thing up for you. And then you choose a voice so you're speaking to it out loud, and once it's hooked into your Gmail and calendar it can tell you what's on your day and which clients are still waiting on a reply. The part I like most is that it all stays on your own machine, so your inbox isn't being sent anywhere and there's no monthly bill. It's called OpenJarvis, and it's open source on GitHub.
+    CTA:
+So comment "LOCAL" and I'll get you the repo along with the prompt I'd give Claude Code to install it.
+    - Sub-page: [[OpenJarvis: Stanford's Local AI Assistant on Your Laptop (Repo + Claude Code Install Prompt)]]
+
 ## 2026-11-17 TOP 5 PLUGINS FOR CLAUDE
 Type: PERSONAL. Creator: [[David Iya]].
 Hook 1:
@@ -68,6 +80,22 @@ Hook 1:
     CTA:
     So comment “DESIGN” and I’ll send you the repo and how I’d set it up in Claude Code.
     - Sub-page: [[Astryx: Meta's Open Source Design System for Claude Code (Repo + Setup)]]
+
+## 2026-11-18 Claude model router
+Type: PERSONAL. Creator: [[David Iya]].
+Hook (Zack D Films-style 3D animation):
+reference: https://www.instagram.com/p/DfhdW3cMmOD/
+    You wouldn’t hire a surgeon to put on band-aids, so why is your top AI model renaming variables? Here’s which model should handle what.
+    Edit note: Show a 3D operating room. A surgeon in full scrubs, with a “TOP MODEL” badge on the cap, leans over a tiny paper cut and carefully puts on a band-aid while a usage meter on the wall drains with every move. On “renaming variables”, the band-aid wrapper flips to show rename_var. On “here’s which model should handle what”, hard cut to David.
+    Body (David talking to camera):
+    So renames, boilerplate and searching the codebase go to the smallest model, and the actual building can usually drop to the middle one. Auth, payments, and a bug you’ve chased for an hour stay on the stronger model with the effort turned up, and planning gets the top model, because a bad plan costs you the most later. Then I have a different model review the code. You can pin a model and effort level on each subagent, so you really set this up once.
+    CTA:
+    So comment “MODELS” and I’ll send you the full routing sheet.
+    Sources
+    - https://code.claude.com/docs/en/sub-agents
+    - https://tech-insider.org/ie/claude-opus-vs-sonnet-vs-haiku-5-5-pricing-2026/
+    - https://www.developersdigest.tech/models/claude-opus-5-5
+    - Sub-page: [[The Claude Code Model Routing Sheet: Which Model Handles What (+ Ready-Made Subagents)]]
 
 ## 2026-11-13 Claude minimalistic graphics
 Type: PERSONAL. Creator: [[David Iya]].
@@ -154,36 +182,3 @@ Hook 2:
     - What If Animation: https://github.com/kelano86/what-if-animation
     - Claude Code: https://claude.com/product/claude-code
     - Sub-page: [[Make Viral Animated Cartoon Shorts in Claude Code: 2 Repos + Full Setup]]
-
-## 2026-11-11 Mac inside terminal
-Type: PERSONAL. Creator: [[David Iya]].
-Hook 1:
-    Someone just put a whole Mac inside a terminal, and they built it for Claude, not for you.
-    Hook 2:
-    This GitHub repo can literally give Claude its own Mac, running right inside yours
-    Body:
-    [DEMO: Claude drawing a diagram in Freeform inside the guest Mac while the real cursor stays still]
-    This is Claude drawing a diagram in Freeform, clicking and typing away, and my actual cursor isn’t moving at all, because it’s working inside its own copy of macOS.
-    Normally when Claude uses your computer, it takes over your real mouse, so you’re stuck waiting and every wrong click happens on your machine. Here it never touches your files or your clipboard, and it checks its own work as it goes.
-    It’s still an early release, and the first run downloads several gigabytes of macOS, so give it some time to set up.
-    The repo is called terminal-mac, it’s free, and it plugs into Claude Code with one command.
-    CTA:
-    Comment “MAC” and I’ll send you the repo and the exact install.
-    resource:
-    - Repo, tools, isolation, install, offline flag, RC status: https://github.com/govijr/terminal-mac
-    - Claude Code plugin command (/plugin install terminal-mac --marketplace govijr/terminal-mac): https://github.com/govijr/terminal-mac#use-with-agents
-    - Self-signed / not notarized, release date context: https://flaviocopes.com/run-macos-in-your-terminal/
-    - Sub-page: [[terminal-mac: Give Claude Its Own Mac Inside Your Terminal (Repo + Exact Install)]]
-
-## 2026-11-10 Agent Desktop - cut token usage
-Type: PERSONAL. Creator: [[David Iya]].
-Hook 1:
-    Vercel just open-sourced a tool that cuts the tokens your agent burns on desktop apps by like 80%, and it does that by skipping screenshots completely.
-    Hook 2:
-    So every time an agent screenshots your screen it probably costs you like a thousand tokens or more, and this new repo from Vercel gets around that.
-    Body:
-    So instead of looking at pictures of your apps, it reads the accessibility tree your operating system already exposes, and the agent gets back a structured list of every button and field it can actually click. In their own numbers, a simulated 52-step task went from around 198,000 tokens down to like 31,000. It’s called Agent Desktop, and it’s open source under Apache 2.0, so you can install it with one npm command and point Claude Code at it.
-    CTA:
-    So comment "DESKTOP" and I'll get you the repo and how I'd hook it into Claude Code.
-    NOTES FOR REVIEW: Fact fix: the transcript says it reads the apps' source code, but Agent Desktop reads the OS accessibility tree (macOS AX, Windows UI Automation, Linux AT-SPI). 198k to 31k is about 84%, so the hook says "like 80%". The benchmark is Vercel's own simulated test. Please confirm the GitHub link before filming. CTA keyword changed from the reference's "Vercel" to "DESKTOP". Voice modeled on the 7-day posted set (6 scripts).
-    - Sub-page: [[Agent Desktop: Let Claude Code Use Your Desktop Apps Without Screenshots (Repo + Setup)]]

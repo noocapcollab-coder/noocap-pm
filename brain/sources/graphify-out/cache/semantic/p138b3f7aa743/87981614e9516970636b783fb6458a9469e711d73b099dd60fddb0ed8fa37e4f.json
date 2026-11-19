@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_aakash_aakash", "label": "Aakash", "file_type": "document", "source_file": "brands/aakash.md", "_origin": "semantic"}], "edges": [{"source": "brands_aakash_aakash", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/aakash.md", "_origin": "semantic"}], "hyperedges": []}

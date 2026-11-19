@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_inspo", "label": "AI Inspo", "file_type": "document", "source_file": "brands/inspo.md"}, {"id": "brands_inspo_duncan", "label": "AI Inspo x Duncan Deal", "file_type": "code", "source_file": "brands/inspo.md", "rationale": "We owe registering on the official website, sending account ID, and sending the script."}], "edges": [], "hyperedges": []}

@@ -1,8 +1,8 @@
 ---
 type: deal
 ---
-Stage: Invoiced
-Last brand reply 2026-11-17, our last reply 2026-11-18.
+Stage: Paid
+Last brand reply 2026-11-17, our last reply 2026-11-19.
 AGREED: [amount]flat fee for 1 short video (Huedini campaign) to be crossposted to Instagram and TikTok. Payment terms: 100% now, Net 1 Business Day (due 2026-11-18). Usage rights and publish date are pending official Huedini feature release and brand go-ahead.
 
 HISTORY:
@@ -12,6 +12,7 @@ HISTORY:
 2026-11-16 brand approved video and caption; noted Huedini feature not yet public.
 2026-11-17 brand requested revised invoice with bank details, sent to invoices@kudosnarratives.com.
 2026-11-18 us submitted revised invoice (INV-006) to brand via email.
+2026-11-19 us followed up on payment status with brand.
 
 BILLING: Billing details on file; invoice INV-006 sent to invoices@kudosnarratives.com on 2026-11-18. Status: Pending payment.
 

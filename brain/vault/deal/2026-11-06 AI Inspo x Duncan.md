@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Brief Received
-Last brand reply 2026-11-16, our last reply 2026-11-15.
+Last brand reply 2026-11-19, our last reply 2026-11-19.
 AGREED: [amount]for one video promoting AI Inspo. Deliverables: one Instagram reel (collab post with AI Inspo official account) plus DM, cross post on Facebook and TikTok. Payment: once after publishing the video. Usage rights and dates not set.
 
 HISTORY:
@@ -14,10 +14,12 @@ HISTORY:
 2026-11-15 us confirmed collaboration, promised script by Monday and final video before Nov 18, and requested testing credits for noocaptools@gmail.com.
 2026-11-16 brand stated they need the AI Inspo account ID starting with 4 to add testing credits, and asked for the script.
 2026-11-16 brand asked us to register on the new official website (ai-inspo.com) and send our new account ID back.
+2026-11-19 brand followed up asking for a progress update.
+2026-11-19 us replied that we are still interested and will share the script shortly.
 
 BILLING: not yet.
 
-OPEN NOW: We owe: Send Duncan's AI Inspo account ID and script.
+OPEN NOW: We owe: Register on AI Inspo official website, send account ID starting with 4, and send the script.
 
 ## Links
 - [[AI Inspo]]

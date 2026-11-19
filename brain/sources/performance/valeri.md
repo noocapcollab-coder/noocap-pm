@@ -1,5 +1,5 @@
 # Valeri - what performs
-Content OS, videos posted since 2026-07-21: 195 posts across platforms, average 10,085 views. Creator: [[Valeri]].
+Content OS, videos posted since 2026-07-22: 198 posts across platforms, average 10,010 views. Creator: [[Valeri]].
 ## 2026-08-11 Comment HOLO and I’ll send you the link 👇
 Instagram Short: 317,926 views, 256 likes, 117 comments, 0 shares, 0 saves. Brand: [[Holo AI]].
 ## 2026-10-23 What if you could find potential web design clients and show them a we
@@ -36,17 +36,17 @@ TikTok Short: 25,800 views, 942 likes, 152 comments, 312 shares, 1,479 saves.
 Instagram Short: 23,612 views, 438 likes, 1,392 comments, 0 shares, 0 saves.
 ## 2026-09-30 What if you could combine free AI quotas from multiple providers into 
 TikTok Short: 21,400 views, 988 likes, 14 comments, 241 shares, 1,118 saves.
+## 2026-10-23 Claude Code Can Find Clients While You Sleep
+YouTube Short: 19,184 views, 662 likes, 67 comments, 0 shares, 0 saves.
 ## 2026-11-11 Looking for useful Claude Code plugins, skills, and resources? Here ar
 TikTok Short: 19,100 views, 1,139 likes, 13 comments, 452 shares, 1,619 saves.
-## 2026-10-23 Claude Code Can Find Clients While You Sleep
-YouTube Short: 19,037 views, 659 likes, 67 comments, 0 shares, 0 saves.
 ## 2026-11-12 An open-source alternative to subscription-based AI creative studios?
 Instagram Short: 15,394 views, 239 likes, 272 comments, 0 shares, 0 saves.
+## 2026-10-25 Claude Can Build Interactive 3D Business Dashboards
+YouTube Short: 15,380 views, 329 likes, 4 comments, 0 shares, 0 saves.
 ## 2026-09-08 Comment “CLONE” and I’ll send you the link.
 Instagram Short: 15,135 views, 387 likes, 309 comments, 0 shares, 0 saves.
 ## 2026-09-03 Comment “QWEN” and I’ll send you the full setup.
 Instagram Short: 13,220 views, 200 likes, 188 comments, 0 shares, 0 saves.
 ## 2026-08-27 Learn how to build and sell AI voice agents without having to be techn
 Instagram Short: 11,853 views, 74 likes, 24 comments, 0 shares, 0 saves.
-## 2026-07-27 Comment "HERMES" and I'll send you the complete setup guide 👇
-Instagram Short: 11,821 views, 253 likes, 466 comments, 0 shares, 0 saves.

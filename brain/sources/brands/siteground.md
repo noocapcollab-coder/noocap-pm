@@ -3,4 +3,4 @@
 Brand. Works with creators: [[Lindsay]].
 
 ## Inbound leads
-- Contact Name: George · Next Step: New brand: management to reply with pricing · Last Brand Email: 2026-11-18 · Thread Subject: Automate AI Consulting & SiteGround - partnership proposal · Status: New offer · Creator: Lindsay · Type: Unclear · Brand Email: zhorzh.i@siteground.com
+- Deliverables: Dedicated long-form video on Coderick AI · Contact Name: George · Next Step: Replied 2026-11-19, waiting on the brand · Platforms: YouTube · Last Our Email: 2026-11-19 · Last Brand Email: 2026-11-19 · Thread Subject: Automate AI Consulting & SiteGround - partnership proposal · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: zhorzh.i@siteground.com

@@ -4,7 +4,7 @@ Brand. Works with creators: [[Chris]].
 
 ## Inbound leads
 - Deliverables: Reel about Marlow AI · Contact Name: Julian · Next Step: No action needed - deal declined due to budget. · Platforms: Instagram · Last Our Email: 2026-11-12 · Last Brand Email: 2026-11-14 · Thread Text: From: "Julian Mercer" <julian@getmarlow.ai>
-Date: 2026-11-14T15:16:27.000Z
+Date: 2026-11-14
 
 Hi Chris,
 

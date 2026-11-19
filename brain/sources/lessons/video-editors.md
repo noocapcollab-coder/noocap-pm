@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A deleted video card never stops a brand email from being handled
+When: A brand email arrives for a deal whose linked card was deleted
+Do: Skip the note on the deleted card and handle the rest of the email
+Never: Let a Notion 'block is archived' error fail the whole email
+Seen 1 time(s). Source: System check.
+## A brand's publish deadline means the video is ready for their review 4 days before it
+When: A brand gives a publish, go-live or posting deadline, asks about the timeline, or worries the deadline is tight
+Do: Work back from the deadline: the video must be ready for the brand's review 3 to 4 days before the publish date (4 by default), so there is time for their review, a round of changes and posting. When several videos can't go live on the same day, plan them on separate days that all land by the deadline. Replies about timing say when the scripts and the videos will be with them, worked out this way
+Never: Never plan the video to be ready on the publish deadline itself, and never answer a deadline worry with only 'that can be done' and no dates
+Seen 1 time(s). Source: Harsh correction.
 ## Drive links appear within 10 minutes of To Film
 When: A card moves to 6- To Film
 Do: Make the Raw Footage, Assets and Edited Vid links on the next heartbeat.

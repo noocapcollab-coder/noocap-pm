@@ -3,4 +3,4 @@
 Brand. Works with creators: [[Lindsay]].
 
 ## Inbound leads
-- Contact Name: Passion · Next Step: New brand: management to reply with pricing · Platforms: YouTube, TikTok, Instagram, X · Last Brand Email: 2026-11-18 · Thread Subject: New Paid Collaboration Opportunity | AI 3D Platform · Status: New offer · Creator: Lindsay · Type: Paid offer · Brand Email: winter01@passionpeace.com.cn
+- Contact Name: Passion · Next Step: Replied 2026-11-18, waiting on the brand · Platforms: YouTube, TikTok, Instagram, X · Last Our Email: 2026-11-18 · Last Brand Email: 2026-11-18 · Thread Subject: New Paid Collaboration Opportunity | AI 3D Platform · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: winter01@passionpeace.com.cn

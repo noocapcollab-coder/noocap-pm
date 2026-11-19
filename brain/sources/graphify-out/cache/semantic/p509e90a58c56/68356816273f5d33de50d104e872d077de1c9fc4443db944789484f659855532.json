@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_startner_startner", "label": "Startner", "file_type": "document", "source_file": "brands/startner.md"}], "edges": [{"source": "brands_startner_startner", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/startner.md"}], "hyperedges": []}

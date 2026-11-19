@@ -4,7 +4,7 @@ Brand. Works with creators: [[Chris]], [[Lindsay]].
 
 ## Inbound leads
 - Deliverables: 1 dedicated YouTube video or 1 long-form integration (60-90s) · Contact Name: Ethan · Next Step: New brand: management to reply with pricing · Platforms: YouTube · Last Brand Email: 2026-11-14 · Thread Text: From: "Ethan Tan" <ethan@feiyemedia.com>
-Date: 2026-11-14T22:17:44.000Z
+Date: 2026-11-14
 
 Hi Chris,
 
@@ -26,7 +26,7 @@ Ethan Tan
 Feiye Media
 ethan@feiyemedia.com · Thread Subject: Sponsored video rates & availability · Status: New offer · Creator: Chris · Type: Paid offer · Brand Email: ethan@feiyemedia.com
 - Contact Name: Ethan · Next Step: New brand: management to reply with pricing · Platforms: YouTube · Last Brand Email: 2026-11-12 · Thread Text: From: Ethan Tan <ethan@feiyemedia.com>
-Date: 2026-11-12T14:14:04.000Z
+Date: 2026-11-12
 
 Hi there,
 

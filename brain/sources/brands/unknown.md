@@ -20,9 +20,13 @@ Last brand reply none, our last reply none.
 
 
 ## Inbound leads
+- Contact Name: Helena · Next Step: New brand: management to reply with pricing · Last Brand Email: 2026-11-19 · Thread Text: From: Helena <bolledisaponelav@libero.it>
+Date: 2026-11-19
+
+Ciao caro/a, trovo che il tuo canale abbia una bellissima estetica. Sarei felice di capire se valuti proposte di collaborazione · Thread Subject: Un'idea per una serie breve · Status: New offer · Creator: Lindsay · Type: Unclear · Brand Email: bolledisaponelav@libero.it
 - Contact Name: Rajeshwari · Next Step: No action needed unless Lindsay wants to discuss this separately · Deal: 1 linked · Last Brand Email: 2026-11-12 · Thread Subject: Brand Sponsorship Offer · Status: Locked · Creator: Lindsay · Type: Paid offer · Brand Email: rajeshwari@jeevmedia.net
 - Contact Name: Luke · Next Step: No action needed—this is not a brand collaboration opportunity. · Last Brand Email: 2026-11-06 · Thread Text: From: Luke Sipka <luke@sipkaoutreach.com>
-Date: 2026-11-06T17:42:52.000Z
+Date: 2026-11-06
 
 should I close the file on you?
 
@@ -46,7 +50,7 @@ On Thu, Nov 5, 2026 at 05:42 PM UTC Luke Sipka <luke@sipkaoutreach.com
 > > -Luke Sipka · Thread Subject: Purchase of AI Money Hub · Status: Lost · Creator: Lindsay · Type: Paid offer · Brand Email: luke@sipkaoutreach.com
 - Deliverables: Instagram Story + Highlight + Link in Bio, or Link-in-Bio Placement Only · Contact Name: Florensia · Next Step: New brand: management to reply with pricing · Platforms: Instagram · Last Our Email: 2026-11-09 · Last Brand Email: 2026-11-10 · Thread Subject: Potential Paid Creator Opportunity – Tech & Lifestyle Category · Status: Negotiating · Creator: Chris · Type: Paid offer · Brand Email: florensia.setipeni@to.partnerforward.com
 - Contact Name: Luke · Next Step: New brand: management to reply with pricing · Platforms: YouTube · Last Our Email: 2026-10-28 · Last Brand Email: 2026-11-05 · Thread Text: From: Luke Sipka <luke@sipkaoutreach.com>
-Date: 2026-11-05T17:42:18.000Z
+Date: 2026-11-05
 
  RE: Purchase of AI Money Hub
 dumb idea?

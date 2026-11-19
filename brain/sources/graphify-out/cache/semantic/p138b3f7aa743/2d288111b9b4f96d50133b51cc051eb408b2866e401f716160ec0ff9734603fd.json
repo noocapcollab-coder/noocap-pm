@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_colby_colby", "label": "Colby", "file_type": "document", "source_file": "brands/colby.md", "_origin": "semantic"}], "edges": [{"source": "brands_colby_colby", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/colby.md", "_origin": "semantic"}], "hyperedges": []}

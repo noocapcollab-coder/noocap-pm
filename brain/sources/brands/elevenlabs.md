@@ -3,25 +3,26 @@
 Brand. Works with creators: [[Valeri]], [[Chris]], [[Duncan]].
 
 ## Brand wiki (from every email with them)
-WHO: ElevenLabs is an AI audio and voice synthesis company. They work with us through their agency, Kudos Narratives.
+WHO: ElevenLabs, an AI audio technology platform. They come to us through their agency, Kudos Narratives.
 
-CONTACTS: Yulia Sheremeteva (yulia@kudosnarratives.com) is our primary contact at Kudos Narratives. Harsh (no email provided) handles finance-related confirmations. Invoices must be sent to invoices@kudosnarratives.com.
+CONTACTS: Yulia Sheremeteva writes to us at yulia@kudosnarratives.com, representing Kudos Narratives. Invoices are sent to invoices@kudosnarratives.com. Harsh and Margarita handle billing/chat operations for the agency. Thread CCs include contact@valchy.ai, valeri@valchy.ai, collab@valchy.ai, and collab@buildroom.ai.
 
 DEALS:
-Valeri: Rate [amount], deliverables and dates pending, stage Posted.
-Chris: Rate pending, deliverables pending, stage Brief Received, due date pending.
-Duncan: [amount], 1 short video (Huedini campaign) crossposted to Instagram/TikTok, stage Invoiced, due 2026-11-18.
-Duncan (previous): [amount], 1 short video, stage Invoiced.
+ElevenLabs x Valeri | Rate: [amount] | Deliverables: not specified | Stage: Posted | Dates: published 2026-10-31, republished 2026-11-11
+ElevenLabs x Chris | Rate: not known yet | Deliverables: not known yet | Stage: Brief Received | Dates: brief filed 2026-11-09
+ElevenLabs x Duncan (Huedini campaign) | Rate: [amount] | Deliverables: 1 short video, crossposting to Instagram and TikTok, one revision round, results report 7 days after go-live | Stage: Paid | Dates: invoice sent 2026-11-18, paid 2026-11-19
+ElevenLabs x Duncan (October campaign) | Rate: [amount] | Deliverables: 1 short video, crossposting to Instagram and TikTok, one revision round, results report 7 days after go-live | Stage: Paid | Dates: posted 2026-10-29, invoice paid 2026-11-19
+ElevenLabs x Valeri (October campaign) | Rate: [amount] | Deliverables: not specified | Stage: Paid | Dates: paid 2026-11-07
 
-HOW THEY WORK: Briefs are shared via Notion links. Scripts and video drafts require approval via email. They use an internal platform (base.kudosnarratives.com) for reporting performance data. Invoices must be sent to invoices@kudosnarratives.com and include bank details (account holder name, bank name, IBAN/account number, SWIFT/BIC), USD currency, and specifically labeled Net 1 Business Day terms to be flagged as Urgent in their system.
+HOW THEY WORK: Briefs are shared via Notion links. Scripts and video drafts go through email or chat for approval. Videos are crossposted to platforms like Instagram, TikTok, Facebook, and YouTube Shorts as specified in briefs. Performance analytics and insights are submitted via Kudos Narratives forms (e.g., https://base.kudosnarratives.com/c/v6sri5mymDRzsd5T-pvZsg) usually one week after go-live. Billing details for Kudos Narratives Ltd: 71-75 Shelton Street, Covent Garden, London, England, WC2H 9JQ, Country Code GB, Tax ID Company No 14412282. Invoices must include full bank details, USD currency, Net 1 business day payment terms, and be sent to invoices@kudosnarratives.com.
 
-WATCH OUT: Missing, deleted, or inaccessible links are a major issue; posts must remain live and accessible for reporting. If a link breaks, the brand requires immediate restoration or manual submission of performance data via their reporting portal.
+WATCH OUT: Sponsored posts must remain accessible; deleting them causes escalations requiring reposting and performance reporting. Invoices must contain complete bank details, USD, and Net 1 terms, or they will be delayed by their automated finance flags.
 
 OPEN NOW:
-Valeri: We owe analytics and insights for the November 11 Instagram post one week post-publication (due 2026-11-18).
-Chris: We owe a complete script draft to the brand.
-Duncan (Huedini): Waiting on brand to pay invoice INV-006 and confirm the Huedini feature public release for publishing clearance.
-Duncan (Previous): Status pending payment for original invoice.
+ElevenLabs x Valeri: We owe analytics and insights after one week from the 2026-11-11 republication (due around 2026-11-18).
+ElevenLabs x Chris: Rudraksh is writing the script; we owe the complete script draft.
+ElevenLabs x Duncan (Huedini campaign): Waiting on brand confirmation of payment receipt for invoice INV-006 and notification of the public release of the Huedini feature for publishing clearance.
+ElevenLabs x Duncan (October campaign): We owe confirmation to the brand on whether payment was received.
 
 ## Deal with [[Valeri]] (Posted, opened 2026-11-11)
 Last brand reply 2026-11-11, our last reply 2026-11-11.
@@ -52,8 +53,8 @@ BILLING: not known yet
 
 OPEN NOW: Rudraksh writing the script. We owe: complete script draft.
 
-## Deal with [[Duncan]] (Invoiced, opened 2026-11-04)
-Last brand reply 2026-11-17, our last reply 2026-11-18.
+## Deal with [[Duncan]] (Paid, opened 2026-11-04)
+Last brand reply 2026-11-17, our last reply 2026-11-19.
 AGREED: [amount]flat fee for 1 short video (Huedini campaign) to be crossposted to Instagram and TikTok. Payment terms: 100% now, Net 1 Business Day (due 2026-11-18). Usage rights and publish date are pending official Huedini feature release and brand go-ahead.
 
 HISTORY:
@@ -63,20 +64,21 @@ HISTORY:
 2026-11-16 brand approved video and caption; noted Huedini feature not yet public.
 2026-11-17 brand requested revised invoice with bank details, sent to invoices@kudosnarratives.com.
 2026-11-18 us submitted revised invoice (INV-006) to brand via email.
+2026-11-19 us followed up on payment status with brand.
 
 BILLING: Billing details on file; invoice INV-006 sent to invoices@kudosnarratives.com on 2026-11-18. Status: Pending payment.
 
 OPEN NOW: Waiting on brand: payment of invoice INV-006 and notification of Huedini public release for publishing clearance.
 
-## Deal with [[Duncan]] (Invoiced, opened 2026-10-23)
-Last brand reply 2026-11-06, our last reply 2026-11-02.
+## Deal with [[Duncan]] (Paid, opened 2026-10-23)
+Last brand reply 2026-11-19, our last reply 2026-11-02.
 AGREED: [amount]total. One short video, crossposting to Instagram and TikTok, one revision round, results report 7 days after go-live. 50% upfront on signing ([amount]), 50% after video posted.
 
-HISTORY: 2026-10-23 brand confirmed rate and deliverables. 2026-10-23 us agreed to 50/50 payment split and Recast brief. 2026-10-24 us sent script for approval. 2026-10-26 brand approved script. 2026-10-26 us sent video first cut and draft caption. 2026-10-26 brand approved video, sent to ElevenLabs. 2026-10-27 brand approved video for go-live. 2026-10-29 us posted video live across Facebook, Instagram, YouTube Shorts, TikTok and sent invoice. 2026-11-02 brand confirmed invoice submitted to finance, processing up to 7 business days. 2026-11-05 brand reports Instagram post link not accessible. 2026-11-06 brand requests confirmation of Instagram post status and performance data.
+HISTORY: 2026-10-23 brand confirmed rate and deliverables. 2026-10-23 us agreed to 50/50 payment split and Recast brief. 2026-10-24 us sent script for approval. 2026-10-26 brand approved script. 2026-10-26 us sent video first cut and draft caption. 2026-10-26 brand approved video, sent to ElevenLabs. 2026-10-27 brand approved video for go-live. 2026-10-29 us posted video live across Facebook, Instagram, YouTube Shorts, TikTok and sent invoice. 2026-11-02 brand confirmed invoice submitted to finance, processing up to 7 business days. 2026-11-05 brand reports Instagram post link not accessible. 2026-11-06 brand requests confirmation of Instagram post status and performance data. 2026-11-19 brand stated finance confirmed invoice paid.
 
-BILLING: Invoice sent 2026-10-30 to hey@kudosnarratives.com, CC yulia@kudosnarratives.com. Kudos Narratives company details on file. Full [amount]invoice submitted to brand's finance 2026-11-02, status pending.
+BILLING: Invoice sent 2026-10-30 to hey@kudosnarratives.com, CC yulia@kudosnarratives.com. Kudos Narratives company details on file. Brand states invoice paid as of 2026-11-19.
 
-OPEN NOW: Instagram post status unclear as of 2026-11-05 - brand cannot access link and needs to collect performance data. Brand asks if post was removed and requests either restoration from Recently Deleted folder or manual entry of insights via link provided. We owe: immediate confirmation whether Instagram post still exists, explanation of why link is inaccessible, and either restored post with insights screenshots or manual performance data entry.
+OPEN NOW: Brand asked us to check if payment was received and also previously requested confirmation of Instagram post status and performance data via their form. We owe: confirmation of payment receipt, plus confirmation of whether the Instagram post is still live or was deleted, and manual performance metrics entered into the Kudos form if deleted.
 
 ## Deal with [[Valeri]] (Paid, opened 2026-10-17)
 Last brand reply 2026-11-01, our last reply 2026-10-28.

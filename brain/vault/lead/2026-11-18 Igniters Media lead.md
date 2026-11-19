@@ -6,7 +6,7 @@ Next Step: Handed to noocapcollab: waiting for the brief
 Platforms: Instagram, TikTok, YouTube Shorts, Facebook
 Last Our Email: 2026-11-18
 Last Brand Email: 2026-11-18
-Thread Text: From: "Igniters Media" <hello@ignitersmedia.com>
+Thread Text: From: "Chris Cordero" <collab@chriscordero.net>
 
 ## Links
 - [[Igniters Media]]

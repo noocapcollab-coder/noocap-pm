@@ -5,17 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Atoms, an AI tool/platform. They come to us directly.
+WHO: Atoms is a platform/tool for building AI applications, represented by May (Xiaohua Su). They come to us directly.
 
-CONTACTS: May, may@atoms.dev, brand contact. We must copy collab@automateaiconsulting.com on replies.
+CONTACTS: May (Xiaohua Su), may@atoms.dev, brand representative. CC: collab@automateaiconsulting.com. Signed by Lindsay's Team / us.
 
-DEALS: Lindsay, 1 dedicated YouTube video (English) plus sponsorship slot in late November, [amount], Signed, publication window November 23 to December 7 2026 (adjustable).
+DEALS: Atoms x Lindsay: 1 dedicated YouTube video (English) with a sponsorship slot, [amount], Brief Received stage, late November 2026 (publication window November 23 to December 7, 2026).
 
-HOW THEY WORK: Register for Atoms with the account email (noocaptools@gmail.com) first before tool access is granted. Next steps from brand: sign contract, provide Atoms account email for upgrade, 2 to 3 build ideas for approval, then the script. Script is sent within 3 days after build direction is finalized.
+HOW THEY WORK: Communication via email thread (reply all). The brand requires registering an account with Atoms (using noocaptools@gmail.com for upgrade access). Process involves sending audience details, 2 to 3 build ideas for approval, followed by script creation based on brand feedback and structure suggestions (explicit pricing rules, end-to-end test with Stripe and Cloud Email, replicating the build for a second company, showing real Atoms operations).
 
-WATCH OUT: The compensation clause in their contract template may be written as no payout due to legal department requirements, but the [amount]fee is agreed via email. Sign the contract with a handwritten signature, signature image, or signature-style font rather than ordinary typed text.
+WATCH OUT: The legal contract template from their legal department includes a compensation clause written as no payout; the brand stated this is standard for them and they will not require any payout, but the [amount] fee is agreed via email. Use a handwritten signature, signature image, or signature-style font rather than ordinary typed text.
 
-OPEN NOW: Waiting on brand to review the signed contract and confirm the recommended build option (One site, sold to every business in a trade / window-replacement quotes).
+OPEN NOW: We owe the revised script and build plan based on the brand's suggestions.
 
 
 ## Links

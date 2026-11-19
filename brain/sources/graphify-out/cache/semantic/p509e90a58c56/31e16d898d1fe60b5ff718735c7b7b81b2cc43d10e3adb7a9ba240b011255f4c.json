@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_ecommercenew_ecommercenew", "label": "Ecommerce.new", "file_type": "document", "source_file": "brands/ecommercenew.md"}], "edges": [{"source": "brands_ecommercenew_ecommercenew", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/ecommercenew.md"}], "hyperedges": []}

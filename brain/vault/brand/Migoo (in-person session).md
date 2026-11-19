@@ -3,7 +3,7 @@ type: brand
 ---
 # Migoo (in-person session)
 
-Brand. Works with creators: [[Brad]], [[Chris]], [[Lindsay]].
+Brand. Works with creators: [[Brad]], [[Lindsay]], [[Chris]].
 ## Brand wiki (from every email with them)
 WHO: Migoo, a product that hosts in-person research sessions. They reach us through AdsMarch, their agency.
 

@@ -1,6 +1,6 @@
 # Migoo (in-person session)
 
-Brand. Works with creators: [[Brad]], [[Chris]], [[Lindsay]].
+Brand. Works with creators: [[Brad]], [[Lindsay]], [[Chris]].
 
 ## Brand wiki (from every email with them)
 WHO: Migoo, a product that hosts in-person research sessions. They reach us through AdsMarch, their agency.
@@ -24,6 +24,7 @@ Last brand reply 2026-11-06, our last reply 2026-10-09.
 AGREED: Migoo video for Brad, paid 2026-10-10 (Brad invoices by hand).<br /><br />HISTORY:<br />2026-11-06 brand / Clara asked for Brad's rate for an in-person session Dec 7-12. That is a new inquiry and lives on the deal Migoo (in-person session).<br /><br />OPEN NOW: We owe: nothing on this deal.
 
 ## Inbound leads
+- Deliverables: 1 Instagram Reel (40-60s) + 1 Instagram Story (with link pinned/highlighted for 7 days) + 1-month ad authorization code for Meta and Google · Next Step: Replied 2026-11-19, waiting on the brand · Platforms: Instagram · Last Our Email: 2026-11-19 · Last Brand Email: 2026-11-19 · Thread Subject: Paid Video Collaboration on Instagram – Migoo (December) · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: rosalia@7rabbit.cn
 - Deliverables: 1 sponsored Instagram Reel or TikTok video (and optional YouTube) · Contact Name: Chandler · Next Step: Replied 2026-11-13, waiting on the brand · Platforms: Instagram, TikTok, YouTube · Last Our Email: 2026-11-13 · Last Brand Email: 2026-11-12 · Thread Subject: Migoo x You | Paid AI Video Creation Collaboration · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: chandler@kol.pulsemedia-co.com
 - Contact Name: Sally · Next Step: New brand: management to reply with pricing · Platforms: YouTube Shorts, Instagram, TikTok · Last Our Email: 2026-11-02 · Last Brand Email: 2026-11-02 · Thread Subject: Collaboration Opportunity with Migoo · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: sally@ssgcollab.com
 - Deliverables: Short-form video cross-posted to YouTube Shorts, Instagram and TikTok · Contact Name: Josie · Next Step: Closed — brand declined. Note SSG for future brand fits. · Platforms: YouTube Shorts, Instagram, TikTok · Last Our Email: 2026-10-23 · Last Brand Email: 2026-11-09 · Thread Subject: Migoo · Status: Lost · Creator: Lindsay · Type: Paid offer · Brand Email: josie@ssg.work

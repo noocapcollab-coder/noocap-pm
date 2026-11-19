@@ -3,21 +3,31 @@
 Brand. Works with creators: [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: Emergent makes an AI app builder platform. They come to us directly.
+WHO: Emergent makes an AI app builder. They come to us directly.
 
-CONTACTS: Aditi Deepak (aditi.d@emergent.sh, Brand), Madhav Bihani (madhav.b@emergent.sh), Kritika Bhatia (kritika@emergent.sh, Brand Manager), Naman Khandelwal (naman@emergent.sh, main POC), Karan Varyani (karan.v@emergent.sh), Gautam Mahajan (gautam@emergent.sh). Sign as Chris's Team or NOOCAP. CC gautam@emergent.sh and karan.v@emergent.sh as applicable per thread.
+CONTACTS:
+Aditi Deepak, aditi.d@emergent.sh, Brand
+Madhav Bihani, madhav.b@emergent.sh, Brand
+Kritika Bhatia, kritika@emergent.sh, Brand Manager, signs
+Naman Khandelwal, naman@emergent.sh, Creator Partnerships, main point of contact, signs
+Karan Varyani, karan.v@emergent.sh, Brand, signs, copy Gautam Mahajan
+Gautam Mahajan, gautam@emergent.sh, Brand, copy Karan Varyani
 
-DEALS: Emergent x Chris | agreed: new video plus usage rights for existing Instagram video (https://www.instagram.com/p/DacjigGsxEa/), rate: [amount] | stage: Approved | dates: brief received Nov 11 2026, approved revised draft Nov 18 2026.
+DEALS:
+Chris | One new video plus usage rights for the existing Instagram video (https://www.instagram.com/p/DacjigGsxEa/) ([amount]) | Approved | Agreed: 2026-11-02
 
-HOW THEY WORK: Scripts are reviewed and approved over email. Video drafts are reviewed via Frame.io links. They want Emergent introduced earlier in videos and the wordmark logo shown. They provide UTM links for posting. Tool access email for their Pro version is noocaptools@gmail.com.
+HOW THEY WORK:
+They share briefs via Google Docs or email. Scripts go through review and edits. Video drafts are shared via Frame.io links (f.io or next.frame.io). They require brand name mentions (Emergent) early in the video, specific text overlays or wordmarks, and specific UTM links for CTAs and bio/DM automation. They requested tool access (Pro version) for creators/tools.
 
-WATCH OUT: Do not use generic terms like an AI app builder in scripts, name Emergent directly. Do not commit to specific timeframes like before finishing my coffee.
+WATCH OUT:
+Ad codes must be correct; previously wrong codes or posts already boosted caused delays. Ensure ad codes are generated properly before sharing.
 
-OPEN NOW: We owe: Render CTAs and post the video with the provided UTM link (https://app.emergent.sh/?utm_shift=redirect&via=thechriscorder-influencer).
+OPEN NOW:
+We owe Karan Varyani and the Emergent team the full name for the agreement, bank account details, and the W-8 or W-9 form.
 
 ## Deal with [[Chris]] (Approved, opened 2026-10-08)
-Last brand reply 2026-11-18, our last reply 2026-11-18.
-AGREED: [amount]for new video plus usage rights for existing Instagram video (https://www.instagram.com/p/DacjigGsxEa/). Payment terms and deliverables not yet confirmed.
+Last brand reply 2026-11-19, our last reply 2026-11-19.
+AGREED: Rate: [amount]. Deliverables: One new video plus usage rights for the existing Instagram video (https://www.instagram.com/p/DacjigGsxEa/). Usage rights: ad code usage for existing video. Payment terms: not yet. Agreed dates: none.
 
 HISTORY:
 2026-10-26 brand requested new collab and reuse rights
@@ -26,10 +36,9 @@ HISTORY:
 2026-11-15 us provided script for new video
 2026-11-16 brand approved script
 2026-11-17 us provided new video draft
-2026-11-18 brand requested edit and asked about going live
-2026-11-18 us provided revised video draft
-2026-11-18 brand approved revised draft and provided UTM link to go live
+2026-11-18 brand approved revised draft, asked to go live that day and provided UTM link
+2026-11-19 brand asked for billing/agreement details (full name, bank details, tax form)
 
 BILLING: not yet
 
-OPEN NOW: We owe: Render CTAs and post the video with the provided UTM link.
+OPEN NOW: We owe: full name for agreement, bank account details, and W-8 or W-9 form.

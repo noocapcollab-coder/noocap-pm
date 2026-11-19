@@ -38,6 +38,17 @@ On-Screen Hook:
     CTA:
 Drop "COURSE" in the comments and I'll send you the links to all seven.
 
+## 2026-11-18 CLAUDE KILLED DAY TRADERS
+Creator: [[Duncan]].
+Hook 1:
+Claude just killed day traders, because you can now run full market research right inside Claude, completely for free.
+    Hook 2:
+Claude just turned into a free market research desk, and the backtesting skill alone is nuts.
+    Body:
+Here’s the thing. Eleven Claude skills just dropped for market research, covering everything from scanning thousands of charts for setup patterns to flagging the headlines that actually move price. The backtesting skill is the one worth your time, because you feed it your strategy and it runs it through years of real market history, so you see how it would’ve played out before you risk a dollar. It won’t place trades for you and nothing here guarantees a win, but it turns hours of manual grind into a quick check, and setup is just dropping the link into Claude and telling it to install.
+    CTA:
+Drop "TRADE" in the comments and I'll send you the skill pack.
+
 ## 2026-11-13 Claude Minimalistic Graphics
 Type: PERSONAL. Creator: [[Duncan]].
 If you type /zackdfilms into Claude, it can take one wild idea and build a 3D animated explainer like this one.
@@ -165,23 +176,3 @@ HOOK 1:
     - Prompt Motion
     - Toolfolio: What Is Prompt Motion?
     - Prompt Motion blog: what 230 real examples show
-
-## 2026-11-09 LeadsRun (IntentRat)
-Type: PERSONAL. Creator: [[Duncan]].
-#### HOOK 1:
-    You can get a ping about thirty seconds after someone online asks for a product like yours, with the reply already written.
-
-#### HOOK 2:
-    Someone just built an AI agent that watches Reddit and X for people ready to buy what you sell, and almost nobody’s using it yet.
-
-#### HOOK 3:
-
-#### BODY
-    So here’s the deal. You paste in your product’s URL, and it works out the keywords your buyers actually use. Then it watches Reddit, Hacker News, X and Bluesky for people describing the problem you solve. When someone shows buying intent, you get an alert in about thirty seconds with a reply already drafted. It writes more technical replies for Hacker News and more casual ones for Reddit. Pretty freaking cool. You just review it and post. The tool’s called LeadsRun.
-
-#### CTA
-    Comment BUYERS and I’ll send you the early-access link plus access to Claude Code Club.
-    resource:
-- https://leads.run/
-
-    THE REFERENCE SAYS “INTENTRAT” AS THE RESOURCE- WHICH I DID NOT RECEIVE THROUGH COMMENTING, AS WELL AS IT DOESN’T EXIST ANYWHERE OVER GOOGLE SEARCH TOO. SO, THE RESOURCE IS REPLACED WITH LEADS.RUN- WHICH IS BASICALLY THE SAME THING APART FROM THE PRICING FACTS (NOT PUBLISHED ANYWHERE).
