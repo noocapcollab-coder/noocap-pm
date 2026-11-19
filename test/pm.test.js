@@ -2738,3 +2738,29 @@ test('an image-only brand email is read from its picture (Katlas receipt for Dre
   assert.equal(got[0].mimeType, 'image/jpeg');
   assert.equal(messageImages({ text: 'Hi team, '.repeat(40), attachments: [img] }).length, 0);
 });
+
+test('a Zoho-quoted brand email is answered from its newest message only (CapCut x Brad, Nov 19)', async () => {
+  const { latestPart, brandAsks, asksForDate } = await import('../lib/briefs.js');
+  const text = 'Hi there,\n\nJust checking in to see if the video can be produced within this week or the next. If not please tell us your earliest timeline for the video.\n\nBest regards,\nAlisa\n\n---- On Tue, 17 Nov 2026 11:35:29 +0800 Alisa <alisa@globeinflu.com> wrote ---\n\nHi there,\n\nWould it be possible to continue with the original brief for Brad instead?\n';
+  const latest = latestPart(text);
+  assert.ok(!/original brief/.test(latest));
+  const asks = brandAsks(latest);
+  assert.ok(asks.length >= 1);
+  assert.ok(asks.some(asksForDate));
+  assert.ok(!asks.some((q) => /original brief/.test(q)));
+  // a closing line is not an ask
+  assert.equal(brandAsks('Here is the brief. Let us know if you have any questions.').length, 0);
+  assert.ok(!/original brief/.test(latestText(text)));
+  assert.ok(!/旧/.test(latestPart('Thanks!\n发件人: Cassie <x@y.com>\n旧')));
+});
+
+test('only the newest queued WhatsApp ask per deal goes out (Luma x Chris, Nov 19)', async () => {
+  const { oneQueuedAskPerDeal } = await import('../lib/whatsapp.js');
+  const msgs = [
+    { meta: 'pending-ask', at: '2026-11-19T07:34:37Z', infoAsk: { dealId: 'luma' } },
+    { meta: 'pending-ask', at: '2026-11-19T07:37:58Z', infoAsk: { dealId: 'luma' } },
+    { meta: 'pending-ask', at: '2026-11-19T09:18:52Z', infoAsk: { dealId: 'capcut' } },
+  ];
+  oneQueuedAskPerDeal(msgs);
+  assert.deepEqual(msgs.map((m) => m.meta), ['stale-ask', 'pending-ask', 'pending-ask']);
+});
