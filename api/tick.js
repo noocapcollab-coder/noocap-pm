@@ -87,6 +87,28 @@ export default async function handler(req, res) {
     if (!text) return res.status(400).json({ error: 'text needed' });
     try { const W = await import('../lib/whatsapp.js'); return res.status(200).json(await W.sendContract({ text: text.slice(0, 3500), label: 'note' })); } catch (e) { return res.status(500).json({ error: String(e.message).slice(0, 200) }); }
   }
+  // ?stripeacct=<creator> (read only): the creator's Stripe account, the bank it pays out to (Stripe shows last 4 only)
+  // and the bank-transfer details on the newest open invoice (Nov 19: Harsh asked for Chris's Stripe bank details)
+  if (req.query?.stripeacct) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const I = await import('../lib/invoicing.js');
+      const acct = await I.creatorStripe(String(req.query.stripeacct));
+      if (!acct) return res.status(404).json({ error: 'no Stripe connected' });
+      const out = {};
+      const safe = async (k, f) => { try { out[k] = await f(); } catch (e) { out[k] = 'error: ' + String(e.message).slice(0, 140); } };
+      await safe('account', async () => { const a = await I.stripe(acct.key, 'GET', '/account'); return { id: a.id, name: a.business_profile?.name || a.settings?.dashboard?.display_name || '', email: a.email || '', country: a.country, currency: a.default_currency, payouts: (a.external_accounts?.data || []).map((b) => ({ bank: b.bank_name, last4: b.last4, routing: b.routing_number, currency: b.currency, holder: b.account_holder_name, default: b.default_for_currency })) }; });
+      await safe('balance', async () => { const b = await I.stripe(acct.key, 'GET', '/balance'); return { available: (b.available || []).map((x) => `${x.amount / 100} ${x.currency}`), pending: (b.pending || []).map((x) => `${x.amount / 100} ${x.currency}`) }; });
+      await safe('openInvoice', async () => {
+        const r = await I.stripe(acct.key, 'GET', '/invoices', { status: 'open', limit: 1 });
+        const inv = (r.data || [])[0]; if (!inv) return null;
+        const pay = { number: inv.number, customer: inv.customer_name, methods: inv.payment_settings?.payment_method_types || 'account default', page: inv.hosted_invoice_url };
+        if (inv.customer) { try { const c = await I.stripe(acct.key, 'GET', `/customers/${inv.customer}/cash_balance`); pay.cashBalance = c.available || {}; } catch { /* bank transfers off */ } }
+        return pay;
+      });
+      return res.status(200).json(out);
+    } catch (e) { return res.status(500).json({ error: String(e.message).slice(0, 200) }); }
+  }
   if (req.query?.stripepaid) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
     try {
