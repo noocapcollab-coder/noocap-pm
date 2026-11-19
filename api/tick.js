@@ -76,6 +76,21 @@ export default async function handler(req, res) {
     try { const R = await import('../lib/replytemplates.js'); return res.status(200).json(await R.sendTemplateToDeal(String(req.query.sendtemplate), String(req.query.key || ''), { from: String(req.query.from || '') })); }
     catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?draftreply=<dealId> (POST {body}): put a reply Harsh asked Claude to write into Approvals for his Send, in the deal's
+  // own thread with its CCs. Nothing is sent (Nov 19: brand emails left unanswered all week)
+  if (req.query?.draftreply) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const { openDeals } = await import('../lib/briefs.js');
+      const { createDraft } = await import('../lib/outbox.js');
+      const deal = (await openDeals({ withClosed: true })).find((d) => String(d.id).replace(/-/g, '') === String(req.query.draftreply).replace(/-/g, ''));
+      if (!deal) return res.status(404).json({ error: 'deal not found' });
+      const body = String(req.body?.body || '').trim();
+      if (!body) return res.status(400).json({ error: 'body needed' });
+      const r = await createDraft({ kind: 'Reply', deal, subject: `Re: ${deal.threadSubject || deal.brand}`, body: body.replace(/\n/g, '<br />'), video: deal.linkedVideo, why: `Needs you: reply written by Claude for Harsh (unanswered brand email) · ${deal.brand} × ${deal.creator}` });
+      return res.status(200).json({ created: !!r?.created, id: r?.id, reason: r?.reason });
+    } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // ?raisedraft=<dealId>: draft the invoice due now (upfront share first) in the creator's Stripe and put its email in
   // Approvals, nothing sent (Nov 17: Harsh sees every invoice before it goes)
   if (req.query?.raisedraft) {
