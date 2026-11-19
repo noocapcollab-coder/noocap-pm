@@ -87,7 +87,7 @@ export default async function handler(req, res) {
       if (!deal) return res.status(404).json({ error: 'deal not found' });
       const body = String(req.body?.body || '').trim();
       if (!body) return res.status(400).json({ error: 'body needed' });
-      const r = await createDraft({ kind: 'Reply', deal, subject: `Re: ${deal.threadSubject || deal.brand}`, body: body.replace(/\n/g, '<br />'), video: deal.linkedVideo, why: `Needs you: reply written by Claude for Harsh (unanswered brand email) · ${deal.brand} × ${deal.creator}` });
+      const r = await createDraft({ kind: 'Reply', deal, subject: `Re: ${deal.threadSubject || deal.brand}`, body, video: deal.linkedVideo, why: `Needs you: reply written by Claude for Harsh (unanswered brand email) · ${deal.brand} × ${deal.creator}` });
       return res.status(200).json({ created: !!r?.created, id: r?.id, reason: r?.reason });
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
