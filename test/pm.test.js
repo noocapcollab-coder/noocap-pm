@@ -2787,4 +2787,5 @@ test('a Stripe payment gives Harsh a note to forward to the creator (Harsh, Nov 
   assert.match(t, /Payment received: Manyfast × Duncan/);
   assert.match(t, /Hi Duncan, Manyfast's payment of \$1,600 .* November 18 \(invoice INV-005, paid by Slate Media Co\., Ltd\.\)/);
   assert.match(t, /Paid invoice: https:\/\/invoice\.stripe\.com\/x/);
+  assert.ok(!/Forward this to/.test(t));
 });
