@@ -2880,3 +2880,13 @@ test('a card back at 5 with a new script version goes again; an unchanged one do
   assert.deepEqual(revisedCards(cards, { ...vers, pending: new Set([a]) }, cur), []);
   assert.deepEqual(revisedCards(cards, { sent: new Map(), pending: new Set() }, cur), []);
 });
+
+test('a card back at 5 after Script Changes goes again as a revised script (Harsh, Nov 20)', async () => {
+  const { changedSinceSent } = await import('../lib/heartbeat.js');
+  const a = 'a'.repeat(32), b = 'b'.repeat(32);
+  const cards = [{ id: a, num: 5, title: 'CapCut × Lindsay (1)' }, { id: b, num: 5, title: 'CapCut × Lindsay (2)' }];
+  const vers = { sentAt: new Map([[a, '2026-11-18T10:00:00Z'], [b, '2026-11-18T10:00:00Z']]), pending: new Set() };
+  const marks = new Map([[a, '2026-11-19T22:00:00Z'], [b, '2026-11-17T09:00:00Z']]);
+  assert.deepEqual(changedSinceSent(cards, vers, marks).map((c) => c.title), ['CapCut × Lindsay (1)']);
+  assert.deepEqual(changedSinceSent(cards, { ...vers, pending: new Set([a]) }, marks), []);
+});
