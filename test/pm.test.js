@@ -2717,3 +2717,14 @@ test('publish_date_confirm uses the card POST DATE and nothing else (Luma x Chri
   assert.match(b, /goes live on Saturday, November 21/);
   assert.ok(!/\{post_date\}/.test(b));
 });
+
+test('one send per draft: a fresh claim from another send blocks a second send (Luma x Chris, Nov 19)', async () => {
+  const { sendClaimState, claimText } = await import('../lib/outbox.js');
+  const now = Date.now();
+  assert.equal(sendClaimState('', 'abc', now), 'free');
+  assert.equal(sendClaimState('n8n returned 500', 'abc', now), 'free');
+  assert.equal(sendClaimState(claimText('abc', now - 1000), 'abc', now), 'mine');
+  assert.equal(sendClaimState(claimText('xyz', now - 1000), 'abc', now), 'taken');
+  assert.equal(sendClaimState(claimText('xyz', now - 1000), undefined, now), 'taken');
+  assert.equal(sendClaimState(claimText('xyz', now - 4 * 60 * 1000), 'abc', now), 'free');
+});
