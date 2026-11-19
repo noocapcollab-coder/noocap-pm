@@ -2855,3 +2855,10 @@ test('a brand\'s "we paid" on a deal Stripe already marked Paid sends no second 
   assert.match(c, /if \(paidAlready\(deal\)\) \{ await patchDeal\(deal, \(set\) => common\(set\)\); did = [^;]+; break; \}/);
   assert.ok(c.indexOf('paidAlready(deal)') < c.indexOf('stripeState'));
 });
+
+test('a contract the brand sends is never treated as our signed copy (Fotor x Duncan, Nov 20)', async () => {
+  const { signedBack } = await import('../lib/inbox.js');
+  assert.equal(signedBack({ from_role: 'brand', delivers: ['signed contract'] }), false);
+  assert.equal(signedBack({ from_role: 'noocap', delivers: ['contract'] }), true);
+  assert.equal(signedBack({ from_role: 'creator', delivers: ['signed contract'] }), true);
+});

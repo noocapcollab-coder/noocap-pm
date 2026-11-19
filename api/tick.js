@@ -57,6 +57,32 @@ export default async function handler(req, res) {
     catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
   // ?contractping=<CONTRACTS row id>: send that contract to WhatsApp and #pm-alerts again (a row added by hand). Hook only.
+  // ?filecontract=<gmail thread id>&deal=<deal id>: file a contract the inbox missed. Takes the newest brand email in the
+  // thread with an agreement PDF and runs the normal contract step (CONTRACTS row, WhatsApp, fixed ack to the brand).
+  // Never signs anything (Fotor x Duncan, Nov 20)
+  if (req.query?.filecontract) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const { partsWithFiles, hydrateAttachments } = await import('../lib/gmailfiles.js');
+      const r = await fetch(process.env.N8N_DRIVE_WEBHOOK, { method: 'POST', headers: { 'content-type': 'application/json', 'x-hook-secret': process.env.PM_HOOK_SECRET || '' }, body: JSON.stringify({ method: 'GET', url: `https://gmail.googleapis.com/gmail/v1/users/me/threads/${encodeURIComponent(String(req.query.filecontract))}?format=full` }) });
+      const j = await r.json().catch(() => ({}));
+      const msgs = ((j.data || j).messages || []).slice().reverse();
+      const h = (m, n) => ((m.payload?.headers || []).find((x) => x.name.toLowerCase() === n) || {}).value || '';
+      const m = msgs.find((x) => !/noocap/i.test(h(x, 'from')) && partsWithFiles(x.payload).some((p) => /agreement|contract/i.test(p.filename)));
+      if (!m) return res.status(404).json({ error: 'no brand email with an agreement in that thread' });
+      const files = partsWithFiles(m.payload).filter((p) => /\.(pdf|docx?)$/i.test(p.filename)).map((p) => ({ filename: p.filename, mimeType: p.mimeType, size: p.size }));
+      const email = { gmailId: m.id, threadId: m.threadId, messageId: h(m, 'message-id'), from: h(m, 'from'), subject: h(m, 'subject'), date: h(m, 'date'), text: m.snippet || '', attachments: files };
+      await hydrateAttachments(email);
+      const { openDeals } = await import('../lib/briefs.js');
+      const deal = req.query.deal ? (await openDeals({ withClosed: true })).find((d) => String(d.id).replace(/-/g, '') === String(req.query.deal).replace(/-/g, '')) : null;
+      if (req.query.deal && !deal) return res.status(404).json({ error: 'deal not found' });
+      const M = await import('../lib/inbox.js');
+      const x = { from_role: 'brand', brand: deal?.brand, creator: deal?.creator, delivers: ['contract'], summary: [`${deal?.brand || 'The brand'} sent the contract (${files.map((f) => f.filename).join(', ')})`] };
+      if (req.query.dry) return res.status(200).json({ from: email.from, date: email.date, files: files.map((f) => f.filename), hasData: email.attachments.map((a) => !!a.data), deal: deal ? `${deal.brand} × ${deal.creator}` : null });
+      const note = await M.contractToWhatsApp(email, x, deal);
+      return res.status(200).json({ from: email.from, files: files.map((f) => f.filename), result: note });
+    } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   if (req.query?.contractping) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
     try { const T = await import('../lib/contracttrack.js'); return res.status(200).json(await T.announceContract(String(req.query.contractping).replace(/[^0-9a-f-]/gi, ''))); }
