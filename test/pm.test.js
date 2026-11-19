@@ -769,7 +769,7 @@ test('an agency thread with two brands: the email lands on the deal of the brand
 test('a brand saying it paid without any proof is not marked paid; the PM asks for the confirmation', async () => {
   const fs = await import('node:fs');
   const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
-  const c = ib.slice(ib.indexOf("case 'payment_confirmed'"), ib.indexOf("case 'payment_confirmed'") + 2500);
+  const c = ib.slice(ib.indexOf("case 'payment_confirmed'"), ib.indexOf("case 'payment_confirmed'") + 2800);
   assert.match(c, /if \(fromBrand && !hasProof\)/);
   assert.match(c, /ask them to share the payment confirmation/);
 });
@@ -2823,4 +2823,35 @@ test('a wrapped "wrote:" line and a broken-up link never become the brand\'s que
   assert.ok(!brandAsks(latestPart(luma)).some((q) => /edit\?|\/d\//.test(q)));
   // real questions still count
   assert.equal(brandAsks('Thanks for the update. When can we expect the script?').length, 1);
+});
+
+test('a retired Gemini model (404) is skipped, not the end of the chain (Leads email failed, system check Nov 19)', async () => {
+  const { MODEL_CHAIN, tryNextModel } = await import('../lib/gemini.js');
+  assert.ok(!MODEL_CHAIN().includes('gemini-2.5-flash-lite'));
+  assert.equal(tryNextModel(404), true);
+  assert.equal(tryNextModel(429), true);
+  assert.equal(tryNextModel(400), false);
+});
+
+test('a bare "Okay" on WhatsApp is not the answer to a brand\'s ask (Vmake AI x Lindsay, system check Nov 19)', async () => {
+  const fs = await import('node:fs');
+  const { isBareAck } = await import('../api/whatsapp.js');
+  for (const t of ['Okay', 'ok', 'OK.', 'noted', 'got it', '👍', 'Thanks!']) assert.equal(isBareAck(t), true, t);
+  for (const t of ['ok the code is ABC123', 'lindsay@example.com', 'okay send the contract to Vmake', '']) assert.equal(isBareAck(t), false, t);
+  const wa = fs.readFileSync(new URL('../api/whatsapp.js', import.meta.url), 'utf8');
+  const fn = wa.slice(wa.indexOf('async function answerInfoAsk'), wa.indexOf('async function answerInfoAsk') + 1800);
+  assert.match(fn, /if \(!file && isBareAck\(text\)\) \{ await say\(/);
+  assert.ok(fn.indexOf('isBareAck') < fn.indexOf('writeEmail'));
+});
+
+test('a brand\'s "we paid" on a deal Stripe already marked Paid sends no second WhatsApp (ElevenLabs x Duncan, system check Nov 19)', async () => {
+  const fs = await import('node:fs');
+  const { paidAlready } = await import('../lib/inbox.js');
+  assert.equal(paidAlready({ stage: 'Paid', paidDate: '2026-11-19' }), true);
+  assert.equal(paidAlready({ stage: 'Invoiced', paidDate: '' }), false);
+  assert.equal(paidAlready({ stage: 'Paid', paidDate: '' }), false);
+  const src = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  const c = src.slice(src.indexOf("case 'payment_confirmed': {"), src.indexOf("case 'payment_confirmed': {") + 2500);
+  assert.match(c, /if \(paidAlready\(deal\)\) \{ await patchDeal\(deal, \(set\) => common\(set\)\); did = [^;]+; break; \}/);
+  assert.ok(c.indexOf('paidAlready(deal)') < c.indexOf('stripeState'));
 });
