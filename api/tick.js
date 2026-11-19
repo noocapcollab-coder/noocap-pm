@@ -78,6 +78,26 @@ export default async function handler(req, res) {
   }
   // ?draftreply=<dealId> (POST {body}): put a reply Harsh asked Claude to write into Approvals for his Send, in the deal's
   // own thread with its CCs. Nothing is sent (Nov 19: brand emails left unanswered all week)
+  // ?stripepaid=<days> (read only): every invoice in each creator's Stripe from the last N days, paid and still open,
+  // so Harsh can see which payments really came in (Nov 19: Revenue rows sat under Awaiting payment after Stripe paid)
+  if (req.query?.stripepaid) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const I = await import('../lib/invoicing.js');
+      const days = Math.min(Number(req.query.stripepaid) || 90, 365);
+      const since = Math.floor(Date.now() / 1000) - days * 86400;
+      const out = {};
+      for (const c of ['Duncan', 'Chris', 'Lindsay', 'Valeri', 'Brad', 'Emtech', 'David Iya', 'Nicole']) {
+        const acct = await I.creatorStripe(c).catch(() => null);
+        if (!acct) { out[c] = 'no Stripe connected'; continue; }
+        try {
+          const r = await I.stripe(acct.key, 'GET', '/invoices', { limit: 100, created: { gte: since } });
+          out[c] = (r.data || []).filter((i) => i.status !== 'draft').map((i) => ({ number: i.number, status: i.status, customer: i.customer_name || i.customer_email || '', amount: (i.status === 'paid' ? i.amount_paid : i.amount_due) / 100, currency: i.currency, created: new Date(i.created * 1000).toISOString().slice(0, 10), paid: i.status_transitions?.paid_at ? new Date(i.status_transitions.paid_at * 1000).toISOString().slice(0, 10) : null, outside: !!i.paid_out_of_band, what: (i.lines?.data?.[0]?.description || '').slice(0, 80) }));
+        } catch (e) { out[c] = 'error: ' + String(e.message).slice(0, 120); }
+      }
+      return res.status(200).json(out);
+    } catch (e) { return res.status(500).json({ error: String(e.message).slice(0, 200) }); }
+  }
   if (req.query?.draftreply) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
     try {
