@@ -129,6 +129,28 @@ export default async function handler(req, res) {
   }
   // ?paythanks=<dealId> (&dry=1 to only look): send the fixed payment thank-you in the brand's thread, only when Stripe
   // shows the deal paid (Nov 19: ElevenLabs x Duncan, finance said it paid and Stripe agreed)
+  // ?markpaid=<dealId>: Harsh says the money arrived outside Stripe (Readdy x Lindsay, Nov 19). Marks the deal and its
+  // Revenue row Paid, closes the open Stripe invoice as paid outside Stripe (stops its reminders) and thanks the brand
+  if (req.query?.markpaid) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const { openDeals } = await import('../lib/briefs.js');
+      const deal = (await openDeals({ withClosed: true })).find((d) => String(d.id).replace(/-/g, '') === String(req.query.markpaid).replace(/-/g, ''));
+      if (!deal) return res.status(404).json({ error: 'deal not found' });
+      const I = await import('../lib/invoicing.js');
+      const { notion } = await import('../lib/notion.js');
+      const out = { deal: `${deal.brand} × ${deal.creator}`, was: deal.stage };
+      const today = new Date(Date.now() + 5.5 * 36e5).toISOString().slice(0, 10);
+      const na = I.paidNextAction(await I.creatorCut(deal.creator));
+      await notion('PATCH', `/pages/${deal.id}`, { properties: { 'Deal Stage': { select: { name: 'Paid' } }, 'Paid Date': { date: { start: today } }, 'Next Action': { rich_text: [{ type: 'text', text: { content: `Paid outside Stripe (Harsh confirmed ${today}). ${na}`.slice(0, 1900) } }] } } });
+      out.stage = 'Paid';
+      try { out.stripe = await I.closeStripePaidOutside(deal); } catch (e) { out.stripe = 'error: ' + String(e.message).slice(0, 120); }
+      const M = await import('../lib/inbox.js');
+      try { out.revenue = await M.markRevenuePaid(deal, { amount: deal.invoiceAmount || deal.finalRate, currency: 'usd', paid_date: today }); } catch (e) { out.revenue = 'error: ' + String(e.message).slice(0, 120); }
+      try { out.thanks = await M.paymentThanks(deal); } catch (e) { out.thanks = 'error: ' + String(e.message).slice(0, 120); }
+      return res.status(200).json(out);
+    } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   if (req.query?.paythanks) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
     try {
