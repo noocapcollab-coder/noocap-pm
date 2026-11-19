@@ -1604,7 +1604,7 @@ test('a revised cut email is the revised cut, never a promise of one or a billin
   assert.equal(plainBody, "Hi Ushni,\n\nHere is the revised cut with the changes you asked for: https://f.io/6CLu_W2h\n\nBest,\nValeri's Team");
   assert.deepEqual(cutBodyProblems(plainBody, true), []);
   assert.match(cutInstructions('', true), /revised cut that already makes the changes/);
-  assert.match(cutInstructions('', false), /Do not answer or raise anything else/);
+  assert.match(cutInstructions('', false), /repeat that answer in one short sentence/);
 });
 
 test('a WhatsApp push failure is logged at most once per 6 hours per person, across cold starts (Nov 10)', async () => {
