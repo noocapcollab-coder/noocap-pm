@@ -78,7 +78,11 @@ export default async function handler(req, res) {
       if (req.query.deal && !deal) return res.status(404).json({ error: 'deal not found' });
       const M = await import('../lib/inbox.js');
       const x = { from_role: 'brand', brand: deal?.brand, creator: deal?.creator, delivers: ['contract'], summary: [`${deal?.brand || 'The brand'} sent the contract (${files.map((f) => f.filename).join(', ')})`] };
-      if (req.query.dry) return res.status(200).json({ from: email.from, date: email.date, files: files.map((f) => f.filename), hasData: email.attachments.map((a) => !!a.data), deal: deal ? `${deal.brand} × ${deal.creator}` : null });
+      if (req.query.dry) {
+        const { pdfText } = await import('../lib/pdftext.js');
+        const text = await Promise.all(email.attachments.map((a) => (a.data && /pdf/i.test(`${a.mimeType} ${a.filename}`) ? pdfText(a.data, 12000).catch(() => '') : '')));
+        return res.status(200).json({ from: email.from, date: email.date, files: files.map((f) => f.filename), hasData: email.attachments.map((a) => !!a.data), deal: deal ? `${deal.brand} × ${deal.creator}` : null, text });
+      }
       const note = await M.contractToWhatsApp(email, x, deal);
       return res.status(200).json({ from: email.from, files: files.map((f) => f.filename), result: note });
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
