@@ -598,8 +598,14 @@ export function infoAskFor(st, replyTo, text = '') {
   const last = [...st.messages].reverse().find((x) => x.role === 'assistant' && !['pending-doc', 'nudge', 'alert'].includes(x.meta));
   return last?.meta === 'info-ask' && last.infoAsk && !last.resolved && !forOther(last) && Date.now() - Date.parse(last.at) < 2 * 36e5 ? last : null;
 }
+// A bare "Okay" / "ok" / "noted" holds nothing the brand asked for (Vmake AI x Lindsay, Nov 19: Harsh's "Okay" 12 minutes
+// after the contract ask became "we'll send over the signed contract along with our payment details separately")
+export function isBareAck(text) {
+  return /^\s*(ok(ay)?|k|kk|okk+|sure|fine|noted|got it|cool|alright|thanks|thank you|ty|yes ok|👍|👌|✅)[\s.!]*$/i.test(String(text || ''));
+}
 async function answerInfoAsk(st, msg, text, file) {
   const a = msg.infoAsk;
+  if (!file && isBareAck(text)) { await say(st, `I haven't written anything to ${a.brand || 'them'}: that didn't hold the ${a.need}. Swipe-reply to the question with it (text, codes, links or a file) and I'll draft the email.`); return; }
   if (/^(cancel|skip|ignore|no|not now|leave it)\.?$/i.test(String(text || '').trim())) { msg.resolved = 'skipped'; await say(st, 'OK, I won\'t reply to them about it.'); return; }
   const { openDeals } = await import('../lib/briefs.js');
   const deal = (await openDeals({ withClosed: true })).find((d) => d.id === a.dealId);
