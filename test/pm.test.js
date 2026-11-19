@@ -2686,3 +2686,15 @@ test('big attachments are fetched from Gmail parts by name; the card has no Sour
   const blocks = pageBody({ x: { summary: ['A point'] }, email: { from: 'Karan <k@e.sh>', subject: 'S', date: 'D' }, links: [], uploads: [], docText: '' });
   assert.ok(!JSON.stringify(blocks).includes('Source email'));
 });
+
+// System check, Nov 19: Emergent x Chris, a campaign brief PDF whose email said the formal agreement comes later was filed
+// as a contract and the auto "thanks for sending the contract, we'll sign it" reply went out
+test('a brief that says the agreement comes later is not a contract', async () => {
+  const { contractIn } = await import('../lib/inbox.js');
+  const pdf = [{ filename: 'AI Video Fest - Creator Guidelines.pdf', mimeType: 'application/pdf', data: 'x' }];
+  assert.equal(contractIn({ text: 'Hi Team, please find the campaign details attached. Once you confirm the intent to go live on 23rd Nov, I will share the formal agreement for signature.', attachments: pdf }), null);
+  assert.equal(contractIn({ text: 'The attached document is the campaign brief, not the final contract.', attachments: pdf }), null);
+  // a real contract still counts
+  assert.ok(contractIn({ text: 'Please find the agreement attached for signature.', attachments: pdf }));
+  assert.ok(contractIn({ text: 'Contract attached, please sign.', attachments: [{ filename: 'Agreement_Kylon.pdf', mimeType: 'application/pdf' }] }));
+});
