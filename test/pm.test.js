@@ -2698,3 +2698,12 @@ test('a brief that says the agreement comes later is not a contract', async () =
   assert.ok(contractIn({ text: 'Please find the agreement attached for signature.', attachments: pdf }));
   assert.ok(contractIn({ text: 'Contract attached, please sign.', attachments: [{ filename: 'Agreement_Kylon.pdf', mimeType: 'application/pdf' }] }));
 });
+
+test('a brand email that asks something stays unread when nothing was sent or drafted (Harsh, Nov 19)', async () => {
+  const { keepUnread } = await import('../lib/inbox.js');
+  assert.equal(keepUnread({ needs_reply: true }, 'Deal memory updated'), true);
+  assert.equal(keepUnread({ we_owe: 'Confirm the publishing date' }, 'Stage set'), true);
+  assert.equal(keepUnread({ needs_reply: true }, 'Sent the fixed reply "video_eta"'), false);
+  assert.equal(keepUnread({ needs_reply: true }, 'Brief updated · reply drafted'), false);
+  assert.equal(keepUnread({ needs_reply: false, we_owe: null }, 'thanks noted'), false);
+});
