@@ -2862,3 +2862,10 @@ test('a contract the brand sends is never treated as our signed copy (Fotor x Du
   assert.equal(signedBack({ from_role: 'noocap', delivers: ['contract'] }), true);
   assert.equal(signedBack({ from_role: 'creator', delivers: ['signed contract'] }), true);
 });
+
+test('deals paid upfront reach the script step (Manyfast x Duncan, Nov 20)', async () => {
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
+  assert.match(src, /const ordered = \[\.\.\.upfrontPaid,/);
+  assert.match(src, /if \(deal\.upfrontOnly\) continue;/);
+});
