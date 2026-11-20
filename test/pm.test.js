@@ -2890,3 +2890,21 @@ test('a card back at 5 after Script Changes goes again as a revised script (Hars
   assert.deepEqual(changedSinceSent(cards, vers, marks).map((c) => c.title), ['CapCut × Lindsay (1)']);
   assert.deepEqual(changedSinceSent(cards, { ...vers, pending: new Set([a]) }, marks), []);
 });
+
+test('a card whose script already went from another deal of the same brand is not owed again (Runway AI x Chris, Nov 20)', async () => {
+  const { cardsScriptedElsewhere } = await import('../lib/heartbeat.js');
+  const nov = '41b508e99dda814dbc98cd2aa2c91bf4';
+  const row = (st, video, ctx = '') => ({ properties: { Status: { type: 'select', select: { name: st } }, Video: { url: video }, Context: { rich_text: [{ plain_text: ctx }] } } });
+  const rows = [row('Sent', `https://app.notion.com/p/Runway-AI-Chris-${nov}`, `fp ${nov}=a282c58a7c59`)];
+  assert.equal(cardsScriptedElsewhere(rows).has(nov), true);
+  assert.equal(cardsScriptedElsewhere([row('Rejected', `https://app.notion.com/p/Runway-AI-Chris-${nov}`)]).has(nov), false);
+  assert.equal(cardsScriptedElsewhere([row('Draft', null, `Script cards: https://app.notion.com/p/x-${nov}`)]).has(nov), true);
+});
+
+test('"wireframe" in cut feedback is not a bank-transfer ask (Manyfast x Chris, Nov 20)', async () => {
+  const { asksOtherPayment } = await import('../lib/invoiceguard.js');
+  assert.equal(asksOtherPayment('The wireframe-to-finished-UI transition and Favorites demonstration are much clearer. Around 16 seconds, the caption still says "cloud code."'), null);
+  assert.equal(asksOtherPayment('Give the wireframe and finished prototype a little more screen time.'), null);
+  assert.equal(asksOtherPayment('We can only pay by wire transfer, please send your bank details.'), 'Bank transfer');
+  assert.equal(asksOtherPayment('Can we pay via PayPal instead?'), 'PayPal');
+});
