@@ -3038,3 +3038,14 @@ test('while Claude is paused every AI call goes straight to Gemini (Harsh, Nov 2
   const src = fs.readFileSync(new URL('../lib/gemini.js', import.meta.url), 'utf8');
   assert.match(src, /freeOnly\.getStore\(\) \|\| anthropicPaused\(\)\) && hasGemini\(\)/);
 });
+
+test('the same contract reaches WhatsApp once, however many emails carry it (Runway x Chris, Nov 20)', async () => {
+  const { contractKey } = await import('../lib/inbox.js');
+  const a = contractKey({ links: ['https://agreements.houseofmarketers.com/sign/jPJbLWueqtiqD5a1BeXyQ'] }, { threadId: 't1' });
+  const b = contractKey({ links: ['https://agreements.houseofmarketers.com/sign/jPJbLWueqtiqD5a1BeXyQ?utm=mail'] }, { threadId: 't2' });
+  assert.equal(a, b);
+  assert.equal(contractKey({ files: [{ filename: 'Agreement.pdf' }] }, { threadId: 't1' }), 't1:agreement.pdf');
+  assert.equal(contractKey({}, {}), '');
+  const fs = await import('node:fs');
+  assert.match(fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8'), /contract already sent to WhatsApp, not sent again/);
+});
