@@ -2942,3 +2942,10 @@ test('the script PDF starts at the newest "updated script" heading, never sendin
   assert.equal(scriptStart(['✅ Approved script (2026-11-20)', 'Script', null]), 0);
   assert.equal(scriptStart([null, null]), -1);
 });
+
+test('the Gemini fallback notice checks the shared log, not just memory (Harsh, Nov 20: #pm-alerts spam)', async () => {
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/claude.js', import.meta.url), 'utf8');
+  assert.match(src, /if \(await noticeRecently\(\)\) return;/);
+  assert.match(src, /import\('\.\/tools\.js'\)/);
+});
