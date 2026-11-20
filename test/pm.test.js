@@ -2908,3 +2908,19 @@ test('"wireframe" in cut feedback is not a bank-transfer ask (Manyfast x Chris, 
   assert.equal(asksOtherPayment('We can only pay by wire transfer, please send your bank details.'), 'Bank transfer');
   assert.equal(asksOtherPayment('Can we pay via PayPal instead?'), 'PayPal');
 });
+
+// System check Nov 20 (CapCut x Brad): the inbox asked Pratham about Alisa's chase, then the "we owe" sweep asked the
+// same thing 7 minutes later. The inbox now writes the sweep's own mark, so the two must agree for one brand email.
+test('the inbox and the owed sweep share one "already asked" mark per brand email', async () => {
+  const { owedMark, owedItem } = await import('../lib/owed.js');
+  const { istStamp } = await import('../lib/tools.js');
+  const id = '3ff508e9-9dda-81eb-a238-e614f2a1ecba';
+  const emailAt = Date.parse('2026-11-20T07:05:00Z');
+  const inboxMark = owedMark(id, istStamp(emailAt));
+  const deal = { id, brand: 'CapCut', creator: 'Brad', stage: 'Submitted', lastBrand: istStamp(emailAt), lastOur: '2026-11-16T14:54:00+05:30', memory: "OPEN NOW: We owe: Brad's earliest timeline for the video" };
+  const item = owedItem(deal, '2026-11-20');
+  assert.ok(item);
+  assert.equal(owedMark(id, item.since), inboxMark);
+  // late evening UTC is the next day in IST: both sides use the IST day
+  assert.equal(owedMark(id, istStamp(Date.parse('2026-11-20T20:00:00Z'))), `${id} 2026-11-21`);
+});
