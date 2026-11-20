@@ -3024,3 +3024,11 @@ test('a lead email waiting on Gemini\'s free quota is retried, never given up on
   const { AI_DOWN } = await import('../api/leads.js');
   assert.match("leads runs on Gemini's free tier and it is unavailable now (Gemini 429 (gemini-flash-lite-latest): quota); retried later", AI_DOWN);
 });
+
+test('a brand-new creator-inbox email is sorted by Claude, lead-thread follow-ups and our own emails by Gemini (Harsh, Nov 20)', async () => {
+  const { leadJob } = await import('../lib/leads.js');
+  const { routeOf } = await import('../lib/claude.js');
+  assert.equal(routeOf(leadJob({})), 'claude');
+  assert.equal(routeOf(leadJob({ known: true })), 'gemini-only');
+  assert.equal(routeOf(leadJob({ ours: true })), 'gemini-only');
+});
