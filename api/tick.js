@@ -112,6 +112,31 @@ export default async function handler(req, res) {
       return res.status(200).json({ deal: `${deal.brand} × ${deal.creator}`, titles, draft: r.id || r, created: r.created, body: mail.body });
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?waste=14: read only. AI spend by job (every month on record) and every email draft from the last N days by kind and
+  // status, so we can see which drafts are made and never sent (Harsh, Nov 20: "drafting mails of no use")
+  if (req.query?.waste) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const { notion, plain } = await import('../lib/notion.js'); const { AI_SPEND_DS } = await import('../lib/aispend.js'); const { OUTBOX_DS } = await import('../lib/outbox.js');
+      const sp = await notion('POST', `/data_sources/${AI_SPEND_DS}/query`, { page_size: 12 });
+      const spend = (sp.results || []).map((p) => ({ month: plain(p.properties?.Month), usd: plain(p.properties?.['Spent USD']), calls: plain(p.properties?.Calls), byJob: plain(p.properties?.['By Job']) }));
+      const days = Math.min(60, Number(req.query.waste) || 14);
+      const since = new Date(Date.now() - days * 864e5).toISOString();
+      const rows = []; let cursor;
+      do {
+        const r = await notion('POST', `/data_sources/${OUTBOX_DS}/query`, { page_size: 100, ...(cursor ? { start_cursor: cursor } : {}), filter: { timestamp: 'created_time', created_time: { on_or_after: since } } });
+        rows.push(...(r.results || [])); cursor = r.has_more ? r.next_cursor : null;
+      } while (cursor && rows.length < 1500);
+      const g = (p, k) => plain(p.properties?.[k]) || '';
+      const table = {}; const unsent = [];
+      for (const p of rows) {
+        const kind = g(p, 'Kind') || '?'; const st = g(p, 'Status') || '?';
+        (table[kind] ||= {}); table[kind][st] = (table[kind][st] || 0) + 1;
+        if (st !== 'Sent') unsent.push({ kind, st, at: p.created_time.slice(0, 16), subject: g(p, 'Subject').slice(0, 80), why: (g(p, 'Why') || g(p, 'Error')).slice(0, 140) });
+      }
+      return res.status(200).json({ days, drafts: rows.length, table, spend, unsent: unsent.slice(0, 250) });
+    } catch (e) { return res.status(500).json({ error: e.message }); }
+  }
   // ?statusopts=1: each creator board's Status options with colour and group (read only), for adding a new status
   if (req.query?.statusopts) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
