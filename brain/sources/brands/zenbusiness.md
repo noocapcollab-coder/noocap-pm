@@ -3,44 +3,36 @@
 Brand. Works with creators: [[Lindsay]].
 
 ## Brand wiki (from every email with them)
-WHO: ZenBusiness offers AI business tools and LLC formation services. They come to us directly.
+WHO: ZenBusiness provides AI-powered business tools and LLC formation services. This brand works with us directly.
 
-CONTACTS:
-Ronnie Choi, ronnie.choi@zenbusiness.com, brand
-Natalie Swanson, natalie.swanson@zenbusiness.com, brand
-Automate AI Consulting, collab@automateaiconsulting.com, agency/cc
+CONTACTS: Ronnie Choi (ronnie.choi@zenbusiness.com), Natalie Swanson (natalie.swanson@zenbusiness.com). All emails should be copied to collab@automateaiconsulting.com and ronnie.choi@zenbusiness.com.
 
-DEALS:
-ZenBusiness x Lindsay | [amount]dedicated video + [amount]creative assets (3 short-form videos in 9x16, 4x5, 16x9 formats) with ZenBusiness Velo branding | Submitted | Agreed July 2, 2026. Payment scheduled July 14, net terms via Awin, received mid-August.
+DEALS: Lindsay: [amount]for one YouTube integration and [amount]for three creative assets (9x16, 4x5, 16x9), total [amount]stage Submitted, status pending final video approval and billing info.
 
-HOW THEY WORK:
-Prefer to handle kickoff and production via email rather than calls. Brief covers ZenBusiness Velo, AI Business Tools, and How to Start an LLC. Deliverables include one long-form YouTube integration video and three creative asset videos for paid marketing (0:15-0:30 seconds in 9x16, 4x5, 16x9 formats). Drafts are reviewed via Google Drive and file links (e.g., Frame.io). Requires specific brand formatting: ZenBusiness as one word with capital B, ZenBusiness Velo on one line with the registered trademark symbol (Velo®), accurate pricing claims ([amount]+ state fees, no credit card required), and specific CTAs where requested.
+HOW THEY WORK: We handle all production based on briefs provided via email. Scripts must be approved by the brand. We deliver assets via Google Drive or Frame.io links for review. Strict brand guidelines include: ZenBusiness must be one word with a capitalized B; ZenBusiness Velo must be on one line with the registered trademark symbol (Velo®); when discussing costs, [amount]plus state fees must be mentioned to avoid claims of false advertising; CTA for Velo is Download the ZenBusiness app to start using Velo today.
 
-WATCH OUT:
-Mixing up dedicated video scripts with YouTube integration scripts. Failing to include registered trademark symbols after Velo, incorrect capitalization or spacing of ZenBusiness and Velo, or improper pricing claims that could be considered false advertising.
+WATCH OUT: The brand is highly specific about trademark usage and spelling. Missing the registered trademark symbol after Velo or using incorrect capitalization will result in rejection. They flagged past drafts for potential false advertising regarding pricing; ensure all cost claims are accurate ([amount]+ state fees). They prefer email communication over kickoff calls.
 
-OPEN NOW:
-Waiting on brand (Natalie Swanson / Ronnie Choi) to review round 3 videos (submitted via Frame.io on November 5, 2026) and provide final approval, and waiting on brand to provide company billing information so we can issue the invoice. Lindsay's team owes the next move if needed, but currently waiting on the brand's reply.
+OPEN NOW: Waiting on brand: final approval for the three creative assets (round 3 submitted November 5) and provision of company billing information to process the invoice. We sent follow-ups on November 9, 17, and 20.
 
 ## Deal with [[Lindsay]] (Submitted, opened 2026-10-22)
-Last brand reply 2026-11-03, our last reply 2026-11-17.
-AGREED: [amount]dedicated video + [amount]creative assets (3 short-form videos in formats 9x16, 4x5, 16x9). Payment scheduled July 14, net terms via Awin, received mid-August. Deliverables: one long-form YouTube integration video and three creative asset videos with ZenBusiness Velo branding. Usage rights and final delivery date not confirmed in emails.
+Last brand reply 2026-11-03, our last reply 2026-11-20.
+AGREED: [amount]for one YouTube integration and [amount]for three creative assets (9x16, 4x5, 16x9). Total: [amount]. Usage rights and specific deadline dates not confirmed.
 
 HISTORY:
 2026-07-02 brand confirmed [amount]total fee and net payment terms.
-2026-07-11 brand sent initial brief on ZenBusiness Velo and LLC formation.
-2026-07-15 us submitted script draft.
-2026-07-24 brand approved dedicated video script, requested paid media asset scripts in three formats.
-2026-10-07 us delivered three UGC videos via Google Drive for review.
-2026-10-22 brand provided detailed feedback on all three videos (branding, spelling, capitalization, positioning).
+2026-07-24 brand approved dedicated video script.
+2026-10-07 us delivered three UGC videos for review.
+2026-10-22 brand provided detailed feedback on all three videos.
 2026-10-28 us resubmitted all three videos with requested changes.
-2026-11-03 brand (Natalie Swanson) provided additional feedback: trademark symbols missing after Velo in all three videos, spelling and capitalization corrections needed.
-2026-11-05 us resubmitted revised videos (round 3) via file link.
-2026-11-17 us sent follow-up check-in on round 3 videos.
+2026-11-03 brand provided additional trademark and spelling feedback.
+2026-11-05 us resubmitted revised videos (round 3).
+2026-11-17 us sent follow-up check-in.
+2026-11-20 us sent follow-up check-in regarding approval and billing.
 
-BILLING: not yet. Billing details requested 2026-11-01; brand has not provided company name, invoice email, or address.
+BILLING: not yet.
 
-OPEN NOW: Waiting on brand to review round 3 videos (submitted 2026-11-05) and provide final approval and billing details. Waiting on brand: final video approval and company billing information so we can issue invoice.
+OPEN NOW: Waiting on brand: final video approval and company billing information.
 
 ## Inbound leads
 - Deliverables: UGC videos with specific formatting and messaging requirements for ZenBusiness and ZenBusiness Velo · Contact Name: Natalie · Next Step: Revise videos per feedback (trademark symbols, capitalization, spelling) and resubmit for approval before invoicing · Platforms: TikTok · Deal: 1 linked · Last Brand Email: 2026-11-02 · Thread Subject: Paid Collab with ZenBusiness + AI for Entrepreneurs - Automate AI Consulting · Status: Locked · Creator: Lindsay · Type: Paid offer · Brand Email: ronnie.choi@zenbusiness.com

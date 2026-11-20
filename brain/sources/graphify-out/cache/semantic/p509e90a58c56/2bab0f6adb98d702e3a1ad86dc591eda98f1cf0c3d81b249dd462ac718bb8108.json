@@ -1,0 +1,1 @@
+{"nodes": [{"id": "scripts_david_iya_openjarvis", "label": "OpenJarvis Script", "file_type": "code", "source_file": "scripts/david-iya.md"}], "edges": [{"source": "scripts_david_iya_openjarvis", "target": "performance_david_stats", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "scripts/david-iya.md"}], "hyperedges": []}

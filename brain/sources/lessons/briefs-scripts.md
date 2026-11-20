@@ -2,11 +2,26 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A deal paid upfront still sends its revised script
+When: A brand that paid 100% before the video sends script notes, and the card comes back to 5- Script Approval with the updated script
+Do: Send the revised script to the brand in its thread as for any live deal, with only the newest version in the PDF; a Paid stage means the money is in, not that the work is done
+Never: Never treat a Paid deal with a Script Sent Date as finished while its video is not posted, and never send the old and the updated script together in one PDF
+Seen 1 time(s). Source: System check.
+## Brand script feedback moves the card to 4.8- Script Changes; back at 5 the revised script goes
+When: A brand sends changes on a script we already sent
+Do: Move every card of that deal still in scripting to 4.8- Script Changes, put the brand's notes on the card, and tag Rudraksh. When the card is moved back to 5, send the script again as the revised version, all cards ready together in one email
+Never: Never leave the card at 5 or 4.5 after brand feedback (nobody can tell it needs work), and never treat a card returning to 5 after changes as already sent
+Seen 1 time(s). Source: Harsh correction.
+## A card moved to 5 sends its script, including later videos of a posted deal and revised scripts
+When: A video card reaches 5- Script Approval (from 4.5 Internal Review or any earlier status)
+Do: Send the script unless that exact version already went. Every Script email records a fingerprint of each script it carried, and a card at 5 whose script differs from the sent version goes again as a revised script
+Never: Never let the deal's stage (Posted after video 1 went live) block the scripts of its other videos, and never re-send a script whose content hasn't changed
+Seen 1 time(s). Source: Harsh correction.
 ## A deal paid upfront still sends its script when the card reaches Script Approval
 When: A deal is already Paid or Invoiced (upfront payment) and its video card moves to 5- Script Approval
 Do: Send the script email the same way as any other deal, the same day
 Never: Never skip or delay the script because the deal stage is already Paid or Invoiced
-Seen 1 time(s). Source: Harsh correction.
+Seen 2 time(s). Source: Harsh correction.
 ## A brief is not a contract, even when the email mentions the agreement
 When: A brand email carries a PDF and talks about a contract or agreement
 Do: Treat it as a contract only when the file is named or written as one, or the brand says it is the contract to sign. If the email calls the file a brief or says the agreement comes later ("once you confirm, I will share the formal agreement"), it is a brief: file it on the deal's card and answer what the brand asked (usually a date for Harsh).

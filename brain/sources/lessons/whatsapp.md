@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Contracts in a creator's own inbox go to WhatsApp too
+When: A brand sends a contract to a creator's own inbox (Chris, Lindsay), not to noocapcollab
+Do: Save it to CONTRACTS and send it to the WhatsApp group with the PDF, once, the same as noocapcollab contracts
+Never: Never announce a contract on Discord only, because Harsh works from WhatsApp and passes contracts to the creator from there
+Seen 1 time(s). Source: Harsh correction.
+## One contract, one WhatsApp message
+When: A contract arrives, possibly in more than one email (agency email plus signing-service email, or a resend)
+Do: Claim the contract by its sign link (or its files and thread) before sending; if it was already sent, only file it
+Never: Never send the same contract to the WhatsApp group twice, because Harsh forwards these to the creator and a second copy reaches the client again
+Seen 1 time(s). Source: Harsh correction.
 ## A WhatsApp question or contract waiting for a closed chat is saved even when the nudge fails
 When: A brand asks for something only Harsh or Pratham has, or a contract arrives, while their WhatsApp chat has been quiet for 24 hours
 Do: Queue the question or contract in the chat first, then try the nudge template, and report a failed nudge without dropping what was queued
@@ -20,8 +30,8 @@ Seen 1 time(s). Source: Harsh correction.
 ## A WhatsApp message only answers the question it replies to
 When: The PM asked Harsh for something a brand needs (an account email, a code) and Harsh then sends an unrelated message or link
 Do: Use a message as the answer only when it swipe-replies to the question or plainly gives what was asked for; otherwise ask again.
-Never: Never put an unrelated link or text into a brand email as the answer.
-Seen 2 time(s). Source: Harsh correction.
+Never: Never put an unrelated link or text into a brand email as the answer, and never turn a bare "Okay" or "noted" into a reply that promises the thing later.
+Seen 3 time(s). Source: Harsh correction.
 ## Reject wins over Send, and never say nothing was sent when it was
 When: Send and Reject are tapped on the same draft within seconds
 Do: Check the draft just before it leaves and stop if it was rejected; if it already went, say so plainly and offer a correction.
@@ -86,7 +96,7 @@ Seen 8 time(s). Source: Rulebook.
 When: Alerting Harsh
 Do: Send each thing once. Discord pm alerts are mirrored to WhatsApp, so never send both.
 Never: Send near-duplicate messages or ask about team work (scripts, cuts, uploads).
-Seen 4 time(s). Source: Rulebook.
+Seen 5 time(s). Source: Rulebook.
 ## WhatsApp deals get WhatsApp alerts
 When: A deal came in on WhatsApp
 Do: Alert Harsh (script ready, posted).

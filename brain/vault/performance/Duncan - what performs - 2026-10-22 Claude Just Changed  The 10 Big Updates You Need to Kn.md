@@ -1,7 +1,7 @@
 ---
 type: performance
 ---
-YouTube Long: 128,854 views, 1,241 likes, 42 comments, 0 shares, 0 saves.
+YouTube Long: 128,922 views, 1,241 likes, 42 comments, 0 shares, 0 saves.
 
 ## Links
 - [[Duncan - what performs]]

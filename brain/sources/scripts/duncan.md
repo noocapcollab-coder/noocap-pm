@@ -2,6 +2,45 @@
 
 The final scripts of videos posted in the last 60 days, as filmed.
 
+## 2026-11-20 TIKTOK - CLAUDE KILLED SOCAIL MEDIA
+Type: PERSONAL. Creator: [[Duncan]].
+ON SCREEN HOOK:
+Claude now scrolls social media for you
+    Hook 1:
+You can now hand Claude any website and get back thousands of ready-to-pitch leads with the first message already drafted.
+    Hook 2:
+Someone just dropped a Claude skill that scrolls social media for you and finds people already looking for what you sell, plus their exact objections.
+    Body:
+So here's the deal. You drop your site into Claude, hit /lead-finder, and it figures out who you actually sell to. Then it reads thousands of profiles across all the major platforms and pulls each person's pain points, their goals, their doubts, all in the exact language they use online. From there it builds a profile, finds a verified email, and drafts the first message back in that same language. The scraper grabs the profiles, a builder cleans them into leads, the finder pulls their work email, and a sender ships the outreach when you give the word. Pretty freaking cool.
+    CTA:
+Comment CUSTOMER and I'll send you the skill plus access to Claude Code Club.
+
+## 2026-11-19 CLAUDE = PAID ADS MACHINE
+Type: PERSONAL. Creator: [[Duncan]].
+ON SCREEN HOOK:
+Claude just became a paid ads machine
+    Hook 1:
+You can now type one slash command inside Claude and get back every live competitor ad in the Meta ad library, with every hook and creative broken down.
+    Hook 2:
+Someone just built a skill that turns Claude into a paid ads machine, and almost nobody is talking about it yet.
+    Body:
+So here's the deal. You paste your site into Claude, type /ads, and it reads your entire industry inside the Meta ad library. You get every ad they're running against you, the copy, the creative, the hooks, the CTAs, all in one view. Then you plug in your ad account and Claude rewrites your ads off whatever is already converting, with the exact angles, the matching images, and the spots where you should shift budget. One skill drops in three tools, a library scraper, an ad writer, and an image tool for the creative. Pretty freaking cool.
+    CTA:
+Comment ADS and I'll send you the skill plus access to Claude Code Club.
+
+## 2026-11-19 MCP IS DEAD
+Type: PERSONAL. Creator: [[Duncan]].
+ON SCREEN HOOK:
+MCP is officially cooked. Cloudflare just replaced it, runs on a thousand tokens instead of 1.17 million, and the whole industry is quietly adopting it.
+    Hook 1:
+MCP is officially cooked. Cloudflare just replaced it, runs on a thousand tokens instead of 1.17 million, and the whole industry is quietly adopting it.
+    Hook 2:
+Stop building AI agents on MCP. The whole industry is moving to a new standard, and here's exactly how it works.
+    Body:
+So here's the deal. With MCP, your agent fires off tool call one, pings the model, fires off tool call two, pings the model again, and just the tool manifest starts eating your context. Cloudflare hit this running 2,500 endpoints, with the old approach burning 1.17 million tokens on a single workflow. So they built CodeMode. MCP tools get exposed as a TypeScript API, the model writes one script that chains them, and the whole thing runs inside a sandbox. Same job, two tools, around a thousand tokens. Pretty freaking cool. Anthropic is already baking this into Claude under programmatic tool calling, and Block Goose is going the same way. MCP as we knew it is done.
+    CTA:
+Comment LINK and I'll send you Cloudflare's full breakdown plus access to Claude Code Club.
+
 ## 2026-11-17 5 THINGS FABLE CAN DO
 Creator: [[Duncan]].
 On-Screen Hook:
@@ -71,7 +110,7 @@ If you type /zackdfilms into Claude, it can take one wild idea and build a 3D an
     - /graph → skills/graph
     Note: the real commands use hyphens (/zach-d-films, /map-route), so the on-screen text should match.
 
-## 2026-11-17 Claude effects
+## 2026-11-18 Claude effects
 Type: PERSONAL. Creator: [[Duncan]].
 Hook:
 If you type /effects glass widgets into Claude Code, it floats glass panels right next to you like this, and that’s just one of seven effects packed into this one skill.
@@ -123,56 +162,3 @@ Type: PERSONAL. Creator: [[Duncan]].
     RESOURCES:
     - Claude — https://claude.ai
     - Animation Studio skill — https://drive.google.com/file/d/1LBu519PXLAIwf7N1vC6AjX1utaRjhmFc/view?usp=sharing
-
-## 2026-11-11 Mac inside terminal
-Type: PERSONAL. Creator: [[Duncan]].
-HOOKS
-    Hook 1 : 
-    Someone just gave Claude its own Mac, so it can click around all day while you keep working on yours.
-    Hook 3: 
-    Stop letting AI agents drive your actual computer. There’s a free, open-source way to hand Claude a Mac of its own.
-
-#### BODY
-    So here’s the deal. When Claude uses your computer, it takes over your actual cursor, so you’re stuck watching, and any wrong click lands in your real accounts.
-    This runs a separate copy of macOS inside Apple’s own virtual machine, right on your Mac, and Claude drives that one instead. Here’s Claude building a diagram in Freeform, clicking and dragging, and my real mouse hasn’t moved once. Pretty freaking cool.
-    That guest Mac can’t touch your home folder, your clipboard, or your camera. In Claude Code it’s one plugin command, plus a quick one-time setup inside the guest.
-    Heads up, it’s an early release, and the guest is online by default, so launch it in offline mode if that matters to you. It’s called terminal-mac, and it’s free and open source.
-
-#### CTA
-    Comment MAC and I’ll send you the repo plus my setup steps. 
-    Resource:
-- https://github.com/govijr/terminal-mac
-
-## 2026-11-09 Browser for AI Agents
-Type: PERSONAL. Creator: [[Duncan]].
-HOOK 1:
-    Your AI agent is running a browser built for humans, and that’s a big reason websites flag it. There’s a free one built for agents instead.
-    HOOK 2:
-    Most people hand their Claude agent headless Chrome and wonder why it’s slow and gets flagged. This free browser loads pages in a fraction of the time.
-    HOOK 3:
-    Someone built a browser from scratch just for AI agents, and it has already crossed 30,000 stars on GitHub.
-    BODY
-    So here’s the deal. You download one file, and it ships with an MCP server, so you can plug it straight into Claude. It loads a page in about 85 milliseconds where headless Chrome takes around 500. Flip on stealth mode and it randomizes its fingerprint every session. But here’s the part that got me. Cloudflare started its own agent browser by porting this one. Pretty freaking cool. It’s still its own engine, so some pages won’t render exactly like Chrome. It’s called Obscura.
-    CTA
-    Comment STEALTH and I’ll send you the GitHub link plus access to Claude Code Club.
-    Sources
-    - Obscura repo
-    - Cloudflare Kitesurf story
-    - Obscura benchmarks
-
-## 2026-11-06 Claude Motion Graphics library
-Type: PERSONAL. Creator: [[Duncan]].
-HOOK 1:
-    Someone just put over 200 Claude-made motion graphics in one place, and every one comes with the prompt that made it.
-    HOOK 2
-    Most people see a slick Claude animation, pause the video, and try to guess the prompt. There’s a site that just shows it to you.
-    HOOK 3
-    You can now take the prompt behind a viral Claude animation and drop in your own concept, colors and length.
-    BODY
-    So here’s the deal. You open the site, and it’s a grid of over 200 animations made with Claude. Filter by product UI, kinetic type or charts, click the one you like, and the exact prompt is right there with a copy button. Pretty freaking cool. But the part that got me is the customize button. You drop in your own concept, font, colors and length, and it reworks the prompt around your project. To turn it into an MP4, you’ll want to run it in Claude Code. It’s called Prompt Motion.
-    CTA
-    Comment ANIMATE and I’ll send you the link plus access to Claude Code Club.
-    Resources:
-    - Prompt Motion
-    - Toolfolio: What Is Prompt Motion?
-    - Prompt Motion blog: what 230 real examples show

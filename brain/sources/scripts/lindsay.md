@@ -2,6 +2,28 @@
 
 The final scripts of videos posted in the last 60 days, as filmed.
 
+## 2026-11-20 CLAUDE KILLED SOCAIL MEDIA
+Type: PERSONAL. Creator: [[Lindsay]].
+[ONSCREEN HOOK]
+Claude finds your Clients now
+    [HOOK 1]
+Claude can now scroll social media for you and pull every customer you want, all from one skill.
+    [HOOK 2]
+Forget hiring for lead gen — there’s a Claude skill that scrolls social media for you and finds people along with the exact pain they’re complaining about
+    [BODY]
+    Here's how it works. Type slash lead finder in Claude, paste your website link, and it scans thousands of profiles across every social platform. You get the pain they're complaining about, the dream they're chasing, and the objection they're stuck on — in their exact words. Then it finds their email and writes outreach that sounds like you already know them. It installs as one skill, and it breaks into four: a scraper, a profile builder, an email finder and a sender. If you want the skill, Comment "CUSTOMER" below and I'll send it over.
+
+## 2026-11-19 7 DAYS 7 AI CERTIFICATES
+Type: PERSONAL. Creator: [[Lindsay]].
+[HOOK 1]
+    Seven free AI certificates in seven days. You end the week with proof you can actually build with AI.
+    [HOOK 2]
+    Big consulting firms charge thousands to train their teams on AI. You can get the same seven certificates for free in a week.
+    [BODY]
+    Day 1 is Google's Intro to Generative AI — 45 minutes, no code, badge at the end. Day 2 is Anthropic's Building Effective Human-Agent Teams, 45 more minutes, still no code. Day 3 is Building AI Agents with MongoDB, 75 minutes. Day 4 is LangChain Essentials, about an hour, and this is where you start writing a little code. Day 5 is Claude Code 101, 90 minutes, more coding. Day 6 is Hugging Face's Agents Course — you build your own agent and have to pass a final test. Day 7 is Anthropic's MCP Advanced Topics — the toughest one of the seven. Stack them end to end and you've basically done a free week-long AI bootcamp.
+    [CTA]
+    Comment "COURSE" below and I'll send you the links to all seven.
+
 ## 2026-11-18 MOTION SITES
 Type: PERSONAL. Creator: [[Lindsay]].
 [HOOK 1]

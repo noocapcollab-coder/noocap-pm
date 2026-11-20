@@ -1,5 +1,5 @@
 # Nicole - what performs
-Content OS, videos posted since 2026-07-22: 39 posts across platforms, average 519 views. Creator: [[Nicole]].
+Content OS, videos posted since 2026-07-23: 39 posts across platforms, average 519 views. Creator: [[Nicole]].
 ## 2026-10-29 Comment “LOGO” and I’ll send you the exact prompts I used to animate a
 Instagram Short: 1,994 views, 31 likes, 12 comments, 0 shares, 0 saves.
 ## 2026-10-25 AI writing can be grammatically perfect and still feel strangely lifel
@@ -27,7 +27,7 @@ Instagram Short: 704 views, 13 likes, 4 comments, 0 shares, 0 saves.
 ## 2026-10-31 Dm me “TEAM” and I'll send you links to every tool on my list. 👇
 TikTok Short: 445 views, 27 likes, 5 comments, 1 shares, 14 saves. Brand: [[AI tool (agents/workflow platform)]].
 ## 2026-10-26 Think GitHub is only for programmers? Think again. 👀
-TikTok Short: 440 views, 12 likes, 0 comments, 0 shares, 13 saves.
+TikTok Short: 440 views, 12 likes, 0 comments, 0 shares, 13 saves. Brand: [[Bison]].
 ## 2026-10-24 Comment “DRIVE” and I’ll send you the exact prompt I used. 👇
 Instagram Short: 367 views, 3 likes, 2 comments, 0 shares, 0 saves.
 ## 2026-10-25 AI writing can be grammatically perfect and still feel strangely lifel

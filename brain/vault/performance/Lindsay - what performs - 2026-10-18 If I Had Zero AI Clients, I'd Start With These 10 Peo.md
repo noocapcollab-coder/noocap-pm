@@ -1,7 +1,7 @@
 ---
 type: performance
 ---
-YouTube Long: 6,037 views, 97 likes, 10 comments, 0 shares, 0 saves.
+YouTube Long: 6,042 views, 97 likes, 10 comments, 0 shares, 0 saves.
 
 ## Links
 - [[Lindsay - what performs]]

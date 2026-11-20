@@ -2,8 +2,8 @@
 type: deal
 ---
 Stage: Approved
-Last brand reply 2026-11-19, our last reply 2026-11-19.
-AGREED: Rate: [amount]. Deliverables: One new video plus usage rights for the existing Instagram video (https://www.instagram.com/p/DacjigGsxEa/). Usage rights: ad code usage for existing video. Payment terms: not yet. Agreed dates: none.
+Last brand reply 2026-11-20, our last reply 2026-11-20.
+AGREED: Rate: [amount]. Deliverables: One new video plus usage rights for the existing Instagram video (https://www.instagram.com/p/DacjigGsxEa/). Payment terms: not stated. Agreed dates: none.
 
 HISTORY:
 2026-10-26 brand requested new collab and reuse rights
@@ -13,11 +13,13 @@ HISTORY:
 2026-11-16 brand approved script
 2026-11-17 us provided new video draft
 2026-11-18 brand approved revised draft, asked to go live that day and provided UTM link
-2026-11-19 brand asked for billing/agreement details (full name, bank details, tax form)
+2026-11-19 brand requested agreement details
+2026-11-20 us provided full name, bank details, and W-9
+2026-11-20 brand sent agreement for signature
 
-BILLING: not yet
+BILLING: Brand has received billing and banking details; invoice status is not yet.
 
-OPEN NOW: We owe: full name for agreement, bank account details, and W-8 or W-9 form.
+OPEN NOW: We owe: Sign and return the agreement to the brand.
 
 ## Links
 - [[Chris]]

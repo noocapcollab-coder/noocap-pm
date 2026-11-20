@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Unsure how to reply still means the new deal gets opened
+When: The two readers disagree on a creator loop-in or an agreed brand deal that has no deal row for its thread
+Do: Open the deal flagged Needs you, tell the team in #pm-alerts, and write nothing to the brand so Harsh replies himself
+Never: Never drop the email with nothing in Notion just because the PM doesn't know what to reply
+Seen 1 time(s). Source: Harsh correction.
+## A contract the brand sends is always filed, even if the email only says "Please check that"
+When: A brand email in a deal thread carries an agreement or contract PDF, whatever the email text says, even when the email has no text at all
+Do: Save it to CONTRACTS and the deal, send it to WhatsApp, send the fixed contract_ack, and move the deal's next step to the creator reviewing and signing
+Never: Never skip a brand's contract as if it were our own signed copy. Only our side or the creator sends contracts back signed
+Seen 2 time(s). Source: Harsh correction.
 ## Every deal is checked within a couple of heartbeats
 When: The heartbeat's deal emails step runs out of time before the end of the deal list
 Do: Start the next run at the deal the last run stopped before, and show 'N of M deals, next: ...' in the step
@@ -51,7 +61,7 @@ Seen 2 time(s). Source: System check.
 When: A brand on a live deal writes only to the creator's own inbox (no reply-all), so the email has another Gmail thread id than the deal
 Do: Match the deal by the sender's address (the deal's Brand Email) and creator, record the email on that deal, set Last Brand Reply and hand it to Harsh as Waiting on us; link a locked lead to the deal of that contact before any brand-name match. When that email approves the script, act on it as an approval: deal to Script Approved with the date, card to 6- To Film, and the tool-access email in the deal's own thread.
 Never: Leave the deal on 'waiting for the brand' because only the lead was updated, or link a lead to another deal because the brand names overlap (Tripo 3D vs Hyper3D / Tripo 3D)
-Seen 2 time(s). Source: System check.
+Seen 3 time(s). Source: System check.
 ## A new deal in an old thread starts with nothing from the old deal's billing
 When: Opening a deal for a brand's next campaign or a new brief that arrived in an existing thread
 Do: Start it at Inbound (or the stage the new emails really show) with empty invoice fields, its own Deal Memory about the new campaign only, and the brand's newest Message-ID. Billing, invoices and payment chases stay on the old deal.

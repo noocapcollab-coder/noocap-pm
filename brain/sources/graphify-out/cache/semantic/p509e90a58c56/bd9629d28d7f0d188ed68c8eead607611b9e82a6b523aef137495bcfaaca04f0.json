@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_bison", "label": "Bison", "file_type": "document", "source_file": "brands/bison.md"}], "edges": [{"source": "brands_bison", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/bison.md"}], "hyperedges": []}

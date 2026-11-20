@@ -3,7 +3,7 @@ type: creator
 ---
 # Duncan
 
-NOOCAP creator. Brands: [[Riverside]], [[Framia Pro]], [[Fotor]], [[Rocket.new]], [[Riverflow]], [[Sourceful]], [[Upfluence]], [[Pokee AI]], [[Fish Audio]], [[Flova AI]], [[Zeely AI]], [[AI Inspo]], [[Luma AI]], [[Manyfast]], [[CapCut]], [[ElevenLabs]], [[ChatGPT]].
+NOOCAP creator. Brands: [[HubSpot]], [[Riverside]], [[Framia Pro]], [[Fotor]], [[Rocket.new]], [[Riverflow]], [[Sourceful]], [[Upfluence]], [[Pokee AI]], [[Fish Audio]], [[Flova AI]], [[Zeely AI]], [[AI Inspo]], [[Luma AI]], [[Manyfast]], [[CapCut]], [[ElevenLabs]], [[ChatGPT]].
 
 ## Links
 - [[AI Inspo]]
@@ -14,6 +14,7 @@ NOOCAP creator. Brands: [[Riverside]], [[Framia Pro]], [[Fotor]], [[Rocket.new]]
 - [[Flova AI]]
 - [[Fotor]]
 - [[Framia Pro]]
+- [[HubSpot]]
 - [[Luma AI]]
 - [[Manyfast]]
 - [[Pokee AI]]

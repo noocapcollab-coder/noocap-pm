@@ -5,17 +5,21 @@ type: brand
 
 Brand. Works with creators: [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: Runway AI, an AI video generation tool, coming to us through agency House of Marketers.
+WHO: Runway AI is an artificial intelligence video generation and editing tool. They work with us through their agency, House of Marketers.
 
-CONTACTS: Natalie Brown (natalie.brown@houseofmarketers.co.uk) role is campaign management for House of Marketers, signs as Natalie Brown, copy collab@chriscordero.net. Pavinder (payments@houseofmarketers.com) role is Payments Team at House of Marketers, signs as Pavinder. Ed Robotham role is House of Marketers, signs as House of Marketers.
+CONTACTS: Natalie Brown writes from natalie.brown@houseofmarketers.co.uk as Campaign Manager at House of Marketers. Pavinder writes from payments@houseofmarketers.com on the Payments Team. Ed Robotham writes from ed@houseofmarketers.com. Agreements come from agreements@houseofmarketers.legal. Chris Cordero writes from collab@chriscordero.net.
 
-DEALS: Chris Cordero, Chris Cordero IG Collab: Runway - SOW2 / EOY | 921, [amount], Invoiced, due 2026-11-13. Chris Cordero, Chris Cordero IG Collab: Runway - SOW2 / EOY | 921, rate not known yet, Brief Received, live deadline 2026-11-27, contract and script deadline Friday 2026-11-20 12pm ET.
+DEALS:
+Runway AI x Chris | Chris Cordero IG Collab: Runway - SOW2 / EOY | Rate: [amount] | Stage: Invoiced | Due date: 2026-11-13
+Runway AI x Chris | Chris Cordero IG Collab: Runway - SOW2 / EOY | Rate: not known yet | Stage: Script Sent | Deadline for live posting: 2026-11-27
 
-HOW THEY WORK: Brief format uses provided Google Docs script template (make a copy). Script approval requires written concepts sent to Natalie for Runway team approval. Drafts and posting dates are agreed together, all live by 27th November. Promo code CHRIS50 and link to Runway must be added to creator bio. Posting rules: mention Runway early in own voice, no scripted reads or AI voiceovers, say Runway never Runway ML or Runway AI, show Runway on screen with prompts and final outputs, upload reference image of product or logo when prompting, follow Hook to Problem to Solution to CTA structure ending with Comment keyword and I will DM you the code, use current logo from runway.com/brand-guidelines, show Runway helping people work faster or do more never replacing anyone is job. Tool access: fresh Runway MAX plus credits code F58D85A00D0D2836, briefs folder in Google Drive. Billing details: INRO GROUP LIMITED, 10 Arnold Hill Road Arnold Nottingham NG5 6LJ England, tax ID VAT GB344380212, email payments@houseofmarketers.com. Invoices must be sent to payments@houseofmarketers.com; they prefer bank transfer over PayPal due to fees.
+HOW THEY WORK: Deliverables require mentioning Runway early in the creator's own voice with no scripted reads or AI voiceovers. Always say Runway, never Runway ML or Runway AI. Show Runway on screen with prompts and final outputs, uploading a reference image of the product or logo when prompting. Follow a Hook, Problem, Solution, CTA structure ending with Comment keyword and I will DM you the code. Use the current Runway logo from runway.com/brand-guidelines. Show Runway helping people work faster or do more, never replacing anyone's job. Promo code is CHRIS50, which goes in the creator bio along with the Runway link. Written concepts are submitted using their provided Google Doc script template.
 
-WATCH OUT: Do not use incorrect bank details on invoices. Ensure the beneficiary name matches the creator name. Do not say Runway ML or Runway AI. Do not use AI voiceovers or scripted reads.
+WATCH OUT: Bank details on invoices must be verified carefully because a mismatch requires a payment recall process through Wise.
 
-OPEN NOW: We owe: Signed contract and script submission for the new November campaign by Friday 2026-11-20 12pm ET. Waiting on brand: Pavinder to confirm the status of the payment recall for INV-001, and Natalie to respond regarding exclusivity flexibility in Section 8 of the agreement.
+OPEN NOW:
+Waiting on brand: Pavinder to confirm the status of the payment recall for INV-001.
+Waiting on brand: Script approval for the November campaign.
 
 
 ## Links

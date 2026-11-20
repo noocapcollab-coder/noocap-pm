@@ -2,6 +2,20 @@
 
 The final scripts of videos posted in the last 60 days, as filmed.
 
+## 2026-11-18 MAUSBOT
+Type: PERSONAL. Creator: [[Valeri]].
+Hook 1:
+24,000 developers just starred the open-source version of Meta Muse and Grok Bot.
+    Hook 2:
+Somebody just killed Meta Muse and Grok Bot with one free repo. And it’s already at 24k stars on GitHub.
+    Body:
+    So basically Cue by Manus gives every agent its own computer, but it’s closed and invite-only.
+    But here’s the crazy part — this one does the same thing on the Claude subscription you already have, with no new accounts.
+    Each bot gets its own computer and its own memory, and it plugs into 500+ apps through Composio.
+    Tell it to find trending AI tools every morning and it literally runs the research on a schedule. Boom.
+    It’s called OpenMausBot, which it’s basically your own team of AI bots inside a chat app.
+    Comment MAUS and I’ll DM you the repo. Let’s go.
+
 ## 2026-11-16 Elephant goldfish model
 Type: PERSONAL. Creator: [[Valeri]].
 Hook 1:
@@ -54,6 +68,23 @@ Hook A
     CTA: DM me PHONE and I’ll send the setup. Let’s go.
     Sources:
     - lxe/phoneuse
+
+## 2026-11-19 CLAUDE PROMPT FOR SEO
+Type: PERSONAL. Creator: [[Valeri]].
+On-Screen Hook for both Hook 1 and Hook 2:
+    This Claude prompt killed SEO agencies 🤯
+    Hook 1:
+    Someone just open-sourced a Claude prompt that replaces a 2,000-dollar SEO agency.
+    Hook 2:
+If you still pay an SEO agency [amount] a month, this Claude prompt replaces it.
+    Body:
+    And the post sharing it already did over 2 million views on X.
+    So basically most sites get stuck on page 2, which it’s literally where nobody clicks.
+    But here’s the crazy part, every morning this prompt has Claude audit every page and fix what’s broken.
+    Then it pulls your page-2 rankings and rewrites them to climb. Boom.
+    Most businesses pay an agency for this every month, and you’re getting it for the cost of a Claude subscription.
+    CTA:
+Comment CLIMB and I’ll DM you the prompt. Let’s go.
 
 ## 2026-11-17 FREE ALT FOR PAID APPS
 Type: PERSONAL. Creator: [[Valeri]].
@@ -193,61 +224,3 @@ Hook A:
     Sources:
     - GitHub – google-research/timesfm
     - Google Workspace Updates – Forecast data in Connected Sheets
-
-## 2026-11-05 Browser for AI Agents
-Creator: [[Valeri]].
-Hook A: 
-    Someone built a browser just for AI agents, and Cloudflare already built on it.
-    Hook B: 
-    Cloudflare blocks bots for a living, so why did they build on this browser?
-    Body:
-    So basically most AI agents browse the web on Chrome, which leaves obvious bot fingerprints, so websites spot them instantly.
-    Then someone rebuilt a browser from scratch in Rust with zero Chromium inside, and it randomizes a fresh fingerprint every single session.
-    And the numbers are absolutely insane, because it runs on almost seven times less memory than Chrome and loads pages in 85 milliseconds. Boom.
-    But here’s the crazy part — Cloudflare literally built its own agent browser by porting this one, and their whole job is blocking bots.
-    We’re testing it as an MCP server on our chatbot builds, where the agent reads the client’s whole website before anything else.
-    Most teams still drag full Chrome into every task, while this one is completely free and open source with over 30,000 stars on GitHub.
-    CTA: 
-    DM me STEALTH and I’ll send you the setup. Let’s go.
-    RESOURCE:
-- https://github.com/h4ckf0r0day/obscura
-
-## 2026-11-06 MeshLLM
-Creator: [[Valeri]].
-Hook A: 
-    Somebody just made paying for claude AI completely optional.
-    Hook B: 
-    OpenAI won’t love this, because your old office laptops can now run AI together.
-
-### Body:
-    So basically your laptop has 16 gigs of memory, and the model you actually want needs around 40.
-    The way this works is every computer you own joins one private network, and your question goes straight to whichever machine already has the model loaded.
-    But here’s the crazy part — when the model’s too big for any one machine, it literally spreads the layers across the whole group. Boom.
-    We’re testing it on our voice agent builds so client call data never touches a cloud API.
-    It’s called Mesh LLM, completely free and open source with 3,600 stars on GitHub.
-
-### CTA: 
-    DM me POOL and I’ll send all three commands. Let’s go.
-    Sources:
-    - GitHub – Mesh-LLM/mesh-llm
-    - GitTrend – mesh-llm
-    - EveryDev – Mesh LLM
-
-## 2026-11-05 LEAKED ANTHROPIC MODEL
-Type: PERSONAL. Creator: [[Valeri]].
-Hook 1:
-A 7.7-terabyte 'leaked Anthropic model' just hit Hugging Face, and it's a complete fraud.
-    Hook 2:
-Someone just leaked a 14-trillion-parameter Claude, or at least that’s what they want you to think.
-    Body:
-    So basically an anonymous account uploaded “Numbat” to Hugging Face, using a real Anthropic code name, and over 5,800 people hit download.
-    But here’s the crazy part.
-    Someone at Hugging Face seeded a random number generator with each tensor’s name, and 43 tensors came out bit for bit identical, which is absolutely insane because real trained weights literally can’t do that.
-    And the loader wants you to run its own Python code, so obviously, don’t.
-    Most people saw “Claude leak” and hit download, but we check before we touch anything.
-    CTA:
-DM me LEAK and I'll send you the breakdown. Let's go.
-    Reference links:
-- https://cellcog.ai/blog/mythos-leak-hugging-face-fake/
-    - The Hugging Face discussion “It is FAKE”: https://huggingface.co/burner22/numbat/discussions/11
-    - The X thread with the 43-tensor finding and the 6.8T vs 14T count: https://x.com/IntCyberDigest/status/2116967760949383478

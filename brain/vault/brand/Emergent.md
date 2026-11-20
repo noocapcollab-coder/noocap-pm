@@ -5,27 +5,24 @@ type: brand
 
 Brand. Works with creators: [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: Emergent makes an AI app builder. They come to us directly.
+WHO: Emergent, an AI app builder and assistant tool coming to us directly.
 
 CONTACTS:
 Aditi Deepak, aditi.d@emergent.sh, Brand
-Madhav Bihani, madhav.b@emergent.sh, Brand
-Kritika Bhatia, kritika@emergent.sh, Brand Manager, signs
-Naman Khandelwal, naman@emergent.sh, Creator Partnerships, main point of contact, signs
-Karan Varyani, karan.v@emergent.sh, Brand, signs, copy Gautam Mahajan
-Gautam Mahajan, gautam@emergent.sh, Brand, copy Karan Varyani
+Madhav Bihani, madhav.b@emergent.sh, Team
+Kritika Bhatia, kritika@emergent.sh, Brand Manager
+Naman Khandelwal, naman@emergent.sh, Creator Partnerships / main POC for future collabs
+Karan Varyani, karan.v@emergent.sh, Creator Partnerships / signs, CC: gautam@emergent.sh
+Gautam Mahajan, gautam@emergent.sh, Team / must be copied on relevant emails
 
 DEALS:
-Chris | One new video plus usage rights for the existing Instagram video (https://www.instagram.com/p/DacjigGsxEa/) ([amount]) | Approved | Agreed: 2026-11-02
+Chris | One new video plus usage rights for the existing Instagram video (https://www.instagram.com/p/DacjigGsxEa/) | [amount] | Approved | Agreed dates: none.
 
-HOW THEY WORK:
-They share briefs via Google Docs or email. Scripts go through review and edits. Video drafts are shared via Frame.io links (f.io or next.frame.io). They require brand name mentions (Emergent) early in the video, specific text overlays or wordmarks, and specific UTM links for CTAs and bio/DM automation. They requested tool access (Pro version) for creators/tools.
+HOW THEY WORK: Scripts require review and approval. Video drafts are reviewed via Frame.io links. UTM links are provided by the brand for tracking or DM automation/link in bio.
 
-WATCH OUT:
-Ad codes must be correct; previously wrong codes or posts already boosted caused delays. Ensure ad codes are generated properly before sharing.
+WATCH OUT: Ad codes may fail or be unavailable if a post is already running as a boosted ad on the creator's end.
 
-OPEN NOW:
-We owe Karan Varyani and the Emergent team the full name for the agreement, bank account details, and the W-8 or W-9 form.
+OPEN NOW: We owe: Sign and return the agreement to the brand.
 
 
 ## Links

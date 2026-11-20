@@ -14,6 +14,30 @@ So you hand the GitHub link to Claude Code and ask it to do the install, and it 
 So comment "LOCAL" and I'll get you the repo along with the prompt I'd give Claude Code to install it.
     - Sub-page: [[OpenJarvis: Stanford's Local AI Assistant on Your Laptop (Repo + Claude Code Install Prompt)]]
 
+## 2026-11-19 MCP IS DEAD
+Type: PERSONAL. Creator: [[David Iya]].
+ONSCREEN HOOK:
+Cloudflare and Anthropic quietly changed how agents use MCP
+    Hook 1:
+Cloudflare basically killed the way most of us have been using MCP, because they fit 2,500 endpoints into about 1,000 tokens.
+    Hook 2:
+Forget MCP as you know it, because companies like Cloudflare and Anthropic are moving to a setup where the model writes code to call tools instead of calling them one by one.
+    Body:
+So the problem is really two-fold, because every MCP call has to go out and return to the model before the next one starts, and once you've connected hundreds of tools the list by itself eats most of your context. Cloudflare's fix is called Code Mode, where tools get rewritten as a TypeScript API so the model can write one small script that chains the calls in a sandbox, and only the final answer comes back. It makes sense because these models have seen way more real code than tool calls. Anthropic's version is called programmatic tool calling, which is why I think the one-call-at-a-time way of using MCP is probably on its way out.
+    CTA:
+So comment "CODEMODE" and I'll get you Cloudflare's write-up and how I'd think about it in Claude Code.
+
+## 2026-11-19 HYPIT
+Type: PERSONAL. Creator: [[David Iya]].
+Hook 1:
+Somebody just dropped a repo that lets Claude Code take a video that already went viral and turn it into a template you fill with your own stuff.
+    Hook 2:
+This repo hit number one on GitHub, and it can turn Claude Code into a content machine that rebuilds videos that already went viral.
+    Body:
+So there are really two repos here, and number one is the template one, where you give Claude Code a video that's already doing well and it breaks it down into a structure you fill with your own stuff. Then the second is HyperFrames, which builds the video, so you hand it your audio, either a voice clone or your own recording, and if you've got a mascot it can use Rhubarb to sync the mouth to your words. And then you give it your brand assets and talk through how it should play out with voice-to-text, which honestly feels a lot like briefing an editor.
+    CTA:
+So comment "TEMPLATE" and I'll get you both repos and the order I'd run them in.
+
 ## 2026-11-17 TOP 5 PLUGINS FOR CLAUDE
 Type: PERSONAL. Creator: [[David Iya]].
 Hook 1:
@@ -148,37 +172,3 @@ Hook 1:
     - ASD-STE100 official site: https://www.asd-ste100.org/STE_faq.html
     - Claude Code: https://claude.com/product/claude-code
     - Sub-page: [[Karpathy's 4 Ways to Make AI Explain Things Better (All 4 Prompts + Setup)]]
-
-## 2026-11-12 Zero Dollar Jarvis on Laptop
-Type: PERSONAL. Creator: [[David Iya]].
-Hook 1:
-    Someone built a Jarvis-style voice assistant that runs off your existing Claude subscription, so you just talk to your laptop and it handles the browser for you.
-    Hook 2:
-    Everyone’s posting a Jarvis clip right now, and it’s really just one repo and Claude Code.
-    Body:
-    So you don’t need to know any code for this, because Claude Code does the installing for you once you paste in the GitHub link. Then you open Chrome, click initialize and say “hey Jarvis,” and it comes online and starts listening. You can ask it to look things up or put on lo-fi while you work, and it’ll even pull screenshots over from your phone. If you connect Gmail it’ll read your inbox to you, though it always asks before it sends or deletes anything. The code is on GitHub and it runs on the Claude plan you’re already paying for, so you don’t need an API key and there’s no extra bill.
-    CTA:
-    Comment "JARVIS" and I'll get you the GitHub repo along with the exact prompt I'd paste into Claude Code.
-    NOTES FOR REVIEW: Dropped the reference's Tony Stark lines and "last one still typing" close to avoid copying. CTA keyword changed from the reference's "hey" to "JARVIS". Please confirm the repo link, that it runs on a standard Claude plan with no API key, and the phone screenshot feature before filming. Voice modeled on the 7-day posted set (6 scripts).
-    SOURCES
-    - Jarvis (repo, features, read-only gate, requirements): https://github.com/adewaskar/jarvis
-    - Claude Code: https://claude.com/product/claude-code
-    - Sub-page: [[Build Your Own Jarvis Voice Assistant With Claude Code (Repo + Paste-In Prompt)]]
-
-## 2026-11-11 Claude Cartoon
-Type: PERSONAL. Creator: [[David Iya]].
-Hook 2:
-    These animated cartoon pages are some of the fastest-growing pages on Instagram and YouTube right now, and you can make one yourself inside Claude Code.
-    Hook 3:
-    Someone broke down the formula behind those trending animated cartoon pages and packed it into a free Claude skill.
-    Body:
-    These pages are blowing up because of a formula, and this skill decoded it from four of those channels: a quick cold open, the premise, the fun part, and then a twist built on one real fact, at around twenty-seven cuts a minute.
-    You type the idea, and Claude writes the script and voices it, then shows you a storyboard before anything gets animated. Since every frame is drawn in code, the character never changes between shots.
-    It’s called What If Animation, and Claude Animated Shorts does the longer story version, both free on GitHub.
-    CTA:
-    Comment “CARTOON” and I’ll send you both repos and the setup.
-    SOURCES
-    - Claude Animated Shorts: https://github.com/mromidev/claude-animated-shorts
-    - What If Animation: https://github.com/kelano86/what-if-animation
-    - Claude Code: https://claude.com/product/claude-code
-    - Sub-page: [[Make Viral Animated Cartoon Shorts in Claude Code: 2 Repos + Full Setup]]
