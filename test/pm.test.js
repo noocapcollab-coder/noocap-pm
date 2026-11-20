@@ -3057,3 +3057,15 @@ test('a contract in a creator\'s own inbox reaches WhatsApp too, once (Noxinflue
   const { contractWhatsApp } = await import('../lib/inbox.js');
   assert.equal(typeof contractWhatsApp, 'function');
 });
+
+test('a signed contract naming the deal\'s creator, for a contract the brand is waiting on, needs no brand name (Luma AI x Lindsay, Nov 21)', async () => {
+  const { contractChecks } = await import('../lib/contracts.js');
+  const deal = { id: 'd1', brand: 'Luma AI', creator: 'Lindsay', brandEmail: 'upendra@njagency.co', threadId: 't1', stage: 'Signed' };
+  const text = 'CONTENT CREATION AGREEMENT between NJ AGENCY and Lindsay Gonzales ("Creator") promoting Luma';
+  assert.deepEqual(contractChecks(deal, { caption: 'here you go', filename: 'Lindsay_Gonzales_Content_Creation_Agreement (signed).pdf', text, openRows: [{ dealIds: ['d1'] }] }), []);
+  // no contract waiting from the brand: still asks
+  assert.ok(contractChecks(deal, { caption: 'here you go', filename: 'x.pdf', text, openRows: [] }).length > 0);
+  // the text names another creator: still a hard stop
+  const chrisDeal = { ...deal, creator: 'Chris' };
+  assert.ok(contractChecks(chrisDeal, { caption: 'here you go', filename: 'x.pdf', text, openRows: [{ dealIds: ['d1'] }] }).some((w) => /contract is for/.test(w)));
+});
