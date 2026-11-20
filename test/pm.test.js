@@ -2924,3 +2924,21 @@ test('the inbox and the owed sweep share one "already asked" mark per brand emai
   // late evening UTC is the next day in IST: both sides use the IST day
   assert.equal(owedMark(id, istStamp(Date.parse('2026-11-20T20:00:00Z'))), `${id} 2026-11-21`);
 });
+
+// System check Nov 20 (Manyfast x Duncan, paid 100% upfront): Seungjoo's script notes were made into an UPDATED SCRIPT
+// on the card, back at 5, but the revised script never went: a Paid deal with a Script Sent Date left the script step.
+test('a deal paid upfront stays in the script step until its video posts, so a revised script goes', async () => {
+  const { upfrontScriptDeal } = await import('../lib/heartbeat.js');
+  const deal = { stage: 'Paid', linkedVideo: 'https://notion.so/x', paidDate: '2026-11-18', scriptSent: '2026-11-20', postedLinks: '' };
+  assert.equal(upfrontScriptDeal(deal, 2), true);
+  assert.equal(upfrontScriptDeal({ ...deal, postedLinks: 'https://instagram.com/p/1' }, 2), false);
+  assert.equal(upfrontScriptDeal({ ...deal, stage: 'Invoiced' }, 2), false);
+  assert.equal(upfrontScriptDeal(deal, 45), false);
+});
+test('the script PDF starts at the newest "updated script" heading, never sending the old and new script together', async () => {
+  const { scriptStart } = await import('../lib/pdf.js');
+  assert.equal(scriptStart([null, 'Script', null, null, 'UPDATED SCRIPT:', null]), 4);
+  assert.equal(scriptStart(['📋 Brief from Manyfast', 'Script', null]), 1);
+  assert.equal(scriptStart(['✅ Approved script (2026-11-20)', 'Script', null]), 0);
+  assert.equal(scriptStart([null, null]), -1);
+});
