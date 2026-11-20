@@ -137,6 +137,32 @@ export default async function handler(req, res) {
       return res.status(200).json({ days, drafts: rows.length, table, spend, unsent: unsent.slice(0, 250) });
     } catch (e) { return res.status(500).json({ error: e.message }); }
   }
+  // ?aiuse=30: read only. Every AGENT LOG row that paid for AI in the last N days, grouped by what happened (event type
+  // and outcome), with calls, tokens and cost, so we can see which AI reads led nowhere (Harsh, Nov 20)
+  if (req.query?.aiuse) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const { notion, plain } = await import('../lib/notion.js'); const { DS } = await import('../lib/tools.js');
+      const days = Math.min(70, Number(req.query.aiuse) || 30);
+      const since = new Date(Date.now() - days * 864e5).toISOString();
+      const groups = {}; let cursor; let n = 0; const t0 = Date.now();
+      do {
+        const r = await notion('POST', `/data_sources/${DS.agentLog}/query`, { page_size: 100, ...(cursor ? { start_cursor: cursor } : {}), filter: { and: [{ timestamp: 'created_time', created_time: { on_or_after: since } }, { property: 'Tokens In', number: { greater_than: 0 } }] } });
+        for (const p of r.results || []) {
+          n++;
+          const g = (k) => plain(p.properties?.[k]) || '';
+          const ev = g('Event').replace(/[:·].*$/, '').replace(/\b(19|20)\d\d-\d\d-\d\d\b/g, '').trim().slice(0, 50);
+          const key = `${ev} | ${g('Outcome')} | ${g('Source')}`;
+          const o = (groups[key] ||= { calls: 0, tin: 0, tout: 0, usd: 0, month: {} });
+          o.calls++; o.tin += Number(g('Tokens In')) || 0; o.tout += Number(g('Tokens Out')) || 0; o.usd += Number(g('Cost USD')) || 0;
+          const m = p.created_time.slice(0, 7); o.month[m] = (o.month[m] || 0) + 1;
+        }
+        cursor = r.has_more ? r.next_cursor : null;
+      } while (cursor && Date.now() - t0 < 240000);
+      const rows = Object.entries(groups).map(([k, v]) => ({ k, ...v, usd: Math.round(v.usd * 1000) / 1000 })).sort((a, b) => b.usd - a.usd);
+      return res.status(200).json({ days, rows: n, complete: !cursor, groups: rows.slice(0, 120) });
+    } catch (e) { return res.status(500).json({ error: e.message }); }
+  }
   // ?statusopts=1: each creator board's Status options with colour and group (read only), for adding a new status
   if (req.query?.statusopts) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
