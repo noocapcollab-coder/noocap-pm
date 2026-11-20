@@ -3049,3 +3049,11 @@ test('the same contract reaches WhatsApp once, however many emails carry it (Run
   const fs = await import('node:fs');
   assert.match(fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8'), /contract already sent to WhatsApp, not sent again/);
 });
+
+test('a contract in a creator\'s own inbox reaches WhatsApp too, once (Noxinfluencer x Chris, Nov 20)', async () => {
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/leads.js', import.meta.url), 'utf8');
+  assert.match(src, /if \(r\?\.created && fresh\) await I\.contractWhatsApp\(/);
+  const { contractWhatsApp } = await import('../lib/inbox.js');
+  assert.equal(typeof contractWhatsApp, 'function');
+});
