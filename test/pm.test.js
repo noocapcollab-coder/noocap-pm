@@ -2975,3 +2975,14 @@ test('a brand question is asked on WhatsApp, never answered by an AI draft first
   assert.doesNotMatch(i, /Needs you: \$\{deal\.brand\} asked: /);
   assert.match(i, /question asked on WhatsApp/);
 });
+
+test('a loop-in reply asks only for what the thread is still missing (Topview x Lindsay, Nov 20)', async () => {
+  const { handoverAckText, handoverHas } = await import('../lib/inbox.js');
+  const has = handoverHas({ text: "Here's the brief with more details: https://app.notion.com/p/topviewguide/IG-TT-Collaboration-Brief-x" });
+  assert.deepEqual(has, { briefShared: true, contractShared: false });
+  const t = handoverAckText({ name: 'Limsuwern', brand: 'Topview AI', creator: 'Lindsay', ...has });
+  assert.match(t, /Could you share the contract in this thread\?/);
+  assert.doesNotMatch(t, /brief and the contract/);
+  assert.match(handoverAckText({ brand: 'X', creator: 'Chris' }), /share the brief and the contract/);
+  assert.equal(handoverHas({ text: 'hi', attachments: [{ filename: 'Agreement.pdf' }] }).contractShared, true);
+});
