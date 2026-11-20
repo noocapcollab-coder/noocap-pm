@@ -2957,3 +2957,21 @@ test('only one PM copy wins an alert claim: earliest row, ties to the smallest i
   assert.equal(winnerOf([{ id: 'a', created_time: t, in_trash: true }, { id: 'b', created_time: t }]), 'b');
   assert.equal(winnerOf([]), null);
 });
+
+test('a dropped draft is not rewritten until a new email lands (Harsh, Nov 20: Manyfast invoice drafted 3 nights)', async () => {
+  const { droppedBlocks } = await import('../lib/outbox.js');
+  const rej = { created_time: '2026-11-19T00:17:00.000Z', last_edited_time: '2026-11-19T00:20:00.000Z', properties: { Error: { rich_text: [{ plain_text: 'Auto-rejected by system check: repeats' }] } } };
+  const now = Date.parse('2026-11-20T00:17:00.000Z');
+  assert.equal(droppedBlocks([rej], { lastEmail: ['2026-11-17T10:00:00+05:30', null], now }), true);
+  assert.equal(droppedBlocks([rej], { lastEmail: ['2026-11-19T12:00:00+05:30'], now }), false);
+  assert.equal(droppedBlocks([rej], { now }), false); // old rule without email dates: auto-reject blocks 24h only
+});
+
+test('a brand question is asked on WhatsApp, never answered by an AI draft first (Harsh, Nov 20)', async () => {
+  const fs = await import('node:fs');
+  const b = fs.readFileSync(new URL('../lib/briefs.js', import.meta.url), 'utf8');
+  const i = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  assert.doesNotMatch(b, /Check the answer\$\{/);
+  assert.doesNotMatch(i, /Needs you: \$\{deal\.brand\} asked: /);
+  assert.match(i, /question asked on WhatsApp/);
+});
