@@ -3032,3 +3032,9 @@ test('a brand-new creator-inbox email is sorted by Claude, lead-thread follow-up
   assert.equal(routeOf(leadJob({ known: true })), 'gemini-only');
   assert.equal(routeOf(leadJob({ ours: true })), 'gemini-only');
 });
+
+test('while Claude is paused every AI call goes straight to Gemini (Harsh, Nov 20: Gemini only until Dec 1)', async () => {
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/gemini.js', import.meta.url), 'utf8');
+  assert.match(src, /freeOnly\.getStore\(\) \|\| anthropicPaused\(\)\) && hasGemini\(\)/);
+});
