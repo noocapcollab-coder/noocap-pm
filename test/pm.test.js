@@ -2946,6 +2946,14 @@ test('the script PDF starts at the newest "updated script" heading, never sendin
 test('the Gemini fallback notice checks the shared log, not just memory (Harsh, Nov 20: #pm-alerts spam)', async () => {
   const fs = await import('node:fs');
   const src = fs.readFileSync(new URL('../lib/claude.js', import.meta.url), 'utf8');
-  assert.match(src, /if \(await noticeRecently\(\)\) return;/);
-  assert.match(src, /import\('\.\/tools\.js'\)/);
+  assert.match(src, /if \(!\(await claimOnce\(NOTICE_EVENT, 6/);
+});
+
+test('only one PM copy wins an alert claim: earliest row, ties to the smallest id (Harsh, Nov 20: 5 notices at once)', async () => {
+  const { winnerOf } = await import('../lib/briefs.js');
+  const t = '2026-11-20T10:12:00.000Z';
+  assert.equal(winnerOf([{ id: 'c', created_time: t }, { id: 'a', created_time: t }, { id: 'b', created_time: t }]), 'a');
+  assert.equal(winnerOf([{ id: 'a', created_time: '2026-11-20T10:13:00.000Z' }, { id: 'z', created_time: t }]), 'z');
+  assert.equal(winnerOf([{ id: 'a', created_time: t, in_trash: true }, { id: 'b', created_time: t }]), 'b');
+  assert.equal(winnerOf([]), null);
 });
