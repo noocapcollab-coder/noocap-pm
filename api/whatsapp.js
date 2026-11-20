@@ -583,7 +583,14 @@ export function labelNamesOtherBrand(text, brand) {
   return false;
 }
 const teamNotes = (text = '') => /^\s*[\w .&'-]{2,40}\s+(x|×)\s+[\w .&'-]{2,40}\s+(changes|fixes|edits|feedback|notes|revisions?)\s*$/im.test(String(text)) || looksLikeCutNotesSync(text);
+// Harsh's "Hi" (sent to open the WhatsApp window) is a greeting, never the answer to the question above it (CapCut x
+// Lindsay, Nov 20: "Hi" 2 minutes after the GTA 6 brief ask became "we are open to switching ... and can make that work
+// for this weekend" to Sophie, a decision nobody gave; night system check, rule 13)
+export function isGreeting(text) {
+  return /^\s*(hi+|hey+|hello+|helo|hiya|yo|gm|good (morning|afternoon|evening|night))[\s.!,]*(harsh|pm|there|team)?[\s.!👋]*$/i.test(String(text || ''));
+}
 export function infoAskFor(st, replyTo, text = '') {
+  if (!replyTo && isGreeting(text)) return null;
   if (replyTo?.meta === 'info-ask' && replyTo.infoAsk && !replyTo.resolved) return replyTo;
   const forOther = (x) => namesOtherCreator(text, x?.infoAsk?.creator) || labelNamesOtherBrand(text, x?.infoAsk?.brand);
   const open = [...st.messages].reverse().filter((x) => x.role === 'assistant' && x.meta === 'info-ask' && x.infoAsk && !x.resolved && Date.now() - Date.parse(x.at) < 3 * 864e5);
@@ -601,7 +608,7 @@ export function infoAskFor(st, replyTo, text = '') {
 // A bare "Okay" / "ok" / "noted" holds nothing the brand asked for (Vmake AI x Lindsay, Nov 19: Harsh's "Okay" 12 minutes
 // after the contract ask became "we'll send over the signed contract along with our payment details separately")
 export function isBareAck(text) {
-  return /^\s*(ok(ay)?|k|kk|okk+|sure|fine|noted|got it|cool|alright|thanks|thank you|ty|yes ok|👍|👌|✅)[\s.!]*$/i.test(String(text || ''));
+  return isGreeting(text) || /^\s*(ok(ay)?|k|kk|okk+|sure|fine|noted|got it|cool|alright|thanks|thank you|ty|yes ok|👍|👌|✅)[\s.!]*$/i.test(String(text || ''));
 }
 async function answerInfoAsk(st, msg, text, file) {
   const a = msg.infoAsk;
