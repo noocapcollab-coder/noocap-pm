@@ -2986,3 +2986,14 @@ test('a loop-in reply asks only for what the thread is still missing (Topview x 
   assert.match(handoverAckText({ brand: 'X', creator: 'Chris' }), /share the brief and the contract/);
   assert.equal(handoverHas({ text: 'hi', attachments: [{ filename: 'Agreement.pdf' }] }).contractShared, true);
 });
+
+test('a held loop-in still gets its deal opened, never a reply (Harsh, Nov 20: Topview x Lindsay)', async () => {
+  const { heldNeedsDeal } = await import('../lib/inbox.js');
+  const email = { threadId: 't1', from: 'collab <collab@automateaiconsulting.com>', to: 'limsuwern@topview.ai', cc: 'noocapcollab@gmail.com', text: 'We are adding noocapcollab@gmail.com in the thread. My team can take it over from here.' };
+  const x = { from_role: 'creator', brand: 'Topview AI' };
+  assert.equal(heldNeedsDeal(email, x, { threadId: 'other' }), true); // matched to Chris's old Topview deal: still opens Lindsay's
+  assert.equal(heldNeedsDeal(email, x, { threadId: 't1' }), false); // this thread already has its deal
+  assert.equal(heldNeedsDeal(email, { from_role: 'brand', brand: 'X', deal_stage: 'Negotiating' }, null), false); // leads stay with management
+  const fs = await import('node:fs');
+  assert.match(fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8'), /I wrote nothing to the brand/);
+});
