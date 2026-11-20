@@ -2997,3 +2997,30 @@ test('a held loop-in still gets its deal opened, never a reply (Harsh, Nov 20: T
   const fs = await import('node:fs');
   assert.match(fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8'), /I wrote nothing to the brand/);
 });
+
+test('cheap jobs run on Gemini light models, brand emails stay on Claude (Harsh, Nov 20)', async () => {
+  const { routeOf } = await import('../lib/claude.js');
+  const { LITE_CHAIN } = await import('../lib/gemini.js');
+  assert.equal(routeOf('inbox'), 'claude');
+  assert.equal(routeOf('drafts'), 'claude');
+  assert.equal(routeOf('whatsapp'), 'claude');
+  assert.equal(routeOf('leads'), 'gemini-only');
+  assert.equal(routeOf('memory'), 'gemini-only');
+  assert.equal(routeOf('wiki'), 'gemini-only');
+  assert.equal(routeOf('second-read'), 'gemini-then-claude');
+  assert.ok(LITE_CHAIN().every((m) => /lite/.test(m)), 'cheap jobs never use the Flash quota kept for Claude\'s backup');
+});
+
+test('an email over 36 hours old on a tracked deal is recorded without AI', async () => {
+  const { oldTrackedEmail } = await import('../lib/inbox.js');
+  const now = Date.parse('2026-11-20T12:00:00Z');
+  const deals = [{ id: 'd', threadId: 't1', brand: 'B' }];
+  assert.equal(oldTrackedEmail({ threadId: 't1', date: '2026-11-18T10:00:00Z' }, deals, now)?.id, 'd');
+  assert.equal(oldTrackedEmail({ threadId: 't1', date: '2026-11-20T10:00:00Z' }, deals, now), null);
+  assert.equal(oldTrackedEmail({ threadId: 't9', date: '2026-11-18T10:00:00Z' }, deals, now), null);
+});
+
+test('a lead email waiting on Gemini\'s free quota is retried, never given up on', async () => {
+  const { AI_DOWN } = await import('../api/leads.js');
+  assert.match("leads runs on Gemini's free tier and it is unavailable now (Gemini 429 (gemini-flash-lite-latest): quota); retried later", AI_DOWN);
+});
