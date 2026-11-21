@@ -172,6 +172,12 @@ export default async function handler(req, res) {
       return res.status(200).json((r.results || []).map((p) => ({ id: p.id, at: p.created_time, kind: plain(p.properties?.Kind), subject: plain(p.properties?.Subject), to: plain(p.properties?.To), attach: plain(p.properties?.Attach), why: String(plain(p.properties?.Why) || '').slice(0, 200) })));
     } catch (e) { return res.status(500).json({ error: e.message }); }
   }
+  // ?harshedit=1 (&dry=1): send TO EDIT rows on Harsh's own board to their editor now (lib/harshboard.js)
+  if (req.query?.harshedit) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const H = await import('../lib/harshboard.js'); return res.status(200).json({ sent: await H.harshBoardToEditors({ dry: req.query.dry === '1' }) }); }
+    catch (e) { return res.status(500).json({ error: e.message }); }
+  }
   // ?statusopts=1: each creator board's Status options with colour and group (read only), for adding a new status
   if (req.query?.statusopts) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
