@@ -3105,3 +3105,15 @@ test('a 7- In Edit row with an editor on Harsh\'s own board is sent to the edito
   assert.equal(wantsEditor(row('7- In Edit', null)), false);
   assert.equal(wantsEditor(row('4- Script Draft', 'PRABAL')), false);
 });
+
+test('preflight holds made-up creator details and auto emails carrying legal details (Topview x Lindsay, Nov 21)', async () => {
+  const { preflight } = await import('../lib/preflight.js');
+  const body = "Hi Su Wern,\n\nAttached is the script for the campaign.\n\nRegarding the agreement, here are Lindsay's details:\n\nBusiness Name: Lindsay Creative LLC\nLegal Name: Lindsay Smith\nLegal Address: 123 Maple Street, Suite 400, Los Angeles, CA 90001\nContact Email: lindsay@noocap.com\n\nBest,\nLindsay's Team";
+  const r = preflight({ kind: 'Script', to: 'limsuwern@topview.ai', replyTo: '<a@topview.ai>', threadId: '1a1f8b27a70d5c97', subject: 'Re: Collaboration: Topview AI', body }, null);
+  assert.ok(r.hold.length, 'the made-up details must hold the email');
+  const real = "Hi Su Wern,\n\nHere are the details for the agreement.\n\nLegal Name: Lindsay Gonzales\nContact Email: lindsay@automateaiconsulting.com\n\nBest,\nLindsay's Team";
+  assert.ok(preflight({ kind: 'Script', to: 'x@b.com', replyTo: '<a@b.c>', subject: 'Re: x', body: real }, null).hold.length, 'a script email never carries legal details');
+  assert.equal(preflight({ kind: 'Other', to: 'x@b.com', replyTo: '<a@b.c>', subject: 'Re: x', body: real }, null).hold.length, 0, 'a reply made from Harsh can carry real details');
+  assert.equal(preflight({ kind: 'Script', to: 'x@b.com', replyTo: '<a@b.c>', subject: 'Re: x', body: 'Hi Su Wern,\n\nAttached is the script for the campaign. Let us know your feedback.\n\nBest,\nLindsay\'s Team' }, null).hold.length, 0);
+});
+
