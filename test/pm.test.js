@@ -3053,7 +3053,9 @@ test('the same contract reaches WhatsApp once, however many emails carry it (Run
 test('a contract in a creator\'s own inbox reaches WhatsApp too, once (Noxinfluencer x Chris, Nov 20)', async () => {
   const fs = await import('node:fs');
   const src = fs.readFileSync(new URL('../lib/leads.js', import.meta.url), 'utf8');
-  assert.match(src, /if \(r\?\.created && fresh\) await I\.contractWhatsApp\(/);
+  assert.match(src, /else if \(CREATOR_INBOX_CONTRACTS\) \{/);
+  const { CREATOR_INBOX_CONTRACTS } = await import('../lib/leads.js');
+  assert.equal(CREATOR_INBOX_CONTRACTS, false, 'Harsh, Nov 21: only noocapcollab contracts are shared for now');
   const { contractWhatsApp } = await import('../lib/inbox.js');
   assert.equal(typeof contractWhatsApp, 'function');
 });
