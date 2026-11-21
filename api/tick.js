@@ -163,6 +163,15 @@ export default async function handler(req, res) {
       return res.status(200).json({ days, rows: n, complete: !cursor, groups: rows.slice(0, 120) });
     } catch (e) { return res.status(500).json({ error: e.message }); }
   }
+  // ?drafts=1: read only. Drafts waiting in Approvals (id, kind, subject, why), newest first
+  if (req.query?.drafts) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const { notion, plain } = await import('../lib/notion.js'); const { OUTBOX_DS } = await import('../lib/outbox.js');
+      const r = await notion('POST', `/data_sources/${OUTBOX_DS}/query`, { page_size: 30, filter: { property: 'Status', select: { equals: 'Draft' } }, sorts: [{ timestamp: 'created_time', direction: 'descending' }] });
+      return res.status(200).json((r.results || []).map((p) => ({ id: p.id, at: p.created_time, kind: plain(p.properties?.Kind), subject: plain(p.properties?.Subject), to: plain(p.properties?.To), attach: plain(p.properties?.Attach), why: String(plain(p.properties?.Why) || '').slice(0, 200) })));
+    } catch (e) { return res.status(500).json({ error: e.message }); }
+  }
   // ?statusopts=1: each creator board's Status options with colour and group (read only), for adding a new status
   if (req.query?.statusopts) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
