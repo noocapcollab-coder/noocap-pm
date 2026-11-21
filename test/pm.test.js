@@ -3135,3 +3135,22 @@ test('no billing reminder or payment chase over the brand\'s unanswered email (D
   assert.equal(brandWaitingOnUs({ lastBrand: '2026-11-18T02:55:00Z', lastOur: '2026-11-18T11:58:00Z' }, 'Payment chase', now), false);
   assert.equal(brandWaitingOnUs({ lastBrand: '2026-11-10T10:00:00Z', lastOur: '2026-11-05T10:00:00Z' }, 'Payment chase', now), false, 'a past-due chase is not blocked forever');
 });
+
+// System check, Nov 21: commits 6b97eaf, e681588 and 73c992c were each reported BROKEN on a different set of writer
+// cases although none touched the writer. A would-be regression is re-run once and only a second fail counts.
+test('test bank: a regression that passes on its re-run is noise, a second fail is kept', async () => {
+  const { confirmRegressions, compare } = await import('../lib/testbank.js');
+  const cases = [{ id: 'a', everPassed: true }, { id: 'b', everPassed: true }, { id: 'c', everPassed: false }];
+  const results = [{ id: 'a', fails: ['repeats the mistake'] }, { id: 'b', fails: ['repeats the mistake'] }, { id: 'c', fails: ['repeats'] }];
+  const ran = [];
+  const rerun = (c) => { ran.push(c.id); return c.id === 'a' ? { fails: [], got: 'ok' } : { fails: ['repeats again'] }; };
+  const out = await confirmRegressions(cases, results, rerun);
+  assert.deepEqual(ran.sort(), ['a', 'b']); // never-passed cases are not re-run
+  const { regressions, stillBroken } = compare(cases, out);
+  assert.deepEqual(regressions.map((r) => r.id), ['b']);
+  assert.deepEqual(stillBroken.map((r) => r.id), ['c']);
+  assert.equal(out.find((r) => r.id === 'a').id, 'a');
+  // Past the deadline nothing is re-run and the fails stand
+  const late = await confirmRegressions(cases, results, rerun, { deadline: Date.now() - 1 });
+  assert.equal(compare(cases, late).regressions.length, 2);
+});
