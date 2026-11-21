@@ -202,6 +202,12 @@ export default async function handler(req, res) {
       return res.status(200).json((r.results || []).map((p) => ({ at: p.created_time, status: plain(p.properties?.Status), ms: plain(p.properties?.['Duration ms']), did: plain(p.properties?.Did), errors: plain(p.properties?.Errors), steps: plain(p.properties?.Steps) })));
     } catch (e) { return res.status(500).json({ error: e.message }); }
   }
+  // ?editornudge=1 (&dry=1): which editor reminders are due now (dry lists them without sending)
+  if (req.query?.editornudge) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const E = await import('../lib/editornudge.js'); return res.status(200).json({ due: await E.editorNudges({ dry: req.query.dry === '1' }) }); }
+    catch (e) { return res.status(500).json({ error: e.message }); }
+  }
   // ?harshedit=1 (&dry=1): send TO EDIT rows on Harsh's own board to their editor now (lib/harshboard.js)
   if (req.query?.harshedit) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });

@@ -3175,3 +3175,31 @@ test('deals with a card at Script Approval go first in the deal loop (Harsh, Nov
   const got = scriptCardDeals(deals, cards).map((d) => `${d.brand}/${d.creator}`);
   assert.deepEqual(got, ['Fotor/Duncan', 'Riverside/Duncan']);
 });
+
+test('editor reminders: stage waits, halved at 2 days, urgent today/tomorrow (Harsh, Nov 21)', async () => {
+  const { nudgeFor } = await import('../lib/editornudge.js');
+  const now = Date.parse('2026-11-21T08:00:00Z'); // 13:30 IST
+  const ago = (h) => new Date(now - h * 36e5).toISOString();
+  // far go-live: assigned 13h ago -> editor only; 25h -> Harsh too
+  let n = nudgeFor({ status: 'Assigned', assignedAt: ago(13), goLive: '2026-11-28' }, now);
+  assert.equal(n.editor, true); assert.equal(n.harsh, false);
+  n = nudgeFor({ status: 'Assigned', assignedAt: ago(25), goLive: '2026-11-28' }, now);
+  assert.equal(n.harsh, true);
+  n = nudgeFor({ status: 'Assigned', assignedAt: ago(5), goLive: null }, now);
+  assert.equal(n.editor, false);
+  // CTAs: 7h after approval -> editor
+  n = nudgeFor({ status: 'To Post', approvedAt: ago(7), goLive: '2026-11-30' }, now);
+  assert.equal(n.stage, 'cta'); assert.equal(n.editor, true); assert.equal(n.harsh, false);
+  // 2 days out: halves, Harsh with the editor
+  n = nudgeFor({ status: 'Changes', changesAt: ago(7), goLive: '2026-11-23' }, now);
+  assert.equal(n.editor, true); assert.equal(n.harsh, true);
+  // today: anything is behind, at once
+  n = nudgeFor({ status: 'Claude running', startedAt: ago(0.2), goLive: '2026-11-21' }, now);
+  assert.equal(n.urgent, true); assert.equal(n.editor, true); assert.equal(n.harsh, true);
+  // tomorrow after midday IST: editing is behind; CTA stage tomorrow is not
+  n = nudgeFor({ status: 'Manual editing', startedAt: ago(1), goLive: '2026-11-22' }, now);
+  assert.equal(n.urgent, true);
+  assert.equal(nudgeFor({ status: 'To Post', approvedAt: ago(1), goLive: '2026-11-22' }, now), null);
+  // waiting on Harsh or the brand: nothing
+  assert.equal(nudgeFor({ status: 'In Review', goLive: '2026-11-21' }, now), null);
+});
