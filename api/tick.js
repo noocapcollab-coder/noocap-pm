@@ -15,6 +15,17 @@ if (!globalThis.fetch.__capped) {
 const HARD_STOP_MS = 250 * 1000;
 
 export default async function handler(req, res) {
+  // ?alive=1: public, no secret. How many minutes since the last heartbeat finished, so n8n can watch the PM from the
+  // other side (if Vercel stops, the PM's own watchdog stops with it). Only the minutes, nothing else.
+  if (req.query?.alive) {
+    try {
+      const { notion } = await import('../lib/notion.js'); const { RUNS_DS } = await import('../lib/runs.js');
+      const r = await notion('POST', `/data_sources/${RUNS_DS}/query`, { page_size: 1, filter: { and: [{ property: 'Job', select: { equals: 'Heartbeat' } }, { property: 'Status', select: { does_not_equal: 'Running' } }] }, sorts: [{ timestamp: 'created_time', direction: 'descending' }] });
+      const at = r.results?.[0]?.last_edited_time || r.results?.[0]?.created_time;
+      res.setHeader('Cache-Control', 'public, max-age=60');
+      return res.status(200).json({ ok: true, heartbeatMinutesAgo: at ? Math.round((Date.now() - Date.parse(at)) / 6e4) : null });
+    } catch (e) { return res.status(200).json({ ok: false, error: String(e.message).slice(0, 80) }); }
+  }
   const fromCron = cronAllowed(req);
   if (!fromCron && !hookAllowed(req)) return res.status(401).json({ error: HOOK_ERROR });
   // ?cuts=now: n8n saw a row switched to "Send to Brand" in EDIT TRACKER. Send just that (fast), not the whole heartbeat.
