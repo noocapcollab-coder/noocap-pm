@@ -3154,3 +3154,16 @@ test('test bank: a regression that passes on its re-run is noise, a second fail 
   const late = await confirmRegressions(cases, results, rerun, { deadline: Date.now() - 1 });
   assert.equal(compare(cases, late).regressions.length, 2);
 });
+
+// Topview AI x Lindsay, system check Nov 21: the tool-access draft greeted "Hi Lim" (Su Wern's family name) and replied to
+// her first email of Nov 20 instead of her Nov 21 approval that carried the agreement.
+test('tool access: greets the sign-off name and replies to the approval email itself', async () => {
+  const { greetingName, toolAccessDeal } = await import('../lib/inbox.js');
+  const text = 'Hi Lindsay’s Team,\n\nThe script looks good to go.\n\nBest Regards,\n\nSu Wern\n\nMarketing Manager\n\nM: +60 16 628 7982';
+  assert.equal(greetingName('"Lim Su Wern" <limsuwern@topview.ai>', text), 'Su Wern');
+  assert.equal(greetingName('Yulia Ivanova <yulia@kudosnarratives.com>', 'Thanks,\nYulia'), 'Yulia');
+  const deal = { id: 'd', threadId: '1a1f8b27a70d5c97', messageRfc: '<1a1f8b8c261@topview.ai>' };
+  assert.equal(toolAccessDeal(deal, { threadId: '1a1f8b27a70d5c97', messageId: '<1a1fc5db2a7@topview.ai>' }).messageRfc, '<1a1fc5db2a7@topview.ai>');
+  assert.equal(toolAccessDeal(deal, { threadId: 'other-thread', messageId: '<x@y>' }).messageRfc, '<1a1f8b8c261@topview.ai>');
+  assert.equal(toolAccessDeal(deal, {}).messageRfc, '<1a1f8b8c261@topview.ai>');
+});
