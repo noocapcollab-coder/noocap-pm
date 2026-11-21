@@ -183,6 +183,10 @@ async function handleMessage(m) {
     else if (quoted && file) { await attachFileToDraft(quoted.draft, file); await say(st, `📎 Attached *${file.filename}* to that email. It goes with it when you tap Send.`); if (text && !/^\(sent a file: /.test(text)) await applyEdit(st, quoted.draft, text.replace(/\n?\(sent a file: [^)]*\)$/, '').trim()); }
     else if (replyTo?.meta === 'reject-why' && text) await learnFromReject(st, replyTo, text);
     else if (quoted && text) await applyEdit(st, quoted.draft, text);
+    // A swipe-reply to "which brand is this signed contract for?" answers that question first: it was read as the answer
+    // to an older Luma AI question and became a draft waiting in Approvals instead of the signed contract going out
+    // (Harsh, Nov 21: "there's no need of approval")
+    else if (!file && text && replyTo?.meta === 'contract-ask' && replyTo.file && await signedContract(st, replyTo.file, text, true)) { /* the brand named for that contract */ }
     else if (infoAskFor(st, replyTo, text) && (text || file)) await answerInfoAsk(st, infoAskFor(st, replyTo, text), text, file);
     else if (text && !quoted && [...st.messages].reverse().find((x) => x.role === 'assistant')?.meta !== 'edit-ask' && await maybeNewDeal(st, text, forwarded)) { /* handled */ }
     else if (file && m.type === 'document' && await signedContract(st, file, caption)) { /* sent to the brand, or asked which brand */ }
@@ -528,8 +532,9 @@ async function signedContract(st, file, hint = '', answering = false) {
       : hard
         ? `🛑 I haven't sent *${file.filename}*: ${why.filter((w) => C.hardStop([w])).join('; ')}. If it really goes to ${deal.brand}, send it from Gmail.`
         : `📎 Got *${file.filename}*. It looks like the *${deal.brand} × ${deal.creator}* contract (to ${deal.brandEmail}), but I haven't sent it: ${why.join('; ')}. Reply with the brand name (e.g. "${deal.brand}") and I'll send it.`;
-    await sendText(st.person.number, ask);
-    st.messages.push({ role: 'assistant', content: ask, meta: hard ? 'contract-done' : 'contract-ask', file: hard ? undefined : file, at: new Date().toISOString() });
+    const sentAsk = await sendText(st.person.number, ask);
+    // The message id is kept so a swipe-reply to this question finds it (and its file)
+    st.messages.push({ role: 'assistant', content: ask, meta: hard ? 'contract-done' : 'contract-ask', file: hard ? undefined : file, wid: sentId(sentAsk), at: new Date().toISOString() });
     return true;
   }
   try {

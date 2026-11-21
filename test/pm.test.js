@@ -3077,3 +3077,11 @@ test('a contract sent by an agency platform is named after the brand in the subj
   assert.equal(contractBrand({ subject: 'Re: [Renoise] Instagram Content Collaboration Proposal', from: '"Helen" <renoise@net.noxinfluencer.com>' }), 'Renoise');
   assert.equal(contractBrand({ subject: 'Agreement', from: 'may@atoms.dev' }), 'Atoms');
 });
+
+test('a swipe-reply naming the brand on "which brand?" sends the signed contract, never a draft (Luma AI x Lindsay, Nov 21)', async () => {
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../api/whatsapp.js', import.meta.url), 'utf8');
+  const ask = src.indexOf("replyTo?.meta === 'contract-ask' && replyTo.file");
+  assert.ok(ask > 0 && ask < src.indexOf('else if (infoAskFor(st, replyTo, text)'), 'the contract answer is checked before older brand questions');
+  assert.match(src, /meta: hard \? 'contract-done' : 'contract-ask', file: hard \? undefined : file, wid: sentId\(sentAsk\)/);
+});
