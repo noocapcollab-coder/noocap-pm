@@ -3124,3 +3124,14 @@ test('hashtag-only notes on an approved reel are not video changes (Dreamina x C
   assert.equal(hashtagOnly('Please add the watermark to the upper right corner and use #Dreamina in the caption'), false);
   assert.equal(hashtagOnly('Less B-roll and more screen recordings'), false);
 });
+
+test('no billing reminder or payment chase over the brand\'s unanswered email (Dreamina x Chris, Nov 20)', async () => {
+  const { brandWaitingOnUs } = await import('../lib/heartbeat.js');
+  const now = Date.parse('2026-11-20T18:47:00Z');
+  const deal = { lastBrand: '2026-11-18T14:12:00Z', lastOur: '2026-11-18T14:09:00Z' };
+  assert.equal(brandWaitingOnUs(deal, 'Billing details', now), true);
+  assert.equal(brandWaitingOnUs(deal, 'Payment chase', now), true);
+  assert.equal(brandWaitingOnUs(deal, 'Follow-up', now), false);
+  assert.equal(brandWaitingOnUs({ lastBrand: '2026-11-18T02:55:00Z', lastOur: '2026-11-18T11:58:00Z' }, 'Payment chase', now), false);
+  assert.equal(brandWaitingOnUs({ lastBrand: '2026-11-10T10:00:00Z', lastOur: '2026-11-05T10:00:00Z' }, 'Payment chase', now), false, 'a past-due chase is not blocked forever');
+});
