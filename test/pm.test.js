@@ -3203,3 +3203,16 @@ test('editor reminders: stage waits, halved at 2 days, urgent today/tomorrow (Ha
   // waiting on Harsh or the brand: nothing
   assert.equal(nudgeFor({ status: 'In Review', goLive: '2026-11-21' }, now), null);
 });
+
+test('test bank: commits that do not touch email handling never start a run; runs batch up (Harsh, Nov 21: Gemini quota)', async () => {
+  const { gateReason, EMAIL_FILES } = await import('../lib/testbank.js');
+  const now = Date.parse('2026-11-21T13:00:00Z');
+  const last = { at: '2026-11-21T08:00:00Z', commit: 'aaaaaaa', lessonAt: '2026-11-21T07:00:00Z' };
+  assert.equal(gateReason({ last, commit: 'bbbbbbb', lessonAt: last.lessonAt, now, emailChange: false }), null);
+  assert.equal(gateReason({ last, commit: 'bbbbbbb', lessonAt: last.lessonAt, now, emailChange: true }), 'commit');
+  assert.equal(gateReason({ last: { ...last, at: '2026-11-21T11:30:00Z' }, commit: 'bbbbbbb', lessonAt: last.lessonAt, now, emailChange: true }), null);
+  assert.equal(gateReason({ last: { ...last, at: '2026-11-21T09:00:00Z' }, commit: 'bbbbbbb', lessonAt: last.lessonAt, now, emailChange: null }), null);
+  assert.equal(EMAIL_FILES.test('lib/inbox.js'), true);
+  assert.equal(EMAIL_FILES.test('lib/editornudge.js'), false);
+  assert.equal(EMAIL_FILES.test('lib/harshboard.js'), false);
+});
