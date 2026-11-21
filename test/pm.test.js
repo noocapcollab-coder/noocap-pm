@@ -3098,10 +3098,10 @@ test('a cut reaches the brand even with no AI: the fixed cut email is used (Hars
   assert.match(fs.readFileSync(new URL('../lib/brandsend.js', import.meta.url), 'utf8'), /cut email writer down, fixed text used/);
 });
 
-test('a TO EDIT row with an editor on Harsh\'s own board is sent to the editor (Harsh, Nov 21: MCP COOKED to Prabal)', async () => {
+test('a 7- In Edit row with an editor on Harsh\'s own board is sent to the editor (Harsh, Nov 21: MCP COOKED to Prabal; board now uses the numbered statuses)', async () => {
   const { wantsEditor } = await import('../lib/harshboard.js');
   const row = (status, editor) => ({ properties: { Status: { status: { name: status } }, Editor: { select: editor ? { name: editor } : null } } });
-  assert.equal(wantsEditor(row('TO EDIT', 'PRABAL')), true);
-  assert.equal(wantsEditor(row('TO EDIT', null)), false);
-  assert.equal(wantsEditor(row('SCRIPTING', 'PRABAL')), false);
+  assert.equal(wantsEditor(row('7- In Edit', 'PRABAL')), true);
+  assert.equal(wantsEditor(row('7- In Edit', null)), false);
+  assert.equal(wantsEditor(row('4- Script Draft', 'PRABAL')), false);
 });
