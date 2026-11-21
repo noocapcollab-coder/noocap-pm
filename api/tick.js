@@ -172,6 +172,25 @@ export default async function handler(req, res) {
       return res.status(200).json((r.results || []).map((p) => ({ id: p.id, at: p.created_time, kind: plain(p.properties?.Kind), subject: plain(p.properties?.Subject), to: plain(p.properties?.To), attach: plain(p.properties?.Attach), why: String(plain(p.properties?.Why) || '').slice(0, 200) })));
     } catch (e) { return res.status(500).json({ error: e.message }); }
   }
+  // ?outboxkind=Script(&days=3): read only. Every OUTBOX row of that kind in any status (sent, rejected, draft), newest first
+  if (req.query?.outboxkind) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const { notion, plain } = await import('../lib/notion.js'); const { OUTBOX_DS } = await import('../lib/outbox.js');
+      const since = new Date(Date.now() - Number(req.query.days || 3) * 864e5).toISOString();
+      const r = await notion('POST', `/data_sources/${OUTBOX_DS}/query`, { page_size: 60, filter: { and: [{ property: 'Kind', select: { equals: String(req.query.outboxkind) } }, { timestamp: 'created_time', created_time: { on_or_after: since } }] }, sorts: [{ timestamp: 'created_time', direction: 'descending' }] });
+      return res.status(200).json((r.results || []).map((p) => { const o = { id: p.id, at: p.created_time, edited: p.last_edited_time }; for (const [k, v] of Object.entries(p.properties || {})) { const t = plain(v); if (t && !/^body$/i.test(k)) o[k] = String(t).slice(0, 220); } return o; }));
+    } catch (e) { return res.status(500).json({ error: e.message }); }
+  }
+  // ?runs=heartbeat(&n=6): read only. The latest PM RUNS rows for a job (status, did, errors, steps)
+  if (req.query?.runs) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const { notion, plain } = await import('../lib/notion.js'); const { RUNS_DS } = await import('../lib/runs.js');
+      const r = await notion('POST', `/data_sources/${RUNS_DS}/query`, { page_size: Number(req.query.n || 6), filter: { property: 'Job', select: { equals: String(req.query.runs) } }, sorts: [{ timestamp: 'created_time', direction: 'descending' }] });
+      return res.status(200).json((r.results || []).map((p) => ({ at: p.created_time, status: plain(p.properties?.Status), ms: plain(p.properties?.['Duration ms']), did: plain(p.properties?.Did), errors: plain(p.properties?.Errors), steps: plain(p.properties?.Steps) })));
+    } catch (e) { return res.status(500).json({ error: e.message }); }
+  }
   // ?harshedit=1 (&dry=1): send TO EDIT rows on Harsh's own board to their editor now (lib/harshboard.js)
   if (req.query?.harshedit) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
