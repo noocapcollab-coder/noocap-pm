@@ -3167,3 +3167,11 @@ test('tool access: greets the sign-off name and replies to the approval email it
   assert.equal(toolAccessDeal(deal, { threadId: 'other-thread', messageId: '<x@y>' }).messageRfc, '<1a1f8b8c261@topview.ai>');
   assert.equal(toolAccessDeal(deal, {}).messageRfc, '<1a1f8b8c261@topview.ai>');
 });
+
+test('deals with a card at Script Approval go first in the deal loop (Harsh, Nov 21: scripts not getting sent)', async () => {
+  const { scriptCardDeals } = await import('../lib/heartbeat.js');
+  const deals = [{ brand: 'Fotor', creator: 'Duncan', linkedVideo: null }, { brand: 'Riverside', creator: 'Duncan', linkedVideo: 'https://app.notion.com/p/419508e99dda808d93a0c78a0cbf350c' }, { brand: 'Fotor', creator: 'Chris' }];
+  const cards = [{ id: '419508e9-9dda-808d-93a0-c78a0cbf350c', creator: 'Duncan', title: 'whatever' }, { id: 'x', creator: 'Duncan', title: 'Fotor × Duncan' }];
+  const got = scriptCardDeals(deals, cards).map((d) => `${d.brand}/${d.creator}`);
+  assert.deepEqual(got, ['Fotor/Duncan', 'Riverside/Duncan']);
+});
