@@ -187,10 +187,13 @@ async function handleMessage(m) {
     // to an older Luma AI question and became a draft waiting in Approvals instead of the signed contract going out
     // (Harsh, Nov 21: "there's no need of approval")
     else if (!file && text && replyTo?.meta === 'contract-ask' && replyTo.file && await signedContract(st, replyTo.file, text, true)) { /* the brand named for that contract */ }
+    // Signed contracts come before older brand questions, unless Harsh swiped on that question itself: a dropped
+    // contract and the brand name for a waiting contract were both read as the answer to an open Luma AI question
+    // (Nov 21), so the contract never went out
+    else if (replyTo?.meta !== 'info-ask' && file && m.type === 'document' && await signedContract(st, file, caption)) { /* sent to the brand, or asked which brand */ }
+    else if (replyTo?.meta !== 'info-ask' && !file && text && pendingContract(st) && await signedContract(st, pendingContract(st), text, true)) { /* the brand named for the waiting contract */ }
     else if (infoAskFor(st, replyTo, text) && (text || file)) await answerInfoAsk(st, infoAskFor(st, replyTo, text), text, file);
     else if (text && !quoted && [...st.messages].reverse().find((x) => x.role === 'assistant')?.meta !== 'edit-ask' && await maybeNewDeal(st, text, forwarded)) { /* handled */ }
-    else if (file && m.type === 'document' && await signedContract(st, file, caption)) { /* sent to the brand, or asked which brand */ }
-    else if (!file && text && pendingContract(st) && await signedContract(st, pendingContract(st), text, true)) { /* the brand named for the waiting contract */ }
     else if (file && /^\(sent a file: /.test(text)) await say(st, `📎 Got *${file.filename}*. Tell me what to do with it, e.g. "send this to Atoms × Lindsay" and I'll put the email with this file attached in the brand's thread for you to approve.`);
     else await onText(st, text, replyTo?.content || '');
   } catch (e) {

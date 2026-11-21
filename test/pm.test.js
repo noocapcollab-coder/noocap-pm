@@ -3082,6 +3082,9 @@ test('a swipe-reply naming the brand on "which brand?" sends the signed contract
   const fs = await import('node:fs');
   const src = fs.readFileSync(new URL('../api/whatsapp.js', import.meta.url), 'utf8');
   const ask = src.indexOf("replyTo?.meta === 'contract-ask' && replyTo.file");
-  assert.ok(ask > 0 && ask < src.indexOf('else if (infoAskFor(st, replyTo, text)'), 'the contract answer is checked before older brand questions');
+  const info = src.indexOf('else if (infoAskFor(st, replyTo, text)');
+  assert.ok(ask > 0 && ask < info, 'the contract answer is checked before older brand questions');
+  assert.ok(src.indexOf("m.type === 'document' && await signedContract(") < info, 'a dropped contract is checked before older brand questions');
+  assert.ok(src.indexOf('pendingContract(st) && await signedContract(') < info, 'the brand name for a waiting contract too');
   assert.match(src, /meta: hard \? 'contract-done' : 'contract-ask', file: hard \? undefined : file, wid: sentId\(sentAsk\)/);
 });
