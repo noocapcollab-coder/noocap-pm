@@ -82,3 +82,24 @@ test('a card belongs only to the deal with its brand email (CapCut × Chris: Mia
   assert.equal(cardBelongsToDeal('sophie.wilson@growmaxvalue.com', mia), true);
   assert.equal(cardBelongsToDeal('', alisa), true);
 });
+
+// CapCut x Chris, Nov 21 (night system check): Mia approved the second script and called the third incorrect; the PM
+// moved card 3 to To Film. The card the brand names as approved comes first.
+import { pickScriptCards as pickCards2, approvedScriptNumber } from '../lib/inbox.js';
+test('the approved script card is the one the brand names, not the first one found', () => {
+  const cards = [{ url: 'v1', num: 12, title: 'CapCut × Chris' }, { url: 'v3', num: 5, title: 'CapCut × Chris (3)' }, { url: 'v2', num: 5, title: 'CapCut × Chris (2)' }];
+  const mail = 'Hi, the second script has been approved by our client.\nPlease start filming as soon as possible.\nBesides, your third script is still incorrect.';
+  assert.equal(approvedScriptNumber(mail), 2);
+  assert.equal(pickCards2(cards, mail)[0], 'v2');
+  assert.equal(approvedScriptNumber('Script 3 is approved, thanks'), 3);
+  assert.equal(approvedScriptNumber('Looks good, approved!'), null);
+  assert.equal(pickCards2(cards, 'Approved!')[0], 'v3');
+});
+
+import { feedbackNeedsHarsh } from '../lib/inbox.js';
+test('a script approval with no question for Harsh sends him no WhatsApp ask (CapCut x Chris, Nov 21)', () => {
+  assert.equal(feedbackNeedsHarsh({ event: 'script_approved', needs_reply: true, needs_our_info: false }), false);
+  assert.equal(feedbackNeedsHarsh({ event: 'script_approved', needs_reply: true, needs_our_info: true }), true);
+  assert.equal(feedbackNeedsHarsh({ event: 'video_feedback', needs_reply: true }), true);
+  assert.equal(feedbackNeedsHarsh({ event: 'brand_reply', needs_reply: true, needs_our_info: true }), false);
+});
