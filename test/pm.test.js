@@ -3117,3 +3117,10 @@ test('preflight holds made-up creator details and auto emails carrying legal det
   assert.equal(preflight({ kind: 'Script', to: 'x@b.com', replyTo: '<a@b.c>', subject: 'Re: x', body: 'Hi Su Wern,\n\nAttached is the script for the campaign. Let us know your feedback.\n\nBest,\nLindsay\'s Team' }, null).hold.length, 0);
 });
 
+test('hashtag-only notes on an approved reel are not video changes (Dreamina x Chris, Nov 18)', async () => {
+  const { hashtagOnly } = await import('../lib/inbox.js');
+  assert.equal(hashtagOnly('Revise the hashtags to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner'), true);
+  assert.equal(hashtagOnly('Around 16 seconds, the caption still says "cloud code." Please change this to "Claude Code."'), false);
+  assert.equal(hashtagOnly('Please add the watermark to the upper right corner and use #Dreamina in the caption'), false);
+  assert.equal(hashtagOnly('Less B-roll and more screen recordings'), false);
+});
