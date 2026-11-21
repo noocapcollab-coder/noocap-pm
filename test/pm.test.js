@@ -3069,3 +3069,9 @@ test('a signed contract naming the deal\'s creator, for a contract the brand is 
   const chrisDeal = { ...deal, creator: 'Chris' };
   assert.ok(contractChecks(chrisDeal, { caption: 'here you go', filename: 'x.pdf', text, openRows: [{ dealIds: ['d1'] }] }).some((w) => /contract is for/.test(w)));
 });
+
+test('a contract sent by an agency platform is named after the brand in the subject (Renoise via Noxinfluencer, Nov 21)', async () => {
+  const { contractBrand } = await import('../lib/contracttrack.js');
+  assert.equal(contractBrand({ subject: 'Re: [Renoise] Instagram Content Collaboration Proposal', from: '"Helen" <renoise@net.noxinfluencer.com>' }), 'Renoise');
+  assert.equal(contractBrand({ subject: 'Agreement', from: 'may@atoms.dev' }), 'Atoms');
+});
