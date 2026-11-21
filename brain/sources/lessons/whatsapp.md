@@ -2,10 +2,20 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
-## Contracts in a creator's own inbox go to WhatsApp too
+## A signed contract goes straight to the brand, never to Approvals
+When: Harsh drops a signed contract in WhatsApp, or names the brand for one the PM asked about
+Do: Check signed contracts first (dropped file, or a brand name for a waiting contract) and send them in the brand's thread with no approval step
+Never: Never let an older open question about the same brand claim the message, and never say an email is waiting in Approvals unless a draft was actually created
+Seen 1 time(s). Source: Harsh correction.
+## A signed contract that identifies itself needs no brand name
+When: Harsh drops a signed contract PDF in the NOOCAP MEDIA chat with a caption like 'here you go'
+Do: Send it when the PDF names the deal's creator by legal name, names the brand (or its agency's domain), and that brand's contract is waiting in CONTRACTS; otherwise ask which brand
+Never: Never hold a signed contract just because the brand isn't in the caption when the PDF already proves which deal it is
+Seen 1 time(s). Source: Harsh correction.
+## Only noocapcollab contracts are shared (for now)
 When: A brand sends a contract to a creator's own inbox (Chris, Lindsay), not to noocapcollab
-Do: Save it to CONTRACTS and send it to the WhatsApp group with the PDF, once, the same as noocapcollab contracts
-Never: Never announce a contract on Discord only, because Harsh works from WhatsApp and passes contracts to the creator from there
+Do: Share only contracts that reach noocapcollab. A creator-inbox contract is left to the creator and management (CREATOR_INBOX_CONTRACTS = false in lib/leads.js)
+Never: Never save, announce on Discord or send to WhatsApp a contract that only reached a creator's own inbox
 Seen 1 time(s). Source: Harsh correction.
 ## One contract, one WhatsApp message
 When: A contract arrives, possibly in more than one email (agency email plus signing-service email, or a resend)
@@ -30,8 +40,8 @@ Seen 1 time(s). Source: Harsh correction.
 ## A WhatsApp message only answers the question it replies to
 When: The PM asked Harsh for something a brand needs (an account email, a code) and Harsh then sends an unrelated message or link
 Do: Use a message as the answer only when it swipe-replies to the question or plainly gives what was asked for; otherwise ask again.
-Never: Never put an unrelated link or text into a brand email as the answer, and never turn a bare "Okay" or "noted" into a reply that promises the thing later.
-Seen 3 time(s). Source: Harsh correction.
+Never: Never put an unrelated link or text into a brand email as the answer, and never turn a bare "Okay", "noted" or a greeting like "Hi" into a reply that promises or agrees to anything.
+Seen 4 time(s). Source: Harsh correction.
 ## Reject wins over Send, and never say nothing was sent when it was
 When: Send and Reject are tapped on the same draft within seconds
 Do: Check the draft just before it leaves and stop if it was rejected; if it already went, say so plainly and offer a correction.

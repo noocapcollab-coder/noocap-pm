@@ -67,3 +67,6 @@ Active. ManyChat calls this webhook to get the latest lead magnet link for a cli
 
 ## Content OS · YouTube sync / Instagram + Facebook + TikTok sync
 Active. Pulls creators' social video stats into Content OS.
+
+## NOOCAP — PM watchdog (is Vercel up?)
+Active. Every 15 minutes checks the PM on Vercel is answering and its heartbeat ran in the last 35 minutes; posts to Discord alerts once if not, and again when it's back.

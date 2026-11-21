@@ -3,41 +3,48 @@
 Brand. Works with creators: [[Lindsay]], [[Chris]], [[Duncan]], [[Brad]].
 
 ## Brand wiki (from every email with them)
-WHO: Luma AI is a creative AI tool and video generation platform. They come to us either directly or through agencies such as NJ Agency and Faved.
+WHO
+Luma AI provides AI-powered creative and video generation tools. They work with our agency primarily through external agencies including NJ Agency and the platform Faved.
 
-CONTACTS: Upendra Singh, upendra@njagency.co, Campaign Head at NJ Agency, signs for NJ Agency deals. Faved, creators@faved.com, platform representing Luma AI. Creator teams and CCs include Lindsay's team (noocapcollab@gmail.com), Chris's team (collab@chriscordero.net), Duncan's team (collab@buildroom.ai), and Brad.
+CONTACTS
+Upendra Singh, Campaign Head at NJ Agency, upendra@njagency.co, signs deals and reviews content.
+Faved Platform, creators@faved.com, manages deal flow and contracts for specific creators.
 
-DEALS:
-Luma AI x Lindsay: Produce and publish by 2026-11-30, stage Brief Received.
-Luma AI x Chris: Reel + Story repost, Net 30 after approved Reel and Story published and invoice received, stage Approved, Reel goes live on 2026-11-21.
-Luma AI x Duncan: Draft script deliverables, 60-day usage rights for Instagram, TikTok, and other paid ads and dark ads, YouTube crossposting allowed with no YouTube paid ad rights or ad codes, stage Signed, Faved deal deal-cevsvd.
-Luma AI x Brad: One video with approved script, stage Posted.
+DEALS
+Lindsay: Content creation, stage Brief Received.
+Chris: Reel and Story, stage Approved, live date 2026-11-21, pay terms Net 30 after publication and invoice.
+Duncan: Draft script, stage Signed, 60-day usage rights for Instagram/TikTok paid/dark ads, YouTube crossposting allowed (no paid ad rights), stage Signed.
+Brad: One video, stage Posted, script approved.
 
-HOW THEY WORK: For NJ Agency, briefings and contract reviews happen via email threads. For accounts like Chris, once scripts are approved, creators sign up using a designated email (noocaptools@gmail.com) and the brand adds platform credits directly to the account; production must not start using free accounts to avoid watermarks. Content is submitted via Frame.io links for review. Publishing requirements include a Luma-approved CTA in the content and caption encouraging viewers to comment a specific keyword (e.g., Luma) to receive a tracking link, setting up comment-to-DM automation, placing tracking links in Instagram bios, publishing Stories with clickable link stickers, and tagging @lumalabsai on both Reels and Stories. Duncan's deal via Faved requires interaction directly on the Faved platform page rather than email replies to Faved.
+HOW THEY WORK
+NJ Agency requires script approval before production begins. For video production, they provide credits to a specific creator account (do not produce content using free accounts to avoid watermarks). Requirements include a Luma-approved CTA (comment "Luma" for link), comment-to-DM automation, and specific tracking links in bios and Story link stickers. They require a live Reel link, live Story link, and a screenshot of the Story upon posting. Faved deals require contract signatures via their platform; all communication regarding Faved deals should happen directly through the Faved portal.
 
-WATCH OUT: For Duncan via Faved, replies sent by email to Faved are not seen by the brand; answers must be posted on the Faved page. For Chris, never start video production using a free Luma account because it generates watermarked videos; always wait for platform credits to be added to noocaptools@gmail.com first. For Duncan, YouTube paid ad rights and ad codes are strictly excluded, though crossposting to YouTube is allowed.
+WATCH OUT
+Do not start production on Luma tools before credits are officially added to the account to avoid watermarks. Do not grant YouTube paid ad rights or partnership/ad codes for deals that explicitly exclude them. 
 
-OPEN NOW:
-Luma AI x Lindsay: We owe review and signature of the contract, and sharing the script for approval.
-Luma AI x Chris: We owe publishing the Reel and Story on 2026-11-21 with the required setup, then sharing the live Reel link, live Story link, and Story screenshot with the brand.
-Luma AI x Duncan: We owe signing the contract, confirming acceptance of usage rights terms (60-day for Instagram/TikTok/other paid ads and dark ads; YouTube crossposting allowed but no YouTube paid ad rights or ad codes), and submitting the draft script on the Faved page.
-Luma AI x Brad: Brad owes filming the video per the approved script.
+OPEN NOW
+Lindsay: We are waiting for the brand to review and sign the contract and approve the upcoming script.
+Chris: We owe the publication of the Reel and Story on 2026-11-21 and subsequent submission of the live links and Story screenshot to Upendra.
+Duncan: We owe the signed contract and the draft script; we must confirm the usage rights limitations (no YouTube paid ad rights) directly on the Faved platform.
+Brad: No actions pending; deal is in the posted stage.
 
 ## Deal with [[Lindsay]] (Brief Received, opened 2026-11-19)
-Last brand reply 2026-11-20, our last reply 2026-11-20.
+Last brand reply 2026-11-21, our last reply 2026-11-21.
 AGREED: rate, deliverables, usage rights, payment terms and any agreed dates. Only what both sides have confirmed.
-Rate: Not stated. Deliverables: Produce and publish by 2026-11-30. Usage rights: Not stated. Payment terms: Not stated. Agreed dates: November 30, 2026 for completion.
+Rate: Not stated. Deliverables: Produce and publish content. Usage rights: Not stated. Payment terms: Not stated. Agreed dates: Not stated.
 
 HISTORY:
 2026-11-19: creator - agreed to collaborate and requested contract and brief.
 2026-11-19: us - confirmed takeover and requested brief and contract.
 2026-11-20: us - acknowledged receipt of contract and committed to review and script creation.
+2026-11-20: brand - acknowledged receipt of our email.
+2026-11-21: us - submitted signed contract to brand.
 
 BILLING:
 not yet
 
 OPEN NOW:
-We owe: Review and sign the contract, and share the script for approval.
+Waiting on brand: Review of the signed contract and approval of the upcoming script.
 
 ## Deal with [[Chris]] (Approved, opened 2026-11-05)
 Last brand reply 2026-11-19, our last reply 2026-11-19.

@@ -3,23 +3,26 @@
 Brand. Works with creators: [[Brad]], [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: PromoCut is an app offering video editing and translation features. They come to us through their agency, Quil Media.
+WHO: PromoCut, an app providing video editing and translation features. They work through an agency named Quil Media.
 
 CONTACTS:
-Nicole Rodrigues, nicole@quilmedia.com, Quil Media (brand agency), signs as Nicole / Nicole Rodrigues
-Hamza Tariq, hamza@quilmedia.com, Quil Media (brand agency), copied on thread, signs as Hamza
+Nicole Rodrigues, nicole@quilmedia.com, Quil Media agency, signs as Nicole / Nicole Rodrigues, must be copied with partnerships@ninjaaitools.com and hamza@quilmedia.com.
+Hamza Tariq, hamza@quilmedia.com, Quil Media agency, signs as Hamza, must be copied.
 
 DEALS:
-PromoCut x Brad: 1 Instagram Reel with ManyChat automation, reposted to Facebook, TikTok, and YouTube Shorts, stage Submitted, draft due 2026-11-12, final approval target 2026-11-13, go-live date 2026-11-16
+Brad | 1 Instagram Reel with ManyChat automation, reposted to Facebook, TikTok, and YouTube Shorts | Submitted | Draft due 2026-11-12, final approval 2026-11-13, go-live 2026-11-16 (rate, payment terms, and usage rights not confirmed).
 
-HOW THEY WORK: Draft videos are reviewed via Frame.io links. Product demonstration screen recordings of editing and translation features must be shown directly within the PromoCut app.
+HOW THEY WORK:
+The brand agency reviews scripts and provides production requirements, including the approved script, campaign brief, clear product demonstration, correct brand name and approved CTA, and required screen recordings. Drafts are submitted for review via Frame.io links. Product access is provided via Apple redeem links or web version at app.promocut.com, with Pro Plan access enabled for noocaptools@gmail.com.
 
-WATCH OUT: None stated.
+WATCH OUT:
+Regional access issues may occur; the web version must be used if the app is unavailable in our region, and account upgrades must be requested for noocaptools@gmail.com.
 
-OPEN NOW: We owe: Record the product demonstration screen recordings using the upgraded web account and send the revised video draft.
+OPEN NOW:
+The revised video draft was submitted to Nicole via Frame.io on 2026-11-21, and we are waiting for the brand to review and provide feedback.
 
 ## Deal with [[Brad]] (Submitted, opened 2026-11-04)
-Last brand reply 2026-11-19, our last reply 2026-11-19.
+Last brand reply 2026-11-19, our last reply 2026-11-21.
 AGREED: 1 Instagram Reel with ManyChat automation, reposted to Facebook, TikTok, and YouTube Shorts. Draft video due 2026-11-12, final approval target 2026-11-13, go-live date 2026-11-16. Rate, payment terms, and usage rights not confirmed.
 
 HISTORY:
@@ -31,12 +34,12 @@ HISTORY:
 2026-11-13 us submitted video draft for review
 2026-11-16 brand sent feedback requesting more screen recordings of product demonstrations
 2026-11-18 us notified brand of regional access issues and requested assets
-2026-11-18 brand replied with web link and offered to upgrade partnerships@ninjaaitools.com
 2026-11-19 us asked brand to grant Pro Plan access to noocaptools@gmail.com, and brand confirmed adding it to the upgrade list
+2026-11-21 us submitted revised video draft for review
 
 BILLING: not yet
 
-OPEN NOW: We owe: Record the product demonstration screen recordings using the upgraded web account and send the revised video draft
+OPEN NOW: Waiting for brand to review the video
 
 ## Inbound leads
 - Next Step: Wait for brand to provide project details · Last Our Email: 2026-10-28 · Last Brand Email: 2026-10-27 · Thread Subject: PromoCut Discord + Potential Paid UGC Opportunity! · Status: Waiting on brand · Creator: Chris · Type: Unclear · Brand Email: renzo.rodriguez@promocut.com

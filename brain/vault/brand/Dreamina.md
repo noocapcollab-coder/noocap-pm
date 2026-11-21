@@ -5,20 +5,25 @@ type: brand
 
 Brand. Works with creators: [[Chris]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Dreamina is an AI video tool and marketing studio, coming to us through agency partners ViralVibe and Katlas Media for creator Chris.
+WHO: Dreamina, an AI tool/marketing studio, working with us directly or through their agency Katlas Media.
 
-CONTACTS: Jenny Guo (jenny@viralvibe.llc) and Camila and Charlotte and Emma at ViralVibe; Kepan at Katlas Media (outreach@katlasmedia.com), with Siyu and Silvia copied on Katlas threads.
+CONTACTS:
+Jenny Guo, jenny@viralvibe.llc, agency (Viral Vibe), signs as Jenny BD, CC camila@viralvibe.llc, charlotte@viralvibe.llc, emma@viralvibe.llc, collab@chriscordero.net.
+Kepan, outreach@katlasmedia.com, agency (Katlas Media), CC siyu@katlasmedia.com, silvia@katlasmedia.com.
 
 DEALS:
-Dreamina x Chris | 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team) | [amount] | Posted | Nov 2026
-Dreamina x Chris | 1 video posted on TikTok and Instagram (Unlimited Seedance campaign); script review required | [amount] | Price Agreed | Nov 2026
-Dreamina x Chris | 1 sponsored video, script review required | [amount] | Invoiced | Oct-Nov 2026
+Dreamina x Chris | 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team) | [amount] | Posted | Nov 2026.
+Dreamina x Chris | 1 video posted on TikTok and Instagram (Unlimited Seedance campaign); script for review first | [amount] | Price Agreed | Nov 2026.
+Dreamina x Chris | 1 sponsored video, script review required before filming | [amount] | Invoiced | Oct-Nov 2026.
 
-HOW THEY WORK: ViralVibe and Katlas Media handle campaigns. For Katlas, scripts are submitted for review before filming, or videos are produced following briefs (such as the Unlimited Seedance campaign via Feishu brief). Drafts and covers are reviewed via Frame.io links or PDFs. ViralVibe requires specific hashtags (#Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner) and UTM tracking links provided via email. Billing details like 9-digit ACH routing numbers are provided when requested.
+HOW THEY WORK: Briefs and scripts are reviewed by the brand before filming or publishing. Videos go through rounds of edits for watermarks, logos, covers, captions, and hashtags. UTM links are provided for tracking. Deliverables are published on TikTok and Instagram. Invoices are raised by us (Stripe/bank transfer) and require company billing details and ACH routing numbers.
 
-WATCH OUT: Ensure watermark backgrounds are transparent without white boxes and use the correct Dreamina Marketing Studio logo on covers when requested by ViralVibe. Do not miss hashtag or UTM link updates required prior to publishing.
+WATCH OUT: Ensure all requested hashtags, transparent watermarks, and correct brand logos are included before publishing. Verify payment receipts when transfers are delayed.
 
-OPEN NOW: For the first deal, we owe publishing the video with the UTM link and hashtag updates, sending the live link, and following up for billing details. For the Katlas campaigns, we are waiting on payment receipt for the [amount]invoice, approval of the submitted script draft for the main campaign, and confirming scope details for the new Unlimited Seedance outreach.
+OPEN NOW:
+First deal: We owe publishing the video with the UTM link and hashtag updates, sending the live link, and following up for billing details.
+Second deal: We are awaiting the contract and final onboarding steps for the Unlimited Seedance campaign.
+Third deal: We are awaiting the payment receipt for the [amount]invoice and approval of the script draft for the main campaign.
 
 
 ## Links

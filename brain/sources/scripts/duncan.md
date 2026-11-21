@@ -2,6 +2,26 @@
 
 The final scripts of videos posted in the last 60 days, as filmed.
 
+## 2026-11-21 MCP IS DEAD (1)
+Type: TRIALS. Creator: [[Duncan]].
+ON SCREEN HOOK:
+MCP is officially cooked. Cloudflare just replaced it, runs on a thousand tokens instead of 1.17 million, and the whole industry is quietly adopting it.
+    Hook 1:
+MCP is officially cooked. Cloudflare just replaced it, runs on a thousand tokens instead of 1.17 million, and the whole industry is quietly adopting it.
+    Hook 2:
+Stop building AI agents on MCP. The whole industry is moving to a new standard, and here's exactly how it works.
+    Body:
+So here's the deal. With MCP, your agent fires off tool call one, pings the model, fires off tool call two, pings the model again, and just the tool manifest starts eating your context. Cloudflare hit this running 2,500 endpoints, with the old approach burning 1.17 million tokens on a single workflow. So they built CodeMode. MCP tools get exposed as a TypeScript API, the model writes one script that chains them, and the whole thing runs inside a sandbox. Same job, two tools, around a thousand tokens. Pretty freaking cool. Anthropic is already baking this into Claude under programmatic tool calling, and Block Goose is going the same way. MCP as we knew it is done.
+    CTA:
+Comment LINK and I'll send you Cloudflare's full breakdown plus access to Claude Code Club.
+    NOTES: 
+    VARIATION 1 (ADD ONLY ONSCREEN)
+Cloudflare killed MCP
+    VARIATION 2 (ADD ONLY ONSCREEN)
+Claude killed MCP
+    VARIATION 3 & 4 DIFFERENT VISUAL HOOK 
+    VARIATION 5 IS HOOK 2
+
 ## 2026-11-20 TIKTOK - CLAUDE KILLED SOCAIL MEDIA
 Type: PERSONAL. Creator: [[Duncan]].
 ON SCREEN HOOK:
@@ -146,19 +166,3 @@ HOOKS
     Comment TOON and I’ll send you the skill plus my setup. We break down workflows like this every week inside Claude Code Club.
     resource:
 - https://github.com/mromidev/claude-animated-shorts
-
-## 2026-11-10 10 Claude Animation Styles
-Type: PERSONAL. Creator: [[Duncan]].
-#### HOOK
-    You can paste one script into Claude and get it animated in ten completely different styles by changing a single word.
-
-#### BODY
-    Watch. Here’s my script as thin white line art, that minimalist Dan Koe look. Now I swap in “Lego,” and every scene gets rebuilt out of toy bricks. Pretty freaking cool.
-    You’ve also got pixel art, chalkboard, glowing sketch, comic panels, flat vector, a blocky PS2 game look, glossy CGI, and that rounded Zack D Films explainer style. Before it renders, it checks frames for anything cropped or off-style.
-    All ten live inside one skill, called Animation Studio.
-
-#### CTA
-    Comment ANIMATE and I’ll send you the skill.
-    RESOURCES:
-    - Claude — https://claude.ai
-    - Animation Studio skill — https://drive.google.com/file/d/1LBu519PXLAIwf7N1vC6AjX1utaRjhmFc/view?usp=sharing

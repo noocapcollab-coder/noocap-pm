@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## An hourly heartbeat job must sit on a tick that has time left
+When: Adding or moving a once-an-hour or once-a-day job in lib/heartbeat.js
+Do: Gate jobs that run after the Invoices step with hourlyTailTick(tickMin), where tickMin is the minute the tick STARTED (read once from T0), and check PM RUNS steps show the job actually running
+Never: Gate a job at the end of the tick on minute < 10 (the :04 tick, always out of time), and never read new Date().getUTCMinutes() when the step is reached: the :14 tick reaches its tail at minute 16
+Seen 2 time(s). Source: System check.
 ## Tests must not read live Vercel env vars
 When: Adding code that reads a Vercel env var (AI_PAUSED_UNTIL, PM_AI_PROVIDER, GEMINI_API_KEY and the like) on a path the tests exercise
 Do: Clear or pin that env var in both the npm test and vercel-build scripts, and run the tests once with the live value set before pushing

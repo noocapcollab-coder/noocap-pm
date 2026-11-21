@@ -3,32 +3,31 @@
 Brand. Works with creators: [[Valeri]], [[Lindsay]], [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: Tripo 3D, a 3D modeling technology brand, coming to us through agency Jeevmedia (and Zeelot via Superlinear for Valeri).
+WHO: Tripo 3D is a 3D modeling tool. We work with them through an agency called JEEVMEDIA.
 
 CONTACTS:
-Rajeshwari Sardar, rajeshwari@jeevmedia.net, Influencer Marketing Associate at Jeevmedia.
-Zeelot, Zeelot@superlinear.cc, Superlinear (brand contact for Valeri).
+Rajeshwari Sardar: rajeshwari@jeevmedia.net, Influencer Marketing Associate at JEEVMEDIA. Copy on all Lindsay-related emails.
+Zeelot: Zeelot@superlinear.cc, handles Valeri's sponsorship.
 
 DEALS:
-Tripo 3D x Valeri: 2 videos, [amount]total ([amount]per video), 30-day ad authorization per video and usage rights, stage Price Agreed, contract pending since November 2026.
-Tripo 3D x Lindsay: 1 IG Reel, DM automation, 90 days boosting, usage rights, and re-editing/secondary creation rights, stage Submitted, contract signed October 9 2026, draft submitted November 20 2026.
+Tripo 3D x Valeri: 2 videos, 30-day ad authorization, usage rights, [amount]total, stage: Price Agreed.
+Tripo 3D x Lindsay: 1 IG Reel, DM automation, 90 days boosting, usage rights, re-editing rights, stage: Submitted.
 
 HOW THEY WORK:
-Brief references and campaign guidelines are shared via Feishu wiki.
-Scripts are submitted for brand review and feedback.
-Video drafts are reviewed via Frame.io links (e.g., https://f.io/rVVciC9y).
-Account details: Lindsay's Tripo account is registered under noocaptools@gmail.com for credit additions.
-Specific requirements include adding invite codes (e.g., 4KI9HH) as on-screen subtitles at the end of the video.
+Process: Brief review, script approval, then video draft submission via Frame.io.
+Billing: Lindsay's deal is 100% after publication, payment within 1 to 7 days.
+Lindsay's Tripo account email: noocaptools@gmail.com.
+On-screen requirements: Brand often requests specific invite codes to be added as subtitles at the end of the video.
 
 WATCH OUT:
-Do not mix up Valeri's separate Tripo thread with Lindsay's Tripo deal with Rajeshwari.
+Do not mix threads between different creators. Valeri's deal should remain separate from Lindsay's.
 
 OPEN NOW:
-Tripo 3D x Valeri: Waiting on brand for the contract.
-Tripo 3D x Lindsay: Waiting on brand to review the revised video draft incorporating the invite code on-screen subtitles.
+Tripo 3D x Valeri: Waiting on brand to provide the contract for signing.
+Tripo 3D x Lindsay: Waiting on brand to review the revised video draft containing the invite code subtitles (4KI9HH).
 
 ## Deal with [[Valeri]] (Price Agreed, opened 2026-10-16)
-Last brand reply 2026-11-11, our last reply 2026-11-17.
+Last brand reply 2026-11-11, our last reply 2026-11-20.
 AGREED: rate [amount]total ([amount]per video), deliverables: 2 videos, usage rights: 30-day ad authorization per video and distribution across all agreed platforms. Payment terms and dates: not stated.
 
 HISTORY:
@@ -39,6 +38,7 @@ HISTORY:
 2026-11-11 brand / Zeelot proposed [amount]per video ([amount]total).
 2026-11-11 us / NOOCAP accepted rate and requested contract.
 2026-11-17 us / NOOCAP followed up on the contract.
+2026-11-20 us / NOOCAP followed up again on the contract.
 
 BILLING: not yet
 

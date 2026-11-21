@@ -2,7 +2,7 @@
 
 The final scripts of videos posted in the last 60 days, as filmed.
 
-## 2026-11-20 CLAUDE KILLED SOCAIL MEDIA
+## 2026-11-19 CLAUDE KILLED SOCAIL MEDIA
 Type: PERSONAL. Creator: [[Lindsay]].
 [ONSCREEN HOOK]
 Claude finds your Clients now
@@ -49,6 +49,19 @@ Type: PERSONAL. Creator: [[Lindsay]].
     [CTA]
     Comment “PAPER” below and I’ll send you Anthropic’s full report on every test.
 
+## 2026-11-20 IMPROVE YOUR PROMPTS INSTANTLY
+Type: PERSONAL. Creator: [[Lindsay]].
+[ONSCREEN HOOK]
+You’re using Claude at 10%
+    [HOOK 1]
+Claude can now fix your prompts with one click, and you can set it up on yours in the next thirty seconds for completely free.
+    [HOOK 2]
+Forget using Claude at ten percent capacity — this free Mod rewrites every prompt you give it with one click.
+    [BODY]
+Open Claude, go to Code, start a new chat, and paste this prompt. In a few seconds it drops a Prompt Master button right into your chat. Type whatever you want, hit the button, and before Claude answers, it asks follow-ups if it needs them, rewrites your prompt in the best prompting framework, then runs it. If you're new to AI, this saves you hours inside Claude and 10x's what your AI can do. It works because Anthropic quietly rolled out a feature called Mods that lets you customize Claude end to end with one prompt.
+    [CTA]
+Comment "PROMPT" below and I'll send you the exact prompt plus the setup guide.
+
 ## 2026-11-10 Kill AI SLOP
 Type: PERSONAL. Creator: [[Lindsay]].
 [HOOK 1] 
@@ -79,16 +92,3 @@ Type: PERSONAL. Creator: [[Lindsay]].
     - GitHub repo (200+ agents): https://github.com/msitarzewski/agency-agents
     - Desktop app download (Mac / Windows / Linux): https://github.com/msitarzewski/agency-agents-app/releases/latest
     - App site: https://agencyagents.app
-
-## 2026-11-09 LeadsRun (IntentRat)
-Type: PERSONAL. Creator: [[Lindsay]].
-HOOK 1: I sent 250 cold emails and got one reply telling me to stop. This AI agent finds business owners already asking for what I sell.
-    HOOK 2: Forget buying lead lists. This AI agent finds business owners asking to pay for what you sell before they hire anyone else.
-    BODY
-    Unless an AI agent is watching for you. You point it at your niche, and it watches Reddit, X and Bluesky around the clock. It brings back the people asking for what you sell, the problem they’re stuck on, and the exact words they use. Drop those words into your outreach and you sound like you already know their business. It’s called LeadsRun, and that’s your next client found before you send a single cold email.
-    CTA
-    Comment SIGNAL below and I’ll send you the link.
-    resource:
-    - https://leads.run/
-    ⚠️ READ FIRST-
-    THE REFERENCE SAYS “INTENTRAT” AS THE RESOURCE- WHICH WAS NOT RECEIVED THROUGH COMMENTING, AS WELL AS IT DOESN’T EXIST ANYWHERE OVER GOOGLE SEARCH TOO. SO, THE RESOURCE IS REPLACED WITH LEADS.RUN- WHICH IS BASICALLY THE SAME THING APART FROM THE PRICING FACTS (NOT PUBLISHED ANYWHERE). LEADS.RUN IS CURRENTLY EARLY ACCESS / WAITLIST ONLY. HACKER NEWS, 30-SECOND ALERTS AND AUTO-DRAFTED REPLIES ARE NOT CONFIRMED ON ITS SITE, SO THEY’VE BEEN LEFT OUT OF THIS SCRIPT.

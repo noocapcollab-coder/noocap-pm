@@ -1,8 +1,8 @@
 ---
 type: deal
 ---
-Stage: Brief Received
-Last brand reply 2026-11-19, our last reply 2026-11-19.
+Stage: Script Sent
+Last brand reply 2026-11-19, our last reply 2026-11-21.
 AGREED: [amount]for one video promoting AI Inspo. Deliverables: one Instagram reel (collab post with AI Inspo official account) plus DM, cross post on Facebook and TikTok. Payment: once after publishing the video. Usage rights and dates not set.
 
 HISTORY:
@@ -16,10 +16,11 @@ HISTORY:
 2026-11-16 brand asked us to register on the new official website (ai-inspo.com) and send our new account ID back.
 2026-11-19 brand followed up asking for a progress update.
 2026-11-19 us replied that we are still interested and will share the script shortly.
+2026-11-21 us sent the script for review.
 
 BILLING: not yet.
 
-OPEN NOW: We owe: Register on AI Inspo official website, send account ID starting with 4, and send the script.
+OPEN NOW: Waiting on brand: approve the script.
 
 ## Links
 - [[AI Inspo]]

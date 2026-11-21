@@ -3,59 +3,59 @@
 Brand. Works with creators: [[Lindsay]], [[Chris]], [[Brad]].
 
 ## Brand wiki (from every email with them)
-WHO
-Topview AI is an AI video generation platform and plugin. They come to us directly.
+WHO: Topview AI, an AI video creation tool, coming to us through agency Spark Hub Media (contact Freya).
 
-CONTACTS
-Lim Su Wern, limsuwern@topview.ai, Marketing Manager at Topview AI.
-Freya, freya@sparkhub.media, agency contact for Brad.
+CONTACTS: Lim Su Wern, limsuwern@topview.ai, Marketing Manager at Topview AI. Freya, freya@sparkhub.media, at Spark Hub Media. Chris Cordero, collab@chriscordero.net. Lindsay Gonzales, Lindsay@automateaiconsulting.com.
 
-DEALS
-Topview AI x Lindsay: 1 short-form video (IG + TikTok) for Topview's Black Friday sale, [amount]USD, Price Agreed, post before Nov 28, 2026.
-Topview AI x Chris: 1 sponsored video featuring Topview, [amount]USD, Paid, posted Sep 18, 2026.
-Topview AI x Brad: Deal completed, Paid, Oct 9, 2026.
+DEALS:
+Topview AI x Lindsay | 1 short-form video (IG and TikTok) for Black Friday sale | [amount] | Script Approved | Post before Nov 28, 2026
+Topview AI x Chris | 1 sponsored video featuring Topview | [amount] | Paid | Posted Sep 18, 2026
+Topview AI x Brad | Paid | Completed Oct 9, 2026
 
-HOW THEY WORK
-Brand sends a campaign brief link. We send a script for approval. Brand approves script via email. We send a video draft via Google Drive link. Brand approves draft and sends an Influencer Services Agreement for us to sign and return. Brand confirms posting approval. Standard link is used unless a tracking link is requested.
+HOW THEY WORK: Brief provided via Notion or email attachment. Script approval via email. Video draft review via Google Drive link. Standard link used for posting unless specified otherwise. Invoices sent to limsuwern@topview.ai with reference Topview Video Collaboration.
 
-WATCH OUT
-Nothing recorded.
+WATCH OUT: Ensure correct business details are used in contracts; brand checks details like business name, legal name, address, and email before updating agreements.
 
-OPEN NOW
-Topview AI x Lindsay: Waiting on us to send Lindsay's business name, legal name, legal address, and contact email so Su Wern can prepare the agreement.
+OPEN NOW: Topview AI x Lindsay: We owe confirmation of the revised contract details (Automate AI Consulting, Lindsay Gonzales, 909 N. Thorne Ave., Fresno, CA 93728, Lindsay@automateaiconsulting.com) so the brand can update the agreement.
 
-## Deal with [[Lindsay]] (Price Agreed, opened 2026-11-20)
-Last brand reply 2026-11-20, our last reply 2026-11-20.
-AGREED: rate [amount]; deliverables 1 short-form video (IG and TikTok) for Topview's Black Friday sale; usage rights not known yet; payment terms not known yet; agreed dates not known yet.
+## Deal with [[Lindsay]] (Script Approved, opened 2026-11-20)
+Last brand reply 2026-11-21, our last reply 2026-11-21.
+AGREED: rate [amount]; deliverables 1 short-form video (IG and TikTok) for Topview's Black Friday sale; usage rights not known; payment terms not known; agreed dates not known.
 
 HISTORY:
-2024-11-20 brand: Su Wern asked for Lindsay's business name, legal name, legal address, and contact email to prepare the agreement.
+2026-11-20 brand: Requested legal and business details for the agreement.
+2026-11-21 us: Sent script and incorrect agreement details.
+2026-11-21 brand: Approved the script and sent the agreement for signature.
+2026-11-21 us: Sent corrected agreement details.
+2026-11-21 brand: Asked to confirm the revised contract details before updating the agreement.
 
-BILLING: not yet.
+BILLING: company Automate AI Consulting; invoice email Lindsay@automateaiconsulting.com; address 909 N. Thorne Ave., Fresno, CA 93728; invoice status not yet.
 
-OPEN NOW: Waiting on brand: Su Wern asked for Lindsay's details to prepare the agreement, and we need to reply with them.
+OPEN NOW: We owe: confirmation of the revised contract details so the brand can update the agreement.
 
-## Deal with [[Lindsay]] (Brief Received, opened 2026-11-20)
-Last brand reply 2026-11-20, our last reply none.
+## Deal with [[Lindsay]] (Script Approved, opened 2026-11-20)
+Last brand reply 2026-11-21, our last reply 2026-11-21.
 AGREED:
-Rate: not known yet
-Deliverables: one short-form video/reel, cross-posted to YouTube Shorts, Instagram and TikTok
-Usage rights: not known yet
-Payment terms: not known yet
-Dates: not known yet
+Rate: 1500
+Deliverables: One short-form video/reel, cross-posted to YouTube Shorts, Instagram and TikTok
+Usage rights: Not specified
+Payment terms: Not specified
+Dates: None
 
 HISTORY:
-2026-11-20 us: Brief filed: Topview AI × Lindsay
-2026-11-20 brand: Brand reply in Lindsay's inbox requesting details to prepare agreement
+2026-11-20 us: Brief filed: Topview AI x Lindsay
+2026-11-20 brand: Requested details for agreement
+2026-11-21 us: Sent script and agreement details
+2026-11-21 brand: Approved script and sent contract for signature
 
 BILLING:
-Company: not known yet
-Invoice email: not known yet
-Address: not known yet
-Invoice status: not known yet
+Company: Not provided
+Invoice email: Not provided
+Address: Not provided
+Invoice status: Not yet
 
 OPEN NOW:
-We owe: send details for Lindsay so the brand can prepare the agreement
+We owe: Sign and return the agreement.
 
 ## Deal with [[Chris]] (Paid, opened 2026-09-29)
 Last brand reply 2026-11-04, our last reply 2026-11-04.

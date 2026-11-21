@@ -1,15 +1,15 @@
 # Duncan - what performs
-Content OS, videos posted since 2026-07-23: 272 posts across platforms, average 12,889 views. Creator: [[Duncan]].
+Content OS, videos posted since 2026-07-24: 268 posts across platforms, average 13,014 views. Creator: [[Duncan]].
 ## 2026-11-15 Give Me 13 Minutes and I'll Make You Disgustingly Good With Claude
-YouTube Long: 478,886 views, 4,741 likes, 120 comments, 0 shares, 0 saves.
+YouTube Long: 555,008 views, 5,436 likes, 131 comments, 0 shares, 0 saves.
 ## 2026-08-25 Check the pinned comment below for the GitHub repo link 👇
 TikTok Short: 400,400 views, 26,000 likes, 170 comments, 2,568 shares, 19,633 saves.
 ## 2026-10-25 What if you could turn a PDF, report, or pitch deck into an animated e
 TikTok Short: 163,300 views, 7,132 likes, 37 comments, 1,538 shares, 7,743 saves.
 ## 2026-10-22 Claude Just Changed: The 10 Big Updates You Need to Know
-YouTube Long: 128,922 views, 1,241 likes, 42 comments, 0 shares, 0 saves.
+YouTube Long: 128,952 views, 1,241 likes, 42 comments, 0 shares, 0 saves.
 ## 2026-10-21 I taught Claude how to edit videos and it's INSANE
-YouTube Long: 90,771 views, 1,246 likes, 82 comments, 0 shares, 0 saves.
+YouTube Long: 91,471 views, 1,256 likes, 82 comments, 0 shares, 0 saves.
 ## 2026-10-01 Comment “OPUS” and I’ll send you the full Claude.md prompt for free.
 Facebook Short: 85,892 views, 489 likes, 136 comments, 73 shares, 0 saves.
 ## 2026-10-29 Comment “SCAN” and I’ll send you the GitHub repo. 🔐👇
@@ -24,8 +24,6 @@ TikTok Short: 80,600 views, 3,266 likes, 23 comments, 883 shares, 4,669 saves.
 TikTok Short: 80,500 views, 3,022 likes, 30 comments, 724 shares, 3,039 saves.
 ## 2026-10-31 What if you could explain a complex technical idea using an interactiv
 TikTok Short: 80,100 views, 3,624 likes, 13 comments, 593 shares, 3,254 saves.
-## 2026-07-23 Comment STACK and I’ll send you the complete setup guide + an invite t
-Instagram Short: 67,840 views, 615 likes, 584 comments, 0 shares, 0 saves.
 ## 2026-10-25 Comment “SLASH” and I’ll send you the setup guide. 👇🎬
 Facebook Short: 62,035 views, 442 likes, 238 comments, 61 shares, 0 saves.
 ## 2026-10-22 Comment “VIDEO” and I’ll send you the GitHub link. 👇
@@ -37,16 +35,18 @@ Instagram Short: 48,847 views, 676 likes, 941 comments, 0 shares, 0 saves.
 ## 2026-08-11 Comment SHOW and I’ll send you the exact prompt + step-by-step setup 👇
 Instagram Short: 41,457 views, 545 likes, 666 comments, 0 shares, 0 saves.
 ## 2026-10-27 GPT-6.1 Terra Just Dropped. What you need to know.
-YouTube Long: 37,005 views, 266 likes, 44 comments, 0 shares, 0 saves.
-## 2026-07-23 DM me "STACK" and I'll send you the full setup guide + Claude Code Clu
-TikTok Short: 36,300 views, 1,558 likes, 86 comments, 421 shares, 2,036 saves.
+YouTube Long: 37,027 views, 266 likes, 44 comments, 0 shares, 0 saves.
 ## 2026-11-04 How I'd Make Money With Claude (If I Got Fired Tomorrow)
-YouTube Long: 35,273 views, 742 likes, 19 comments, 0 shares, 0 saves.
+YouTube Long: 35,512 views, 745 likes, 19 comments, 0 shares, 0 saves.
 ## 2026-10-29 5 Claude Skills That Create Videos Without AI Video Models
-YouTube Short: 33,408 views, 1,098 likes, 13 comments, 0 shares, 0 saves.
+YouTube Short: 33,524 views, 1,099 likes, 14 comments, 0 shares, 0 saves.
 ## 2026-10-26 Comment “OPEN” and I’ll send you the link. 👇🎬
 Facebook Short: 31,054 views, 342 likes, 303 comments, 59 shares, 0 saves.
 ## 2026-11-05 What if you could bring your favorite business thinkers into one AI bo
 TikTok Short: 30,000 views, 1,416 likes, 25 comments, 723 shares, 2,117 saves. Brand: [[Avori]].
 ## 2026-10-27 Comment “OPEN” and I’ll send you the link. 👇🎬
 Facebook Short: 29,308 views, 307 likes, 215 comments, 52 shares, 0 saves.
+## 2026-10-16 Comment "EDITED" and I'll send you the full breakdown.
+Facebook Short: 29,201 views, 347 likes, 757 comments, 45 shares, 0 saves.
+## 2026-10-29 Cloudflare open-sourced the security audit skill that helped inspire i
+TikTok Short: 25,800 views, 1,115 likes, 6 comments, 281 shares, 1,097 saves.

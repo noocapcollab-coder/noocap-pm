@@ -66,7 +66,7 @@ Seen 1 time(s). Source: Harsh correction.
 When: A payment chase is due but the brand's latest email to us is a question we have not answered
 Do: Hold the chase. Get the answer (ask Harsh on WhatsApp if only he knows) and send that first; the payment ask can ride in the same email.
 Never: Draft a payment chase that skips or guesses the answer to the brand's open question.
-Seen 1 time(s). Source: System check.
+Seen 3 time(s). Source: System check.
 ## Chase where the brand told us to chase
 When: Writing a payment chase or reminder on a deal where the brand said how invoices or reminders must be sent (which thread, which finance address, which portal)
 Do: Read the thread for the brand's own instructions first and follow them: reply in the thread the invoice went out in and copy the finance address they named. If the deal's Thread ID points at the old collab thread, switch it to the invoice thread before drafting.

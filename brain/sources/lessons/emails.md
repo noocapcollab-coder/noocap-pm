@@ -2,6 +2,21 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Wrong details we sent are corrected before the brand's document is signed
+When: We sent a brand wrong facts (a creator's name, address, rate or date) and the brand answers with a document built on them, such as an agreement or invoice form
+Do: Keep the correction alive after the brand's next email: answer that email with the right facts, ask them to fix the document, and tell Harsh on WhatsApp in the contract message that the document carries the wrong details so he does not sign it
+Never: Retire the correction because the brand wrote again, or file the brand's document as ready to sign without saying it repeats our mistake
+Seen 1 time(s). Source: System check.
+## Never invent a creator's legal or business details
+When: A brand asks for the creator's business name, legal name, legal address, contact email, tax ID or bank details (for an agreement, invoice or vendor form), in any email the PM writes
+Do: Leave those details out of the email and ask Harsh on WhatsApp for them; answer the rest of the email (the script, the cut). Only details Harsh gave, or ones already on file word for word, ever go to a brand.
+Never: Fill in a name, company, address or email that is not on file (no 'Lindsay Creative LLC', '123 Maple Street', 'name@noocap.com'), and never put agreement details inside a script, follow-up, tool-access or cut email.
+Seen 2 time(s). Source: System check.
+## An e-sign notice gets no reply email
+When: An automated signing service (agreements@, PandaDoc, DocuSign, a 'Please sign' or 'Completed' notice with a sign link) emails a contract for a creator
+Do: Send the contract and sign link to Harsh on WhatsApp once and link it to the right deal; a 'Completed' notice only records that it is signed.
+Never: Never draft a reply to the signing service's address, never greet the campaign contact in it, and never promise to review or sign it 'shortly'.
+Seen 1 time(s). Source: System check.
 ## A loop-in reply asks only for what the brand hasn't sent
 When: A creator's team loops noocapcollab into a brand thread
 Do: Check the thread for a brief link or file and an attached contract, and ask only for what is missing
@@ -60,8 +75,8 @@ Seen 1 time(s). Source: Harsh correction.
 ## A brand chasing a promised posting gets a time from Harsh, never 'today' or 'finishing touches'
 When: A brand asks when the approved video goes live, or chases a posting we said would happen today
 Do: Give the posting time Harsh supplied, otherwise ask Harsh on WhatsApp for it before replying
-Never: Write 'we will post it today/tomorrow/soon', 'we are posting it today', 'we're getting it posted right now', 'we are putting the finishing touches' or 'we're finalizing the video' without a time Harsh gave
-Seen 2 time(s). Source: System check.
+Never: Write 'we will post it today/tomorrow/soon/now', 'Chris will post it today', 'we are going ahead and posting it now', 'we are posting it today', 'we're getting it posted right now', 'we are putting the finishing touches' or 'we're finalizing the video' without a time Harsh gave
+Seen 3 time(s). Source: System check.
 ## A fixed reply in Harsh's own words sends on its own, timing line included
 When: Saving a Reply Templates reply (Why has [template:...]) such as billing_on_approval
 Do: Hold a fixed reply only for a leftover placeholder or a made-up code; let it auto-send otherwise, and record the deal's ask (Billing Request Sent) only when the copy really went
@@ -176,7 +191,7 @@ Seen 1 time(s). Source: System check.
 When: Replying in a thread where the brand's latest email changes the subject (hands payment to a colleague, pitches a new brand, asks a rate)
 Do: Read the newest message first. Greet and address whoever wrote it, answer exactly what it asks, and send a rate or new-brand question to Harsh (it opens its own Inbound deal).
 Never: Answer an older question nobody asked again, greet someone who did not write, or skip the question the brand actually asked.
-Seen 7 time(s). Source: System check.
+Seen 8 time(s). Source: System check.
 ## Copy the deal's full Thread CC on every draft
 When: Writing any email to a brand, including a resend from a creator's inbox
 Do: Put every address in the deal's Thread CC into Cc, plus noocapcollab when the brand was asked to reply all.
@@ -221,4 +236,4 @@ Seen 3 time(s). Source: Rulebook.
 When: Writing any email
 Do: Give the thing if we have it, otherwise leave the promise out.
 Never: Write 'shortly', 'within a few hours', 'we'll send it today', [DATE], [name] or invented dates.
-Seen 18 time(s). Source: Rulebook.
+Seen 20 time(s). Source: Rulebook.

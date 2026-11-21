@@ -2,20 +2,22 @@
 type: deal
 ---
 Stage: Brief Received
-Last brand reply 2026-11-20, our last reply 2026-11-20.
+Last brand reply 2026-11-21, our last reply 2026-11-21.
 AGREED: rate, deliverables, usage rights, payment terms and any agreed dates. Only what both sides have confirmed.
-Rate: Not stated. Deliverables: Produce and publish by 2026-11-30. Usage rights: Not stated. Payment terms: Not stated. Agreed dates: November 30, 2026 for completion.
+Rate: Not stated. Deliverables: Produce and publish content. Usage rights: Not stated. Payment terms: Not stated. Agreed dates: Not stated.
 
 HISTORY:
 2026-11-19: creator - agreed to collaborate and requested contract and brief.
 2026-11-19: us - confirmed takeover and requested brief and contract.
 2026-11-20: us - acknowledged receipt of contract and committed to review and script creation.
+2026-11-20: brand - acknowledged receipt of our email.
+2026-11-21: us - submitted signed contract to brand.
 
 BILLING:
 not yet
 
 OPEN NOW:
-We owe: Review and sign the contract, and share the script for approval.
+Waiting on brand: Review of the signed contract and approval of the upcoming script.
 
 ## Links
 - [[Lindsay]]

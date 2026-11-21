@@ -2,6 +2,11 @@
 
 What brands asked us to change after seeing a cut. Read before editing the next video for the same brand.
 
+## 2026-11-14 Dreamina × Chris (Artist Team)
+Brand: [[Dreamina]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 3.
+Revise the hashtags to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner
+Brand asked to revise hashtags for the video to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner
+
 ## 2026-11-19 Manyfast × Chris
 Brand: [[Manyfast]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 2.
 - Around 16 seconds, the caption still says “cloud code.” Please change this to “Claude Code.”
@@ -27,11 +32,6 @@ At second 15-16, when saying 'I built an app around that on Emergent', either sa
 Brand requested edits to the video draft
 Emergent should be mentioned earlier in the video
 Around 15-16s: say 'on Emergent' or show logo
-
-## 2026-11-14 Dreamina × Chris (Artist Team)
-Brand: [[Dreamina]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 3.
-Revise the hashtags to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner
-Brand asked to revise hashtags for the video to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner
 
 ## 2026-11-13 CapCut × Chris
 Brand: [[CapCut]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.

@@ -5,18 +5,18 @@ Brand. Works with creators: [[Duncan]].
 ## Brand wiki (from every email with them)
 WHO: AI Inspo is an AI product/tool. They come to us directly.
 
-CONTACTS: Jessie, business@vivavideotech.com, AI Inspo Team. Copied: collab@buildroom.ai.
+CONTACTS: Jessie, business@vivavideotech.com, AI Inspo Team; CC collab@buildroom.ai.
 
-DEALS: Duncan | One Instagram reel (collab post with AI Inspo official account) plus DM, cross post on Facebook and TikTok | [amount]| Brief Received | Target dates: final video before November 18 (not met).
+DEALS: Duncan | One video promoting AI Inspo, deliverables: one Instagram reel (collab post with AI Inspo official account) plus DM, cross post on Facebook and TikTok | [amount]| Stage: Script Sent | Dates: agreed 2026-11-12.
 
-HOW THEY WORK: We register on their official website (ai-inspo.com) and send them our account ID (starting with 4) so they can add testing credits. Step-by-step process: provide payment info for contract, write script, send script for review/approval, filming and editing, first draft review, final version approval, posting.
+HOW THEY WORK: Register on their official website at ai-inspo.com to get an account ID starting with 4 for testing credits. Write the script based on their production guide, send the script for review, send the first draft for review and adjustments, send the final version for approval, then post.
 
 WATCH OUT: They cannot add testing credits using an email address alone; they require the AI Inspo account ID starting with 4.
 
-OPEN NOW: We owe registering on the AI Inspo official website, sending our account ID starting with 4, and sending the script.
+OPEN NOW: Waiting on the brand to approve the script sent on 2026-11-21.
 
-## Deal with [[Duncan]] (Brief Received, opened 2026-11-06)
-Last brand reply 2026-11-19, our last reply 2026-11-19.
+## Deal with [[Duncan]] (Script Sent, opened 2026-11-06)
+Last brand reply 2026-11-19, our last reply 2026-11-21.
 AGREED: [amount]for one video promoting AI Inspo. Deliverables: one Instagram reel (collab post with AI Inspo official account) plus DM, cross post on Facebook and TikTok. Payment: once after publishing the video. Usage rights and dates not set.
 
 HISTORY:
@@ -30,7 +30,8 @@ HISTORY:
 2026-11-16 brand asked us to register on the new official website (ai-inspo.com) and send our new account ID back.
 2026-11-19 brand followed up asking for a progress update.
 2026-11-19 us replied that we are still interested and will share the script shortly.
+2026-11-21 us sent the script for review.
 
 BILLING: not yet.
 
-OPEN NOW: We owe: Register on AI Inspo official website, send account ID starting with 4, and send the script.
+OPEN NOW: Waiting on brand: approve the script.

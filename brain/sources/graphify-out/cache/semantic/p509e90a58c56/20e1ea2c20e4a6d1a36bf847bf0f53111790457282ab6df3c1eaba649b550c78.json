@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_treza_treza", "label": "Treza", "file_type": "concept", "source_file": "brands/treza.md"}], "edges": [{"source": "brands_treza_treza", "target": "creators_lindsay_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/treza.md"}], "hyperedges": []}

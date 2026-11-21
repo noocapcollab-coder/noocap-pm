@@ -5,21 +5,36 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]], [[Chris]], [[Duncan]], [[Brad]].
 ## Brand wiki (from every email with them)
-WHO: CapCut app and tools (including CapCut PC, Dreamina, and CapCut ChatGPT plugin), working directly and through agencies GrowMaxValue and GlobeInflu.
+WHO
+CapCut, editing app and software maker. We come to them directly and through agencies (GrowMaxValue, GlobeInflu).
 
-CONTACTS: Sophie Wilson, sophie.wilson@growmaxvalue.com, GrowMaxValue agency, signs as Lindsay's Team. Mia Brown, mia.brown@growmaxvalue.com, GrowMaxValue agency, signs as Chris's Team. Alisa, alisa@globeinflu.com, GlobeInflu agency, signs as Chris's Team and Brad's Team. Victoria Ev, victoria@mediacube.io, Mediacube agency, signs as Duncan's team. Thread CC includes collab@automateaiconsulting.com, collab@buildroom.ai, alilar@mediacube.io.
+CONTACTS
+Sophie Wilson, sophie.wilson@growmaxvalue.com, GrowMaxValue agency, signs for Lindsay.
+Mia Brown, mia.brown@growmaxvalue.com, GrowMaxValue agency, signs for Chris, copy collab@chriscordero.net.
+Victoria Ev, victoria@mediacube.io, Mediacube agency, signs for Duncan, copy collab@buildroom.ai, alilar@mediacube.io.
+Alisa, alisa@globeinflu.com, GlobeInflu agency, signs for Brad.
 
-DEALS:
-CapCut x Lindsay: 3 promotional videos for CapCut APP on Instagram, 30 to 60 seconds each, [amount]script approved, latest publication deadline November 27, 2026, with 60-day ad code authorization per video.
-CapCut x Chris: 3 short-form videos, [amount]posted, channel Email.
-CapCut x Duncan: 1 short-form video for CapCut, [amount]invoiced, go-line deadline October 30, 2026, 3-month ad code.
-CapCut x Brad: 3 short-form videos (Ninja AI Tools campaign), [amount]([amount]per video), submitted, 100% due within 7 days after video publication.
+DEALS
+CapCut x Lindsay | 3 promotional videos for CapCut APP on Instagram, 30-60 seconds each | [amount]| Script Approved | Nov 27 publication deadline.
+CapCut x Chris | 3 short-form videos | [amount]| Posted | Nov 26 publication deadline.
+CapCut x Duncan | 1 short-form video with 3-month ad code for CapCut (Zeely AI) | [amount]| Invoiced | Go-live Oct 30.
+CapCut x Brad | 3 short-form videos (Ninja AI Tools) | [amount]| Submitted | Publish window Nov 23-27.
 
-HOW THEY WORK: Brief format requires script approval before filming, up to 2 revisions. Post within 24 hours to 3 days of approval depending on the campaign. Mandatory tracking links (UTM) and 60-day ad codes must be provided upon publication. Specific title and thumbnail instructions apply per video. Invoices must include company name, address, tax ID, and payment details in text format.
+HOW THEY WORK
+Scripts need approval before filming, up to 2 revisions.
+Videos must include specific UTM links and 60-day ad codes.
+Titles and thumbnails have strict requirements (e.g., must include Zeely Review).
+Invoices must include full company info and payment details in text format, no QR codes or links.
 
-WATCH OUT: Do not mix up creators and scripts (e.g., mistakenly sharing Chris's script with Brad's campaign). Ensure exact video titles and thumbnails requested by the brand are used (e.g., Zeely AI review). Ad codes and UTM links must be sent immediately upon publication. Payment receipts and invoices must be provided in text format with full company details.
+WATCH OUT
+Do not mix up creators and scripts (e.g., sending Chris's script/video for Brad).
+Do not use QR codes or links for billing details on invoices; finance team requires text format.
 
-OPEN NOW: CapCut x Lindsay: We owe a reply to the brand regarding the switch to the new GTA 6 brief for the third video. CapCut x Chris: Waiting on brand approval or feedback for the revised scripts of videos two and three. CapCut x Duncan: Awaiting final [amount]payment against Invoice INV-003 from the brand finance team. CapCut x Brad: Waiting on brand feedback for the revised script once shared by us.
+OPEN NOW
+CapCut x Lindsay: We owe reply to the brand regarding the switch to the new GTA 6 brief for the third video.
+CapCut x Chris: We owe revised third script and first draft of the second video.
+CapCut x Duncan: Awaiting [amount]final payment against Invoice INV-003. Waiting on brand: process final payment within next few days per their 2026-11-09 commitment.
+CapCut x Brad: Waiting on brand: Feedback on the revised script once shared by us.
 
 ## Decisions from Harsh
 - 2026-11-20: Brand asked: an answer to: Brand approved the second script. (wants third video published by 2026-11-22) · Harsh answered: Hi

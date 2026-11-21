@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Hashtags are the post caption, not changes to the cut
+When: A brand whose reel is approved or cleared to post asks only for different hashtags or caption tags
+Do: Keep the video where it is (To Post), put the hashtags on the card's Post Caption, tell whoever posts, and get the reel live with them, then send the live link.
+Never: Move the tracker row or card back to Changes or send hashtag notes to the editor as video feedback.
+Seen 1 time(s). Source: System check.
 ## A deleted video card never stops a brand email from being handled
 When: A brand email arrives for a deal whose linked card was deleted
 Do: Skip the note on the deleted card and handle the rest of the email

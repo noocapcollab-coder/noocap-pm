@@ -1,5 +1,5 @@
 # Valeri - what performs
-Content OS, videos posted since 2026-07-23: 197 posts across platforms, average 10,116 views. Creator: [[Valeri]].
+Content OS, videos posted since 2026-07-24: 197 posts across platforms, average 10,260 views. Creator: [[Valeri]].
 ## 2026-08-11 Comment HOLO and I’ll send you the link 👇
 Instagram Short: 317,926 views, 256 likes, 117 comments, 0 shares, 0 saves. Brand: [[Holo AI]].
 ## 2026-10-23 What if you could find potential web design clients and show them a we
@@ -18,14 +18,14 @@ Facebook Short: 87,219 views, 596 likes, 687 comments, 95 shares, 0 saves. Brand
 Instagram Short: 81,703 views, 98 likes, 46 comments, 0 shares, 0 saves. Brand: [[Holo AI]].
 ## 2026-10-25 Comment “DASHBOARD” and I’ll send you the step-by-step guide. 👇🎮
 Instagram Short: 62,887 views, 813 likes, 1,660 comments, 0 shares, 0 saves.
+## 2026-10-25 Claude Can Build Interactive 3D Business Dashboards
+YouTube Short: 60,748 views, 835 likes, 12 comments, 0 shares, 0 saves.
 ## 2026-10-30 Comment “LEADS” and I’ll DM you my setup guide plus the outreach messa
 Instagram Short: 57,616 views, 561 likes, 545 comments, 0 shares, 0 saves.
 ## 2026-09-09 Comment “LINKS” and I’ll DM you all seven GitHub repos.
 Instagram Short: 49,505 views, 1,177 likes, 888 comments, 0 shares, 0 saves.
 ## 2026-10-02 Comment “THINK” and I’ll send you the GitHub link.
 Instagram Short: 43,040 views, 750 likes, 426 comments, 0 shares, 0 saves.
-## 2026-10-25 Claude Can Build Interactive 3D Business Dashboards
-YouTube Short: 33,477 views, 560 likes, 9 comments, 0 shares, 0 saves.
 ## 2026-11-11 30 Claude Code plugins, skills, and resources organized by what you ac
 Instagram Short: 28,673 views, 473 likes, 715 comments, 0 shares, 0 saves.
 ## 2026-08-25 Comment KIMI and I'll send you the link 👇
@@ -39,7 +39,7 @@ Instagram Short: 23,612 views, 438 likes, 1,392 comments, 0 shares, 0 saves.
 ## 2026-09-30 What if you could combine free AI quotas from multiple providers into 
 TikTok Short: 21,400 views, 988 likes, 14 comments, 241 shares, 1,118 saves.
 ## 2026-10-23 Claude Code Can Find Clients While You Sleep
-YouTube Short: 19,298 views, 668 likes, 68 comments, 0 shares, 0 saves.
+YouTube Short: 19,435 views, 673 likes, 71 comments, 0 shares, 0 saves.
 ## 2026-11-11 Looking for useful Claude Code plugins, skills, and resources? Here ar
 TikTok Short: 19,100 views, 1,139 likes, 13 comments, 452 shares, 1,619 saves.
 ## 2026-11-12 An open-source alternative to subscription-based AI creative studios?
