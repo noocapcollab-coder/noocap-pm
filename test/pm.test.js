@@ -3088,3 +3088,12 @@ test('a swipe-reply naming the brand on "which brand?" sends the signed contract
   assert.ok(src.indexOf('pendingContract(st) && await signedContract(') < info, 'the brand name for a waiting contract too');
   assert.match(src, /meta: hard \? 'contract-done' : 'contract-ask', file: hard \? undefined : file, wid: sentId\(sentAsk\)/);
 });
+
+test('a cut reaches the brand even with no AI: the fixed cut email is used (Harsh, Nov 21)', async () => {
+  const { plainCutBody, greetingFor } = await import('../lib/brandsend.js');
+  assert.equal(greetingFor('kepan@katlasmedia.com'), 'Hi Kepan,');
+  assert.equal(greetingFor('outreach@katlasmedia.com'), 'Hi,');
+  assert.equal(plainCutBody(greetingFor('anita@arch.agency'), 'https://f.io/x', 'Chris', false), "Hi Anita,\n\nHere is the cut for your review: https://f.io/x\n\nBest,\nChris's Team");
+  const fs = await import('node:fs');
+  assert.match(fs.readFileSync(new URL('../lib/brandsend.js', import.meta.url), 'utf8'), /cut email writer down, fixed text used/);
+});
