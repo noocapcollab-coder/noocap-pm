@@ -3226,3 +3226,32 @@ test('"it\'s duncan" for a waiting contract picks the deal from the contract tex
   assert.equal(none.deal, null); assert.equal(none.creator, 'Duncan'); assert.equal(none.options.length, 2);
   assert.equal(dealFromCreatorAnswer('hello', { text: 'Fotor' }, deals).creator, null);
 });
+
+// ---------- Topview AI x Lindsay, Nov 22: contract_ack promised a script that had already gone and been approved ----------
+test('a fixed contract ack never promises a script the brand already has', async () => {
+  const { dropSentScriptPromise } = await import('../lib/replytemplates.js');
+  const ack = "Hi Lim,\n\nThanks for sending the contract over. We've received it and will review and sign it, and we'll share the script with you here in this thread.\n\nBest,\nLindsay's Team";
+  const after = dropSentScriptPromise(ack, { stage: 'Script Approved', scriptSent: '2026-11-21' });
+  assert.equal(/script/i.test(after), false);
+  assert.match(after, /will review and sign it\.\n\nBest,/);
+  // before the script went, the promise stays (Fotor x Duncan, Nov 20)
+  assert.equal(dropSentScriptPromise(ack, { stage: 'Signed' }), ack);
+  // a whole sentence about the script goes too
+  assert.equal(dropSentScriptPromise("Hi Zoey,\n\nThanks, we've got it. We'll send the script here soon.\n\nBest,\nDuncan's Team", { scriptSent: '2026-11-21' }), "Hi Zoey,\n\nThanks, we've got it.\n\nBest,\nDuncan's Team");
+});
+
+// ---------- CapCut x Chris BD-67, Nov 19 and Nov 22: billing asked for a 3-video fee after video 1 only ----------
+test('a multi-video deal is not invoiced while videos are still owed', async () => {
+  const { partDue, videosStillOwed } = await import('../lib/invoicing.js');
+  const capcut = { stage: 'Posted', deliverables: '3 short-form videos (signed contract, GrowMaxValue agency)', postedLinks: '',
+    memory: 'BILLING: not yet<br /><br />OPEN NOW: We owe: revised third script and first draft of the second video.' };
+  assert.equal(videosStillOwed(capcut), true);
+  assert.equal(partDue(capcut, 'final', ''), false);
+  // the brand asking for the invoice still makes it due
+  assert.equal(partDue({ ...capcut, stage: 'Submitted', invoiceRequested: true }, 'final', ''), true);
+  // all three reels live: due
+  const done = { ...capcut, memory: 'OPEN NOW: Waiting on brand: payment', postedLinks: 'https://www.instagram.com/reel/A1/ https://www.instagram.com/reel/B2/ https://www.instagram.com/reel/C3/' };
+  assert.equal(partDue(done, 'final', ''), true);
+  // a single-video deal is untouched
+  assert.equal(partDue({ stage: 'Posted', deliverables: '1 dedicated video', memory: 'We owe: the live link' }, 'final', ''), true);
+});
