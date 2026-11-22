@@ -3255,3 +3255,13 @@ test('a multi-video deal is not invoiced while videos are still owed', async () 
   // a single-video deal is untouched
   assert.equal(partDue({ stage: 'Posted', deliverables: '1 dedicated video', memory: 'We owe: the live link' }, 'final', ''), true);
 });
+
+test('videos owed by a deal: shorts/reels/videos counted, stories and syndication are not (Upfluence × Duncan, Nov 22)', async () => {
+  const { videosOwed, cardsForDeal } = await import('../lib/missingcards.js');
+  assert.equal(videosOwed('2x YouTube Shorts (syndicated to TikTok, Facebook, Instagram), 2x Instagram Stories (minimum 2 frames each)'), 2);
+  assert.equal(videosOwed('1 Instagram Reel + 1 story'), 1);
+  assert.equal(videosOwed('Three dedicated videos'), 3);
+  assert.equal(videosOwed('one YouTube integration and 2 reels'), 3);
+  assert.equal(videosOwed(''), 0);
+  assert.deepEqual(cardsForDeal(['UPFLUENCE × DUNCAN 1', 'Fotor × Duncan', 'Random'], 'Upfluence'), ['UPFLUENCE × DUNCAN 1']);
+});

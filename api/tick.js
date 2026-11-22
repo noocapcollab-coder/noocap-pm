@@ -214,6 +214,12 @@ export default async function handler(req, res) {
     try { const I = await import('../lib/inbox.js'); return res.status(200).json(await I.sendVideoChanges({ brand: String(req.query.brand || ''), creator: String(req.query.creator || ''), feedback: String(req.query.notes || '') })); }
     catch (e) { return res.status(500).json({ error: e.message }); }
   }
+  // ?missingcards=1 (&dry=1): deals owing more videos than their creator's board has cards for (lib/missingcards.js)
+  if (req.query?.missingcards) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const M = await import('../lib/missingcards.js'); return res.status(200).json({ due: await M.missingVideoCards({ dry: req.query.dry === '1' }) }); }
+    catch (e) { return res.status(500).json({ error: e.message }); }
+  }
   // ?harshedit=1 (&dry=1): send TO EDIT rows on Harsh's own board to their editor now (lib/harshboard.js)
   if (req.query?.harshedit) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
