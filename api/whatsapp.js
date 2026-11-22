@@ -518,7 +518,21 @@ async function signedContract(st, file, hint = '', answering = false) {
   const { openDeals } = await import('../lib/briefs.js');
   const deals = await openDeals({ withClosed: true }).catch(() => []);
   // Which deal: on an answer, only Harsh's words pick it; otherwise caption, file name and contract text
-  const deal = C.matchDeal({ caption: hint, filename: answering ? '' : file.filename, text: answering ? '' : text }, deals);
+  let deal = C.matchDeal({ caption: hint, filename: answering ? '' : file.filename, text: answering ? '' : text }, deals);
+  // "it's duncan": only the creator named. The contract text picks which of that creator's deals; if it can't, ask
+  // again with that creator's deals, and never let the answer fall through to a drafted reply (Nov 22: "it's duncan"
+  // became a Luma AI × Duncan email with the Fotor contract attached)
+  if (!deal && answering) {
+    const pick = C.dealFromCreatorAnswer(hint, { filename: file.filename, text }, deals);
+    if (pick.deal) deal = pick.deal;
+    else if (pick.creator) {
+      const list = pick.options.map((d) => d.brand).filter(Boolean).slice(0, 8);
+      const ask = `📎 Which of ${pick.creator}'s deals is *${file.filename}* for?${list.length ? ` Open ones: ${list.join(', ')}.` : ''} Reply with the brand name (e.g. "${list[0] || 'Atoms'}").`;
+      const sentAsk = await sendText(st.person.number, ask);
+      st.messages.push({ role: 'assistant', content: ask, meta: 'contract-ask', file, wid: sentId(sentAsk), at: new Date().toISOString() });
+      return true;
+    }
+  }
   if (!deal && answering) return false; // not a brand name: let the message be handled normally
   // Safety checks before anything goes to a brand on its own (lib/contracts.js contractChecks). Nov 16: the Atoms
   // agreement (Lindsay's) went to Holo AI x Chris's agency, who had never sent us a contract.

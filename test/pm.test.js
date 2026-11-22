@@ -3216,3 +3216,13 @@ test('test bank: commits that do not touch email handling never start a run; run
   assert.equal(EMAIL_FILES.test('lib/editornudge.js'), false);
   assert.equal(EMAIL_FILES.test('lib/harshboard.js'), false);
 });
+
+test('"it\'s duncan" for a waiting contract picks the deal from the contract text among Duncan\'s deals (Nov 22)', async () => {
+  const { dealFromCreatorAnswer } = await import('../lib/contracts.js');
+  const deals = [{ brand: 'Luma AI', creator: 'Duncan', stage: 'Signed' }, { brand: 'Fotor', creator: 'Duncan', stage: 'Brief Received' }, { brand: 'Fotor', creator: 'Chris', stage: 'Script Sent' }];
+  const r = dealFromCreatorAnswer("it's duncan", { filename: 'INFLUENCER AGREEMENT-thechriscordero.pdf', text: 'This agreement is between Chengdu Everimaging d/b/a Fotor and Duncan Rogoff' }, deals);
+  assert.equal(r.deal.brand, 'Fotor'); assert.equal(r.deal.creator, 'Duncan');
+  const none = dealFromCreatorAnswer("it's duncan", { text: 'agreement with some company' }, deals);
+  assert.equal(none.deal, null); assert.equal(none.creator, 'Duncan'); assert.equal(none.options.length, 2);
+  assert.equal(dealFromCreatorAnswer('hello', { text: 'Fotor' }, deals).creator, null);
+});
