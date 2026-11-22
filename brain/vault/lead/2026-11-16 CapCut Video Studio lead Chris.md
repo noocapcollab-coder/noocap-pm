@@ -5,7 +5,7 @@ Deliverables: 3 short-form videos
 Contact Name: Mia
 Next Step: Provide access to CapCut on noocaptools@gmail.com and confirm receipt before filming
 Platforms: TikTok
-Last Our Email: 2026-11-19
+Last Our Email: 2026-11-22
 Follow-ups: 0
 Deal: 1 linked
 Last Brand Email: 2026-11-16

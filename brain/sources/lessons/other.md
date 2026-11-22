@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A once-a-day heartbeat job must respect the time budget
+When: Adding or reviving a heartbeat job that loops over every card, deal or folder
+Do: Check late() inside the loop, work in small parallel batches and let the next run pick up the rest
+Never: Loop over every live card with one network call each and no time check inside the heartbeat
+Seen 1 time(s). Source: System check.
 ## An hourly heartbeat job must sit on a tick that has time left
 When: Adding or moving a once-an-hour or once-a-day job in lib/heartbeat.js
 Do: Gate jobs that run after the Invoices step with hourlyTailTick(tickMin), where tickMin is the minute the tick STARTED (read once from T0), and check PM RUNS steps show the job actually running

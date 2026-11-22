@@ -2,7 +2,7 @@
 
 The final scripts of videos posted in the last 60 days, as filmed.
 
-## 2026-11-21 MCP IS DEAD (1)
+## 2026-11-20 MCP IS DEAD (1)
 Type: TRIALS. Creator: [[Duncan]].
 ON SCREEN HOOK:
 MCP is officially cooked. Cloudflare just replaced it, runs on a thousand tokens instead of 1.17 million, and the whole industry is quietly adopting it.
@@ -60,6 +60,19 @@ Stop building AI agents on MCP. The whole industry is moving to a new standard, 
 So here's the deal. With MCP, your agent fires off tool call one, pings the model, fires off tool call two, pings the model again, and just the tool manifest starts eating your context. Cloudflare hit this running 2,500 endpoints, with the old approach burning 1.17 million tokens on a single workflow. So they built CodeMode. MCP tools get exposed as a TypeScript API, the model writes one script that chains them, and the whole thing runs inside a sandbox. Same job, two tools, around a thousand tokens. Pretty freaking cool. Anthropic is already baking this into Claude under programmatic tool calling, and Block Goose is going the same way. MCP as we knew it is done.
     CTA:
 Comment LINK and I'll send you Cloudflare's full breakdown plus access to Claude Code Club.
+
+## 2026-11-21 FASTEST GROWING CLAUDE SKILLS
+Type: PERSONAL. Creator: [[Duncan]].
+ONSCREEN HOOK:
+The 5 fastest-growing Claude skills right now
+    Hook 1:
+Five Claude skills are blowing up on GitHub this month, and the one sitting at number one came straight out of Cloudflare’s security team.
+    Hook 2:
+Here are the five Claude skills with the biggest star growth on GitHub this month, all free, and the last one is Cloudflare's own security audit for your entire codebase.
+    Body:
+So here’s the deal. These five Claude skills are growing faster than anything else on GitHub right now. Hallmark flags AI-generated patterns on your page before you ship, and Anatomy turns any concept into a diagram of how the system actually works, so you learn it way faster. Impeccable has over a hundred thousand stars and catches the tiny formatting slips most people miss, while Matt Pocock’s Engineering Skills gives you a full end-to-end setup that’s been climbing the list all year. And at number one is Cloudflare’s Security Audit, open-sourced straight from their security team, which audits your whole codebase and hands you a punch list of what to fix. Pretty freaking cool.
+    CTA:
+Comment RANK and I'll send you every install line plus access to Claude Code Club.
 
 ## 2026-11-17 5 THINGS FABLE CAN DO
 Creator: [[Duncan]].
@@ -150,19 +163,3 @@ Type: REPOST, TRIALS. Creator: [[Duncan]].
     - Claude Opus 5.5 still builds that generic AI look out of the box, and five free plugins fix it.
     - These five free plugins are the reason my Claude Opus 5.5 builds stopped looking AI-made.
     - Most people run Claude Opus 5.5 with zero design plugins, and here are the five I’d install first.
-
-## 2026-11-10 Claude trending cartoon
-Creator: [[Duncan]].
-HOOKS
-    Hook 1: 
-    Claude can now make a full animated cartoon short, and not one frame comes from an AI video model.
-    Hook 2: 
-    Stop burning AI video credits on cartoons. Claude can build the whole short in code, right on your own computer.
-
-#### BODY
-    So here’s the deal. You give Claude one topic and it pulls the facts and writes the script before laying down the voice. From there it plans every shot, with 2D characters moving through a 3D world and the camera gliding between moments, and the whole thing renders in code on your own machine with the music and sound effects mixed in. Before the final render, agents check your frames against a style guide measured from 20 viral shorts, so anything that looks off gets caught. Pretty freaking cool. What you get is a vertical short around a minute long in 2K, and if you end each one on a cliffhanger, your comments can vote on what happens next. It’s called Claude Animated Shorts, and the skill is fully open source.
-
-#### CTA
-    Comment TOON and I’ll send you the skill plus my setup. We break down workflows like this every week inside Claude Code Club.
-    resource:
-- https://github.com/mromidev/claude-animated-shorts

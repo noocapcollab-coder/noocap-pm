@@ -13,9 +13,9 @@ HISTORY:
 2026-11-14 us followed up on the revised cut with casual music, asking for approval to post on November 17.
 2026-11-18 us followed up on the revised video review and billing details.
 
-BILLING: Not yet.
+BILLING: Not yet. Polar pays via Gusto; 3 billing-detail reminders already sent, so no more (system check, Nov 21).
 
-OPEN NOW: Waiting on brand: approval on the revised cut and company billing details.
+OPEN NOW: Waiting on brand: approval on the revised cut. We owe: Valeri's billing details to Ushni, which she asked for on Nov 10 (needs Harsh).
 
 ## Links
 - [[Polar]]

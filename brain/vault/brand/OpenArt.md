@@ -3,7 +3,7 @@ type: brand
 ---
 # OpenArt
 
-Brand. Works with creators: [[Chris]], [[Lindsay]].
+Brand. Works with creators: [[Lindsay]], [[Chris]].
 
 ## Links
 - [[Chris]]

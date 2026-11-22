@@ -5,27 +5,19 @@ type: brand
 
 Brand. Works with creators: [[Chris]], [[Valeri]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Holo AI is an AI brand. They come to us directly for Valeri and through Arch Agency for Chris.
+WHO: Holo AI / Holo is an AI brand. They come to us directly for Valeri and through an agency named Arch Agency for Chris.
 
-CONTACTS:
-Anita Dundovic, anitadundovic@arch.agency, Senior Campaign Manager at Arch Agency, signs contracts, must be copied.
-Mateo, Arch Agency, shares briefs, must be copied.
-Bruna Dragovic, brunapdragovic@arch.agency, Arch Agency contact during Anita's absence.
-Milda, milda@tryholo.ai, brand contact for Valeri.
+CONTACTS: Anita Dundovic, anitadundovic@arch.agency, Senior Campaign Manager at Arch Agency, signs and is copied. Mateo, colleague of Anita at Arch Agency, shares the brief. Bruna Dragovic, brunapdragovic@arch.agency, back-up contact at Arch Agency. Milda, milda@tryholo.ai, brand contact for Valeri. Thread CC includes collab@chriscordero.net and collab@valchy.ai.
 
 DEALS:
-Chris: 1x Instagram Reel + 30 days of Partnership Ads usage rights, [amount], Script Sent stage, contract via PandaDoc sent 2026-11-17, script sent 2026-11-19.
-Valeri: deliverables not stated, Paid stage, invoice sent 2026-10-05, paid 2026-10-08.
+Chris: 1x Instagram Reel + 30 days of Partnership Ads usage rights, [amount], Script Sent, dates none
+Valeri: collaboration + 30-day ad usage license, [amount], Paid, paid on 2026-10-08
 
-HOW THEY WORK:
-For Chris, contract via PandaDoc link provided by brand. Script shared via email.
-Billing details given for Chris: Company name CORD Creations, Billing address 715 N Patterson Park Ave, Baltimore MD 21205, Tax ID 99-1222704.
+HOW THEY WORK: Arch Agency prepares the contract via PandaDoc link for review and signature. Company details provided for Chris are CORD Creations, 715 N Patterson Park Ave, Baltimore MD 21205, Tax ID 99-1222704. Scripts are sent via email for review.
 
-WATCH OUT:
-We previously sent an unrelated signed contract by mistake to Arch Agency.
+WATCH OUT: Continuing to use content for paid advertising beyond the agreed licensing period without an extended license or prior approval is unacceptable.
 
-OPEN NOW:
-Chris deal: Waiting on Anita Dundovic to review the script and share feedback or approval upon her return on November 23 2026.
+OPEN NOW: For Chris, waiting on Anita to review the script and share feedback or approval upon her return on November 23 2026. For Valeri, waiting on Milda to pause active ads and respond regarding the license extension.
 
 ## Decisions from Harsh
 - 2026-11-18: Brand asked: Provide billing details to the brand so they can generate the contract · Harsh answered: holo is signed

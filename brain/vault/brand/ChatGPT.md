@@ -5,25 +5,25 @@ type: brand
 
 Brand. Works with creators: [[Duncan]].
 ## Brand wiki (from every email with them)
-WHO: ChatGPT, a brand managed by the agency Viral Nation.
+WHO: ChatGPT uses the agency Viral Nation for influencer marketing and payments.
 
-CONTACTS: 
-Delton Alves, dalves@viralnation.com, Invoicing Specialist, signs off as Delton.
-Banks Burkart, bburkart@viralnation.com, contact, signs off as Banks.
-Michael Valore, mvalore@viralnation.com, CC on threads.
-D. Liang, dliang@viralnation.com, CC on threads.
-Ashay Desai, adesai@viralnation.com, CC on threads.
-J. McGhee, jmcghee@viralnation.com, CC on threads.
-Collab team, collab@buildroom.ai, CC on threads.
+CONTACTS:
+Banks Burkart, bburkart@viralnation.com, agency
+Michael Valore, mvalore@viralnation.com, agency, copy
+David Liang, dliang@viralnation.com, agency, copy
+Ashay Desai, adesai@viralnation.com, agency, copy
+Jonathan McGhee, jmcghee@viralnation.com, agency, copy
+Delton Alves, dalves@viralnation.com, invoicing specialist / agency, copy
+Buildroom AI, collab@buildroom.ai, agency, copy
 
-DEALS: 
-Duncan | Switch to ChatGPT | [amount] | Invoiced | Date of Invoice 2026-11-05.
+DEALS:
+Duncan | Switch to ChatGPT | [amount] | Invoiced | Invoice sent 2026-11-05
 
-HOW THEY WORK: Payments are processed via a platform called Trolley. A one time Vendor Form must be completed to initiate the setup. Once the Vendor Form is submitted, the brand expects us to monitor our email for specific setup requests sent directly from the Trolley system to finalize banking details. Invoices should be sent to the contact team as provided in the thread.
+HOW THEY WORK: Payments are processed through the Trolley service, which requires filling out a vendor form and completing a banking setup via Trolley.
 
-WATCH OUT: Payment cannot be deposited until the banking setup via the Trolley email link is fully completed. 
+WATCH OUT: None stated.
 
-OPEN NOW: We owe: Check email and spam folders for a pending banking setup request from Trolley. Waiting on brand: Confirmation of payment processing for invoice INV-004 once banking setup is verified.
+OPEN NOW: Waiting on the brand to respond to our request to send the Trolley setup/invitation email directly to the noocapcollabs email address.
 
 
 ## Links

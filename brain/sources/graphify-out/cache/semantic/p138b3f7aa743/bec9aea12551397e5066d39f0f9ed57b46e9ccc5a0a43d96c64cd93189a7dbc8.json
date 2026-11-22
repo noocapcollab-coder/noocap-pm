@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_vuezy_vuezy", "label": "Vuezy", "file_type": "document", "source_file": "brands/vuezy.md", "_origin": "semantic"}], "edges": [{"source": "brands_vuezy_vuezy", "target": "creators_lindsay_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/vuezy.md", "_origin": "semantic"}], "hyperedges": []}

@@ -1,5 +1,5 @@
 # Valeri - what performs
-Content OS, videos posted since 2026-07-24: 197 posts across platforms, average 10,260 views. Creator: [[Valeri]].
+Content OS, videos posted since 2026-07-25: 198 posts across platforms, average 10,347 views. Creator: [[Valeri]].
 ## 2026-08-11 Comment HOLO and I’ll send you the link 👇
 Instagram Short: 317,926 views, 256 likes, 117 comments, 0 shares, 0 saves. Brand: [[Holo AI]].
 ## 2026-10-23 What if you could find potential web design clients and show them a we
@@ -14,12 +14,12 @@ Facebook Short: 98,652 views, 897 likes, 702 comments, 147 shares, 0 saves.
 Facebook Short: 96,576 views, 814 likes, 1,020 comments, 131 shares, 0 saves. Brand: [[Kimi]].
 ## 2026-08-25 Comment KIMI and I'll send you the link 👇
 Facebook Short: 87,219 views, 596 likes, 687 comments, 95 shares, 0 saves. Brand: [[Kimi]].
+## 2026-10-25 Claude Can Build Interactive 3D Business Dashboards
+YouTube Short: 84,853 views, 1,084 likes, 20 comments, 0 shares, 0 saves.
 ## 2026-10-01 Comment “HOLO” and I’ll send you the link.
 Instagram Short: 81,703 views, 98 likes, 46 comments, 0 shares, 0 saves. Brand: [[Holo AI]].
 ## 2026-10-25 Comment “DASHBOARD” and I’ll send you the step-by-step guide. 👇🎮
 Instagram Short: 62,887 views, 813 likes, 1,660 comments, 0 shares, 0 saves.
-## 2026-10-25 Claude Can Build Interactive 3D Business Dashboards
-YouTube Short: 60,748 views, 835 likes, 12 comments, 0 shares, 0 saves.
 ## 2026-10-30 Comment “LEADS” and I’ll DM you my setup guide plus the outreach messa
 Instagram Short: 57,616 views, 561 likes, 545 comments, 0 shares, 0 saves.
 ## 2026-09-09 Comment “LINKS” and I’ll DM you all seven GitHub repos.
@@ -39,7 +39,7 @@ Instagram Short: 23,612 views, 438 likes, 1,392 comments, 0 shares, 0 saves.
 ## 2026-09-30 What if you could combine free AI quotas from multiple providers into 
 TikTok Short: 21,400 views, 988 likes, 14 comments, 241 shares, 1,118 saves.
 ## 2026-10-23 Claude Code Can Find Clients While You Sleep
-YouTube Short: 19,435 views, 673 likes, 71 comments, 0 shares, 0 saves.
+YouTube Short: 19,634 views, 676 likes, 74 comments, 0 shares, 0 saves.
 ## 2026-11-11 Looking for useful Claude Code plugins, skills, and resources? Here ar
 TikTok Short: 19,100 views, 1,139 likes, 13 comments, 452 shares, 1,619 saves.
 ## 2026-11-12 An open-source alternative to subscription-based AI creative studios?

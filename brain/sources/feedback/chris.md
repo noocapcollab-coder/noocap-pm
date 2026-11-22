@@ -2,6 +2,13 @@
 
 What brands asked us to change after seeing a cut. Read before editing the next video for the same brand.
 
+## 2026-11-09 Inworld AI × Chris
+Brand: [[Inworld]]. Creator: [[Chris]]. Editor: Prabal. Revisions: 1.
+Inworld's notes on the cut:
+Fix the subtitle that says "nWorld": it should say "Inworld" (capital I, no caps on the W).
+Add the Inworld logo into the video where it fits best. Logos (several formats): https://drive.google.com/drive/folders/1CWMEKkvMGAxr9L5EPypkevKCYmkjXr9v?usp=drive_link
+Everything else is approved ("This is great now, some really minor asks").
+
 ## 2026-11-14 Dreamina × Chris (Artist Team)
 Brand: [[Dreamina]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 3.
 Revise the hashtags to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner

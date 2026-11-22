@@ -1,5 +1,5 @@
 # David - what performs
-Content OS, videos posted since 2026-07-24: 232 posts across platforms, average 5,100 views. Creator: [[David]].
+Content OS, videos posted since 2026-07-25: 232 posts across platforms, average 5,100 views. Creator: [[David]].
 ## 2026-11-03 Comment 7 and I’ll send you all seven links.
 Facebook Short: 245,882 views, 2,405 likes, 2,813 comments, 353 shares, 0 saves.
 ## 2026-09-25 Every Jarvis clip on your feed right now is the same open-source repo 

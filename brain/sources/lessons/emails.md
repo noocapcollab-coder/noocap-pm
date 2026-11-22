@@ -2,6 +2,26 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A fixed reply never promises work that is already done
+When: A fixed reply (contract ack, ETA reply) is about to go on a deal where the script, cut or other item it mentions has already been sent or approved
+Do: Check the deal's Script Sent Date, stage and history first and cut any line that promises something the brand already has. Keep Deal Memory's 'We owe' to what is really still owed.
+Never: Tell a brand 'we'll share the script' (or the cut) after it was sent and approved, or write that promise into Deal Memory as something we owe.
+Seen 1 time(s). Source: System check.
+## Send signed contracts to the brand, never the creator
+When: Sending a signed influencer agreement or contract email
+Do: Send agreement emails only to the brand contact or agency handling the contract, never back to the creator or their team inbox
+Never: Send signed contracts back to the creator or their management team
+Seen 1 time(s). Source: Draft rejected.
+## Do not send unneeded reply emails when already answered or nothing to say
+When: Drafting or sending an email reply
+Do: Check if the thread or deal already has our response or if no reply is needed before drafting; drop unnecessary replies.
+Never: Send unneeded or duplicate reply emails when the thread requires no further answer
+Seen 1 time(s). Source: Draft rejected.
+## Never agree to the brand's timeframe on our own
+When: A brand asks whether the video can be made within their window (this week or next, by a deadline)
+Do: Send the timeline ask to Harsh on WhatsApp and write only from his answer
+Never: Reply 'yes, we can do it within this timeframe', 'we can meet your deadline' or 'that timeline works' when Harsh gave no timeline
+Seen 1 time(s). Source: System check.
 ## Wrong details we sent are corrected before the brand's document is signed
 When: We sent a brand wrong facts (a creator's name, address, rate or date) and the brand answers with a document built on them, such as an agreement or invoice form
 Do: Keep the correction alive after the brand's next email: answer that email with the right facts, ask them to fix the document, and tell Harsh on WhatsApp in the contract message that the document carries the wrong details so he does not sign it
@@ -236,4 +256,4 @@ Seen 3 time(s). Source: Rulebook.
 When: Writing any email
 Do: Give the thing if we have it, otherwise leave the promise out.
 Never: Write 'shortly', 'within a few hours', 'we'll send it today', [DATE], [name] or invented dates.
-Seen 20 time(s). Source: Rulebook.
+Seen 21 time(s). Source: Rulebook.

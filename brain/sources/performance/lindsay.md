@@ -1,5 +1,5 @@
 # Lindsay - what performs
-Content OS, videos posted since 2026-07-24: 98 posts across platforms, average 3,949 views. Creator: [[Lindsay]].
+Content OS, videos posted since 2026-07-25: 99 posts across platforms, average 3,959 views. Creator: [[Lindsay]].
 ## 2026-11-02 Forget hiring an editor for every single reel. 👀
 Facebook Short: 76,839 views, 579 likes, 1,094 comments, 134 shares, 0 saves.
 ## 2026-10-28 Comment “FIVE” and I’ll send you all 5 links. 👇🔥
@@ -9,44 +9,44 @@ Facebook Short: 17,090 views, 112 likes, 174 comments, 29 shares, 0 saves.
 ## 2026-10-27 Comment LIBRARIES and I'll send you all 3 UI libraries 👇
 Facebook Short: 12,446 views, 94 likes, 43 comments, 7 shares, 0 saves. Brand: [[Aries]].
 ## 2026-11-07 I Built One AI Employee From a Free GitHub Repo And Sell It To Every L
-YouTube Long: 10,172 views, 286 likes, 16 comments, 0 shares, 0 saves.
+YouTube Long: 10,221 views, 286 likes, 16 comments, 0 shares, 0 saves.
 ## 2026-10-25 Comment “SALE” and I’ll send you the code + setup guide. 👇
 Facebook Short: 8,284 views, 42 likes, 151 comments, 8 shares, 0 saves.
+## 2026-11-19 I Found a Free GitHub Repo You Can Turn Into a Paid AI Service
+YouTube Long: 7,166 views, 143 likes, 13 comments, 0 shares, 0 saves.
 ## 2026-11-13 Sell This One AI Employee To Every Local Business for [amount] Each Free Te
-YouTube Long: 7,086 views, 135 likes, 17 comments, 0 shares, 0 saves.
+YouTube Long: 7,164 views, 135 likes, 17 comments, 0 shares, 0 saves.
 ## 2026-10-24 Anthropic Just Dropped 44 Small Business Skills. Here Are the 5 I'd Se
-YouTube Long: 6,849 views, 159 likes, 16 comments, 0 shares, 0 saves.
+YouTube Long: 6,854 views, 159 likes, 16 comments, 0 shares, 0 saves.
 ## 2026-10-27 Comment “PLUGIN” and I’ll send you all 5 links. 👇🎨
 Instagram Short: 6,655 views, 75 likes, 169 comments, 0 shares, 0 saves.
 ## 2026-11-01 Stop building lead lists one business at a time. 👀
 Facebook Short: 6,303 views, 31 likes, 39 comments, 4 shares, 0 saves.
-## 2026-11-19 I Found a Free GitHub Repo You Can Turn Into a Paid AI Service
-YouTube Long: 6,197 views, 129 likes, 12 comments, 0 shares, 0 saves.
 ## 2026-10-18 If I Had Zero AI Clients, I'd Start With These 10 People
-YouTube Long: 6,047 views, 97 likes, 10 comments, 0 shares, 0 saves.
+YouTube Long: 6,050 views, 97 likes, 10 comments, 0 shares, 0 saves.
 ## 2026-10-27 Comment LIBRARIES and I'll send you all 3 UI libraries 👇
 Instagram Short: 5,955 views, 71 likes, 152 comments, 0 shares, 0 saves. Brand: [[Aries]].
+## 2026-11-12 5 Boring AI Services Local Businesses Actually Pay [amount] For
+YouTube Long: 5,835 views, 120 likes, 12 comments, 0 shares, 0 saves.
 ## 2026-10-28 Comment “FIVE” and I’ll send you all 5 links. 👇🔥
 Instagram Short: 5,817 views, 87 likes, 88 comments, 0 shares, 0 saves.
-## 2026-11-12 5 Boring AI Services Local Businesses Actually Pay [amount] For
-YouTube Long: 5,776 views, 118 likes, 11 comments, 0 shares, 0 saves.
 ## 2026-11-06 I Tried Selling Agentic OS, Businesses Wanted This Instead
-YouTube Long: 5,706 views, 127 likes, 13 comments, 0 shares, 0 saves.
+YouTube Long: 5,713 views, 127 likes, 13 comments, 0 shares, 0 saves.
 ## 2026-10-28 5 Open-Source GitHub Repos Every AI Builder Should Know
-YouTube Short: 5,447 views, 183 likes, 3 comments, 0 shares, 0 saves.
+YouTube Short: 5,459 views, 183 likes, 3 comments, 0 shares, 0 saves.
 ## 2026-11-11 Imagine creating a local business ad just by describing what you want.
 Instagram Short: 5,388 views, 48 likes, 80 comments, 0 shares, 0 saves.
 ## 2026-11-01 This Free GitHub Tool Turns Google Maps Into a Lead List
-YouTube Short: 5,364 views, 199 likes, 4 comments, 0 shares, 0 saves. Brand: [[AI tool (agents/workflow platform)]].
+YouTube Short: 5,375 views, 199 likes, 4 comments, 0 shares, 0 saves. Brand: [[AI tool (agents/workflow platform)]].
 ## 2026-11-04 You don't need another expensive tech bootcamp. You need to know where
 Facebook Short: 5,336 views, 39 likes, 29 comments, 2 shares, 0 saves.
 ## 2026-10-29 I made Claude write like an actual person by turning Wikipedia's list 
 Instagram Short: 4,926 views, 29 likes, 59 comments, 0 shares, 0 saves.
 ## 2026-10-18 4 Free Claude Code Skills for Premium Website Design
-YouTube Short: 4,853 views, 192 likes, 49 comments, 0 shares, 0 saves.
+YouTube Short: 4,867 views, 192 likes, 49 comments, 0 shares, 0 saves.
 ## 2026-10-25 Comment “SALE” and I’ll send you the code + setup guide. 👇
 Instagram Short: 4,846 views, 61 likes, 283 comments, 0 shares, 0 saves.
 ## 2026-10-20 How I’d Find My First AI Client Using 2 Tools I Built
-YouTube Long: 4,821 views, 80 likes, 3 comments, 0 shares, 0 saves. Brand: [[AI tool (agents/workflow platform)]].
+YouTube Long: 4,822 views, 80 likes, 3 comments, 0 shares, 0 saves. Brand: [[AI tool (agents/workflow platform)]].
 ## 2026-11-12 Claude + @higgsfield.ai can turn your video into a much more polished 
 Facebook Short: 4,398 views, 26 likes, 12 comments, 4 shares, 0 saves. Brand: [[Higgsfield]].

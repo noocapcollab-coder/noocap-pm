@@ -27,6 +27,18 @@ So the problem is really two-fold, because every MCP call has to go out and retu
     CTA:
 So comment "CODEMODE" and I'll get you Cloudflare's write-up and how I'd think about it in Claude Code.
 
+## 2026-11-20 FASTEST GROWING CLAUDE SKILLS
+Type: PERSONAL. Creator: [[David Iya]].
+Hook 1:
+These are the nine fastest growing Claude skills on GitHub in the last 30 days, and one of them is Cloudflare’s own security audit process.
+    Hook 2:
+These are nine of the fastest growing Claude skills on GitHub right now, and most people using Claude Code haven’t installed a single one of them.
+    Body:
+So Everything Claude Code installs a whole setup in one line, and Ponytail keeps Claude coding efficiently so you’re saving tokens. Impeccable catches the spacing and alignment issues I usually end up fixing on client sites, and Hallmark flags that typical AI-generated look before your page ships. Google’s Stitch Skills let Claude turn a design into React code and back again, and Claude Trading Skills runs a daily market check and keeps a journal of your trades. Matt Pocock’s skills cover the whole engineering workflow, and Anatomy breaks any idea down part by part. But the one I’d install first is Cloudflare’s security audit, because it’s their own internal process and it goes through your codebase and tells you what to fix.
+    CTA:
+So comment "SKILLS" and I'll get you every link with the install commands.
+    - Sub-page: [[9 Fastest Growing Claude Skills on GitHub (All Links + Install Commands)]]
+
 ## 2026-11-19 HYPIT
 Type: PERSONAL. Creator: [[David Iya]].
 Hook 1:
@@ -133,42 +145,3 @@ Hook:
     - claude-video-effects (GitHub)
     - SKILL.md
     - Sub-page: [[Claude Animation Skills: 6 Slash Commands That Make Reel Animations (Repo + Setup)]]
-
-## 2026-11-12 100 fake customers
-Creator: [[David Iya]].
-Hook 1:
-    Someone built a free set of Claude skills that acts like your CFO and a room full of 100 customers, so you find out your idea won’t sell before you build it.
-    Hook 2:
-    There’s a free pack of 11 Claude skills that tests your business idea on like 100 buyers before you spend a dollar.
-    Body:
-    So three skills do most of the work.
-    First is the CFO, which finds your real margin and how much cash you need before it pays for itself.
-    Second is the board, which scores your idea through Hormozi, Thiel, and Jobs frameworks and votes on it.
-    And third, I think this is the best one, the consumer panel, like 100 buyers, each with their own income and reason to say no, telling you who’d pay and why the rest walked.
-    They’re simulated, so test the winner on real people. It’s called Founder.
-    CTA:
-    Comment “BUYERS” and I’ll send you all 11 and the order to run them.
-    Resources:
-    - https://github.com/Jakeschincariol/founder-skill
-    - Sub-page: [[Founder: 11 Claude Skills That Test Your Idea on 100 Buyers Before You Build (Repo + Order to Run)]]
-
-## 2026-11-13 ASD-STE-100
-Type: PERSONAL. Creator: [[David Iya]].
-Hook 1:
-    There’s a writing trick from aircraft maintenance manuals that makes Claude way easier to read, and it’s one of four that Karpathy shared.
-    Hook 3:
-    Andrej Karpathy, who co-founded OpenAI and now works at Anthropic, shared four ways he gets AI to explain things better, and the first one comes from aerospace manuals.
-    Body:
-    So the first one is asking for the answer in HTML, so a question about loan payments comes back as an actual calculator with sliders.
-    Then you ask for a diagram instead of more text, and the one he’s most excited about is a fully custom explainer video, like a 3Blue1Brown style video with ElevenLabs doing the narration.
-    And the writing one is asking it to explain in ASD-STE100, the simplified English aerospace uses so a repair step can’t be misread, and I’d typically say follow it about 80% of the way so it doesn’t sound robotic.
-    His point is code is cheap now, so it makes sense to ask for throwaway stuff you’d never have built before, and your job becomes checking that it’s right.
-    CTA:
-    Comment “MANUAL” and I’ll send you all four prompts.
-    SOURCES
-    - Karpathy’s post (four formats, video prompt, 80%): https://x.com/karpathy/status/2105819303471976479
-    - Breakdown + fact-check of the post: https://max.nardit.com/articles/karpathy-understanding-llm-outputs
-    - Karpathy joins Anthropic pre-training: https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/
-    - ASD-STE100 official site: https://www.asd-ste100.org/STE_faq.html
-    - Claude Code: https://claude.com/product/claude-code
-    - Sub-page: [[Karpathy's 4 Ways to Make AI Explain Things Better (All 4 Prompts + Setup)]]

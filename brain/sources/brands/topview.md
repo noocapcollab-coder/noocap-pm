@@ -3,35 +3,38 @@
 Brand. Works with creators: [[Lindsay]], [[Chris]], [[Brad]].
 
 ## Brand wiki (from every email with them)
-WHO: Topview AI, an AI video creation tool, coming to us through agency Spark Hub Media (contact Freya).
+WHO: Topview AI is an AI-powered video creation and editing tool/platform. They come to us directly.
 
-CONTACTS: Lim Su Wern, limsuwern@topview.ai, Marketing Manager at Topview AI. Freya, freya@sparkhub.media, at Spark Hub Media. Chris Cordero, collab@chriscordero.net. Lindsay Gonzales, Lindsay@automateaiconsulting.com.
+CONTACTS: Lim Su Wern writes to us as Marketing Manager for Topview AI (limsuwern@topview.ai); Freya writes to us from Spark Hub Media representing them (freya@sparkhub.media).
 
 DEALS:
-Topview AI x Lindsay | 1 short-form video (IG and TikTok) for Black Friday sale | [amount] | Script Approved | Post before Nov 28, 2026
-Topview AI x Chris | 1 sponsored video featuring Topview | [amount] | Paid | Posted Sep 18, 2026
-Topview AI x Brad | Paid | Completed Oct 9, 2026
+Topview AI x Lindsay | 1 short-form video (IG + TikTok) for Topview's Black Friday sale | [amount] | Script Approved | Post before Nov 28, 2026
+Topview AI x Chris | One sponsored video featuring Topview | [amount] | Paid | Posted Sep 18, 2026
+Topview AI x Brad | Deal completed | Paid | Oct 9, 2026
 
-HOW THEY WORK: Brief provided via Notion or email attachment. Script approval via email. Video draft review via Google Drive link. Standard link used for posting unless specified otherwise. Invoices sent to limsuwern@topview.ai with reference Topview Video Collaboration.
+HOW THEY WORK: Briefs are provided via Notion links or direct email. Scripts are sent for approval before production. Once the script is approved, video drafts are sent via Google Drive links for review. Standard tracking links or brand URLs are used for posting unless specified. Invoices are sent by email to limsuwern@topview.ai.
 
-WATCH OUT: Ensure correct business details are used in contracts; brand checks details like business name, legal name, address, and email before updating agreements.
+WATCH OUT: Ensure contract business details match the correct legal entity (e.g., Automate AI Consulting for Lindsay).
 
-OPEN NOW: Topview AI x Lindsay: We owe confirmation of the revised contract details (Automate AI Consulting, Lindsay Gonzales, 909 N. Thorne Ave., Fresno, CA 93728, Lindsay@automateaiconsulting.com) so the brand can update the agreement.
+OPEN NOW: For Lindsay's deal, we owe reviewing and signing the updated agreement (Harsh).
 
 ## Deal with [[Lindsay]] (Script Approved, opened 2026-11-20)
-Last brand reply 2026-11-21, our last reply 2026-11-21.
-AGREED: rate [amount]; deliverables 1 short-form video (IG and TikTok) for Topview's Black Friday sale; usage rights not known; payment terms not known; agreed dates not known.
+Last brand reply 2026-11-22, our last reply 2026-11-22.
+AGREED: rate [amount]; deliverables 1 short-form video (IG + TikTok) for Topview's Black Friday sale; usage rights not specified; payment terms 100% payable within fourteen (14) days after execution of the production and publication of the production, with receipt of a valid invoice; agreed dates not specified.
 
 HISTORY:
 2026-11-20 brand: Requested legal and business details for the agreement.
-2026-11-21 us: Sent script and incorrect agreement details.
+2026-11-21 us: Sent script and initial agreement details.
 2026-11-21 brand: Approved the script and sent the agreement for signature.
 2026-11-21 us: Sent corrected agreement details.
-2026-11-21 brand: Asked to confirm the revised contract details before updating the agreement.
+2026-11-21 brand: Asked to confirm the revised contract details.
+2026-11-22 us: Confirmed the correct contract details and requested the revised agreement.
+2026-11-22 brand: Sent the updated agreement for review.
+2026-11-22 us: Acknowledged receipt of the contract (auto reply; its line about sharing the script was wrong, the script was approved on Nov 21).
 
 BILLING: company Automate AI Consulting; invoice email Lindsay@automateaiconsulting.com; address 909 N. Thorne Ave., Fresno, CA 93728; invoice status not yet.
 
-OPEN NOW: We owe: confirmation of the revised contract details so the brand can update the agreement.
+OPEN NOW: We owe: review and sign the updated agreement (Harsh). The script is already approved.
 
 ## Deal with [[Lindsay]] (Script Approved, opened 2026-11-20)
 Last brand reply 2026-11-21, our last reply 2026-11-21.
