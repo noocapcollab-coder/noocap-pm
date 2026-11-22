@@ -2019,6 +2019,14 @@ test('a signed contract from WhatsApp finds its deal, and asks when it is not cl
   assert.equal(matchDeal({ caption: 'oiioii signed', filename: 'scan.pdf' }, deals)?.id, '2');
   assert.equal(matchDeal({ filename: 'contract.pdf', text: 'This Agreement is made between Luminary SM and the creator' }, deals), null); // agency runs two deals: ask
   assert.equal(matchDeal({ filename: 'TapNow contract.pdf' }, deals), null); // paid deal: not a target
+  // Topview AI x Lindsay, Nov 22: a paused duplicate on the same thread never ties with the live deal
+  const dup = [
+    { id: '94', brand: 'Topview AI', creator: 'Lindsay', stage: 'Script Approved', brandEmail: 'limsuwern@topview.ai', threadId: 't1' },
+    { id: '95', brand: 'Topview AI', creator: 'Lindsay', stage: 'Script Approved', brandEmail: 'limsuwern@topview.ai', threadId: 't1', paused: true },
+  ];
+  assert.equal(matchDeal({ filename: 'Influencer Services Agreement - Topview AI x Lindsay Gonzales (signed).pdf' }, dup)?.id, '94');
+  assert.equal(matchDeal({ caption: 'Topview' }, dup)?.id, '94');
+  assert.equal(matchDeal({ caption: 'Topview' }, [{ ...dup[1], threadId: 't2' }])?.id, '95'); // paused alone still matches
   assert.ok(looksLikeContract('scan.pdf', 'IN WITNESS WHEREOF the parties have signed'));
   assert.ok(!looksLikeContract('thumbnail.png', 'hello'));
   assert.match(contractEmail(deals[0]), /^Hi Gina,\n\nPlease find the signed contract attached/);
