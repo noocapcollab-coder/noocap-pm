@@ -861,6 +861,14 @@
 .rz-bill{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:8px}.rz-bill label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}.rz-bill input{padding:7px 9px;border-radius:8px;border:1px solid var(--line,#333);background:transparent;color:inherit;font:inherit;font-size:13px}.rz-bill .rz-link{grid-column:1/-1}.rz-go{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
   .tr-h{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.tr-h img{width:40px;height:40px;border-radius:50%;object-fit:cover}.tr-u{font-size:12px;color:var(--muted)}
   .tr-name{all:unset;cursor:pointer;font:inherit}.tr-name:hover{color:var(--accent)}.tr-back{margin-left:auto}.tr-tag{font-size:10px;padding:1px 6px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-left:4px}
+  .sk-p{--ig:#3987e5;--yt:#d95926;--tt:#199e70;--fb:#c98500;--ot:#8d8c86}
+  .sk-sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px;vertical-align:-1px}
+  .sk-bar{height:8px;border-radius:0 4px 4px 0;min-width:2px}
+  .sk-ch{position:relative}.sk-ch svg{display:block;width:100%}
+  .sk-tip{position:absolute;top:6px;pointer-events:none;background:var(--panel);border:1px solid var(--line2);border-radius:8px;padding:8px 10px;font-size:12px;display:none;min-width:150px;z-index:2}
+  .sk-tip .r{display:flex;justify-content:space-between;gap:14px}
+  .sk-leg{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+  .sk-link code{font:12px 'IBM Plex Mono',monospace}
   .tr-ms{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}.tr-m{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:3px;min-width:0}
   .tr-m .l{font-size:11px;color:var(--muted)}.tr-m b{font:600 20px 'Space Grotesk',sans-serif;font-variant-numeric:tabular-nums}.tr-m .s{font-size:11px;color:#8a8e97;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .tr-top{font-size:13px;color:var(--soft)}.tr-top a,.tr-b a{color:var(--accent)}
@@ -896,6 +904,7 @@
     <button data-v="hq" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Schedule &amp; team</button>
     <button data-v="team" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14.8c1.9.7 3.1 2.4 3.5 5.2"/></svg>Editors</button>
     <button data-v="trials" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 9.5v5l4-2.5z"/></svg>Trial reels</button>
+    <button data-v="skool" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>Skool links</button>
   </div>
   <div class="grp">
     <div class="lbl">Behind the scenes</div>
@@ -1024,6 +1033,19 @@
   <section class="ostats" id="spStats" aria-label="Spend totals"><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div></section>
   <div id="spBody"><div class="skel"></div><div class="skel"></div></div>
   <div class="err" id="spErr" style="font-size:13px"></div>
+</div></section>
+
+<!-- ============ Skool links ============ -->
+<section class="view" id="skool"><div class="ov">
+  <div class="ov-head">
+    <div><div class="k" id="skWhen">Tracked links per platform that send people to each creator's Skool page</div><h1>Skool links</h1></div>
+    <div class="cfilter" id="skDays" style="margin:0" role="group" aria-label="Date range"><button type="button" data-d="7">7 days</button><button type="button" data-d="30" class="on">30 days</button><button type="button" data-d="90">90 days</button></div>
+  </div>
+  <div class="cfilter" id="skF" style="margin:0" role="group" aria-label="Pick a creator"></div>
+  <section class="ostats" id="skStats" aria-label="Skool link totals"><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div></section>
+  <div id="skBody"><div class="skel"></div><div class="skel"></div></div>
+  <div class="ofoot" style="font-size:12px;color:var(--muted)">Clicks come from our tracked links only, with link-preview bots filtered out. A unique visitor is one device per day. Skool never says where a member came from, so new members is the public member count read every hour (everyone who joined minus anyone who left, from every source). Line the member spikes up with the click spikes to see which platform moves the needle.</div>
+  <div class="err" id="skErr" style="font-size:13px"></div>
 </div></section>
 
 <!-- ============ Trial reels ============ -->
@@ -1156,6 +1178,7 @@
   <button data-v="brain" type="button"><span class="i">✺</span>Brain</button>
   <button data-v="spend" type="button"><span class="i">▭</span>Tools</button>
   <button data-v="trials" type="button"><span class="i">▶</span>Trials</button>
+  <button data-v="skool" type="button"><span class="i">⛓</span>Skool</button>
   <button data-v="flow" type="button"><span class="i">⇢</span>System</button>
   <button data-v="chat" type="button"><span class="i">✦</span>Chat</button>
   <button data-v="approvals" type="button"><span class="i">✉</span>Approvals<span class="badge" data-count hidden>0</span></button>
@@ -1201,7 +1224,7 @@
   // ---------- tabs ----------
   let view = 'overview';
   function show(v) {
-    if (!['overview', 'hq', 'team', 'billing', 'leads', 'followups', 'pricing', 'active', 'deals', 'revenue', 'outreach', 'brain', 'spend', 'trials', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
+    if (!['overview', 'hq', 'team', 'billing', 'leads', 'followups', 'pricing', 'active', 'deals', 'revenue', 'outreach', 'brain', 'spend', 'trials', 'skool', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
     if (v === 'deals') v = 'leads'; // the old Brand deals board is now Leads + Active brands
     view = v;
     document.querySelectorAll('.view').forEach((el) => el.classList.toggle('on', el.id === v));
@@ -1215,6 +1238,7 @@
     if (v === 'revenue') rv ? renderRevenue() : loadRevenue();
     if (v === 'spend') sp ? renderSpend() : loadSpend();
     if (v === 'trials') { if (tr) renderTrials(); loadTrials(); }
+    if (v === 'skool') { if (sk) renderSkool(); loadSkool(); }
     if (v === 'outreach') { if (orData) renderOutreach(); loadOutreach(); }
     if (v === 'brain') loadBrain();
     if (v === 'followups') fu ? renderFollowups() : loadFollowups();
@@ -1229,7 +1253,7 @@
   }
   document.querySelectorAll('[data-v]').forEach((b) => b.onclick = () => show(b.dataset.v));
   window.addEventListener('hashchange', () => show(location.hash.slice(1)));
-  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else if (view === 'spend') loadSpend(true); else if (view === 'trials') loadTrials(true); else if (view === 'outreach') loadOutreach(); else if (view === 'followups') loadFollowups(true); else if (view === 'team') loadEditorMonth(true); else if (view === 'runs') loadRuns(); else if (view === 'pricing') loadPricing(true); else loadHQ(true); };
+  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else if (view === 'spend') loadSpend(true); else if (view === 'trials') loadTrials(true); else if (view === 'skool') loadSkool(); else if (view === 'outreach') loadOutreach(); else if (view === 'followups') loadFollowups(true); else if (view === 'team') loadEditorMonth(true); else if (view === 'runs') loadRuns(); else if (view === 'pricing') loadPricing(true); else loadHQ(true); };
   document.querySelectorAll('.ov [data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
 
   // =====================================================================
@@ -1400,6 +1424,101 @@
     $('trBody').innerHTML = `<div style="display:flex;flex-direction:column;gap:16px">${cards || '<div class="empty">No trial reels posted through Zernio yet.</div>'}${waiting}</div>`;
     $('trBody').querySelectorAll('[data-c]').forEach((b) => b.onclick = () => { trSel = one || b.dataset.c === 'all' ? 'all' : b.dataset.c; renderTrials(); document.querySelector('.view.on')?.scrollTo?.(0, 0); });
   }
+  // =====================================================================
+  // Skool links: per-platform tracked link clicks + hourly Skool member count, per creator (GET /api/skool)
+  let sk = null, skLoading = false, skSel = null, skDaysN = 30;
+  const SK_ORDER = ['instagram', 'youtube', 'tiktok', 'facebook'];
+  const SK_NAME = { instagram: 'Instagram', youtube: 'YouTube', tiktok: 'TikTok', facebook: 'Facebook' };
+  const SK_COL = { instagram: 'var(--ig)', youtube: 'var(--yt)', tiktok: 'var(--tt)', facebook: 'var(--fb)' };
+  const skCol = (p) => SK_COL[p] || 'var(--ot)';
+  const skCap = (s) => String(s || '').charAt(0).toUpperCase() + String(s || '').slice(1);
+  async function loadSkool() {
+    if (skLoading) return; skLoading = true;
+    $('skErr').textContent = '';
+    try {
+      const r = await fetch('/api/skool?days=' + skDaysN, { headers: headers() });
+      if (r.status === 401) { skLoading = false; return needPassword(); }
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error || 'Could not load Skool link tracking');
+      sk = j; renderSkool();
+    } catch (e) { $('skErr').textContent = e.message; if (!sk) { $('skStats').innerHTML = ''; $('skBody').innerHTML = '<div class="empty">Skool link numbers could not load. Hit refresh to try again.</div>'; } }
+    skLoading = false;
+  }
+  addEventListener('resize', () => { if (view === 'skool' && sk) { clearTimeout(window.__skR); window.__skR = setTimeout(renderSkool, 150); } });
+  $('skDays').querySelectorAll('button').forEach((b) => b.onclick = () => { skDaysN = +b.dataset.d; $('skDays').querySelectorAll('button').forEach((x) => x.classList.toggle('on', x === b)); loadSkool(); });
+  function skDates(n) { const out = [], now = new Date(); for (let i = n - 1; i >= 0; i--) { const d = new Date(now); d.setUTCDate(d.getUTCDate() - i); out.push(d.toISOString().slice(0, 10)); } return out; }
+  // One chart, one axis: lines for clicks per platform, or rounded bars for net new members
+  function skChart(id, dates, series, h, bars) {
+    const W = Math.max(300, (($('skBody') && $('skBody').clientWidth) || 940) - 42), H = h, m = { l: 34, r: 18, t: 10, b: 22 };
+    const max = Math.max(4, ...series.flatMap((s) => dates.map((d) => s.v[d] || 0))); const top = Math.ceil(max / 4) * 4;
+    const y = (v) => H - m.b - (H - m.t - m.b) * Math.max(0, v) / top;
+    const bw = (W - m.l - m.r) / dates.length, x = (i) => bars ? m.l + i * bw + bw / 2 : m.l + (W - m.l - m.r) * (dates.length < 2 ? 0 : i / (dates.length - 1));
+    let g = '';
+    for (let k = 0; k <= 4; k++) { const t = top * k / 4; g += `<line x1="${m.l}" x2="${W - m.r}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)"/><text x="${m.l - 6}" y="${y(t) + 4}" text-anchor="end" font-size="11" fill="var(--muted)">${t}</text>`; }
+    const step = Math.ceil(dates.length / (W < 500 ? 4 : 6));
+    dates.forEach((d, i) => { if (i % step === 0 || i === dates.length - 1) g += `<text x="${x(i)}" y="${H - 5}" text-anchor="middle" font-size="11" fill="var(--muted)">${d.slice(8)}/${d.slice(5, 7)}</text>`; });
+    if (bars) series.forEach((s) => dates.forEach((d, i) => { const n = s.v[d]; if (n > 0) { const hh = H - m.b - y(n), w = Math.max(2, bw - 6), x0 = x(i) - w / 2, r = Math.min(4, hh, w / 2); g += `<path d="M${x0},${H - m.b} v${-(hh - r)} q0,${-r} ${r},${-r} h${w - 2 * r} q${r},0 ${r},${r} v${hh - r} z" fill="${s.c}"/>`; } }));
+    else series.forEach((s) => { g += `<polyline points="${dates.map((d, i) => `${x(i)},${y(s.v[d] || 0)}`).join(' ')}" fill="none" stroke="${s.c}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`; });
+    g += `<line class="xh" y1="${m.t}" y2="${H - m.b}" stroke="var(--muted)" stroke-dasharray="3 3" visibility="hidden"/><rect class="hit" x="${m.l}" y="0" width="${W - m.l - m.r}" height="${H - m.b}" fill="transparent"/>`;
+    return `<div class="sk-ch" id="${id}" data-w="${W}" data-l="${m.l}" data-r="${m.r}" data-bars="${bars ? 1 : 0}"><svg viewBox="0 0 ${W} ${H}" style="height:${H}px" role="img">${g}</svg><div class="sk-tip"></div></div>`;
+  }
+  function skHover(id, dates, series, empty) {
+    const box = $(id); if (!box) return;
+    const svg = box.querySelector('svg'), tip = box.querySelector('.sk-tip'), xh = svg.querySelector('.xh'), hit = svg.querySelector('.hit');
+    const W = +box.dataset.w, L = +box.dataset.l, R = +box.dataset.r, bars = box.dataset.bars === '1';
+    hit.onmousemove = (e) => {
+      const b = svg.getBoundingClientRect(), px = (e.clientX - b.left) * W / b.width, span = W - L - R;
+      const i = Math.max(0, Math.min(dates.length - 1, bars ? Math.floor((px - L) / (span / dates.length)) : Math.round((px - L) / (span / Math.max(1, dates.length - 1)))));
+      const cx = bars ? L + (i + .5) * span / dates.length : L + span * (dates.length < 2 ? 0 : i / (dates.length - 1));
+      xh.setAttribute('x1', cx); xh.setAttribute('x2', cx); xh.setAttribute('visibility', 'visible');
+      tip.innerHTML = `<div style="color:var(--muted);margin-bottom:4px">${new Date(dates[i] + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</div>` + series.map((s) => `<div class="r"><span><span class="sk-sw" style="background:${s.c}"></span>${s.n}</span><b>${s.v[dates[i]] != null ? s.v[dates[i]] : empty}</b></div>`).join('');
+      tip.style.display = 'block'; tip.style.left = Math.min(b.width - 170, cx * b.width / W + 12) + 'px';
+    };
+    hit.onmouseleave = () => { tip.style.display = 'none'; xh.setAttribute('visibility', 'hidden'); };
+  }
+  function renderSkool() {
+    if (!sk) return;
+    const all = sk.creators || [];
+    if (!all.length) { $('skF').innerHTML = ''; $('skStats').innerHTML = ''; $('skBody').innerHTML = '<div class="empty">No creators have tracked Skool links yet.</div>'; return; }
+    if (!skSel || !all.some((c) => c.creator === skSel)) skSel = all[0].creator;
+    const c = all.find((x) => x.creator === skSel);
+    $('skF').innerHTML = all.length > 1 ? all.map((x) => `<button type="button" class="${x.creator === skSel ? 'on' : ''}" data-c="${esc(x.creator)}">${esc(skCap(x.creator))}<b>${x.total_clicks}</b></button>`).join('') : '';
+    $('skF').querySelectorAll('button').forEach((b) => b.onclick = () => { skSel = b.dataset.c; renderSkool(); });
+    $('skWhen').textContent = `Tracked Skool links · ${skCap(c.creator)} · last ${sk.days} days · updated ${since(sk.generated_at)}`;
+    const plats = (c.platforms || []).slice().sort((a, z) => { const ia = SK_ORDER.indexOf(a.platform), iz = SK_ORDER.indexOf(z.platform); return (ia < 0 ? 99 : ia) - (iz < 0 ? 99 : iz); });
+    const uniq = plats.reduce((s, p) => s + p.unique, 0), M = c.members || {};
+    const top = plats.slice().sort((a, z) => z.unique - a.unique)[0];
+    const stat = (l, v, s, st = '') => `<div class="ostat"><span class="l">${l}</span><span class="v" style="${st}">${v}</span><span class="s">${s}</span></div>`;
+    const sinceTxt = M.tracking_since ? 'tracking since ' + new Date(M.tracking_since).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' }) : 'read every hour';
+    $('skStats').innerHTML = stat('Link clicks', Number(c.total_clicks || 0).toLocaleString('en-US'), 'bots filtered out', 'color:var(--accent)')
+      + stat('Unique visitors', uniq.toLocaleString('en-US'), 'one device per day')
+      + stat('Top platform', top && top.unique ? esc(SK_NAME[top.platform] || top.platform) : '—', top && top.unique ? `${Math.round(100 * top.unique / uniq)}% of visitors` : 'no clicks yet')
+      + stat('Skool members', M.current != null ? Number(M.current).toLocaleString('en-US') : '—', sinceTxt)
+      + stat('New members (net)', M.net_new != null ? (M.net_new > 0 ? '+' : '') + Number(M.net_new).toLocaleString('en-US') : '—', 'all sources, minus leavers')
+      + stat('Visitors per new member', M.net_new > 0 && uniq ? (uniq / M.net_new).toFixed(1) : '—', 'our visitors ÷ net new');
+    const maxU = Math.max(1, ...plats.map((p) => p.unique));
+    const prow = plats.map((p) => `<tr><td><span class="sk-sw" style="background:${skCol(p.platform)}"></span>${esc(SK_NAME[p.platform] || p.platform)}</td><td class="num">${p.clicks}</td><td class="num">${p.unique}</td><td style="width:34%"><div class="sk-bar" style="width:${100 * p.unique / maxU}%;background:${skCol(p.platform)}"></div></td><td class="num">${uniq ? Math.round(100 * p.unique / uniq) + '%' : '—'}</td></tr>`).join('');
+    const dates = skDates(sk.days);
+    const series = plats.filter((p) => (c.links || []).some((l) => l.platform === p.platform)).map((p) => { const v = {}; (c.daily || []).filter((r) => r.platform === p.platform).forEach((r) => v[r.day] = r.clicks); return { n: SK_NAME[p.platform] || p.platform, c: skCol(p.platform), v }; });
+    const mv = {}; (M.daily || []).forEach((r) => mv[r.day] = r.net_new);
+    const mSeries = [{ n: 'Net new members', c: 'var(--accent)', v: mv }];
+    const dev = Object.entries(c.devices || {}).sort((a, z) => z[1] - a[1]), devT = dev.reduce((s, x) => s + x[1], 0);
+    const links = (c.links || []).slice().sort((a, z) => SK_ORDER.indexOf(a.platform) - SK_ORDER.indexOf(z.platform)).map((l) => { const u = `${sk.linkHost}/${l.slug}`; return `<tr class="sk-link"><td><span class="sk-sw" style="background:${skCol(l.platform)}"></span>${esc(l.label || SK_NAME[l.platform])}</td><td><code>${esc(u.replace(/^https:\/\//, ''))}</code></td><td class="num">${l.clicks}</td><td class="num"><button type="button" class="obtn" style="min-height:30px;padding:0 10px;font-size:12px" data-copy="${esc(u)}">Copy</button></td></tr>`; }).join('');
+    $('skBody').innerHTML = `<div class="sk-p" style="display:flex;flex-direction:column;gap:16px">
+      <section class="ocard"><h2>By platform <small>unique visitors per tracked link</small>${c.skoolUrl ? `<a class="more" href="${esc(c.skoolUrl)}" target="_blank" rel="noopener">Skool page ↗</a>` : ''}</h2>
+        <div class="tscroll"><table><tr><th>Platform</th><th class="num">Clicks</th><th class="num">Unique</th><th>Share of visitors</th><th class="num">Share</th></tr>${prow}</table></div></section>
+      <section class="ocard"><h2>Clicks per day</h2><div class="sk-leg">${series.map((s) => `<span><span class="sk-sw" style="background:${s.c}"></span>${s.n}</span>`).join('')}</div>${skChart('skC1', dates, series, 220, false)}</section>
+      <section class="ocard"><h2>New Skool members per day <small>net, from the public member count</small></h2>${(M.daily || []).length ? '' : '<div style="font-size:12px;color:var(--muted)">Collecting data. Daily numbers show up after a full day of hourly readings.</div>'}${skChart('skC2', dates, mSeries, 170, true)}</section>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+        <section class="ocard"><h2>Devices</h2>${dev.length ? `<table>${dev.map(([k2, v]) => `<tr><td>${esc(k2)}</td><td class="num">${v}</td><td class="num" style="color:var(--muted)">${Math.round(100 * v / devT)}%</td></tr>`).join('')}</table>` : '<div class="empty">No clicks yet</div>'}</section>
+        <section class="ocard"><h2>Top countries</h2>${(c.countries || []).length ? `<table>${c.countries.map((x) => `<tr><td>${esc(x.country)}</td><td class="num">${x.clicks}</td></tr>`).join('')}</table>` : '<div class="empty">No clicks yet</div>'}</section>
+      </div>
+      <section class="ocard"><h2>Links to use <small>swap these in wherever the Skool link sits now</small></h2><div class="tscroll"><table><tr><th>Use on</th><th>Link</th><th class="num">Clicks</th><th></th></tr>${links}</table></div></section>
+    </div>`;
+    skHover('skC1', dates, series, 0); skHover('skC2', dates, mSeries, '—');
+    $('skBody').querySelectorAll('[data-copy]').forEach((b) => b.onclick = () => { navigator.clipboard.writeText(b.dataset.copy); b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1200); });
+  }
+
   const captionTitle = (txt) => { const f = String(txt || '').split('\n').map((x) => x.trim()).find(Boolean) || 'Untitled reel'; return f.length > 90 ? f.slice(0, 87) + '…' : f; };
 
 
