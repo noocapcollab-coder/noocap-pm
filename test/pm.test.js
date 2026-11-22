@@ -3273,3 +3273,12 @@ test('videos owed by a deal: shorts/reels/videos counted, stories and syndicatio
   assert.equal(videosOwed(''), 0);
   assert.deepEqual(cardsForDeal(['UPFLUENCE × DUNCAN 1', 'Fotor × Duncan', 'Random'], 'Upfluence'), ['UPFLUENCE × DUNCAN 1']);
 });
+
+test('"approved the second script" picks card 2, not the next card waiting (CapCut × Lindsay, Nov 20)', async () => {
+  const { approvedScriptNumber, pickScriptCards } = await import('../lib/inbox.js');
+  const mail = 'Our creative team has also approved the second script, so you can go ahead and start producing the second video. Regarding the third script, it still requires some revisions.';
+  assert.equal(approvedScriptNumber(mail), 2);
+  assert.equal(approvedScriptNumber('The second script has been approved'), 2);
+  const cards = [{ title: 'CapCut × Lindsay', num: 7, url: 'c1' }, { title: 'CapCut × Lindsay (3)', num: 5, url: 'c3' }, { title: 'CapCut × Lindsay (2)', num: 5, url: 'c2' }];
+  assert.equal(pickScriptCards(cards, mail)[0], 'c2');
+});
