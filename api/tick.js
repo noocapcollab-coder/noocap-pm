@@ -208,6 +208,12 @@ export default async function handler(req, res) {
     try { const E = await import('../lib/editornudge.js'); return res.status(200).json({ due: await E.editorNudges({ dry: req.query.dry === '1' }) }); }
     catch (e) { return res.status(500).json({ error: e.message }); }
   }
+  // ?videochanges=1&brand=&creator=&notes=: hand video changes to the editor (the same as the WhatsApp "Send to editor")
+  if (req.query?.videochanges) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const I = await import('../lib/inbox.js'); return res.status(200).json(await I.sendVideoChanges({ brand: String(req.query.brand || ''), creator: String(req.query.creator || ''), feedback: String(req.query.notes || '') })); }
+    catch (e) { return res.status(500).json({ error: e.message }); }
+  }
   // ?harshedit=1 (&dry=1): send TO EDIT rows on Harsh's own board to their editor now (lib/harshboard.js)
   if (req.query?.harshedit) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });

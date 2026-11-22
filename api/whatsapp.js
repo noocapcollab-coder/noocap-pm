@@ -264,6 +264,7 @@ async function onButton(st, id) {
   if (action === 'moreyes') { await addMoreVideos(st); return; }
   if (action === 'moreno') { const p = pendingMore(st); if (p) p.resolved = 'cancelled'; await say(st, 'OK, I didn\'t add anything.'); return; }
   if (action === 'noteson') { await sendScriptNotes(st); return; }
+  if (action === 'vidnoteson') { await sendVideoNotes(st); return; }
   if (action === 'notesno') { const p = pendingNotes(st); if (p) p.resolved = 'cancelled'; await say(st, 'OK, I didn\'t send it.'); return; }
   if (action === 'invpick') { const W = await import('../lib/wainvoice.js'); await W.pickInvoice(st, String(id).slice('invpick:'.length)); return; }
   if (action === 'invpage') { const W = await import('../lib/wainvoice.js'); await W.startInvoice(st, Number(arg) || 0); return; }
@@ -334,12 +335,16 @@ async function onText(st, text, quotedText = '') {
   }
   // We asked whose script feedback it is (or the creator was wrong): a creator's name sets it
   const pn = pendingNotes(st);
+  // "it's video changes to the editor" / "script": Harsh says which kind the notes are. Saying it is the instruction,
+  // so video changes go straight to the editor (Nov 22: this reply was ignored and the Inworld notes never reached Prabal)
+  if (pn && t.length < 120 && /\b(video|editor|edit|cut)\b/i.test(t) && !/\bscript\b/i.test(t)) { pn.video = true; if (pn.creator) await sendVideoNotes(st); else { await saveState(st); await say(st, 'Whose video is it? Reply with the creator\'s name.'); } return; }
+  if (pn && t.length < 60 && /\bscript\b/i.test(t) && pn.video) { pn.video = false; await sendNotesButtons(st, pn, `✏️ *Script feedback: ${pn.brand} × ${pn.creator || 'whose?'}*`); return; }
   if (pn && t.length < 40) {
     const { BOARDS } = await import('../lib/tools.js');
     const c = BOARDS.map((b) => b.creator).find((n) => n.toLowerCase().startsWith(t.toLowerCase().replace(/[^a-z]/g, '').slice(0, 4)) && t.length >= 3);
     if (c) {
       pn.creator = c; pn.whose = false;
-      await sendButtons(st.person.number, `OK, *${pn.brand} × ${c}*. Send the notes to Rudraksh?`, [{ id: 'noteson', title: '✏️ Send to Rudraksh' }, { id: 'notesno', title: '✖️ Don\'t send' }]);
+      await sendNotesButtons(st, pn, `OK, *${pn.brand} × ${c}*.`);
       return;
     }
     if (/^(cancel|no|stop|leave it)\.?$/i.test(t)) { pn.resolved = 'cancelled'; await say(st, 'OK, I didn\'t send it.'); return; }
@@ -843,16 +848,43 @@ async function offerScriptNotes(st, t, x, deals, roster) {
   const deal = key && deals.find((d) => norm(d.brand).includes(key) && (!x.creator || d.creator === x.creator));
   const creator = x.creator || deal?.creator || null;
   const entry = { role: 'assistant', meta: 'notes-confirm', notes: t.slice(0, 6000), brand: deal?.brand || x.brand, creator, at: new Date().toISOString() };
-  entry.content = `✏️ *Script feedback: ${entry.brand || 'brand?'} × ${creator || 'whose?'}*\n• ${x.gist}`;
+  // Notes on the edited video go to the editor, not Rudraksh: subtitles, logos, shots, timestamps, or a video that is
+  // already edited (Inworld × Chris, Nov 22: "subtitle says nWorld … drop our logo into the video" was offered to Rudraksh)
+  entry.video = looksLikeCutNotesSync(t) || /\b(subtitles?|captions?|logo|in the video|into the video|the cut|frame\.io|f\.io)\b/i.test(t) || await videoIsEdited(entry.brand, creator).catch(() => false);
+  entry.content = entry.video ? `🎬 *Video changes: ${entry.brand || 'brand?'} × ${creator || 'whose?'}*\n• ${x.gist}` : `✏️ *Script feedback: ${entry.brand || 'brand?'} × ${creator || 'whose?'}*\n• ${x.gist}`;
   st.messages.push(entry);
   await saveState(st); // saved before the buttons go out, so a quick tap finds it
   if (!creator) {
     entry.whose = true;
     await sendText(st.person.number, `${entry.content}\n\nWhose script is this? Reply with the creator's name (${roster.join(', ')}).`);
   } else {
-    await sendButtons(st.person.number, `${entry.content}\n\nSend it to Rudraksh? I'll ping him on Discord with the notes, add them to the video card and move the card back to Script Draft.\nWrong creator? Just reply with the right name.`, [{ id: 'noteson', title: '✏️ Send to Rudraksh' }, { id: 'notesno', title: '✖️ Don\'t send' }]);
+    await sendNotesButtons(st, entry);
   }
   return true;
+}
+function sendNotesButtons(st, p, lead = '') {
+  return p.video
+    ? sendButtons(st.person.number, `${lead || p.content}\n\nSend it to the editor? I'll put the changes on the Edit Tracker row (status Changes), post them in the editor's video thread and move the card to 8- Changes.\nScript notes instead? Reply "script". Wrong creator? Reply with the right name.`, [{ id: 'vidnoteson', title: '🎬 Send to editor' }, { id: 'notesno', title: '✖️ Don\'t send' }])
+    : sendButtons(st.person.number, `${lead || p.content}\n\nSend it to Rudraksh? I'll ping him on Discord with the notes, add them to the video card and move the card back to Script Draft.\nVideo changes instead? Reply "video". Wrong creator? Just reply with the right name.`, [{ id: 'noteson', title: '✏️ Send to Rudraksh' }, { id: 'notesno', title: '✖️ Don\'t send' }]);
+}
+// The brand's video already has an edit (an Edit Tracker row past editing): its notes are for the editor
+async function videoIsEdited(brand, creator) {
+  if (!brand) return false;
+  const { findIntakeRowByBrand } = await import('../lib/intake.js');
+  const row = await findIntakeRowByBrand(brand, creator);
+  return !!row && ['In Review', 'Send to Brand', 'With Brand', 'Changes', 'To Post'].includes(row.status);
+}
+async function sendVideoNotes(st) {
+  const p = await findPending(st, pendingNotes);
+  if (!p) { await say(st, 'Those notes are no longer waiting. Forward them again.'); return; }
+  if (!p.creator) { await say(st, 'Whose video is it? Reply with the creator\'s name.'); return; }
+  p.resolved = 'sending'; await saveState(st);
+  try {
+    const { sendVideoChanges } = await import('../lib/inbox.js');
+    const r = await sendVideoChanges({ brand: p.brand, creator: p.creator, feedback: p.notes });
+    p.resolved = 'sent';
+    await say(st, `✅ Sent *${r.deal}*'s video changes to ${r.editor || 'the editor'} (Edit Tracker row set to Changes${r.video ? `, card moved to ${r.video}` : ''}).`);
+  } catch (e) { p.resolved = 'failed'; await say(st, `⚠️ I couldn't send it: ${e.message}`); }
 }
 async function sendScriptNotes(st) {
   const p = await findPending(st, pendingNotes);
