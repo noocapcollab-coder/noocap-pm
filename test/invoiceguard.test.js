@@ -90,3 +90,10 @@ test('billing details typed by Harsh on the Invoices page pass as his, not as un
   const b = p.find((x) => x.k === 'billing-source');
   assert.equal(b.ok, true); assert.match(b.t, /entered by you/);
 });
+
+test('one Revenue row per video adds up to the deal fee (Runway x Chris, Nov 23)', () => {
+  const p = invoiceProblems({ deal: { brand: 'Runway AI', creator: 'Chris', finalRate: 3600 }, bill: { company_name: 'INRO GROUP LIMITED', by: 'Harsh' }, amount: 3600, pct: 100, convo: [], revenue: [1800, 1800], otherDealLinks: new Set() });
+  assert.equal(p.find((x) => x.k === 'amount-revenue')?.ok, true);
+  const q = invoiceProblems({ deal: { brand: 'Runway AI', creator: 'Chris', finalRate: 3600 }, bill: { company_name: 'INRO GROUP LIMITED', by: 'Harsh' }, amount: 3600, pct: 100, convo: [], revenue: [1800], otherDealLinks: new Set() });
+  assert.equal(q.find((x) => x.k === 'amount-revenue')?.ok, false);
+});
