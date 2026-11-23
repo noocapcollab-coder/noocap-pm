@@ -345,7 +345,11 @@ export default async function handler(req, res) {
       const deal = (await openDeals({ withClosed: true })).find((d) => String(d.id).replace(/-/g, '') === String(req.query.paythanks).replace(/-/g, ''));
       if (!deal) return res.status(404).json({ error: 'deal not found' });
       const I = await import('../lib/invoicing.js');
-      const st = await I.stripeState(deal).catch((e) => ({ known: false, error: e.message }));
+      // &via=<other deal id>: the brand wrote in this deal's thread about the other deal's invoice (ElevenLabs x Duncan,
+      // Nov 23): Stripe is checked on that deal, the thank-you goes in this thread
+      const via = req.query.via ? (await openDeals({ withClosed: true })).find((d) => String(d.id).replace(/-/g, '') === String(req.query.via).replace(/-/g, '')) : null;
+      if (req.query.via && (!via || via.brand !== deal.brand || via.creator !== deal.creator)) return res.status(400).json({ error: 'via deal not found or not the same brand and creator' });
+      const st = await I.stripeState(via || deal).catch((e) => ({ known: false, error: e.message }));
       const look = { deal: `${deal.brand} × ${deal.creator}`, stage: deal.stage, thread: !!deal.threadId, to: deal.brandEmail, stripePaid: !!(st.known && st.allPaid) };
       if (req.query.dry || !look.stripePaid) return res.status(200).json({ ...look, sent: false });
       const { paymentThanks } = await import('../lib/inbox.js');
