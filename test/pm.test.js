@@ -3407,3 +3407,15 @@ test('payment reminders are never held back (Harsh, Nov 23: "send reminders no m
   assert.match(o, /if \(opts\?\.kind === 'Payment chase'\) return false;/);
   assert.match(o, /kind !== 'Payment chase' && secondReadHolds\(mode\)/);
 });
+
+test('an email left with only the greeting and sign-off is rewritten or held, never sent (Luma AI x Lindsay, Nov 23)', async () => {
+  const { emptyBody } = await import('../lib/outbox.js');
+  assert.equal(emptyBody("Hi Upendra,\n\nBest,\nLindsay's Team"), true);
+  assert.equal(emptyBody('Hi Upendra,<br /><br />Best,<br />Lindsay\'s Team'), true);
+  assert.equal(emptyBody("Hi Upendra,\n\nPlease find the script attached.\n\nBest,\nLindsay's Team"), false);
+  const fs = await import('node:fs');
+  const ob = fs.readFileSync(new URL('../lib/outbox.js', import.meta.url), 'utf8');
+  const fn = ob.slice(ob.indexOf('export async function writeEmail'), ob.indexOf('export const NOT_EMPTY'));
+  assert.match(fn, /if \(mail\.body && emptyBody\(mail\.body\)\)/);
+  assert.match(fn, /mail\.needsYou = mail\.needsYou \|\| EMPTY_EMAIL/);
+});
