@@ -3381,3 +3381,18 @@ test('a brief on a new thread opens a closed deal only when the brief, contract 
   const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
   assert.match(ib, /if \(!onThread && !closedInThread\(email\.text\) && !isHandover\(email, x\)\) return openInquiry/);
 });
+
+test('our "it is live" email gives the deal its posted links (Emergent x Chris, Nov 21)', async () => {
+  const { livePostLinks } = await import('../lib/inbox.js');
+  const t = "Hi,\n\nThe video has been successfully published! Here's the link:\n\n*Video Link: *\n\nhttps://www.instagram.com/reel/Df-4kseBJqL/?utm_source=ig_web_copy_link&avpt=NTc4\n\nCould you also please share the company's billing details?";
+  assert.deepEqual(livePostLinks(t), ['https://www.instagram.com/reel/Df-4kseBJqL/?utm_source=ig_web_copy_link&avpt=NTc4']);
+  assert.deepEqual(livePostLinks('Brief: https://docs.google.com/document/d/abc'), []);
+  assert.equal(livePostLinks('TikTok: https://www.tiktok.com/@thechriscordero/video/7702076594667392269 and https://youtube.com/shorts/Kd_QhSiINlI').length, 2);
+});
+
+test('billing details sent as a screenshot are read from the file (Emergent x Chris, Nov 23)', async () => {
+  const { billingFiles, BILLING_ASK } = await import('../lib/invoicing.js');
+  assert.ok(BILLING_ASK.test('Please find attached the fully executed agreement, along with our billing details.'));
+  const files = billingFiles([{ filename: 'Screenshot 2026-09-09.png', mimeType: 'image/png', data: 'x' }, { filename: 'Emergent_Influencer Agreement.pdf', mimeType: 'application/pdf', data: 'y' }, { filename: 'W9.pdf', mimeType: 'application/pdf', data: 'z' }]);
+  assert.deepEqual(files.map((f) => f.filename), ['Screenshot 2026-09-09.png']);
+});
