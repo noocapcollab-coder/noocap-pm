@@ -3282,3 +3282,14 @@ test('"approved the second script" picks card 2, not the next card waiting (CapC
   const cards = [{ title: 'CapCut × Lindsay', num: 7, url: 'c1' }, { title: 'CapCut × Lindsay (3)', num: 5, url: 'c3' }, { title: 'CapCut × Lindsay (2)', num: 5, url: 'c2' }];
   assert.equal(pickScriptCards(cards, mail)[0], 'c2');
 });
+
+// Nov 23 morning check: cut chases drafted on a weekend sat in Approvals until Monday because autopilot held every
+// follow-up on New York weekends (Polar x Valeri, ZenBusiness x Lindsay, Flova x Duncan). Rule 50: cut chases excepted.
+test('a cut chase sends on a weekend, other follow-ups wait for Monday', async () => {
+  const { weekendHold } = await import('../lib/heartbeat.js');
+  assert.equal(weekendHold('Follow-up', "No reply for 3 days at Submitted (waiting for the brand to review the video) (follow-up 4, until they answer). Harsh's rule: once a video is sent for approval, we follow up every 3 days"), false);
+  assert.equal(weekendHold('Follow-up', 'Rewritten by system check: this one only chases the revised cut (cut chases run every 3 days, weekends included).'), false);
+  assert.equal(weekendHold('Follow-up', 'No reply for 3 days at Script Sent (waiting for their approval of the script we sent) (follow-up 3, until they answer).'), true);
+  assert.equal(weekendHold('Lead follow-up', 'No reply for 5 days'), true);
+  assert.equal(weekendHold('Payment chase', 'Past due'), false, 'payment chases are held elsewhere, not by this check');
+});
