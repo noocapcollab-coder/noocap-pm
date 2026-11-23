@@ -1196,7 +1196,8 @@ test('no before-due payment check-in once the brand answered the invoice (Runway
   assert.equal(brandAnsweredInvoice({ invoiceSent: '2026-10-29', lastOur: '2026-11-03T10:43:00.000Z', lastBrand: '2026-11-03T12:08:00.000Z' }, false), false);
   const fs = await import('node:fs');
   const src = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
-  assert.match(src, /!brandAnsweredInvoice\(deal, !!beforeDue\)/);
+  // Harsh, Nov 23: reminders go no matter what; the brand's answer only shapes the wording now
+  assert.match(src, /brandAnsweredInvoice\(deal, !!beforeDue\) \? \{ brand_gave_date/);
 });
 
 test('a failed WhatsApp template nudge reports what Meta says about the template (Pratham 132001, Nov 6)', async () => {
@@ -3395,4 +3396,14 @@ test('billing details sent as a screenshot are read from the file (Emergent x Ch
   assert.ok(BILLING_ASK.test('Please find attached the fully executed agreement, along with our billing details.'));
   const files = billingFiles([{ filename: 'Screenshot 2026-09-09.png', mimeType: 'image/png', data: 'x' }, { filename: 'Emergent_Influencer Agreement.pdf', mimeType: 'application/pdf', data: 'y' }, { filename: 'W9.pdf', mimeType: 'application/pdf', data: 'z' }]);
   assert.deepEqual(files.map((f) => f.filename), ['Screenshot 2026-09-09.png']);
+});
+
+test('payment reminders are never held back (Harsh, Nov 23: "send reminders no matter what")', async () => {
+  const fs = await import('node:fs');
+  const h = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
+  const o = fs.readFileSync(new URL('../lib/outbox.js', import.meta.url), 'utf8');
+  assert.match(h, /if \(kind === 'Payment chase'\) \{\n\s+const notes = \[\];/);
+  assert.doesNotMatch(h, /no payment chase, the live link the brand asked for has not been sent yet/);
+  assert.match(o, /if \(opts\?\.kind === 'Payment chase'\) return false;/);
+  assert.match(o, /kind !== 'Payment chase' && secondReadHolds\(mode\)/);
 });
