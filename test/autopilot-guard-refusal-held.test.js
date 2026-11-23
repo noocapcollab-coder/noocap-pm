@@ -51,8 +51,9 @@ test('a draft the send guard refuses is held for Harsh once instead of being ret
   assert.match(r.why, /already went to the brand/);
   const why = (page.properties.Why.rich_text || []).map((t) => t.plain_text).join('');
   assert.match(why, /^Needs you: held from sending on its own, these scripts already went to the brand/);
-  // and nothing was sent: no Gmail/n8n call was made
-  assert.ok(!calls.some((c) => /n8n|webhook|gmail/i.test(c.url)));
+  // and nothing was sent: no Gmail/n8n/SMTP call was made (the hold card to Discord #pm is allowed)
+  assert.ok(!calls.some((c) => /n8n|gmail|railway/i.test(c.url)), calls.map((c) => c.url).join(' '));
+  assert.ok(!calls.some((c) => c.method === 'PATCH' && c.body?.properties?.Status), 'status unchanged');
 });
 
 test('guardRefusal only treats pre-send refusals as holds', async () => {
