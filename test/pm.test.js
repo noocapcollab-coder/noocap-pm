@@ -3361,7 +3361,7 @@ test('a deal with no Linked Video uses its one card at 5 for the script (Dreamin
   const fs = await import('node:fs');
   const h = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
   assert.match(h, /const scriptCard = video \|\| \(dealCardList && dealCardList\.length === 1 && dealCardList\[0\]\.num === 5/);
-  assert.match(h, /if \(!scriptsByCard && scriptCard && scriptCard\.num === 5/);
+  assert.match(h, /if \(!borrowedSent && !scriptsByCard && scriptCard && scriptCard\.num === 5/);
 });
 
 test('a cold inquiry asking for "your usual rates" is an inquiry, never a brief (Intimeros x Chris, Nov 19)', async () => {
@@ -3418,4 +3418,16 @@ test('an email left with only the greeting and sign-off is rewritten or held, ne
   const fn = ob.slice(ob.indexOf('export async function writeEmail'), ob.indexOf('export const NOT_EMPTY'));
   assert.match(fn, /if \(mail\.body && emptyBody\(mail\.body\)\)/);
   assert.match(fn, /mail\.needsYou = mail\.needsYou \|\| EMPTY_EMAIL/);
+});
+
+test('a borrowed card whose script already went from another deal is not drafted again (Runway AI / Dreamina x Chris, Nov 23)', async () => {
+  const { rowsCarryCard } = await import('../lib/heartbeat.js');
+  const rows = [{ video: 'https://app.notion.com/p/Runway-AI-Chris-41b508e99dda814dbc98cd2aa2c91bf4', context: 'fp 41b508e99dda814dbc98cd2aa2c91bf4=a282c58a7c59' }];
+  assert.equal(rowsCarryCard(rows, '41b508e9-9dda-814d-bc98-cd2aa2c91bf4'), true);
+  assert.equal(rowsCarryCard([{ video: '', context: 'fp 3ea508e99dda815490c2e0994cd53cea=ffe670d65ad7' }], '3ea508e99dda815490c2e0994cd53cea'), true);
+  assert.equal(rowsCarryCard(rows, '3ea508e99dda815490c2e0994cd53cea'), false);
+  const fs = await import('node:fs');
+  const h = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
+  assert.match(h, /const borrowedSent = !video && scriptCard \? await cardScriptSentAnywhere\(scriptCard\.id\) : false;/);
+  assert.match(h, /if \(!borrowedSent && !scriptsByCard && scriptCard/);
 });
