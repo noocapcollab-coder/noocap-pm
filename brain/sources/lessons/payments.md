@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A posted video must always end up invoiced: record the post and read billing details from files
+When: We email the brand that the video is live with its links, or the brand sends billing details as a screenshot or PDF
+Do: Save the live links and move the deal to Posted from our own email; read billing details from image/PDF attachments when the email talks about billing
+Never: Never leave a posted video sitting at Approved, or billing details unread in an attachment, so the invoice never goes
+Seen 1 time(s). Source: Harsh correction.
+## A brand's "we paid" in an old deal thread can be about a newer invoice
+When: A brand says it paid in a thread whose deal isn't paid in Stripe, while another deal of the same brand and creator is
+Do: Check the brand's other deals with that creator in Stripe; if one is paid, send the fixed thank-you in the thread the brand wrote in, and leave the old deal unpaid
+Never: Never mark the old deal Paid on the brand's word, and never leave a brand's payment email unanswered because the matched deal had no Stripe invoice
+Seen 1 time(s). Source: Harsh correction.
 ## A multi-video deal is billed when its videos are done, not after the first one
 When: A deal covers 2 or more videos for one fee and the first video goes live while the others are still being scripted, filmed or edited
 Do: Wait until every video in the deliverables is live (or the brand asks for the invoice, or the terms split payment per video) before asking for billing details or raising the final invoice. While a script or cut is owed, emails answer the brand's latest message about the work.
@@ -51,7 +61,7 @@ Seen 1 time(s). Source: Harsh correction.
 When: Writing any email, above all a payment chase that goes to a finance or payments address rather than the usual contact
 Do: Greet whoever is in To by the name they signed with (the payments team's Pavinder, not the campaign contact), and keep the usual contact on Cc
 Never: Never open with the campaign contact's name while the email goes to a different person or team address
-Seen 1 time(s). Source: System check.
+Seen 3 time(s). Source: System check.
 ## A due date in a brand email comes from the brand's terms
 When: Writing a payment chase or reminder that names a due date
 Do: Quote a due date only when the thread or the deal's Payment Terms give it (Net 30 agreed, the brand's own 'paid on 13/11'). When no terms were agreed, ask when we can expect the payment instead. Match the count: two invoices sent = 'the two invoices'.

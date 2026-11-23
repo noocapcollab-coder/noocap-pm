@@ -5,20 +5,20 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]], [[Chris]], [[Brad]].
 ## Brand wiki (from every email with them)
-WHO: Topview AI is an AI-powered video creation and editing tool/platform. They come to us directly.
+WHO: Topview AI is an AI video generation tool and plugin (topview.ai). They come to us directly and also through Spark Hub Media.
 
-CONTACTS: Lim Su Wern writes to us as Marketing Manager for Topview AI (limsuwern@topview.ai); Freya writes to us from Spark Hub Media representing them (freya@sparkhub.media).
+CONTACTS: Lim Su Wern, limsuwern@topview.ai, Marketing Manager at Topview. Freya, freya@sparkhub.media, agency contact at Spark Hub Media.
 
 DEALS:
 Topview AI x Lindsay | 1 short-form video (IG + TikTok) for Topview's Black Friday sale | [amount] | Script Approved | Post before Nov 28, 2026
-Topview AI x Chris | One sponsored video featuring Topview | [amount] | Paid | Posted Sep 18, 2026
-Topview AI x Brad | Deal completed | Paid | Oct 9, 2026
+Topview AI x Chris | 1 sponsored video featuring Topview | [amount] | Paid | Signed agreement Sep 18, 2026, posted Sep 18, 2026
+Topview AI x Brad | Deal completed | Paid | Paid Oct 9, 2026
 
-HOW THEY WORK: Briefs are provided via Notion links or direct email. Scripts are sent for approval before production. Once the script is approved, video drafts are sent via Google Drive links for review. Standard tracking links or brand URLs are used for posting unless specified. Invoices are sent by email to limsuwern@topview.ai.
+HOW THEY WORK: Briefs are provided via Notion or email. Scripts are sent for approval. Video drafts are reviewed via Google Drive links. Standard links are used unless a specific tracking link is requested.
 
-WATCH OUT: Ensure contract business details match the correct legal entity (e.g., Automate AI Consulting for Lindsay).
+WATCH OUT: Ensure contract details match the correct business entity (e.g., Automate AI Consulting for Lindsay).
 
-OPEN NOW: For Lindsay's deal, we owe reviewing and signing the updated agreement (Harsh).
+OPEN NOW: Lindsay deal: We owe sending the script (noting the brand asked for it, though it was previously sent on Nov 21 and approved). Chris deal: Paid, waiting on confirmation of funds if needed.
 
 
 ## Links

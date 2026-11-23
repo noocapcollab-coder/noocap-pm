@@ -3,22 +3,31 @@
 Brand. Works with creators: [[Lindsay]], [[Brad]], [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: Teamily or Teamily AI, a multi-agent AI collaboration platform that allows users to build and manage multiple AI agents in one shared workspace, featuring real-time multi-user collaboration and workflow automation. They come to us through an agency named Widely.
+WHO: Teamily AI is a multi-agent AI collaboration platform that allows users to build and manage multiple AI agents in one shared workspace, featuring real-time multi-user collaboration and workflow automation. They come to us through the agency Widely.
 
-CONTACTS: Alyssa Salazar, alyssa@withwidely.com, Influencer Marketing Manager at Widely, signs as Alyssa, copy alyssa.salazar@videoplusinc.ai, evan.g@videoplusinc.ai, evan@withwidely.com, evan@getwidely.com, partnerships@ninjaaitools.com. Enchi Guang (also known as Evan), evan@withwidely.com, Influencer Marketing Manager at Widely, signs as Evan.
+CONTACTS:
+Evan Guang, evan@withwidely.com (also evan@getwidely.com), Influencer Marketing Manager at Widely, signs as Evan or Best, Evan.
+Alyssa Salazar, alyssa@withwidely.com, contact at Widely, signs as Best, Alyssa.
+Brad, partnerships@ninjaaitools.com, creator, signs as Brad or Brad's Team.
+Lindsay, collab@automateaiconsulting.com, creator.
+Must be copied: noocapcollab@gmail.com, collab@automateaiconsulting.com, alyssa.salazar@videoplusinc.ai, evan.g@videoplusinc.ai, evan@withwidely.com, partnerships@ninjaaitools.com.
 
 DEALS:
-Teamily x Lindsay | YouTube integration and community promotion package | Rate unknown, deliverables unknown | Negotiating | Dates: Nov 5, 2026 inquiry, Nov 16, 2026 interest confirmed.
-Teamily AI x Brad | Instagram Reel | Rate, deliverables, usage rights, payment terms and agreed dates not documented | Script Sent | Dates: Oct 20, 2026 contract sent, Nov 14, 2026 script sent, Nov 17, 2026 script feedback received.
+Teamily x Lindsay | YouTube integration and community promotion package | Negotiating | Dates not documented
+Teamily AI x Brad | Instagram Reel | Script Sent | Dates not documented
 
-HOW THEY WORK: Scripts are submitted for review. Brand provides detailed script feedback covering specific product demonstrations, workflow triggers, client interactions, UI/UX accuracy, and human approval steps. Always reply all, including noocapcollab@gmail.com and the specified thread CCs. Contracts are sent via DocuSign to partnerships@ninjaaitools.com.
+HOW THEY WORK:
+For Brad, the process involves script review through PDF attachments sent via email. Script feedback must be incorporated addressing specific workflow accuracy (showing real triggers like client edits or comments, Send to Agent messages, individual agent updates, verifiable sources for reviewers, exact before-and-after comparisons, and a human approval step before publishing). CTAs require link in bio or comment TEAM and I will DM you. Captions require hashtag Teamily and tag @Teamily.
 
-WATCH OUT: Always remember to reply all so noocapcollab@gmail.com stays in the loop. DocuSign contract emails can end up in spam folders. Do not assume automatic agent updates in scripts; show the real trigger (client edits or comments, Send to Agent or message in shared project, agent updates, and reviewer checks). Show the client participating through their own Teamily account rather than a simulation from our account.
+WATCH OUT:
+DocuSign contracts can go to spam at partnerships@ninjaaitools.com. Always reply all to keep noocapcollab@gmail.com in the loop.
 
-OPEN NOW: We owe: Send Lindsay's pricing for the Teamily YouTube integration and community promotion package. We owe: Send revised script for Brad incorporating brand feedback.
+OPEN NOW:
+We owe: Send Lindsay's pricing for the Teamily YouTube integration and community promotion package.
+Waiting on brand: Review the updated script sent for Brad's Instagram Reel.
 
 ## Deal with [[Lindsay]] (Negotiating, opened 2026-11-05)
-Last brand reply 2026-11-17, our last reply 2026-11-15.
+Last brand reply 2026-11-17, our last reply 2026-11-23.
 AGREED: rate unknown, deliverables unknown, usage rights unknown, payment terms unknown, dates unknown.
 
 HISTORY:
@@ -27,14 +36,15 @@ HISTORY:
 2026-11-15 us followed up asking if brand is moving forward with dedicated video integration.
 2026-11-16 brand replied confirming interest in a YouTube integration and community promotion package, asking for pricing.
 2026-11-17 brand provided an update on an unrelated Kylon invoice payment scheduled for November 20th.
+2026-11-23 us followed up regarding the pending Kylon invoice payment.
 
 BILLING: not yet
 
 OPEN NOW: We owe: Send Lindsay's pricing for the Teamily YouTube integration and community promotion package.
 
 ## Deal with [[Brad]] (Script Sent, opened 2026-10-20)
-Last brand reply 2026-11-17, our last reply 2026-11-17.
-AGREED: Rate, deliverables, usage rights, payment terms and agreed dates not documented in email chain. Deal marked as script sent in system.
+Last brand reply 2026-11-17, our last reply 2026-11-23.
+AGREED: Rate, deliverables, usage rights, payment terms and agreed dates not documented in email chain.
 
 HISTORY:
 2026-10-20 creator: confirmed interest and requested reply all for noocapcollab@gmail.com.
@@ -45,10 +55,11 @@ HISTORY:
 2026-11-17 brand: acknowledged script receipt and stated it was submitted for review.
 2026-11-17 us: acknowledged brand's update and stated they will wait for feedback before filming.
 2026-11-17 brand: sent feedback on the script and requested a revised script.
+2026-11-23 us: sent updated script incorporating brand feedback for review.
 
 BILLING: not yet
 
-OPEN NOW: We owe: send revised script incorporating brand feedback.
+OPEN NOW: Waiting on brand: review the updated script.
 
 ## Inbound leads
 - Deliverables: One short-form video demonstrating Teamily AI · Contact Name: Alex · Next Step: New brand: management to reply with pricing · Platforms: YouTube Shorts, TikTok, Instagram · Last Brand Email: 2026-11-20 · Thread Subject: Show How AI Agents Turn Team Chat into Action · Status: New offer · Creator: Lindsay · Type: Affiliate · Brand Email: alex@socialbookcollab.com

@@ -2,6 +2,14 @@
 
 What brands asked us to change after seeing a cut. Read before editing the next video for the same brand.
 
+## 2026-11-19 Manyfast × Chris
+Brand: [[Manyfast]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 2.
+- Around 16 seconds, the caption still says “cloud code.” Please change this to “Claude Code.”
+- The connection and build sequence appears to show the Claude app. Could you confirm which tool was used and make sure the tool names in the narration and captions match what’s shown?
+Brand requests caption correction (cloud code to Claude Code) at 16s.
+Brand asks to confirm tool usage in the build sequence.
+Brand confirms Nov 30 publish date.
+
 ## 2026-11-09 Inworld AI × Chris
 Brand: [[Inworld]]. Creator: [[Chris]]. Editor: Prabal. Revisions: 1.
 Inworld's notes on the cut:
@@ -13,14 +21,6 @@ Everything else is approved ("This is great now, some really minor asks").
 Brand: [[Dreamina]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 3.
 Revise the hashtags to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner
 Brand asked to revise hashtags for the video to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner
-
-## 2026-11-19 Manyfast × Chris
-Brand: [[Manyfast]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 2.
-- Around 16 seconds, the caption still says “cloud code.” Please change this to “Claude Code.”
-- The connection and build sequence appears to show the Claude app. Could you confirm which tool was used and make sure the tool names in the narration and captions match what’s shown?
-Brand requests caption correction (cloud code to Claude Code) at 16s.
-Brand asks to confirm tool usage in the build sequence.
-Brand confirms Nov 30 publish date.
 
 ## 2026-11-04 CapCut x ChatGPT
 Brand: [[CapCut]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.

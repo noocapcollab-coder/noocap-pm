@@ -2,6 +2,17 @@
 
 The final scripts of videos posted in the last 60 days, as filmed.
 
+## 2026-11-23 REANIMATE - CLAUDE SKILL
+Type: PERSONAL. Creator: [[David Iya]].
+Hook 1:
+There's a free Claude Code skill that takes any animation you've seen and works out how it was built, and then it rebuilds it in your own code.
+    Hook 2:
+Someone just dropped a Claude Code skill that lets you reverse engineer pretty much any animation and rebuild it in your own code.
+    Body:
+So you point it at a live site or a screen recording, and it goes through the animation frame by frame and writes down every element on screen, including when it starts and how it eases. Then it rebuilds it in whatever your project already uses, like CSS or GSAP, and records its own version next to the original so it can check the timing actually matches. It's open source with no API keys, and it's called Reanimate, so you just give Claude Code the GitHub link and type slash reanimate.
+    CTA:
+So comment "REBUILD" and I'll get you the GitHub link plus a couple of animations worth testing it on.
+
 ## 2026-11-18 OPEN JARVIS - 2
 Type: PERSONAL. Creator: [[David Iya]].
 Hook 1:
@@ -116,32 +127,3 @@ Hook 1:
     CTA:
     So comment “DESIGN” and I’ll send you the repo and how I’d set it up in Claude Code.
     - Sub-page: [[Astryx: Meta's Open Source Design System for Claude Code (Repo + Setup)]]
-
-## 2026-11-18 Claude model router
-Type: PERSONAL. Creator: [[David Iya]].
-Hook (Zack D Films-style 3D animation):
-reference: https://www.instagram.com/p/DfhdW3cMmOD/
-    You wouldn’t hire a surgeon to put on band-aids, so why is your top AI model renaming variables? Here’s which model should handle what.
-    Edit note: Show a 3D operating room. A surgeon in full scrubs, with a “TOP MODEL” badge on the cap, leans over a tiny paper cut and carefully puts on a band-aid while a usage meter on the wall drains with every move. On “renaming variables”, the band-aid wrapper flips to show rename_var. On “here’s which model should handle what”, hard cut to David.
-    Body (David talking to camera):
-    So renames, boilerplate and searching the codebase go to the smallest model, and the actual building can usually drop to the middle one. Auth, payments, and a bug you’ve chased for an hour stay on the stronger model with the effort turned up, and planning gets the top model, because a bad plan costs you the most later. Then I have a different model review the code. You can pin a model and effort level on each subagent, so you really set this up once.
-    CTA:
-    So comment “MODELS” and I’ll send you the full routing sheet.
-    Sources
-    - https://code.claude.com/docs/en/sub-agents
-    - https://tech-insider.org/ie/claude-opus-vs-sonnet-vs-haiku-5-5-pricing-2026/
-    - https://www.developersdigest.tech/models/claude-opus-5-5
-    - Sub-page: [[The Claude Code Model Routing Sheet: Which Model Handles What (+ Ready-Made Subagents)]]
-
-## 2026-11-13 Claude minimalistic graphics
-Type: PERSONAL. Creator: [[David Iya]].
-Hook:
-    If you type slash breakdown into Claude Code, it takes your product and pulls it apart into an animation like this, labelling every piece without you ever opening an editor.
-    Body:
-    And if you type slash graph and add your numbers, it draws the line while the big number counts up, and slash map route draws a 3D route between any two places you give it. There’s also slash minimalistic graphics, which turns one line of text into a clean dot-and-steps animation and slash Zack D Films, which turns a what-if question into a 3D animated explainer. It’s called Claude Animation Skills and it’s free on GitHub.
-    CTA:
-    So comment “EXPLAIN” and I’ll send you the repo and my setup.
-    Sources
-    - claude-video-effects (GitHub)
-    - SKILL.md
-    - Sub-page: [[Claude Animation Skills: 6 Slash Commands That Make Reel Animations (Repo + Setup)]]

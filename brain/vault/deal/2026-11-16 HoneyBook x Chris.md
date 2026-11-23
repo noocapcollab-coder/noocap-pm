@@ -1,8 +1,8 @@
 ---
 type: deal
 ---
-Stage: Brief Received
-Last brand reply 2026-11-17, our last reply 2026-11-17.
+Stage: Script Sent
+Last brand reply 2026-11-17, our last reply 2026-11-23.
 AGREED:
 Rate: per deal fields
 Deliverables: per deal fields
@@ -14,12 +14,13 @@ HISTORY:
 2026-11-17 creator: agreed to the partnership and stated signed contract would be shared shortly
 2026-11-17 us: sent the signed contract to Dori
 2026-11-17 us: updated that the script is in progress and will be delivered within 2 to 3 working days
+2026-11-23 us: sent the script for review
 
 BILLING:
 not yet
 
 OPEN NOW:
-Waiting on brand: script review after we send it within 2 to 3 working days.
+Waiting on brand: script approval or feedback.
 
 ## Links
 - [[Chris]]

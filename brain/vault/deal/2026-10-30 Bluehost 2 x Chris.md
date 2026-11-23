@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Price Agreed
-Last brand reply 2026-10-28, our last reply 2026-11-19.
+Last brand reply 2026-10-28, our last reply 2026-11-23.
 AGREED: [amount]USD. 1 Instagram Reel under 60 seconds featuring one Bluehost AI product. Instagram only. Delivery via Creator.co platform. Payment terms and specific delivery date not yet confirmed in writing.
 
 HISTORY:
@@ -13,6 +13,7 @@ HISTORY:
 2026-11-10 us reported continued dashboard registration failure and asked for an alternative method
 2026-11-16 us followed up on the dashboard registration issue and alternative onboarding update
 2026-11-19 us followed up again for an update on the Creator.co registration issue and alternative onboarding
+2026-11-23 us followed up again for an update on the Creator.co registration issue
 
 BILLING: not yet
 

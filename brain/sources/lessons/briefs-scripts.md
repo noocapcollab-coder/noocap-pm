@@ -2,6 +2,26 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A cold 'share your usual rates' email is an inquiry, never a brief
+When: A brand writes for the first time asking if the creator is interested and what their rates are, with a description of the idea
+Do: Open the deal at Inbound and put it to Harsh for a rate; no card, no script
+Never: Never file it as a brief, open a deal at Brief Received or ask Rudraksh for a script before a price is agreed
+Seen 1 time(s). Source: Harsh correction.
+## A repeat deal whose card belongs to the old deal still sends its script
+When: A brand comes back for a new campaign in the same thread, a new deal opens, and the script is written on the existing card that is still linked to the old deal
+Do: Use the deal's one matching card when it has no Linked Video, and link the new deal to it
+Never: Never let a script sit at 5 because the card is linked to an older, invoiced deal of the same brand
+Seen 1 time(s). Source: Harsh correction.
+## A revised script must really differ from the one the brand already has
+When: A script card comes back to 5- Script Approval after the brand's script notes
+Do: Send it as the revised script only when the card's script text changed since the last Script email (its fingerprint differs); otherwise leave it with Rudraksh
+Never: Never send the same script again saying the brand's notes are worked in, and never send the same revised script twice
+Seen 1 time(s). Source: System check.
+## Notes on our script are script changes, even when the brand calls it a video draft
+When: A brand sends notes while the deal is at Script Sent (or earlier) and no cut has gone out, but the email says 'your first video draft' or 'the video'
+Do: Check what we actually sent: only a script means script_changes, the notes go to Rudraksh on the card and the revised script goes back when the card returns to 5
+Never: Never file it as video_feedback or hand it to Harsh as a reader split when no cut exists
+Seen 1 time(s). Source: System check.
 ## One email about several scripts: move only the card the brand approved
 When: A deal has several script cards and the brand's email approves one script and rejects or comments on another
 Do: Match the approval to the card it names ("the second script" = card (2)) and move only that card to 6- To Film. Send the other script's notes to the script writer on its own card, back at 4- Script Draft.
@@ -44,9 +64,9 @@ Never: Drop a content note because it contains the word budget, price or cost
 Seen 1 time(s). Source: Harsh correction.
 ## A deal past the brief always has a video card
 When: A deal reaches Brief Received or later, including deals opened by the system check or by hand
-Do: Make the card with the brief, link it in the deal's Linked Video and tell the script writer once
+Do: Make the card with the brief, link it in the deal's Linked Video and tell the script writer once. When the creator's board already has the brand's card, link that card instead of making a new one
 Never: Leave a deal with a brief and no card, so nobody is writing the script
-Seen 1 time(s). Source: Harsh correction.
+Seen 2 time(s). Source: Harsh correction.
 ## Script notes go to the card still being scripted, never to a filmed video
 When: A deal has several videos and the brand sends script notes or a script approval
 Do: Put the notes on the sibling cards at status 5 or lower (CapCut x Chris (2), (3)) and ping the script writer with those cards

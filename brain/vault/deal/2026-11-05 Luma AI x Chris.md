@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Posted
-Last brand reply 2026-11-22, our last reply 2026-11-19.
+Last brand reply 2026-11-23, our last reply 2026-11-23.
 AGREED: Rate not confirmed. Deliverables: Reel + Story repost. Usage rights not confirmed. Payment terms: Net 30 after approved Reel and Story published and invoice received. Agreed dates: Reel goes live on 2026-11-21.
 
 HISTORY:
@@ -15,10 +15,12 @@ HISTORY:
 2026-11-22 brand Noted Reel is published but tagged account is missing, Story is missing, and bio link is missing.
 2026-11-22 us Sent update confirming tag, bio link adjustments, pinned post, and attached screenshots.
 2026-11-22 brand Acknowledged changes and requested the pending Story to be published with the tracking link and tag.
+2026-11-23 us Confirmed the Story will be posted today and requested company billing details.
+2026-11-23 brand Provided company billing details and requested the invoice.
 
-BILLING: not yet
+BILLING: NJ Agency, upendra@njagency.co, KHASRA NO. 2256, Mundawar, Khairthal Tijara, Rajasthan 301407, India. Invoice status: not yet invoiced.
 
-OPEN NOW: We owe: Publish the agreed Story with the tracking link and @lumalabsai tag, and share the Story link with the brand.
+OPEN NOW: We owe: Share the published Story screenshot and invoice.
 
 ## Links
 - [[Chris]]

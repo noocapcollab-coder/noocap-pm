@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A brand is closed only once the brief, the contract or an agreed price came up
+When: A new brand's email looks like a brief but the thread never mentions sharing the brief, sending the contract, or an agreed price (or being selected for the campaign)
+Do: Keep the brand in talks: deal at Inbound, Harsh asked, no card, no script writer
+Never: Never open a closed deal (Brief Received, card, Rudraksh pinged) on a brand that is still only talking
+Seen 1 time(s). Source: Harsh correction.
+## A fully executed agreement is filed, never sent back as a contract to sign
+When: The brand sends a copy already signed by both sides (fully executed, countersigned, for your records), often with billing details after the video is live
+Do: File it in CONTRACTS as signed and move on to what the email really asks for (usually the invoice)
+Never: Send a 'read it and sign it yourself' contract card to Harsh, send a 'we'll review and sign it' ack to the brand, or set Next Action to send the signed agreement back
+Seen 1 time(s). Source: System check.
 ## Unsure how to reply still means the new deal gets opened
 When: The two readers disagree on a creator loop-in or an agreed brand deal that has no deal row for its thread
 Do: Open the deal flagged Needs you, tell the team in #pm-alerts, and write nothing to the brand so Harsh replies himself

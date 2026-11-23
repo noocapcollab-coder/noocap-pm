@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Price Agreed
-Last brand reply 2026-11-12, our last reply 2026-11-19.
+Last brand reply 2026-11-12, our last reply 2026-11-23.
 AGREED: [amount]USD for one horizontal video, one vertical video, and one cover photo. No payment terms, invoice details, or delivery dates confirmed.
 
 HISTORY:

@@ -3,26 +3,26 @@
 Brand. Works with creators: [[Duncan]], [[Chris]], [[Lindsay]].
 
 ## Brand wiki (from every email with them)
-WHO: Fotor, an online photo editing and design platform (Everimaging Co., Ltd.), coming to us directly.
+WHO: Fotor, an AI photo and video editing platform (Fotor | Everimaging Co., Ltd.), coming to us directly.
 
 CONTACTS:
-Zoey Rachel, zoey@fotor.me, brand contact for Duncan, signs as Zoey, copy zoey@fotor.me
-Marina Xu, marina@fotor.me, brand contact for Chris, signs as Marina Xu, copy collab@chriscordero.net
+Zoey Rachel, zoey@fotor.me, brand contact, signs as Zoey, copy zoey@fotor.me
+Marina Xu, marina@fotor.me, brand contact, signs as Marina, copy collab@chriscordero.net
 
 DEALS:
-Fotor x Duncan | 1 dedicated video published on Instagram Reels, TikTok, and Facebook | [amount]| Script Sent | Agreed: rate [amount]Fotor x Chris | 1 dedicated video posted on Instagram and TikTok with 30-day ad authorization and cross-posting | [amount]| Script Sent | Agreed: rate [amount]
-HOW THEY WORK:
-Fotor provides access links and codes for their tool (Access link: https://www.fotor.com/video/, Code: F-OlzhZMA). They offer multiple video concept options in their briefs for creators to choose from, and scripts are sent via email for their review and approval. Invoices must be sent to the account email in the contract and include the company title and video link.
+Fotor x Duncan: 1 dedicated video published on Instagram Reels, TikTok, and Facebook, [amount]Script Sent, no dates agreed
+Fotor x Chris: 1 dedicated video posted on Instagram and TikTok with 30-day ad authorization and cross-posting, [amount]Script Sent, no dates agreed
 
-WATCH OUT:
-None specified.
+HOW THEY WORK: Brand sends access link, code, and brief options. Creator selects a concept and writes the script, sending it via email for brand team review. Duncan code: none provided. Chris code: F-OlzhZMA, access link: https://www.fotor.com/video/. Duncan brief: none linked. Chris briefs: All-in-one (https://docs.google.com/document/d/1u5z5J4rqT-t_U-WLHlm8r7WJvDTRf6IW4ZHWSMBECjI/edit?tab=t.0#heading=h.80g3wcy9lk8i), Talking Head (https://docs.google.com/document/d/1ZMj9SiZNvs6cL3JVqmnCqZcGiwMhMR-SqIMinkgHU-I/edit?tab=t.0#heading=h.80g3wcy9lk8i).
+
+WATCH OUT: None listed.
 
 OPEN NOW:
-Fotor x Duncan: Waiting on brand to review and approve or request changes to the script. Brand owes the next move.
-Fotor x Chris: Waiting on brand approval of the submitted script. Brand owes the next move.
+Fotor x Duncan: Waiting on brand to review and approve or request changes to the script.
+Fotor x Chris: Waiting on brand to review and approve or request changes to the script.
 
 ## Deal with [[Duncan]] (Script Sent, opened 2026-11-18)
-Last brand reply 2026-11-19, our last reply 2026-11-22.
+Last brand reply 2026-11-23, our last reply 2026-11-23.
 AGREED: rate: [amount]; deliverables: 1 dedicated video published on Instagram Reels, TikTok, and Facebook; usage rights: not specified; payment terms: full [amount]on a PayPal invoice after the video goes live, paid within 3 working days of the invoice; agreed dates: not specified.
 
 HISTORY:
@@ -33,6 +33,7 @@ HISTORY:
 2026-11-20 us: Confirmed receipt of contract, stated intent to sign and draft script.
 2026-11-21 us: Sent the script for brand review.
 2026-11-22 us: Sent the signed contract.
+2026-11-23 brand: Confirmed script is submitted to their team for review.
 
 BILLING: not yet
 

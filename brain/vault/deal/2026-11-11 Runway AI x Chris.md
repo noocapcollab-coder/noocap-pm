@@ -1,7 +1,7 @@
 ---
 type: deal
 ---
-Stage: Posted
+Stage: Price Agreed
 Last brand reply 2026-11-11, our last reply none.
 AGREED: Rate: per deal fields (Runway AI x Chris). Deliverables: per deal fields, plus concept to be delivered shortly. Usage rights, payment terms, agreed dates: per deal fields. Agreement not yet signed.
 

@@ -1,8 +1,9 @@
 # Wanna AI
 
-Brand. Works with creators: [[Chris]].
+Brand. Works with creators: [[Lindsay]], [[Chris]].
 
 ## Inbound leads
+- Deliverables: 1 short-form video cross-posted to YouTube Shorts, Instagram and TikTok · Next Step: New brand: management to reply with pricing · Platforms: Instagram, TikTok, YouTube Shorts · Last Our Email: 2026-11-23 · Last Brand Email: 2026-11-23 · Thread Subject: Collab? · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: hello@send.wannable.ai
 - Next Step: New brand: management to reply with pricing · Last Brand Email: 2026-11-20 · Thread Text: From: "Wanna AI" <hello@send.wannable.ai>
 Date: 2026-11-20
 

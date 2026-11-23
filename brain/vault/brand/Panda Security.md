@@ -5,23 +5,24 @@ type: brand
 
 Brand. Works with creators: [[Chris]], [[Valeri]].
 ## Brand wiki (from every email with them)
-WHO: Panda Security is a cybersecurity software brand. They work with us through their agency, Lua Group.
+WHO: Panda Security is a cybersecurity product/brand, coming to us through agency Lua Group.
 
-CONTACTS: 
-Camila Molares, camila.molares@luagroup.com, Senior Request Manager at Lua Group. Copy on all threads.
-Francisca Vitória, francisca.vitoria@luagroup.com, Lua Group. Copy on Valeri deal.
+CONTACTS:
+Camila Molares, camila.molares@luagroup.com, Senior Request Manager at Lua Group
+Francisca Vitória, francisca.vitoria@luagroup.com, Lua Group
+Lucía Fernández, lucia.fernandez@luagroup.com, Lua Group
+no-reply@luagroup.com, Lua Group (CC)
+business@luagroup.com, Lua Group (CC)
 
 DEALS:
-Chris: deliverable details pending, script approved, stage: script approved.
-Valeri: 1 horizontal video, 1 vertical video, 1 cover photo for [amount]USD, stage: price agreed.
+Panda Security x Chris | Script approved | No agreed rate or payment terms documented.
+Panda Security x Valeri | One horizontal video, one vertical video, and one cover photo for [amount]USD (UGC only, not posted on creator pages) | Price agreed | No delivery dates or payment terms confirmed.
 
-HOW THEY WORK: Communication is via email and the Panda Security app. For Chris, the Panda Security app is used for script and content submission. 
+HOW THEY WORK: Scripts and video submissions are handled through the Panda Security app. Content updates should also be communicated over email.
 
-WATCH OUT: There has been a communication gap where the brand requested content while the creator had already submitted it via the Panda Security app. Always verify internal status within their app before reacting to requests for status updates via email.
+WATCH OUT: Miscommunication happened when coordinating solely through the Panda Security app without updating the brand via email, leading the brand to believe there was no response. The rule is to keep the brand updated over email as well.
 
-OPEN NOW:
-Chris: Waiting on brand to verify internal status and content submission within the Panda Security app.
-Valeri: Waiting on brand (Francisca) to provide feedback from the client and the creative brief.
+OPEN NOW: Panda Security x Chris: Waiting on brand for client video review. Panda Security x Valeri: Waiting on brand for Francisca to provide feedback from the client and the creative brief.
 
 
 ## Links

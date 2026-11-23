@@ -3,10 +3,11 @@ type: lead
 ---
 Deliverables: 1 tutorial video (affiliate / gifted credits)
 Contact Name: Leonardo
-Next Step: New brand: management to reply with pricing
+Next Step: Replied 2026-11-23, waiting on the brand
+Last Our Email: 2026-11-23
 Last Brand Email: 2026-11-21
 Thread Subject: Chris Cordero x Kleo: a tutorial idea
-Status: New offer
+Status: Waiting on brand
 Creator: Chris
 Type: Affiliate
 Brand Email: leo@getkleooai.com

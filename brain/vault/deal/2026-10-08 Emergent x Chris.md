@@ -1,9 +1,9 @@
 ---
 type: deal
 ---
-Stage: Approved
-Last brand reply 2026-11-20, our last reply 2026-11-21.
-AGREED: Rate: [amount]. Deliverables: One new video plus usage rights for the existing Instagram video. Usage rights: not specified. Payment terms: not specified. Agreed dates: none.
+Stage: Invoiced
+Last brand reply 2026-11-23, our last reply 2026-11-23.
+AGREED: Rate: [amount]. Deliverables: One new video plus usage rights. Usage rights: per agreement. Payment terms: Net 15 days of receipt of invoice. Agreed dates: Go-live Nov 21, 2026.
 
 HISTORY:
 2026-11-02 brand agreed to [amount]for new video and reuse rights.
@@ -14,10 +14,12 @@ HISTORY:
 2026-11-18 brand approved revised draft and provided UTM link.
 2026-11-20 us provided agreement details, W-9, and signed agreement.
 2026-11-21 us confirmed video published and requested billing details for invoice.
+2026-11-23 brand provided fully executed agreement and billing details.
+2026-11-23 us sent invoice INV-008 for [amount]via Stripe and sent script for another new video.
 
-BILLING: not yet
+BILLING: Company: Emergent Labs Inc. Invoice email: not yet. Address: not yet. Invoice status: sent.
 
-OPEN NOW: Waiting on brand: Provide company billing details for the invoice.
+OPEN NOW: We owe: Send the reel analytics. Waiting on brand: Payment of invoice INV-008 ([amount]) within Net 15 terms and review of the new script sent on Nov 23.
 
 ## Links
 - [[Chris]]

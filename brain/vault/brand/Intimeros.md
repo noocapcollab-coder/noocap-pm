@@ -5,22 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: Intimeros makes intimate products. They come to us through the agency Moonio, using the email reply-to@moonio.io.
+WHO: Intimeros is a brand, coming to us through the agency Moonio.
 
-CONTACTS:
-Moonio team via reply-to@moonio.io.
+CONTACTS: reply-to@moonio.io
 
-DEALS:
-Intimeros x Chris: deliverables not known yet, rate not known yet, currency not known yet, stage Brief Received, agreed dates not known yet.
+DEALS: Chris, deliverables not known yet, rate not known yet, stage Inbound, dates not known yet.
 
-HOW THEY WORK:
-Not known yet.
+HOW THEY WORK: 
 
-WATCH OUT:
-None noted yet.
+WATCH OUT: 
 
-OPEN NOW:
-We owe: Rudraksh writing the script for Intimeros x Chris.
+OPEN NOW: We owe Rudraksh writing the script for the Chris deal.
 
 
 ## Links

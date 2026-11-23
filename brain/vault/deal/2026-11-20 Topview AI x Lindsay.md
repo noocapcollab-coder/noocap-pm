@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Script Approved
-Last brand reply 2026-11-22, our last reply 2026-11-22.
+Last brand reply 2026-11-23, our last reply 2026-11-23.
 AGREED: rate [amount]; deliverables 1 short-form video (IG + TikTok) for Topview's Black Friday sale; usage rights not specified; payment terms 100% payable within fourteen (14) days after execution of the production and publication of the production, with receipt of a valid invoice; agreed dates not specified.
 
 HISTORY:
@@ -13,13 +13,15 @@ HISTORY:
 2026-11-21 brand: Asked to confirm the revised contract details.
 2026-11-22 us: Confirmed the correct contract details and requested the revised agreement.
 2026-11-22 brand: Sent the updated agreement for review.
-2026-11-22 us: Acknowledged receipt of the contract (auto reply; its line about sharing the script was wrong, the script was approved on Nov 21).
+2026-11-22 us: Acknowledged receipt of the contract.
+2026-11-23 us: Sent the signed contract.
+2026-11-23 brand: Acknowledged receipt of the signed contract and asked for the script.
 
 BILLING: company Automate AI Consulting; invoice email Lindsay@automateaiconsulting.com; address 909 N. Thorne Ave., Fresno, CA 93728; invoice status not yet.
 
-OPEN NOW: We owe: review and sign the updated agreement (Harsh). The script is already approved.
+OPEN NOW: We owe: send the script (noting the brand asked for it, though it was previously sent on Nov 21 and approved).
 Stage: Script Approved
-Last brand reply 2026-11-21, our last reply 2026-11-21.
+Last brand reply 2026-11-21, our last reply 2026-11-23.
 AGREED:
 Rate: 1500
 Deliverables: One short-form video/reel, cross-posted to YouTube Shorts, Instagram and TikTok

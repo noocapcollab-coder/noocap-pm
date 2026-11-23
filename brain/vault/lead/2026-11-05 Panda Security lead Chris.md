@@ -5,7 +5,7 @@ Deliverables: 1 UGC video in horizontal (1-3 min) and vertical formats + 1 cover
 Contact Name: Camila
 Next Step: Replied 2026-11-21, waiting on the brand
 Platforms: Instagram, TikTok, YouTube, YouTube Shorts
-Last Our Email: 2026-11-21
+Last Our Email: 2026-11-23
 Follow-ups: 3
 Last Brand Email: 2026-11-05
 Thread Subject: Paid campaign with Panda Security - thechriscordero

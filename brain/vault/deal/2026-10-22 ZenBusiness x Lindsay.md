@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Submitted
-Last brand reply 2026-11-03, our last reply 2026-11-20.
+Last brand reply 2026-11-03, our last reply 2026-11-23.
 AGREED: [amount]for one YouTube integration and [amount]for three creative assets (9x16, 4x5, 16x9). Total: [amount]. Usage rights and specific deadline dates not confirmed.
 
 HISTORY:
@@ -15,6 +15,7 @@ HISTORY:
 2026-11-05 us resubmitted revised videos (round 3).
 2026-11-17 us sent follow-up check-in.
 2026-11-20 us sent follow-up check-in regarding approval and billing.
+2026-11-23 us sent follow-up check-in regarding video approval.
 
 BILLING: not yet.
 

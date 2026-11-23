@@ -5,7 +5,7 @@ Deliverables: Real footage demonstrations: (1) SpeakOn button press and note gen
 Contact Name: Cassie
 Next Step: Send revised script with the four specific visual demonstrations Cassie outlined before filming
 Platforms: YouTube Shorts
-Last Our Email: 2026-11-19
+Last Our Email: 2026-11-23
 Deal: 1 linked
 Last Brand Email: 2026-11-06
 Thread Subject: 回复: Paid Tech Sponsorship with SpeakOn AI

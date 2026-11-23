@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Script Approved
-Last brand reply 2026-11-20, our last reply 2026-11-22.
+Last brand reply 2026-11-23, our last reply 2026-11-22.
 AGREED: [amount]for three CapCut app videos on Instagram, 30 to 60 seconds each. Script approval before filming, up to 2 revisions, publish within 3 days of approval, 60-day ad code authorization per video. Latest publication deadline November 27.
 
 HISTORY:
@@ -16,10 +16,11 @@ HISTORY:
 2026-11-20 us submitted the three revised scripts for final approval.
 2026-11-20 brand approved the first and second scripts, and asked to switch the third script to a new GTA 6 brief.
 2026-11-22 us agreed to explore the new GTA 6 brief for the third video and accommodate the revised timeline.
+2026-11-23 brand asked us to prioritize the third script and share first drafts of the first two videos soon.
 
 BILLING: not yet.
 
-OPEN NOW: Waiting on brand: third script delivery based on the new GTA 6 brief.
+OPEN NOW: We owe: third script (GTA 6 brief) and first drafts of the first two videos.
 
 ## Links
 - [[CapCut]]

@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Posted
-Last brand reply 2026-11-10, our last reply 2026-11-18.
+Last brand reply 2026-11-10, our last reply 2026-11-23.
 AGREED: Rate [amount]. Deliverables: 2 UGC videos with whitelisting. Usage rights not specified. Payment terms not specified. Agreed post date for video 2: 2026-11-17.
 
 HISTORY:
@@ -12,10 +12,11 @@ HISTORY:
 2026-11-10 us replied about swapping music and asked brand for billing details.
 2026-11-14 us followed up on the revised cut with casual music, asking for approval to post on November 17.
 2026-11-18 us followed up on the revised video review and billing details.
+2026-11-23 us checked in again on the revised cut.
 
-BILLING: Not yet. Polar pays via Gusto; 3 billing-detail reminders already sent, so no more (system check, Nov 21).
+BILLING: Not yet. Polar pays via Gusto.
 
-OPEN NOW: Waiting on brand: approval on the revised cut. We owe: Valeri's billing details to Ushni, which she asked for on Nov 10 (needs Harsh).
+OPEN NOW: Waiting on brand: approval on the revised cut.
 
 ## Links
 - [[Polar]]

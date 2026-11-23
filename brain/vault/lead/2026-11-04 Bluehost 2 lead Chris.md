@@ -17,7 +17,7 @@ Deliverables: One original short-form video (Instagram Reel), no cross-posting o
 Contact Name: Erick
 Next Step: Chris to opt in through the new Creator.co link and complete profile approval
 Platforms: Instagram, TikTok, YouTube
-Last Our Email: 2026-11-19
+Last Our Email: 2026-11-23
 Deal: 1 linked
 Last Brand Email: 2026-11-04
 Thread Subject: Bluehost AI | Paid Creator Collaboration ([amount]–[amount] USD)

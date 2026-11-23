@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A countersigned agreement with billing details is one message: time to invoice
+When: After the video is live, the brand sends the fully executed agreement together with its billing details
+Do: File the agreement, save the billing details on the deal, and send Harsh ONE WhatsApp message offering to raise the invoice (amount and terms from the deal)
+Never: Never send a 'please read it and sign it yourself' contract card for an agreement that is already signed by both sides, and never send a second card for the same email
+Seen 1 time(s). Source: System check.
 ## A signed contract goes straight to the brand, never to Approvals
 When: Harsh drops a signed contract in WhatsApp, or names the brand for one the PM asked about
 Do: Check signed contracts first (dropped file, or a brand name for a waiting contract) and send them in the brand's thread with no approval step
@@ -11,7 +16,7 @@ Seen 1 time(s). Source: Harsh correction.
 When: Harsh drops a signed contract PDF in the NOOCAP MEDIA chat with a caption like 'here you go'
 Do: Send it when the PDF names the deal's creator by legal name, names the brand (or its agency's domain), and that brand's contract is waiting in CONTRACTS; otherwise ask which brand
 Never: Never hold a signed contract just because the brand isn't in the caption when the PDF already proves which deal it is
-Seen 1 time(s). Source: Harsh correction.
+Seen 2 time(s). Source: Harsh correction.
 ## Only noocapcollab contracts are shared (for now)
 When: A brand sends a contract to a creator's own inbox (Chris, Lindsay), not to noocapcollab
 Do: Share only contracts that reach noocapcollab. A creator-inbox contract is left to the creator and management (CREATOR_INBOX_CONTRACTS = false in lib/leads.js)

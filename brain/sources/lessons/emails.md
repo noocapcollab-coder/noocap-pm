@@ -2,6 +2,31 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A draft the last send check refuses goes to Harsh once, it is not retried forever
+When: Autopilot tries to send a waiting draft and a pre-send check refuses it ("Not sent: ...", e.g. the scripts already went, someone already replied, wrong amount)
+Do: Mark the draft Needs you with the reason the check gave and post one hold card, so Harsh decides and Approvals stops saying it will send on its own
+Never: Leave the draft saying "Sends on its own in 30 min" while every heartbeat retries it and fails the same way
+Seen 1 time(s). Source: System check.
+## No bank recall guesses on corrected invoice emails
+When: Drafting an email about a cancelled and re-issued invoice
+Do: Remove any speculation about bank recalls or returned wire transfers from invoice correction emails and keep the message strictly to the replacement and payment link
+Never: Write about bank recalls, wire returns or returned money on corrected invoice emails
+Seen 1 time(s). Source: Draft edit.
+## Each follow-up is worded fresh, never a copy of the one before
+When: Writing a second or later follow-up on the same deal
+Do: Read our previous follow-ups in the thread and word the new one differently: name what we sent and when, and ask one clear question (approved, or changes?)
+Never: Never send a follow-up whose text matches our previous email word for word, and never add an offer to cancel the project, which is Harsh's call
+Seen 1 time(s). Source: System check.
+## A creator's loop-in always gets the take-over reply, even when it carries the brief
+When: The creator's team (their own domain, e.g. buildroom.ai) copies noocapcollab and hands the brand over, in any wording: 'loop in', 'in the loop', 'take things forward from here'
+Do: Open the deal with the brand's outside address as Brand Email, file the brief, and send the fixed take-over reply asking only for what's missing (contract)
+Never: Never put the creator's own address as Brand Email, and never treat the creator team's email as our own and skip the reply
+Seen 2 time(s). Source: Harsh correction.
+## A cut chase goes out on weekends too
+When: A follow-up chases a cut (first or revised) waiting on the brand's approval and it is Saturday or Sunday in New York
+Do: Send it after the 30-minute hold like any other day; only other follow-ups wait for Monday
+Never: Never leave a cut chase sitting in Approvals until Monday
+Seen 1 time(s). Source: System check.
 ## A fixed reply never promises work that is already done
 When: A fixed reply (contract ack, ETA reply) is about to go on a deal where the script, cut or other item it mentions has already been sent or approved
 Do: Check the deal's Script Sent Date, stage and history first and cut any line that promises something the brand already has. Keep Deal Memory's 'We owe' to what is really still owed.
@@ -16,7 +41,7 @@ Seen 1 time(s). Source: Draft rejected.
 When: Drafting or sending an email reply
 Do: Check if the thread or deal already has our response or if no reply is needed before drafting; drop unnecessary replies.
 Never: Send unneeded or duplicate reply emails when the thread requires no further answer
-Seen 1 time(s). Source: Draft rejected.
+Seen 2 time(s). Source: Draft rejected.
 ## Never agree to the brand's timeframe on our own
 When: A brand asks whether the video can be made within their window (this week or next, by a deadline)
 Do: Send the timeline ask to Harsh on WhatsApp and write only from his answer
@@ -96,7 +121,7 @@ Seen 1 time(s). Source: Harsh correction.
 When: A brand asks when the approved video goes live, or chases a posting we said would happen today
 Do: Give the posting time Harsh supplied, otherwise ask Harsh on WhatsApp for it before replying
 Never: Write 'we will post it today/tomorrow/soon/now', 'Chris will post it today', 'we are going ahead and posting it now', 'we are posting it today', 'we're getting it posted right now', 'we are putting the finishing touches' or 'we're finalizing the video' without a time Harsh gave
-Seen 3 time(s). Source: System check.
+Seen 4 time(s). Source: System check.
 ## A fixed reply in Harsh's own words sends on its own, timing line included
 When: Saving a Reply Templates reply (Why has [template:...]) such as billing_on_approval
 Do: Hold a fixed reply only for a leftover placeholder or a made-up code; let it auto-send otherwise, and record the deal's ask (Billing Request Sent) only when the copy really went
@@ -121,7 +146,7 @@ Seen 1 time(s). Source: Draft rejected.
 When: A brand has agreed (we accepted their rate, or the creator said yes) and owes us the contract, brief or script approval
 Do: Follow up every 3 days until they answer. A contract or brief follow-up 3+ days after our last email is never too early.
 Never: Never stop after a set number of follow-ups, never let a stale stage (Negotiating) or an empty Last Our Reply stop the chase, and never hold a contract follow-up as too soon.
-Seen 1 time(s). Source: Harsh correction.
+Seen 2 time(s). Source: Harsh correction.
 ## Chris's inbox is collab@chriscordero.net, and a Message-ID is never an address
 When: Building To or Cc for any email, from a thread where a brand mistyped one of our inboxes or where a Message-ID slipped into the address list
 Do: Use our real inboxes (collab@chriscordero.net, collab@buildroom.ai, partnerships@ninjaaitools.com, collab@automateaiconsulting.com, collab@valchy.ai) and drop anything @mail.gmail.com

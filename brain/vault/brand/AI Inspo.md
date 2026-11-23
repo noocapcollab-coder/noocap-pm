@@ -5,17 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Duncan]].
 ## Brand wiki (from every email with them)
-WHO: AI Inspo is an AI product/tool. They come to us directly.
+WHO: AI Inspo is an AI-powered product for creating videos (beta link https://pre.ai-inspo.com/, official link https://www.ai-inspo.com/). They come to us directly.
 
-CONTACTS: Jessie, business@vivavideotech.com, AI Inspo Team; CC collab@buildroom.ai.
+CONTACTS: Jessie from the AI Inspo Team, business@vivavideotech.com, brand. Duncan's team writes as Duncan's Team, signing off as Duncan's Team, and using noocapcollab@gmail.com and collab@buildroom.ai on the thread.
 
-DEALS: Duncan | One video promoting AI Inspo, deliverables: one Instagram reel (collab post with AI Inspo official account) plus DM, cross post on Facebook and TikTok | [amount]| Stage: Script Sent | Dates: agreed 2026-11-12.
+DEALS: Duncan | One Instagram reel (collab post with AI Inspo official account) plus DM, cross post on Facebook and TikTok | [amount]| Script Sent | Agreed Nov 2026.
 
-HOW THEY WORK: Register on their official website at ai-inspo.com to get an account ID starting with 4 for testing credits. Write the script based on their production guide, send the script for review, send the first draft for review and adjustments, send the final version for approval, then post.
+HOW THEY WORK: We write the script and send it for review. They review and send feedback for revisions. Product testing requires registration on their website and providing the account ID (starting with 4) to receive credits. 
 
-WATCH OUT: They cannot add testing credits using an email address alone; they require the AI Inspo account ID starting with 4.
+WATCH OUT: 
 
-OPEN NOW: Waiting on the brand to approve the script sent on 2026-11-21.
+OPEN NOW: Waiting on brand: to review and approve the newly revised script.
 
 
 ## Links

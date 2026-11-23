@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## The test bank scores reader cases the way the inbox really handles them
+When: A reader fix lives in handleInboxEmail (a stage-based correction) instead of in the reader prompt
+Do: Apply the same correction in the test bank's runReader (readerStageFixes) so the case shows fixed once production is fixed
+Never: Never leave a case reported as not fixed or broken when production already handles it, because false results switch lessons off or mark commits for undoing
+Seen 1 time(s). Source: System check.
+## The test bank judges only drafts the heartbeat would really write
+When: A writer case in the PM TEST BANK covers an email the heartbeat stops before writing (a gate like liveLinkOwed)
+Do: Run the heartbeat's own gates before scoring a writer case, and score a gated case as not drafted
+Never: Report a case as broken for a draft production never makes, because that switches lessons off and marks good commits for undoing
+Seen 1 time(s). Source: System check.
 ## A once-a-day heartbeat job must respect the time budget
 When: Adding or reviving a heartbeat job that loops over every card, deal or folder
 Do: Check late() inside the loop, work in small parallel batches and let the next run pick up the rest

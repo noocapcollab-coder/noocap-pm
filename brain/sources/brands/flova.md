@@ -3,31 +3,20 @@
 Brand. Works with creators: [[Duncan]], [[Chris]], [[Lindsay]].
 
 ## Brand wiki (from every email with them)
-WHO
-Flova AI is an AI video scene planning and generation platform featuring a Skills community. They contact us directly.
+WHO: Flova AI is an AI video tool with a Skills community where creators share reusable workflows. They come to us directly.
 
-CONTACTS
-Niko (谢宇晨), xieyuchen@flova.ai, Brand contact.
-CC on thread: collab@buildroom.ai.
+CONTACTS: Niko (谢宇晨, xieyuchen@flova.ai), brand representative at Flova.ai. Thread CC includes collab@buildroom.ai and noocapcollab@gmail.com.
 
-DEALS
-Duncan: Deliverables disputed, rate and terms unconfirmed, stage Submitted, video delivered November 2, 2026.
+DEALS: Flova AI x Duncan | Deliverables currently disputed (brand claims 8-15 minute YouTube video, creator/agency state short-form video); rate, usage rights, payment terms, and dates not yet confirmed | Stage: Submitted | Dates: Script sent October 22, 2026; video delivered via Frame.io on November 2, 2026.
 
-HOW THEY WORK
-Always use Reply All when responding to their emails.
-Scripts are submitted in email body for brand review.
-Video drafts are delivered via Frame.io links for feedback.
-Short-form CTA uses comment keyword FLOVA and description link.
+HOW THEY WORK: Drafts are reviewed via Frame.io.
 
-WATCH OUT
-Brand claimed the brief required an 8 to 15 minute long-form YouTube video. Duncan team clarified that Duncan does not do long-form sponsored content and provided screenshots showing short-form video posted across TikTok, Instagram Reels, YouTube Shorts, and Facebook Reels was the agreed deliverable.
-Niko requested to always use Reply All when responding to emails.
+WATCH OUT: Misunderstanding regarding deliverables, as the brand claimed the agreement was for an 8 to 15 minute YouTube video while the creator and agency confirmed it was for a short-form video.
 
-OPEN NOW
-Waiting on Niko to review the short-form video delivered on Frame.io on November 2, 2026, provide feedback or approval, and resolve the deliverable dispute. Rate, usage rights, payment terms, and final delivery confirmation are also pending brand response.
+OPEN NOW: The brand has not yet provided feedback on the short-form video delivered via Frame.io on November 2, 2026, nor has it resolved the deliverable dispute. Waiting on the brand for feedback, approval, or revisions on the video, clarification on deliverables, and confirmation of the rate, usage rights, payment terms, and final delivery.
 
 ## Deal with [[Duncan]] (Submitted, opened 2026-11-02)
-Last brand reply 2026-11-02, our last reply 2026-11-20.
+Last brand reply 2026-11-02, our last reply 2026-11-23.
 AGREED: Deliverables currently disputed. Rate, usage rights, payment terms, and dates not yet confirmed.
 HISTORY:
 2026-10-20 Duncan's team: Offered updated scripts and contract confirmation.
@@ -37,7 +26,7 @@ HISTORY:
 2026-11-02 Duncan's team: Provided screenshots to clarify short-form video was the agreed deliverable.
 2026-11-02 us: Delivered short-form video via Frame.io for review.
 2026-11-05 us: Sent first follow-up requesting feedback on the video.
-2026-11-20 us: Sent multiple follow-ups, including the latest, requesting feedback on the video.
+2026-11-20 us: Sent multiple follow-ups, including the latest on November 23, requesting feedback on the video.
 BILLING: not yet
 OPEN NOW: The brand has not yet provided feedback on the video delivered on November 2, nor has it resolved the deliverable dispute. Waiting on brand: feedback, approval, or revisions on the short-form video, and clarification on deliverables. Rate, usage rights, payment terms, and final delivery confirmation also pending.
 

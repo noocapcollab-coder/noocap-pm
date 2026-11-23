@@ -3,35 +3,31 @@
 Brand. Works with creators: [[Duncan]].
 
 ## Brand wiki (from every email with them)
-WHO: AI Inspo is an AI product/tool. They come to us directly.
+WHO: AI Inspo is an AI-powered product for creating videos (beta link https://pre.ai-inspo.com/, official link https://www.ai-inspo.com/). They come to us directly.
 
-CONTACTS: Jessie, business@vivavideotech.com, AI Inspo Team; CC collab@buildroom.ai.
+CONTACTS: Jessie from the AI Inspo Team, business@vivavideotech.com, brand. Duncan's team writes as Duncan's Team, signing off as Duncan's Team, and using noocapcollab@gmail.com and collab@buildroom.ai on the thread.
 
-DEALS: Duncan | One video promoting AI Inspo, deliverables: one Instagram reel (collab post with AI Inspo official account) plus DM, cross post on Facebook and TikTok | [amount]| Stage: Script Sent | Dates: agreed 2026-11-12.
+DEALS: Duncan | One Instagram reel (collab post with AI Inspo official account) plus DM, cross post on Facebook and TikTok | [amount]| Script Sent | Agreed Nov 2026.
 
-HOW THEY WORK: Register on their official website at ai-inspo.com to get an account ID starting with 4 for testing credits. Write the script based on their production guide, send the script for review, send the first draft for review and adjustments, send the final version for approval, then post.
+HOW THEY WORK: We write the script and send it for review. They review and send feedback for revisions. Product testing requires registration on their website and providing the account ID (starting with 4) to receive credits. 
 
-WATCH OUT: They cannot add testing credits using an email address alone; they require the AI Inspo account ID starting with 4.
+WATCH OUT: 
 
-OPEN NOW: Waiting on the brand to approve the script sent on 2026-11-21.
+OPEN NOW: Waiting on brand: to review and approve the newly revised script.
 
 ## Deal with [[Duncan]] (Script Sent, opened 2026-11-06)
-Last brand reply 2026-11-19, our last reply 2026-11-21.
-AGREED: [amount]for one video promoting AI Inspo. Deliverables: one Instagram reel (collab post with AI Inspo official account) plus DM, cross post on Facebook and TikTok. Payment: once after publishing the video. Usage rights and dates not set.
+Last brand reply 2026-11-23, our last reply 2026-11-23.
+AGREED: Rate: [amount]. Deliverables: One Instagram reel (collab post with AI Inspo official account) plus DM, cross post on Facebook and TikTok. Payment terms: once payment after publishing the video. Usage rights: not specified. Dates: none agreed.
 
 HISTORY:
-2026-11-06 us confirmed interest and added noocapcollab@gmail.com.
-2026-11-09 brand asked if we received her Google Drive doc.
-2026-11-09 us said the Drive doc had not arrived and asked for details in the thread.
-2026-11-11 us said we would test the tool, asked for the topic and contract timeline.
-2026-11-12 brand shared collaboration terms ([amount]deliverables, PayPal/legal info request) and beta link.
-2026-11-15 us confirmed collaboration, promised script by Monday and final video before Nov 18, and requested testing credits for noocaptools@gmail.com.
-2026-11-16 brand stated they need the AI Inspo account ID starting with 4 to add testing credits, and asked for the script.
-2026-11-16 brand asked us to register on the new official website (ai-inspo.com) and send our new account ID back.
-2026-11-19 brand followed up asking for a progress update.
-2026-11-19 us replied that we are still interested and will share the script shortly.
+2026-11-12 brand shared collaboration terms and requested payment and legal info.
+2026-11-15 us confirmed collaboration and requested testing credits.
+2026-11-16 brand asked for account ID and new website registration.
+2026-11-19 us replied we would share the script shortly.
 2026-11-21 us sent the script for review.
+2026-11-23 brand sent feedback requesting three revisions.
+2026-11-23 us sent revised script, then another, then replied we would send a proper revision in 2 to 3 days, and finally sent the newly revised script.
 
 BILLING: not yet.
 
-OPEN NOW: Waiting on brand: approve the script.
+OPEN NOW: Waiting on brand: to review and approve the newly revised script.
