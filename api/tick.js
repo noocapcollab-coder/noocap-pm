@@ -391,6 +391,30 @@ export default async function handler(req, res) {
       return res.status(200).json(out);
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?invoicefile=<outbox draft id>: Harsh sends this invoice himself (Nov 23). Finalizes the Stripe invoice without any
+  // email from Stripe or the PM, returns the pay link and PDF, and retires the draft so nothing goes out twice
+  if (req.query?.invoicefile) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const { notion, plain } = await import('../lib/notion.js');
+      const I = await import('../lib/invoicing.js');
+      const row = await notion('GET', `/pages/${String(req.query.invoicefile).replace(/-/g, '')}`);
+      const ref = plain(row.properties?.['Stripe Invoice']) || '';
+      const invId = (ref.match(/in_[A-Za-z0-9]+/) || [])[0];
+      const creator = plain(row.properties?.Creator);
+      const dealId = (row.properties?.Deal?.relation || [])[0]?.id;
+      if (!invId || !creator) return res.status(400).json({ error: 'no Stripe invoice on that draft' });
+      const fin = await I.finalizeForSend(creator, invId);
+      await notion('PATCH', `/pages/${row.id}`, { properties: { Status: { select: { name: 'Retired' } } } }).catch(() => {});
+      if (dealId) {
+        const d = await notion('GET', `/pages/${dealId}`);
+        const list = I.readInvoices(plain(d.properties?.['Stripe Invoices']));
+        const out = list.map((x) => (x.id === invId ? `${x.part} | ${x.id} | open | ${x.amount || ''}` : `${x.part} | ${x.id} | ${x.status} | ${x.amount || ''}`)).join('\n');
+        await notion('PATCH', `/pages/${dealId}`, { properties: { 'Stripe Invoices': { rich_text: [{ type: 'text', text: { content: out } }] }, 'Pay Link': { url: fin.link || null }, 'Invoice Number': { rich_text: [{ type: 'text', text: { content: fin.number || '' } }] } } }).catch(() => {});
+      }
+      return res.status(200).json({ number: fin.number, amount: fin.amount, link: fin.link, pdf: fin.pdf?.data || null });
+    } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // ?voidinvoice=<dealId>&inv=<stripe invoice id>[&dry=1]: void a wrong invoice in the creator's Stripe and drop it from
   // the deal (Nov 23: Runway x Chris INV-001 had the wrong bank details). Nothing is emailed
   if (req.query?.voidinvoice) {
