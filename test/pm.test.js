@@ -3369,3 +3369,15 @@ test('a cold inquiry asking for "your usual rates" is an inquiry, never a brief 
   assert.ok(briefIsInquiry(email, { brand: 'Intimeros', event: 'brief' }, [])?.asksRate);
   assert.equal(briefIsInquiry({ threadId: 't2', text: 'Here is the brief for the video, the script goes to Anna.' }, { brand: 'X' }, []), null);
 });
+
+test('a brief on a new thread opens a closed deal only when the brief, contract or an agreed price came up (Harsh, Nov 23)', async () => {
+  const { closedInThread } = await import('../lib/inbox.js');
+  assert.equal(closedInThread('Would you be interested in collaborating? If so, could you share your usual rates for Instagram Reels?'), false);
+  assert.equal(closedInThread('We are launching a new AI tool and would love to see a reel about it. Here are some ideas.'), false);
+  assert.equal(closedInThread('Just to confirm, $1,600 for one short-form video. Please send the contract and paperwork to noocapcollab'), true);
+  assert.equal(closedInThread('That works for us. USD 1500 for one video. Could you please send over the contract'), true);
+  assert.equal(closedInThread('Congratulations, you have been selected for the campaign! Here is the brief'), true);
+  const fs = await import('node:fs');
+  const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  assert.match(ib, /if \(!onThread && !closedInThread\(email\.text\) && !isHandover\(email, x\)\) return openInquiry/);
+});
