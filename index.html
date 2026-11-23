@@ -1308,7 +1308,7 @@
 
     const line = (a) => `<li style="display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)">
         <span><b>${a.url ? `<a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.brand)}</a>` : esc(a.brand)}</b> × ${esc(a.creator || '?')}${a.amount ? ` · ${money(a.amount)} ${what[a.type]}` : ''}<br>
-        <small style="color:var(--muted)">${a.nudges} of 3 follow-ups sent${a.lastBrand ? ` · they last wrote ${day(a.lastBrand)}` : ' · no reply yet'}</small></span>
+        <small style="color:var(--muted)">${a.nudges} follow-up${a.nudges === 1 ? "" : "s"} sent (keeps chasing until they answer)${a.lastBrand ? ` · they last wrote ${day(a.lastBrand)}` : ' · no reply yet'}</small></span>
         <span style="white-space:nowrap;color:var(--muted);text-align:right">${a.state === 'in Approvals' ? '<span class="pill spon">approve it</span>' : a.next ? `next: <b style="color:var(--text)">${day(a.next)}</b>` : ''}</span></li>`;
     const list = (title, xs, empty, note) => `<section class="ocard"><h2>${title} <small>${xs.length}${note ? ' · ' + note : ''}</small></h2>${xs.length ? `<ul style="list-style:none;margin:0;padding:0">${xs.map(line).join('')}</ul>` : `<div class="empty">${empty}</div>`}</section>`;
 
