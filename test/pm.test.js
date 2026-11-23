@@ -3354,4 +3354,9 @@ test('an open timing promise blocks a second ETA reply until the work goes out',
   assert.equal(templateBlock(t('script_eta'), { stage: 'Brief Received', today: '2026-11-23', etaPromised: '' }), '');
   // new notes after a script we sent still get their own acknowledgement
   assert.equal(templateBlock(t('script_changes_ack'), { stage: 'Script Sent', today: '2026-11-23', etaPromised: '2026-11-19' }), '');
+test('a deal with no Linked Video uses its one card at 5 for the script (Dreamina x Chris, Nov 23)', async () => {
+  const fs = await import('node:fs');
+  const h = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
+  assert.match(h, /const scriptCard = video \|\| \(dealCardList && dealCardList\.length === 1 && dealCardList\[0\]\.num === 5/);
+  assert.match(h, /if \(!scriptsByCard && scriptCard && scriptCard\.num === 5/);
 });
