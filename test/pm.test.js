@@ -3202,10 +3202,13 @@ test('editor reminders: stage waits, halved at 2 days, urgent today/tomorrow (Ha
   n = nudgeFor({ status: 'Changes', changesAt: ago(7), goLive: '2026-11-23' }, now);
   assert.equal(n.editor, true); assert.equal(n.harsh, true);
   // today: anything is behind, at once
-  n = nudgeFor({ status: 'Claude running', startedAt: ago(0.2), goLive: '2026-11-21' }, now);
+  n = nudgeFor({ status: 'Claude running', startedAt: ago(3.2), goLive: '2026-11-21' }, now);
   assert.equal(n.urgent, true); assert.equal(n.editor, true); assert.equal(n.harsh, true);
+  // just handed over: no ping yet, even for tomorrow (SAVED REELS, Nov 23: pinged 2 minutes after assignment)
+  assert.equal(nudgeFor({ status: 'Assigned', assignedAt: ago(0.05), goLive: '2026-11-22' }, now), null);
+  assert.equal(nudgeFor({ status: 'Claude running', startedAt: ago(0.2), goLive: '2026-11-21' }, now), null);
   // tomorrow after midday IST: editing is behind; CTA stage tomorrow is not
-  n = nudgeFor({ status: 'Manual editing', startedAt: ago(1), goLive: '2026-11-22' }, now);
+  n = nudgeFor({ status: 'Manual editing', startedAt: ago(4), goLive: '2026-11-22' }, now);
   assert.equal(n.urgent, true);
   assert.equal(nudgeFor({ status: 'To Post', approvedAt: ago(1), goLive: '2026-11-22' }, now), null);
   // waiting on Harsh or the brand: nothing
