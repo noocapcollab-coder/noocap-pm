@@ -3362,3 +3362,10 @@ test('a deal with no Linked Video uses its one card at 5 for the script (Dreamin
   assert.match(h, /const scriptCard = video \|\| \(dealCardList && dealCardList\.length === 1 && dealCardList\[0\]\.num === 5/);
   assert.match(h, /if \(!scriptsByCard && scriptCard && scriptCard\.num === 5/);
 });
+
+test('a cold inquiry asking for "your usual rates" is an inquiry, never a brief (Intimeros x Chris, Nov 19)', async () => {
+  const { briefIsInquiry } = await import('../lib/inbox.js');
+  const email = { threadId: 't1', text: "Hi Chris,\n\nWe're interested in creating a short Instagram Reel about AI companions.\n\nWould you be interested in collaborating? If so, could you share your usual rates for Instagram Reels, Stories, or other available formats?\n\nBest regards,\nIntimeros Team" };
+  assert.ok(briefIsInquiry(email, { brand: 'Intimeros', event: 'brief' }, [])?.asksRate);
+  assert.equal(briefIsInquiry({ threadId: 't2', text: 'Here is the brief for the video, the script goes to Anna.' }, { brand: 'X' }, []), null);
+});
