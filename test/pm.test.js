@@ -3318,3 +3318,15 @@ test('notes on a script-only deal are never treated as cut feedback', async () =
   assert.match(src, /x\.event === 'video_feedback' && scriptOnlyStage\(deal\.stage\)/, 'the video_feedback -> script_changes guard runs before the second read');
   assert.ok(src.indexOf("scriptOnlyStage(deal.stage)") < src.indexOf('const held = await secondReadGate({ email, x, deal, who, usage, cost })'));
 });
+
+test('a creator loop-in with the brief gets the take-over reply and the brand, not the creator, as Brand Email (HubSpot x Duncan, Nov 20)', async () => {
+  const { isHandover, handoverBrandEmail } = await import('../lib/inbox.js');
+  const e = { from: 'Collab Oration <collab@buildroom.ai>', to: 'Piers Moore <piers@redthread.co>', cc: 'noocapcollab <noocapcollab@gmail.com>', text: 'Hi Piers,\n\nPlease feel free to send the contract and paperwork to noocapcollab@gmail.com so the rest of our team can be in the loop to take things forward from here.\n\nThanks' };
+  assert.equal(isHandover(e, { from_role: 'noocap', brand: 'HubSpot' }), true);
+  assert.equal(handoverBrandEmail(e), 'piers@redthread.co');
+  const fs = await import('node:fs');
+  const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  assert.match(ib, /if \(r\?\.createdDeal && isHandover\(email, x\)\)/);
+  const b = fs.readFileSync(new URL('../lib/briefs.js', import.meta.url), 'utf8');
+  assert.match(b, /addrs\.find\(\(a\) => !ourSide\(a\)/);
+});
