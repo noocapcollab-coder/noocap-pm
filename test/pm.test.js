@@ -3293,3 +3293,16 @@ test('a cut chase sends on a weekend, other follow-ups wait for Monday', async (
   assert.equal(weekendHold('Lead follow-up', 'No reply for 5 days'), true);
   assert.equal(weekendHold('Payment chase', 'Past due'), false, 'payment chases are held elsewhere, not by this check');
 });
+
+// Nov 23 morning check: AI Inspo x Duncan's notes on our script PDF opened with "happy to receive your first video
+// draft", the reader said video_feedback, the readers split and the deal waited for Harsh. Only a script went out.
+test('notes on a script-only deal are never treated as cut feedback', async () => {
+  const { scriptOnlyStage } = await import('../lib/inbox.js');
+  assert.equal(scriptOnlyStage('Script Sent'), true);
+  assert.equal(scriptOnlyStage('Price Agreed'), true);
+  assert.equal(scriptOnlyStage('Submitted'), false, 'a cut is with the brand at Submitted');
+  assert.equal(scriptOnlyStage('Approved'), false);
+  const src = (await import('node:fs')).readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  assert.match(src, /x\.event === 'video_feedback' && scriptOnlyStage\(deal\.stage\)/, 'the video_feedback -> script_changes guard runs before the second read');
+  assert.ok(src.indexOf("scriptOnlyStage(deal.stage)") < src.indexOf('const held = await secondReadGate({ email, x, deal, who, usage, cost })'));
+});
