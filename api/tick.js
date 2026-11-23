@@ -369,6 +369,13 @@ export default async function handler(req, res) {
       return res.status(200).json({ created: !!r?.created, id: r?.id, reason: r?.reason });
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?voidinvoice=<dealId>&inv=<stripe invoice id>[&dry=1]: void a wrong invoice in the creator's Stripe and drop it from
+  // the deal (Nov 23: Runway x Chris INV-001 had the wrong bank details). Nothing is emailed
+  if (req.query?.voidinvoice) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const I = await import('../lib/invoicing.js'); return res.status(200).json(await I.voidDealInvoice(String(req.query.voidinvoice), String(req.query.inv || ''), { dry: !!req.query.dry })); }
+    catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // ?raisedraft=<dealId>: draft the invoice due now (upfront share first) in the creator's Stripe and put its email in
   // Approvals, nothing sent (Nov 17: Harsh sees every invoice before it goes)
   if (req.query?.raisedraft) {
