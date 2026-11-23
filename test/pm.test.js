@@ -3330,3 +3330,28 @@ test('a creator loop-in with the brief gets the take-over reply and the brand, n
   const b = fs.readFileSync(new URL('../lib/briefs.js', import.meta.url), 'utf8');
   assert.match(b, /addrs\.find\(\(a\) => !ourSide\(a\)/);
 });
+
+// System check, Nov 23 (Atoms x Lindsay): "xiaohua su" <may@atoms.dev> signs "May"; the fixed reply opened "Hi xiaohua"
+test('a fixed reply greets the name the brand signs with, capitalised', async () => {
+  const { BUILT_IN, fillTemplate } = await import('../lib/replytemplates.js');
+  const body = BUILT_IN.find((x) => x.key === 'script_eta').body;
+  const text = "Hi Lindsay's team,\n\nI wanted to follow up on the revised script. How is it coming along?\n\nThank you!\n\nBest,\nMay\n";
+  assert.match(fillTemplate(body, { from: '"xiaohua su" <may@atoms.dev>', deal: { creator: 'Lindsay' }, text }), /^Hi May,/);
+  assert.match(fillTemplate(body, { from: '"xiaohua su" <may@atoms.dev>', deal: { creator: 'Lindsay' } }), /^Hi Xiaohua,/);
+  // our own people signing never become the greeting
+  assert.match(fillTemplate(body, { from: 'Daniela Ruiz <daniela@closedune.com>', deal: { creator: 'Chris' }, text: 'Ok\n\nBest,\nHarsh\n' }), /^Hi Daniela,/);
+});
+
+// System check, Nov 23 (Atoms x Lindsay): a second "2 to 3 working days" to a brand chasing the first one
+test('an open timing promise blocks a second ETA reply until the work goes out', async () => {
+  const { BUILT_IN, templateBlock, openEtaPromise } = await import('../lib/replytemplates.js');
+  const t = (k) => ({ ...BUILT_IN.find((x) => x.key === k), active: true });
+  const ack = { why: 'Fixed reply (sends on its own) [template:script_changes_ack] [from:x]: Atoms × Lindsay', status: 'Sent', kind: 'Reply', created: '2026-11-19T10:00:00Z' };
+  assert.equal(openEtaPromise([ack]), '2026-11-19');
+  assert.equal(openEtaPromise([ack, { why: 'Revised script', status: 'Sent', kind: 'Script', created: '2026-11-21T10:00:00Z' }]), '');
+  assert.equal(openEtaPromise([{ ...ack, status: 'Rejected' }]), '');
+  assert.match(templateBlock(t('script_eta'), { stage: 'Brief Received', today: '2026-11-23', etaPromised: '2026-11-19' }), /already promised a time/);
+  assert.equal(templateBlock(t('script_eta'), { stage: 'Brief Received', today: '2026-11-23', etaPromised: '' }), '');
+  // new notes after a script we sent still get their own acknowledgement
+  assert.equal(templateBlock(t('script_changes_ack'), { stage: 'Script Sent', today: '2026-11-23', etaPromised: '2026-11-19' }), '');
+});

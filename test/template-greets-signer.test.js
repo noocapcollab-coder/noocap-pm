@@ -16,6 +16,8 @@ test('with no signature it falls back to "Hi there", never the role word', () =>
   assert.match(fillTemplate(body, { from, deal: { creator: 'Duncan' } }), /^Hi there,/);
 });
 
+// When the email has no sign-off name, the From name is used. (A sign-off name wins over it since the Nov 23 system
+// check: Atoms x Lindsay's "xiaohua su" signs "May".)
 test('a real first name in the From line is still used', () => {
-  assert.match(fillTemplate(body, { from: '"Karan V" <karan.v@emergent.sh>', deal: { creator: 'Chris' }, text }), /^Hi Karan,/);
+  assert.match(fillTemplate(body, { from: '"Karan V" <karan.v@emergent.sh>', deal: { creator: 'Chris' }, text: 'Hi,\n\nSounds good, thanks.\n' }), /^Hi Karan,/);
 });
