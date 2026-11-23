@@ -769,9 +769,18 @@ test('an agency thread with two brands: the email lands on the deal of the brand
 test('a brand saying it paid without any proof is not marked paid; the PM asks for the confirmation', async () => {
   const fs = await import('node:fs');
   const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
-  const c = ib.slice(ib.indexOf("case 'payment_confirmed'"), ib.indexOf("case 'payment_confirmed'") + 2800);
+  const c = ib.slice(ib.indexOf("case 'payment_confirmed'"), ib.indexOf("case 'payment_confirmed'") + 5200);
   assert.match(c, /if \(fromBrand && !hasProof\)/);
   assert.match(c, /ask them to share the payment confirmation/);
+});
+
+test('"we paid" in an old deal thread is checked against the brand\'s other deals in Stripe and thanked there (ElevenLabs x Duncan, Nov 19)', async () => {
+  const fs = await import('node:fs');
+  const ib = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  const c = ib.slice(ib.indexOf("case 'payment_confirmed'"), ib.indexOf("case 'payment_confirmed'") + 9000);
+  assert.match(c, /paidSiblingDeal\(deal\)/);
+  assert.match(c, /paymentThanks\(\{ \.\.\.deal, threadId: email\.threadId/);
+  assert.ok(c.indexOf('paidSiblingDeal') < c.indexOf("set('Deal Stage', 'Paid')"));
 });
 
 test('a hand-filed deal with no email thread is treated as a WhatsApp deal (Buzzy × Brad got an email-style invoice ping)', async () => {
