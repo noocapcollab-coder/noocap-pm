@@ -369,6 +369,28 @@ export default async function handler(req, res) {
       return res.status(200).json({ created: !!r?.created, id: r?.id, reason: r?.reason });
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?stuckposted=1 (read only): deals still before Posted whose emails show our live-post links, and posted deals with no
+  // billing details (Nov 23, Emergent x Chris: posted Nov 21, never invoiced)
+  if (req.query?.stuckposted) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const { openDeals } = await import('../lib/briefs.js');
+      const { readTranscript } = await import('../lib/memory.js');
+      const { livePostLinks } = await import('../lib/inbox.js');
+      const { readBilling } = await import('../lib/invoicing.js');
+      const out = [];
+      for (const d of await openDeals({ withClosed: true })) {
+        if (['Lost', 'Paid', 'Invoiced'].includes(d.stage) || d.channel === 'WhatsApp') continue;
+        const t = await readTranscript(d.id, 60000).catch(() => '');
+        const ours = String(t).split(/\n?(?=📨 )/).filter((p) => /^📨 \S+ · (us\b|[^·]*team)/.test(p)).join('\n').replace(/<br\s*\/?>/g, '\n');
+        const links = /\b(live|published|posted)\b/i.test(ours) ? livePostLinks(ours) : [];
+        const notPosted = d.stage !== 'Posted' && links.length > 0;
+        const noBilling = (d.stage === 'Posted' || links.length > 0) && !readBilling(d.billing);
+        if (notPosted || noBilling) out.push({ deal: `${d.brand} × ${d.creator}`, id: d.id, stage: d.stage, postedLinksOnDeal: !!String(d.postedLinks || '').trim(), liveLinksInEmails: links.slice(0, 4), billing: !!readBilling(d.billing), fee: d.finalRate, next: String(d.nextAction || '').slice(0, 140) });
+      }
+      return res.status(200).json(out);
+    } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // ?voidinvoice=<dealId>&inv=<stripe invoice id>[&dry=1]: void a wrong invoice in the creator's Stripe and drop it from
   // the deal (Nov 23: Runway x Chris INV-001 had the wrong bank details). Nothing is emailed
   if (req.query?.voidinvoice) {
