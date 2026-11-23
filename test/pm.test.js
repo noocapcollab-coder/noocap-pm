@@ -3431,3 +3431,25 @@ test('a borrowed card whose script already went from another deal is not drafted
   assert.match(h, /const borrowedSent = !video && scriptCard \? await cardScriptSentAnywhere\(scriptCard\.id\) : false;/);
   assert.match(h, /if \(!borrowedSent && !scriptsByCard && scriptCard/);
 });
+
+test('a posted deal with no fee gets its rate from the deal memory only when one was agreed (Luma x Chris, Nov 24)', async () => {
+  const { rateFromMemory } = await import('../lib/invoicing.js');
+  assert.equal(rateFromMemory('AGREED: Rate: $1200. Deliverables: 1 reel'), 1200);
+  assert.equal(rateFromMemory('AGREED: Rate 1400 USD. Deliverables: 2 UGC videos'), 1400);
+  assert.equal(rateFromMemory('AGREED: Rate not confirmed. Deliverables: Reel + Story'), null);
+  assert.equal(rateFromMemory('AGREED: Rate: not yet discussed.'), null);
+  assert.equal(rateFromMemory('HISTORY: rate $900 offered\nAGREED: nothing yet'), null);
+});
+
+test('billing asks never stop after 3: a due reminder still counts as needing an ask (Harsh, Nov 24)', async () => {
+  const { needsBillingAsk } = await import('../lib/invoicing.js');
+  const old = new Date(Date.now() - 6 * 864e5).toISOString().slice(0, 10);
+  const today = new Date(Date.now() + 5.5 * 36e5).toISOString().slice(0, 10);
+  assert.equal(needsBillingAsk({ stage: 'Posted', billingRequested: old, billingReminders: 5 }), true);
+  assert.equal(needsBillingAsk({ stage: 'Posted', billingRequested: today }), false);
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/invoicing.js', import.meta.url), 'utf8');
+  assert.ok(!/billingReminders\s*>=\s*3/.test(src), 'no cap on billing reminders');
+  assert.ok(/findDealFee\(deal\)/.test(src), 'a deal with no fee looks for it before giving up');
+  assert.ok(/sendBillingAsk\(deal\)/.test(src), 'a confirmed-live deal asks for billing on its own');
+});
