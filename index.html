@@ -2219,7 +2219,7 @@
     const open = box.dataset.open === '1';
     box.innerHTML = `<div class="rz" style="margin-bottom:12px"><div class="rz-h"><div><b>New invoice</b> <small style="color:var(--muted)">· any brand deal, any amount, also a repeat deal with a brand you already invoiced</small></div><button type="button" class="obtn" data-nitog="1">${open ? 'Close' : '+ New invoice'}</button></div>
       <div class="rz-bill" ${open ? '' : 'hidden'} data-niform="1">
-        <label>Brand deal<select data-n="deal">${pick.map((d) => `<option value="${esc(d.id)}">${esc(d.brand)} × ${esc(d.creator)} · ${esc(d.stage || 'no stage')}${d.invoices.length ? ' · ' + d.invoices.length + ' invoice' + (d.invoices.length > 1 ? 's' : '') + ' already' : ''}</option>`).join('')}</select></label>
+        <label>Brand deal<select data-n="deal">${pick.map((d) => `<option value="${esc(d.id)}">${esc(d.brand)} × ${esc(d.creator)}${d.created ? ' · started ' + esc(new Date(d.created).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })) : ''}${d.what ? ' · ' + esc(d.what) : ''} · ${esc(d.stage || 'no stage')}${d.invoices.length ? ' · ' + d.invoices.length + ' invoice' + (d.invoices.length > 1 ? 's' : '') + ' already' : ''}</option>`).join('')}</select></label>
         <label>Amount (USD)<input data-n="amount" inputmode="decimal" placeholder="1700"></label>
         <label>What it's for<input data-n="note" placeholder="e.g. 1 short video, December campaign"></label>
         <div data-nprev style="font-size:12px;color:var(--muted)"></div>
