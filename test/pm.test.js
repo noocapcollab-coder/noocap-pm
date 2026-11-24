@@ -3453,3 +3453,12 @@ test('billing asks never stop after 3: a due reminder still counts as needing an
   assert.ok(/findDealFee\(deal\)/.test(src), 'a deal with no fee looks for it before giving up');
   assert.ok(/sendBillingAsk\(deal\)/.test(src), 'a confirmed-live deal asks for billing on its own');
 });
+
+test('a video approval is never a WhatsApp ask for Harsh unless it asks for our info (ZenBusiness x Lindsay, Nov 24)', async () => {
+  const { feedbackNeedsHarsh } = await import('../lib/inbox.js');
+  assert.equal(feedbackNeedsHarsh({ event: 'video_feedback', video_approved: true, needs_reply: true }), false);
+  assert.equal(feedbackNeedsHarsh({ event: 'video_feedback', video_approved: true, needs_reply: true, needs_our_info: true }), true);
+  assert.equal(feedbackNeedsHarsh({ event: 'script_approved', needs_reply: true }), false);
+  assert.equal(feedbackNeedsHarsh({ event: 'video_feedback', needs_reply: true }), true);
+  assert.equal(feedbackNeedsHarsh({ event: 'script_changes', needs_reply: true }), true);
+});
