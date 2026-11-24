@@ -3514,3 +3514,13 @@ test('the hourly reply check never writes a promise email or acknowledges change
   assert.ok(EDITOR_TURN.test("Editor making the brand's changes"));
   assert.ok(!EDITOR_TURN.test('Waiting for payment of INV-003'));
 });
+
+test('a Next Action saying the move is ours holds the follow-up even with the card at 9 (CapCut x Brad, Nov 24)', async () => {
+  const { saysWaitingOnUs } = await import('../lib/heartbeat.js');
+  assert.equal(saysWaitingOnUs("Waiting on us: Confirm if we accept the new brief and provide Brad's production timeline."), true);
+  assert.equal(saysWaitingOnUs('We owe: send invoice and request billing details.'), true);
+  assert.equal(saysWaitingOnUs('Waiting for the brand to review the video'), false);
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
+  assert.ok(/ourMove = changesOpen \|\| saysWaitingOnUs\(deal\.nextAction\)/.test(src), 'the follow-up check uses it');
+});
