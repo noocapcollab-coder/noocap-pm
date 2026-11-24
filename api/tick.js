@@ -369,6 +369,21 @@ export default async function handler(req, res) {
       return res.status(200).json({ created: !!r?.created, id: r?.id, reason: r?.reason });
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?brandnotes=<dealId> (POST {"notes": [...]}, &dry=1): put a brand's posting instructions from an email the PM read
+  // before Brand Notes existed on that deal's open cards (Harsh, Nov 24)
+  if (req.query?.brandnotes) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const { openDeals } = await import('../lib/briefs.js');
+      const deal = (await openDeals({ withClosed: true })).find((d) => d.id.replace(/-/g, '') === String(req.query.brandnotes).replace(/-/g, ''));
+      if (!deal) return res.status(404).json({ error: 'deal not found' });
+      const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
+      const notes = (body.notes || []).map(String).filter(Boolean);
+      if (req.query.dry === '1') return res.status(200).json({ deal: `${deal.brand} × ${deal.creator}`, notes });
+      const { saveBrandNotes } = await import('../lib/inbox.js');
+      return res.status(200).json({ deal: `${deal.brand} × ${deal.creator}`, saved: await saveBrandNotes(deal, notes) });
+    } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // ?scripttobrand=1 (&dry=1): fill "Script to Brand" on cards whose deal already has a Script Sent Date and that still
   // wait on the brand (5- Script Approval), so the cards show it now (Harsh, Nov 24)
   if (req.query?.scripttobrand) {

@@ -3462,3 +3462,16 @@ test('a video approval is never a WhatsApp ask for Harsh unless it asks for our 
   assert.equal(feedbackNeedsHarsh({ event: 'video_feedback', needs_reply: true }), true);
   assert.equal(feedbackNeedsHarsh({ event: 'script_changes', needs_reply: true }), true);
 });
+
+test('brand notes go on the card newest first, without repeating a note already there (Harsh, Nov 24)', async () => {
+  const { mergeBrandNotes } = await import('../lib/inbox.js');
+  const a = mergeBrandNotes('', ['Must hashtags: #CapCutDidThat #Dreamina', 'Send the 60-day ad code'], '2026-11-24');
+  assert.match(a, /^2026-11-24:\n• Must hashtags/);
+  const b = mergeBrandNotes(a, ['Send the 60-day ad code', 'No other posts within one day after this one'], '2026-11-25');
+  assert.match(b, /^2026-11-25:\n• No other posts within one day/);
+  assert.equal(b.match(/60-day ad code/g).length, 1);
+  assert.equal(mergeBrandNotes(b, ['send the 60-day ad code'], '2026-11-26'), null);
+  const fs = await import('node:fs');
+  const src = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
+  assert.ok(/brand_notes: \{[^\n]*Never prices, fees or payment/.test(src), 'brand notes never carry money');
+});
