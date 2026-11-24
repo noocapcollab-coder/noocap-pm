@@ -13,8 +13,9 @@ const MAX_TRIES = 3;
 const rt = (s) => [{ type: 'text', text: { content: String(s || '').slice(0, 1900) } }];
 
 // The AI being out of credit, over its spend limit, paused or overloaded says nothing about the email itself: the email
-// stays unread and is tried again later, and it never counts towards giving up on it
-export const AI_DOWN = /usage limit|credit balance|AI paused|overloaded|rate.?limit|Claude (429|529|5\d\d)|free tier and it is unavailable/i;
+// stays unread and is tried again later, and it never counts towards giving up on it. That includes Gemini standing in
+// for Claude being busy (503 high demand), out of quota (429) or hanging (bug hunter, Nov 24)
+export const AI_DOWN = /usage limit|credit balance|AI paused|overloaded|rate.?limit|Claude (429|529|5\d\d)|free tier and it is unavailable|Gemini (429|5\d\d) |Gemini \([^)]*\): .*(timeout|aborted|fetch failed|ECONNRESET)/i;
 
 async function recordError(email, err) {
   if (AI_DOWN.test(String(err))) {
