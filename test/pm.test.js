@@ -3535,3 +3535,15 @@ test('two cuts of one deal go in one email, each link named by its video (CapCut
   const body = B.groupCutBody('Hi Sophie,', [{ title: 'CapCut × Lindsay (2)', frame: 'https://f.io/B' }, { title: 'CapCut × Lindsay', frame: 'https://f.io/A' }], 'Lindsay');
   assert.match(body, /Video 1: https:\/\/f\.io\/A\nVideo 2: https:\/\/f\.io\/B/);
 });
+
+test('a new invoice can be raised from the Invoices page for any deal, billing carried from the brand (Harsh, Nov 25)', async () => {
+  const fs = await import('node:fs');
+  const inv = fs.readFileSync(new URL('../lib/invoicing.js', import.meta.url), 'utf8');
+  const page = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+  const api = fs.readFileSync(new URL('../api/outbox.js', import.meta.url), 'utf8');
+  assert.ok(/export async function newInvoiceSend/.test(inv), 'raise-and-send for any deal and amount');
+  assert.ok(/an earlier deal with this brand/.test(inv), 'billing carried over from the brand\'s last deal');
+  assert.ok(/action === 'invoice-new'/.test(api) && /data-nsend="link"/.test(page), 'the page has the New invoice form');
+  const { newInvoiceSend } = await import('../lib/invoicing.js');
+  await assert.rejects(() => newInvoiceSend({ deal: 'x', amount: 0 }), /amount/);
+});

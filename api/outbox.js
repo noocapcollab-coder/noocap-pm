@@ -48,6 +48,12 @@ export default async function handler(req, res) {
       const out = await withRun('Send', `Invoice raised from the Invoices page (${mode === 'bank' ? 'bank details' : 'Stripe pay link'})`, () => I.raiseAndSend(body.deal, { mode }), { trigger: 'Dashboard', summarize: () => ({ did: [mode === 'bank' ? 'Invoice raised and sent with the creator\'s bank details' : 'Invoice raised in Stripe and sent to the brand with the pay link'] }) });
       return res.status(200).json(out);
     }
+    if (action === 'invoice-new') {
+      const I = await import('../lib/invoicing.js');
+      const mode = body.mode === 'bank' ? 'bank' : 'link';
+      const out = await withRun('Send', `New invoice from the Invoices page (${mode === 'bank' ? 'bank details' : 'Stripe pay link'})`, () => I.newInvoiceSend({ deal: body.deal, amount: body.amount, note: body.note, billing: body.billing, mode }), { trigger: 'Dashboard', summarize: (r) => ({ did: [`New invoice $${r?.amount} raised and sent to ${r?.billed_to || 'the brand'}`] }) });
+      return res.status(200).json(out);
+    }
     if (action === 'deal-billing') {
       const I = await import('../lib/invoicing.js');
       return res.status(200).json(await I.setDealBilling(body.deal, body.billing || {}));

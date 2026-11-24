@@ -989,7 +989,7 @@
   <section class="ostats inv-tot" id="invTot" aria-label="Invoice totals"></section>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">By creator <small style="color:var(--muted);font-weight:400">· tap a creator to see only theirs</small></h2><div id="invByCr"><div class="skel"></div></div></section>
   <div id="invChips" class="inv-chips" role="group" aria-label="Filter by creator"></div>
-  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Raise an invoice <small id="rzN" style="color:var(--muted);font-weight:400"></small> <small style="color:var(--muted);font-weight:400">· check the details, then one click raises it in Stripe and emails the brand</small></h2><div id="rzList"><div class="skel"></div></div></section>
+  <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Raise an invoice <small id="rzN" style="color:var(--muted);font-weight:400"></small> <small style="color:var(--muted);font-weight:400">· check the details, then one click raises it in Stripe and emails the brand</small></h2><div id="rzNew"></div><div id="rzList"><div class="skel"></div></div></section>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Needs you <small id="invTodoN"></small></h2><div id="invTodo"><div class="skel"></div></div></section>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">Sent to brands, not paid yet <small id="invWaitN"></small></h2><div id="invWait"><div class="skel"></div></div></section>
   <section class="ocard" style="gap:0"><h2 style="margin-bottom:6px">NOOCAP cut to collect <small id="invCutN"></small></h2><div id="invCut"><div class="skel"></div></div></section>
@@ -2197,7 +2197,59 @@
   }
   // Raise an invoice: every deal whose invoice is due or drafted, or whose billing is already in, with the steps it has
   // gone through, everything that will be on it, and one button that raises it in Stripe and emails the brand.
+  // New invoice for any deal, a repeat campaign with a brand we already invoiced included (Harsh, Nov 25: ElevenLabs
+  // wanted one more deal and the page had no way to send them an invoice)
+  function renderNewInvoice(st) {
+    const box = $('rzNew'); if (!box) return;
+    const pick = (st.pick || []).filter((d) => invCreator === 'all' || d.creator === invCreator)
+      .sort((a, z) => String(z.created || '').localeCompare(String(a.created || '')));
+    if (!pick.length) { box.innerHTML = ''; return; }
+    const open = box.dataset.open === '1';
+    box.innerHTML = `<div class="rz" style="margin-bottom:12px"><div class="rz-h"><div><b>New invoice</b> <small style="color:var(--muted)">· any brand deal, any amount, also a repeat deal with a brand you already invoiced</small></div><button type="button" class="obtn" data-nitog="1">${open ? 'Close' : '+ New invoice'}</button></div>
+      <div class="rz-bill" ${open ? '' : 'hidden'} data-niform="1">
+        <label>Brand deal<select data-n="deal">${pick.map((d) => `<option value="${esc(d.id)}">${esc(d.brand)} × ${esc(d.creator)} · ${esc(d.stage || 'no stage')}${d.invoices.length ? ' · ' + d.invoices.length + ' invoice' + (d.invoices.length > 1 ? 's' : '') + ' already' : ''}</option>`).join('')}</select></label>
+        <label>Amount (USD)<input data-n="amount" inputmode="decimal" placeholder="1700"></label>
+        <label>What it's for<input data-n="note" placeholder="e.g. 1 short video, December campaign"></label>
+        <div data-nprev style="font-size:12px;color:var(--muted)"></div>
+        <label>Company name<input data-b="company" placeholder="Registered company name"></label>
+        <label>Billing email<input data-b="email" placeholder="finance@brand.com"></label>
+        <label>Address<input data-b="address" placeholder="Street, city, postcode"></label>
+        <label>Country code<input data-b="country" maxlength="2" placeholder="GB"></label>
+        <label>VAT / Tax ID<input data-b="tax_id" placeholder="optional"></label>
+        <label>Contact name<input data-b="contact" placeholder="who the email greets (optional)"></label>
+        <div class="rz-go"><button type="button" class="obtn pri" data-nsend="link">Send with Stripe pay link</button><button type="button" class="obtn" data-nsend="bank">Send with bank details</button><small data-nmsg style="color:var(--muted)">Raised in the creator's Stripe and emailed in that deal's thread straight away.</small></div>
+      </div></div>`;
+    const form = box.querySelector('[data-niform]');
+    box.querySelector('[data-nitog]').onclick = () => { box.dataset.open = open ? '0' : '1'; renderNewInvoice(st); };
+    const sel = form.querySelector('[data-n="deal"]');
+    const fill = () => {
+      const d = pick.find((x) => x.id === sel.value) || {}; const b = d.billing || {};
+      for (const i of form.querySelectorAll('[data-b]')) i.value = b[i.dataset.b] || '';
+      form.querySelector('[data-nprev]').textContent = `${d.billing ? 'Billing filled from ' + d.billing_from + '. Check it.' : 'No billing details on record for this brand yet, type them from the brand\'s email.'}${d.invoices.length ? ' Already on this deal: ' + d.invoices.join(', ') + '.' : ''}${d.rate ? ' Deal fee: ' + usd(d.rate) + '.' : ''}`;
+      const bankBtn = form.querySelector('[data-nsend="bank"]'); const ok = !!(st.bank || {})[d.creator]; bankBtn.disabled = !ok; bankBtn.title = ok ? '' : `No verified bank or PayPal details for ${d.creator} yet`;
+    };
+    sel.onchange = fill; fill();
+    form.querySelectorAll('[data-nsend]').forEach((btn) => btn.onclick = async () => {
+      const d = pick.find((x) => x.id === sel.value); if (!d) return;
+      const amount = Number(String(form.querySelector('[data-n="amount"]').value).replace(/[$,\s]/g, ''));
+      const note = form.querySelector('[data-n="note"]').value.trim();
+      const billing = Object.fromEntries([...form.querySelectorAll('[data-b]')].map((i) => [i.dataset.b, i.value.trim()]));
+      const msg = form.querySelector('[data-nmsg]');
+      if (!(amount > 0)) { msg.textContent = 'Type the amount first.'; return; }
+      if (!billing.company) { msg.textContent = 'Add the company name the invoice is billed to.'; return; }
+      const bank = btn.dataset.nsend === 'bank';
+      if (!confirm(`Raise ${usd(amount)} for ${d.brand} × ${d.creator} in ${d.creator}'s Stripe, billed to ${billing.company}, and email it now ${bank ? `with ${d.creator}'s bank details` : 'with the Stripe pay link'}?`)) return;
+      form.querySelectorAll('button').forEach((b) => { b.disabled = true; }); btn.textContent = 'Sending…';
+      try {
+        const r = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ action: 'invoice-new', deal: d.id, amount, note, billing, mode: bank ? 'bank' : 'link' }) });
+        const j = await r.json(); if (!r.ok) throw new Error(j.error || 'Failed');
+        form.querySelector('.rz-go').innerHTML = `<small class="ok">✓ ${usd(amount)} invoice sent to ${esc(billing.company)} ${bank ? 'with the bank details' : 'with the Stripe pay link'}.</small>`;
+        setTimeout(() => { box.dataset.open = '0'; stAt = 0; loadStripeInv(true); loadHQ(true); }, 2500);
+      } catch (e) { form.querySelectorAll('button').forEach((b) => { b.disabled = false; }); btn.textContent = bank ? 'Send with bank details' : 'Send with Stripe pay link'; msg.textContent = e.message; msg.style.color = 'var(--err)'; }
+    });
+  }
   function renderRaise(st) {
+    renderNewInvoice(st);
     const box = $('rzList'); if (!box) return;
     const open = (st.deals || []).filter((d) => d.parts.some((p) => p.status === 'draft' || p.status === 'due' || (p.status === 'later' && d.billing)))
       .filter((d) => invCreator === 'all' || d.creator === invCreator)
