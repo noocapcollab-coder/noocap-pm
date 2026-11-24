@@ -3503,3 +3503,14 @@ test('a card titled with a bare number at the end still belongs to its deal (UPF
   assert.equal(isDealCardTitle('Upfluence × Duncan (2)', 'Upfluence', 'Duncan'), true);
   assert.equal(isDealCardTitle('Upfluence Agency × Duncan 2', 'Upfluence', 'Duncan'), false);
 });
+
+test('the hourly reply check never writes a promise email or acknowledges change notes (night check, Nov 24)', async () => {
+  const { REPLY_NOTE, promiseOnly, EDITOR_TURN } = await import('../lib/unanswered.js');
+  assert.ok(!/shortly|will send it/i.test(REPLY_NOTE.replace(/no "we will send it"/, '')), 'the instruction holds no promise wording');
+  assert.equal(promiseOnly("Hi Upendra,\n\nWe are checking on Lindsay's Luma account email address and will send it over.\n\nBest,\nLindsay's Team"), true);
+  assert.equal(promiseOnly('Hi Milda,\n\nWe will share the details on when it was spotted shortly.\n\nBest,\nValeri\'s Team'), true);
+  assert.equal(promiseOnly('Hi Seungjoo,\n\nWe can definitely check with our editor on adjusting that segment.\n\nBest,\nChris\'s Team'), true);
+  assert.equal(promiseOnly('Hi Alyssa,\n\nThank you for letting us know and for taking care of that payment.\n\nBest,\nLindsay\'s Team'), false);
+  assert.ok(EDITOR_TURN.test("Editor making the brand's changes"));
+  assert.ok(!EDITOR_TURN.test('Waiting for payment of INV-003'));
+});
