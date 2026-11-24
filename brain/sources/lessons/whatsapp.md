@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A file Harsh sends after answering the brand himself is for the team, not an email
+When: Harsh sends a file on WhatsApp (often the brand's own brief) for a deal where he has already answered the brand by hand
+Do: Pass the file to the team (brief to Rudraksh) and ask Harsh once if he also wants it emailed; check the thread for our newer email first
+Never: Never email the brand their own brief back, never write facts Harsh did not type, and never tell a brand we are ready to sign a contract
+Seen 1 time(s). Source: System check.
 ## A countersigned agreement with billing details is one message: time to invoice
 When: After the video is live, the brand sends the fully executed agreement together with its billing details
 Do: File the agreement, save the billing details on the deal, and send Harsh ONE WhatsApp message offering to raise the invoice (amount and terms from the deal)
@@ -56,7 +61,7 @@ Seen 1 time(s). Source: Harsh correction.
 When: A brand email needs work done (recording, editing, posting, a revised cut) rather than a fact, file, date or money decision from Harsh
 Do: Send the work to the team or the creator through the video card and editor flow, and ask Harsh only for the missing fact (a date, a code, a price, a file only he holds). If the brand asked nothing he must answer, send him nothing.
 Never: Send Harsh a swipe-reply ask whose 'need' is the team's own work (record screen recordings, send the revised draft, publish the video).
-Seen 2 time(s). Source: System check.
+Seen 3 time(s). Source: System check.
 ## A queued WhatsApp message is sent once
 When: Asks and contract alerts queued while the chat was closed go out at the morning round-up or when the chat reopens
 Do: Send each queued message once and mark it sent so no later run sends it again; before sending, check the same text has not already gone out since it was queued.

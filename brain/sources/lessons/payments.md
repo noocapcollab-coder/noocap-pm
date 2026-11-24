@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Brand asked for the invoice but the deal had no fee, and the fee was in the signed contract
+When: A brand asks for the invoice and Final Rate USD is empty
+Do: Read the fee from the signed contract linked to the deal (CONTRACTS file) and from the thread, set Final Rate USD, and draft the invoice for Harsh's Send. Only ask Harsh when neither has an amount.
+Never: Never park an invoice request on 'add the fee' while a signed agreement with the fee sits on the deal. Never write that a file (like a Story screenshot) is attached when it is not.
+Seen 1 time(s). Source: Harsh correction.
+## Payment reminders always go out, no matter what
+When: An invoice is unpaid and the 3/5/9 weekday reminder is due
+Do: Send the reminder on schedule; anything that would have held it (live link owed, unanswered brand email, a payment date they gave, a 'we paid' claim) goes into the email's wording
+Never: Never hold, skip, auto-reject or block a payment reminder, in the PM, the second check or the system check
+Seen 1 time(s). Source: Harsh correction.
 ## A posted video must always end up invoiced: record the post and read billing details from files
 When: We email the brand that the video is live with its links, or the brand sends billing details as a screenshot or PDF
 Do: Save the live links and move the deal to Posted from our own email; read billing details from image/PDF attachments when the email talks about billing
@@ -77,10 +87,10 @@ When: A brand names a finance or accounts address for invoices, or asks for remi
 Do: Send invoices and every payment chase to that address, in the thread where the invoice went, with the usual contact on Cc.
 Never: Never chase payment in the contact's deal thread once the brand named a finance address, and never put an estimated date in a brand email.
 Seen 1 time(s). Source: Harsh correction.
-## Answer the brand's question before chasing money
+## Answer the brand's question inside the payment chase, never instead of it
 When: A payment chase is due but the brand's latest email to us is a question we have not answered
-Do: Hold the chase. Get the answer (ask Harsh on WhatsApp if only he knows) and send that first. Adding the payment ask to that same email is allowed but optional: an email that only answers the brand's question is right.
-Never: Draft a payment chase that skips or guesses the answer to the brand's open question.
+Do: Put the answer (the live link, the info they asked for) in the same payment reminder
+Never: Hold, skip or reject a payment chase because the brand's question is still open (Harsh, Nov 23: 'send reminders no matter what')
 Seen 4 time(s). Source: System check.
 ## Chase where the brand told us to chase
 When: Writing a payment chase or reminder on a deal where the brand said how invoices or reminders must be sent (which thread, which finance address, which portal)

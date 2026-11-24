@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Paid
-Last brand reply 2026-11-23, our last reply 2026-11-23.
+Last brand reply 2026-11-24, our last reply 2026-11-24.
 AGREED: Rate: [amount]. Deliverables: 1 short-form video, cross-posted to Instagram, TikTok, and Facebook. Usage rights: Not specified. Payment terms: 100 percent upfront ([amount]paid). Agreed dates: None.
 
 HISTORY:
@@ -16,6 +16,7 @@ HISTORY:
 2026-11-20 us: Sent revised script
 2026-11-23 brand: Provided further script feedback
 2026-11-23 us: Sent updated script incorporating latest feedback
+2026-11-24 brand: Approved final script and authorized production
 
 BILLING:
 Company: Slate Media Co., Ltd.
@@ -25,7 +26,7 @@ Tax ID: 790-86-01367
 Invoice status: Paid in full
 
 OPEN NOW:
-Waiting on brand: Script approval.
+We owe: Delivery of the video draft for brand review.
 
 ## Links
 - [[Duncan]]

@@ -3,20 +3,20 @@
 Brand. Works with creators: [[Duncan]].
 
 ## Brand wiki (from every email with them)
-WHO: Riverside, a brand/product that comes to us directly.
+WHO: Riverside is a software product, coming to us directly.
 
-CONTACTS: Jackie Cohen, jackie.cohen@riverside.fm, from the brand, signs as Jackie, must be copied on thread with collab@buildroom.ai and noocapcollab@gmail.com.
+CONTACTS: Jackie Cohen, jackie.cohen@riverside.fm, represents the brand. We use Reply All to include collab@buildroom.ai and noocapcollab@gmail.com, and we sign as Duncan's Team.
 
-DEALS: Riverside x Duncan, deliverables and rate per deal fields, stage Script Sent, dates not yet agreed, usage rights not yet agreed, payment terms not yet agreed.
+DEALS: Riverside x Duncan | Deliverables and rate per deal fields | Script Sent | Nov 16, 2026 to present.
 
-HOW THEY WORK: Contract and brief are exchanged via email, script is sent for review and approval via email, brand can request script adjustments based on reference videos.
+HOW THEY WORK: We write scripts and send them for brand review and approval. Brand may request adjustments based on reference videos.
 
-WATCH OUT: None stated.
+WATCH OUT: None listed.
 
-OPEN NOW: We owe revised script per brand feedback within 2 to 3 working days.
+OPEN NOW: Waiting on brand to approve the revised script.
 
 ## Deal with [[Duncan]] (Script Sent, opened 2026-11-16)
-Last brand reply 2026-11-23, our last reply 2026-11-23.
+Last brand reply 2026-11-23, our last reply 2026-11-24.
 AGREED:
 Rate: Per deal fields.
 Deliverables: Per deal fields.
@@ -29,12 +29,12 @@ HISTORY:
 2026-11-16 / us / Requested brief and contract.
 2026-11-19 / us / Submitted signed contract to brand.
 2026-11-20 / us / Sent script for review and approval.
-2026-11-23 / us / Followed up on script review.
 2026-11-23 / brand / Requested script adjustments based on a reference video.
-2026-11-23 / us / Confirmed script revision is underway, to be sent in 2 to 3 working days.
+2026-11-23 / us / Confirmed script revision is underway.
+2026-11-24 / us / Sent revised script for review.
 
 BILLING:
 Not yet.
 
 OPEN NOW:
-We owe: Revised script per brand feedback within 2 to 3 working days.
+Waiting on brand: Approve the revised script.

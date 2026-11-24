@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A brand that hands over a brief and asks for the script has sent a brief
+When: Reading a brand email that attaches or links a brief and asks when the script will come, above all on a deal that is already posted or paid (the next reel's brief)
+Do: Read it as a brief, so the next reel gets its own deal and card and the script writer gets the brief
+Never: Never file it as a plain brand_reply on the old deal. A brief only promised for later, or a rate question, is not a brief.
+Seen 1 time(s). Source: System check.
+## A brand's own rewritten script is their revised script, not notes for the writer
+When: The brand sends back its OWN rewritten version of our script (in the email or attached: "we've made a few adjustments to the script, revised version below", "we've attached our revised version, does it work for the creator?") without saying it is approved
+Do: Treat their version as the revised script. Keep the card where it is, save their text on the card, and ask Harsh once on WhatsApp whether the creator films it as written; his answer becomes the reply. If they also say it is approved, it is an approval (card to To Film).
+Never: Send it to Rudraksh as script changes, move the card to 4.8, or reply "we've passed your notes to our writer, revised script in 2 to 3 working days".
+Seen 2 time(s). Source: System check.
 ## A cold 'share your usual rates' email is an inquiry, never a brief
 When: A brand writes for the first time asking if the creator is interested and what their rates are, with a description of the idea
 Do: Open the deal at Inbound and put it to Harsh for a rate; no card, no script
@@ -9,9 +19,9 @@ Never: Never file it as a brief, open a deal at Brief Received or ask Rudraksh f
 Seen 1 time(s). Source: Harsh correction.
 ## A repeat deal whose card belongs to the old deal still sends its script
 When: A brand comes back for a new campaign in the same thread, a new deal opens, and the script is written on the existing card that is still linked to the old deal
-Do: Use the deal's one matching card when it has no Linked Video, and link the new deal to it
-Never: Never let a script sit at 5 because the card is linked to an older, invoiced deal of the same brand
-Seen 1 time(s). Source: Harsh correction.
+Do: Use the deal's one matching card when it has no Linked Video, and link the new deal to it, but only when that card's script has not already gone to the brand in a Script email from any deal
+Never: Never let a script sit at 5 because the card is linked to an older, invoiced deal of the same brand, and never re-send a script that already went from the other deal of the same campaign
+Seen 2 time(s). Source: Harsh correction.
 ## A revised script must really differ from the one the brand already has
 When: A script card comes back to 5- Script Approval after the brand's script notes
 Do: Send it as the revised script only when the card's script text changed since the last Script email (its fingerprint differs); otherwise leave it with Rudraksh

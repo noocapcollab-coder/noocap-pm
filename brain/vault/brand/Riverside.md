@@ -5,17 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Duncan]].
 ## Brand wiki (from every email with them)
-WHO: Riverside, a brand/product that comes to us directly.
+WHO: Riverside is a software product, coming to us directly.
 
-CONTACTS: Jackie Cohen, jackie.cohen@riverside.fm, from the brand, signs as Jackie, must be copied on thread with collab@buildroom.ai and noocapcollab@gmail.com.
+CONTACTS: Jackie Cohen, jackie.cohen@riverside.fm, represents the brand. We use Reply All to include collab@buildroom.ai and noocapcollab@gmail.com, and we sign as Duncan's Team.
 
-DEALS: Riverside x Duncan, deliverables and rate per deal fields, stage Script Sent, dates not yet agreed, usage rights not yet agreed, payment terms not yet agreed.
+DEALS: Riverside x Duncan | Deliverables and rate per deal fields | Script Sent | Nov 16, 2026 to present.
 
-HOW THEY WORK: Contract and brief are exchanged via email, script is sent for review and approval via email, brand can request script adjustments based on reference videos.
+HOW THEY WORK: We write scripts and send them for brand review and approval. Brand may request adjustments based on reference videos.
 
-WATCH OUT: None stated.
+WATCH OUT: None listed.
 
-OPEN NOW: We owe revised script per brand feedback within 2 to 3 working days.
+OPEN NOW: Waiting on brand to approve the revised script.
 
 
 ## Links

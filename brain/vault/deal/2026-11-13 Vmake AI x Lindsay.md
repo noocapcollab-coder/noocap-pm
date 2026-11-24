@@ -1,8 +1,8 @@
 ---
 type: deal
 ---
-Stage: Signed
-Last brand reply 2026-11-23, our last reply 2026-11-20.
+Stage: Brief Received
+Last brand reply 2026-11-24, our last reply 2026-11-20.
 AGREED: Rate: not yet specified. Deliverables: 1 Instagram Reel, 30-day link in bio, Instagram Collab Post, discount code. Usage rights: not yet confirmed. Payment terms: payment via ACH transfer in USD. Dates: content to be published by December 10 at the latest.
 
 HISTORY:

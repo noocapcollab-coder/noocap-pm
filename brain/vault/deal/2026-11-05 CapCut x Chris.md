@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Posted
-Last brand reply 2026-11-23, our last reply 2026-11-23.
+Last brand reply 2026-11-23, our last reply 2026-11-24.
 AGREED: Rate: [amount]. Deliverables: 3 short-form videos. Usage rights: not stated. Payment terms: not stated. Agreed dates: video two publication deadline November 26, Beijing Time. Signed contract via GrowMaxValue agency.
 
 HISTORY:
@@ -16,10 +16,11 @@ HISTORY:
 2026-11-22 us / Acknowledged second script approval, confirmed filming is proceeding, and stated revised third script and draft will follow.
 2026-11-23 us / Sent the first draft of the second video for review, and reported that the third brief is inaccessible.
 2026-11-23 brand / Approved second video draft, resent third brief, and requested publication and 60-day ad code for video two.
+2026-11-24 us / Sent the live link and 60-day ad code for the published second video, and stated the third script will be shared shortly.
 
 BILLING: not yet
 
-OPEN NOW: We owe: publishing the second video, sending its live links and 60-day ad code, and providing the revised third script.
+OPEN NOW: Waiting on brand: review of the third script once provided.
 
 ## Links
 - [[CapCut]]

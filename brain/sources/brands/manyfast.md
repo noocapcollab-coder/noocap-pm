@@ -3,22 +3,24 @@
 Brand. Works with creators: [[Duncan]], [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: Manyfast is an AI-powered app and product planning tool that takes a one-line idea and turns it into product plans, PRDs, feature specs, user flows, and wireframes, integrating with Claude Code through MCP. They come to us directly through their team.
+WHO: Manyfast is an AI-powered product planning and specification platform. They come to us directly. Their marketing agency is Slate Media Co., Ltd.
 
-CONTACTS: Seungjoo Lee (Konan) writes to us at konan@manyfast.io as their Content and Production lead. Jun (이동준) writes to us at jun@manyfast.io handling payments and invoices on behalf of their marketing agency. We write from noocap collab at noocapcollab@gmail.com and sign as Duncan's Team or Chris's Team. Thread CC should include collab@buildroom.ai for Duncan and collab@chriscordero.net and jun@manyfast.io for Chris. Jun should only be copied on emails concerning invoices or payment, not general content and production.
+CONTACTS: Seungjoo (Konan) konan@manyfast.io handles content and production discussions. Jun jun@manyfast.io handles payments and invoicing. We sign as Duncan's Team or Chris's Team, and copy collab@buildroom.ai for Duncan and collab@chriscordero.net for Chris. Jun must be copied only when emails concern invoices or payment.
 
 DEALS:
-Manyfast x Duncan | 1 short-form video, cross-posted to Instagram, TikTok, and Facebook | [amount] | Paid | Script review stage
-Manyfast x Chris | 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days | [amount] | Invoiced | Waiting on final video review, scheduled for publication on 2026-11-30
+Manyfast x Duncan | 1 short-form video, cross-posted to Instagram, TikTok, and Facebook | [amount] | Paid | Script approved 2026-11-24, awaiting video draft delivery
+Manyfast x Chris | 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days | [amount] | Invoiced | Publication scheduled for 2026-11-30, awaiting final video approval after terminal interface revision
 
-HOW THEY WORK: Content and production discussions happen directly with Konan. Invoices and payment arrangements go through Jun. Billing must be issued in the name of their marketing agency, Slate Media Co., Ltd. Scripts go through multiple rounds of feedback focusing on strong hooks, showing polished finished UI up front, and giving wireframes and feature demonstrations enough screen time. Tool access provided by the brand uses logins like https://manyfast.io/en with trial account credentials. Promo codes provided by brand are DUNCAN30 and CHRIS30. Comment automation keywords and bio links require tracking links and tagging @manyfast.official. Draft reviews are shared via Frame.io.
+HOW THEY WORK: Scripts are reviewed and approved via email. Video drafts are reviewed on Frame.io (https://f.io/9E9Quq9U). Invoices are issued with Stripe payment links. Payment and billing details go through their marketing agency, Slate Media Co., Ltd. Trial account for Duncan: manyfast.io/en, duncan@manyfast.io, Team plan (5 seats), period Nov 20 to Dec 20, 2026, viewer promo code DUNCAN30. Promo code for Chris: CHRIS30 (30 percent off first month of Pro monthly plan).
 
-WATCH OUT: Do not CC Jun on emails that do not concern invoices or payment. Make sure tool names in narration and captions match what is shown on screen, and always fix caption typos such as cloud code to Claude Code.
+WATCH OUT: Do not CC Jun on content, script, or general production emails. Ensure tool names match the narration and captions (specifically distinguishing between standard Claude UI and Claude Code / terminal interface). Ensure offer text clearly states 30 percent off the first month of the Pro monthly plan.
 
-OPEN NOW: For Manyfast x Duncan, we are waiting on the brand to review and approve the latest revised script sent on 2026-11-23. For Manyfast x Chris, we are waiting on the brand to review the final video draft sent on Frame.io on 2026-11-23, ahead of the scheduled publication date of 2026-11-30.
+OPEN NOW:
+Manyfast x Duncan: We owe delivery of the initial video draft for brand review.
+Manyfast x Chris: We owe confirmation on whether we can update the prompt segment to show the terminal interface for Claude Code, followed by the revised draft on Frame.io.
 
 ## Deal with [[Duncan]] (Paid, opened 2026-11-16)
-Last brand reply 2026-11-23, our last reply 2026-11-23.
+Last brand reply 2026-11-24, our last reply 2026-11-24.
 AGREED: Rate: [amount]. Deliverables: 1 short-form video, cross-posted to Instagram, TikTok, and Facebook. Usage rights: Not specified. Payment terms: 100 percent upfront ([amount]paid). Agreed dates: None.
 
 HISTORY:
@@ -32,6 +34,7 @@ HISTORY:
 2026-11-20 us: Sent revised script
 2026-11-23 brand: Provided further script feedback
 2026-11-23 us: Sent updated script incorporating latest feedback
+2026-11-24 brand: Approved final script and authorized production
 
 BILLING:
 Company: Slate Media Co., Ltd.
@@ -41,27 +44,25 @@ Tax ID: 790-86-01367
 Invoice status: Paid in full
 
 OPEN NOW:
-Waiting on brand: Script approval.
+We owe: Delivery of the video draft for brand review.
 
 ## Deal with [[Chris]] (Invoiced, opened 2026-11-10)
-Last brand reply 2026-11-23, our last reply 2026-11-23.
-AGREED: Rate: [amount]. Deliverables: 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days. Usage rights: not specified. Payment terms: 50% upon script approval ([amount]billed), 50% once video is published. Agreed dates: publication scheduled for 2026-11-30.
+Last brand reply 2026-11-24, our last reply 2026-11-24.
+AGREED: Rate: [amount]. Deliverables: 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days. Usage rights: not specified. Payment terms: 50% upon script approval ([amount]billed), 50% after publication. Agreed dates: publication scheduled for 2026-11-30.
 
 HISTORY:
-2026-11-16 brand: approved script and confirmed billing process.
 2026-11-17 brand: provided billing details for Slate Media Co., Ltd.
 2026-11-17 us: sent initial 50% invoice ([amount]) via Stripe.
-2026-11-18 us: sent first video draft for review.
-2026-11-19 brand: requested edits and proposed publication on 2026-11-30.
-2026-11-19 us: confirmed edits underway and accepted publication date.
-2026-11-20 us: submitted revised video draft.
-2026-11-20 brand: requested final caption fix and tool confirmation.
-2026-11-23 brand: confirmed details and requested final version.
-2026-11-23 us: sent final revised video draft on Frame.io.
+2026-11-18 us: sent first video draft.
+2026-11-19 brand: requested edits and moved publication to 2026-11-30.
+2026-11-20 us: submitted second video draft.
+2026-11-20 brand: requested caption fixes and tool confirmation.
+2026-11-23 us: sent third video draft.
+2026-11-24 brand: requested final revisions for connector and typing sequence, then requested terminal interface update.
 
 BILLING: Brand has provided agency billing details (Slate Media Co., Ltd., jun@manyfast.io, Seoul address, tax ID 790-86-01367). Invoice status: initial 50% invoice sent.
 
-OPEN NOW: Waiting on brand: to review the final video.
+OPEN NOW: We owe: confirm if we can update the prompt segment to show the terminal interface and send a revised draft.
 
 ## Inbound leads
-- Deliverables: Comment-keyword DM automation setup, bio link placement, trial account exploration and content creation · Next Step: Handed to noocapcollab: waiting for the brief · Platforms: Instagram · Last Our Email: 2026-11-23 · Last Brand Email: 2026-11-17 · Thread Subject: Paid Reel collaboration — Manyfast × Chris · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: konan@manyfast.io
+- Deliverables: Comment-keyword DM automation setup, bio link placement, trial account exploration and content creation · Next Step: Handed to noocapcollab: waiting for the brief · Platforms: Instagram · Last Our Email: 2026-11-24 · Last Brand Email: 2026-11-24 · Thread Subject: Paid Reel collaboration — Manyfast × Chris · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: konan@manyfast.io

@@ -5,17 +5,23 @@ type: brand
 
 Brand. Works with creators: [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: Manus AI comes through agency EezyCollab.
+WHO: Manus AI is an AI product. They come to us through an agency named EezyCollab.
 
-CONTACTS: Ocean writes from creators at eezycollab dot com for EezyCollab Partnership. Chris signs as Chris Cordero, website www dot cordcreations dot com. Thread CC includes contact at chriscordero dot net and collab at chriscordero dot net.
+CONTACTS:
+Ocean, creators@eezycollab.com, EezyCollab Partnership
+Chris Cordero, contact@chriscordero.net and collab@chriscordero.net, creator
 
-DEALS: Chris, one Instagram Story re-sharing the official Manus Black Friday discount post, rate not yet discussed, stage Posted, campaign starts next Monday.
+DEALS:
+Chris | one Instagram Story re-sharing the official Manus Black Friday discount post | Rate: not yet discussed | stage Posted | campaign started 2026-11-24
 
-HOW THEY WORK: No extra filming or editing is needed, just a quick re-share of the official post as an Instagram Story.
+HOW THEY WORK:
+Brand sends the official post link for the Instagram Story reshare. After resharing, we must reply with the Instagram Story link.
 
-WATCH OUT: None listed.
+WATCH OUT:
+none known
 
-OPEN NOW: Waiting on brand to share the link.
+OPEN NOW:
+Nothing is pending.
 
 
 ## Links

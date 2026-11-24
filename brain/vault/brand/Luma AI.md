@@ -5,25 +5,30 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]], [[Chris]], [[Duncan]], [[Brad]].
 ## Brand wiki (from every email with them)
-WHO: Luma AI comes to us through NJ Agency for Lindsay and Chris, and through the platform Faved for Duncan.
+WHO
+Luma AI is an AI-powered video creation platform. They work with us both directly and through agencies. NJ Agency is the primary point of contact for Lindsay and Chris. Faved manages the agency relationship for Duncan.
 
-CONTACTS: Upendra Singh, upendra@njagency.co, Campaign Head at NJ Agency, writes to us and signs. Creators' team emails are collab@chriscordero.net for Chris, and collab@buildroom.ai for Duncan. Faved writes via creators@faved.com.
+CONTACTS
+Upendra Singh, upendra@njagency.co, Campaign Head at NJ Agency (for Lindsay and Chris).
+Faved, creators@faved.com (for Duncan).
 
-DEALS:
-Luma AI x Lindsay, Produce and publish content, stage Brief Received, agreed dates completion within November 2026.
-Luma AI x Chris, Reel + Story repost, stage Posted, net 30 after approved Reel and Story published and invoice received, agreed date November 21 2026 for Reel live.
-Luma AI x Duncan, draft script, stage Signed, 60-day usage for Instagram/TikTok/other paid ads and dark ads (YouTube crossposting allowed, no YouTube paid ad rights or ad codes).
-Luma AI x Brad, one video with approved script, stage Posted.
+DEALS
+Lindsay: One video production and publication, due by November 30, 2026. Stage: Script Sent.
+Chris: Reel + Story repost, [amount]. Stage: Posted.
+Duncan: Draft script, 60-day usage rights for social media ads (no YouTube ad codes/rights). Stage: Signed.
+Brad: One video production. Stage: Posted.
 
-HOW THEY WORK: Brief format, script approval, drafts reviewed, posting requirements include CTA, comment-to-DM automation, bio link, story with clickable link sticker, and tagging @lumalabsai. For Duncan, replies by email to Faved are not seen by the brand so we must answer on the Faved page.
+HOW THEY WORK
+Brands provide a brief, script, and/or tracking links. For sponsored content, they require specific CTAs, comment-to-DM automation setups, and tagging of @lumalabsai in Reels and Stories. Bio links are often required for tracking. Invoices must be submitted after all deliverables (Reels, Stories, and screenshots) are confirmed live.
 
-WATCH OUT: Missing tags, bio links, and stories caused disputes during Chris deal before publishing screenshots and invoice.
+WATCH OUT
+Always confirm tagging and bio link placement immediately upon posting. For Duncan, explicitly exclude YouTube ad rights and partnership codes from the contract. Always ensure screenshots are provided as proof of live status for Stories and Reels.
 
-OPEN NOW:
-Lindsay: We owe answering brand workflow questions, signing up for Luma, sharing registered email, and providing the script.
-Chris: We owe sharing the published Story screenshot and invoice.
-Duncan: We owe signing contract, confirming usage rights terms, and submitting draft script.
-Brad: Brad to film the video per the approved script. We owe nothing right now pending Brad's filming.
+OPEN NOW
+Lindsay: We owe the Luma account email address for credit issuance. Waiting on brand for script approval and credit addition.
+Chris: We owe the screenshot of the published Story and the invoice for the [amount] payment.
+Duncan: We owe the signed contract, confirmation of usage rights (Instagram/TikTok/dark ads only, no YouTube paid ads), and the draft script.
+Brad: None.
 
 
 ## Links

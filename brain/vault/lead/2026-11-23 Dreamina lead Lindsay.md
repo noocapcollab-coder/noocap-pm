@@ -3,7 +3,7 @@ type: lead
 ---
 Deliverables: 1 short-form video cross-posted to YouTube Shorts, Instagram and TikTok
 Contact Name: Anna
-Next Step: New brand: management to reply with pricing
+Next Step: Replied 2026-11-23, waiting on the brand
 Platforms: Instagram, TikTok, YouTube Shorts
 Last Our Email: 2026-11-23
 Last Brand Email: 2026-11-23

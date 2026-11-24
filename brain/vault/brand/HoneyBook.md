@@ -5,17 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: HoneyBook, coming through the agency Narrative Group.
+WHO: HoneyBook, promoting their new product MyCo. They come to us through an agency named Narrative Group.
 
-CONTACTS: Dori Zussmann, dori@narrativegroup.co, from Narrative Group, signs as Dori Zussmann, must be copied on all emails along with collab@chriscordero.net.
+CONTACTS: Dori Zussmann, email dori@narrativegroup.co, role VP Client Management at Narrative Group. We sign as Chris's Team and must copy noocapcollab@gmail.com and collab@chriscordero.net.
 
-DEALS: Chris, deliverables not specified in notes, rate not specified in notes, stage Script Sent, dates not specified.
+DEALS: HoneyBook x Chris: deliverables, rate, usage rights, and payment terms per deal fields; stage Script Approved; agreed dates none yet.
 
-HOW THEY WORK: Script is sent via email thread for review and approval.
+HOW THEY WORK: Scripts are sent for review via email attachments or docs with comments in the doc. Brief specifies focusing on MyCo, HoneyBook's new product, without needing to mention HoneyBook itself.
 
-WATCH OUT: Reply all on future emails so the whole team stays in the loop.
+WATCH OUT: Scripts must focus specifically on MyCo rather than a general HoneyBook integration.
 
-OPEN NOW: Waiting on brand for script approval or feedback.
+OPEN NOW: We owe: incorporate brand comments from the doc and proceed with filming.
 
 
 ## Links

@@ -2,7 +2,7 @@
 type: hub
 ---
 # David - what performs
-Content OS, videos posted since 2026-07-26: 232 posts across platforms, average 5,100 views. Creator: [[David]].
+Content OS, videos posted since 2026-07-27: 232 posts across platforms, average 5,100 views. Creator: [[David]].
 
 ## Links
 - [[David]]

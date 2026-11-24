@@ -5,23 +5,27 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Atoms, platform/tool for building AI solutions, comes to us directly.
+WHO
+Atoms is a platform for building AI tools and automations. They come to us directly.
 
-CONTACTS:
-May (xiaohua su), may@atoms.dev, brand contact, signs for brand, must be copied.
-NOOCAP team, noocapcollab@gmail.com, agency/team, must be copied.
+CONTACTS
+May (xiaohua su), may@atoms.dev, Brand Representative. All emails must be sent to May and CC noocapcollab@gmail.com.
 
-DEALS:
-Atoms x Lindsay | 1 dedicated YouTube video (English) with a sponsorship slot | [amount] | Stage: Brief Received | Agreed dates: late November 2026 (requested to move to first week of December).
+DEALS
+Lindsay, 1 dedicated YouTube video (English) including two CTAs, [amount], stage Scripting, Publish first week of December 2026.
 
-HOW THEY WORK:
-Brand process includes registering for Atoms with a specified account (noocaptools@gmail.com) for tool access upgrade, submitting 2-3 build ideas for approval, writing the script based on their feedback (structuring the build around real-world use cases, explicit pricing rules, end-to-end tests with Stripe and Cloud Email, system replication, and Atoms operations), and publishing. Thread correspondence must use REPLY ALL, keeping noocapcollab@gmail.com copied. Signed contracts require a handwritten signature, signature image, or signature-style font rather than ordinary typed text.
+HOW THEY WORK
+Process: Brand provides a brief, creator sends build ideas for approval, then creator sends script for approval.
+Script Requirements: Must show end-to-end test (homeowner quote, deposit via Stripe, booking measurement, dashboard order, cloud email notification), showcase remixing for a second business, explain pricing/profit, and preserve the creator’s storytelling style.
+Technical: Atoms credits or subscription costs must be factored into profit calculations. If AI credits are needed for the demo, May can provide a top-up.
+Black Friday: Promotion runs Nov 25 to Dec 9 (50% off plans).
+Communication: Reply all on all threads.
 
-WATCH OUT:
-Do not use ordinary typed text for signing contracts (must use a handwritten signature, image, or signature font). Do not forget to REPLY ALL with noocapcollab@gmail.com on the thread.
+WATCH OUT
+The compensation clause in their legal template may state no payout; this is standard for them and does not reflect the agreed fee of [amount]. Ensure the [amount] fee is stated in discussions or finalized agreements. Use handwritten or signature-style font for signing, not typed text.
 
-OPEN NOW:
-Waiting on brand confirmation to push the publish date to the first week of December; we owe the revised script once the build is finalized.
+OPEN NOW
+We owe the revised script to May.
 
 
 ## Links

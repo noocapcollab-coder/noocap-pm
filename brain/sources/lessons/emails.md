@@ -2,6 +2,31 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A brand's script approval always gets a reply
+When: The brand approves the script and asks us to go ahead, with nothing else to answer
+Do: Send the script_approved_ack fixed reply (thanks, moving into production, first draft within 3 to 4 working days) in the thread right after the approval is handled.
+Never: Never leave a script approval unanswered because the brand asked no question.
+Seen 1 time(s). Source: Harsh correction.
+## A post date that has passed is never quoted to a brand
+When: Telling a brand when a video goes live (publish_date_confirm or any reply naming a date)
+Do: Use the card's POST DATE only when it is today or later; when it has passed or is empty, ask Harsh for the date
+Never: Never tell a brand a go-live date that is already in the past
+Seen 1 time(s). Source: System check.
+## Never tell a brand we will sign their contract on our own
+When: Any reply, follow-up or draft built from a file Harsh sent, when the brand has shared a contract, agreement or brief
+Do: Leave signing to Harsh: hold the draft as Needs you and ask him on WhatsApp
+Never: Write "we're ready to sign", "we're happy to sign" or "we'll sign it" in an email that sends itself
+Seen 1 time(s). Source: System check.
+## Keep chasing until the brand answers or pays
+When: A brand goes quiet on a follow-up, an on-hold check-in or an unpaid invoice
+Do: Keep sending on the 3 / 5 / 9 weekday gaps, then every 9 weekdays, until they answer or pay
+Never: Never stop after a set number of follow-ups or reminders and hand the deal back to Harsh
+Seen 1 time(s). Source: Harsh correction.
+## Never leave an email with only a greeting and a sign-off
+When: A guard takes made-up details, filler or a foreign link out of a draft and little or nothing is left
+Do: Write the email again saying what it is for (for a script: the script is attached for their review) and leave out only the part we have no facts for; the missing fact goes to Harsh
+Never: Never save or send a draft whose body is just 'Hi X,' and 'Best, X's Team'
+Seen 1 time(s). Source: System check.
 ## A draft the last send check refuses goes to Harsh once, it is not retried forever
 When: Autopilot tries to send a waiting draft and a pre-send check refuses it ("Not sent: ...", e.g. the scripts already went, someone already replied, wrong amount)
 Do: Mark the draft Needs you with the reason the check gave and post one hold card, so Harsh decides and Approvals stops saying it will send on its own
@@ -61,7 +86,7 @@ Seen 2 time(s). Source: System check.
 When: An automated signing service (agreements@, PandaDoc, DocuSign, a 'Please sign' or 'Completed' notice with a sign link) emails a contract for a creator
 Do: Send the contract and sign link to Harsh on WhatsApp once and link it to the right deal; a 'Completed' notice only records that it is signed.
 Never: Never draft a reply to the signing service's address, never greet the campaign contact in it, and never promise to review or sign it 'shortly'.
-Seen 1 time(s). Source: System check.
+Seen 2 time(s). Source: System check.
 ## A loop-in reply asks only for what the brand hasn't sent
 When: A creator's team loops noocapcollab into a brand thread
 Do: Check the thread for a brief link or file and an attached contract, and ask only for what is missing
@@ -281,4 +306,4 @@ Seen 3 time(s). Source: Rulebook.
 When: Writing any email
 Do: Give the thing if we have it, otherwise leave the promise out.
 Never: Write 'shortly', 'within a few hours', 'we'll send it today', [DATE], [name] or invented dates.
-Seen 21 time(s). Source: Rulebook.
+Seen 22 time(s). Source: Rulebook.

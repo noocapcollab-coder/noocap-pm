@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Price Agreed
-Last brand reply none, our last reply 2026-11-20.
+Last brand reply none, our last reply 2026-11-24.
 AGREED: rate and deliverables confirmed in deal stage (Price Agreed); usage rights and payment terms not yet stated in emails; no dates specified.
 
 HISTORY:

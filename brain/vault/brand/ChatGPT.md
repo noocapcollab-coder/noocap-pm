@@ -5,25 +5,12 @@ type: brand
 
 Brand. Works with creators: [[Duncan]].
 ## Brand wiki (from every email with them)
-WHO: ChatGPT uses the agency Viral Nation for influencer marketing and payments.
-
-CONTACTS:
-Banks Burkart, bburkart@viralnation.com, agency
-Michael Valore, mvalore@viralnation.com, agency, copy
-David Liang, dliang@viralnation.com, agency, copy
-Ashay Desai, adesai@viralnation.com, agency, copy
-Jonathan McGhee, jmcghee@viralnation.com, agency, copy
-Delton Alves, dalves@viralnation.com, invoicing specialist / agency, copy
-Buildroom AI, collab@buildroom.ai, agency, copy
-
-DEALS:
-Duncan | Switch to ChatGPT | [amount] | Invoiced | Invoice sent 2026-11-05
-
-HOW THEY WORK: Payments are processed through the Trolley service, which requires filling out a vendor form and completing a banking setup via Trolley.
-
-WATCH OUT: None stated.
-
-OPEN NOW: Waiting on the brand to respond to our request to send the Trolley setup/invitation email directly to the noocapcollabs email address.
+WHO: ChatGPT, agency is Viral Nation.
+CONTACTS: Delton Alves, dalves@viralnation.com, Invoicing Specialist at Viral Nation; Michael Valore, mvalore@viralnation.com, Viral Nation; David Liang, dliang@viralnation.com, Viral Nation; Ashay Desai, adesai@viralnation.com, Account Manager at Viral Nation; Jack McGhee, jmcghee@viralnation.com, Viral Nation; Banks Burkart, bburkart@viralnation.com, Viral Nation.
+DEALS: ChatGPT x Duncan, deliverables not specified, rate [amount], stage Invoiced, no agreed dates.
+HOW THEY WORK: Payments are processed through the Trolley service, requiring completion of their Vendor Form via Google Forms to set up banking and update email preferences.
+WATCH OUT: Payments cannot be deposited without the creator or team completing the Trolley setup.
+OPEN NOW: Waiting on Duncan to complete the Viral Nation Vendor Form update so Viral Nation can process payment for invoice INV-004.
 
 
 ## Links

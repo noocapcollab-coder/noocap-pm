@@ -101,29 +101,3 @@ So it’s really like 11 smaller skills in one pack, and each one handles its ow
 Comment “REELS” and I’ll get you the skill pack.
     SKILL NAME: Instagram Agent Skill 
     - Sub-page: [[The Instagram Agent Skill Pack: Let Claude Run Your Content (Repo + Setup + Order to Use)]]
-
-## 2026-11-17 CLAUDE KILLED DAY TRADERS
-Type: PERSONAL. Creator: [[David Iya]].
-On-Screen Hook 1:
-    Claude just killed day trading 📉
-    Hook 1:
-Claude just killed day trading, because you can now run full-on market research right inside Claude.
-    Hook 2:
-Someone built a set of Claude skills that scans thousands of charts for setups and then backtests your strategy against years of past market data.
-    Body:
-So there are really two parts to this, and the first is the daily research, where one skill goes through thousands of charts looking for setups while another keeps an eye on the news as it breaks, and the others fill in the rest of the prep. The second part is backtesting, which takes your strategy and tests it against years of past market data, so you get a sense of how it would have held up before any real money goes in. It won’t place any trades for you and nothing like this can guarantee a result, so it’s really the prep work you do before making your own call, and setup is just giving Claude the link and asking it to install the skills.
-    CTA:
-Comment “CHARTS” and I’ll get you the link plus the setup I’d run in Claude.
-    - Sub-page: [[The Day Trader Skill Pack: Market Research and Trade Prep in Claude (Repo + Setup)]]
-
-## 2026-11-14 Astryx, Meta's own internal design library
-Type: PERSONAL. Creator: [[David Iya]].
-Hook 1:
-    The part of vibe coding I typically spend the most time fixing is the UI, and Meta open-sourced the component library behind over 13,000 of their own internal apps.
-    Hook 2:
-    Meta open-sourced the design system they've been building internally for like eight years, and it's honestly the first thing I'd hand Claude Code before building any UI.
-    Body:
-    So it’s over 150 React components that Meta organized into families to make really good UI and UX, and it comes with themes, dark mode and page templates on top of that. It also ships with its own CLI, so Claude Code can actually look up the right component instead of guessing at spacing and layout. What I’d do is start with one page of your app, or one client dashboard at the agency, see how far it gets you, and then roll it out from there. It’s called Astryx, it’s MIT licensed, and it’s sitting at over 20,000 stars on GitHub.
-    CTA:
-    So comment “DESIGN” and I’ll send you the repo and how I’d set it up in Claude Code.
-    - Sub-page: [[Astryx: Meta's Open Source Design System for Claude Code (Repo + Setup)]]

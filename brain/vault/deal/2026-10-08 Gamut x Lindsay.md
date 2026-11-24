@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Invoiced
-Last brand reply 2026-11-18, our last reply 2026-11-18.
+Last brand reply 2026-11-18, our last reply 2026-11-24.
 AGREED: [amount]rate ([amount]upfront, [amount]on delivery). Deliverables: one dedicated long-form YouTube video (8-10 minutes) featuring Gamut as main subject, shown in use. Usage rights not specified in writing. Agreed tracking link: gamut.so/automateai. Key features to showcase: agent email inbox, Slack integration, text approvals, templates, multiplayer mode, model switching. Sponsor mention: must mention video is sponsored by Gamut the first time Gamut comes up in Part 2.
 
 HISTORY:

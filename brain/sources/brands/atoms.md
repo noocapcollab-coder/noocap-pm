@@ -3,46 +3,46 @@
 Brand. Works with creators: [[Lindsay]].
 
 ## Brand wiki (from every email with them)
-WHO: Atoms, platform/tool for building AI solutions, comes to us directly.
+WHO
+Atoms is a platform for building AI tools and automations. They come to us directly.
 
-CONTACTS:
-May (xiaohua su), may@atoms.dev, brand contact, signs for brand, must be copied.
-NOOCAP team, noocapcollab@gmail.com, agency/team, must be copied.
+CONTACTS
+May (xiaohua su), may@atoms.dev, Brand Representative. All emails must be sent to May and CC noocapcollab@gmail.com.
 
-DEALS:
-Atoms x Lindsay | 1 dedicated YouTube video (English) with a sponsorship slot | [amount] | Stage: Brief Received | Agreed dates: late November 2026 (requested to move to first week of December).
+DEALS
+Lindsay, 1 dedicated YouTube video (English) including two CTAs, [amount], stage Scripting, Publish first week of December 2026.
 
-HOW THEY WORK:
-Brand process includes registering for Atoms with a specified account (noocaptools@gmail.com) for tool access upgrade, submitting 2-3 build ideas for approval, writing the script based on their feedback (structuring the build around real-world use cases, explicit pricing rules, end-to-end tests with Stripe and Cloud Email, system replication, and Atoms operations), and publishing. Thread correspondence must use REPLY ALL, keeping noocapcollab@gmail.com copied. Signed contracts require a handwritten signature, signature image, or signature-style font rather than ordinary typed text.
+HOW THEY WORK
+Process: Brand provides a brief, creator sends build ideas for approval, then creator sends script for approval.
+Script Requirements: Must show end-to-end test (homeowner quote, deposit via Stripe, booking measurement, dashboard order, cloud email notification), showcase remixing for a second business, explain pricing/profit, and preserve the creator’s storytelling style.
+Technical: Atoms credits or subscription costs must be factored into profit calculations. If AI credits are needed for the demo, May can provide a top-up.
+Black Friday: Promotion runs Nov 25 to Dec 9 (50% off plans).
+Communication: Reply all on all threads.
 
-WATCH OUT:
-Do not use ordinary typed text for signing contracts (must use a handwritten signature, image, or signature font). Do not forget to REPLY ALL with noocapcollab@gmail.com on the thread.
+WATCH OUT
+The compensation clause in their legal template may state no payout; this is standard for them and does not reflect the agreed fee of [amount]. Ensure the [amount] fee is stated in discussions or finalized agreements. Use handwritten or signature-style font for signing, not typed text.
 
-OPEN NOW:
-Waiting on brand confirmation to push the publish date to the first week of December; we owe the revised script once the build is finalized.
+OPEN NOW
+We owe the revised script to May.
 
 ## Deal with [[Lindsay]] (Brief Received, opened 2026-10-30)
-Last brand reply 2026-11-23, our last reply 2026-11-23.
-AGREED: Rate: [amount]. Deliverables: 1 dedicated YouTube video (English) with a sponsorship slot. Usage rights: not specified. Payment terms: not specified. Agreed dates: late November 2026 (publish date requested to be moved to first week of December).
+Last brand reply 2026-11-24, our last reply 2026-11-23.
+AGREED: Rate: [amount]. Deliverables: 1 dedicated YouTube video (English) including two CTAs (middle and end) and a showcase of the Atoms build. Usage rights: not specified. Payment terms: not specified. Agreed dates: First week of December 2026.
 
 HISTORY:
-2026-11-02 us sent contract with tool access request.
-2026-11-04 brand replied Atoms tool registration required.
-2026-11-11 brand resent contract with instructions and brief.
-2026-11-16 brand followed up on contract status.
-2026-11-17 brand asked for audience details.
 2026-11-17 us sent signed contract, audience details, and build proposal.
 2026-11-19 brand shared feedback and script requirements.
 2026-11-19 us confirmed receipt and committed to delivering revised script in 2-3 working days.
 2026-11-23 brand followed up on script status.
-2026-11-23 us proposed moving publish date to first week of December due to build delays and Thanksgiving.
+2026-11-23 us proposed moving publish date to first week of December due to build delays.
+2026-11-24 brand accepted new timeline, added Black Friday promo context, and requested faster script turnaround.
 
 BILLING: not yet
 
-OPEN NOW: Waiting on brand: confirmation on pushing the publish date to the first week of December.
+OPEN NOW: We owe: a revised script to the brand.
 
 ## Inbound leads
 - Deliverables: dedicated YouTube video · Next Step: New brand: management to reply with pricing · Platforms: YouTube · Last Brand Email: 2026-11-23 · Thread Subject: Paid AI collaboration with Atoms · Status: New offer · Creator: Lindsay · Type: Paid offer · Brand Email: wujiajin@metagptx.com
-- Deliverables: revised contract · Contact Name: Ataur · Next Step: Send the revised contract to May at Atoms. · Platforms: TikTok · Last Our Email: 2026-11-23 · Deal: 1 linked · Last Brand Email: 2026-11-19 · Thread Subject: PAID Collaboration | Atoms — From Idea to Revenue with AI · Status: Locked · Creator: Lindsay · Type: Paid offer · Brand Email: may@atoms.dev
+- Deliverables: revised contract · Contact Name: Ataur · Next Step: Send the revised contract to May at Atoms. · Platforms: TikTok · Last Our Email: 2026-11-23 · Deal: 1 linked · Last Brand Email: 2026-11-24 · Thread Subject: PAID Collaboration | Atoms — From Idea to Revenue with AI · Status: Locked · Creator: Lindsay · Type: Paid offer · Brand Email: may@atoms.dev
 - Deliverables: One short-form video cross-posted to YouTube Shorts, Instagram and TikTok · Contact Name: xiaohua · Next Step: Wait for brand team to review and approve budget · Platforms: YouTube Shorts, Instagram, TikTok · Last Our Email: 2026-11-04 · Deal: 1 linked · Last Brand Email: 2026-11-05 · Thread Subject: Creator Partnership Inquiry – Atoms AI Platform · Status: Locked · Creator: Lindsay · Type: Paid offer · Brand Email: gina@luminarysm.com
 - Contact Name: Anna · Next Step: Wait for Maxiom to return with brand team's feedback on the [amount]and [amount]rate options · Platforms: YouTube · Last Our Email: 2026-10-26 · Follow-ups: 1 · Last Brand Email: 2026-10-20 · Thread Subject: Paid YouTube collaboration with Atoms · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: may@atoms.dev

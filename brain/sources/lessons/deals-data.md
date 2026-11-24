@@ -27,11 +27,11 @@ When: The heartbeat's deal emails step runs out of time before the end of the de
 Do: Start the next run at the deal the last run stopped before, and show 'N of M deals, next: ...' in the step
 Never: Leave the deals past one run's reach to wait hours for a rotating start to drift onto them
 Seen 1 time(s). Source: System check.
-## Live links sent with the invoice count as the links email
-When: A deal's live links went to the brand inside another email (usually the invoice email) and a Posted links step comes up
+## Live links our side already emailed count as the links email
+When: A deal's live links already went to the brand in any email from our side (the invoice email, or one the creator's team sent by hand) and a Posted links step comes up
 Do: Treat the links as sent: fill Links Sent Date from that email and draft nothing more about the links. If a reminder is due, it is a payment chase, written as one.
 Never: Draft a Posted links email for links the brand already has, or put another email's body (a payment chase) under the Posted links kind.
-Seen 1 time(s). Source: System check.
+Seen 2 time(s). Source: System check.
 ## A sign link on the brand's own domain is a contract, and every contract gets acknowledged
 When: A brand sends a contract to sign, as a file, an e-sign service link or a link on their own site (agreements.<agency>.com/sign/...)
 Do: Save it in CONTRACTS as Needs signing, send it to Harsh and Pratham on WhatsApp, and send the brand the fixed contract_ack reply at once
@@ -61,7 +61,7 @@ Seen 1 time(s). Source: System check.
 When: A brand writes again only to confirm they received or can open what we sent and will come back with feedback
 Do: Record it as the brand's latest email and set the deal to waiting on the brand, with the next check-in counted from that email
 Never: Set the deal to 'Waiting on us', put it on Harsh's list or draft a reply to a plain acknowledgement
-Seen 1 time(s). Source: System check.
+Seen 3 time(s). Source: System check.
 ## Only our own inboxes speak for NOOCAP
 When: Reading an email in a deal thread that is signed by someone at an outside company (an agency or the brand's team)
 Do: Treat anyone writing from a company domain that is not noocapcollab or a creator's own domain as the brand's side: record it as a brand reply, move Last Brand Reply, and let their address become the brand contact.

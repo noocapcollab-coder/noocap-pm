@@ -5,25 +5,36 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]], [[Chris]], [[Duncan]], [[Brad]].
 ## Brand wiki (from every email with them)
-WHO: CapCut app and tools (including CapCut plugin on ChatGPT, Dreamina, and PC software), working both directly and through agencies like GrowMaxValue and GlobeInflu.
+WHO: CapCut is an all-in-one video editing app offering desktop and mobile tools, AI features like Dreamina, and ChatGPT plugins. Deals come through agencies GrowMaxValue and GlobeInflu.
 
-CONTACTS: Sophie Wilson, sophie.wilson@growmaxvalue.com, GrowMaxValue agency; Mia Brown, mia.brown@growmaxvalue.com, GrowMaxValue agency; Alisa, alisa@globeinflu.com, GlobeInflu agency; Victoria Ev, victoria@mediacube.io, Mediacube agency. Signatures vary by creator team. Copy thread contacts as received.
+CONTACTS:
+Sophie Wilson, sophie.wilson@growmaxvalue.com, GrowMaxValue Agency (CapCut x Lindsay, CapCut x Chris).
+Mia Brown, mia.brown@growmaxvalue.com, GrowMaxValue Agency (CapCut x Chris). Signs as Mia Brown | BD, GrowMaxValue Agency. Copy collab@automateaiconsulting.com for Lindsay, collab@chriscordero.net for Chris.
+Alisa, alisa@globeinflu.com, GlobeInflu (CapCut x Brad). Signs as Alisa, Business Development Manager, GlobeInflu.
+Victoria Ev (Victoria), victoria@mediacube.io, Mediacube Worldwide Ltd / Mediacube (CapCut x Duncan). Copy collab@buildroom.ai, alilar@mediacube.io.
 
 DEALS:
-CapCut x Lindsay | 3 promotional videos for CapCut app on Instagram, 30-60 seconds each, [amount]total | Script Approved | November 27 deadline
-CapCut x Chris | 3 short-form videos, [amount]total | Posted | November 26 publication deadline
-CapCut x Duncan | 1 short-form video for CapCut with 3-month ad code, [amount]total | Invoiced | Go-live October 30, 2026
-CapCut x Brad | 3 short-form videos (Ninja AI Tools campaign), [amount]total ([amount]per video) | Submitted | Publish window November 23-27, 2026
+Lindsay: 3 promotional videos for CapCut app on Instagram, 30-60 seconds each, [amount]total. Script Approved. Nov 27 2026 publication deadline, 60-day ad code authorization per video.
+Chris: 3 short-form videos, [amount]total. Posted. Publish deadline Nov 26 Beijing Time, 60-day ad code.
+Duncan: 1 short-form video with 3-month ad code, [amount]([amount]per 50% split). Invoiced. Go-live deadline Oct 30 2026.
+Brad: 3 videos (Ninja AI Tools campaign), [amount]per video ([amount]total). Submitted. Publish window Nov 23-27 2026.
 
-HOW THEY WORK: Script approval is required before filming. Up to 2 revisions allowed. Videos must be published within 3 days of approval. 60-day ad code authorization required per video. Video titles and thumbnails have exact naming rules when specified by the brand, such as including Zeely AI review or correct CapCut and Dreamina capitalization and UTM links. Avoid posting any new videos within one day after publishing a campaign video to help performance. Invoices must include both parties company info and payment details in text format.
+HOW THEY WORK:
+Deliverables require pre-approval of scripts before filming (up to 2 revisions).
+Videos must use exact naming, CTAs, UTM links, and hashtag instructions provided in briefs.
+For Chris: avoid posting any new videos within one day after publishing a CapCut campaign video. Use CapCut consistently in captions, on-screen text, and titles with both Cs capitalized.
+For Duncan: title must include "Zeely AI review", thumbnail must include "Zeely Review".
+Invoices must be in text format (no QR codes or links) and include company and payment details. Mediacube billing details: Mediacube Worldwide Ltd, Makariou III, 134 GROUND FLOOR 3021, Limassol, Cyprus, Tax ID: CY10401840A.
 
-WATCH OUT: Mixing up creators and scripts across campaigns causes major rejection. Double check creator assignments before submitting drafts.
+WATCH OUT:
+Do not mix up creator assets or scripts across different creators (e.g. sending Chris's script/video for Brad).
+Always ensure video titles and thumbnails match brand requirements exactly before publishing.
 
 OPEN NOW:
-Lindsay deal: We owe third script (GTA 6 brief) and first drafts of the first two videos.
-Chris deal: We owe publishing the second video, sending its live links and 60-day ad code, and providing the revised third script.
-Duncan deal: Awaiting [amount]final payment against Invoice INV-003 from Mediacube.
-Brad deal: Waiting on brand feedback on the revised script once shared by us.
+Lindsay: We owe the third script (GTA 6 brief) and first drafts of the first two videos.
+Chris: Waiting on brand review of the third script once provided.
+Duncan: Awaiting [amount]final payment against Invoice INV-003.
+Brad: Waiting on brand feedback on the revised script once shared by us.
 
 ## Decisions from Harsh
 - 2026-11-20: Brand asked: an answer to: Brand approved the second script. (wants third video published by 2026-11-22) · Harsh answered: Hi

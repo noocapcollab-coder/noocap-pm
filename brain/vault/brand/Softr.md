@@ -5,18 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Softr is a no code platform for building web apps from databases. They work with us directly.
+WHO: Softr is a software company providing tools to build internal applications and client portals, featuring a Vibe Coding block and Claude MCP integration. They come to us directly.
 
-CONTACTS: Kat Simonova (katerina@softr.io) is the Growth Marketer; she is the main point of contact for strategy and approvals. Tim Fisher (tim@softr.io) handles accounts payable. Copy all communications to them and collab@automateaiconsulting.com.
+CONTACTS: Kat Simonova (katerina@softr.io, Growth Marketer), Tim Fisher (tim@softr.io). Copy both when dealing with billing or deal discussions.
 
-DEALS: 
-Softr x Lindsay: Two videos delivered (September and October 2026). Rate/currency not explicitly confirmed in records. Stage: Invoiced. 
+DEALS: Softr x Lindsay | Two videos delivered, published September and 2026-10-23 | Rate: [amount]total for both videos | Stage Paid | Invoices sent 2026-10-28, paid 2026-11-24. Third video proposed at [amount](not yet agreed).
 
-HOW THEY WORK: Softr provides specific briefs including target audiences (Ops, IT, and internal team members), pain points to address, and required UTM parameters. They do not want creators to position Softr as a tool for AI/automation agencies to sell services; they prefer a focus on internal business apps, client portals, and security (logins/permissions). We must submit script, thumbnail, description, and time stamps for review. Descriptions must be optimized for AEO (question led timestamps, keywords). Only one main CTA is allowed in the description. Softr videos must be the only content published by the creator on the day of release.
+HOW THEY WORK: Scripts must be targeted toward Ops, IT roles, and managers within companies who build internal apps, rather than targeting AI and automation agencies. Do not position Softr as something you can sell as an agency or talk about making money selling apps. Focus on pain points like spreadsheets, manual processes, hiring expensive developers, and employees vibe coding without IT security. UTM links provided by Kat must be shortened and placed in the video description and the first pinned comment. Only one main CTA should be placed in the first few lines of the description (our Skool community link). Softr must be the only video going live on the publishing day.
 
-WATCH OUT: Avoid positioning Softr as a tool for agency services or selling apps. Do not include multiple CTAs in descriptions; use only the one provided by the brand. The brand prefers to see the final edited video, including screen recordings, before approval.
+WATCH OUT: Do not position Softr around agency sales or making money selling apps. Do not include multiple main CTAs at the top of the description.
 
-OPEN NOW: Waiting on Tim Fisher to process the single invoice covering the two completed videos.
+OPEN NOW: Third video proposal at [amount]is pending brand confirmation.
 
 
 ## Links

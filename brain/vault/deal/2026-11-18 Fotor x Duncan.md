@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Script Sent
-Last brand reply 2026-11-23, our last reply 2026-11-23.
+Last brand reply 2026-11-24, our last reply 2026-11-24.
 AGREED: rate: [amount]; deliverables: 1 dedicated video published on Instagram Reels, TikTok, and Facebook; usage rights: not specified; payment terms: full [amount]on a PayPal invoice after the video goes live, paid within 3 working days of the invoice; agreed dates: not specified.
 
 HISTORY:
@@ -14,10 +14,12 @@ HISTORY:
 2026-11-21 us: Sent the script for brand review.
 2026-11-22 us: Sent the signed contract.
 2026-11-23 brand: Confirmed script is submitted to their team for review.
+2026-11-24 brand: Sent a revised script for creator review and approval.
+2026-11-24 us: Confirmed revised script looks good and asked brand to submit to management.
 
 BILLING: not yet
 
-OPEN NOW: Waiting on brand: to review and approve or request changes to the script.
+OPEN NOW: Waiting on brand: management final approval of the revised script.
 
 ## Links
 - [[Duncan]]
