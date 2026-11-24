@@ -3524,3 +3524,14 @@ test('a Next Action saying the move is ours holds the follow-up even with the ca
   const src = fs.readFileSync(new URL('../lib/heartbeat.js', import.meta.url), 'utf8');
   assert.ok(/ourMove = changesOpen \|\| saysWaitingOnUs\(deal\.nextAction\)/.test(src), 'the follow-up check uses it');
 });
+
+test('two cuts of one deal go in one email, each link named by its video (CapCut x Lindsay, Nov 24)', async () => {
+  const B = await import('../lib/brandsend.js');
+  assert.equal(B.videoNumber('CapCut × Lindsay (2)'), 2);
+  assert.equal(B.videoNumber('CapCut × Lindsay'), 1);
+  assert.equal(B.videoNumber('UPFLUENCE × DUNCAN 2'), 2);
+  assert.equal(B.wrongVideoNamed('Here is the Frame.io link for the first video:', 2), true);
+  assert.equal(B.wrongVideoNamed('Here is the cut of video 2 for your review', 2), false);
+  const body = B.groupCutBody('Hi Sophie,', [{ title: 'CapCut × Lindsay (2)', frame: 'https://f.io/B' }, { title: 'CapCut × Lindsay', frame: 'https://f.io/A' }], 'Lindsay');
+  assert.match(body, /Video 1: https:\/\/f\.io\/A\nVideo 2: https:\/\/f\.io\/B/);
+});
