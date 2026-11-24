@@ -3484,3 +3484,14 @@ test('brand notes go on the card newest first, without repeating a note already 
   const src = fs.readFileSync(new URL('../lib/inbox.js', import.meta.url), 'utf8');
   assert.ok(/brand_notes: \{[^\n]*Never prices, fees or payment/.test(src), 'brand notes never carry money');
 });
+
+test('the hourly reply check skips only reactions, signing notices and out-of-office (Harsh, Nov 24)', async () => {
+  const { noReplyNeeded } = await import('../lib/unanswered.js');
+  assert.equal(noReplyNeeded('🙏  Yulia Sheremeteva reacted via Gmail <https://www.google.com/gmail/about/>'), true);
+  assert.equal(noReplyNeeded('Completed: Runway × @thechriscordero — Influencer Agreement\nAll parties have signed.'), true);
+  assert.equal(noReplyNeeded("Thanks for incorporating our feedback! The revised script looks great. Please proceed with production."), false);
+  assert.equal(noReplyNeeded('These are approved.'), false);
+  const fs = await import('node:fs');
+  const v = JSON.parse(fs.readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
+  assert.ok(v.crons.some((c) => c.path === '/api/unanswered'), 'the reply check runs on a schedule');
+});

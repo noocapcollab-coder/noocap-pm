@@ -41,6 +41,9 @@
     },
     "api/trials.js": {
       "maxDuration": 60
+    },
+    "api/unanswered.js": {
+      "maxDuration": 300
     }
   },
   "crons": [
@@ -67,6 +70,10 @@
     {
       "path": "/api/outreach",
       "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/unanswered",
+      "schedule": "31 * * * *"
     }
   ]
 }
