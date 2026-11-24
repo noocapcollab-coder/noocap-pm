@@ -1484,7 +1484,9 @@
     const c = all.find((x) => x.creator === skSel);
     $('skF').innerHTML = all.length > 1 ? all.map((x) => `<button type="button" class="${x.creator === skSel ? 'on' : ''}" data-c="${esc(x.creator)}">${esc(skCap(x.creator))}<b>${x.total_clicks}</b></button>`).join('') : '';
     $('skF').querySelectorAll('button').forEach((b) => b.onclick = () => { skSel = b.dataset.c; renderSkool(); });
-    $('skWhen').textContent = `Tracked Skool links · ${skCap(c.creator)} · last ${sk.days} days · updated ${since(sk.generated_at)}`;
+    // A creator whose link goes to a website (Valeri's Hintora, Nov 24) has no Skool group: no member boxes or chart
+    const isSkool = !!c.skoolUrl;
+    $('skWhen').textContent = `Tracked ${isSkool ? 'Skool ' : ''}links · ${skCap(c.creator)} · last ${sk.days} days · updated ${since(sk.generated_at)}`;
     const plats = (c.platforms || []).slice().sort((a, z) => { const ia = SK_ORDER.indexOf(a.platform), iz = SK_ORDER.indexOf(z.platform); return (ia < 0 ? 99 : ia) - (iz < 0 ? 99 : iz); });
     const uniq = plats.reduce((s, p) => s + p.unique, 0), M = c.members || {};
     const top = plats.slice().sort((a, z) => z.unique - a.unique)[0];
@@ -1493,9 +1495,9 @@
     $('skStats').innerHTML = stat('Link clicks', Number(c.total_clicks || 0).toLocaleString('en-US'), 'bots filtered out', 'color:var(--accent)')
       + stat('Unique visitors', uniq.toLocaleString('en-US'), 'one device per day')
       + stat('Top platform', top && top.unique ? esc(SK_NAME[top.platform] || top.platform) : '—', top && top.unique ? `${Math.round(100 * top.unique / uniq)}% of visitors` : 'no clicks yet')
-      + stat('Skool members', M.current != null ? Number(M.current).toLocaleString('en-US') : '—', sinceTxt)
+      + (!isSkool ? '' : stat('Skool members', M.current != null ? Number(M.current).toLocaleString('en-US') : '—', sinceTxt)
       + stat('New members (net)', M.net_new != null ? (M.net_new > 0 ? '+' : '') + Number(M.net_new).toLocaleString('en-US') : '—', 'all sources, minus leavers')
-      + stat('Visitors per new member', M.net_new > 0 && uniq ? (uniq / M.net_new).toFixed(1) : '—', 'our visitors ÷ net new');
+      + stat('Visitors per new member', M.net_new > 0 && uniq ? (uniq / M.net_new).toFixed(1) : '—', 'our visitors ÷ net new'));
     const maxU = Math.max(1, ...plats.map((p) => p.unique));
     const prow = plats.map((p) => `<tr><td><span class="sk-sw" style="background:${skCol(p.platform)}"></span>${esc(SK_NAME[p.platform] || p.platform)}</td><td class="num">${p.clicks}</td><td class="num">${p.unique}</td><td style="width:34%"><div class="sk-bar" style="width:${100 * p.unique / maxU}%;background:${skCol(p.platform)}"></div></td><td class="num">${uniq ? Math.round(100 * p.unique / uniq) + '%' : '—'}</td></tr>`).join('');
     const dates = skDates(sk.days);
@@ -1508,14 +1510,14 @@
       <section class="ocard"><h2>By platform <small>unique visitors per tracked link</small>${c.skoolUrl ? `<a class="more" href="${esc(c.skoolUrl)}" target="_blank" rel="noopener">Skool page ↗</a>` : ''}</h2>
         <div class="tscroll"><table><tr><th>Platform</th><th class="num">Clicks</th><th class="num">Unique</th><th>Share of visitors</th><th class="num">Share</th></tr>${prow}</table></div></section>
       <section class="ocard"><h2>Clicks per day</h2><div class="sk-leg">${series.map((s) => `<span><span class="sk-sw" style="background:${s.c}"></span>${s.n}</span>`).join('')}</div>${skChart('skC1', dates, series, 220, false)}</section>
-      <section class="ocard"><h2>New Skool members per day <small>net, from the public member count</small></h2>${(M.daily || []).length ? '' : '<div style="font-size:12px;color:var(--muted)">Collecting data. Daily numbers show up after a full day of hourly readings.</div>'}${skChart('skC2', dates, mSeries, 170, true)}</section>
+      ${!isSkool ? '' : `<section class="ocard"><h2>New Skool members per day <small>net, from the public member count</small></h2>${(M.daily || []).length ? '' : '<div style="font-size:12px;color:var(--muted)">Collecting data. Daily numbers show up after a full day of hourly readings.</div>'}${skChart('skC2', dates, mSeries, 170, true)}</section>`}
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
         <section class="ocard"><h2>Devices</h2>${dev.length ? `<table>${dev.map(([k2, v]) => `<tr><td>${esc(k2)}</td><td class="num">${v}</td><td class="num" style="color:var(--muted)">${Math.round(100 * v / devT)}%</td></tr>`).join('')}</table>` : '<div class="empty">No clicks yet</div>'}</section>
         <section class="ocard"><h2>Top countries</h2>${(c.countries || []).length ? `<table>${c.countries.map((x) => `<tr><td>${esc(x.country)}</td><td class="num">${x.clicks}</td></tr>`).join('')}</table>` : '<div class="empty">No clicks yet</div>'}</section>
       </div>
-      <section class="ocard"><h2>Links to use <small>swap these in wherever the Skool link sits now</small></h2><div class="tscroll"><table><tr><th>Use on</th><th>Link</th><th class="num">Clicks</th><th></th></tr>${links}</table></div></section>
+      <section class="ocard"><h2>Links to use <small>swap these in wherever the ${isSkool ? 'Skool link' : 'plain link'} sits now</small></h2><div class="tscroll"><table><tr><th>Use on</th><th>Link</th><th class="num">Clicks</th><th></th></tr>${links}</table></div></section>
     </div>`;
-    skHover('skC1', dates, series, 0); skHover('skC2', dates, mSeries, '—');
+    skHover('skC1', dates, series, 0); if (isSkool) skHover('skC2', dates, mSeries, '—');
     $('skBody').querySelectorAll('[data-copy]').forEach((b) => b.onclick = () => { navigator.clipboard.writeText(b.dataset.copy); b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1200); });
   }
 
