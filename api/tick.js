@@ -118,8 +118,12 @@ export default async function handler(req, res) {
       if (!cards.length) return res.status(400).json({ error: 'cards needed' });
       const O = await import('../lib/outbox.js');
       const titles = cards.map((c) => c.title);
-      const mail = await O.writeEmail({ kind: 'Script', deal, facts: { video_titles: titles, script_count: cards.length, revised: true, note: `${cards.length} revised script PDFs are attached, one per video (${titles.join(', ')}). Say the updated scripts are attached and ask them to approve or share feedback on each. Do not describe the scripts.` } });
-      const r = await O.createDraft({ kind: 'Script', deal, subject: mail.subject, body: mail.body, attach: 'Script PDF', video: cards[0].url, context: `Script cards: ${cards.map((c) => c.url).join(' ')}`, why: `Revised scripts for ${titles.join(', ')} are back at Script Approval (Harsh, Nov 20). Waiting for your Send.`, notify: true, sameAs: cards.map((c) => c.url).join(' ') });
+      // &fresh=1: a first script for a video, not a revised one (Upfluence x Duncan 2, Nov 24)
+      const fresh = req.query.fresh === '1';
+      const mail = await O.writeEmail({ kind: 'Script', deal, facts: fresh
+        ? { video_titles: titles, script_count: cards.length, note: `${cards.length > 1 ? cards.length + ' script PDFs are' : 'The script PDF is'} attached for ${titles.join(', ')}. This is a new script for ${cards.length > 1 ? 'these videos' : 'this video'}, not a revision. Say it is attached and ask them to approve it or share feedback. Do not describe the script.` }
+        : { video_titles: titles, script_count: cards.length, revised: true, note: `${cards.length} revised script PDFs are attached, one per video (${titles.join(', ')}). Say the updated scripts are attached and ask them to approve or share feedback on each. Do not describe the scripts.` } });
+      const r = await O.createDraft({ kind: 'Script', deal, subject: mail.subject, body: mail.body, attach: 'Script PDF', video: cards[0].url, context: `Script cards: ${cards.map((c) => c.url).join(' ')}`, why: fresh ? `Script for ${titles.join(', ')} (Harsh asked to send it, Nov 24). Waiting for your Send.` : `Revised scripts for ${titles.join(', ')} are back at Script Approval (Harsh, Nov 20). Waiting for your Send.`, notify: true, sameAs: cards.map((c) => c.url).join(' ') });
       return res.status(200).json({ deal: `${deal.brand} × ${deal.creator}`, titles, draft: r.id || r, created: r.created, body: mail.body });
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }

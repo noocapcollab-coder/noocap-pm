@@ -3495,3 +3495,11 @@ test('the hourly reply check skips only reactions, signing notices and out-of-of
   const v = JSON.parse(fs.readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
   assert.ok(v.crons.some((c) => c.path === '/api/unanswered'), 'the reply check runs on a schedule');
 });
+
+test('a card titled with a bare number at the end still belongs to its deal (UPFLUENCE × DUNCAN 2, Nov 24)', async () => {
+  const { isDealCardTitle } = await import('../lib/heartbeat.js');
+  assert.equal(isDealCardTitle('UPFLUENCE × DUNCAN 2', 'Upfluence', 'Duncan'), true);
+  assert.equal(isDealCardTitle('Upfluence × Duncan 1', 'Upfluence', 'Duncan'), true);
+  assert.equal(isDealCardTitle('Upfluence × Duncan (2)', 'Upfluence', 'Duncan'), true);
+  assert.equal(isDealCardTitle('Upfluence Agency × Duncan 2', 'Upfluence', 'Duncan'), false);
+});
