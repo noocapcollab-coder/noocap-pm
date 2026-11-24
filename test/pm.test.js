@@ -3547,3 +3547,11 @@ test('a new invoice can be raised from the Invoices page for any deal, billing c
   const { newInvoiceSend } = await import('../lib/invoicing.js');
   await assert.rejects(() => newInvoiceSend({ deal: 'x', amount: 0 }), /amount/);
 });
+
+test('New invoice: WhatsApp deals get a pay link to forward, email deals are emailed', async () => {
+  const { dealEmailable } = await import('../lib/invoicing.js');
+  assert.equal(dealEmailable({ channel: 'WhatsApp', threadId: '' }), false);
+  assert.equal(dealEmailable({ channel: 'Email', threadId: '1a16930a6b45dfb2' }), true);
+  assert.equal(dealEmailable({ channel: 'Email', brandEmail: 'invoices@brand.com' }), true);
+  assert.equal(dealEmailable({ channel: 'Email' }), false);
+});

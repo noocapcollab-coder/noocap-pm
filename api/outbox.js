@@ -51,7 +51,7 @@ export default async function handler(req, res) {
     if (action === 'invoice-new') {
       const I = await import('../lib/invoicing.js');
       const mode = body.mode === 'bank' ? 'bank' : 'link';
-      const out = await withRun('Send', `New invoice from the Invoices page (${mode === 'bank' ? 'bank details' : 'Stripe pay link'})`, () => I.newInvoiceSend({ deal: body.deal, amount: body.amount, note: body.note, billing: body.billing, mode }), { trigger: 'Dashboard', summarize: (r) => ({ did: [`New invoice $${r?.amount} raised and sent to ${r?.billed_to || 'the brand'}`] }) });
+      const out = await withRun('Send', `New invoice from the Invoices page (${mode === 'bank' ? 'bank details' : 'Stripe pay link'})`, () => I.newInvoiceSend({ deal: body.deal, amount: body.amount, note: body.note, billing: body.billing, mode, newDeal: body.newDeal || null }), { trigger: 'Dashboard', summarize: (r) => ({ did: [r?.emailed === false ? `New invoice $${r?.amount} raised (${r?.number || ''}) for ${r?.billed_to || 'the brand'}, pay link handed back to forward` : `New invoice $${r?.amount} raised and sent to ${r?.billed_to || 'the brand'}`] }) });
       return res.status(200).json(out);
     }
     if (action === 'deal-billing') {

@@ -2219,7 +2219,10 @@
     const open = box.dataset.open === '1';
     box.innerHTML = `<div class="rz" style="margin-bottom:12px"><div class="rz-h"><div><b>New invoice</b> <small style="color:var(--muted)">· any brand deal, any amount, also a repeat deal with a brand you already invoiced</small></div><button type="button" class="obtn" data-nitog="1">${open ? 'Close' : '+ New invoice'}</button></div>
       <div class="rz-bill" ${open ? '' : 'hidden'} data-niform="1">
-        <label>Brand deal<select data-n="deal">${pick.map((d) => `<option value="${esc(d.id)}">${esc(d.brand)} × ${esc(d.creator)}${d.created ? ' · started ' + esc(new Date(d.created).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })) : ''}${d.what ? ' · ' + esc(d.what) : ''} · ${esc(d.stage || 'no stage')}${d.invoices.length ? ' · ' + d.invoices.length + ' invoice' + (d.invoices.length > 1 ? 's' : '') + ' already' : ''}</option>`).join('')}</select></label>
+        <label>Brand deal<select data-n="deal"><option value="__new">+ A brand that isn't in the list yet</option>${pick.map((d) => `<option value="${esc(d.id)}">${esc(d.brand)} × ${esc(d.creator)}${d.created ? ' · started ' + esc(new Date(d.created).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })) : ''}${d.what ? ' · ' + esc(d.what) : ''} · ${esc(d.stage || 'no stage')}${d.invoices.length ? ' · ' + d.invoices.length + ' invoice' + (d.invoices.length > 1 ? 's' : '') + ' already' : ''}</option>`).join('')}</select></label>
+        <label data-newd hidden>Brand name<input data-nd="brand" placeholder="e.g. ElevenLabs"></label>
+        <label data-newd hidden>Creator<select data-nd="creator">${[...new Set((st.pick || []).map((d) => d.creator).filter(Boolean))].sort().map((c) => `<option ${c === invCreator ? 'selected' : ''}>${esc(c)}</option>`).join('')}</select></label>
+        <label data-newd hidden>Brand email<input data-nd="email" placeholder="where the invoice goes (leave empty to get a link to forward)"></label>
         <label>Amount (USD)<input data-n="amount" inputmode="decimal" placeholder="1700"></label>
         <label>What it's for<input data-n="note" placeholder="e.g. 1 short video, December campaign"></label>
         <div data-nprev style="font-size:12px;color:var(--muted)"></div>
@@ -2234,15 +2237,22 @@
     const form = box.querySelector('[data-niform]');
     box.querySelector('[data-nitog]').onclick = () => { box.dataset.open = open ? '0' : '1'; renderNewInvoice(st); };
     const sel = form.querySelector('[data-n="deal"]');
+    if (!box.dataset.picked && pick[0]) sel.value = pick[0].id; else if (box.dataset.picked) sel.value = box.dataset.picked;
+    const isNew = () => sel.value === '__new';
+    const dealOf = () => isNew() ? { id: '', brand: form.querySelector('[data-nd="brand"]').value.trim(), creator: form.querySelector('[data-nd="creator"]').value, email: !!form.querySelector('[data-nd="email"]').value.trim(), invoices: [], billing: null, isNew: true } : pick.find((x) => x.id === sel.value);
     const fill = () => {
-      const d = pick.find((x) => x.id === sel.value) || {}; const b = d.billing || {};
+      box.dataset.picked = sel.value;
+      form.querySelectorAll('[data-newd]').forEach((l) => { l.hidden = !isNew(); });
+      const d = dealOf() || {}; const b = d.billing || {};
       for (const i of form.querySelectorAll('[data-b]')) i.value = b[i.dataset.b] || '';
-      form.querySelector('[data-nprev]').textContent = `${d.billing ? 'Billing filled from ' + d.billing_from + '. Check it.' : 'No billing details on record for this brand yet, type them from the brand\'s email.'}${d.invoices.length ? ' Already on this deal: ' + d.invoices.join(', ') + '.' : ''}${d.rate ? ' Deal fee: ' + usd(d.rate) + '.' : ''}`;
+      form.querySelector('[data-nprev]').textContent = `${d.billing ? 'Billing filled from ' + d.billing_from + '. Check it.' : 'No billing details on record for this brand yet, type them from the brand\'s email.'}${d.invoices.length ? ' Already on this deal: ' + d.invoices.join(', ') + '.' : ''}${d.rate ? ' Deal fee: ' + usd(d.rate) + '.' : ''}${isNew() ? ' A new deal is made for this brand so the PM tracks the payment.' : d.email ? '' : ' This deal has no email thread, so you get the pay link and PDF here to forward on WhatsApp.'}`;
       const bankBtn = form.querySelector('[data-nsend="bank"]'); const ok = !!(st.bank || {})[d.creator]; bankBtn.disabled = !ok; bankBtn.title = ok ? '' : `No verified bank or PayPal details for ${d.creator} yet`;
     };
     sel.onchange = fill; fill();
+    form.querySelector('[data-nd="creator"]').onchange = fill;
     form.querySelectorAll('[data-nsend]').forEach((btn) => btn.onclick = async () => {
-      const d = pick.find((x) => x.id === sel.value); if (!d) return;
+      const d = dealOf(); if (!d) return;
+      if (d.isNew && !d.brand) { form.querySelector('[data-nmsg]').textContent = 'Type the brand name first.'; return; }
       const amount = Number(String(form.querySelector('[data-n="amount"]').value).replace(/[$,\s]/g, ''));
       const note = form.querySelector('[data-n="note"]').value.trim();
       const billing = Object.fromEntries([...form.querySelectorAll('[data-b]')].map((i) => [i.dataset.b, i.value.trim()]));
@@ -2250,13 +2260,21 @@
       if (!(amount > 0)) { msg.textContent = 'Type the amount first.'; return; }
       if (!billing.company) { msg.textContent = 'Add the company name the invoice is billed to.'; return; }
       const bank = btn.dataset.nsend === 'bank';
-      if (!confirm(`Raise ${usd(amount)} for ${d.brand} × ${d.creator} in ${d.creator}'s Stripe, billed to ${billing.company}, and email it now ${bank ? `with ${d.creator}'s bank details` : 'with the Stripe pay link'}?`)) return;
+      const how = d.email ? `and email it now ${bank ? `with ${d.creator}'s bank details` : 'with the Stripe pay link'}` : `and give you the pay link and PDF to forward${bank ? ` (with ${d.creator}'s bank details on it)` : ''}`;
+      if (!confirm(`Raise ${usd(amount)} for ${d.brand} × ${d.creator} in ${d.creator}'s Stripe, billed to ${billing.company}, ${how}?`)) return;
       form.querySelectorAll('button').forEach((b) => { b.disabled = true; }); btn.textContent = 'Sending…';
       try {
-        const r = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ action: 'invoice-new', deal: d.id, amount, note, billing, mode: bank ? 'bank' : 'link' }) });
+        const r = await fetch('/api/outbox', { method: 'POST', headers: headers(), body: JSON.stringify({ action: 'invoice-new', deal: d.id || undefined, newDeal: d.isNew ? { brand: d.brand, creator: d.creator, email: form.querySelector('[data-nd="email"]').value.trim() } : undefined, amount, note, billing, mode: bank ? 'bank' : 'link' }) });
         const j = await r.json(); if (!r.ok) throw new Error(j.error || 'Failed');
+        const res = j.result || j;
+        if (res.emailed === false) {
+          form.querySelector('.rz-go').innerHTML = `<small class="ok">✓ Invoice ${esc(res.number || '')} for ${usd(amount)} made. Send the brand this pay link:</small> <code style="user-select:all">${esc(res.link || '')}</code> <button type="button" class="obtn" data-cp>Copy link</button>${res.pdf ? ` <a class="obtn" download="Invoice ${esc(res.number || '')}.pdf" href="${res.pdf}">Download PDF</a>` : ''}`;
+          const cp = form.querySelector('[data-cp]'); if (cp) cp.onclick = () => { navigator.clipboard.writeText(res.link || ''); cp.textContent = 'Copied'; };
+          stAt = 0; loadStripeInv(true); loadHQ(true);
+          return;
+        }
         form.querySelector('.rz-go').innerHTML = `<small class="ok">✓ ${usd(amount)} invoice sent to ${esc(billing.company)} ${bank ? 'with the bank details' : 'with the Stripe pay link'}.</small>`;
-        setTimeout(() => { box.dataset.open = '0'; stAt = 0; loadStripeInv(true); loadHQ(true); }, 2500);
+        setTimeout(() => { box.dataset.open = '0'; box.dataset.picked = ''; stAt = 0; loadStripeInv(true); loadHQ(true); }, 2500);
       } catch (e) { form.querySelectorAll('button').forEach((b) => { b.disabled = false; }); btn.textContent = bank ? 'Send with bank details' : 'Send with Stripe pay link'; msg.textContent = e.message; msg.style.color = 'var(--err)'; }
     });
   }
