@@ -2736,6 +2736,15 @@ test('publish_date_confirm uses the card POST DATE and nothing else (Luma x Chri
   assert.ok(!/\{post_date\}/.test(b));
 });
 
+test('publish_date_confirm never quotes a POST DATE that has passed (ElevenLabs x Duncan, Nov 24)', async () => {
+  const { usablePostDay } = await import('../lib/replytemplates.js');
+  assert.equal(usablePostDay('2026-10-28', '2026-11-24'), '');
+  assert.equal(usablePostDay('2026-11-24', '2026-11-24'), '2026-11-24');
+  assert.equal(usablePostDay('2026-11-30T00:00:00.000Z', '2026-11-24'), '2026-11-30');
+  assert.equal(usablePostDay('', '2026-11-24'), '');
+  assert.equal(usablePostDay(undefined, '2026-11-24'), '');
+});
+
 test('one send per draft: a fresh claim from another send blocks a second send (Luma x Chris, Nov 19)', async () => {
   const { sendClaimState, claimText } = await import('../lib/outbox.js');
   const now = Date.now();
