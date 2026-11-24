@@ -369,6 +369,27 @@ export default async function handler(req, res) {
       return res.status(200).json({ created: !!r?.created, id: r?.id, reason: r?.reason });
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
+  // ?scripttobrand=1 (&dry=1): fill "Script to Brand" on cards whose deal already has a Script Sent Date and that still
+  // wait on the brand (5- Script Approval), so the cards show it now (Harsh, Nov 24)
+  if (req.query?.scripttobrand) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try {
+      const { openDeals } = await import('../lib/briefs.js');
+      const { allVideos } = await import('../lib/tools.js');
+      const { stampScriptToBrand } = await import('../lib/intake.js');
+      const { videos } = await allVideos();
+      const out = [];
+      for (const d of await openDeals({ withClosed: true })) {
+        const id = (String(d.linkedVideo || '').match(/[0-9a-f]{32}/i) || [''])[0].toLowerCase();
+        if (!id || !d.scriptSent) continue;
+        const v = videos.find((x) => String(x.id || '').replace(/-/g, '') === id);
+        if (!v || parseInt(String(v.status || ''), 10) !== 5) continue;
+        const set = req.query.dry === '1' ? 'dry' : await stampScriptToBrand(id, d.scriptSent);
+        out.push({ card: v.title, creator: v.creator, scriptSent: d.scriptSent, set });
+      }
+      return res.status(200).json(out);
+    } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
+  }
   // ?stuckposted=1 (read only): deals still before Posted whose emails show our live-post links, and posted deals with no
   // billing details (Nov 23, Emergent x Chris: posted Nov 21, never invoiced)
   if (req.query?.stuckposted) {
