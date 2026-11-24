@@ -1497,7 +1497,8 @@
       + stat('Top platform', top && top.unique ? esc(SK_NAME[top.platform] || top.platform) : '—', top && top.unique ? `${Math.round(100 * top.unique / uniq)}% of visitors` : 'no clicks yet')
       + (!isSkool ? '' : stat('Skool members', M.current != null ? Number(M.current).toLocaleString('en-US') : '—', sinceTxt)
       + stat('New members (net)', M.net_new != null ? (M.net_new > 0 ? '+' : '') + Number(M.net_new).toLocaleString('en-US') : '—', 'all sources, minus leavers')
-      + stat('Visitors per new member', M.net_new > 0 && uniq ? (uniq / M.net_new).toFixed(1) : '—', 'our visitors ÷ net new'));
+      + (() => { const grp = all.filter((x) => x.skoolUrl === c.skoolUrl), gu = grp.reduce((s, x) => s + (x.platforms || []).reduce((t, p) => t + p.unique, 0), 0);
+        return stat('Visitors per new member', M.net_new > 0 && gu ? (gu / M.net_new).toFixed(1) : '—', grp.length > 1 ? `all partners' visitors ÷ net new` : 'our visitors ÷ net new'); })());
     const maxU = Math.max(1, ...plats.map((p) => p.unique));
     const prow = plats.map((p) => `<tr><td><span class="sk-sw" style="background:${skCol(p.platform)}"></span>${esc(SK_NAME[p.platform] || p.platform)}</td><td class="num">${p.clicks}</td><td class="num">${p.unique}</td><td style="width:34%"><div class="sk-bar" style="width:${100 * p.unique / maxU}%;background:${skCol(p.platform)}"></div></td><td class="num">${uniq ? Math.round(100 * p.unique / uniq) + '%' : '—'}</td></tr>`).join('');
     const dates = skDates(sk.days);
@@ -1505,8 +1506,19 @@
     const mv = {}; (M.daily || []).forEach((r) => mv[r.day] = r.net_new);
     const mSeries = [{ n: 'Net new members', c: 'var(--accent)', v: mv }];
     const dev = Object.entries(c.devices || {}).sort((a, z) => z[1] - a[1]), devT = dev.reduce((s, x) => s + x[1], 0);
+    // Partners sharing one Skool group (Duncan and David both own Claude Code Club, Harsh Nov 25): compare their
+    // audiences side by side. The member count can't be split by audience, so the comparison is on visitors.
+    const mates = isSkool ? all.filter((x) => x.skoolUrl === c.skoolUrl) : [];
+    const uOf = (x, p) => ((x.platforms || []).find((q) => q.platform === p) || {}).unique || 0;
+    const tot = (x) => (x.platforms || []).reduce((s, p) => s + p.unique, 0);
+    const vs = mates.length < 2 ? '' : `<section class="ocard"><h2>Whose audience brings more visitors <small>${mates.map((x) => esc(skCap(x.creator))).join(' vs ')} · same Skool group, unique visitors</small></h2>
+      <div class="tscroll"><table><tr><th>Platform</th>${mates.map((x) => `<th class="num">${esc(skCap(x.creator))}</th>`).join('')}</tr>
+      ${SK_ORDER.filter((p) => mates.some((x) => (x.links || []).some((l) => l.platform === p))).map((p) => { const best = Math.max(...mates.map((x) => uOf(x, p))); return `<tr><td><span class="sk-sw" style="background:${skCol(p)}"></span>${esc(SK_NAME[p] || p)}</td>${mates.map((x) => `<td class="num" style="${best > 0 && uOf(x, p) === best ? 'color:var(--accent);font-weight:600' : ''}">${uOf(x, p)}</td>`).join('')}</tr>`; }).join('')}
+      <tr><td><b>Total</b></td>${mates.map((x) => `<td class="num"><b>${tot(x)}</b></td>`).join('')}</tr></table></div>
+      <div style="font-size:12px;color:var(--muted);margin-top:8px">Skool only shows the group's total member count, so new members can't be split between partners. Visitors per link is the fair comparison.</div></section>`;
     const links = (c.links || []).slice().sort((a, z) => SK_ORDER.indexOf(a.platform) - SK_ORDER.indexOf(z.platform)).map((l) => { const u = `${sk.linkHost}/${l.slug}`; return `<tr class="sk-link"><td><span class="sk-sw" style="background:${skCol(l.platform)}"></span>${esc(l.label || SK_NAME[l.platform])}</td><td><code>${esc(u.replace(/^https:\/\//, ''))}</code></td><td class="num">${l.clicks}</td><td class="num"><button type="button" class="obtn" style="min-height:30px;padding:0 10px;font-size:12px" data-copy="${esc(u)}">Copy</button></td></tr>`; }).join('');
     $('skBody').innerHTML = `<div class="sk-p" style="display:flex;flex-direction:column;gap:16px">
+      ${vs}
       <section class="ocard"><h2>By platform <small>unique visitors per tracked link</small>${c.skoolUrl ? `<a class="more" href="${esc(c.skoolUrl)}" target="_blank" rel="noopener">Skool page ↗</a>` : ''}</h2>
         <div class="tscroll"><table><tr><th>Platform</th><th class="num">Clicks</th><th class="num">Unique</th><th>Share of visitors</th><th class="num">Share</th></tr>${prow}</table></div></section>
       <section class="ocard"><h2>Clicks per day</h2><div class="sk-leg">${series.map((s) => `<span><span class="sk-sw" style="background:${s.c}"></span>${s.n}</span>`).join('')}</div>${skChart('skC1', dates, series, 220, false)}</section>
