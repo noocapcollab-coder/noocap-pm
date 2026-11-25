@@ -123,6 +123,12 @@ export default async function handler(req, res) {
       const mail = await O.writeEmail({ kind: 'Script', deal, facts: fresh
         ? { video_titles: titles, script_count: cards.length, note: `${cards.length > 1 ? cards.length + ' script PDFs are' : 'The script PDF is'} attached for ${titles.join(', ')}. This is a new script for ${cards.length > 1 ? 'these videos' : 'this video'}, not a revision. Say it is attached and ask them to approve it or share feedback. Do not describe the script.` }
         : { video_titles: titles, script_count: cards.length, revised: true, note: `${cards.length} revised script PDFs are attached, one per video (${titles.join(', ')}). Say the updated scripts are attached and ask them to approve or share feedback on each. Do not describe the scripts.` } });
+      // the team's NOTES on the cards go in word for word (CapCut x Brad, Nov 25)
+      try {
+        const { scriptNotes } = await import('../lib/pdf.js');
+        const notes = (await Promise.all(String(req.query.cards || '').split(',').filter(Boolean).map((id) => scriptNotes(id.trim()).catch(() => '')))).filter(Boolean).join('\n\n');
+        if (notes) mail.body = /\n(Best|Thanks|Regards|Cheers)[\s\S]*$/i.test(mail.body) ? String(mail.body).replace(/\n(Best|Thanks|Regards|Cheers)[\s\S]*$/i, (sig) => `\n\n${notes}\n${sig}`) : `${mail.body}\n\n${notes}`;
+      } catch { /* the email goes without them */ }
       const r = await O.createDraft({ kind: 'Script', deal, subject: mail.subject, body: mail.body, attach: 'Script PDF', video: cards[0].url, context: `Script cards: ${cards.map((c) => c.url).join(' ')}`, why: fresh ? `Script for ${titles.join(', ')} (Harsh asked to send it, Nov 24). Waiting for your Send.` : `Revised scripts for ${titles.join(', ')} are back at Script Approval (Harsh, Nov 20). Waiting for your Send.`, notify: true, sameAs: cards.map((c) => c.url).join(' ') });
       return res.status(200).json({ deal: `${deal.brand} × ${deal.creator}`, titles, draft: r.id || r, created: r.created, body: mail.body });
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
