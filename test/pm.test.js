@@ -3637,3 +3637,10 @@ test('platforms read from deliverables and brand emails (Nov 26)', async () => {
   assert.deepEqual(platformsFromText('One video, LinkedIn and Facebook'), ['Facebook', 'LinkedIn']);
   assert.deepEqual(platformsFromText('one sponsored video'), []);
 });
+
+test('payment due date from the brand terms (Emergent, Nov 26)', async () => {
+  const { dueFromTerms } = await import('../lib/invoicing.js');
+  assert.equal(dueFromTerms('Payment released within 15 days of receiving the invoice', { invoiceSent: '2026-11-23', said: '2026-11-26' }), '2026-12-08');
+  assert.equal(dueFromTerms('100% net 30', { invoiceSent: '2026-11-01' }), '2026-12-01');
+  assert.equal(dueFromTerms('50% upfront, 50% on publish', { invoiceSent: '2026-11-01' }), null);
+});
