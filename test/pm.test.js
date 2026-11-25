@@ -3644,3 +3644,9 @@ test('payment due date from the brand terms (Emergent, Nov 26)', async () => {
   assert.equal(dueFromTerms('100% net 30', { invoiceSent: '2026-11-01' }), '2026-12-01');
   assert.equal(dueFromTerms('50% upfront, 50% on publish', { invoiceSent: '2026-11-01' }), null);
 });
+
+test('a "please confirm that ..." in a script approval goes to Harsh (Teamily, Nov 26)', async () => {
+  const { awaitsOurConfirmation } = await import('../lib/inbox.js');
+  assert.match(awaitsOurConfirmation('1. Fix the disclosure line. 3. Please confirm that Iron Haus Fitness and Marcus are real, and that Marcus is OK being shown.'), /Iron Haus/);
+  assert.equal(awaitsOurConfirmation('Please confirm that you received the invoice.'), '');
+});
