@@ -474,6 +474,15 @@ export default async function handler(req, res) {
       const now = I.dueNow(deal);
       // &due=YYYY-MM-DD: the date the brand asked the invoice to be due (ElevenLabs, Nov 17: Net 1, due Nov 18)
       const dueDays = req.query.due ? Math.max(1, Math.ceil((Date.parse(String(req.query.due)) - Date.now()) / 864e5)) : 0;
+      // &amount=1700&for=...: an extra invoice Harsh asked for with its amount (ElevenLabs November, Nov 25)
+      // &to=email: who the email goes to; &bank=1: the creator's verified bank details printed on the PDF, pay link kept
+      if (req.query.amount) {
+        const made = await I.raiseInvoiceNow(deal.id, Number(req.query.amount), { notify: false, part: 'extra', dueDays, forWhat: String(req.query.for || '').slice(0, 300) });
+        const extra = {};
+        if (made.draft && req.query.to) { const { notion } = await import('../lib/notion.js'); await notion('PATCH', `/pages/${made.draft}`, { properties: { To: { rich_text: [{ type: 'text', text: { content: String(req.query.to).slice(0, 200) } }] } } }); extra.to = String(req.query.to); }
+        if (req.query.bank === '1') { const G = await import('../lib/invoiceguard.js'); const row = await G.verifiedRow(deal.creator); if (!row || row.unverified) extra.bank = 'not added: no verified bank details'; else { const acct = await I.creatorStripe(deal.creator); await I.stripe(acct.key, 'POST', `/invoices/${made.invoice}`, { metadata: { pdf_platform: '1' } }); extra.bank = 'on the PDF'; } }
+        return res.status(200).json({ ...made, ...extra });
+      }
       return res.status(200).json({ due: now, ...(await I.raiseInvoiceNow(deal.id, now.amount, { notify: false, part: now.part, pct: now.pct, dueDays })) });
     } catch (e) { return res.status(500).json({ error: String(e.message || e).slice(0, 300) }); }
   }
