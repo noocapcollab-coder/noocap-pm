@@ -3515,6 +3515,18 @@ test('the hourly reply check never writes a promise email or acknowledges change
   assert.ok(!EDITOR_TURN.test('Waiting for payment of INV-003'));
 });
 
+test('the hourly reply check never drafts a reply that only says thanks (morning check, Nov 25)', async () => {
+  const { hollowReply, brandAsks, promiseOnly } = await import('../lib/unanswered.js');
+  assert.equal(hollowReply("Hi Upendra,<br /><br />That is great news that the script is approved.<br /><br />Best,<br />Lindsay's Team"), true);
+  assert.equal(hollowReply("Hi Alyssa,<br /><br />Thanks for letting us know, and we'll keep an eye out for their feedback.<br /><br />Best,<br />Brad's Team"), true);
+  assert.equal(hollowReply("Hi Ana,<br /><br />Thanks so much for sending over the fully signed contract, and we are excited to work together on this. We look forward to connecting with Bruce for the brief and content details.<br /><br />Best,<br />Lindsay's Team"), true);
+  assert.equal(hollowReply("Hi Upendra,<br /><br />Please add the credits to noocaptools@gmail.com, the Luma account we use for this video.<br /><br />Best,<br />Lindsay's Team"), false);
+  assert.equal(hollowReply("Hi Natalie,<br /><br />Thanks for letting us know and for getting these approved. Could you please share your company's billing details so we can raise and send the invoice over?<br /><br />Best,<br />Lindsay's Team"), false);
+  assert.equal(promiseOnly("Hi Konan,<br /><br />Thanks for confirming. We are on it and will send the draft over as soon as it is ready for your review.<br /><br />Best,<br />Duncan's Team"), true);
+  assert.equal(brandAsks('Please share your Luma account email ID so we can add the credits.'), true);
+  assert.equal(brandAsks('Sounds good, and we look forward to seeing the first draft.'), false);
+});
+
 test('a Next Action saying the move is ours holds the follow-up even with the card at 9 (CapCut x Brad, Nov 24)', async () => {
   const { saysWaitingOnUs } = await import('../lib/heartbeat.js');
   assert.equal(saysWaitingOnUs("Waiting on us: Confirm if we accept the new brief and provide Brad's production timeline."), true);
