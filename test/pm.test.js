@@ -3664,3 +3664,10 @@ test('an ack from before this brand email never blocks it, even with no Sent row
     assert.equal(await sentRecently('ds', 't1', 'video_eta', { since: '2026-11-25T16:39:00Z' }), false);
   } finally { globalThis.fetch = old; }
 });
+
+test('a status update gets the stage acknowledgement (Holo AI, Nov 25)', async () => {
+  const { statusAckFor } = await import('../lib/replytemplates.js');
+  assert.equal(statusAckFor('Script Sent'), 'script_review_ack');
+  assert.equal(statusAckFor('Submitted'), 'draft_review_ack');
+  assert.equal(statusAckFor('Paid'), null);
+});
