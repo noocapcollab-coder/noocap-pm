@@ -280,13 +280,14 @@ test('sponsor cards: Type read from a select or a multi-select (Lindsay\'s board
   assert.equal(typeName(undefined), '');
 });
 
-test('script writer is Rudraksh and the old writer is never tagged', async () => {
+test('brand-script pings tag Harsh, never Rudraksh or the old writer (Nov 25)', async () => {
   const old = process.env.SHREYA_DISCORD_ID; process.env.SHREYA_DISCORD_ID = '111';
-  delete process.env.SCRIPTWRITER_DISCORD_ID;
+  process.env.SCRIPTWRITER_DISCORD_ID = '333'; delete process.env.SCRIPTS_TAG_DISCORD_ID;
   const { tag } = await import('../lib/briefs.js');
-  assert.equal(tag(), '@Rudraksh');
-  process.env.SCRIPTWRITER_DISCORD_ID = '222'; assert.equal(tag(), '<@222>');
-  delete process.env.SCRIPTWRITER_DISCORD_ID; if (old === undefined) delete process.env.SHREYA_DISCORD_ID; else process.env.SHREYA_DISCORD_ID = old;
+  assert.equal(tag(), '@Harsh');
+  process.env.SCRIPTS_TAG_DISCORD_ID = '222'; assert.equal(tag(), '<@222>');
+  delete process.env.SCRIPTS_TAG_DISCORD_ID; delete process.env.SCRIPTWRITER_DISCORD_ID;
+  if (old === undefined) delete process.env.SHREYA_DISCORD_ID; else process.env.SHREYA_DISCORD_ID = old;
 });
 
 test('invoice email while the AI is paused: plain text with the pay link and the creator team signature', async () => {
