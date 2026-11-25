@@ -16,3 +16,13 @@ test('a deal past the script stage, or a case with a cut sent, keeps video_feedb
   assert.equal(readerStageFixes(x(), { stage: 'Script Sent', cutSent: true }, I).event, 'video_feedback');
   assert.equal(readerStageFixes({ ...x(), from_role: 'us' }, { stage: 'Script Sent' }, I).event, 'video_feedback');
 });
+
+// Bug hunter Nov 25: kylon-publish-chase was reported BROKEN after 34fd4ee ("wanted to set the stage to Paid") though
+// production never writes a money stage from the reader (aiStage drops Invoiced/Paid), so the bank flagged a commit
+// for undoing over a stage the PM cannot set
+test('a money stage from the reader is dropped in the test bank, like production (aiStage)', () => {
+  const paid = readerStageFixes({ from_role: 'brand', event: 'brand_reply', deal_stage: 'Paid' }, { stage: 'Invoiced' }, I);
+  assert.equal(paid.deal_stage, null);
+  assert.equal(readerStageFixes({ from_role: 'brand', event: 'brand_reply', deal_stage: 'Invoiced' }, { stage: 'Posted' }, I).deal_stage, null);
+  assert.equal(readerStageFixes({ from_role: 'brand', event: 'brand_reply', deal_stage: 'Approved' }, { stage: 'Video Sent' }, I).deal_stage, 'Approved');
+});
