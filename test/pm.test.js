@@ -3627,3 +3627,13 @@ test('A payment chase held by the second check is retired after a day so reminde
   assert.equal(heldChaseToRetire('Needs you: ⚠️ a made-up detail · Invoice sent', '2026-11-20T05:16:11Z', now), false);
   assert.equal(heldChaseToRetire('Invoice sent 22 days ago. Sends on its own in 30 min unless you reject it.', '2026-11-20T05:16:11Z', now), false);
 });
+
+test('platforms read from deliverables and brand emails (Nov 26)', async () => {
+  const { platformsFromText } = await import('../lib/platforms.js');
+  assert.deepEqual(platformsFromText('1 IG reel + TikTok cross-post, no YouTube'), ['Instagram', 'TikTok']);
+  assert.deepEqual(platformsFromText('1 dedicated YouTube video'), ['YouTube']);
+  assert.deepEqual(platformsFromText('YouTube Shorts and Instagram Reels'), ['Instagram', 'YouTube Shorts']);
+  assert.deepEqual(platformsFromText('Post it on all your platforms please'), ['All platforms']);
+  assert.deepEqual(platformsFromText('One video, LinkedIn and Facebook'), ['Facebook', 'LinkedIn']);
+  assert.deepEqual(platformsFromText('one sponsored video'), []);
+});

@@ -224,6 +224,12 @@ export default async function handler(req, res) {
     try { const I = await import('../lib/inbox.js'); return res.status(200).json(await I.sendVideoChanges({ brand: String(req.query.brand || ''), creator: String(req.query.creator || ''), feedback: String(req.query.notes || '') })); }
     catch (e) { return res.status(500).json({ error: e.message }); }
   }
+  // ?platforms=1 (&dry=1): fill Platforms on open deals that have none (lib/platforms.js)
+  if (req.query?.platforms) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const P = await import('../lib/platforms.js'); return res.status(200).json({ set: await P.fillDealPlatforms({ dry: req.query.dry === '1' }) }); }
+    catch (e) { return res.status(500).json({ error: e.message }); }
+  }
   // ?missingcards=1 (&dry=1): deals owing more videos than their creator's board has cards for (lib/missingcards.js)
   if (req.query?.missingcards) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
