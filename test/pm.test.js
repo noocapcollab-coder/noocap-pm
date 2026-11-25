@@ -3671,3 +3671,10 @@ test('a status update gets the stage acknowledgement (Holo AI, Nov 25)', async (
   assert.equal(statusAckFor('Submitted'), 'draft_review_ack');
   assert.equal(statusAckFor('Paid'), null);
 });
+
+test('approval email gets the fixed script-approved reply', async () => {
+  const { approvalAck } = await import('../lib/unanswered.js');
+  assert.equal(approvalAck('Thanks for sending this over. The script is approved. The hook works well. Please go ahead and film it.'), 'script_approved_ack');
+  assert.equal(approvalAck('The script is not approved yet, a few notes below.'), null);
+  assert.equal(approvalAck('Thanks for the links, all noted.'), null);
+});
