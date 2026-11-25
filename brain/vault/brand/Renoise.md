@@ -5,24 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: Renoise, an AI app and desktop video editing software. They come to us directly through their team.
+WHO: Renoise AI app and desktop video editing workflows, working through agency NoxInfluencer.
 
-CONTACTS:
-Helen, renoise@net.noxinfluencer.com, Renoise AI Team, signs as Helen.
-Chris Cordero, collab@chriscordero.net, creator, copied on emails.
+CONTACTS: Helen, renoise@net.noxinfluencer.com, NoxInfluencer agency.
 
-DEALS:
-Chris | One initial pilot Instagram Reel promoting Renoise AI app and desktop video editing workflows | [amount]| Signed | Scheduled for the last week of December 2026.
+DEALS: Chris, one initial pilot Instagram Reel promoting Renoise AI app and desktop video editing workflows, [amount]Brief Received, scheduled for the last week of December 2026.
 
-HOW THEY WORK:
-Brand will share a campaign brief in the email thread before production to confirm creative direction.
-Must always reply all on future emails so everyone stays included.
+HOW THEY WORK: Brief and brand references provided by brand, script to be shared by us for review and approval.
 
-WATCH OUT:
-None noted yet.
+WATCH OUT: None.
 
-OPEN NOW:
-We owe: review and sign the contract, and share the script.
+OPEN NOW: We owe: share the script.
 
 
 ## Links

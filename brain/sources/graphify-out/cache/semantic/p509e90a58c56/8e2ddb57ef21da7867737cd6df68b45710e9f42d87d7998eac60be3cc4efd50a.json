@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_honeybook_honeybook", "label": "HoneyBook", "file_type": "document", "source_file": "brands/honeybook.md"}], "edges": [{"source": "brands_honeybook_honeybook", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/honeybook.md"}], "hyperedges": []}

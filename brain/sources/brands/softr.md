@@ -3,20 +3,20 @@
 Brand. Works with creators: [[Lindsay]].
 
 ## Brand wiki (from every email with them)
-WHO: Softr is a software company providing tools to build internal applications and client portals, featuring a Vibe Coding block and Claude MCP integration. They come to us directly.
+WHO: Softr is an app building platform. They come to us directly.
 
-CONTACTS: Kat Simonova (katerina@softr.io, Growth Marketer), Tim Fisher (tim@softr.io). Copy both when dealing with billing or deal discussions.
+CONTACTS: Kat Simonova (katerina@softr.io) is Growth Marketer and writes to us. Tim Fisher (tim@softr.io) handles invoice processing. Emails are signed by Lindsay or Lindsay's team. We copy collab@automateaiconsulting.com, lindsay@automateaiconsulting.com, and katerina@softr.io.
 
-DEALS: Softr x Lindsay | Two videos delivered, published September and 2026-10-23 | Rate: [amount]total for both videos | Stage Paid | Invoices sent 2026-10-28, paid 2026-11-24. Third video proposed at [amount](not yet agreed).
+DEALS: Softr x Lindsay | Two videos total delivered and published (September video and October 23 video) | Stage Paid | Dates: Invoices sent 2026-10-28, paid 2026-11-24. Third video proposed at [amount]not yet agreed.
 
-HOW THEY WORK: Scripts must be targeted toward Ops, IT roles, and managers within companies who build internal apps, rather than targeting AI and automation agencies. Do not position Softr as something you can sell as an agency or talk about making money selling apps. Focus on pain points like spreadsheets, manual processes, hiring expensive developers, and employees vibe coding without IT security. UTM links provided by Kat must be shortened and placed in the video description and the first pinned comment. Only one main CTA should be placed in the first few lines of the description (our Skool community link). Softr must be the only video going live on the publishing day.
+HOW THEY WORK: Softr sponsors videos focused on internal tools, secure apps, and vibe coding for IT, Ops, and non-technical team members rather than targeting automation or AI agencies. We must not position Softr as something you can sell as an agency or use agency-focused CTAs and thumbnail phrasing around money and what clients pay. Thumbnails should feature app interfaces, app icons, or Claude code icons rather than money. Video descriptions and time stamps must be optimized for AEO, add keywords, and use question-led timestamps. Shorten all UTM links provided by Kat before putting them in the description and first pinned comment. Only one main CTA should be in the description, ideally placed near the end (not the beginning). Softr videos must be the only video going live on the publishing day.
 
-WATCH OUT: Do not position Softr around agency sales or making money selling apps. Do not include multiple main CTAs at the top of the description.
+WATCH OUT: Do not position Softr as something you can sell as an agency or target automation and AI agencies in the content; focus on IT, Ops, and internal company use cases instead. Do not put money or client earnings on thumbnails. Do not put multiple main CTAs at the beginning of the video description. Do not publish any other video on the same day as a Softr video.
 
-OPEN NOW: Third video proposal at [amount]is pending brand confirmation.
+OPEN NOW: Nothing is pending.
 
 ## Deal with [[Lindsay]] (Paid, opened 2026-09-29)
-Last brand reply 2026-11-19, our last reply 2026-11-24.
+Last brand reply 2026-11-19, our last reply 2026-11-25.
 AGREED: Two videos total. First video published September. Second video published 2026-10-23. Rate, usage rights, and payment terms not stated in deal fields or confirmed in emails. Third video proposed at [amount](not yet agreed).
 
 HISTORY:
@@ -33,7 +33,7 @@ HISTORY:
 
 BILLING: Invoices sent 2026-10-28 for two videos. Full company billing address and details not yet provided; contacts are Kat Simonova (katerina@softr.io) and Tim Fisher (tim@softr.io). Status: payment made for [amount].
 
-OPEN NOW: If nothing is pending, say so.
+OPEN NOW: Nothing is pending.
 
 ## Inbound leads
 - Deliverables: Two sponsored videos · Next Step: Wait for Softr to process the invoice for two videos · Last Our Email: 2026-11-19 · Thread Subject: September video topics · Status: Locked · Creator: Lindsay · Type: Paid offer · Brand Email: tim@softr.io

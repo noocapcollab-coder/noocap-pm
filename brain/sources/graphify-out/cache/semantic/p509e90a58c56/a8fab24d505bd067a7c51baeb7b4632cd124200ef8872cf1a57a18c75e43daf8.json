@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_carbonado_carbonado", "label": "Carbonado", "file_type": "document", "source_file": "brands/carbonado.md"}], "edges": [{"source": "brands_carbonado_carbonado", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/carbonado.md"}], "hyperedges": []}

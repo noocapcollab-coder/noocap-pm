@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_amplecomputer_ample_computer", "label": "Ample Computer", "file_type": "document", "source_file": "brands/amplecomputer.md"}], "edges": [{"source": "brands_amplecomputer_ample_computer", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/amplecomputer.md"}], "hyperedges": []}

@@ -3,30 +3,20 @@
 Brand. Works with creators: [[Lindsay]].
 
 ## Brand wiki (from every email with them)
-WHO
-Atoms is a platform for building AI tools and automations. They come to us directly.
+WHO: Atoms is an AI tool and platform that allows users to build, remix, and deploy practical AI systems and applications (such as instant quote and deposit tools). They come to us directly.
 
-CONTACTS
-May (xiaohua su), may@atoms.dev, Brand Representative. All emails must be sent to May and CC noocapcollab@gmail.com.
+CONTACTS: Xiaohua Su (May), may@atoms.dev, brand contact, signs for them, must be copied via reply all. We must CC collab@automateaiconsulting.com and noocapcollab@gmail.com.
 
-DEALS
-Lindsay, 1 dedicated YouTube video (English) including two CTAs, [amount], stage Scripting, Publish first week of December 2026.
+DEALS: Atoms x Lindsay | 1 dedicated YouTube video (English) including two CTAs (middle and end) and a showcase of the Atoms build, [amount], Script Sent stage, agreed for first week of December 2026.
 
-HOW THEY WORK
-Process: Brand provides a brief, creator sends build ideas for approval, then creator sends script for approval.
-Script Requirements: Must show end-to-end test (homeowner quote, deposit via Stripe, booking measurement, dashboard order, cloud email notification), showcase remixing for a second business, explain pricing/profit, and preserve the creator’s storytelling style.
-Technical: Atoms credits or subscription costs must be factored into profit calculations. If AI credits are needed for the demo, May can provide a top-up.
-Black Friday: Promotion runs Nov 25 to Dec 9 (50% off plans).
-Communication: Reply all on all threads.
+HOW THEY WORK: Coordinate via email with reply all. We provide the signed contract, audience details, and build proposals. Next steps include providing the Atoms registered account email for an upgrade, drafting build ideas, script approval, and video production. Deliverables require a middle and end CTA, showing real Atoms operations and results, an end-to-end test, remixing for a second company, and a discussion of costs and profits.
 
-WATCH OUT
-The compensation clause in their legal template may state no payout; this is standard for them and does not reflect the agreed fee of [amount]. Ensure the [amount] fee is stated in discussions or finalized agreements. Use handwritten or signature-style font for signing, not typed text.
+WATCH OUT: The contract legal template contains a zero-payout clause due to company policy, but May confirmed via email that the [amount] fee agreed upon in our emails will be honored and the contract is only for internal payment processing. Sign using handwritten signature, signature image, or signature-style font rather than ordinary typed text.
 
-OPEN NOW
-We owe the revised script to May.
+OPEN NOW: Waiting on the brand to approve the revised script sent on November 25, 2026.
 
-## Deal with [[Lindsay]] (Brief Received, opened 2026-10-30)
-Last brand reply 2026-11-24, our last reply 2026-11-23.
+## Deal with [[Lindsay]] (Script Sent, opened 2026-10-30)
+Last brand reply 2026-11-24, our last reply 2026-11-25.
 AGREED: Rate: [amount]. Deliverables: 1 dedicated YouTube video (English) including two CTAs (middle and end) and a showcase of the Atoms build. Usage rights: not specified. Payment terms: not specified. Agreed dates: First week of December 2026.
 
 HISTORY:
@@ -36,10 +26,11 @@ HISTORY:
 2026-11-23 brand followed up on script status.
 2026-11-23 us proposed moving publish date to first week of December due to build delays.
 2026-11-24 brand accepted new timeline, added Black Friday promo context, and requested faster script turnaround.
+2026-11-25 us sent the revised script for review.
 
 BILLING: not yet
 
-OPEN NOW: We owe: a revised script to the brand.
+OPEN NOW: Waiting on brand: to approve the revised script.
 
 ## Inbound leads
 - Deliverables: dedicated YouTube video · Next Step: New brand: management to reply with pricing · Platforms: YouTube · Last Brand Email: 2026-11-23 · Thread Subject: Paid AI collaboration with Atoms · Status: New offer · Creator: Lindsay · Type: Paid offer · Brand Email: wujiajin@metagptx.com

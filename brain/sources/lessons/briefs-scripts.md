@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A new script at 5 goes to the brand whatever the deal stage says
+When: A video card is back at 5- Script Approval with a script the brand hasn't had, while the deal stage still shows a later step (Submitted, Approved) from an earlier round
+Do: Send the card's newest script (the part under UPDATED / REVISED SCRIPT) as the PDF, and put the team's NOTES from the card into the email word for word. Only the newest version goes in the PDF.
+Never: Never hold a script because the deal stage is stale, never put the old script or our internal notes in the PDF, and never promise the brand 'the revised script shortly' without it going out.
+Seen 1 time(s). Source: Harsh correction.
 ## A brand that hands over a brief and asks for the script has sent a brief
 When: Reading a brand email that attaches or links a brief and asks when the script will come, above all on a deal that is already posted or paid (the next reel's brief)
 Do: Read it as a brief, so the next reel gets its own deal and card and the script writer gets the brief
@@ -76,7 +81,7 @@ Seen 1 time(s). Source: Harsh correction.
 When: A deal reaches Brief Received or later, including deals opened by the system check or by hand
 Do: Make the card with the brief, link it in the deal's Linked Video and tell the script writer once. When the creator's board already has the brand's card, link that card instead of making a new one
 Never: Leave a deal with a brief and no card, so nobody is writing the script
-Seen 2 time(s). Source: Harsh correction.
+Seen 3 time(s). Source: Harsh correction.
 ## Script notes go to the card still being scripted, never to a filmed video
 When: A deal has several videos and the brand sends script notes or a script approval
 Do: Put the notes on the sibling cards at status 5 or lower (CapCut x Chris (2), (3)) and ping the script writer with those cards

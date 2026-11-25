@@ -86,6 +86,21 @@ If you still pay an SEO agency [amount] a month, this Claude prompt replaces it.
     CTA:
 Comment CLIMB and I’ll DM you the prompt. Let’s go.
 
+## 2026-11-24 TOP 5 PLUGINS FOR CLAUDE
+Type: PERSONAL. Creator: [[Valeri]].
+Hook 1:
+Five Claude Code tools that save months of building, and nobody talks about them.
+    Hook 2:
+Forget stacking 30 Claude plugins. These five run everything, and it's absolutely insane.
+    Body:
+    So First, Ponytail makes Claude write over 50% less code, which it’s like having a lazy senior dev on your team.
+    Second, Google’s Elephant Goldfish Model plans the whole spec first, then fresh reviewer agents rip out every gap before a line gets built.
+    Third, NVIDIA’s SkillSpector scans every skill before you install it, basically an antivirus for your Claude.
+    Fourth, OpenSEO plugs keyword research and rank tracking straight into Claude, so it literally does your SEO homework.
+    But here’s the crazy part — Lemo-Opuscar teaches Claude 43 film styles, so it literally directs, draws and scores a whole short film for you. Boom.
+    CTA:
+    Comment STACK and I’ll DM you all five links. Let’s go.
+
 ## 2026-11-17 FREE ALT FOR PAID APPS
 Type: PERSONAL. Creator: [[Valeri]].
 ONSCREEN HOOK:
@@ -168,19 +183,3 @@ Hook A — Founder Flex :
     - Speed reality check (292 s/token, community numbers): https://dev.to/arshtechpro/airllm-runs-a-70b-model-on-a-4gb-gpu-its-true-and-thats-not-the-interesting-part-hha
     - Kimi K3 benchmarks vs Fable 5 / GPT-5.6 Sol: https://www.eesel.ai/blog/kimi-k3
     - Kimi K3 model listing (open weights, July 16, 2026): https://epoch.ai/models/kimi-k3
-
-## 2026-11-09 30 Best Claude Plugins
-Creator: [[Valeri]].
-Hook A :
-    These are the 30 most viral Claude plugins on GitHub.
-    Hook B :
-    If you installed every viral Claude plugin, you’re literally paying for noise, so here are the only 30 worth knowing, sorted by the job they do.
-
-#### BODY:
-    If you write code, take this first row, because it makes Claude work like a senior dev — Superpowers, Matt Pocock’s skills, ECC, Karpathy skills, Ponytail and Agent Skills.
-    If you research or need to understand something big, there’s Graphify, Agent Reach, Understand Anything, Last 30 Days, CareerOps and REA.
-    If your projects are huge and your tokens keep running out, there’s gstack, Caveman, Claude Mem, Headroom, GSD and the BMAD method.
-    For design and visuals, there’s UI UX Pro Max, Taste, Archify, Impeccable, PPT Master and Diagram Design.
-    And for writing and video, there’s Skills by Anthropic, Open Montage, HyperFrames, Humanizer, I Have ADHD and Marketing Skills.
-    CTA: 
-    Comment PLUGINS and I’ll send you all 30 links. Let’s go.

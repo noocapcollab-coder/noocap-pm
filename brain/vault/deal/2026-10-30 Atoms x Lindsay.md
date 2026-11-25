@@ -1,8 +1,8 @@
 ---
 type: deal
 ---
-Stage: Brief Received
-Last brand reply 2026-11-24, our last reply 2026-11-23.
+Stage: Script Sent
+Last brand reply 2026-11-24, our last reply 2026-11-25.
 AGREED: Rate: [amount]. Deliverables: 1 dedicated YouTube video (English) including two CTAs (middle and end) and a showcase of the Atoms build. Usage rights: not specified. Payment terms: not specified. Agreed dates: First week of December 2026.
 
 HISTORY:
@@ -12,10 +12,11 @@ HISTORY:
 2026-11-23 brand followed up on script status.
 2026-11-23 us proposed moving publish date to first week of December due to build delays.
 2026-11-24 brand accepted new timeline, added Black Friday promo context, and requested faster script turnaround.
+2026-11-25 us sent the revised script for review.
 
 BILLING: not yet
 
-OPEN NOW: We owe: a revised script to the brand.
+OPEN NOW: Waiting on brand: to approve the revised script.
 
 ## Links
 - [[Atoms]]

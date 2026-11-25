@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_scispace", "label": "SciSpace", "file_type": "document", "source_file": "brands/scispace.md"}], "edges": [{"source": "brands_scispace", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/scispace.md"}], "hyperedges": []}

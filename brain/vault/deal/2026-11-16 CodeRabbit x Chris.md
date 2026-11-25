@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Script Sent
-Last brand reply 2026-11-24, our last reply 2026-11-24.
+Last brand reply 2026-11-24, our last reply 2026-11-25.
 AGREED: [amount]; 1 short-form video (Instagram Reel/TikTok) with 2 months of ad rights, paid partnership label and partnership ad code.
 
 HISTORY:

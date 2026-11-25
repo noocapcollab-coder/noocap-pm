@@ -5,15 +5,15 @@ type: brand
 
 Brand. Works with creators: [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: CodeRabbit product, coming through DevTools Academy agency.
+WHO: CodeRabbit, an AI code review tool, coming through DevTools Academy agency.
 
-CONTACTS: Riya T, riya@devtoolsacademy.com, Head of Growth at DevTools Academy; Ankur, ankur@devtoolsacademy.com; coderabbit@devtoolsacademy.com; collab@chriscordero.net.
+CONTACTS: Riya T, riya@devtoolsacademy.com, Head of Growth at DevTools Academy, signs as RT. Copy ankur@devtoolsacademy.com, coderabbit@devtoolsacademy.com, collab@chriscordero.net.
 
-DEALS: Chris x CodeRabbit: 1 short-form video (Instagram Reel or TikTok) with 2 months of ad rights, paid partnership label, and partnership ad code for [amount], stage Script Sent.
+DEALS: Chris | 1 short-form video (Instagram Reel/TikTok) with 2 months of ad rights, paid partnership label and partnership ad code for [amount] | Script Sent | Agreed Nov 2026.
 
-HOW THEY WORK: We send draft scripts via email. They review scripts and provide feedback or approval. They use a Google Doc brief.
+HOW THEY WORK: Draft script reviewed by their team. Brief link provided by brand.
 
-WATCH OUT: None listed.
+WATCH OUT: None yet.
 
 OPEN NOW: Waiting on brand to share script feedback or approval.
 

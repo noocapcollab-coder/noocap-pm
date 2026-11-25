@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Paid
-Last brand reply 2026-11-19, our last reply 2026-11-24.
+Last brand reply 2026-11-19, our last reply 2026-11-25.
 AGREED: Two videos total. First video published September. Second video published 2026-10-23. Rate, usage rights, and payment terms not stated in deal fields or confirmed in emails. Third video proposed at [amount](not yet agreed).
 
 HISTORY:
@@ -19,7 +19,7 @@ HISTORY:
 
 BILLING: Invoices sent 2026-10-28 for two videos. Full company billing address and details not yet provided; contacts are Kat Simonova (katerina@softr.io) and Tim Fisher (tim@softr.io). Status: payment made for [amount].
 
-OPEN NOW: If nothing is pending, say so.
+OPEN NOW: Nothing is pending.
 
 ## Links
 - [[Lindsay]]

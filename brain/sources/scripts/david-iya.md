@@ -13,6 +13,28 @@ So you point it at a live site or a screen recording, and it goes through the an
     CTA:
 So comment "REBUILD" and I'll get you the GitHub link plus a couple of animations worth testing it on.
 
+## 2026-11-24 CLAUDE 2.0 IN 90 SEC
+Type: PERSONAL. Creator: [[David Iya]].
+Hook 1:
+Claude 2.0 just came out, and here are the four major changes Anthropic made in under a minute.
+    Hook 2:
+Anthropic just dropped Claude 2.0, and here are the four major changes they made in under a minute.
+    Body:
+So number one is split view, which puts two sessions side by side so you're not flipping between windows. Number two is mods, small pieces of code that sit in front of Claude, so you could set one up with your brand rules and every prompt runs through it first. Then the session panel shows what each session is doing and how much context you've used, so you see the limit coming. Next is projects, still in beta for some accounts, where you talk to one Claude session and it hands the work out to its own agents and pulls back what they send.
+    CTA:
+So comment "DESKTOP" and I'll get you a quick rundown of all six features.
+
+## 2026-11-25 SAVED REELS
+Type: PERSONAL. Creator: [[David Iya]].
+Hook 1:
+If you've got like 200 saved reels you're probably never going to open again, Claude can sort through the whole pile for you with one prompt.
+    Hook 2:
+When did you last open your saved reels folder, because if it's been more than 30 days, there's a much better place for those reels to go.
+    Body:
+So typically when you see a reel worth keeping you hit save, and it just sits in a folder you never open again. Instead, you share it over to an app called Recall, which pulls out what's actually said in it. Then like a month later you can search for it by what the person actually explained, rather than scrolling through 200 saves trying to remember who posted it.
+    CTA:
+So comment "SORT" and I'll get you the exact setup.
+
 ## 2026-11-18 OPEN JARVIS - 2
 Type: PERSONAL. Creator: [[David Iya]].
 Hook 1:
@@ -72,32 +94,3 @@ Number one is Ponytail, which trims what Claude Code outputs so you typically us
     CTA:
 Comment "SEND" and I'll get you all five links and the order I'd install them in.
     - Sub-page: [[The Top 5 Claude Code Plugins (All 5 Links + The Order I'd Install Them)]]
-
-## 2026-11-18 ASK CLAUDE YOUR SECRET
-Type: PERSONAL. Creator: [[David Iya]].
-On-screen text:
-    Claude knows you better than you do 👀
-    Hook 1:
-There’s a test going around right now where you ask Claude what it’s figured out about you, and people who try it say it brings up things they never actually told it.
-    Hook 2:
-Claude can show you where your life is headed in five years if nothing changes, and it does it using only what you’ve told it in your chats.
-    Body:
-So the one everyone’s sharing is where Claude maps out your next five years assuming nothing changes, and then a second version where you fix the thing that’s held you back the longest, with both laid out side by side. But that one typically lands harder after two warm-up prompts, so the first asks Claude to name five things it’s worked out about you that you never actually said, and to be blunt about it, and the second asks how you make decisions and what you keep putting off. You need memory switched on in Claude, and it works in ChatGPT too, but it’s only reading your chats, so it’ll probably get some of it wrong.
-    CTA:
-Comment “SECRET” and I’ll get you all three prompts written out so you can paste them in.
-    - Sub-page: [[Ask Claude What It Knows About You: The 3 Prompts (Copy + Paste)]]
-
-## 2026-11-17 CLAUDE KILLED INSTAGRAM
-Type: PERSONAL. Creator: [[David Iya]].
-On-Screen Hook:
-    Claude just killed Instagram 💀
-    Hook 1:
-Claude just killed Instagram, because it can now basically run your entire Instagram content for you.
-    Hook 2:
-Someone just dropped a free Claude skill that runs your entire Instagram for you.
-    Body:
-So it’s really like 11 smaller skills in one pack, and each one handles its own piece, so one drafts posts from a library of hook formats and another goes through your profile and suggests what to fix. But the one I’d actually start with is virality, because it goes through the reels doing best in your niche and works out why their hooks landed, and then it writes you an original script built on that, in your voice. Then the planning skill maps out your week around that script, which typically saves the most time, and setup is just giving Claude the link.
-    CTA:
-Comment “REELS” and I’ll get you the skill pack.
-    SKILL NAME: Instagram Agent Skill 
-    - Sub-page: [[The Instagram Agent Skill Pack: Let Claude Run Your Content (Repo + Setup + Order to Use)]]

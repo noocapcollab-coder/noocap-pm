@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_photoroom_photoroom", "label": "Photoroom", "file_type": "document", "source_file": "brands/photoroom.md"}], "edges": [{"source": "brands_photoroom_photoroom", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/photoroom.md"}], "hyperedges": []}

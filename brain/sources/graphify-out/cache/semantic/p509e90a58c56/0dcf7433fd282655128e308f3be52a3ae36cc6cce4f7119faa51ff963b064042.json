@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_manymotions_manymotions", "label": "ManyMotions", "file_type": "document", "source_file": "brands/manymotions.md"}], "edges": [{"source": "brands_manymotions_manymotions", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/manymotions.md"}], "hyperedges": []}

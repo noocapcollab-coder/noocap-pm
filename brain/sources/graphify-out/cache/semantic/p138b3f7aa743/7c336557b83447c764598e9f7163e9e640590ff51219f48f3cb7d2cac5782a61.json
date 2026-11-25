@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_foneclaw_foneclaw", "label": "FoneClaw", "file_type": "document", "source_file": "brands/foneclaw.md", "_origin": "semantic"}], "edges": [{"source": "brands_foneclaw_foneclaw", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/foneclaw.md", "_origin": "semantic"}], "hyperedges": []}

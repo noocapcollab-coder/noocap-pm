@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A fee the brand already scheduled through a partner platform needs no invoice
+When: A video is approved or posted and the thread shows the brand set up the payment itself through a partner or affiliate platform (Awin and similar), e.g. 'your payment is scheduled for July 14th, net payment terms in Awin'
+Do: Read the whole thread for how the fee is paid before asking anything. Record 'Paid through <platform>' in the deal's BILLING line, leave the deal without an invoice, and ask Harsh once whether the platform payment landed.
+Never: Ask such a brand for company billing details, draft an invoice for it, or flag it as 'posted, no invoice'. Never reply to a plain 'these are approved' with a billing ask.
+Seen 1 time(s). Source: System check.
+## A revised invoice belongs to the deal whose invoice it replaces
+When: A brand asks for a revised or corrected invoice while two deals with them share one email thread
+Do: Check which video the brand's email is about ("payment for the first video", the old invoice number) and record the revised invoice and its payment on that deal. Keep the other deal unpaid and uninvoiced until its own invoice goes out.
+Never: Never file a revised invoice on the newest deal in the thread just because it is the newest, and never mark a deal Paid from a payment that settled another deal's invoice.
+Seen 1 time(s). Source: Harsh correction.
 ## Brand asked for the invoice but the deal had no fee, and the fee was in the signed contract
 When: A brand asks for the invoice and Final Rate USD is empty
 Do: Read the fee from the signed contract linked to the deal (CONTRACTS file) and from the thread, set Final Rate USD, and draft the invoice for Harsh's Send. Only ask Harsh when neither has an amount.
@@ -11,7 +21,7 @@ Seen 1 time(s). Source: Harsh correction.
 When: An invoice is unpaid and the 3/5/9 weekday reminder is due
 Do: Send the reminder on schedule; anything that would have held it (live link owed, unanswered brand email, a payment date they gave, a 'we paid' claim) goes into the email's wording
 Never: Never hold, skip, auto-reject or block a payment reminder, in the PM, the second check or the system check
-Seen 1 time(s). Source: Harsh correction.
+Seen 2 time(s). Source: Harsh correction.
 ## A posted video must always end up invoiced: record the post and read billing details from files
 When: We email the brand that the video is live with its links, or the brand sends billing details as a screenshot or PDF
 Do: Save the live links and move the deal to Posted from our own email; read billing details from image/PDF attachments when the email talks about billing
@@ -104,8 +114,8 @@ Never: Never set Invoiced or Paid from the AI's reading of an email, and never l
 Seen 2 time(s). Source: Harsh correction.
 ## Stop chasing billing details after 3 reminders or when the brand pays through a platform
 When: The video is posted and the invoice needs the brand's company details
-Do: Count Billing Reminders Sent. At 3, stop and tell Harsh once. If the brand pays through Gusto, Faved, creator.co or a similar portal, use that portal and don't ask for invoice details. Never nudge while our own latest email in the thread is still unanswered.
-Never: Draft a 4th billing reminder, or a reminder hours after our last email.
+Do: Since Harsh, Nov 24 (code 422745a: "why do I have to remind you again and again"), the billing-details ask is repeated every 3 days with no cap until the details arrive, Polar x Valeri included. Never nudge while our own latest email in the thread is still unanswered, and never put a billing ask inside a follow-up or cut email.
+Never: Draft a billing reminder hours after our last email, or inside another email. Do not reject a plain billing reminder for its count or because the brand once mentioned a portal.
 Seen 2 time(s). Source: System check.
 ## A claimed payment needs proof
 When: A brand says 'we've already paid' with nothing attached

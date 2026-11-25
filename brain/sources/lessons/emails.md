@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A brand waiting on our confirmation of a date or plan is a question for Harsh
+When: A brand email says it is waiting for us to confirm something before it moves (once you confirm the go-live date, please confirm Chris is available on the 3rd)
+Do: Mark it as needing our info and ask Harsh once on WhatsApp for the confirmation, quoting the brand's sentence
+Never: Never treat it as a plain brief or brand reply that needs nothing from us, and never answer the date ourselves
+Seen 1 time(s). Source: System check.
 ## A brand's script approval always gets a reply
 When: The brand approves the script and asks us to go ahead, with nothing else to answer
 Do: Send the script_approved_ack fixed reply (thanks, moving into production, first draft within 3 to 4 working days) in the thread right after the approval is handled.
@@ -22,11 +27,11 @@ When: A brand goes quiet on a follow-up, an on-hold check-in or an unpaid invoic
 Do: Keep sending on the 3 / 5 / 9 weekday gaps, then every 9 weekdays, until they answer or pay
 Never: Never stop after a set number of follow-ups or reminders and hand the deal back to Harsh
 Seen 1 time(s). Source: Harsh correction.
-## Never leave an email with only a greeting and a sign-off
-When: A guard takes made-up details, filler or a foreign link out of a draft and little or nothing is left
-Do: Write the email again saying what it is for (for a script: the script is attached for their review) and leave out only the part we have no facts for; the missing fact goes to Harsh
-Never: Never save or send a draft whose body is just 'Hi X,' and 'Best, X's Team'
-Seen 1 time(s). Source: System check.
+## Never send an email that says nothing beyond a greeting, thanks and a sign-off
+When: A guard takes made-up details, filler or a foreign link out of a draft and little is left, or a reply is written to a brand email that only acknowledges something or asks for a fact only Harsh has
+Do: Write the email again saying what it is for and leave out only the part we have no facts for; the missing fact goes to Harsh. If the brand only acknowledged ("sounds good", "thanks for the update"), write no reply at all. If the brand asked for something only Harsh has (an account email, a date), ask Harsh instead of sending thanks.
+Never: Never save or send a draft whose body is just 'Hi X,' and 'Best, X's Team', or only 'thanks / great news / we'll keep an eye out / we look forward'
+Seen 3 time(s). Source: System check.
 ## A draft the last send check refuses goes to Harsh once, it is not retried forever
 When: Autopilot tries to send a waiting draft and a pre-send check refuses it ("Not sent: ...", e.g. the scripts already went, someone already replied, wrong amount)
 Do: Mark the draft Needs you with the reason the check gave and post one hold card, so Harsh decides and Approvals stops saying it will send on its own
@@ -241,7 +246,7 @@ Seen 4 time(s). Source: System check.
 When: A cut or script went to the brand, they sent changes (or asked for a reshoot or a revised script), and our team is working on it, even if the card or deal stage still says we are waiting on them.
 Do: Treat the EDIT TRACKER row on Changes (or a Next Action like "editor making the brand's changes" or a reshoot) as our move. Send the revised cut when it is done; if it is late, tell Harsh once.
 Never: Never send the brand a check-in that only repeats our last email or promises the cut 'in the next few days'.
-Seen 3 time(s). Source: System check.
+Seen 4 time(s). Source: System check.
 ## A follow-up counts from the brand's newest message, in any inbox
 When: A brand writes on a deal from or to the creator's own inbox (not the noocapcollab thread), e.g. 'sent it to the client for review'
 Do: Record that message on the deal (Last Brand Reply, memory) and wait 3 days from it before a gentle nudge that acknowledges what they said.
@@ -306,4 +311,4 @@ Seen 3 time(s). Source: Rulebook.
 When: Writing any email
 Do: Give the thing if we have it, otherwise leave the promise out.
 Never: Write 'shortly', 'within a few hours', 'we'll send it today', [DATE], [name] or invented dates.
-Seen 22 time(s). Source: Rulebook.
+Seen 23 time(s). Source: Rulebook.

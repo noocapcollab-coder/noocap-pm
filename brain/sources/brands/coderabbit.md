@@ -3,20 +3,20 @@
 Brand. Works with creators: [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: CodeRabbit product, coming through DevTools Academy agency.
+WHO: CodeRabbit, an AI code review tool, coming through DevTools Academy agency.
 
-CONTACTS: Riya T, riya@devtoolsacademy.com, Head of Growth at DevTools Academy; Ankur, ankur@devtoolsacademy.com; coderabbit@devtoolsacademy.com; collab@chriscordero.net.
+CONTACTS: Riya T, riya@devtoolsacademy.com, Head of Growth at DevTools Academy, signs as RT. Copy ankur@devtoolsacademy.com, coderabbit@devtoolsacademy.com, collab@chriscordero.net.
 
-DEALS: Chris x CodeRabbit: 1 short-form video (Instagram Reel or TikTok) with 2 months of ad rights, paid partnership label, and partnership ad code for [amount], stage Script Sent.
+DEALS: Chris | 1 short-form video (Instagram Reel/TikTok) with 2 months of ad rights, paid partnership label and partnership ad code for [amount] | Script Sent | Agreed Nov 2026.
 
-HOW THEY WORK: We send draft scripts via email. They review scripts and provide feedback or approval. They use a Google Doc brief.
+HOW THEY WORK: Draft script reviewed by their team. Brief link provided by brand.
 
-WATCH OUT: None listed.
+WATCH OUT: None yet.
 
 OPEN NOW: Waiting on brand to share script feedback or approval.
 
 ## Deal with [[Chris]] (Script Sent, opened 2026-11-16)
-Last brand reply 2026-11-24, our last reply 2026-11-24.
+Last brand reply 2026-11-24, our last reply 2026-11-25.
 AGREED: [amount]; 1 short-form video (Instagram Reel/TikTok) with 2 months of ad rights, paid partnership label and partnership ad code.
 
 HISTORY:
@@ -35,4 +35,4 @@ BILLING: not yet
 OPEN NOW: Waiting on brand: to share script feedback or approval.
 
 ## Inbound leads
-- Deliverables: Short-form video · Contact Name: Riya · Next Step: Deal opened by system check 2026-11-16 (brief came Oct 29); reply to Riya waiting in Approvals · Platforms: Instagram, TikTok, YouTube Shorts · Last Our Email: 2026-11-24 · Deal: 1 linked · Last Brand Email: 2026-11-17 · Thread Subject: Collaboration Opportunity · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: riya@devtoolsacademy.com
+- Deliverables: Short-form video · Contact Name: Riya · Next Step: Deal opened by system check 2026-11-16 (brief came Oct 29); reply to Riya waiting in Approvals · Platforms: Instagram, TikTok, YouTube Shorts · Last Our Email: 2026-11-25 · Deal: 1 linked · Last Brand Email: 2026-11-17 · Thread Subject: Collaboration Opportunity · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: riya@devtoolsacademy.com

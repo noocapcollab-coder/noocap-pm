@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_tigerlesslabs", "label": "Tigerless Labs", "file_type": "document", "source_file": "brands/tigerlesslabs.md"}], "edges": [{"source": "brands_tigerlesslabs", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/tigerlesslabs.md"}], "hyperedges": []}

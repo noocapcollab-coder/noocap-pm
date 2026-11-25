@@ -2,6 +2,16 @@
 
 The final scripts of videos posted in the last 60 days, as filmed.
 
+## 2026-11-24 Higgsfield × Lindsay
+Creator: [[Lindsay]].
+You've got three days three days of unlimited images and videos inside Claude before it switches over to usage credits, so here are the four things I'd build before that happens.
+    Number one, I gave Claude five websites I'm obsessed with and it built mine in that exact style, because web design is where Claude really shows off.
+    Number two is my favorite, because I had Claude edit my own Reel with Higgsfield Shorts Studio and it cut every single word and dropped in a fresh graphic every two seconds — you just type slash shorts-studio.
+    Number three, I made a four K film scene with Higgsfield Seedance two point five, and if you want to make an AI film in twenty twenty-seven, start with a shot like this.
+    And number four, I took one plain product photo and turned it into a GTA-style ad, so here are the exact commands behind this shot.
+    Here's the thing — you can try every one of these yourself by connecting Higgsfield MCP to Claude, and new users get three days of free, unlimited generation plus seventy percent off in the Black Friday sale.
+    If you want the Black Friday sale link, comment BLACK FRIDAY and I'll send it over — just make sure you're following so you actually see my DM.
+
 ## 2026-11-19 CLAUDE KILLED SOCAIL MEDIA
 Type: PERSONAL. Creator: [[Lindsay]].
 [ONSCREEN HOOK]
@@ -12,6 +22,27 @@ Claude can now scroll social media for you and pull every customer you want, all
 Forget hiring for lead gen — there’s a Claude skill that scrolls social media for you and finds people along with the exact pain they’re complaining about
     [BODY]
     Here's how it works. Type slash lead finder in Claude, paste your website link, and it scans thousands of profiles across every social platform. You get the pain they're complaining about, the dream they're chasing, and the objection they're stuck on — in their exact words. Then it finds their email and writes outreach that sounds like you already know them. It installs as one skill, and it breaks into four: a scraper, a profile builder, an email finder and a sender. If you want the skill, Comment "CUSTOMER" below and I'll send it over.
+
+## 2026-11-23 UNSLOP
+Type: PERSONAL. Creator: [[Lindsay]].
+[ON SCREEN HOOK]
+[amount] websites now cost [amount]    [HOOK 1]
+Forget hiring a web designer — Claude Code just made ten-thousand-dollar websites cost zero with this free skill.
+    [HOOK 2]
+Someone turned a real designer into a Claude skill, and it makes any website look like it cost ten thousand dollars
+    [BODY]
+    Paste your website link into Claude Code, type slash unslop, and it scans the whole page for every AI tell, like the purple gradients and the random emojis that make a site look generated. Then it pitches you a design direction based on your actual product and reworks the spacing, the icons, the copy and the colors into one system that fits it. Here’s the thing — it works top to bottom the way a real designer does a review pass, and it works on sites you’ve already shipped, so you don’t have to start over. It’s called Unslop, and it was built by a real designer who gets paid to do this exact job by hand.
+    [CTA]
+    Comment "UNSLOP" below and I'll send it over. 
+
+    - Keyword: UNSLOP
+    - Guide: Unslop Guide
+    Instagram / Facebook caption: Unslop is a free Claude Code skill that reviews your website for every sign it was made with AI, and then it reworks the spacing, colors, icons and copy into one design that fits your product. It even works on a site you already launched, so you don't have to start from scratch. Comment "UNSLOP" and I'll send it over.
+Follow me so the DM can reach you.
+#claudecode #webdesign #aitools #claudeai #websitedesign #vibecoding
+    TikTok caption: This free Claude Code skill finds everything that makes your website look AI-made and fixes it the way a designer would. DM me "UNSLOP" and I'll send it over.
+#claudecode #webdesign #aitools #claudeai
+    YouTube Shorts title: This Free Claude Code Skill Makes Your Website Stop Looking
 
 ## 2026-11-19 7 DAYS 7 AI CERTIFICATES
 Type: PERSONAL. Creator: [[Lindsay]].
@@ -61,34 +92,3 @@ Forget using Claude at ten percent capacity — this free Mod rewrites every pro
 Open Claude, go to Code, start a new chat, and paste this prompt. In a few seconds it drops a Prompt Master button right into your chat. Type whatever you want, hit the button, and before Claude answers, it asks follow-ups if it needs them, rewrites your prompt in the best prompting framework, then runs it. If you're new to AI, this saves you hours inside Claude and 10x's what your AI can do. It works because Anthropic quietly rolled out a feature called Mods that lets you customize Claude end to end with one prompt.
     [CTA]
 Comment "PROMPT" below and I'll send you the exact prompt plus the setup guide.
-
-## 2026-11-10 Kill AI SLOP
-Type: PERSONAL. Creator: [[Lindsay]].
-[HOOK 1] 
-    Forget hiring designers, this one skill turns plain Claude Code sites into ten-thousand-dollar designs.
-    [HOOK 2]
-    Your AI website looks like AI slop, and clients can tell. This free skill fixes it with Apple’s own design rules.
-    [BODY]
-    I installed a skill that took seventeen rules from Apple’s WWDC design talks, and now Claude follows them every time it builds. My headlines got tighter letter spacing and the body text finally has room to breathe. Buttons react the instant you tap them, and menus open right from the button you pressed. Then I pointed it at a site I’d already built, and it reviewed the whole thing like an Apple designer would.
-    It’s one command to install, and it’s called apple-design, by Emil Kowalski, a design engineer who’s worked at Vercel and Linear.
-    That creates a site like this.
-    [CTA]
-    Comment “POLISH” below and I’ll send you the skill.
-    Resources
-    - Skill file: https://github.com/emilkowalski/skills/blob/main/skills/apple-design/SKILL.md
-    - Full repo (more design skills): https://github.com/emilkowalski/skills
-
-## 2026-11-16 [amount]AI Agency Claude
-Type: PERSONAL. Creator: [[Lindsay]].
-[HOOK 1]
-    Someone just dropped a free GitHub repo that gives you a full AI agency, with over two hundred specialists inside it.
-    [HOOK 2]
-    Stop paying an agency thirty-eight thousand dollars a year. Over two hundred AI specialists are sitting free on GitHub.
-    [BODY]
-    Inside you’ll find an SEO Specialist that handles the technical SEO agencies charge around [amount]a month for, and an Ad Creative Strategist that writes your Meta and Google ads. There’s a Reddit Community Builder that plans out your posts and a Frontend Developer that builds the site, and every one of them comes with its own personality and way of working. A free desktop app installs over two hundred of these into Claude Code in one click, so you’ve basically got a whole team ready for whatever a client asks for.
-    [CTA]
-    Comment “ROSTER” below and I’ll send you the links.
-    resources:
-    - GitHub repo (200+ agents): https://github.com/msitarzewski/agency-agents
-    - Desktop app download (Mac / Windows / Linux): https://github.com/msitarzewski/agency-agents-app/releases/latest
-    - App site: https://agencyagents.app

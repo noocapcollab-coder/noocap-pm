@@ -1,7 +1,7 @@
 ---
 type: deal
 ---
-Stage: Brief Received
+Stage: Posted
 Last brand reply none, our last reply none.
 AGREED:
 Rate: not known yet.

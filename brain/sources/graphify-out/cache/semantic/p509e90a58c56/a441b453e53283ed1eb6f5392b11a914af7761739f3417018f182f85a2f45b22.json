@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_enclaverse_enclaverse", "label": "Enclaverse", "file_type": "document", "source_file": "brands/enclaverse.md"}], "edges": [{"source": "brands_enclaverse_enclaverse", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/enclaverse.md"}], "hyperedges": []}

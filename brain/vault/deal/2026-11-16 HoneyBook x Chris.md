@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Script Approved
-Last brand reply 2026-11-24, our last reply 2026-11-24.
+Last brand reply 2026-11-24, our last reply 2026-11-25.
 AGREED:
 Rate: per deal fields
 Deliverables: per deal fields
@@ -19,12 +19,13 @@ HISTORY:
 2026-11-24 us: acknowledged notes and stated revised script is in progress
 2026-11-24 us: sent revised script
 2026-11-24 brand: sent comments in the doc on the revised script
+2026-11-25 us: acknowledged feedback and confirmed starting video production
 
 BILLING:
 not yet
 
 OPEN NOW:
-We owe: incorporate brand comments from the doc and proceed with filming.
+We owe: Film and edit the video.
 
 ## Links
 - [[Chris]]

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_eva_eva", "label": "EVA", "file_type": "document", "source_file": "brands/eva.md", "_origin": "semantic"}], "edges": [{"source": "brands_eva_eva", "target": "lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/eva.md", "_origin": "semantic"}], "hyperedges": []}

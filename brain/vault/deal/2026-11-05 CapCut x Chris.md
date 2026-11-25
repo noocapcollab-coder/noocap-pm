@@ -2,25 +2,24 @@
 type: deal
 ---
 Stage: Posted
-Last brand reply 2026-11-23, our last reply 2026-11-24.
+Last brand reply 2026-11-25, our last reply 2026-11-25.
 AGREED: Rate: [amount]. Deliverables: 3 short-form videos. Usage rights: not stated. Payment terms: not stated. Agreed dates: video two publication deadline November 26, Beijing Time. Signed contract via GrowMaxValue agency.
 
 HISTORY:
 2026-11-05 us / Brief received, contract signed.
 2026-11-16 brand / Approved video one, shared posting requirements.
-2026-11-17 brand / Provided revision notes for second script and new brief for third.
-2026-11-19 us / Sent Instagram and Facebook links for the published first video.
-2026-11-19 us / Confirmed the CapCut UTM link and provided the 60-day ad codes.
 2026-11-20 us / Sent revised scripts for videos two and three for brand review.
-2026-11-21 brand / Approved second script, asked to start filming, noted third script is still incorrect and needs revision per brief.
-2026-11-22 us / Acknowledged second script approval, confirmed filming is proceeding, and stated revised third script and draft will follow.
-2026-11-23 us / Sent the first draft of the second video for review, and reported that the third brief is inaccessible.
-2026-11-23 brand / Approved second video draft, resent third brief, and requested publication and 60-day ad code for video two.
-2026-11-24 us / Sent the live link and 60-day ad code for the published second video, and stated the third script will be shared shortly.
+2026-11-21 brand / Approved second script, noted third script needs revision.
+2026-11-23 us / Sent first draft of second video, reported third brief inaccessible.
+2026-11-23 brand / Approved second video, resent third brief.
+2026-11-24 us / Published second video, sent link and ad code.
+2026-11-25 us / Requested billing details, submitted revised third script.
+2026-11-25 brand / Provided tax forms and company info, requested engagement boost on first video.
+2026-11-25 us / Acknowledged tax forms and engagement request, stated we will complete the forms and boost engagement.
 
-BILLING: not yet
+BILLING: Brand provided company info and tax forms on 2026-11-25. Invoice status: not yet.
 
-OPEN NOW: Waiting on brand: review of the third script once provided.
+OPEN NOW: We owe: Fill out tax forms and boost engagement on the first video. Waiting on brand: Review of the third script.
 
 ## Links
 - [[CapCut]]

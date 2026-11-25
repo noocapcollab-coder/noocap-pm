@@ -45,4 +45,4 @@ BILLING: Company: Emergent Labs Inc. Invoice email: not yet. Address: not yet. I
 OPEN NOW: We owe: Send the reel analytics. Waiting on brand: Payment of invoice INV-008 ([amount]) within Net 15 terms and review of the new script sent on Nov 23.
 
 ## Inbound leads
-- Deliverables: 1 short-form video shared across platforms (Reel/TikTok) · Contact Name: Mitali · Next Step: New brand: management to reply with pricing · Platforms: Instagram, TikTok, YouTube · Last Brand Email: 2026-11-24 · Thread Subject: Paid Collaboration Opportunity | Emergent X Chris Cordero · Status: New offer · Creator: Chris · Type: Paid offer · Brand Email: mitali@emergent.sh
+- Deliverables: 1 short-form video (Reel/TikTok) shared across all platforms · Contact Name: Mitali · Next Step: Replied 2026-11-25, waiting on the brand · Platforms: Instagram, TikTok, YouTube · Last Our Email: 2026-11-25 · Last Brand Email: 2026-11-25 · Thread Subject: Paid Collaboration Opportunity | Emergent X Chris Cordero · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: mitali@emergent.sh

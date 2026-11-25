@@ -8,17 +8,17 @@ Show the terminal interface instead of the web/app Claude UI for the prompt bein
 Brand thanks us for the revised cut and natural typing sequence.
 Requests one last adjustment to show the terminal interface for Claude Code instead of the web/app UI.
 
+## 2026-11-14 Dreamina × Chris (Artist Team)
+Brand: [[Dreamina]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 3.
+Revise the hashtags to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner
+Brand asked to revise hashtags for the video to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner
+
 ## 2026-11-09 Inworld AI × Chris
 Brand: [[Inworld]]. Creator: [[Chris]]. Editor: Prabal. Revisions: 1.
 Inworld's notes on the cut:
 Fix the subtitle that says "nWorld": it should say "Inworld" (capital I, no caps on the W).
 Add the Inworld logo into the video where it fits best. Logos (several formats): https://drive.google.com/drive/folders/1CWMEKkvMGAxr9L5EPypkevKCYmkjXr9v?usp=drive_link
 Everything else is approved ("This is great now, some really minor asks").
-
-## 2026-11-14 Dreamina × Chris (Artist Team)
-Brand: [[Dreamina]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 3.
-Revise the hashtags to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner
-Brand asked to revise hashtags for the video to: #Dreamina #MarketingStudio #HireDreamina #Seedance #DreaminaPartner
 
 ## 2026-11-04 CapCut x ChatGPT
 Brand: [[CapCut]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_kleo_kleo_ai", "label": "Kleo AI", "file_type": "document", "source_file": "brands/kleo.md"}], "edges": [{"source": "brands_kleo_kleo_ai", "target": "chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/kleo.md"}], "hyperedges": []}

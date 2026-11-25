@@ -3,50 +3,47 @@
 Brand. Works with creators: [[Lindsay]], [[Chris]], [[Duncan]], [[Brad]].
 
 ## Brand wiki (from every email with them)
-WHO
-Luma AI is an AI-powered video creation platform. They work with us both directly and through agencies. NJ Agency is the primary point of contact for Lindsay and Chris. Faved manages the agency relationship for Duncan.
+WHO: Luma AI, a generative AI video platform. They come to us directly and through the agency Faved.
 
-CONTACTS
-Upendra Singh, upendra@njagency.co, Campaign Head at NJ Agency (for Lindsay and Chris).
-Faved, creators@faved.com (for Duncan).
+CONTACTS: Upendra Singh, upendra@njagency.co, Campaign Head at NJ Agency; Faved, creators@faved.com, sponsorship platform.
 
-DEALS
-Lindsay: One video production and publication, due by November 30, 2026. Stage: Script Sent.
-Chris: Reel + Story repost, [amount]. Stage: Posted.
-Duncan: Draft script, 60-day usage rights for social media ads (no YouTube ad codes/rights). Stage: Signed.
-Brad: One video production. Stage: Posted.
+DEALS:
+Luma AI x Lindsay, One video production and publication, Rate not stated, Script Approved, Completion and publication before December 30, 2026.
+Luma AI x Chris, Reel + Story repost, Rate [amount], Posted, Reel went live on November 21, 2026.
+Luma AI x Duncan, Draft script, Rate and payment terms not stated, Signed, Usage rights: 60-day for Instagram/TikTok/other paid ads and dark ads; YouTube crossposting allowed but no YouTube paid ad rights or ad codes.
+Luma AI x Brad, One video (script approved), Rate not known yet, Posted, Dates not known yet.
 
-HOW THEY WORK
-Brands provide a brief, script, and/or tracking links. For sponsored content, they require specific CTAs, comment-to-DM automation setups, and tagging of @lumalabsai in Reels and Stories. Bio links are often required for tracking. Invoices must be submitted after all deliverables (Reels, Stories, and screenshots) are confirmed live.
+HOW THEY WORK: Scripts must be submitted for brand approval. For tracking and attribution, creators must add a specific tracking link to their Instagram bio, set up comment-to-DM automation for viewers commenting keywords, publish an Instagram Story with a clickable link sticker and tag @lumalabsai, and tag @lumalabsai in the Reel. Billing details for NJ Agency: NJ Agency, Upendra Singh, KHASRA NO. 2256, Mundawar, Khairthal Tijara, Rajasthan 301407, India, GSTIN 08DDBPJ4548H1ZH, USD, Net 30. For Duncan, replies by email to Faved are not seen by the brand; answers must be posted on the Faved page.
 
-WATCH OUT
-Always confirm tagging and bio link placement immediately upon posting. For Duncan, explicitly exclude YouTube ad rights and partnership codes from the contract. Always ensure screenshots are provided as proof of live status for Stories and Reels.
+WATCH OUT: For Chris, the brand flagged missing tags, missing Stories, and missing bio links after the Reel went live, so all deliverables must be fully live simultaneously at publication. For Duncan, usage rights exclude YouTube ad rights and ad codes while allowing 60-day rights for Instagram, TikTok, paid ads, dark ads, and whitelisting.
 
-OPEN NOW
-Lindsay: We owe the Luma account email address for credit issuance. Waiting on brand for script approval and credit addition.
-Chris: We owe the screenshot of the published Story and the invoice for the [amount] payment.
-Duncan: We owe the signed contract, confirmation of usage rights (Instagram/TikTok/dark ads only, no YouTube paid ads), and the draft script.
-Brad: None.
+OPEN NOW:
+Luma AI x Lindsay: Waiting on brand to add tool credits to the Luma account noocaptools@gmail.com.
+Luma AI x Chris: We owe sharing the published Story screenshot and invoice to upendra@njagency.co.
+Luma AI x Duncan: We owe signing the contract, confirming acceptance of usage rights terms, and submitting the draft script on the Faved platform.
+Luma AI x Brad: Brad owes filming the video per the approved script.
 
-## Deal with [[Lindsay]] (Script Sent, opened 2026-11-19)
-Last brand reply 2026-11-24, our last reply 2026-11-24.
-AGREED: rate, deliverables, usage rights, payment terms and any agreed dates. Only what both sides have confirmed.
-Rate: Not stated. Deliverables: One video production and publication. Usage rights: Not stated. Payment terms: Not stated. Agreed dates: Completion by November 30, 2026.
+## Deal with [[Lindsay]] (Script Approved, opened 2026-11-19)
+Last brand reply 2026-11-25, our last reply 2026-11-25.
+AGREED: Rate: Not stated. Deliverables: One video production and publication. Usage rights: Not stated. Payment terms: Not stated. Agreed dates: Completion and publication before December 30, 2026.
 
 HISTORY:
 2026-11-19: creator - agreed to collab and requested contract/brief.
 2026-11-19: us - confirmed takeover and requested docs.
 2026-11-20: us - acknowledged receipt of contract.
 2026-11-21: us - submitted signed contract.
-2026-11-23: brand - requested script, November timeline, and Luma account email.
+2026-11-23: brand - requested script, timeline, and Luma account email.
 2026-11-24: us - sent script for approval.
-2026-11-24: brand - requested Luma account email for credits.
+2026-11-25: brand - approved script and reiterated timeline.
+2026-11-25: us - shared Luma account email noocaptools@gmail.com.
+2026-11-25: brand - asked for timeline confirmation.
+2026-11-25: us - confirmed publication before December 30 and requested Luma credits.
 
 BILLING:
 not yet
 
 OPEN NOW:
-We owe: Lindsay's Luma account email address. Waiting on brand: Script approval and credit addition.
+Waiting on brand: Addition of tool credits to the account.
 
 ## Deal with [[Chris]] (Posted, opened 2026-11-05)
 Last brand reply 2026-11-23, our last reply 2026-11-23.

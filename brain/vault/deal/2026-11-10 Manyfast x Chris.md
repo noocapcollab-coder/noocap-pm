@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Invoiced
-Last brand reply 2026-11-24, our last reply 2026-11-24.
+Last brand reply 2026-11-24, our last reply 2026-11-25.
 AGREED: Rate: [amount]. Deliverables: 1 dedicated Instagram Reel, comment-keyword DM automation, bio link live for 7 days. Usage rights: not specified. Payment terms: 50% upon script approval ([amount]billed), 50% after publication. Agreed dates: publication scheduled for 2026-11-30.
 
 HISTORY:
@@ -14,10 +14,11 @@ HISTORY:
 2026-11-20 brand: requested caption fixes and tool confirmation.
 2026-11-23 us: sent third video draft.
 2026-11-24 brand: requested final revisions for connector and typing sequence, then requested terminal interface update.
+2026-11-25 us: sent revised video draft with the terminal interface.
 
 BILLING: Brand has provided agency billing details (Slate Media Co., Ltd., jun@manyfast.io, Seoul address, tax ID 790-86-01367). Invoice status: initial 50% invoice sent.
 
-OPEN NOW: We owe: confirm if we can update the prompt segment to show the terminal interface and send a revised draft.
+OPEN NOW: Waiting on brand: review the latest revised draft with the terminal interface.
 
 ## Links
 - [[Chris]]

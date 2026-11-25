@@ -5,22 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: ZenBusiness, offering AI business tools and LLC formation services. They come to us directly.
+WHO: ZenBusiness, offering AI Business Tools and LLC formation. They come to us directly.
 
-CONTACTS:
-Natalie Swanson, natalie.swanson@zenbusiness.com, brand, signs as Natalie, copy collaboration team (collab@automateaiconsulting.com) and Ronnie Choi.
-Ronnie Choi, ronnie.choi@zenbusiness.com, brand, signs as Ronnie, copy collaboration team.
+CONTACTS: Ronnie Choi, ronnie.choi@zenbusiness.com, brand. Natalie Swanson, natalie.swanson@zenbusiness.com, brand. Thread CC: collab@automateaiconsulting.com. Signed by Lindsay's Team.
 
-DEALS:
-ZenBusiness x Lindsay: [amount]for one YouTube integration and [amount]for three creative assets (9x16, 4x5, 16x9). Total: [amount]. Stage Approved. Agreed July 2, 2026.
+DEALS: Lindsay | one YouTube integration and three creative assets (9x16, 4x5, 16x9) for [amount]total | Posted | agreed 2026-07-02.
 
-HOW THEY WORK:
-We handle full scripting and creation based on briefs. Script approval is required before production. Drafts are reviewed via Google Drive or Frame.io. Publisher ID is 2933515. 
+HOW THEY WORK: Handle campaign over email rather than kickoff calls. Brief format is provided by the brand. Scripts are reviewed and approved over email. Draft reviews are shared via Google Drive or Frame.io links. Billing details and invoices are not needed because payment runs through Awin.
 
-WATCH OUT:
-Ensure correct spelling (ZenBusiness as one word, capitalize B) and use the registered trademark symbol after Velo (ZenBusiness Velo®) when required by brand feedback. Avoid false advertising regarding costs (use [amount]+ state fees or no credit card required).
+WATCH OUT: Never ask ZenBusiness for billing details or send an invoice since payment is handled through Awin.
 
-OPEN NOW: We owe: send invoice and request company billing details.
+OPEN NOW: Nothing owed to the brand by email.
 
 
 ## Links

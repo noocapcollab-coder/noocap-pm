@@ -2,8 +2,8 @@
 type: deal
 ---
 Stage: Invoiced
-Last brand reply 2026-11-20, our last reply 2026-11-20.
-AGREED: rate: 3000. deliverables: one sponsored video for Chris featuring Dreamina, script review required before filming. usage rights: not specified. payment terms: bank transfer, 3-5 days lead time.
+Last brand reply 2026-11-25, our last reply 2026-11-25.
+AGREED: rate: [amount]. deliverables: publish pre-made videos (7-day one link for DMChat). usage rights: 60-day ad code. payment terms: bank transfer, due Nov 22.
 
 HISTORY:
 2026-10-26 brand: Video approved, cleared to publish
@@ -15,13 +15,13 @@ HISTORY:
 2026-11-08 brand: Payment expected in 3-5 days, offered new campaign
 2026-11-18 us: Provided ACH routing number
 2026-11-20 us: Submitted script draft for brand review
-2026-11-20 us: Replied to separate outreach asking for scope details
+2026-11-25 us: Followed up on unpaid [amount]invoice INV-003
 
 BILLING:
-Brand details provided (Katlas Media). Invoice sent 2026-11-01. Status: processing (receipt not yet provided).
+Company: Katlas Media (outreach@katlasmedia.com). Invoice sent 2026-11-01 (INV-003). Status: unpaid, due Nov 22.
 
 OPEN NOW:
-Waiting on brand: payment receipt for prior invoice, approval of the script draft for the main campaign, and response regarding the new campaign outreach.
+Waiting on brand: payment of INV-003 ([amount]).
 
 ## Links
 - [[Chris]]

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_superprofile", "label": "SuperProfile", "file_type": "document", "source_file": "brands/superprofile.md"}], "edges": [{"source": "brands_superprofile", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/superprofile.md"}], "hyperedges": []}

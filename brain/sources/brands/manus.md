@@ -3,34 +3,29 @@
 Brand. Works with creators: [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: Manus AI is an AI product. They come to us through an agency named EezyCollab.
+WHO: Manus AI is an AI software company. They work with us through an agency called EezyCollab.
 
-CONTACTS:
-Ocean, creators@eezycollab.com, EezyCollab Partnership
-Chris Cordero, contact@chriscordero.net and collab@chriscordero.net, creator
+CONTACTS: Ocean from EezyCollab (creators@eezycollab.com) handles communication. Chris Cordero (contact@chriscordero.net, collab@chriscordero.net) is the creator; emails to him should CC these addresses.
 
-DEALS:
-Chris | one Instagram Story re-sharing the official Manus Black Friday discount post | Rate: not yet discussed | stage Posted | campaign started 2026-11-24
+DEALS: Chris: One Instagram Story re-share of official Black Friday post, rate not discussed, posted 2026-11-24.
 
-HOW THEY WORK:
-Brand sends the official post link for the Instagram Story reshare. After resharing, we must reply with the Instagram Story link.
+HOW THEY WORK: They provide a link to an official post and request a re-share to an Instagram Story. They require a link to the Story as proof of completion.
 
-WATCH OUT:
-none known
+WATCH OUT: None.
 
-OPEN NOW:
-Nothing is pending.
+OPEN NOW: Nothing is pending.
 
 ## Deal with [[Chris]] (Posted, opened 2026-11-20)
-Last brand reply 2026-11-24, our last reply 2026-11-23.
-AGREED: Rate: not yet discussed. Deliverables: one Instagram Story re-sharing the official Manus Black Friday discount post. Usage rights: not yet discussed. Payment terms: not yet discussed. Agreed dates: campaign starts next Monday.
+Last brand reply 2026-11-25, our last reply 2026-11-25.
+AGREED: rate: not yet discussed. deliverables: one Instagram Story re-sharing the official Manus Black Friday discount post. usage rights: not yet discussed. payment terms: not yet discussed. agreed dates: campaign started 2026-11-24.
 
 HISTORY:
 2026-11-20 brand: Requested an Instagram Story re-share of the official Manus Black Friday discount post.
 2026-11-20 us: Agreed to reshare the post.
-2026-11-23 brand: Stated they will share the link around 11 AM PST.
-2026-11-24 brand: Sent the official post link and asked for the reshare.
+2026-11-23 brand: Stated they would share the link around 11 AM PST.
+2026-11-24 brand: Sent the official post link and requested the reshare.
 2026-11-24 us: Sent the Instagram Story link confirming the reshare.
+2026-11-25 brand: Confirmed receipt of the Story link and closing the communication.
 
 BILLING:
 not yet

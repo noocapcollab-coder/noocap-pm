@@ -2,11 +2,36 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Every editor ping says in words whether the video is a sponsor, trial or personal
+When: Any new-video ping to an editor's Discord channel
+Do: Put a Type line under the title (SPONSOR video, the brand reviews this cut / TRIAL REEL / Personal) and read the exact TYPE select, which wins over other columns named Type
+Never: Rely on the badge emoji alone, or read the first column called Type (Chris has a file column and Brad a content-category column with the same name)
+Seen 1 time(s). Source: Harsh correction.
+## A brand video is SPONSOR in the edit tracker, whatever the board's TYPE looks like
+When: An editor is assigned to a video and its EDIT TRACKER row is created
+Do: Read TYPE as a select or a multi-select; if it's empty, a card with a Brand Email or a 'Brand × Creator' title is SPONSOR.
+Never: Never default a brand video to PERSONAL just because TYPE couldn't be read.
+Seen 3 time(s). Source: Harsh correction.
+## One brand email about several videos is split by video
+When: A brand reviews more than one video of a deal in one email ("Video 1: ... Video 2: ...") and each video has its own editor
+Do: Give each video only its own section: changes go to that video's editor, an approved video goes to To Post with its hashtags and links as the Post Caption.
+Never: Never send the whole email to the first video found, and never treat a mixed email as all changes or all approved.
+Seen 1 time(s). Source: Harsh correction.
+## An editor's 'done' counts even after they pressed 'started edit'
+When: An editor types done in a video thread while the EDIT TRACKER row shows Manual editing / Claude running / Editor review because they pressed 'started' on a changes round
+Do: Treat done as the changes being finished whenever changes are still open (Changes Requested At after Changes Done At): brand rounds go to Send to Brand, internal rounds to In Review.
+Never: Never ignore a done just because the row left Changes when the editor started working.
+Seen 1 time(s). Source: Harsh correction.
+## Several cuts of one deal go in one email, each link named by its video
+When: Two or more videos of the same deal are switched to Send to Brand together, or a cut of a multi-video deal is sent
+Do: Send one email with every link labelled by its video number (Video 1: link, Video 2: link). A single cut of a multi-video deal names its own number.
+Never: Never send two cut emails seconds apart, and never call a video 'the first' unless it is video 1.
+Seen 1 time(s). Source: Harsh correction.
 ## A platform's 'submit it in the app' notice is not change notes
 When: Faved, creator.co or another platform emails that the draft must be submitted through their campaign page, or that a submission had no asset
 Do: Tell Harsh once to submit the cut on the platform; keep the tracker row where it is
 Never: Never put the row on Changes or ping the editor with CHANGES REQUESTED for platform instructions
-Seen 1 time(s). Source: System check.
+Seen 2 time(s). Source: System check.
 ## One Drive folders post per card
 When: The heartbeat makes Drive folders for a card at To Film
 Do: Check the live card for links before making folders and posting to Discord
@@ -141,4 +166,4 @@ Seen 1 time(s). Source: Rulebook.
 When: A brand sends notes on a cut or a script
 Do: Put the notes on the right video row and send them to the editor (cut) or Rudraksh (script). After the editor is done, draft the revised-cut email.
 Never: Reply to the brand just to acknowledge the notes.
-Seen 2 time(s). Source: Rulebook.
+Seen 3 time(s). Source: Rulebook.

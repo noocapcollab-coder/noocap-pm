@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_viewsmax", "label": "ViewsMax", "file_type": "document", "source_file": "brands/viewsmax.md"}], "edges": [{"source": "brands_viewsmax", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/viewsmax.md"}], "hyperedges": []}

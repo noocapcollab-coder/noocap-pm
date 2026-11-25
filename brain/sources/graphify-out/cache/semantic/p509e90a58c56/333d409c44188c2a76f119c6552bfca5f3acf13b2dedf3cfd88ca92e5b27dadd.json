@@ -1,0 +1,1 @@
+{"nodes": [{"id": "feedback_lindsay", "label": "Lindsay Feedback", "file_type": "document", "source_file": "feedback/lindsay.md"}], "edges": [{"source": "feedback_lindsay", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "feedback/lindsay.md"}], "hyperedges": []}

@@ -1,15 +1,13 @@
 ---
 type: deal
 ---
-Stage: Script Approved
-Last brand reply 2026-11-23, our last reply 2026-11-22.
+Stage: Submitted
+Last brand reply 2026-11-25, our last reply 2026-11-25.
 AGREED: [amount]for three CapCut app videos on Instagram, 30 to 60 seconds each. Script approval before filming, up to 2 revisions, publish within 3 days of approval, 60-day ad code authorization per video. Latest publication deadline November 27.
 
 HISTORY:
 2026-11-12 brand confirmed the [amount]package for three videos, shared the brief, sent the contract, and set November 27 as the deadline.
 2026-11-14 us sent the signed contract.
-2026-11-16 us sent the initial video scripts for approval.
-2026-11-16 brand asked for clarification on briefs and production timeline.
 2026-11-17 us clarified each script covers a different brief and confirmed the deadline can be met.
 2026-11-18 brand sent script revision feedback and updated CTA/comment instructions.
 2026-11-19 brand asked for faster script delivery; us confirmed three-video plan and outlined a staggered schedule.
@@ -17,10 +15,13 @@ HISTORY:
 2026-11-20 brand approved the first and second scripts, and asked to switch the third script to a new GTA 6 brief.
 2026-11-22 us agreed to explore the new GTA 6 brief for the third video and accommodate the revised timeline.
 2026-11-23 brand asked us to prioritize the third script and share first drafts of the first two videos soon.
+2026-11-24 us sent the first drafts of the first two videos for review and clarified the links.
+2026-11-25 brand approved video 2, requested video 1 revisions, proposed changing/dropping the third video, and requested the creator's CapCut UID for whitelisting.
+2026-11-25 us and brand exchanged messages regarding the creator's CapCut UID and correct format.
 
 BILLING: not yet.
 
-OPEN NOW: We owe: third script (GTA 6 brief) and first drafts of the first two videos.
+OPEN NOW: We owe: correct CapCut UID. Waiting on brand: review of video 1 revisions and final decision on the third video.
 
 ## Links
 - [[CapCut]]

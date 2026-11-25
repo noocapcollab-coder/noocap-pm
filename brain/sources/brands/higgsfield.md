@@ -3,28 +3,24 @@
 Brand. Works with creators: [[Lindsay]], [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: Higgsfield.AI is an AI video generation platform. They engage creators both directly and through their partner agency, AIFY MEDIA.
+WHO: Higgsfield / Higgsfield.AI is an AI video platform. They come to us directly through their IM team, and also work through a separate agency named AIFY MEDIA.
 
-CONTACTS: Higgsfield IM Team (higgsfield.ai@jeevmedia.net) is the primary contact for direct campaigns. CC collab@automateaiconsulting.com on all brand email communications.
+CONTACTS: Higgsfield IM Team, email higgsfield.ai@jeevmedia.net, role brand IM team. Thread CC: collab@automateaiconsulting.com.
 
 DEALS:
-Higgsfield x Lindsay: 1 video, rate TBD, stage Brief Received.
-Higgsfield x Chris: Short drama greenscreen video, rate TBD, stage Posted.
-Higgsfield x Chris: Deliverables/Rate TBD, stage Posted.
-Higgsfield.AI x Lindsay: 1 Instagram Reel and DM automation, [amount]USD fixed rate, stage Posted.
-Higgsfield x Lindsay: 1 Instagram Reel and Link in Bio (7 days), [amount]USD, stage Paid.
+Higgsfield x Lindsay | 1 Instagram Reel + Link in bio for 7 days | Rate: [amount]USD | Stage: Paid | Paid on 2026-10-15
+Higgsfield.AI x Lindsay | 1 Instagram Reel and DM automation | Rate: [amount]USD per campaign | Stage: Posted
+Higgsfield x Chris | Short drama greenscreen video | Rate: not known yet | Stage: Posted
+Higgsfield x Lindsay | 1 video | Rate: not known yet | Stage: Posted
+Higgsfield x Chris | Deliverables not known yet | Rate: not known yet | Stage: Posted
 
-HOW THEY WORK: They manage campaigns through direct email threads. For direct Higgsfield campaigns, the agreed rate for Lindsay is [amount]USD per campaign. They emphasize that they are a separate entity from AIFY MEDIA and will not facilitate introductions or provide contact details for other agencies.
+HOW THEY WORK: Briefs are received via email or WhatsApp. Campaigns may require portal submissions, and uploading links incorrectly through a portal can render a campaign ineligible for payment. Brand provides invoice templates for billing.
 
-WATCH OUT: Do not confuse Higgsfield.AI (Jeev Media) with AIFY MEDIA; these are separate agencies. Campaigns managed by AIFY MEDIA must be handled directly with that agency. In the past, payment was disputed when content was submitted via a portal rather than the brand's preferred direct channel. Always confirm rates before beginning production.
+WATCH OUT: Campaigns are ineligible for payment if submitted incorrectly through their portal. AIFY MEDIA is a separate agency from Higgsfield; Higgsfield will not provide introductions to AIFY MEDIA, so we must reach out to AIFY MEDIA directly for campaigns they manage.
 
-OPEN NOW:
-Higgsfield x Lindsay: We owe a script draft from Rudraksh.
-Higgsfield x Chris (Drama/Greenscreen): We owe a script draft from Rudraksh.
-Higgsfield x Chris (Second deal): We owe a script draft from Rudraksh.
-Higgsfield.AI x Lindsay: We plan to contact AIFY MEDIA directly regarding the ChatGPT and Wan 3.0 campaign.
+OPEN NOW: We owe a script draft from Rudraksh for the Higgsfield x Lindsay video. We owe a script from Rudraksh for the Higgsfield x Chris short drama greenscreen video. We owe a script from Rudraksh for the other Higgsfield x Chris video. For the ChatGPT and Wan 3.0 campaign, we plan to reach out directly to AIFY MEDIA since the brand declined to introduce us.
 
-## Deal with [[Lindsay]] (Brief Received, opened 2026-11-18)
+## Deal with [[Lindsay]] (Posted, opened 2026-11-18)
 Last brand reply none, our last reply none.
 AGREED:
 Rate: not known yet.
@@ -98,7 +94,7 @@ Last brand reply 2026-10-15, our last reply 2026-10-15.
 
 ## Inbound leads
 - Deliverables: 1 Instagram Reel · Contact Name: Siddhi · Next Step: None (deal declined by brand) · Platforms: Instagram · Last Our Email: 2026-11-20 · Last Brand Email: 2026-11-21 · Thread Subject: Collaboration Inquiry Higgsfield · Status: Lost · Creator: Chris · Type: Paid offer · Brand Email: siddhi@jeevmedia.net
-- Deliverables: Dedicated YouTube video (or short integration) · Contact Name: Emma · Next Step: Replied 2026-11-18, waiting on the brand · Platforms: YouTube, Instagram · Last Our Email: 2026-11-18 · Last Brand Email: 2026-11-17 · Thread Subject: Collaboration Opportunity- Higgsfield · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: clarkecl@jointeamheekentertainment.com
+- Deliverables: Dedicated YouTube video (or short integration) · Contact Name: Emma · Next Step: No further action needed (thread closed by agency). · Platforms: YouTube, Instagram · Last Our Email: 2026-11-25 · Last Brand Email: 2026-11-25 · Thread Subject: Collaboration Opportunity- Higgsfield · Status: Lost · Creator: Lindsay · Type: Unclear · Brand Email: clarkecl@jointeamheekentertainment.com
 - Deliverables: 1 Instagram Reel and DM automation per campaign · Contact Name: Higgsfield · Next Step: Contact AIFY MEDIA directly for campaign details and rate discussion · Platforms: Instagram · Last Our Email: 2026-10-21 · Deal: 1 linked · Last Brand Email: 2026-10-22 · Thread Subject: @lindsay.ai X Higgsfield.AI · Status: Locked · Creator: Lindsay · Type: Unclear · Brand Email: higgsfield.ai@jeevmedia.net
 - Next Step: Wait for brand to confirm if [amount]rate works or counter-offer · Platforms: YouTube · Last Our Email: 2026-08-20 · Last Brand Email: 2026-08-20 · Thread Subject: Paid Collaboration - thechriscordero x Higgsfield AI · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: emmacl@gocreators-heekentertainment.com
 - Deliverables: 10 Instagram Reels for Higgsfield AI API launch · Next Step: Wait for brand to confirm acceptance of [amount]/video rate and finalize terms · Platforms: Instagram · Last Our Email: 2026-09-17 · Last Brand Email: 2026-09-16 · Thread Subject: Collaboration Opportunity – Higgsfield AI x thechriscordero · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: marketing@creators-heekentertainmentcloud.com

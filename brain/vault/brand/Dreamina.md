@@ -5,20 +5,31 @@ type: brand
 
 Brand. Works with creators: [[Chris]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Dreamina is an AI video generation tool/platform. They work with us both directly and through agencies, specifically Katlas Media.
+WHO: Dreamina, an AI tool and marketing studio, working with us through agencies (Viral Vibe and Katlas Media) to secure sponsored short videos from creators like Chris.
 
-CONTACTS: Jenny Guo (jenny@viralvibe.llc) is a BD contact representing Viral Vibe/Dreamina, copied on threads with charlotte@viralvibe.llc, camila@viralvibe.llc, and emma@viralvibe.llc. Kepan (outreach@katlasmedia.com) is the contact at Katlas Media, copied with siyu@katlasmedia.com and silvia@katlasmedia.com. All emails to us are copied to collab@chriscordero.net and noocapcollab@gmail.com.
+CONTACTS:
+Jenny Guo, jenny@viralvibe.llc, BD at Viral Vibe (agency for Dreamina); signs as Jenny; CC camila@viralvibe.llc, charlotte@viralvibe.llc, emma@viralvibe.llc, collab@chriscordero.net.
+Kepan, outreach@katlasmedia.com, representative at Katlas Media (agency for Dreamina); CC siyu@katlasmedia.com, silvia@katlasmedia.com.
 
 DEALS:
-Dreamina x Chris | 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team) | [amount] | Posted | Dates: Published November 2026.
-Dreamina x Chris | 1 video posted on TikTok and Instagram (Unlimited Seedance campaign); script for review | [amount] | Price Agreed | Dates: Brief received November 2026.
-Dreamina x Chris | 1 sponsored video featuring Dreamina | [amount] | Invoiced | Dates: Invoice sent November 1, 2026.
+Dreamina x Chris | 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team) | [amount] | Posted | Delivered Nov 2026.
+Dreamina x Chris | 1 video posted on TikTok and Instagram (Unlimited Seedance campaign) | [amount] | Price Agreed | Brief: https://winddownclub.feishu.cn/wiki/WhFcweC1WiIRvpkkuPsccZvHnKg (or https://winddownclub.feishu.cn/wiki/WliSwqr52i54SrkJglxcRxw7nQ8).
+Dreamina x Chris | Pre-made videos posting (7-day one link for DMChat, 60-day ad code) | [amount] | Invoiced | Invoice sent Nov 1, 2026 (INV-003).
 
-HOW THEY WORK: For standard campaigns, deliverables include pre-made videos or new content posted on platforms like Instagram and TikTok, often requiring a 7-day bio link and a 1-month ad code. Some campaigns require submitting a script to Katlas Media for review before filming. Edits, watermarks (transparent background, specific Dreamina Marketing Studio logos for covers), captions, and hashtags must strictly follow brand guidelines before publishing. UTM links provided by the brand must be used. Invoices require company details, registered name, billing email, address, and VAT/tax ID. Payments may require a 9-digit ACH routing number.
+HOW THEY WORK:
+Campaigns may involve publishing pre-made videos or creating new ones based on a brief.
+For new creation campaigns, scripts must be sent to Katlas Media for review before filming, and completed video drafts are reviewed via Frame.io links.
+Watermarks must have a transparent background without a white box, and covers must feature the specific Dreamina Marketing Studio logo when requested.
+Required hashtags must be included in captions along with designated UTM tracking links.
 
-WATCH OUT: The brand strictly monitors publishing deadlines and will threaten cancellation if publication is delayed. They are also strict about specific watermark formatting, correct logo usage on covers, and exact hashtag requirements.
+WATCH OUT:
+Do not miss adding exact requested hashtags and watermarks, as brands will flag them before approval.
+Ensure strict adherence to requested UTM links and publication deadlines to avoid threats of collaboration cancellation.
 
-OPEN NOW: For the [amount]deal, we owe the brand the requested contract and payment information form. For the [amount]deal, we are waiting on the brand for the payment receipt. For the new Unlimited Seedance campaign, we are waiting on the brand to send the contract and confirm the brief details after agreeing to the [amount]rate and script review process.
+OPEN NOW:
+We owe: provide the requested contract and payment information form to Viral Vibe (Jenny Guo).
+Waiting on brand: receive the contract for the new Unlimited Seedance campaign from Katlas Media (Kepan).
+Waiting on brand: confirmation and arrival of the [amount]payment for INV-003 from Katlas Media.
 
 
 ## Links
