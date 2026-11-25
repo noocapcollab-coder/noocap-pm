@@ -3578,3 +3578,11 @@ test('Script card: bold "UPDATED SCRIPT" label starts the script, NOTES label en
   assert.equal(notesStart(labels, s), 5);
   assert.equal(labelText(para('Every cut and caption you are watching came from one chat message', true)), null);
 });
+
+test('Revised script only goes when the deal says the brand is waiting on it (Nov 25)', async () => {
+  const { scriptOwedToBrand } = await import('../lib/heartbeat.js');
+  assert.equal(scriptOwedToBrand({ memory: 'HISTORY:\n2026-11-20 us: Agreed to continue with original brief/script, stated we will share the revised script shortly.\n\nOPEN NOW: Waiting on brand: Feedback on the revised script once shared by us.' }), true);
+  assert.equal(scriptOwedToBrand({ memory: 'OPEN NOW: Waiting on brand: feedback on the current script (they said by today or tomorrow).' }), false);
+  assert.equal(scriptOwedToBrand({ memory: 'OPEN NOW: Waiting on brand: approval of the updated script.' }), false);
+  assert.equal(scriptOwedToBrand({ memory: '' , nextAction: 'Waiting for payment' }), false);
+});
