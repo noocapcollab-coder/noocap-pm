@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import { sentRecently, templateBlock } from '../lib/replytemplates.js';
 
 const mock = (status) => {
-  globalThis.fetch = async () => ({ ok: true, status: 200, json: async () => ({ results: status ? [{ id: 'd', properties: { Status: { select: { name: status } } } }] : [] }), text: async () => '' });
+  globalThis.fetch = async () => ({ ok: true, status: 200, json: async () => ({ results: status ? [{ id: 'd', created_time: '2026-11-18T10:00:00Z', properties: { Status: { select: { name: status } }, Why: { rich_text: [{ plain_text: 'ask [template:billing_on_approval]' }] } } }] : [] }), text: async () => '' });
 };
 const t = { active: true, stages: ['Approved'], days: 0 };
 

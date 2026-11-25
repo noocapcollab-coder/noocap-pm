@@ -3645,3 +3645,22 @@ test('payment due date from the brand terms (Emergent, Nov 26)', async () => {
   assert.equal(dueFromTerms('50% upfront, 50% on publish', { invoiceSent: '2026-11-01' }), null);
 });
 
+
+test('a fixed reply from the last round does not block this round (Topview, Nov 25)', async () => {
+  const { sameRoundCopy } = await import('../lib/replytemplates.js');
+  const ack = (t, st = 'Sent') => ({ why: 'x [template:video_changes_ack]', status: st, created: t });
+  assert.equal(sameRoundCopy([ack('2026-11-25T08:36:00Z'), { why: 'revised cut', status: 'Sent', created: '2026-11-25T16:29:00Z' }], 'video_changes_ack'), false);
+  assert.equal(sameRoundCopy([{ why: 'revised cut', status: 'Sent', created: '2026-11-25T16:29:00Z' }, ack('2026-11-25T16:40:00Z')], 'video_changes_ack'), 'sent');
+  assert.equal(sameRoundCopy([ack('2026-11-25T16:40:00Z', 'Draft')], 'video_changes_ack'), 'waiting');
+});
+
+test('an ack from before this brand email never blocks it, even with no Sent row in between (Nov 26)', async () => {
+  const { sentRecently } = await import('../lib/replytemplates.js');
+  const old = globalThis.fetch;
+  globalThis.fetch = async () => ({ ok: true, status: 200, json: async () => ({ results: [{ id: 'a', created_time: '2026-11-25T08:36:00.000Z', properties: { Status: { select: { name: 'Sent' } }, Why: { rich_text: [{ plain_text: 'fixed [template:video_changes_ack]' }] } } }] }), text: async () => '' });
+  try {
+    assert.equal(await sentRecently('ds', 't1', 'video_changes_ack', { since: '2026-11-25T16:39:00Z' }), false);
+    assert.equal(await sentRecently('ds', 't1', 'video_changes_ack'), 'sent');
+    assert.equal(await sentRecently('ds', 't1', 'video_eta', { since: '2026-11-25T16:39:00Z' }), false);
+  } finally { globalThis.fetch = old; }
+});
