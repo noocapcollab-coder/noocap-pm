@@ -3616,3 +3616,13 @@ test('One brand email, two videos: video 1 changes go to video 1, video 2 approv
   assert.ok(/#CapCutDidThat/.test(v2.lines.join(' ')));
   assert.ok(!/GTA 6/.test(v2.lines.join(' ')));
 });
+
+test('A payment chase held by the second check is retired after a day so reminders keep going (Dreamina x Chris, Nov 25)', async () => {
+  const { heldChaseToRetire } = await import('../lib/heartbeat.js');
+  const now = Date.parse('2026-11-25T10:00:00Z');
+  const why = "Needs you: second check says Answers an old message · Invoice sent 22 days ago, no payment yet (due 2026-11-22). Reminder 1 of 3.";
+  assert.equal(heldChaseToRetire(why, '2026-11-23T05:16:11Z', now), true);
+  assert.equal(heldChaseToRetire(why, '2026-11-25T05:16:11Z', now), false);
+  assert.equal(heldChaseToRetire('Needs you: ⚠️ a made-up detail · Invoice sent', '2026-11-20T05:16:11Z', now), false);
+  assert.equal(heldChaseToRetire('Invoice sent 22 days ago. Sends on its own in 30 min unless you reject it.', '2026-11-20T05:16:11Z', now), false);
+});
