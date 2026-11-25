@@ -44,6 +44,9 @@
     },
     "api/unanswered.js": {
       "maxDuration": 300
+    },
+    "api/duewatch.js": {
+      "maxDuration": 120
     }
   },
   "crons": [
@@ -74,6 +77,10 @@
     {
       "path": "/api/unanswered",
       "schedule": "31 * * * *"
+    },
+    {
+      "path": "/api/duewatch",
+      "schedule": "17,47 * * * *"
     }
   ]
 }

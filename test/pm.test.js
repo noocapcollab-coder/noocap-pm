@@ -3586,3 +3586,19 @@ test('Revised script only goes when the deal says the brand is waiting on it (No
   assert.equal(scriptOwedToBrand({ memory: 'OPEN NOW: Waiting on brand: approval of the updated script.' }), false);
   assert.equal(scriptOwedToBrand({ memory: '' , nextAction: 'Waiting for payment' }), false);
 });
+
+test('Due watch: open promise, stage mismatch, ignored done, posted without invoice (Nov 25)', async () => {
+  const { openPromise, findDue } = await import('../lib/duewatch.js');
+  const mem = 'HISTORY:\n2026-11-17 brand: Asked to continue with original brief.\n2026-11-20 us: Agreed to continue, stated we will share the revised script shortly.\n\nOPEN NOW: Waiting on brand: Feedback on the revised script once shared by us.';
+  assert.equal(openPromise(mem).day, '2026-11-20');
+  assert.equal(openPromise('HISTORY:\n2026-11-20 us: Sent the script.\n'), null);
+  const now = Date.parse('2026-11-25T12:00:00Z');
+  const deals = [
+    { id: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', brand: 'CapCut', creator: 'Brad', stage: 'Submitted', memory: mem, lastOur: '2026-11-20 10:57', linkedVideo: 'https://app.notion.com/p/CapCut-Brad-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' },
+    { id: 'cccccccccccccccccccccccccccccccc', brand: 'Acme', creator: 'Lindsay', stage: 'Posted', linksSent: '2026-11-22', channel: 'Email' },
+  ];
+  const cards = [{ id: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', title: 'CapCut × Brad', status: '5- Script Approval - Brand/Creator', edited: '2026-11-23T10:26:00Z' }];
+  const rows = [{ id: 'dddddddddddddddddddddddddddddddd', 'Video Title': 'Manyfast × Chris', Editor: 'PRATEEK', Status: 'Manual editing', 'Changes Requested At': '2026-11-24T08:40:00Z', 'Changes Done At': '2026-11-24T08:17:00Z' }];
+  const rules = findDue({ deals, cards, rows, now }).map((i) => i.rule).sort();
+  assert.deepEqual(rules, ['invoice', 'mismatch', 'promise', 'script', 'stuckedit']);
+});
