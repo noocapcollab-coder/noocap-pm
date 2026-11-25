@@ -2129,7 +2129,7 @@
     const tp = o.today_posts, risky = tp.filter((v) => v.stage !== 'Ready' && v.stage !== 'Posted');
     const st = (v) => v.stage === 'Posted' ? ['Posted', 'ok'] : v.stage === 'Ready' ? ['Ready', 'ok'] : v.stage === 'Review' ? [stageLabel(v) === 'Changes' ? 'Changes' : 'In review', 'warn'] : ['Not ready · ' + v.stage, 'bad'];
     $('ovPostsN').textContent = tp.length ? `${tp.length - risky.length} of ${tp.length} ready` : '';
-    $('ovPosts').innerHTML = tp.length ? tp.map((v) => { const [label, tone] = st(v); return `<a class="post" href="${esc(v.url)}" target="_blank" rel="noopener"><div class="top"><b>${esc(v.creator)}</b>${v.time ? `<span class="tm">${v.time}</span>` : ''}<span class="st" style="${toneStyle(tone)}">${label}</span></div><div class="tt">${esc(v.title)}${v.sponsor ? ' · sponsor' : ''}${v.editor ? ' · ' + esc(v.editor) : ''}</div></a>`; }).join('') : '<div class="empty">Nothing scheduled to post today.</div>';
+    $('ovPosts').innerHTML = tp.length ? tp.map((v) => { const [label, tone] = st(v); return `<a class="post" href="${esc(v.url)}" target="_blank" rel="noopener"><div class="top"><b>${esc(v.creator)}</b>${v.time ? `<span class="tm">${v.time}</span>` : ''}<span class="st" style="${toneStyle(tone)}">${label}</span></div><div class="tt">${esc(v.title)}${v.sponsor ? ' · sponsor' : ''}${v.trial ? ' · trial reel' : ''}${v.editor ? ' · ' + esc(v.editor) : ''}</div></a>`; }).join('') : '<div class="empty">Nothing scheduled to post today.</div>';
 
     // 3. This week, per creator, behind first
     const colors = { ok: 'var(--accent)', warn: 'var(--warn)', bad: 'var(--err)' };
@@ -2721,7 +2721,7 @@
     $('sched').innerHTML = items.map((v) => {
       const done = v.stage === 'Ready' || v.stage === 'Posted';
       const pill = v.days_late ? `<span class="pill late">${v.days_late}d late · ${esc(v.stage)}</span>` : `<span class="pill ${done ? 'ready' : ''}">${v.stage === 'Posted' ? '✓ posted' : done ? '✓ ready' : esc(v.stage)}</span>`;
-      return `<a class="row" href="${esc(v.url)}" target="_blank" rel="noopener"><span class="main"><div class="ttl">${esc(v.title)}${v.sponsor ? '<span class="pill spon">SPONSOR</span>' : ''}</div><div class="sub">${esc([v.creator, v.editor, v.days_late ? v.date : null].filter(Boolean).join(' · '))}</div></span>${pill}</a>`;
+      return `<a class="row" href="${esc(v.url)}" target="_blank" rel="noopener"><span class="main"><div class="ttl">${esc(v.title)}${v.sponsor ? '<span class="pill spon">SPONSOR</span>' : ''}${v.trial ? '<span class="pill spon" style="background:rgba(255,160,60,.15);color:#ffa64d">TRIAL</span>' : ''}</div><div class="sub">${esc([v.creator, v.editor, v.days_late ? v.date : null].filter(Boolean).join(' · '))}</div></span>${pill}</a>`;
     }).join('');
   }
 
