@@ -3567,3 +3567,14 @@ test('New invoice: WhatsApp deals get a pay link to forward, email deals are ema
   assert.equal(dealEmailable({ channel: 'Email', brandEmail: 'invoices@brand.com' }), true);
   assert.equal(dealEmailable({ channel: 'Email' }), false);
 });
+
+test('Script card: bold "UPDATED SCRIPT" label starts the script, NOTES label ends it (CapCut x Brad, Nov 25)', async () => {
+  const { labelText, scriptStart, notesStart } = await import('../lib/pdf.js');
+  const para = (t, bold = true) => ({ type: 'paragraph', paragraph: { rich_text: [{ plain_text: t, annotations: { bold } }] } });
+  const top = [para('[HOOK]'), para('I didn’t edit this video', false), para("BRAD’S UPDATED SCRIPT:"), para('[HOOK — 0:00–0:03]'), para('NO WAY…', false), para('NOTES:'), para('Please send them this:', false), para('The hook performs well.', false)];
+  const labels = top.map(labelText);
+  const s = scriptStart(labels);
+  assert.equal(s, 2);
+  assert.equal(notesStart(labels, s), 5);
+  assert.equal(labelText(para('Every cut and caption you are watching came from one chat message', true)), null);
+});
