@@ -3602,3 +3602,17 @@ test('Due watch: open promise, stage mismatch, ignored done, posted without invo
   const rules = findDue({ deals, cards, rows, now }).map((i) => i.rule).sort();
   assert.deepEqual(rules, ['invoice', 'mismatch', 'promise', 'script', 'stuckedit']);
 });
+
+test('One brand email, two videos: video 1 changes go to video 1, video 2 approval goes to video 2 (CapCut x Lindsay, Nov 25)', async () => {
+  const I = await import('../lib/inbox.js');
+  const text = "Hi Lindsay's Team,\n\nThank you for sending over the links! Our creative team has reviewed both videos.\n\nVideo 1:\nThe section from 00:20–00:30 needs to be revised. Please show the actual editing interface and demonstrate how Edit Pilot was used.\n\nVideo 2:\nThis video is approved for publication! Please remember the following requirements:\nInclude these hashtags in the caption: #CapCutDidThat #Dreamina\nOnce published, please send me the live video link and Ad Code.\n\nRegarding the third video:\nThe GTA 6 brief requires publication by November 26.\n\nBest regards,\nSophie";
+  const rows = [{ id: 'b', title: 'CapCut × Lindsay (2)' }, { id: 'a', title: 'CapCut × Lindsay' }];
+  const parts = I.notesPerVideo(text, rows);
+  assert.equal(parts.length, 2);
+  const v1 = parts.find((p) => p.row.id === 'a'), v2 = parts.find((p) => p.row.id === 'b');
+  assert.equal(v1.approved, false);
+  assert.ok(/00:20/.test(v1.lines.join(' ')));
+  assert.equal(v2.approved, true);
+  assert.ok(/#CapCutDidThat/.test(v2.lines.join(' ')));
+  assert.ok(!/GTA 6/.test(v2.lines.join(' ')));
+});
