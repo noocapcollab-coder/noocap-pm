@@ -3784,3 +3784,11 @@ test('token review: freelancer pitches skip the AI, the reader sees each thread 
     assert.equal(L.obviousNoise({ from: 'jane@brand.ai', subject: 'Paid collab', text: "We'd love to sponsor a reel. What's your rate for one video? I'm a designer at Brand." }), null);
   }
 });
+
+test('wants UGC is read from the deal text', async () => {
+  const { wantsUgc } = await import('../lib/platforms.js');
+  assert.ok(wantsUgc('2 UGC videos for our TikTok ads'));
+  assert.ok(wantsUgc('Raw footage for our ads, not posted on your account'));
+  assert.ok(!wantsUgc('1 Instagram Reel + TikTok cross-post'));
+  assert.ok(!wantsUgc('Collab post, no UGC needed'));
+});
