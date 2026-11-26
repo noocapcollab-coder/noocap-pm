@@ -1145,8 +1145,14 @@ test('isBrandRound: only brand-change rounds finished after the cutoff', async (
     Revisions: { type: 'number', number: o.rev ?? 1 },
     'Sent To Brand At': { type: 'date', date: o.sent ? { start: o.sent } : null },
     'Changes Requested At': { type: 'date', date: o.asked === null ? null : { start: o.asked || '2026-11-06T08:00:00Z' } },
+    ...(o.note ? { 'Brand Send Note': { type: 'rich_text', rich_text: [{ plain_text: o.note }] } } : {}),
   } });
   assert.equal(isBrandRound(row()), true);
+  assert.equal(isBrandRound(row({ note: 'Brand changes done, sending the revised cut back to the brand.' })), true);
+  // Bug hunter Nov 26 (HoneyBook x Chris): a held send put the row back on In Review, which looked like a new round
+  assert.equal(isBrandRound(row({ note: 'Not sent: held for Harsh: Needs you: second check says the link is the same as the first cut' })), false, 'a held send waits for Harsh');
+  assert.equal(isBrandRound(row({ note: 'No brand deal found for "X" (Chris). The video title needs the brand\'s name' })), false, 'a blocked send waits for Harsh');
+  assert.equal(isBrandRound(row({ note: 'The HoneyBook deal has no brand email. Add it on the deal, then switch to Send to Brand again.' })), false);
   assert.equal(isBrandRound(row({ rev: 0 })), false, 'internal changes stay with Harsh');
   assert.equal(isBrandRound(row({ rev: 0, sent: '2026-11-05T13:00:00Z' })), true, 'already with the brand');
   assert.equal(isBrandRound(row({ status: 'Changes' })), false);
