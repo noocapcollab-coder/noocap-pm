@@ -3757,3 +3757,11 @@ test('one video cross-posted to four platforms is one video, not four', async ()
   assert.equal(videosOwed('2 YouTube Shorts'), 2);
   assert.equal(videosOwed('3 reels, cross-posted to TikTok'), 3);
 });
+
+test('a script approval with a production hold gets the hold reply, not "moving into production"', async () => {
+  const { approvalAck, productionHold } = await import('../lib/unanswered.js');
+  const t = 'Your script has already been approved. However, during our platform testing, we discovered some issues. Therefore, we\'d like to ask if you\'re comfortable with temporarily postponing the video schedule. Please wait for our confirmation before starting video production.';
+  assert.ok(productionHold(t));
+  assert.equal(approvalAck(t), 'production_hold_ack');
+  assert.equal(approvalAck('The script is approved. Please go ahead and film it.'), 'script_approved_ack');
+});
