@@ -3715,3 +3715,18 @@ test('outreach never pitches send-only or bounced addresses', async () => {
   assert.equal(unsendable('partnerships@wondershare.com'), '');
   assert.equal(unsendable('jane@leadsquared.com'), '');
 });
+
+test('outreach follows up every 3 days, 5 times, and never on a US weekend', async () => {
+  const { nextUp, inWindow, buildEmail } = await import('../lib/outreach.js');
+  const cs = [{ creator: 'Duncan', status: 'Running', followUps: [] }];
+  const now = Date.parse('2026-11-26T15:00:00Z');
+  const row = (status, days) => ({ id: status, creator: 'Duncan', status, lastSentAt: new Date(now - days * 864e5).toISOString() });
+  assert.equal(nextUp(cs, [row('Sent', 3)], now).kind, 'fu1');
+  assert.equal(nextUp(cs, [row('Follow-up 4 sent', 3)], now).kind, 'fu5');
+  assert.equal(nextUp(cs, [row('Sent', 2)], now), null);
+  assert.equal(nextUp(cs, [row('Follow-up 5 sent', 9)], now), null);
+  assert.equal(nextUp(cs, [row('Replied', 9)], now), null);
+  assert.equal(inWindow(new Date('2026-11-28T15:00:00Z')), false); // Saturday in New York
+  assert.equal(inWindow(new Date('2026-11-27T15:00:00Z')), true); // Friday
+  assert.match(buildEmail({ creator: 'Valeri', pronoun: 'she', followUps: [] }, { brand: 'Acme' }, 'fu1').text, /Valeri would be a strong fit for Acme, and I'd be happy to share her rates/);
+});

@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     const b = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
     const c = String(b.creator || '');
     switch (b.action) {
-      case 'save': { const f = {}; for (const k of ['subject', 'body', 'followUp1', 'followUp2', 'followers', 'pronoun']) if (k in b) f[k] = String(b[k] ?? ''); return res.status(200).json(await O.saveCampaign(c, f)); }
+      case 'save': { const f = {}; for (const k of ['subject', 'body', 'followUp1', 'followUp2', 'followUp3', 'followUp4', 'followUp5', 'followers', 'pronoun']) if (k in b) f[k] = String(b[k] ?? ''); return res.status(200).json(await O.saveCampaign(c, f)); }
       case 'start': return res.status(200).json(await O.start(c));
       case 'pause': return res.status(200).json(await O.pause(c));
       case 'stop': return res.status(200).json(await O.stop(c));
