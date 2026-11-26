@@ -3811,3 +3811,13 @@ test('wants UGC is read from the deal text', async () => {
   assert.equal(creatorForDashKey('abcdefghijklmnopqrstuvwxyz'), 'Valeri');
   assert.equal(creatorForDashKey('short'), null);
 }
+
+// Instagram share and Story links pass the invoice link check (Luma AI × Chris, Nov 27)
+{
+  const src = (await import('node:fs')).readFileSync(new URL('../lib/invoiceguard.js', import.meta.url), 'utf8');
+  const re = eval(src.match(/Instagram: (\/\^.*?\/i),/)[1]);
+  assert.ok(re.test('https://www.instagram.com/share/HTAhtKzzx'));
+  assert.ok(re.test('https://www.instagram.com/stories/thechriscordero/4036741707577198604'));
+  assert.ok(re.test('https://www.instagram.com/reel/DdEHh0UoENe/'));
+  assert.ok(!re.test('https://www.instagram.com/thechriscordero/'));
+}
