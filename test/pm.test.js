@@ -3765,3 +3765,16 @@ test('a script approval with a production hold gets the hold reply, not "moving 
   assert.equal(approvalAck(t), 'production_hold_ack');
   assert.equal(approvalAck('The script is approved. Please go ahead and film it.'), 'script_approved_ack');
 });
+
+test('token review: freelancer pitches skip the AI, the reader sees each thread once', async () => {
+  const L = await import('../lib/leads.js');
+  const { emailBody } = await import('../lib/inbox.js');
+  const long = 'Hi team,\nApproved, thanks!\n\nOn Mon, someone wrote:\n> ' + 'old reply '.repeat(800);
+  const b = emailBody({ text: long }, 'x'.repeat(2000));
+  assert.ok(b.length < 1600 && /Approved, thanks/.test(b));
+  assert.equal(emailBody({ text: 'short' }, ''), 'short');
+  if (L.obviousNoise) {
+    assert.equal(L.obviousNoise({ from: 'nitij@gmail.com', subject: 'Shorts for Automate AI Consulting', text: "Hi, I'm a video editor. Here's a free sample edit of your video." }), 'service pitch');
+    assert.equal(L.obviousNoise({ from: 'jane@brand.ai', subject: 'Paid collab', text: "We'd love to sponsor a reel. What's your rate for one video? I'm a designer at Brand." }), null);
+  }
+});
