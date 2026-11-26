@@ -3739,3 +3739,11 @@ test('a second-reader quibble about stage or rate never holds an approval', asyn
   assert.ok(!peripheralOnly(x, { agree: false, rightEvent: 'video_feedback', wrongDeal: true, reason: 'stage' }));
   assert.ok(!peripheralOnly(x, { agree: false, rightEvent: 'video_feedback', reason: 'Moving the card to To Post is wrong, the brand asked for changes' }));
 });
+
+test('KooKo AI x Valeri, Nov 26: an agreement accepted by an email reply gets no "we will sign it" ack', async () => {
+  const { agreeByReply } = await import('../lib/inbox.js');
+  assert.ok(agreeByReply('1. Contract & Confirm: Please review the Agreement attached and reply "Agree with the Influencer Cooperation Rules" — this is a required step from our company. A written email reply is sufficient and no need to sign the agreement.'));
+  assert.ok(agreeByReply('No signature is required, just reply to confirm.'));
+  assert.equal(agreeByReply('Please find the contract attached. Kindly sign and return it by Friday.'), false);
+  assert.equal(agreeByReply('Contract attached, please sign.'), false);
+});
