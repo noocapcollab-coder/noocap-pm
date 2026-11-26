@@ -2,6 +2,36 @@
 
 The final scripts of videos posted in the last 60 days, as filmed.
 
+## 2026-11-25 13 CLAUDE SKILLS TO START WITH
+Type: PERSONAL. Creator: [[David Iya]].
+Hook 1:
+If you just set up Claude Code and it still has zero skills in it, these are the 12 essential ones you should install right away.
+    Hook 2:
+Most people set up Claude Code and go straight to prompting, but I'd honestly install these 12 skills first.
+    Body:
+So number one is Find Skills, which looks up the right skill whenever you ask how to do something. Number two, Anti-UI Slop, cleans up that obvious AI-template look, and number three, Frontend Design, pushes Claude toward designs that don't look like every other AI build. Number four, Caveman, makes Claude answer in fewer words so its replies cost fewer tokens. Number five, SEO Audit, checks what's keeping your site off Google, and number six, AI SEO, gets your content showing up in AI search. Number seven, Agent Browser, lets Claude click through a real website on its own. Number eight, Copywriting, writes your landing-page copy from what customers actually say, and number nine, PPTX, builds real PowerPoint decks. Number ten, Systematic Debugging, makes Claude find the root cause before patching anything, and number eleven, Skill Creator, lets it build your own skills. And number twelve is the one I'd install first, Grill Me, because it keeps asking you questions until you both agree on what you're building.
+    CTA:
+So comment "STARTER" and I'll get you all 12 links with the order I'd install them in.
+    Sources
+    - https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me
+    - https://raw.githubusercontent.com/JuliusBrussee/caveman/HEAD/README.md
+    - https://mcpservers.org/agent-skills/vercel/find-skills
+    - https://www.skills.sh/vercel-labs/agent-browser/agentcore
+    - https://buildwithclaude.com/skill/anti-ui-slop
+    - https://claudemarketplaces.com/skills/coreyhaines31/mar
+
+## 2026-11-26 CLAUDE TRIAL REELS
+Type: PERSONAL. Creator: [[David Iya]].
+Hook 1:
+You can now have Claude post up to 10 trial reels a day for you, and I think that's probably the fastest way to test content I've seen this year.
+    Hook 2:
+Claude can now test like 10 reel ideas a day on people who don't follow you, so by the time your followers see a reel, you already know it works.
+    Body:
+So it really comes down to two things, and number one is volume, because after you hook up your Instagram account, Claude researches ideas and builds the videos, and then it posts them as trial reels, which only go out to people who don't follow you yet. And then number two is the feedback loop, because it reads the analytics on each one to see which ones actually held people, and then it uses that to frame the next batch, so it typically learns what your audience wants a lot faster than you could by posting once a day.
+    CTA:
+Comment "TRIAL" and I'll send you the set up.
+    https://www.getripping.com/
+
 ## 2026-11-23 REANIMATE - CLAUDE SKILL
 Type: PERSONAL. Creator: [[David Iya]].
 Hook 1:
@@ -82,15 +112,3 @@ This repo hit number one on GitHub, and it can turn Claude Code into a content m
 So there are really two repos here, and number one is the template one, where you give Claude Code a video that's already doing well and it breaks it down into a structure you fill with your own stuff. Then the second is HyperFrames, which builds the video, so you hand it your audio, either a voice clone or your own recording, and if you've got a mascot it can use Rhubarb to sync the mouth to your words. And then you give it your brand assets and talk through how it should play out with voice-to-text, which honestly feels a lot like briefing an editor.
     CTA:
 So comment "TEMPLATE" and I'll get you both repos and the order I'd run them in.
-
-## 2026-11-17 TOP 5 PLUGINS FOR CLAUDE
-Type: PERSONAL. Creator: [[David Iya]].
-Hook 1:
-These are the top 5 AI plugins that you need to install in Claude Code right now.
-    Hook 2:
-Did you hit a Claude Code usage limit more than twice last week, because there's a free plugin that just moves you onto another model when that happens?
-    Body:
-Number one is Ponytail, which trims what Claude Code outputs so you typically use around half the tokens, and number two is FreeLLM API, which moves you onto one of like 600 free models when you hit a limit. Number three, AgentReach, pulls data off sites like LinkedIn and Reddit for you, and number four gives Claude Code like 60 animation styles for explainer videos. But number five is the one I’d honestly install first, because NVIDIA’s SkillSpectre checks a skill for hidden malware before you add it, a bit like a security check at the door.
-    CTA:
-Comment "SEND" and I'll get you all five links and the order I'd install them in.
-    - Sub-page: [[The Top 5 Claude Code Plugins (All 5 Links + The Order I'd Install Them)]]

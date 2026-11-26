@@ -3,23 +3,21 @@
 Brand. Works with creators: [[Chris]], [[Lindsay]].
 
 ## Brand wiki (from every email with them)
-WHO: Bluehost sponsoring content featuring Bluehost AI products, coming through the agency Creator.co.
+WHO: Bluehost is a web hosting and domain services provider. They partner with creators via the agency Creator.co.
 
-CONTACTS: Smahi Grover, smahi@creator.co, agency Creator.co, signs as Smahi, must be copied collab@chriscordero.net. Erick Alvergue, agency Creator.co.
+CONTACTS: Smahi Grover (smahi@creator.co) and Erick Alvergue (Creator.co). Copy collab@chriscordero.net on all correspondence.
 
-DEALS:
-Bluehost 2 x Chris | 1 Instagram Reel (under 60s) featuring one Bluehost AI product, Instagram only, via Creator.co | [amount]USD | Price Agreed | Draft within 7 days of product access, publish within 3 days of approval, live by Dec 31, 2026.
-Bluehost x Chris | 1 video on one agreed platform (Reels, TikTok, Shorts or YouTube) featuring one Bluehost AI product, via Creator.co | [amount]USD | Lost | Draft within 7 days of product access, Bluehost review with up to 2 revisions, publish within 3 days of approval, live by Dec 31, 2026.
+DEALS: Chris: 1 Instagram Reel (under 60s) featuring one Bluehost AI product, [amount]USD, stage: Price Agreed, due: Dec 31, 2026.
 
-HOW THEY WORK: Creator.co platform is used for onboarding and offer processing with a 5% processing fee deducted. Writer brief PDF without money on the video card.
+HOW THEY WORK: All deals are processed through the Creator.co dashboard. Creators must opt-in to the campaign via a specific invitation link provided by the agency. Once opted-in, the platform handles the offer, contract, and payment (noting a 5% processing fee deducted by the platform). Drafts are due within 7 days of product access. Bluehost allows up to 2 rounds of revisions. Final publication must occur within 3 days of approval.
 
-WATCH OUT: Avoid stray threads without Chris's inbox on CC. Ensure proper thread IDs are held to prevent opening new threads on follow-ups.
+WATCH OUT: Dashboard registration errors are common. If the standard invitation link fails due to alleged eligibility issues (follower or engagement metrics), request an alternative onboarding method from the agency immediately. Do not proceed with creative work until the platform registration is confirmed.
 
-OPEN NOW: Waiting on brand: Smahi to provide an update or an alternative way for Chris to complete onboarding.
+OPEN NOW: Waiting on brand: Smahi to provide an update or alternative registration method for Chris to resolve the ongoing Creator.co dashboard eligibility error.
 
 ## Deal with [[Chris]] (Price Agreed, opened 2026-10-30)
-Last brand reply 2026-10-28, our last reply 2026-11-23.
-AGREED: [amount]USD. 1 Instagram Reel under 60 seconds featuring one Bluehost AI product. Instagram only. Delivery via Creator.co platform. Payment terms and specific delivery date not yet confirmed in writing.
+Last brand reply 2026-10-28, our last reply 2026-11-26.
+AGREED: [amount]. 1 Instagram Reel (under 60s) featuring one Bluehost AI product, Instagram only. Delivery via Creator.co. Payment terms and specific dates not yet confirmed.
 
 HISTORY:
 2026-11-02 us requested contract and brand brief
@@ -27,13 +25,14 @@ HISTORY:
 2026-11-05 brand sent a new campaign invitation link
 2026-11-10 us followed up on the new invitation link status
 2026-11-10 us reported continued dashboard registration failure and asked for an alternative method
-2026-11-16 us followed up on the dashboard registration issue and alternative onboarding update
-2026-11-19 us followed up again for an update on the Creator.co registration issue and alternative onboarding
-2026-11-23 us followed up again for an update on the Creator.co registration issue
+2026-11-16 us followed up on registration issue
+2026-11-19 us followed up on registration issue
+2026-11-23 us followed up on registration issue
+2026-11-26 us followed up on registration issue
 
 BILLING: not yet
 
-OPEN NOW: Waiting on brand: Smahi to provide an update or an alternative way for Chris to complete onboarding.
+OPEN NOW: Waiting on brand: Smahi to provide an update or alternative way for Chris to complete registration.
 
 ## Deal with [[Chris]] (Lost, opened 2026-10-30)
 Last brand reply 2026-10-28, our last reply none.
@@ -53,4 +52,4 @@ OPEN NOW: Chris to opt in on Creator.co so Bluehost can approve and send the [am
 - Deliverables: 1 short-form video (single-platform within [amount]–[amount]USD range) · Contact Name: Bianca · Next Step: New brand: management to reply with pricing · Platforms: Instagram, TikTok, YouTube Shorts · Last Our Email: 2026-11-10 · Last Brand Email: 2026-11-13 · Thread Subject: Following Up: Bluehost AI Paid Collaboration ([amount]–[amount] USD) · Status: Negotiating · Creator: Lindsay · Type: Paid offer · Brand Email: bianca@creator.co
 - Deliverables: One original short-form video featuring one of three Bluehost AI products (Website Builder, All-Access Pack, or Agent Hosting). · Contact Name: Erick · Next Step: Review campaign details via the Creator.co link and opt in if interested, or reply with rate confirmation. · Platforms: Instagram, TikTok, YouTube · Last Our Email: 2026-11-05 · Deal: 1 linked · Last Brand Email: 2026-11-04 · Thread Subject: Invitation by Bluehost to collaborate on "Create What’s Next with Bluehost AI: Rising Creators" · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: erick@creator.co
 - Deliverables: One original video featuring Bluehost AI Website Builder, AI All-Access Pack, or AI Agent Hosting · Contact Name: Erick · Next Step: Lost: offer [amount]is under our [amount]inimum, not answered · Platforms: Instagram, TikTok, YouTube · Last Our Email: 2026-10-23 · Last Brand Email: 2026-10-25 · Thread Subject: Following Up: Bluehost AI Paid Collaboration ([amount]–[amount] USD) · Status: Lost · Creator: Chris · Type: Paid offer · Brand Email: erick@creator.co
-- Deliverables: One original short-form video (Instagram Reel), no cross-posting or performance recap required · Contact Name: Erick · Next Step: Chris to opt in through the new Creator.co link and complete profile approval · Platforms: Instagram, TikTok, YouTube · Last Our Email: 2026-11-23 · Deal: 1 linked · Last Brand Email: 2026-11-04 · Thread Subject: Bluehost AI | Paid Creator Collaboration ([amount]–[amount] USD) · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: erick@creator.co
+- Deliverables: One original short-form video (Instagram Reel), no cross-posting or performance recap required · Contact Name: Erick · Next Step: Chris to opt in through the new Creator.co link and complete profile approval · Platforms: Instagram, TikTok, YouTube · Last Our Email: 2026-11-26 · Deal: 1 linked · Last Brand Email: 2026-11-04 · Thread Subject: Bluehost AI | Paid Creator Collaboration ([amount]–[amount] USD) · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: erick@creator.co

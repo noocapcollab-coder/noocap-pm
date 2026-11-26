@@ -5,22 +5,18 @@ type: brand
 
 Brand. Works with creators: [[Duncan]], [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: HubSpot, coming through agency Redthread.
+WHO: HubSpot comes through agency Redthread.
 
-CONTACTS:
-Piers Moore, piers@redthread.co, Redthread, signs as Piers, copy collab@buildroom.ai and joe@redthread.co
+CONTACTS: Joe Stratton, joe@redthread.co, Redthread; Piers Moore, piers@redthread.co, Redthread; copy collab@buildroom.ai; sign as Duncan's Team.
 
 DEALS:
-HubSpot x Duncan: one dedicated sponsored video plus two Instagram Story frames, [amount]USD ([amount]dedicated sponsored video + [amount]for two Instagram Story frames), Brief Received, dates not known yet
+Duncan | one dedicated sponsored video plus two Instagram Story frames | [amount]USD ([amount]dedicated sponsored video + [amount]for two Instagram Story frames) | Script Sent | Brief received 2026-11-20
 
-HOW THEY WORK:
-Product access requested for noocaptools@gmail.com
+HOW THEY WORK: Draft contract provided via Google Docs with comments tracked or listed in email; product access requested for noocaptools@gmail.com.
 
-WATCH OUT:
-none known yet
+WATCH OUT: none noted
 
-OPEN NOW:
-We owe: Review the updated contract and brief, and share the video script.
+OPEN NOW: Waiting on brand (Joe Stratton / Piers Moore) to approve the script or provide feedback.
 
 ## Decisions from Harsh
 - 2026-11-23: Brand asked: Answer Piers about story frames cost and HubSpot usage, and sign the contract · Harsh answered: (sent a file: HubSpot for Startups - Creator Brief Headless - Red Thread.docx)

@@ -2,6 +2,10 @@
 
 What brands asked us to change after seeing a cut. Read before editing the next video for the same brand.
 
+## 2026-11-26 HoneyBook × Chris
+Brand: [[HoneyBook]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 1.
+Please replace the old assistant image with the Myco one, since it's a bit outdated and the client is presenting it at Myco. And use Myco's logo instead of the woman's photo.
+
 ## 2026-11-24 Manyfast × Chris
 Brand: [[Manyfast]]. Creator: [[Chris]]. Editor: PRATEEK. Revisions: 5.
 Show the terminal interface instead of the web/app Claude UI for the prompt being typed into Claude Code.

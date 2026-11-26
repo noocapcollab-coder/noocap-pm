@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Invoiced
-Last brand reply 2026-11-23, our last reply 2026-11-23.
+Last brand reply 2026-11-26, our last reply 2026-11-26.
 AGREED: Rate: [amount]. Deliverables: One new video plus usage rights. Usage rights: per agreement. Payment terms: Net 15 days of receipt of invoice. Agreed dates: Go-live Nov 21, 2026.
 
 HISTORY:

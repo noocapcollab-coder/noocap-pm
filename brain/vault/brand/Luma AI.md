@@ -5,24 +5,24 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]], [[Chris]], [[Duncan]], [[Brad]].
 ## Brand wiki (from every email with them)
-WHO: Luma AI, a generative AI video platform. They come to us directly and through the agency Faved.
+WHO: Luma AI provides AI video generation products and tools. They come to us directly and through agencies (NJ Agency, Faved).
 
-CONTACTS: Upendra Singh, upendra@njagency.co, Campaign Head at NJ Agency; Faved, creators@faved.com, sponsorship platform.
+CONTACTS: Upendra Singh (upendra@njagency.co), Campaign Head at NJ Agency; Faved (creators@faved.com), platform/agency. Thread CCs include collab@automateaiconsulting.com, collab@chriscordero.net, collab@buildroom.ai.
 
 DEALS:
-Luma AI x Lindsay, One video production and publication, Rate not stated, Script Approved, Completion and publication before December 30, 2026.
-Luma AI x Chris, Reel + Story repost, Rate [amount], Posted, Reel went live on November 21, 2026.
-Luma AI x Duncan, Draft script, Rate and payment terms not stated, Signed, Usage rights: 60-day for Instagram/TikTok/other paid ads and dark ads; YouTube crossposting allowed but no YouTube paid ad rights or ad codes.
-Luma AI x Brad, One video (script approved), Rate not known yet, Posted, Dates not known yet.
+Luma AI x Lindsay: 1 video production and publication, rate not stated, stage Submitted, complete and publish before December 30, 2026.
+Luma AI x Chris: Reel + Story repost, [amount]USD, stage Posted, live date November 21, 2026.
+Luma AI x Duncan: Draft script, rate and payment terms not stated, stage Signed, usage rights 60-day for Instagram, TikTok, paid ads, and dark ads, with YouTube crossposting allowed but no YouTube paid ad rights or ad codes (deal-cevsvd via Faved platform).
+Luma AI x Brad: One video with script approved, rate not known, stage Posted, agreed dates not known.
 
-HOW THEY WORK: Scripts must be submitted for brand approval. For tracking and attribution, creators must add a specific tracking link to their Instagram bio, set up comment-to-DM automation for viewers commenting keywords, publish an Instagram Story with a clickable link sticker and tag @lumalabsai, and tag @lumalabsai in the Reel. Billing details for NJ Agency: NJ Agency, Upendra Singh, KHASRA NO. 2256, Mundawar, Khairthal Tijara, Rajasthan 301407, India, GSTIN 08DDBPJ4548H1ZH, USD, Net 30. For Duncan, replies by email to Faved are not seen by the brand; answers must be posted on the Faved page.
+HOW THEY WORK: Scripts are submitted to the brand for approval. For Luma account credits, use noocaptools@gmail.com. Videos are reviewed via links such as Frame.io. Publishing requirements include a Luma-approved CTA in the video and caption asking viewers to comment a keyword to receive a link, comment-to-DM automation, the tracking link in the Instagram bio, an Instagram story with a clickable tracking link sticker, and tagging @lumalabsai in both the Reel and Story. For Duncan via Faved, replies by email to Faved are not seen by the brand; answers must be handled on the Faved page.
 
-WATCH OUT: For Chris, the brand flagged missing tags, missing Stories, and missing bio links after the Reel went live, so all deliverables must be fully live simultaneously at publication. For Duncan, usage rights exclude YouTube ad rights and ad codes while allowing 60-day rights for Instagram, TikTok, paid ads, dark ads, and whitelisting.
+WATCH OUT: Missing deliverables such as the Instagram Story, missing tags, or missing bio links must be caught before invoicing. Duncan's deal excludes YouTube paid ad rights and partnership/ad codes entirely.
 
 OPEN NOW:
-Luma AI x Lindsay: Waiting on brand to add tool credits to the Luma account noocaptools@gmail.com.
-Luma AI x Chris: We owe sharing the published Story screenshot and invoice to upendra@njagency.co.
-Luma AI x Duncan: We owe signing the contract, confirming acceptance of usage rights terms, and submitting the draft script on the Faved platform.
+Luma AI x Lindsay: Waiting on brand to review the video.
+Luma AI x Chris: We owe sending the signed invoice to the brand.
+Luma AI x Duncan: We owe signing the contract on the Faved page, confirming acceptance of the usage rights terms, and submitting the draft script.
 Luma AI x Brad: Brad owes filming the video per the approved script.
 
 

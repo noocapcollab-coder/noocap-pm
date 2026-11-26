@@ -1,25 +1,24 @@
 ---
 type: deal
 ---
-Stage: Script Sent
-Last brand reply 2026-11-23, our last reply 2026-11-23.
-AGREED: Rate, deliverables, usage rights, payment terms and agreed dates not documented in email chain.
+Stage: Script Approved
+Last brand reply 2026-11-26, our last reply 2026-11-26.
+AGREED: rate, deliverables, usage rights, payment terms and any agreed dates. Only what both sides have confirmed.
 
 HISTORY:
-2026-10-20 creator: confirmed interest and requested reply all for noocapcollab@gmail.com.
-2026-10-20 creator: asked for contract status.
+2026-10-20 creator: requested reply all for noocapcollab@gmail.com and asked for contract status.
 2026-10-20 brand: resent DocuSign contract to partnerships@ninjaaitools.com.
 2026-11-09 us: confirmed sending signed contract and requested campaign brief.
 2026-11-14 us: sent script for review.
-2026-11-17 brand: acknowledged script receipt and stated it was submitted for review.
-2026-11-17 us: acknowledged brand's update and stated they will wait for feedback before filming.
-2026-11-17 brand: sent feedback on the script and requested a revised script.
-2026-11-23 us: sent updated script incorporating brand feedback for review.
-2026-11-23 brand: acknowledged receipt of revised script and stated it was submitted for review.
+2026-11-17 brand: provided script feedback.
+2026-11-23 us: sent revised script for review.
+2026-11-26 brand: approved script and provided final production requirements.
+2026-11-26 us: requested Teamily AI account access for noocaptools@gmail.com to record the demo.
+2026-11-26 brand: stated policy to subscribe using our own account first and get reimbursed with invoice payment.
 
 BILLING: not yet
 
-OPEN NOW: Waiting on brand: review the updated script.
+OPEN NOW: We owe: reply to the brand regarding their subscription reimbursement policy and confirm next steps for filming.
 
 ## Links
 - [[Brad]]

@@ -3,21 +3,19 @@
 Brand. Works with creators: [[Chris]].
 
 ## Brand wiki (from every email with them)
-WHO: Runway AI is a creative suite for video generation. We work with them through their agency, House of Marketers.
+WHO: Runway AI is an AI video generation platform. They come to us through the agency House of Marketers.
 
-CONTACTS: Natalie Brown (natalie.brown@houseofmarketers.co.uk) is our primary campaign contact. Pavinder/Payments Team (payments@houseofmarketers.com) handles billing. Ed Robotham (ed@houseofmarketers.com) handles legal agreements. Copy collab@chriscordero.net on all creator-related correspondence.
+CONTACTS: Natalie Brown writes from natalie.brown@houseofmarketers.co.uk as Campaign Manager at House of Marketers. Pavinder writes from payments@houseofmarketers.com for the Payments Team at House of Marketers. Ed Robotham is copied at ed@houseofmarketers.com and sends agreements from agreements@houseofmarketers.legal. Chris Cordero writes from collab@chriscordero.net representing the creator. We sign and send as Chris's Team or us (NOOCAP) via noocapcollab@gmail.com. We copy collab@chriscordero.net on thread CC.
 
 DEALS:
-Chris Cordero: IG Collab SOW2/EOY, [amount]USD, Invoiced, Due 2026-11-13.
-Chris Cordero: November Rerun, [amount]USD, Script Sent, Deadline 2026-11-27.
+Runway AI x Chris | Deliverables: Chris Cordero IG Collab: Runway - SOW2 / EOY | 921 | Rate: [amount] | Stage: Invoiced / Script Sent | Dates: agreed live date by 2026-11-27
+Runway AI x Chris | Deliverables: November rerun, like for like: 2 short videos cross-posted to TikTok, Instagram Reels, YouTube Shorts and Facebook Reels, 90 days paid usage | Rate: [amount] | Stage: Price Agreed | Dates: contract sent 2026-11-11
 
-HOW THEY WORK: Scripts must be written in their template and approved by the Runway team. Key guidelines: Mention Runway early in the creator's own voice (no AI voiceovers), never say Runway ML or Runway AI, show the tool on screen including prompts and output, upload product/logo images when prompting, and follow a Hook to Problem to Solution to CTA structure. Must use the Runway logo from their guidelines site. Posting deadline for the November rerun is November 27. Ad codes are required.
+HOW THEY WORK: We receive briefs via Google Drive folders and use their script template. Promo code for Chris is CHRIS50, and fresh Runway MAX plus credits code is F58D85A00D0D2836. Requirements for videos: mention Runway early in creator's own voice with no scripted reads or AI voiceovers; always say Runway and never Runway ML or Runway AI; show Runway on screen with prompts and final outputs, uploading a reference image of the product or logo when prompting; follow Hook, Problem, Solution, CTA structure ending with Comment keyword and I'll DM you the code; use current Runway logo from runway.com/brand-guidelines; show Runway helping people work faster or do more and never replacing anyone's job. Invoice company details given: INRO GROUP LIMITED, 10 Arnold Hill Road, Arnold, Nottingham, NG5 6LJ, England, Tax ID VAT GB344380212 and CIF 12509530, sent to payments@houseofmarketers.com.
 
-WATCH OUT: Previous payment (INV-001) for the October campaign failed due to incorrect bank details provided by us. A recall request is in progress with House of Marketers. Always double-check beneficiary and bank details before submitting invoices.
+WATCH OUT: Do not use incorrect bank details on invoices, as mismatched beneficiary names cause payment failures that require recall through Wise. Do not use the name Runway ML or Runway AI. Do not use scripted reads or AI voiceovers.
 
-OPEN NOW:
-For the October campaign (INV-007): Waiting on brand: Pavinder to confirm receipt of the updated invoice and status of the payment recall.
-For the November campaign: Waiting on brand: Script approval from the Runway team.
+OPEN NOW: For invoice INV-007 and the November campaign script, waiting on brand: response regarding invoice INV-007, payment recall status, and script approval.
 
 ## Deal with [[Chris]] (Signed, opened 2026-11-20)
 Last brand reply 2026-11-20, our last reply none.
@@ -69,11 +67,11 @@ BILLING: not yet
 OPEN NOW: Waiting on brand: response regarding exclusivity and agreement signature.
 
 ## Deal with [[Chris]] (Invoiced, opened 2026-10-05)
-Last brand reply 2026-11-17, our last reply 2026-11-23.
+Last brand reply 2026-11-17, our last reply 2026-11-26.
 AGREED: Rate 3600. Deliverables: Chris Cordero IG Collab: Runway - SOW2 / EOY | 921. Usage rights: not confirmed. Payment terms: bank transfer. Due date: 2026-11-13.
-HISTORY: 2026-10-29 us posted both videos live, sent invoice. 2026-11-03 us provided all ad codes and confirmed bio updates. 2026-11-03 brand confirmed payment queued for 2026-11-13. 2026-11-11 brand requested November rerun, sent fresh contract. 2026-11-14 us followed up with Pavinder regarding unpaid invoice INV-001. 2026-11-15 us informed brand of incorrect bank details, requested payment recall, and stated corrected invoice with Stripe link will follow. 2026-11-17 brand followed up on new November campaign details. 2026-11-17 us thanked Pavinder for submitting the payment recall request and requested updates on the returned funds. 2026-11-23 us sent updated invoice INV-007 with correct details to Pavinder.
+HISTORY: 2026-10-29 us posted both videos live, sent invoice. 2026-11-03 us provided all ad codes and confirmed bio updates. 2026-11-03 brand confirmed payment queued for 2026-11-13. 2026-11-11 brand requested November rerun, sent fresh contract. 2026-11-14 us followed up with Pavinder regarding unpaid invoice INV-001. 2026-11-15 us informed brand of incorrect bank details, requested payment recall, and stated corrected invoice with Stripe link will follow. 2026-11-17 brand followed up on new November campaign details. 2026-11-17 us thanked Pavinder for submitting the payment recall request and requested updates on the returned funds. 2026-11-23 us sent updated invoice INV-007 with correct details to Pavinder. 2026-11-26 us followed up on the updated invoice and upcoming campaign script.
 BILLING: INRO GROUP LIMITED, VAT GB344380212, CIF 12509530, 10 Arnold Hill Road Arnold Nottingham NG5 6LJ England. Send to payments@houseofmarketers.com. Invoice INV-001 sent 2026-10-29, payment due 2026-11-13, status unpaid/recalled. Updated invoice INV-007 sent 2026-11-23.
-OPEN NOW: Waiting on brand: Pavinder to confirm receipt of updated invoice INV-007 and status of the payment recall.
+OPEN NOW: Waiting on brand: response regarding invoice INV-007, payment recall status, and the upcoming campaign script.
 
 ## Inbound leads
-- Deliverables: 2 short-form videos across Instagram, TikTok, YouTube Shorts, Facebook with discount code CHRIS50 and Runway link in bio · Contact Name: Natalie · Next Step: No action needed. Payment is confirmed in queue for 13/11/26 · Platforms: Instagram, TikTok, YouTube Shorts, Facebook · Last Our Email: 2026-11-23 · Follow-ups: 0 · Deal: 1 linked · Last Brand Email: 2026-11-17 · Thread Subject: @thechriscordero x RUNWAY AI [Collaboration Inquiry] · Status: Locked · Our Counters: 0 · Creator: Chris · Type: Paid offer · Brand Email: natalie.brown@houseofmarketers.co.uk
+- Deliverables: 2 short-form videos across Instagram, TikTok, YouTube Shorts, Facebook with discount code CHRIS50 and Runway link in bio · Contact Name: Natalie · Next Step: No action needed. Payment is confirmed in queue for 13/11/26 · Platforms: Instagram, TikTok, YouTube Shorts, Facebook · Last Our Email: 2026-11-26 · Follow-ups: 0 · Deal: 1 linked · Last Brand Email: 2026-11-17 · Thread Subject: @thechriscordero x RUNWAY AI [Collaboration Inquiry] · Status: Locked · Our Counters: 0 · Creator: Chris · Type: Paid offer · Brand Email: natalie.brown@houseofmarketers.co.uk

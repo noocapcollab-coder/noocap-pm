@@ -2,12 +2,10 @@
 type: deal
 ---
 Stage: Submitted
-Last brand reply 2026-11-25, our last reply 2026-11-25.
+Last brand reply 2026-11-26, our last reply 2026-11-26.
 AGREED: rate [amount]; deliverables 1 short-form video (IG + TikTok) for Topview's Black Friday sale; usage rights not specified; payment terms 100% payable within fourteen (14) days after execution of the production and publication of the production, with receipt of a valid invoice; agreed dates not specified.
 
 HISTORY:
-2026-11-21 us: Requested agreement details correction.
-2026-11-22 us: Confirmed correct contract details and requested revised agreement.
 2026-11-22 brand: Sent updated agreement for review.
 2026-11-23 us: Sent signed contract.
 2026-11-23 brand: Acknowledged signed contract.
@@ -15,33 +13,37 @@ HISTORY:
 2026-11-25 brand: Sent feedback and revision requests for the draft video.
 2026-11-25 us: Sent revised video cut incorporating feedback.
 2026-11-25 brand: Sent second round of feedback and revision requests for the video.
+2026-11-26 us: Sent revised video cut for round 3 for review.
+2026-11-26 brand: Approved the video and provided company name and address.
+2026-11-26 us: Sent follow-up email regarding video posting and billing.
 
-BILLING: company Automate AI Consulting; invoice email Lindsay@automateaiconsulting.com; address 909 N. Thorne Ave., Fresno, CA 93728; invoice status not yet.
+BILLING: company Topview Pte. Ltd.; invoice email not yet; address 20 Collyer Quay #20-03 S(049319); invoice status not yet.
 
-OPEN NOW: We owe: the next revised video cut incorporating the second round of feedback.
-Stage: Script Approved
-Last brand reply 2026-11-21, our last reply 2026-11-23.
+OPEN NOW: We owe: to post the video, share the live link, and send the invoice.
+Stage: Approved
+Last brand reply 2026-11-26, our last reply 2026-11-26.
 AGREED:
 Rate: 1500
 Deliverables: One short-form video/reel, cross-posted to YouTube Shorts, Instagram and TikTok
 Usage rights: Not specified
-Payment terms: Not specified
+Payment terms: 100% payable within fourteen (14) days after execution of the production and publication of the production, with receipt of a valid invoice
 Dates: None
 
 HISTORY:
-2026-11-20 us: Brief filed: Topview AI x Lindsay
-2026-11-20 brand: Requested details for agreement
+2026-11-20 brand: Requested agreement details
 2026-11-21 us: Sent script and agreement details
 2026-11-21 brand: Approved script and sent contract for signature
+2026-11-26 brand: Approved the video
+2026-11-26 brand: Provided billing details and asked about posting status
 
 BILLING:
-Company: Not provided
+Company: Topview Pte. Ltd.
 Invoice email: Not provided
-Address: Not provided
-Invoice status: Not yet
+Address: 20 Collyer Quay #20-03 S(049319)
+Invoice status: not yet
 
 OPEN NOW:
-We owe: Sign and return the agreement.
+We owe: Render CTAs and post the video.
 
 ## Links
 - [[Lindsay]]

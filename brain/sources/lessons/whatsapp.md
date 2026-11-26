@@ -61,7 +61,7 @@ Seen 1 time(s). Source: Harsh correction.
 When: A brand email needs work done (recording, editing, posting, a revised cut) rather than a fact, file, date or money decision from Harsh
 Do: Send the work to the team or the creator through the video card and editor flow, and ask Harsh only for the missing fact (a date, a code, a price, a file only he holds). If the brand asked nothing he must answer, send him nothing.
 Never: Send Harsh a swipe-reply ask whose 'need' is the team's own work (record screen recordings, send the revised draft, publish the video).
-Seen 3 time(s). Source: System check.
+Seen 4 time(s). Source: System check.
 ## A queued WhatsApp message is sent once
 When: Asks and contract alerts queued while the chat was closed go out at the morning round-up or when the chat reopens
 Do: Send each queued message once and mark it sent so no later run sends it again; before sending, check the same text has not already gone out since it was queued.

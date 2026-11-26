@@ -1,5 +1,5 @@
 # Brad - what performs
-Content OS, videos posted since 2026-07-28: 20 posts across platforms, average 2,952 views. Creator: [[Brad]].
+Content OS, videos posted since 2026-07-29: 20 posts across platforms, average 2,952 views. Creator: [[Brad]].
 ## 2026-11-01 👇 Comment “WEBSITES” below and I'll DM you all the links!
 Instagram Short: 34,912 views, 873 likes, 743 comments, 0 shares, 0 saves.
 ## 2026-11-10 👇 Comment "WEBSITES" and I'll send the links to your DMs

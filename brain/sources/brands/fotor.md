@@ -3,44 +3,40 @@
 Brand. Works with creators: [[Duncan]], [[Chris]], [[Lindsay]].
 
 ## Brand wiki (from every email with them)
-WHO: Fotor is a brand providing tools like Fotor Agent, coming to us directly.
+WHO: Fotor, an AI-powered agency offering the Fotor Agent video creation tool. They come to us directly.
 
-CONTACTS: Zoey Rachel, zoey@fotor.me, brand, signs, copy zoey@fotor.me. Marina Xu, marina@fotor.me, brand, signs, copy collab@chriscordero.net.
+CONTACTS: Zoey Rachel, zoey@fotor.me, represents Fotor (writes to Duncan). Marina Xu, marina@fotor.me, represents Fotor (writes to Chris). We sign off as Duncan's Team or Chris's Team, copying noocapcollab@gmail.com. Marina Xu must be copied on Chris's emails and Zoey Rachel on Duncan's.
 
 DEALS:
-Fotor x Duncan | 1 dedicated video published on Instagram Reels, TikTok, and Facebook | [amount]| Stage: Script Sent | Dates: none agreed.
-Fotor x Chris | 1 dedicated video posted on Instagram and TikTok | [amount]| Stage: Submitted | Dates: none agreed.
+Fotor x Duncan | 1 dedicated video published on Instagram Reels, TikTok, and Facebook | [amount]| In Production | Agreement reached Nov 18, 2026.
+Fotor x Chris | 1 dedicated video posted on Instagram and TikTok with 30-day ad authorization and cross-posting usage rights | [amount]| Submitted | Agreement reached Nov 13, 2026.
 
-HOW THEY WORK: They send briefs, access links, and codes (e.g., Fotor access link https://www.fotor.com/video/, code F-OlzhZMA). Concepts include All-in-one and Talking Head. Drafts and revised scripts are reviewed via email threads. Edited videos are reviewed via Frame.io links (e.g., https://f.io/K887WgR6). Brand provides reference asset folders such as Gibberish text comparison asset pack, Fotor Agent logo files, and sample asset library.
+HOW THEY WORK: They provide a content brief, access link, redemption code, and contract. Creators pick concepts or review scripts. Scripts go through brand review and revisions. Drafts are reviewed via video links such as Frame.io. Invoices must be sent to the contract email address with the company title and video link.
 
-WATCH OUT: None.
+WATCH OUT: Nothing noted yet.
 
-OPEN NOW:
-Fotor x Duncan: Waiting on brand: management final approval of the revised script.
-Fotor x Chris: Waiting on brand: review the submitted video.
+OPEN NOW: For Fotor x Duncan, we owe filming and production based on the final script update. For Fotor x Chris, we are waiting on the brand to review the submitted video draft.
 
-## Deal with [[Duncan]] (Script Sent, opened 2026-11-18)
-Last brand reply 2026-11-24, our last reply 2026-11-24.
-AGREED: rate: [amount]; deliverables: 1 dedicated video published on Instagram Reels, TikTok, and Facebook; usage rights: not specified; payment terms: full [amount]on a PayPal invoice after the video goes live, paid within 3 working days of the invoice; agreed dates: not specified.
+## Deal with [[Duncan]] (In Production, opened 2026-11-18)
+Last brand reply 2026-11-26, our last reply 2026-11-26.
+AGREED: rate: [amount]; deliverables: 1 dedicated video published on Instagram Reels, TikTok, and Facebook; usage rights: not specified; payment terms: full [amount]on a PayPal invoice after the video goes live (to contract email with company title and video link), paid within 3 working days of the invoice; agreed dates: not specified.
 
 HISTORY:
 2026-11-18 creator: Accepted [amount]for 1 video on IG, TikTok, and Facebook.
-2026-11-19 us: Requested brief and contract from brand.
-2026-11-19 us: Acknowledged receipt of brief.
 2026-11-19 brand: Shared contract.
-2026-11-20 us: Confirmed receipt of contract, stated intent to sign and draft script.
-2026-11-21 us: Sent the script for brand review.
+2026-11-21 us: Sent the initial script for brand review.
 2026-11-22 us: Sent the signed contract.
-2026-11-23 brand: Confirmed script is submitted to their team for review.
 2026-11-24 brand: Sent a revised script for creator review and approval.
-2026-11-24 us: Confirmed revised script looks good and asked brand to submit to management.
+2026-11-24 us: Approved the revised script.
+2026-11-26 brand: Provided final script update and authorization to begin filming.
+2026-11-26 brand: Provided access code, asset library, and visual references for production.
 
 BILLING: not yet
 
-OPEN NOW: Waiting on brand: management final approval of the revised script.
+OPEN NOW: We owe: filming and production of the video based on the final script update.
 
 ## Deal with [[Chris]] (Submitted, opened 2026-11-13)
-Last brand reply 2026-11-24, our last reply 2026-11-25.
+Last brand reply 2026-11-26, our last reply 2026-11-26.
 AGREED: [amount]rate. 1 dedicated video posted on Instagram and TikTok. 30-day ad authorization and cross-posting usage rights. Payment terms not specified. No dates agreed yet.
 HISTORY:
 2026-11-13 us: Agreed to [amount]for the video package with 30-day ad authorization and cross-posting.
@@ -51,11 +47,12 @@ HISTORY:
 2026-11-20 us: Selected the Talking Head concept and submitted the draft script for approval.
 2026-11-24 brand: Sent a revised script in the email body plus reference asset folders.
 2026-11-25 us: Submitted the edited video for brand review.
+2026-11-26 brand: Acknowledged receipt of the video draft and stated they will provide feedback as soon as possible.
 BILLING: not yet
 OPEN NOW: Waiting on brand: review the submitted video.
 
 ## Inbound leads
-- Deliverables: 1 video (script revision in progress) · Contact Name: Marina · Next Step: Wait for Chris's team to send the revised script within 2-3 working days · Platforms: YouTube · Last Our Email: 2026-11-25 · Thread Subject: Paid Collab: Become One of the Fotor Agent Creators · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: marina@fotor.me
+- Deliverables: Short-form or Long-form video on YouTube, Instagram Reels, TikTok, or X · Contact Name: Rubywinfluenceagency · Next Step: New brand: management to reply with pricing · Platforms: YouTube, Instagram, TikTok, X · Last Our Email: 2026-11-26 · Last Brand Email: 2026-11-26 · Thread Subject: PAID COLLABORATION INVITATION - FOTOR · Status: Negotiating · Creator: Chris · Type: Paid offer · Brand Email: rubywinfluenceagency@mcn.noxinfluencer.com
 - Deliverables: 1 Instagram Reel + 7 days Link in Bio + Basic ManyChat setup · Contact Name: Marina · Next Step: None, deal declined by brand. · Platforms: Instagram · Last Our Email: 2026-11-17 · Last Brand Email: 2026-11-18 · Thread Subject: Paid Collab: Become One of the Fotor Agent Creators · Status: Lost · Creator: Lindsay · Type: Paid offer · Brand Email: marina@fotor.me
 - Deliverables: One 45-60 second Instagram Reel · Contact Name: Influenca · Next Step: Reply with rate for 1 short-form video and mention availability. · Platforms: Instagram · Last Our Email: 2026-11-20 · Deal: 1 linked · Last Brand Email: 2026-11-19 · Thread Subject: Paid Instagram Collaboration Opportunity | Fotor Agent · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: BloomLogiccollab@sales.jenniefy.com
 - Deliverables: 1 short-form video (cross-posted to YT Shorts, IG, TikTok) + asked about dedicated YouTube long-form video · Contact Name: Marina · Next Step: New brand: management to reply with pricing · Platforms: Instagram, TikTok, YouTube, YouTube Shorts · Last Our Email: 2026-11-13 · Last Brand Email: 2026-11-16 · Thread Subject: 🔥Paid Collaboration: Fotor AI & Long-term corporation · Status: Negotiating · Creator: Lindsay · Type: Paid offer · Brand Email: cynthia@bloomlogic.com.cn

@@ -2,6 +2,32 @@
 
 The final scripts of videos posted in the last 60 days, as filmed.
 
+## 2026-11-25 CLAUDE TRIAL REELS
+Type: PERSONAL. Creator: [[Duncan]].
+Hook 1:
+Claude can now ship 10 trial reels a day straight to your account, so your agent figures out what people actually watch before you waste a month filming the wrong thing.
+    Hook 2:
+The easiest way to find a viral reel this week is to let Claude post 10 of them for you and watch the data come back the next morning.
+    Body:
+So here's the deal. You plug in your Instagram and Claude starts researching ideas, building the reels, and shipping them for you. It watches each one, sees exactly where people skip, and uses that data to sharpen the next batch. Instead of guessing which hooks land, your account is testing 10 at once and learning on its own. If you want a following around what you sell in 2027, this is probably the fastest way in. Pretty freaking cool.
+    CTA:
+Comment RIP and I'll send you access plus Claude Code Club.
+    https://www.getripping.com/
+    https://tinyurl.com/mh7wm57m
+
+## 2026-11-26 CLAUDE KILLED GOOGLE, MICROSFT AND MORE
+Type: PERSONAL. Creator: [[Duncan]].
+Hook 1:
+Anthropic quietly shipped a whiteboard, a spreadsheet and a data tool inside Claude in one update, and Figma, Microsoft and Google are watching their moats disappear.
+    Hook 2:
+Claude just came for Google, Figma and Microsoft because the last update put a whiteboard and a working spreadsheet right inside the chat.
+    Body:
+So here's the deal. Until now, when you asked Claude to map out a project, you got a block of chat text that you still had to drag into Miro or Figma before it was any use. Now Claude Whiteboard now draws your plans for you, so you talk a project through out loud and get back a full timeline with every owner and due date filled in. Claude Sheets takes a line like "give me an ad spend tracker by platform" and hands you a working sheet with the formulas already set up. And Claude Data plugs into your CRM, so you ask a question in plain English and a live dashboard shows up. Pretty freaking cool.
+    CTA:
+Comment STACK and I'll send you the full guide to this.
+    lead magnet
+https://www.youtube.com/watch?v=Of9ylhwSkJE
+
 ## 2026-11-20 MCP IS DEAD (1)
 Type: TRIALS. Creator: [[Duncan]].
 ON SCREEN HOOK:

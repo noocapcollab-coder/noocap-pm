@@ -2,7 +2,7 @@
 type: deal
 ---
 Stage: Negotiating
-Last brand reply 2026-11-25, our last reply 2026-11-23.
+Last brand reply 2026-11-26, our last reply 2026-11-23.
 AGREED: rate unknown, deliverables unknown, usage rights unknown, payment terms unknown, dates unknown.
 
 HISTORY:

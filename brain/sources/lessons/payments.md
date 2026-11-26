@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Deal Memory billing follows the invoice actually paid, not the split the brand first proposed
+When: A brand proposes split payments (50% upfront, 50% after posting) but the invoice that went out and got paid was for the full amount
+Do: Write in Deal Memory and Payment Terms what was invoiced and paid (amount, invoice number, date) and that no balance is due
+Never: Keep '50% paid, balance pending publication' when Stripe shows the whole amount paid, or raise a second invoice for a balance nobody owes
+Seen 1 time(s). Source: System check.
+## No payment chase before the date the brand said it pays
+When: A deal is Invoiced and the brand's terms or emails say when they pay (Net 15, within 30 days, a date)
+Do: Set Invoice Due Date from the terms (from the invoice date when they run from the invoice), stay quiet until then, and send the first reminder the day after the due date
+Never: Use the 3-day Stripe default when the deal has payment terms, or send an 'is it on track' reminder inside the brand's payment window
+Seen 1 time(s). Source: Harsh correction.
 ## A fee the brand already scheduled through a partner platform needs no invoice
 When: A video is approved or posted and the thread shows the brand set up the payment itself through a partner or affiliate platform (Awin and similar), e.g. 'your payment is scheduled for July 14th, net payment terms in Awin'
 Do: Read the whole thread for how the fee is paid before asking anything. Record 'Paid through <platform>' in the deal's BILLING line, leave the deal without an invoice, and ask Harsh once whether the platform payment landed.
@@ -36,7 +46,7 @@ Seen 1 time(s). Source: Harsh correction.
 When: A deal covers 2 or more videos for one fee and the first video goes live while the others are still being scripted, filmed or edited
 Do: Wait until every video in the deliverables is live (or the brand asks for the invoice, or the terms split payment per video) before asking for billing details or raising the final invoice. While a script or cut is owed, emails answer the brand's latest message about the work.
 Never: Ask for company billing details or invoice the full fee of a multi-video deal after only the first video is posted, and never redraft a billing ask Harsh already rejected on the same deal without anything new.
-Seen 1 time(s). Source: System check.
+Seen 3 time(s). Source: System check.
 ## One WhatsApp per payment
 When: Stripe already showed a brand's payment and marked the deal Paid, then the brand emails that finance has paid
 Do: Record the email on the deal (Last Brand Reply) and stop there: Harsh already heard about the money from Stripe.

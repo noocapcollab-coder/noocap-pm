@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A cut the PM could not send waits for Harsh, it is never re-sent on its own every run
+When: A revised cut at Send to Brand is held by a check or blocked (no deal, no link, no brand email) and the row goes back to In Review
+Do: Leave the row at In Review with its 'Not sent' note and one alert to Harsh; resend only when Harsh switches it to Send to Brand again
+Never: Never treat the PM's own 'Not sent' edit as the editor finishing a new round, and never post the same 'to approve' or 'couldn't send' alert again each heartbeat
+Seen 1 time(s). Source: System check.
+## Brand changes reach the editor once per round, in the brand's own words
+When: A brand asks for video changes (any round)
+Do: Let the CHANGES REQUESTED alert carry the notes; the PM reposts only when Feedback Posted is still unticked after 20 minutes. Store the brand's feedback, or the summary only when there is no feedback text
+Never: Post the PM's 'Brand changes · round N' message as well as the alert, or save the feedback plus its summary (every note shows twice)
+Seen 1 time(s). Source: Harsh correction.
 ## Every editor ping says in words whether the video is a sponsor, trial or personal
 When: Any new-video ping to an editor's Discord channel
 Do: Put a Type line under the title (SPONSOR video, the brand reviews this cut / TRIAL REEL / Personal) and read the exact TYPE select, which wins over other columns named Type
@@ -164,6 +174,6 @@ Never: Assume one column name for every board.
 Seen 1 time(s). Source: Rulebook.
 ## Brand change notes go to the editor
 When: A brand sends notes on a cut or a script
-Do: Put the notes on the right video row and send them to the editor (cut) or Rudraksh (script). After the editor is done, draft the revised-cut email.
-Never: Reply to the brand just to acknowledge the notes.
+Do: Put the notes on the right video row and send them to the editor (cut) or the script writer (script). Reply to the brand with the fixed acknowledgement from Reply Templates (video_changes_ack / script_changes_ack: thanks, revised cut or script in 1 to 2 working days), every round, on its own. After the editor is done, send the revised-cut email.
+Never: Write an AI reply to change notes (no promises of reshoots, new presenters or 'we'll check with our editor'). The fixed acknowledgement is NOT this: it always goes (Harsh, Nov 26).
 Seen 3 time(s). Source: Rulebook.

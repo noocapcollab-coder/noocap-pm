@@ -5,17 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: HoneyBook promoting MyCo, their new product (users do not need to be HoneyBook customers to use MyCo). They come through an agency, Narrative Group.
+WHO: HoneyBook, offering a new product called MyCo. They come to us through an agency named Narrative Group.
 
-CONTACTS: Dori Zussmann, dori@narrativegroup.co, VP Client Management at Narrative Group. We sign as Chris's Team and copy collab@chriscordero.net.
+CONTACTS: Dori Zussmann, dori@narrativegroup.co, VP Client Management at Narrative Group. Thread CC includes collab@chriscordero.net and noocapcollab@gmail.com. We sign on behalf of Chris.
 
-DEALS: Chris x HoneyBook | stage Script Approved | channel Email
+DEALS: HoneyBook x Chris | deliverables, rate, usage rights, and payment terms per deal fields | Submitted | agreed dates none yet.
 
-HOW THEY WORK: Scripts are reviewed via shared document comments or attachments, focusing specifically on MyCo per their brief. Once feedback on the revised script is received, production proceeds to filming and editing.
+HOW THEY WORK: Scripts are shared via PDF or Google Docs for review and feedback. Video drafts are reviewed via Frame.io links (f.io/BVcjmHP0). The brand may request asset updates (such as replacing old assistant images with MyCo ones and using the MyCo logo) and creator account emails for UTM tracking.
 
 WATCH OUT: Scripts must focus specifically on MyCo rather than a general HoneyBook integration.
 
-OPEN NOW: We owe filming and editing the video, and then submitting it to the brand.
+OPEN NOW: Waiting on brand to review the revised video cut.
 
 
 ## Links

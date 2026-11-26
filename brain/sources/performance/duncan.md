@@ -1,5 +1,5 @@
 # Duncan - what performs
-Content OS, videos posted since 2026-07-28: 258 posts across platforms, average 15,411 views. Creator: [[Duncan]].
+Content OS, videos posted since 2026-07-29: 258 posts across platforms, average 15,411 views. Creator: [[Duncan]].
 ## 2026-11-15 Give Me 13 Minutes and I'll Make You Disgustingly Good With Claude
 YouTube Long: 935,688 views, 8,353 likes, 171 comments, 0 shares, 0 saves.
 ## 2026-08-25 Check the pinned comment below for the GitHub repo link 👇

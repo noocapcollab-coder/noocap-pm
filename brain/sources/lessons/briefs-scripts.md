@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Another campaign's brief shared for an overview is not the brief
+When: A brand shares a brief link 'in the meantime' or 'for an overview' (often an older or current campaign's brief) and says the final brief for our deal will come later
+Do: Treat it as reference: thank them if a reply is due, keep the card at 2- Waiting For Brief with the brand's posting window as POST DATE, and wait for the final brief before the script writer starts.
+Never: File it as the deal's brief, move the card to Script Draft, ask Rudraksh for a script or send a script written from it.
+Seen 1 time(s). Source: System check.
 ## A new script at 5 goes to the brand whatever the deal stage says
 When: A video card is back at 5- Script Approval with a script the brand hasn't had, while the deal stage still shows a later step (Submitted, Approved) from an earlier round
 Do: Send the card's newest script (the part under UPDATED / REVISED SCRIPT) as the PDF, and put the team's NOTES from the card into the email word for word. Only the newest version goes in the PDF.
@@ -30,8 +35,8 @@ Seen 2 time(s). Source: Harsh correction.
 ## A revised script must really differ from the one the brand already has
 When: A script card comes back to 5- Script Approval after the brand's script notes
 Do: Send it as the revised script only when the card's script text changed since the last Script email (its fingerprint differs); otherwise leave it with Rudraksh
-Never: Never send the same script again saying the brand's notes are worked in, and never send the same revised script twice
-Seen 1 time(s). Source: System check.
+Never: Never send the same script again saying the brand's notes are worked in, never send the same revised script twice, and never send another 'revised' script when the brand has given no new notes since the last one we sent
+Seen 2 time(s). Source: System check.
 ## Notes on our script are script changes, even when the brand calls it a video draft
 When: A brand sends notes while the deal is at Script Sent (or earlier) and no cut has gone out, but the email says 'your first video draft' or 'the video'
 Do: Check what we actually sent: only a script means script_changes, the notes go to Rudraksh on the card and the revised script goes back when the card returns to 5

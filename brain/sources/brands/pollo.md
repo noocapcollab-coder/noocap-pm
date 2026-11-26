@@ -20,6 +20,7 @@ Last brand reply 2026-10-16, our last reply 2026-10-15.
 
 
 ## Inbound leads
+- Contact Name: Mina · Next Step: New brand: management to reply with pricing · Last Brand Email: 2026-11-26 · Thread Subject: Join Pollo AI’s Exclusive Creator Campaigns · Status: New offer · Creator: Chris · Type: Paid offer · Brand Email: mina@mail.pollo.ai
 - Deliverables: talking-head videos, product reviews, tutorials, and promotional content · Contact Name: Mina · Next Step: Replied 2026-11-23, waiting on the brand · Last Our Email: 2026-11-23 · Last Brand Email: 2026-11-23 · Thread Subject: Following Up: Exclusive Creator Opportunities with Pollo AI · Status: Waiting on brand · Creator: Lindsay · Type: Paid offer · Brand Email: mina@mail.pollo.ai
 - Next Step: Ignore or archive the creator platform invitation. · Last Brand Email: 2026-11-16 · Thread Subject: Join Pollo AI’s Exclusive Creator Campaigns · Status: Lost · Creator: Chris · Type: Unclear · Brand Email: linn@mail.pollo.ai
 - Next Step: New brand: management to reply with pricing · Platforms: YouTube · Last Our Email: 2026-11-11 · Last Brand Email: 2026-11-16 · Thread Subject: @ Automate AI Consulting - Paid YouTube Sponsorship Opportunity with Pollo AI · Status: Negotiating · Creator: Lindsay · Type: Paid offer · Brand Email: linn@mail.pollo.ai

@@ -2,6 +2,41 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A reply never says something is already set up or done unless someone on our side said so
+When: A brand asks us to confirm a setup step (comment-DM automation, access, upload, the release file) before posting
+Do: Answer with what will be done, or hold the draft for Harsh to confirm the fact; facts come only from the thread, the card or Harsh's words
+Never: Write 'we have the DM automation set up', 'access is working' or 'it's uploaded' when nobody on our side said so
+Seen 1 time(s). Source: System check.
+## An agreement the brand accepts by an email reply is never answered with 'we'll sign it'
+When: A brand attaches an agreement or rules and says a written reply such as "Agree with the Influencer Cooperation Rules" is enough and no signature is needed
+Do: File the agreement, send Harsh the file saying no signature is needed and that agreeing is his reply, and leave the written 'Agree' reply plus any account email to him
+Never: Send the contract_ack ('we've received it and will review and sign it') or tell Harsh to sign it when the brand says no signature is needed
+Seen 1 time(s). Source: System check.
+## A brand asking why we did something gets Harsh's answer, never a made-up reason
+When: A brand questions one of our own actions ('why was a script shared before the agreement?', 'why did you post early?') or asks about the creator's intent
+Do: Answer the parts the thread already settles (e.g. noting their payment terms) only if Harsh adds the rest; put the 'why' and the creator's intent to Harsh on WhatsApp and draft from his words.
+Never: Invent a motive ('to keep the momentum going'), speak for the creator's intent, or promise to wait on a brief nobody discussed.
+Seen 2 time(s). Source: System check.
+## Every new brand email with notes gets its fixed acknowledgement, every round
+When: The brand sends round 2 (or later) notes on a script or video within 3 days of the round 1 acknowledgement
+Do: Send the fixed acknowledgement again; only a copy written after this brand email counts as already answered
+Never: Skip an acknowledgement because the same template went in the thread in the last 3 days for an earlier round
+Seen 2 time(s). Source: Harsh correction.
+## The script-approval email sends on its own, even when the brand lists points
+When: A brand approves a script and also asks us to confirm something (people, facts, permissions)
+Do: Thank them, say we'll film and take care of all the points they listed, ask for access on noocaptools@gmail.com, and send it on its own with no second-check hold
+Never: Hold the script-approval / tool-access email for Harsh or ask him on WhatsApp about the brand's filming points. Harsh, Nov 26: 'these kind of mails don't need my approval, it should send straight away'
+Seen 1 time(s). Source: Harsh correction.
+## Never tell a brand the video is published or live without its live link
+When: Replying to a brand that cleared the video for posting or asked to publish it
+Do: Say only what is true now. If the video is live, give the live post link; if it is not, leave posting out (the post date is Harsh's call).
+Never: Write 'we have published the video', 'it is now live' or 'the reel has been posted' when there is no live post link and the deal is not at Posted.
+Seen 1 time(s). Source: System check.
+## Never quote a brand a price nobody gave
+When: A brand asks about a rate, a package or how things are progressing on a deal still in negotiation, and the price is not in the thread, the deal or Harsh's WhatsApp answer
+Do: Use only a price that is written in the thread, on the deal or in Harsh's answer, word for word. If our side already sent a price, the deal is waiting on the brand. If no price exists, ask Harsh once on WhatsApp and draft nothing until he answers.
+Never: Invent, round up, combine or estimate a price, a package total or a fee in any email.
+Seen 1 time(s). Source: System check.
 ## A brand waiting on our confirmation of a date or plan is a question for Harsh
 When: A brand email says it is waiting for us to confirm something before it moves (once you confirm the go-live date, please confirm Chris is available on the 3rd)
 Do: Mark it as needing our info and ask Harsh once on WhatsApp for the confirmation, quoting the brand's sentence
@@ -21,7 +56,7 @@ Seen 1 time(s). Source: System check.
 When: Any reply, follow-up or draft built from a file Harsh sent, when the brand has shared a contract, agreement or brief
 Do: Leave signing to Harsh: hold the draft as Needs you and ask him on WhatsApp
 Never: Write "we're ready to sign", "we're happy to sign" or "we'll sign it" in an email that sends itself
-Seen 1 time(s). Source: System check.
+Seen 2 time(s). Source: System check.
 ## Keep chasing until the brand answers or pays
 When: A brand goes quiet on a follow-up, an on-hold check-in or an unpaid invoice
 Do: Keep sending on the 3 / 5 / 9 weekday gaps, then every 9 weekdays, until they answer or pay
@@ -311,4 +346,4 @@ Seen 3 time(s). Source: Rulebook.
 When: Writing any email
 Do: Give the thing if we have it, otherwise leave the promise out.
 Never: Write 'shortly', 'within a few hours', 'we'll send it today', [DATE], [name] or invented dates.
-Seen 23 time(s). Source: Rulebook.
+Seen 24 time(s). Source: Rulebook.

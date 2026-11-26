@@ -5,17 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: Joylo is an app builder that guarantees production. They come to us through Closedune.
+WHO: Joylo app builder that guarantees production, comes through Closedune agency.
 
-CONTACTS: Daniela, daniela@closedune.com, Closedune (brand contact). Chris Cordero, collab@chriscordero.net, creator (copied).
+CONTACTS: Daniela, daniela@closedune.com, Closedune (brand contact). Chris Cordero Team, collab@chriscordero.net (creator team).
 
-DEALS: Chris | One short-form reel, cross-posted | [amount] | Script Sent | Agreed 2026-09-30, script sent 2026-10-01.
+DEALS: Joylo x Chris, one short-form reel cross-posted, [amount], stage Script Sent, agreed on 2026-09-30, script sent on 2026-10-01.
 
-HOW THEY WORK: Brief received 2026-09-30. Script sent for review on 2026-10-01.
+HOW THEY WORK: Brief and reference post received, script sent as PDF for review and feedback.
 
 WATCH OUT: None stated.
 
-OPEN NOW: No brand response to the script since 2026-10-01 despite multiple follow-ups. Waiting on the brand for script feedback, confirmation to proceed, or project cancellation.
+OPEN NOW: No brand response to script since 2026-10-01 despite multiple follow-ups; waiting on brand for script feedback, confirmation to proceed, or project cancellation.
 
 
 ## Links
