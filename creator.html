@@ -38,6 +38,7 @@
   .tops { display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; }
   .top { background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; text-decoration:none; color:inherit; display:flex; flex-direction:column; }
   .top img { width:100%; aspect-ratio: 9/14; object-fit:cover; background:var(--line); display:block; }
+  .top .ph { width:100%; aspect-ratio:9/14; background:var(--line); display:grid; place-items:center; color:var(--mute); font-size:28px; }
   .top .meta { padding:9px 10px; font-size:12px; color:var(--mute); }
   .top .meta b { color:var(--ink); font-size:15px; display:block; }
   .row { display:grid; grid-template-columns: 1fr auto auto; gap:12px; align-items:center; padding:12px 14px; border-bottom:1px solid var(--line); }
@@ -104,7 +105,7 @@ function render(d) {
 
   if (d.top && d.top.length) {
     h += `<h2>Top videos · last 90 days</h2><div class="tops">` + d.top.map((t) => `<a class="top" href="${esc(t.url)}" target="_blank" rel="noopener noreferrer">
-      ${t.thumb ? `<img src="${esc(t.thumb)}" alt="" loading="lazy">` : ''}
+      ${t.thumb ? `<img src="${esc(t.thumb)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'▶'}))">` : '<div class="ph">▶</div>'}
       <div class="meta"><b>${short(t.views)} views</b>${PL[t.platform] || esc(t.platform)} · ${date(t.at)}</div></a>`).join('') + `</div>`;
   }
 
