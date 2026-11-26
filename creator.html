@@ -87,7 +87,7 @@ function spark(hist) {
 }
 
 function trialsHtml(t) {
-  if (!t) return `<div class="card" style="color:var(--mute)">No trial reels yet.</div>`;
+  if (!t) return `<div class="card" style="color:var(--mute)">No trial reels posted yet. They will show here, with views for each hook version, as soon as the first ones go live.</div>`;
   let h = `<div class="tiles">
     <div class="tile"><span class="k">Trial reels</span><b>${num(t.reels)}</b><small>${num(t.videos)} videos tested</small></div>
     <div class="tile"><span class="k">Views</span><b>${short(t.views)}</b><small>all trial reels</small></div>
