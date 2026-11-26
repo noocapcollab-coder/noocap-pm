@@ -14,12 +14,17 @@ test('a Billing Details line saying the fee is paid through a platform is recogn
   assert.equal(paidThroughPlatform('Company: Acme Inc | Email: ap@acme.com'), null);
   assert.equal(paidThroughPlatform(''), null);
   assert.equal(paidThroughPlatform('Paid via bank transfer'), null);
+  assert.equal(paidThroughPlatform('Paid via Gusto'), null);
+  assert.equal(paidThroughPlatform('paid through Faved, upload the invoice there'), null);
 });
 
 test('no billing-details ask for a deal paid through a partner platform', () => {
   const deal = { stage: 'Posted', billing: 'Paid through Awin' };
   assert.equal(needsBillingAsk(deal), false);
   assert.equal(needsBillingAsk({ stage: 'Posted', billing: '' }), true);
+  // ZenBusiness's real deal: Billing Details empty, the platform is in Notes and the Deal Memory BILLING line
+  assert.equal(needsBillingAsk({ stage: 'Posted', billing: '', notes: 'Pays through Awin (partnership platform, publisher ID 2933515)' }), false);
+  assert.equal(needsBillingAsk({ stage: 'Posted', billing: '', memory: 'BILLING: Paid through Awin, no invoice or billing details needed.' }), false);
 });
 
 test('the due watch never lists a platform-paid deal as posted with no invoice', () => {
