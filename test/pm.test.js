@@ -3730,3 +3730,12 @@ test('outreach follows up every 3 days, 5 times, and never on a US weekend', asy
   assert.equal(inWindow(new Date('2026-11-27T15:00:00Z')), true); // Friday
   assert.match(buildEmail({ creator: 'Valeri', pronoun: 'she', followUps: [] }, { brand: 'Acme' }, 'fu1').text, /Valeri would be a strong fit for Acme, and I'd be happy to share her rates/);
 });
+
+test('a second-reader quibble about stage or rate never holds an approval', async () => {
+  const { peripheralOnly } = await import('../lib/verify.js');
+  const x = { event: 'video_feedback', video_approved: true };
+  assert.ok(peripheralOnly(x, { agree: false, rightEvent: 'video_feedback', reason: "The first reader incorrectly identified the deal stage as 'Paid' when it is actually 'Invoiced', and the rate was 1500 not 1600" }));
+  assert.ok(!peripheralOnly(x, { agree: false, rightEvent: 'brand_reply', reason: 'stage is Invoiced' }));
+  assert.ok(!peripheralOnly(x, { agree: false, rightEvent: 'video_feedback', wrongDeal: true, reason: 'stage' }));
+  assert.ok(!peripheralOnly(x, { agree: false, rightEvent: 'video_feedback', reason: 'Moving the card to To Post is wrong, the brand asked for changes' }));
+});
