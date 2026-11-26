@@ -3747,3 +3747,13 @@ test('KooKo AI x Valeri, Nov 26: an agreement accepted by an email reply gets no
   assert.equal(agreeByReply('Please find the contract attached. Kindly sign and return it by Friday.'), false);
   assert.equal(agreeByReply('Contract attached, please sign.'), false);
 });
+
+test('one video cross-posted to four platforms is one video, not four', async () => {
+  const { videosOwed } = await import('../lib/missingcards.js');
+  const { videoCount } = await import('../lib/briefs.js');
+  const d = 'One short video posted as 1 Instagram Reel + 1 TikTok + 1 YouTube Short + 1 Facebook post';
+  assert.equal(videosOwed(d), 1);
+  assert.equal(videoCount({}, { deliverables: d }), 1);
+  assert.equal(videosOwed('2 YouTube Shorts'), 2);
+  assert.equal(videosOwed('3 reels, cross-posted to TikTok'), 3);
+});
