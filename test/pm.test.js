@@ -3678,3 +3678,24 @@ test('approval email gets the fixed script-approved reply', async () => {
   assert.equal(approvalAck('The script is not approved yet, a few notes below.'), null);
   assert.equal(approvalAck('Thanks for the links, all noted.'), null);
 });
+
+test('publishing and a later invoice are never a Harsh ask (Manyfast x Chris, Nov 26)', async () => {
+  const { teamWorkOnly, owedItem } = await import('../lib/owed.js');
+  const need = 'publish the video on 2026-11-30 and send the final 50% invoice after publication';
+  assert.equal(teamWorkOnly(need), true);
+  const deal = { id: 'd', stage: 'Approved', memory: `OPEN NOW: We owe: ${need}`, lastBrand: '2026-11-26T00:00', lastOur: '2026-11-25T08:42' };
+  assert.equal(owedItem(deal, '2026-11-26'), null);
+  // a fact only Harsh has still reaches him
+  assert.equal(teamWorkOnly('publish the video and share the 60-day ad code'), false);
+  assert.ok(owedItem({ ...deal, memory: 'OPEN NOW: We owe: publish the video and share the 60-day ad code' }, '2026-11-26'));
+  assert.ok(owedItem({ ...deal, memory: 'OPEN NOW: We owe: send the W-9 form' }, '2026-11-26'));
+});
+
+test('another campaign brief shared for an overview is not the brief (Renoise x Chris, Nov 25)', async () => {
+  const { referenceBriefOnly, applyTextGuards } = await import('../lib/inbox.js');
+  const renoise = "Thank you for sending the signed contract! Our campaign brief may be updated before the December collaboration to reflect the latest product features and campaign plans. We'll send you the final brief well before production and discuss the content direction together. In the meantime, you're welcome to look through our current Black Friday campaign's creator brief for an overview of the Renoise App: https://field-warbler-6c0.notion.site/renoise-app-creators-campaign-brief-en";
+  assert.equal(referenceBriefOnly(renoise), true);
+  const x = applyTextGuards({ event: 'brief', from_role: 'brand' }, { text: renoise });
+  assert.equal(x.event, 'brand_reply');
+  assert.equal(referenceBriefOnly("Here's the brief for the reel: https://docs.google.com/x. Please send the script by Friday."), false);
+});
