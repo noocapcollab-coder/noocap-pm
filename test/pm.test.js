@@ -3705,3 +3705,13 @@ test('multi-select Type column takes the SPONSOR tag', async () => {
   const v = buildValue({ type: 'multi_select', multi_select: { options: [{ name: 'SPONSOR' }, { name: 'TRIALS' }] } }, 'SPONSOR');
   assert.deepEqual(v, { multi_select: [{ name: 'SPONSOR' }] });
 });
+
+test('outreach never pitches send-only or bounced addresses', async () => {
+  const { unsendable } = await import('../lib/outreach.js');
+  assert.match(unsendable('hello@send.wannable.ai'), /send-only/);
+  assert.match(unsendable('rohit@solarisstudiojoin.com'), /send-only/);
+  assert.match(unsendable('abby@goprospectloop.co'), /send-only/);
+  assert.match(unsendable('yael@dont-gate.com', [{ status: 'Bounced', to: 'yael@dont-gate.com' }]), /bounced before/);
+  assert.equal(unsendable('partnerships@wondershare.com'), '');
+  assert.equal(unsendable('jane@leadsquared.com'), '');
+});
