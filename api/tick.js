@@ -225,6 +225,12 @@ export default async function handler(req, res) {
     catch (e) { return res.status(500).json({ error: e.message }); }
   }
   // ?platforms=1 (&dry=1): fill Platforms on open deals that have none (lib/platforms.js)
+  // ?postdates=1 (&dry=1): date every card that has a brief but no POST DATE (lib/briefs.js fillMissingPostDates)
+  if (req.query?.postdates) {
+    if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
+    try { const B = await import('../lib/briefs.js'); return res.status(200).json({ set: await B.fillMissingPostDates({ dry: req.query.dry === '1' }) }); }
+    catch (e) { return res.status(500).json({ error: e.message }); }
+  }
   if (req.query?.platforms) {
     if (!hookAllowed(req)) return res.status(401).json({ error: 'hook secret needed' });
     try { const P = await import('../lib/platforms.js'); return res.status(200).json({ set: await P.fillDealPlatforms({ dry: req.query.dry === '1' }) }); }
