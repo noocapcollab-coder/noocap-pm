@@ -3797,10 +3797,9 @@ test('wants UGC is read from the deal text', async () => {
 {
   const { dealsView, contentView, creatorForDashKey } = await import('../lib/creatordash.js');
   const v = dealsView([
-    { 'Brand Name': 'A', 'Deal Stage': 'Paid', 'Final Rate USD': 700, 'Paid Date': '2026-11-07' },
-    { 'Brand Name': 'B', 'Deal Stage': 'Invoiced', 'Invoice Amount': 1400 },
-    { 'Brand Name': 'C', 'Deal Stage': 'Lost', 'Final Rate USD': 999 },
-    { 'Brand Name': 'D', 'Deal Stage': 'In Production', 'Final Rate USD': 600 },
+    { title: 'A', paid: true, amount: 700, paidDate: '2026-11-07', stage: 'Posted' },
+    { title: 'B', paid: false, amount: 1400, stage: 'Posted' },
+    { title: 'D', paid: false, amount: 600, stage: 'In production' },
   ]);
   assert.equal(v.deals.length, 3);
   assert.equal(v.earned, 700); assert.equal(v.awaiting, 1400); assert.equal(v.inProgress, 600);

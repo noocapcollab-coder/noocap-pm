@@ -47,6 +47,9 @@
     },
     "api/duewatch.js": {
       "maxDuration": 120
+    },
+    "api/creator.js": {
+      "maxDuration": 60
     }
   },
   "crons": [
