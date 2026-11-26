@@ -50,6 +50,16 @@
   .chip.Awaiting { background: color-mix(in srgb, var(--wait) 18%, transparent); color: var(--wait); }
   .chip.In { background: color-mix(in srgb, var(--acc) 16%, transparent); color: var(--acc); }
   .card.flush { padding:0; }
+  .tabs { display:flex; gap:6px; margin: 0 0 18px; border-bottom:1px solid var(--line); }
+  .tabs button { background:none; border:0; border-bottom:2px solid transparent; color:var(--mute); font:inherit; font-weight:600; padding:10px 4px; margin-right:14px; cursor:pointer; }
+  .tabs button.on { color:var(--ink); border-color: var(--acc); }
+  .batch { padding:12px 14px; border-bottom:1px solid var(--line); }
+  .batch:last-child { border-bottom:0; }
+  .batch .head { display:flex; justify-content:space-between; gap:12px; align-items:baseline; }
+  .batch .head b { font-variant-numeric: tabular-nums; white-space:nowrap; }
+  .vers { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+  .vers a, .vers span { font-size:12px; color:var(--mute); border:1px solid var(--line); border-radius:999px; padding:3px 9px; text-decoration:none; font-variant-numeric: tabular-nums; }
+  .vers a.best { color:var(--acc); border-color: color-mix(in srgb, var(--acc) 50%, transparent); }
   .msg { color: var(--mute); padding: 60px 0; text-align:center; }
   @media (max-width: 680px) { .tiles { grid-template-columns: repeat(2, 1fr); } .plats { grid-template-columns: 1fr; } .tops { grid-template-columns: repeat(2, 1fr); } .row { grid-template-columns: 1fr auto; } .row .chip { grid-column: 1; justify-self:start; } }
 </style>
@@ -64,6 +74,9 @@ const num = (v) => Number(v || 0).toLocaleString('en-US');
 const short = (v) => { v = Number(v || 0); return v >= 1e6 ? (v / 1e6).toFixed(1).replace(/\.0$/, '') + 'M' : v >= 1e4 ? Math.round(v / 1e3) + 'K' : v >= 1e3 ? (v / 1e3).toFixed(1).replace(/\.0$/, '') + 'K' : String(v); };
 const usd = (v) => '$' + Number(v || 0).toLocaleString('en-US');
 const date = (d) => d ? new Date(d + (String(d).length === 10 ? 'T00:00:00' : '')).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
+let tab = 'overview', last = null;
+try { tab = localStorage.getItem('cdTab') || 'overview'; } catch {}
+function setTab(t) { tab = t; try { localStorage.setItem('cdTab', t); } catch {} render(last); }
 const PL = { instagram: 'Instagram', tiktok: 'TikTok', youtube: 'YouTube' };
 
 function spark(hist) {
@@ -73,18 +86,36 @@ function spark(hist) {
   return `<svg class="spark" viewBox="0 0 100 38" preserveAspectRatio="none"><polyline points="${pts}" fill="none" stroke="var(--acc)" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>`;
 }
 
+function trialsHtml(t) {
+  if (!t) return `<div class="card" style="color:var(--mute)">No trial reels yet.</div>`;
+  let h = `<div class="tiles">
+    <div class="tile"><span class="k">Trial reels</span><b>${num(t.reels)}</b><small>${num(t.videos)} videos tested</small></div>
+    <div class="tile"><span class="k">Views</span><b>${short(t.views)}</b><small>all trial reels</small></div>
+    <div class="tile"><span class="k">Avg per reel</span><b>${short(t.perReel)}</b><small>views</small></div>
+    <div class="tile"><span class="k">${t.follows != null ? 'Follows' : 'Saves'}</span><b>${num(t.follows != null ? t.follows : t.saves)}</b><small>${t.follows != null ? 'from trial reels' : 'on trial reels'}</small></div>
+  </div>`;
+  h += `<h2>Each video and its hook versions</h2><div class="card flush">` + t.batches.map((b) => `<div class="batch">
+    <div class="head"><div><div class="t" style="font-weight:600">${esc(b.title || 'Video')}</div><div class="sub" style="color:var(--mute);font-size:12px">${num(b.count)} version${b.count === 1 ? '' : 's'} · posted ${date(b.postedAt)}</div></div><b>${short(b.views)} views</b></div>
+    <div class="vers">${b.versions.map((v, i) => v.url ? `<a class="${i === 0 && b.count > 1 ? 'best' : ''}" href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${i === 0 && b.count > 1 ? '★ ' : ''}${v.pending ? 'just posted' : short(v.views)}</a>` : `<span>${v.pending ? 'just posted' : short(v.views)}</span>`).join('')}</div>
+  </div>`).join('') + `</div>`;
+  return h;
+}
+
 function render(d) {
+  if (!d) return; last = d;
   document.title = `${d.creator} · Dashboard`;
   const c = d.content, a = d.audience;
   const ch = c && c.viewsChange != null ? `<small class="${c.viewsChange >= 0 ? 'up' : 'down'}">${c.viewsChange >= 0 ? '▲' : '▼'} ${Math.abs(c.viewsChange)}% vs previous 30 days</small>` : '<small>&nbsp;</small>';
   let h = `<div class="k">Creator dashboard</div><h1>${esc(d.creator)}</h1>
   <div class="upd">Updated ${new Date(d.updated).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}</div>
-  <div class="tiles">
+  <div class="tabs"><button class="${tab === 'overview' ? 'on' : ''}" onclick="setTab('overview')">Overview</button><button class="${tab === 'trials' ? 'on' : ''}" onclick="setTab('trials')">Trial reels</button></div>
+  ${tab === 'trials' ? trialsHtml(d.trials) : `<div class="tiles">
     <div class="tile"><span class="k">Followers</span><b>${a ? num(a.total) : '–'}</b><small>all platforms</small></div>
     <div class="tile"><span class="k">Views · 30 days</span><b>${c ? short(c.last30.views) : '–'}</b>${ch}</div>
-    <div class="tile go"><span class="k">Earned</span><b>${usd(d.earned)}</b><small>brand deals paid</small></div>
+    <div class="tile go"><span class="k">Earned from brand deals</span><b>${usd(d.earned)}</b><small>paid so far</small></div>
     <div class="tile wait"><span class="k">Awaiting payment</span><b>${usd(d.awaiting)}</b><small>invoiced or posted</small></div>
-  </div>`;
+  </div>`}`;
+  if (tab === 'trials') return $(h);
 
   if (a) {
     h += `<h2>Audience</h2><div class="plats">` + a.accounts.map((x) => `<div class="card plat">
@@ -109,7 +140,11 @@ function render(d) {
       <div class="meta"><b>${short(t.views)} views</b>${PL[t.platform] || esc(t.platform)} · ${date(t.at)}</div></a>`).join('') + `</div>`;
   }
 
-  h += `<h2>Brand deals</h2>`;
+  const paidN = d.deals.filter((x) => x.status === 'Paid').length;
+  h += `<h2>Brand deals</h2><div class="card" style="margin-bottom:10px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px;align-items:end">
+    <div><span class="k">Earned so far</span><div style="font-size:34px;font-weight:750;color:var(--go);letter-spacing:-.02em;font-variant-numeric:tabular-nums">${usd(d.earned)}</div><small style="color:var(--mute)">from ${paidN} paid deal${paidN === 1 ? '' : 's'}</small></div>
+    <div><span class="k">Awaiting</span><div style="font-size:20px;font-weight:700;color:var(--wait)">${usd(d.awaiting)}</div></div>
+    <div><span class="k">In progress</span><div style="font-size:20px;font-weight:700;color:var(--acc)">${usd(d.inProgress)}</div></div></div>`;
   h += d.deals.length ? `<div class="card flush">` + d.deals.map((x) => `<div class="row">
       <div><div class="t">${esc(x.brand)}</div><div class="sub">${x.status === 'Paid' && x.paidDate ? 'Paid ' + date(x.paidDate) : 'Started ' + date(x.started)}</div></div>
       <span class="chip ${x.status.split(' ')[0]}">${esc(x.status)}</span>
