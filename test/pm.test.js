@@ -3792,3 +3792,23 @@ test('wants UGC is read from the deal text', async () => {
   assert.ok(!wantsUgc('1 Instagram Reel + TikTok cross-post'));
   assert.ok(!wantsUgc('Collab post, no UGC needed'));
 });
+
+// Creator dashboard: lost deals hidden, full amounts summed by status, weekly views bucketed
+{
+  const { dealsView, contentView, creatorForDashKey } = await import('../lib/creatordash.js');
+  const v = dealsView([
+    { 'Brand Name': 'A', 'Deal Stage': 'Paid', 'Final Rate USD': 700, 'Paid Date': '2026-11-07' },
+    { 'Brand Name': 'B', 'Deal Stage': 'Invoiced', 'Invoice Amount': 1400 },
+    { 'Brand Name': 'C', 'Deal Stage': 'Lost', 'Final Rate USD': 999 },
+    { 'Brand Name': 'D', 'Deal Stage': 'In Production', 'Final Rate USD': 600 },
+  ]);
+  assert.equal(v.deals.length, 3);
+  assert.equal(v.earned, 700); assert.equal(v.awaiting, 1400); assert.equal(v.inProgress, 600);
+  const now = new Date('2026-11-27T00:00:00Z');
+  const c = contentView([{ date: '2026-11-25', postCount: 1, metrics: { views: 100 }, platformMetrics: { instagram: { views: 100, postCount: 1 } } }, { date: '2026-10-10', postCount: 1, metrics: { views: 50 } }], now);
+  assert.equal(c.last30.views, 100); assert.equal(c.viewsChange, 100); assert.equal(c.weeks.length, 12);
+  assert.equal(c.weeks[11].views, 100);
+  process.env.CREATOR_DASH_KEYS = 'Valeri:abcdefghijklmnopqrstuvwxyz';
+  assert.equal(creatorForDashKey('abcdefghijklmnopqrstuvwxyz'), 'Valeri');
+  assert.equal(creatorForDashKey('short'), null);
+}

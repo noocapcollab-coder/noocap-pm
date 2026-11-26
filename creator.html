@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Creator Dashboard</title>
+<style>
+  :root { --bg:#0d0e11; --card:#15171c; --line:#252931; --ink:#eef0f3; --mute:#8b919c; --go:#3ccf8e; --wait:#f2b84b; --acc:#8b7cff; --bar:#8b7cff; --red:#ff6b6b; }
+  @media (prefers-color-scheme: light) { :root { --bg:#f5f6f8; --card:#fff; --line:#e3e6eb; --ink:#14161a; --mute:#636a75; --go:#13905a; --wait:#a46900; --acc:#5b4bd8; --bar:#6b5ce7; --red:#c93c3c; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.45 -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 28px 16px 64px; }
+  .k { color: var(--mute); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+  h1 { margin: 4px 0 4px; font-size: 28px; letter-spacing: -.02em; }
+  .upd { color: var(--mute); font-size: 13px; margin-bottom: 22px; }
+  h2 { font-size: 15px; margin: 34px 0 12px; font-weight: 650; }
+  .tiles { display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; }
+  .tile, .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; }
+  .tile b { display:block; font-size: 24px; margin-top: 4px; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+  .tile small { color: var(--mute); font-size: 12px; }
+  .up { color: var(--go); } .down { color: var(--red); } .go b { color: var(--go); } .wait b { color: var(--wait); }
+  .plats { display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; }
+  .plat .name { display:flex; justify-content:space-between; font-size:13px; color:var(--mute); }
+  .plat b { font-size: 22px; font-variant-numeric: tabular-nums; }
+  svg.spark { width:100%; height:38px; margin-top:8px; display:block; }
+  .bars { display:flex; align-items:flex-end; gap:6px; height:150px; padding-top:10px; }
+  .bars div { flex:1; background:var(--bar); border-radius:5px 5px 2px 2px; min-height:2px; position:relative; opacity:.85; }
+  .bars div:hover { opacity:1; }
+  .bars div span { position:absolute; bottom:100%; left:50%; transform:translate(-50%,-4px); font-size:11px; color:var(--mute); white-space:nowrap; display:none; }
+  .bars div:hover span { display:block; }
+  .axis { display:flex; gap:6px; margin-top:6px; } .axis span { flex:1; text-align:center; font-size:10px; color:var(--mute); }
+  table { width:100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { text-align:right; padding:9px 6px; border-bottom:1px solid var(--line); font-size:14px; }
+  th { color:var(--mute); font-weight:500; font-size:12px; } th:first-child, td:first-child { text-align:left; text-transform: capitalize; }
+  tr:last-child td { border-bottom:0; }
+  .tops { display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; }
+  .top { background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; text-decoration:none; color:inherit; display:flex; flex-direction:column; }
+  .top img { width:100%; aspect-ratio: 9/14; object-fit:cover; background:var(--line); display:block; }
+  .top .meta { padding:9px 10px; font-size:12px; color:var(--mute); }
+  .top .meta b { color:var(--ink); font-size:15px; display:block; }
+  .row { display:grid; grid-template-columns: 1fr auto auto; gap:12px; align-items:center; padding:12px 14px; border-bottom:1px solid var(--line); }
+  .row:last-child { border-bottom:0; }
+  .row .t { font-weight:600; } .row .sub { color:var(--mute); font-size:12px; }
+  .amt { font-weight:700; font-variant-numeric: tabular-nums; text-align:right; }
+  .chip { font-size:12px; border-radius:999px; padding:3px 10px; white-space:nowrap; }
+  .chip.Paid { background: color-mix(in srgb, var(--go) 16%, transparent); color: var(--go); }
+  .chip.Awaiting { background: color-mix(in srgb, var(--wait) 18%, transparent); color: var(--wait); }
+  .chip.In { background: color-mix(in srgb, var(--acc) 16%, transparent); color: var(--acc); }
+  .card.flush { padding:0; }
+  .msg { color: var(--mute); padding: 60px 0; text-align:center; }
+  @media (max-width: 680px) { .tiles { grid-template-columns: repeat(2, 1fr); } .plats { grid-template-columns: 1fr; } .tops { grid-template-columns: repeat(2, 1fr); } .row { grid-template-columns: 1fr auto; } .row .chip { grid-column: 1; justify-self:start; } }
+</style>
+</head>
+<body>
+<main id="app"><div class="msg">Loading…</div></main>
+<script>
+const k = new URLSearchParams(location.search).get('k') || '';
+const $ = (h) => { document.getElementById('app').innerHTML = h; };
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+const num = (v) => Number(v || 0).toLocaleString('en-US');
+const short = (v) => { v = Number(v || 0); return v >= 1e6 ? (v / 1e6).toFixed(1).replace(/\.0$/, '') + 'M' : v >= 1e4 ? Math.round(v / 1e3) + 'K' : v >= 1e3 ? (v / 1e3).toFixed(1).replace(/\.0$/, '') + 'K' : String(v); };
+const usd = (v) => '$' + Number(v || 0).toLocaleString('en-US');
+const date = (d) => d ? new Date(d + (String(d).length === 10 ? 'T00:00:00' : '')).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
+const PL = { instagram: 'Instagram', tiktok: 'TikTok', youtube: 'YouTube' };
+
+function spark(hist) {
+  if (!hist || hist.length < 2) return '';
+  const v = hist.map((h) => h.followers), lo = Math.min(...v), hi = Math.max(...v), r = hi - lo || 1;
+  const pts = v.map((x, i) => `${(i / (v.length - 1)) * 100},${36 - ((x - lo) / r) * 32}`).join(' ');
+  return `<svg class="spark" viewBox="0 0 100 38" preserveAspectRatio="none"><polyline points="${pts}" fill="none" stroke="var(--acc)" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>`;
+}
+
+function render(d) {
+  document.title = `${d.creator} · Dashboard`;
+  const c = d.content, a = d.audience;
+  const ch = c && c.viewsChange != null ? `<small class="${c.viewsChange >= 0 ? 'up' : 'down'}">${c.viewsChange >= 0 ? '▲' : '▼'} ${Math.abs(c.viewsChange)}% vs previous 30 days</small>` : '<small>&nbsp;</small>';
+  let h = `<div class="k">Creator dashboard</div><h1>${esc(d.creator)}</h1>
+  <div class="upd">Updated ${new Date(d.updated).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}</div>
+  <div class="tiles">
+    <div class="tile"><span class="k">Followers</span><b>${a ? num(a.total) : '–'}</b><small>all platforms</small></div>
+    <div class="tile"><span class="k">Views · 30 days</span><b>${c ? short(c.last30.views) : '–'}</b>${ch}</div>
+    <div class="tile go"><span class="k">Earned</span><b>${usd(d.earned)}</b><small>brand deals paid</small></div>
+    <div class="tile wait"><span class="k">Awaiting payment</span><b>${usd(d.awaiting)}</b><small>invoiced or posted</small></div>
+  </div>`;
+
+  if (a) {
+    h += `<h2>Audience</h2><div class="plats">` + a.accounts.map((x) => `<div class="card plat">
+      <div class="name"><span>${PL[x.platform] || esc(x.platform)}</span><span>@${esc(x.username)}</span></div>
+      <b>${num(x.followers)}</b>
+      ${x.gained != null && x.since ? `<div class="${x.gained >= 0 ? 'up' : 'down'}" style="font-size:12px">${x.gained >= 0 ? '+' : ''}${num(x.gained)} since ${date(x.since)}</div>` : ''}
+      ${spark(x.history)}</div>`).join('') + `</div>`;
+  }
+
+  if (c) {
+    const max = Math.max(1, ...c.weeks.map((w) => w.views));
+    h += `<h2>Views per week</h2><div class="card"><div class="bars">${c.weeks.map((w) => `<div style="height:${(w.views / max) * 100}%"><span>${short(w.views)}</span></div>`).join('')}</div>
+      <div class="axis">${c.weeks.map((w, i) => `<span>${i % 2 ? '' : date(w.start)}</span>`).join('')}</div></div>`;
+    h += `<h2>Last 30 days by platform</h2><div class="card"><table><tr><th>Platform</th><th>Posts</th><th>Views</th><th>Likes</th></tr>
+      ${c.platforms.map((p) => `<tr><td>${PL[p.platform] || esc(p.platform)}</td><td>${num(p.posts)}</td><td>${num(p.views)}</td><td>${num(p.likes)}</td></tr>`).join('')}
+      <tr><td><b>Total</b></td><td><b>${num(c.last30.posts)}</b></td><td><b>${num(c.last30.views)}</b></td><td><b>${num(c.last30.likes)}</b></td></tr></table></div>`;
+  }
+
+  if (d.top && d.top.length) {
+    h += `<h2>Top videos · last 90 days</h2><div class="tops">` + d.top.map((t) => `<a class="top" href="${esc(t.url)}" target="_blank" rel="noopener noreferrer">
+      ${t.thumb ? `<img src="${esc(t.thumb)}" alt="" loading="lazy">` : ''}
+      <div class="meta"><b>${short(t.views)} views</b>${PL[t.platform] || esc(t.platform)} · ${date(t.at)}</div></a>`).join('') + `</div>`;
+  }
+
+  h += `<h2>Brand deals</h2>`;
+  h += d.deals.length ? `<div class="card flush">` + d.deals.map((x) => `<div class="row">
+      <div><div class="t">${esc(x.brand)}</div><div class="sub">${x.status === 'Paid' && x.paidDate ? 'Paid ' + date(x.paidDate) : 'Started ' + date(x.started)}</div></div>
+      <span class="chip ${x.status.split(' ')[0]}">${esc(x.status)}</span>
+      <div class="amt">${x.amount ? usd(x.amount) : '–'}</div></div>`).join('') + `</div>`
+    : `<div class="card" style="color:var(--mute)">No brand deals yet.</div>`;
+  $(h);
+}
+
+async function load() {
+  if (k.length < 20) return $('<div class="msg">This link is not valid.</div>');
+  try {
+    const r = await fetch('/api/creator?k=' + encodeURIComponent(k), { cache: 'no-store' });
+    const j = await r.json();
+    if (!r.ok) return $(`<div class="msg">${esc(j.error || 'Could not load')}</div>`);
+    render(j);
+  } catch { $('<div class="msg">Could not load right now, try again in a minute.</div>'); }
+}
+load();
+setInterval(load, 10 * 60 * 1000);
+</script>
+</body>
+</html>
