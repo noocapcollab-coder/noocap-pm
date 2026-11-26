@@ -3699,3 +3699,9 @@ test('another campaign brief shared for an overview is not the brief (Renoise x 
   assert.equal(x.event, 'brand_reply');
   assert.equal(referenceBriefOnly("Here's the brief for the reel: https://docs.google.com/x. Please send the script by Friday."), false);
 });
+
+test('multi-select Type column takes the SPONSOR tag', async () => {
+  const { buildValue } = await import('../lib/actions.js');
+  const v = buildValue({ type: 'multi_select', multi_select: { options: [{ name: 'SPONSOR' }, { name: 'TRIALS' }] } }, 'SPONSOR');
+  assert.deepEqual(v, { multi_select: [{ name: 'SPONSOR' }] });
+});
