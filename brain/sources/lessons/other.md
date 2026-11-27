@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## The test bank only scores emails the heartbeat would really draft
+When: Running a Writer case in the test bank
+Do: Apply the heartbeat's own gates first: a follow-up is drafted only when the brand has been silent since our newest email, so a Follow-up case whose email is the brand's newest message counts as not drafted.
+Never: Score a follow-up written over the brand's own unanswered email as a regression, or mark a commit for undoing because of it.
+Seen 1 time(s). Source: System check.
 ## An AI outage (Claude or Gemini busy, out of quota, hanging) never counts as a failed try on an email
 When: An Inbox or Leads email fails because the AI model is unavailable, including Gemini standing in for Claude (503 high demand, 429 quota, timeout)
 Do: Leave the email unread and retry it on the next sweep; only errors about the email itself count towards giving up after 3 tries

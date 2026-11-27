@@ -20,6 +20,18 @@ So comment "STARTER" and I'll get you all 12 links with the order I'd install th
     - https://buildwithclaude.com/skill/anti-ui-slop
     - https://claudemarketplaces.com/skills/coreyhaines31/mar
 
+## 2026-11-27 GITHUB: RUNE
+Type: PERSONAL. Creator: [[David Iya]].
+Hook:
+If you're building an app with Claude Code, there's a new open source tool that lets Claude open your app and click through it on its own to test it.
+    Body:
+So there are really two reasons I'd pay attention to this one, and number one is that apps built with it don't carry a browser around inside them, so they're typically lighter and the same code runs on your computer and even on the web. But the part that matters if you use Claude Code is that it can run your app without opening a window, so Claude can take a picture of the screen and click through every button by itself, which means you're not sitting there testing it all by hand. It's called Rune, and as far as I can tell it's from the team behind OpenCode.
+    CTA:
+So comment "RUNE" and I'll send you the repo plus a short prompt that gets Claude Code testing your app with it.
+    - Link: https://github.com/anomalyco/rune
+
+    - TikTok: https://www.tiktok.com/@davidiya.co/video/7712804810071805197
+
 ## 2026-11-26 CLAUDE TRIAL REELS
 Type: PERSONAL. Creator: [[David Iya]].
 Hook 1:
@@ -89,6 +101,23 @@ Forget MCP as you know it, because companies like Cloudflare and Anthropic are m
 So the problem is really two-fold, because every MCP call has to go out and return to the model before the next one starts, and once you've connected hundreds of tools the list by itself eats most of your context. Cloudflare's fix is called Code Mode, where tools get rewritten as a TypeScript API so the model can write one small script that chains the calls in a sandbox, and only the final answer comes back. It makes sense because these models have seen way more real code than tool calls. Anthropic's version is called programmatic tool calling, which is why I think the one-call-at-a-time way of using MCP is probably on its way out.
     CTA:
 So comment "CODEMODE" and I'll get you Cloudflare's write-up and how I'd think about it in Claude Code.
+
+## 2026-11-26 CLAUDE = PAID ADS MACHINE
+Type: PERSONAL. Creator: [[David Iya]].
+Hook 1:
+    Everyone is still guessing at their Meta ad copy while there’s a Claude Code skill that just copies what’s already working for your competitors.
+    Hook 2:
+    You can basically turn Claude Code into a paid ads machine with one skill.
+    Body:
+    So the setup is one skill that comes with a scraper plus a couple of tools for the copy and the images, and the skill itself is free. You connect your ad account and then type slash ads in Claude Code with your URL, and it goes into the Meta Ad Library and pulls the ads your competitors have kept running the longest, which is usually the best signal you’re going to get, because people don’t typically keep paying for an ad that isn’t converting. And then it rewrites yours around those.
+    CTA:
+    Comment “CAMPAIGN” for the skill, and we break down how we run it on client accounts inside the Claude Code Club.
+    Sources:
+    - Skill and /ads commands: github.com/AgriciDaniel/claude-ads
+    - Competitor ad data: facebook.com/ads/library
+    - Ad Library only shows performance data for EU and political ads: openskillindex.com/skills/clawdbot-skills-ad-intelligence
+    - Long-running ads as the “winning” signal: adspirer.com/skills/ad-library-deep-dive
+    - Sub-page: [[Claude Ads: Turn Claude Code Into a Paid Ads Machine (Free Skill + Setup)]]
 
 ## 2026-11-20 FASTEST GROWING CLAUDE SKILLS
 Type: PERSONAL. Creator: [[David Iya]].

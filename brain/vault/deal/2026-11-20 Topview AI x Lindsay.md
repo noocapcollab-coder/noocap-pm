@@ -1,25 +1,24 @@
 ---
 type: deal
 ---
-Stage: Submitted
-Last brand reply 2026-11-26, our last reply 2026-11-26.
+Stage: Approved
+Last brand reply 2026-11-27, our last reply 2026-11-26.
 AGREED: rate [amount]; deliverables 1 short-form video (IG + TikTok) for Topview's Black Friday sale; usage rights not specified; payment terms 100% payable within fourteen (14) days after execution of the production and publication of the production, with receipt of a valid invoice; agreed dates not specified.
 
 HISTORY:
-2026-11-22 brand: Sent updated agreement for review.
 2026-11-23 us: Sent signed contract.
-2026-11-23 brand: Acknowledged signed contract.
 2026-11-25 us: Sent draft video link for review.
 2026-11-25 brand: Sent feedback and revision requests for the draft video.
 2026-11-25 us: Sent revised video cut incorporating feedback.
 2026-11-25 brand: Sent second round of feedback and revision requests for the video.
 2026-11-26 us: Sent revised video cut for round 3 for review.
 2026-11-26 brand: Approved the video and provided company name and address.
-2026-11-26 us: Sent follow-up email regarding video posting and billing.
+2026-11-27 brand: Asked for an update on posting the approved video.
+2026-11-27 brand: Requested a new video revision with an updated promotional message, requiring approval before posting within 12 hours.
 
 BILLING: company Topview Pte. Ltd.; invoice email not yet; address 20 Collyer Quay #20-03 S(049319); invoice status not yet.
 
-OPEN NOW: We owe: to post the video, share the live link, and send the invoice.
+OPEN NOW: Brand requested a video revision with a new promotional message and approval before posting within 12 hours, threatening to annul the collaboration if no response is received. We owe: response and revised video.
 Stage: Approved
 Last brand reply 2026-11-26, our last reply 2026-11-26.
 AGREED:

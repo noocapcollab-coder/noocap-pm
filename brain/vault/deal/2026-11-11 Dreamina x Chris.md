@@ -2,22 +2,23 @@
 type: deal
 ---
 Stage: Posted
-Last brand reply 2026-11-24, our last reply 2026-11-21.
-AGREED: Rate: [amount]. Deliverables: 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team). Payment terms: within 7 days after video delivery and publication on Instagram, influencer covers any transaction fees for PayPal or Bank Transfer. Usage rights not yet confirmed. Post date not yet confirmed.
+Last brand reply 2026-11-27, our last reply 2026-11-27.
+AGREED: [amount]. Deliverables: 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team). Payment terms: Net 7 after delivery and publication on Instagram, influencer covers transfer/PayPal fees. Usage rights: none stated. Agreed dates: none stated.
 
 HISTORY:
-2026-11-13 us confirmed receipt and sent initial video.
-2026-11-14 brand requested video edits, then cover and caption; us sent revised cut.
-2026-11-15 us sent cover and caption PDF; brand requested watermark and logo fixes.
-2026-11-16 us sent revised cut, brand approved video.
-2026-11-17 us sent updated cover, brand approved and sent UTM link for publishing.
-2026-11-18 brand urged publication and requested hashtag revisions; us requested billing details and sent updated caption.
+2026-11-14 brand requested edits, cover, and caption.
+2026-11-15 us sent cover/caption; brand requested watermark and logo revisions.
+2026-11-16 us sent revised video; brand approved video.
+2026-11-17 us sent updated cover; brand approved and provided UTM link.
+2026-11-18 brand requested hashtag changes and urged publication.
 2026-11-21 us followed up for billing details.
-2026-11-24 brand requested contract and payment details form to proceed with project contract and payment processing.
+2026-11-24 brand requested contract and payment information form.
+2026-11-27 us provided contract details and requested brand billing details for Stripe invoice.
+2026-11-27 brand asked to confirm if bank account is a company account, and asked if we can provide an official invoice.
 
-BILLING: not yet
+BILLING: Brand has not given billing details. Invoice status: not yet.
 
-OPEN NOW: We owe: provide the requested contract and payment information to the brand.
+OPEN NOW: We owe: confirm whether our bank account is a company bank account and confirm that we provide an official invoice.
 
 ## Links
 - [[Chris]]

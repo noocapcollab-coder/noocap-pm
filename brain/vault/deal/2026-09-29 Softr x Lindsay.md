@@ -7,7 +7,7 @@ AGREED: Two videos total. First video published September. Second video publishe
 
 HISTORY:
 2026-10-21 us and brand discussed timeline for editing and publishing
-2026-10-22 us sent invoices for two videos and proposed [amount]rate for third video
+2026-10-22 us sent invoices for two videos and proposed [amount] rate for third video
 2026-10-23 us delivered final edited video and description; video published
 2026-10-28 us sent invoices; brand promised follow-up with accountant upon return from OoO
 2026-11-07 us followed up on invoice payment status

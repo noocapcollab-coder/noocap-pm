@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A script the brand already has never goes again unless it was revised
+When: A card sits at 5- Script Approval and its script already went to the brand from this or another deal, with no new brand notes since
+Do: Leave it: no Script draft. If one gets drafted and the send guard says the scripts already went, retire it at once
+Never: Never draft the same script a second time, and never leave such a duplicate waiting in Approvals as Needs you
+Seen 1 time(s). Source: System check.
 ## Another campaign's brief shared for an overview is not the brief
 When: A brand shares a brief link 'in the meantime' or 'for an overview' (often an older or current campaign's brief) and says the final brief for our deal will come later
 Do: Treat it as reference: thank them if a reply is due, keep the card at 2- Waiting For Brief with the brand's posting window as POST DATE, and wait for the final brief before the script writer starts.

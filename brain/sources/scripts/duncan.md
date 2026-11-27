@@ -48,6 +48,18 @@ Claude killed MCP
     VARIATION 3 & 4 DIFFERENT VISUAL HOOK 
     VARIATION 5 IS HOOK 2
 
+## 2026-11-27 INSOMIA - GITHUB REPO
+Type: PERSONAL. Creator: [[Duncan]].
+Hook 1:
+An open-source repo is blowing up on X right now because it lets you close your MacBook while Claude Code keeps building in the background
+    Hook 2:
+Stop leaving your laptop lid propped open overnight. One line in Claude Code keeps your agents alive after it shuts.
+    Body:
+So here's the deal. The moment you fold your MacBook closed, whatever agent you've got running crashes with it, which is why half the people building AI online are taping their lids half-open at cafés. One line inside Claude Code kills that problem for good. The repo is called Insomnia, fully open source, and the launch tweet sits near a million views already. You set a timer in days or hours, shut the lid, your agents keep working until that clock hits zero. The clever part is what else happens while the lid is down. Keyboard backlight dies, the display goes black, Slack, WhatsApp and Discord mute, the Mac drops into low-power mode, and if the Wi-Fi quits it jumps to your iPhone hotspot on its own. Pretty freaking cool.
+    CTA:
+Comment SLEEP and I'll send you the install guide.
+    - Link: https://github.com/krishhgg/Insomnia
+
 ## 2026-11-24 REANIMATE - CLAUDE SKILL
 Type: PERSONAL. Creator: [[Duncan]].
 Hook 1:
@@ -127,50 +139,3 @@ Here are the five Claude skills with the biggest star growth on GitHub this mont
 So here’s the deal. These five Claude skills are growing faster than anything else on GitHub right now. Hallmark flags AI-generated patterns on your page before you ship, and Anatomy turns any concept into a diagram of how the system actually works, so you learn it way faster. Impeccable has over a hundred thousand stars and catches the tiny formatting slips most people miss, while Matt Pocock’s Engineering Skills gives you a full end-to-end setup that’s been climbing the list all year. And at number one is Cloudflare’s Security Audit, open-sourced straight from their security team, which audits your whole codebase and hands you a punch list of what to fix. Pretty freaking cool.
     CTA:
 Comment RANK and I'll send you every install line plus access to Claude Code Club.
-
-## 2026-11-17 5 THINGS FABLE CAN DO
-Creator: [[Duncan]].
-On-Screen Hook:
-Claude Fable 5.2 built its own operating system
-    Hook 1:
-Anthropic dropped Claude Fable 5.2, and five of the tests they ran should not be possible for one AI model.
-    Hook 2:
-Fable 5.2 pulled off five things no single model should be able to do. Three have been in my head all week.
-    Body:
-    One, an empty folder goes in, Fable runs over a thousand sub-agents for eight days, and out comes an operating system that boots on a laptop.
-    Two, Anthropic gave it a single paragraph and it designed three working electronic devices, each ready for manufacturing in under a day.
-    Three, a thousand Fable agents turned the proof of Fermat’s Last Theorem into computer-checked math in 30 hours.
-    Four, on a robot test it scored 64.9%, way ahead of the next best model at 39.4%.
-    And five, it finished a black hole calculation from 2003 that nobody had completed in 23 years.
-    CTA:
-Drop "FABLE" in the comments and I'll send you the full breakdown on all five.
-
-## 2026-11-17 7 DAYS 7 AI CERTIFICATES
-Creator: [[Duncan]].
-On-Screen Hook:
-7 Anthropic certificates in 7 days
-    Hook 1:
-    Seven free Anthropic certificates in seven days, and they get harder every day, so by day seven you’re ahead of 99% of people using AI.
-    Hook 2:
-    Anthropic is giving out free certificates right now, and if you stack seven of them this week you’ll be ahead of 99% of people using AI.
-    Body:
-    Day one is Claude 101, zero coding, and you walk away with your first Anthropic certificate.
-    Day two is AI Fluency, which teaches you how to actually work alongside AI.
-    Day three is Building Effective Human-Agent Teams, a quick one on handing real work to AI agents.
-    Day four is where it gets real, because Claude Code 101 has you writing code for the first time.
-    Day five is Claude Code in Action, where you use it on a real codebase.
-    By day six you’re building your own MCP server in the Intro to MCP course.
-    And day seven is MCP: Advanced Topics, which is how Claude Code talks to every other app, and it’s easily the hardest. Pretty freaking cool.
-    CTA:
-Drop "COURSE" in the comments and I'll send you the links to all seven.
-
-## 2026-11-18 CLAUDE KILLED DAY TRADERS
-Creator: [[Duncan]].
-Hook 1:
-Claude just killed day traders, because you can now run full market research right inside Claude, completely for free.
-    Hook 2:
-Claude just turned into a free market research desk, and the backtesting skill alone is nuts.
-    Body:
-Here’s the thing. Eleven Claude skills just dropped for market research, covering everything from scanning thousands of charts for setup patterns to flagging the headlines that actually move price. The backtesting skill is the one worth your time, because you feed it your strategy and it runs it through years of real market history, so you see how it would’ve played out before you risk a dollar. It won’t place trades for you and nothing here guarantees a win, but it turns hours of manual grind into a quick check, and setup is just dropping the link into Claude and telling it to install.
-    CTA:
-Drop "TRADE" in the comments and I'll send you the skill pack.

@@ -2,11 +2,31 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## "Shared it with the client" on a cut gets the fixed review reply
+When: The brand says our video draft is with their client or team for review, and asks nothing else
+Do: Send the draft_review_ack fixed reply (we'll wait for the feedback, the editor turns changes around in 1 to 2 working days).
+Never: Never log it as 'no reply needed' and leave the brand on read.
+Seen 1 time(s). Source: Harsh correction.
+## Two brand emails minutes apart get one answer, and it follows the newest one
+When: A brand sends a second email (a correction, an extra note, a change of plan) minutes after the first, before or while our fixed acknowledgement goes out
+Do: Read every brand email in the burst and answer the newest one once. If the newest says they no longer need to see a revised script or cut, say so back and put the next real step (the design preview, filming) in the reply; any money or partnership ask in it (a community post, a Skool collab) goes to Harsh.
+Never: Never send the same acknowledgement twice in a thread within minutes, and never promise a revised script or cut the brand's latest email said they do not need to see.
+Seen 1 time(s). Source: System check.
+## A brand's 'thanks for confirming, send the link once it's live' needs no reply
+When: The brand's newest email only confirms what we already said (a posting date, a plan) and asks for something we will deliver later, like the live link
+Do: Write nothing now; the email that carries the live link after posting is the reply.
+Never: Never draft a reply that just repeats our own promise back ("we'll send the link once it's posted on the 30th").
+Seen 1 time(s). Source: System check.
+## A brand's status update gets one acknowledgement per round, never one per email
+When: The brand says the cut or script is with their team, sends a thumbs-up, asks us to wait, or the same email lands again in the creator's inbox, and we already acknowledged since our last real email
+Do: Send the stage's fixed acknowledgement once; after that, a status update, emoji or 'please wait' needs no reply until the brand sends feedback or a question
+Never: Send the same 'we'll wait for the feedback' email twice in a thread, or draft a 'we are standing by' reply
+Seen 1 time(s). Source: System check.
 ## A reply never says something is already set up or done unless someone on our side said so
 When: A brand asks us to confirm a setup step (comment-DM automation, access, upload, the release file) before posting
 Do: Answer with what will be done, or hold the draft for Harsh to confirm the fact; facts come only from the thread, the card or Harsh's words
 Never: Write 'we have the DM automation set up', 'access is working' or 'it's uploaded' when nobody on our side said so
-Seen 1 time(s). Source: System check.
+Seen 2 time(s). Source: System check.
 ## An agreement the brand accepts by an email reply is never answered with 'we'll sign it'
 When: A brand attaches an agreement or rules and says a written reply such as "Agree with the Influencer Cooperation Rules" is enough and no signature is needed
 Do: File the agreement, send Harsh the file saying no signature is needed and that agreeing is his reply, and leave the written 'Agree' reply plus any account email to him
@@ -16,12 +36,12 @@ Seen 1 time(s). Source: System check.
 When: A brand questions one of our own actions ('why was a script shared before the agreement?', 'why did you post early?') or asks about the creator's intent
 Do: Answer the parts the thread already settles (e.g. noting their payment terms) only if Harsh adds the rest; put the 'why' and the creator's intent to Harsh on WhatsApp and draft from his words.
 Never: Invent a motive ('to keep the momentum going'), speak for the creator's intent, or promise to wait on a brief nobody discussed.
-Seen 2 time(s). Source: System check.
+Seen 3 time(s). Source: System check.
 ## Every new brand email with notes gets its fixed acknowledgement, every round
 When: The brand sends round 2 (or later) notes on a script or video within 3 days of the round 1 acknowledgement
 Do: Send the fixed acknowledgement again; only a copy written after this brand email counts as already answered
 Never: Skip an acknowledgement because the same template went in the thread in the last 3 days for an earlier round
-Seen 2 time(s). Source: Harsh correction.
+Seen 3 time(s). Source: Harsh correction.
 ## The script-approval email sends on its own, even when the brand lists points
 When: A brand approves a script and also asks us to confirm something (people, facts, permissions)
 Do: Thank them, say we'll film and take care of all the points they listed, ask for access on noocaptools@gmail.com, and send it on its own with no second-check hold
@@ -186,7 +206,7 @@ Seen 1 time(s). Source: Harsh correction.
 When: A brand asks when the approved video goes live, or chases a posting we said would happen today
 Do: Give the posting time Harsh supplied, otherwise ask Harsh on WhatsApp for it before replying
 Never: Write 'we will post it today/tomorrow/soon/now', 'Chris will post it today', 'we are going ahead and posting it now', 'we are posting it today', 'we're getting it posted right now', 'we are putting the finishing touches' or 'we're finalizing the video' without a time Harsh gave
-Seen 4 time(s). Source: System check.
+Seen 5 time(s). Source: System check.
 ## A fixed reply in Harsh's own words sends on its own, timing line included
 When: Saving a Reply Templates reply (Why has [template:...]) such as billing_on_approval
 Do: Hold a fixed reply only for a leftover placeholder or a made-up code; let it auto-send otherwise, and record the deal's ask (Billing Request Sent) only when the copy really went

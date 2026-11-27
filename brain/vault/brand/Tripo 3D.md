@@ -5,19 +5,21 @@ type: brand
 
 Brand. Works with creators: [[Valeri]], [[Lindsay]], [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: Tripo 3D, a 3D modeling and AI tool brand, coming through the agency Jeevmédia.
+WHO: Tripo 3D is a brand offering 3D AI modeling tools. They work with us through an agency named Jeevmedia (and Zeelot via Superlinear for Valeri).
 
-CONTACTS: Rajeshwari Sardar, rajeshwari@jeevmedia.net, influencer marketing associate at Jeevmédia; Zeelot, Zeelot@superlinear.cc, contact for Valeri's deal. Copy collab@valchy.ai on Valeri's deal and collab@automateaiconsulting.com on Lindsay's deal. Sign off as Lindsay's Team or Valeri's Team accordingly.
+CONTACTS:
+Rajeshwari Sardar, rajeshwari@jeevmedia.net, Influencer Marketing Associate at Jeevmedia (brand contact for Lindsay), signs as Rajeshwari Sardar, copy collab@automateaiconsulting.com.
+Zeelot, Zeelot@superlinear.cc, brand contact for Valeri via Superlinear, signs as Zeelot, copy collab@valchy.ai.
 
 DEALS:
-Tripo 3D x Valeri: 2 videos, 30-day ad authorization per video, usage rights, [amount]USD total ([amount]per video), stage Price Agreed, contract pending since November 2026.
-Tripo 3D x Lindsay: 1 IG Reel, DM automation, 90 days boosting, usage rights, re-editing and secondary creation rights, stage Approved, posting November 27 2026.
+Valeri | 2 videos, 30-day ad authorization per video, usage rights | [amount] USD total ([amount] per video) | Price Agreed | 2026-11-11
+Lindsay | 1 IG Reel, DM automation, 90 days boosting, usage rights, re-editing/secondary creation rights | Rate not specified | Approved | Posted Nov 2026
 
-HOW THEY WORK: Briefs shared via Feishu wiki. Scripts reviewed by brand. Video drafts reviewed via Frame.io. Lindsay's Tripo account email is noocaptools@gmail.com. Invite code for Lindsay is 4KI9HH, included as on-screen subtitles at the end of the video. UTM link provided by brand upon draft approval: https://studio.tripo3d.ai/home?invite_code=4KI9HH&utm_source=Instagram&utm_medium=kol&utm_campaign=kol_lindsay.ai.
+HOW THEY WORK: Brief shared via Feishu wiki. Scripts and video drafts are reviewed via Frame.io links (f.io/rVVciC9y). Lindsay's Tripo account email is noocaptools@gmail.com and her invite code is 4KI9HH. Brand provides UTM links for posting. Ad codes are requested after the video goes live.
 
-WATCH OUT: Valeri's Tripo thread and Zeelot contact were previously mixed into Lindsay's deal thread with Rajeshwari and had to be separated. Keep Valeri and Lindsay deals strictly separate.
+WATCH OUT: Valeri's separate Tripo thread with Zeelot was mistakenly attached to Lindsay's deal by Jeevmedia and had to be separated.
 
-OPEN NOW: Tripo 3D x Valeri: waiting on brand for the contract. Tripo 3D x Lindsay: waiting on brand for confirmation after the video is posted.
+OPEN NOW: Across Valeri's deal, we are waiting on the brand for the contract. Across Lindsay's deal, we owe the brand the ad code.
 
 ## Decisions from Harsh
 - 2026-11-18: Brand asked: Lindsay's registered Tripo account email ID · Harsh answered: https://higgsfield-ai.notion.site/astra-6-2-x-higgsfield-game-vi ·  · Lindsay X Higgsfield

@@ -11,6 +11,7 @@ Thread Subject: Paid Collaboration Opportunity with TapNow
 Status: Waiting on brand
 Creator: Chris
 Type: Paid offer
+Wants UGC: true
 Brand Email: alisa@globeinflu.com
 
 ## Links

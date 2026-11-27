@@ -10,6 +10,7 @@ Thread Subject: Paid Promotion - Join the Soldy AI
 Status: Waiting on brand
 Creator: Chris
 Type: Paid offer
+Wants UGC: true
 Brand Email: cara@macaron-ai.com
 
 ## Links

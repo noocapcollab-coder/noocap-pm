@@ -1,7 +1,7 @@
 ---
 type: lead
 ---
-Next Step: Wait for brand to confirm if [amount]rate works and send brand details
+Next Step: Wait for brand to confirm if [amount] rate works and send brand details
 Platforms: YouTube
 Last Our Email: 2026-10-06
 Follow-ups: 3

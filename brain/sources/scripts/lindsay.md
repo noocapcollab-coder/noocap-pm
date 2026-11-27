@@ -109,3 +109,4 @@ HOOK
     Comment PRICES below and I’ll send you the links. Make sure you’re following so you actually see my DM.
     📌 Brand notes 2026-11-25
     📌 Brand notes 2026-11-25
+    📌 Brand notes 2026-11-27

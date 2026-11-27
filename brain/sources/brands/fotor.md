@@ -19,10 +19,10 @@ OPEN NOW: For Fotor x Duncan, we owe filming and production based on the final s
 
 ## Deal with [[Duncan]] (In Production, opened 2026-11-18)
 Last brand reply 2026-11-26, our last reply 2026-11-26.
-AGREED: rate: [amount]; deliverables: 1 dedicated video published on Instagram Reels, TikTok, and Facebook; usage rights: not specified; payment terms: full [amount]on a PayPal invoice after the video goes live (to contract email with company title and video link), paid within 3 working days of the invoice; agreed dates: not specified.
+AGREED: rate: [amount]; deliverables: 1 dedicated video published on Instagram Reels, TikTok, and Facebook; usage rights: not specified; payment terms: full [amount] on a PayPal invoice after the video goes live (to contract email with company title and video link), paid within 3 working days of the invoice; agreed dates: not specified.
 
 HISTORY:
-2026-11-18 creator: Accepted [amount]for 1 video on IG, TikTok, and Facebook.
+2026-11-18 creator: Accepted [amount] for 1 video on IG, TikTok, and Facebook.
 2026-11-19 brand: Shared contract.
 2026-11-21 us: Sent the initial script for brand review.
 2026-11-22 us: Sent the signed contract.
@@ -37,9 +37,9 @@ OPEN NOW: We owe: filming and production of the video based on the final script 
 
 ## Deal with [[Chris]] (Submitted, opened 2026-11-13)
 Last brand reply 2026-11-26, our last reply 2026-11-26.
-AGREED: [amount]rate. 1 dedicated video posted on Instagram and TikTok. 30-day ad authorization and cross-posting usage rights. Payment terms not specified. No dates agreed yet.
+AGREED: [amount] rate. 1 dedicated video posted on Instagram and TikTok. 30-day ad authorization and cross-posting usage rights. Payment terms not specified. No dates agreed yet.
 HISTORY:
-2026-11-13 us: Agreed to [amount]for the video package with 30-day ad authorization and cross-posting.
+2026-11-13 us: Agreed to [amount] for the video package with 30-day ad authorization and cross-posting.
 2026-11-16 brand: Sent access link, code, two video concepts, brief, and contract.
 2026-11-17 us: Sent the signed contract.
 2026-11-18 brand: Confirmed receipt of signed contract and requested brief selection.

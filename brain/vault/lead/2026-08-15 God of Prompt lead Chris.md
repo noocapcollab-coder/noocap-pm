@@ -1,7 +1,7 @@
 ---
 type: lead
 ---
-Next Step: Wait for brand to confirm if [amount]rate works for them
+Next Step: Wait for brand to confirm if [amount] rate works for them
 Platforms: Instagram
 Last Our Email: 2026-08-17
 Last Brand Email: 2026-08-15

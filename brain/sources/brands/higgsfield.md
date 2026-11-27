@@ -8,8 +8,8 @@ WHO: Higgsfield / Higgsfield.AI is an AI video platform. They come to us directl
 CONTACTS: Higgsfield IM Team, email higgsfield.ai@jeevmedia.net, role brand IM team. Thread CC: collab@automateaiconsulting.com.
 
 DEALS:
-Higgsfield x Lindsay | 1 Instagram Reel + Link in bio for 7 days | Rate: [amount]USD | Stage: Paid | Paid on 2026-10-15
-Higgsfield.AI x Lindsay | 1 Instagram Reel and DM automation | Rate: [amount]USD per campaign | Stage: Posted
+Higgsfield x Lindsay | 1 Instagram Reel + Link in bio for 7 days | Rate: [amount] USD | Stage: Paid | Paid on 2026-10-15
+Higgsfield.AI x Lindsay | 1 Instagram Reel and DM automation | Rate: [amount] USD per campaign | Stage: Posted
 Higgsfield x Chris | Short drama greenscreen video | Rate: not known yet | Stage: Posted
 Higgsfield x Lindsay | 1 video | Rate: not known yet | Stage: Posted
 Higgsfield x Chris | Deliverables not known yet | Rate: not known yet | Stage: Posted
@@ -70,15 +70,15 @@ OPEN NOW: We owe: Rudraksh to write the script
 
 ## Deal with [[Lindsay]] (Posted, opened 2026-10-16)
 Last brand reply 2026-11-02, our last reply 2026-11-09.
-AGREED: Rate [amount]USD per campaign. Deliverables: 1 Instagram Reel and DM automation. Usage rights, payment terms, and delivery dates not confirmed.
+AGREED: Rate [amount] USD per campaign. Deliverables: 1 Instagram Reel and DM automation. Usage rights, payment terms, and delivery dates not confirmed.
 
 HISTORY:
 2026-09-29 brand: initial response; campaign ineligible for payment due to portal submission
 2026-10-12 brand: clarified payment and link upload process
 2026-10-13 us: disputed payment denial; provided live link
 2026-10-14 brand: identified WhatsApp screenshots as from separate agency AIFY MEDIA
-2026-10-14 brand: offered [amount]rate for future campaigns managed directly through Higgsfield
-2026-10-16 us: confirmed acceptance of [amount]fixed rate
+2026-10-14 brand: offered [amount] rate for future campaigns managed directly through Higgsfield
+2026-10-16 us: confirmed acceptance of [amount] fixed rate
 2026-10-21 us: asked if Higgsfield would offer ChatGPT & Wan 3.0 campaign
 2026-10-22 brand: clarified campaign managed by AIFY MEDIA; advised to work directly with them
 2026-11-02 us: requested introduction to AIFY MEDIA to finalize brief and contract
@@ -96,5 +96,5 @@ Last brand reply 2026-10-15, our last reply 2026-10-15.
 - Deliverables: 1 Instagram Reel · Contact Name: Siddhi · Next Step: None (deal declined by brand) · Platforms: Instagram · Last Our Email: 2026-11-20 · Last Brand Email: 2026-11-21 · Thread Subject: Collaboration Inquiry Higgsfield · Status: Lost · Creator: Chris · Type: Paid offer · Brand Email: siddhi@jeevmedia.net
 - Deliverables: Dedicated YouTube video (or short integration) · Contact Name: Emma · Next Step: No further action needed (thread closed by agency). · Platforms: YouTube, Instagram · Last Our Email: 2026-11-25 · Last Brand Email: 2026-11-25 · Thread Subject: Collaboration Opportunity- Higgsfield · Status: Lost · Creator: Lindsay · Type: Unclear · Brand Email: clarkecl@jointeamheekentertainment.com
 - Deliverables: 1 Instagram Reel and DM automation per campaign · Contact Name: Higgsfield · Next Step: Contact AIFY MEDIA directly for campaign details and rate discussion · Platforms: Instagram · Last Our Email: 2026-10-21 · Deal: 1 linked · Last Brand Email: 2026-10-22 · Thread Subject: @lindsay.ai X Higgsfield.AI · Status: Locked · Creator: Lindsay · Type: Unclear · Brand Email: higgsfield.ai@jeevmedia.net
-- Next Step: Wait for brand to confirm if [amount]rate works or counter-offer · Platforms: YouTube · Last Our Email: 2026-08-20 · Last Brand Email: 2026-08-20 · Thread Subject: Paid Collaboration - thechriscordero x Higgsfield AI · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: emmacl@gocreators-heekentertainment.com
+- Next Step: Wait for brand to confirm if [amount] rate works or counter-offer · Platforms: YouTube · Last Our Email: 2026-08-20 · Last Brand Email: 2026-08-20 · Thread Subject: Paid Collaboration - thechriscordero x Higgsfield AI · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: emmacl@gocreators-heekentertainment.com
 - Deliverables: 10 Instagram Reels for Higgsfield AI API launch · Next Step: Wait for brand to confirm acceptance of [amount]/video rate and finalize terms · Platforms: Instagram · Last Our Email: 2026-09-17 · Last Brand Email: 2026-09-16 · Thread Subject: Collaboration Opportunity – Higgsfield AI x thechriscordero · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: marketing@creators-heekentertainmentcloud.com

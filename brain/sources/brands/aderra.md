@@ -3,13 +3,13 @@
 Brand. Works with creators: [[Lindsay]], [[Chris]].
 
 ## Inbound leads
-- Deliverables: Paid partnership ([amount]per 1,000 views) · Next Step: New brand: management to reply with pricing · Last Brand Email: 2026-11-26 · Thread Text: From: Aderra Partnerships <partnerships@aderra.ai>
+- Deliverables: Paid partnership ([amount] per 1,000 views) · Next Step: New brand: management to reply with pricing · Last Brand Email: 2026-11-26 · Thread Text: From: Aderra Partnerships <partnerships@aderra.ai>
 Date: 2026-11-26
 
 Hi Lindsay,
 
 just checking this landed. Happy to answer anything, or send you the
-details of the paid partnership ([amount]per 1,000 views).
+details of the paid partnership ([amount] per 1,000 views).
 
 Adem
 

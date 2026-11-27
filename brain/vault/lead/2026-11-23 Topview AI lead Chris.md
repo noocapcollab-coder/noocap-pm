@@ -11,6 +11,7 @@ Thread Subject: Paid Collab Offer – AI Video Tool Topview AI
 Status: Waiting on brand
 Creator: Chris
 Type: Paid offer
+Wants UGC: true
 Brand Email: cathy@sparkhub.media
 
 ## Links

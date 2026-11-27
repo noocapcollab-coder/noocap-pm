@@ -9,6 +9,7 @@ Thread Subject: Let's Collaborate 🌟 AI Video Creation Tool - Medeo × thechri
 Status: Waiting on brand
 Creator: Chris
 Type: Unclear
+Wants UGC: true
 Brand Email: medeomarketing@one2x.ai
 
 ## Links

@@ -11,6 +11,7 @@ Thread Subject: Paid YouTube collaboration with RunningHub
 Status: Waiting on brand
 Creator: Lindsay
 Type: Paid offer
+Wants UGC: true
 Brand Email: ons.influence@gmail.com
 
 ## Links

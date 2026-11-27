@@ -4,7 +4,7 @@ The final scripts of videos posted in the last 60 days, as filmed.
 
 ## 2026-11-18 Dreamina × Chris (Artist Team)
 Type: SPONSOR. Creator: [[Chris]].
-Hook: Someone just figured out how to make Claude run an entire Black Friday campaign by itself, and it replaces the [amount]agency you were about to hire.
+Hook: Someone just figured out how to make Claude run an entire Black Friday campaign by itself, and it replaces the [amount] agency you were about to hire.
     Body:
     Watch this, you give Claude one sentence asking it to research the top Black Friday ads in your niche, and it writes every prompt before handing the visuals over to Dreamina.
     Seedream 5.0 Pro makes your posters with up to ten variations per prompt, while Seedance 2.5 turns your product into video ads.
@@ -20,6 +20,7 @@ Hook: Someone just figured out how to make Claude run an entire Black Friday cam
     📋 Brand feedback on the video 2026-11-17
     ✅ Cleared to post 2026-11-17
     📋 Brand feedback on the video 2026-11-18
+    📌 Brand notes 2026-11-27
 
 ## 2026-11-20 Emergent × Chris
 Type: SPONSOR. Creator: [[Chris]].

@@ -21,13 +21,13 @@ BILLING: not yet
 OPEN NOW: Waiting on brand: Smahi to provide an update or alternative way for Chris to complete registration.
 Stage: Lost
 Last brand reply 2026-10-28, our last reply none.
-AGREED: [amount]for one video on one platform (Reels, TikTok, Shorts, or YouTube) featuring Bluehost AI product, delivered via Creator.co. Usage rights, payment terms, and delivery date not known yet.
+AGREED: [amount] for one video on one platform (Reels, TikTok, Shorts, or YouTube) featuring Bluehost AI product, delivered via Creator.co. Usage rights, payment terms, and delivery date not known yet.
 
 HISTORY: not known yet
 
 BILLING: not known yet
 
-OPEN NOW: Chris to opt in on Creator.co so Bluehost can approve and send the [amount]offer through the platform. We owe: Chris to complete Creator.co opt-in step.
+OPEN NOW: Chris to opt in on Creator.co so Bluehost can approve and send the [amount] offer through the platform. We owe: Chris to complete Creator.co opt-in step.
 
 ## Links
 - [[Bluehost 2]]

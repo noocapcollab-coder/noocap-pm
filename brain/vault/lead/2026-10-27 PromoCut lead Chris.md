@@ -8,6 +8,7 @@ Thread Subject: PromoCut Discord + Potential Paid UGC Opportunity!
 Status: Waiting on brand
 Creator: Chris
 Type: Unclear
+Wants UGC: true
 Brand Email: renzo.rodriguez@promocut.com
 
 ## Links

@@ -9,6 +9,7 @@ Thread Subject: Paid tech UGC opportunity in the US
 Status: New offer
 Creator: Chris
 Type: Paid offer
+Wants UGC: true
 Brand Email: brady@launchpointhq.com
 
 ## Links

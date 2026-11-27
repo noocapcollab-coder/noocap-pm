@@ -3,9 +3,9 @@ type: deal
 ---
 Stage: Submitted
 Last brand reply 2026-11-26, our last reply 2026-11-26.
-AGREED: [amount]rate. 1 dedicated video posted on Instagram and TikTok. 30-day ad authorization and cross-posting usage rights. Payment terms not specified. No dates agreed yet.
+AGREED: [amount] rate. 1 dedicated video posted on Instagram and TikTok. 30-day ad authorization and cross-posting usage rights. Payment terms not specified. No dates agreed yet.
 HISTORY:
-2026-11-13 us: Agreed to [amount]for the video package with 30-day ad authorization and cross-posting.
+2026-11-13 us: Agreed to [amount] for the video package with 30-day ad authorization and cross-posting.
 2026-11-16 brand: Sent access link, code, two video concepts, brief, and contract.
 2026-11-17 us: Sent the signed contract.
 2026-11-18 brand: Confirmed receipt of signed contract and requested brief selection.

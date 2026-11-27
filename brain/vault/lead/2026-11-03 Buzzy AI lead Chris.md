@@ -10,6 +10,7 @@ Thread Subject: Partnership Opportunity with Buzzy (AI Video Creation)
 Status: Waiting on brand
 Creator: Chris
 Type: Paid offer
+Wants UGC: true
 Brand Email: cecelia@buzzy.now
 
 ## Links

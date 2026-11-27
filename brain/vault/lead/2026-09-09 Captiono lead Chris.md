@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: 1 dedicated video (IG Reel/TikTok)
-Next Step: Decide whether to accept [amount]or counter-offer (Chris's original ask was [amount])
+Next Step: Decide whether to accept [amount] or counter-offer (Chris's original ask was [amount])
 Platforms: Instagram, TikTok
 Last Our Email: 2026-10-06
 Follow-ups: 3

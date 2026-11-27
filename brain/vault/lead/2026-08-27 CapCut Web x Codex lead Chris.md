@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: Instagram Reel with 30-day Ad Code usage rights
-Next Step: Wait for brand to accept or counter the [amount]rate
+Next Step: Wait for brand to accept or counter the [amount] rate
 Platforms: Instagram
 Last Our Email: 2026-08-28
 Last Brand Email: 2026-08-27

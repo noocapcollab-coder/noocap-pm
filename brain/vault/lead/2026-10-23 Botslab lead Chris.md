@@ -3,7 +3,7 @@ type: lead
 ---
 Deliverables: 1 Instagram Reel (Collab Post)
 Contact Name: Lubia
-Next Step: Lost: offer [amount]is under our [amount]inimum, not answered
+Next Step: Lost: offer [amount] is under our [amount] inimum, not answered
 Platforms: Instagram
 Last Our Email: 2026-10-26
 Last Brand Email: 2026-10-23

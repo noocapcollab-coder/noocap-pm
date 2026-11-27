@@ -10,7 +10,7 @@ WHO: HubSpot comes through agency Redthread.
 CONTACTS: Joe Stratton, joe@redthread.co, Redthread; Piers Moore, piers@redthread.co, Redthread; copy collab@buildroom.ai; sign as Duncan's Team.
 
 DEALS:
-Duncan | one dedicated sponsored video plus two Instagram Story frames | [amount]USD ([amount]dedicated sponsored video + [amount]for two Instagram Story frames) | Script Sent | Brief received 2026-11-20
+Duncan | one dedicated sponsored video plus two Instagram Story frames | [amount] USD ([amount] dedicated sponsored video + [amount] for two Instagram Story frames) | Script Sent | Brief received 2026-11-20
 
 HOW THEY WORK: Draft contract provided via Google Docs with comments tracked or listed in email; product access requested for noocaptools@gmail.com.
 

@@ -5,25 +5,25 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]], [[Chris]], [[Duncan]], [[Brad]].
 ## Brand wiki (from every email with them)
-WHO: Luma AI provides AI video generation products and tools. They come to us directly and through agencies (NJ Agency, Faved).
+WHO: Luma AI comes through NJ Agency and Faved.
 
-CONTACTS: Upendra Singh (upendra@njagency.co), Campaign Head at NJ Agency; Faved (creators@faved.com), platform/agency. Thread CCs include collab@automateaiconsulting.com, collab@chriscordero.net, collab@buildroom.ai.
+CONTACTS: Upendra Singh, upendra@njagency.co, Campaign Head at NJ Agency; Faved, creators@faved.com.
 
 DEALS:
-Luma AI x Lindsay: 1 video production and publication, rate not stated, stage Submitted, complete and publish before December 30, 2026.
-Luma AI x Chris: Reel + Story repost, [amount]USD, stage Posted, live date November 21, 2026.
-Luma AI x Duncan: Draft script, rate and payment terms not stated, stage Signed, usage rights 60-day for Instagram, TikTok, paid ads, and dark ads, with YouTube crossposting allowed but no YouTube paid ad rights or ad codes (deal-cevsvd via Faved platform).
-Luma AI x Brad: One video with script approved, rate not known, stage Posted, agreed dates not known.
+Luma AI x Lindsay, one video production and publication before December 30 2026, rate not stated, stage Approved, dates Dec 30 2026.
+Luma AI x Chris, Reel and Story repost, [amount], stage Invoiced, dates Nov 21 2026.
+Luma AI x Duncan, draft script, rate and terms not stated, stage Signed, 60-day usage rights for IG/TikTok/other paid and dark ads, YouTube crossposting allowed without ad rights or codes.
+Luma AI x Brad, one video with script approved, stage Posted.
 
-HOW THEY WORK: Scripts are submitted to the brand for approval. For Luma account credits, use noocaptools@gmail.com. Videos are reviewed via links such as Frame.io. Publishing requirements include a Luma-approved CTA in the video and caption asking viewers to comment a keyword to receive a link, comment-to-DM automation, the tracking link in the Instagram bio, an Instagram story with a clickable tracking link sticker, and tagging @lumalabsai in both the Reel and Story. For Duncan via Faved, replies by email to Faved are not seen by the brand; answers must be handled on the Faved page.
+HOW THEY WORK: Brief format includes script approval, Frame.io for first cut reviews, tracking links provided by brand, comment-to-DM automation using keyword Luma, clickable link sticker on Instagram Story, Instagram bio link placement, tagging @lumalabsai in Reel and Story, and sharing live links and Story screenshots. Invoices are sent via Stripe with billing details from NJ Agency.
 
-WATCH OUT: Missing deliverables such as the Instagram Story, missing tags, or missing bio links must be caught before invoicing. Duncan's deal excludes YouTube paid ad rights and partnership/ad codes entirely.
+WATCH OUT: Missing stories and tagging errors must be fixed before publishing is considered complete. For Duncan, replies by email to Faved are not seen by the brand so they must be answered on the Faved page.
 
 OPEN NOW:
-Luma AI x Lindsay: Waiting on brand to review the video.
-Luma AI x Chris: We owe sending the signed invoice to the brand.
-Luma AI x Duncan: We owe signing the contract on the Faved page, confirming acceptance of the usage rights terms, and submitting the draft script.
-Luma AI x Brad: Brad owes filming the video per the approved script.
+For Lindsay, we owe publishing the content and sharing the live Reel link, live Story link, Story screenshot, and confirmation that DM automation is working.
+For Chris, we are waiting on brand payment processing per Net 30 terms.
+For Duncan, we owe signing the contract, confirming acceptance of usage rights terms, and submitting the draft script.
+For Brad, Brad owes filming the video per the approved script.
 
 
 ## Links

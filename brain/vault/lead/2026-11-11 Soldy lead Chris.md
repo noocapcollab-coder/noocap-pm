@@ -11,6 +11,7 @@ Thread Subject: Let's work together!
 Status: Waiting on brand
 Creator: Chris
 Type: Paid offer
+Wants UGC: true
 Brand Email: vicki.yee@soldy.ai
 
 ## Links

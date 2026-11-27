@@ -19,7 +19,7 @@ collab@valchy.ai, creator Valeri, copy
 
 DEALS:
 Panda Security x Chris | Script Approved | deliverables not fully documented | rate not documented | stage Script Approved | dates not documented
-Panda Security x Valeri | one horizontal video, one vertical video, one cover photo | [amount]USD | stage Price Agreed | dates not documented
+Panda Security x Valeri | one horizontal video, one vertical video, one cover photo | [amount] USD | stage Price Agreed | dates not documented
 
 HOW THEY WORK: Content review and video submissions are coordinated directly through the Panda Security app. Content is UGC and not posted on creator pages.
 

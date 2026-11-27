@@ -11,6 +11,7 @@ Thread Subject: 🔥 Partnership Opportunity
 Status: Waiting on brand
 Creator: Chris
 Type: Paid offer
+Wants UGC: true
 Brand Email: kiwi@globaldragon.top
 
 ## Links

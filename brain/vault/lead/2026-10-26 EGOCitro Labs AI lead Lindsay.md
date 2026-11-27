@@ -3,7 +3,7 @@ type: lead
 ---
 Deliverables: 1 short-form video (30-60s), product link in bio/link sticker
 Contact Name: kaia
-Next Step: Quote at [amount]waiting in Approvals
+Next Step: Quote at [amount] waiting in Approvals
 Platforms: TikTok, Instagram, YouTube Shorts
 Last Our Email: 2026-10-23
 Last Brand Email: 2026-10-26

@@ -2,11 +2,11 @@
 type: deal
 ---
 Stage: Submitted
-Last brand reply 2026-11-25, our last reply 2026-11-26.
-AGREED: [amount]for three CapCut app videos on Instagram, 30 to 60 seconds each. Script approval before filming, up to 2 revisions, publish within 3 days of approval, 60-day ad code authorization per video. Latest publication deadline November 27.
+Last brand reply 2026-11-27, our last reply 2026-11-26.
+AGREED: [amount] for three CapCut app videos on Instagram, 30 to 60 seconds each. Script approval before filming, up to 2 revisions, publish within 3 days of approval, 60-day ad code authorization per video. Latest publication deadline extended to November 30 for video 1.
 
 HISTORY:
-2026-11-12 brand confirmed the [amount]package for three videos, shared the brief, sent the contract, and set November 27 as the deadline.
+2026-11-12 brand confirmed the [amount] package for three videos, shared the brief, sent the contract, and set November 27 as the deadline.
 2026-11-14 us sent the signed contract.
 2026-11-17 us clarified each script covers a different brief and confirmed the deadline can be met.
 2026-11-18 brand sent script revision feedback and updated CTA/comment instructions.
@@ -18,10 +18,11 @@ HISTORY:
 2026-11-24 us sent the first drafts of the first two videos for review and clarified the links.
 2026-11-25 brand approved video 2, requested video 1 revisions, proposed changing/dropping the third video, and requested the creator's CapCut UID for whitelisting.
 2026-11-26 us sent the correct CapCut UID and submitted the revised cut for video 1.
+2026-11-27 brand requested two further changes to video 1, extended its deadline to November 30, and asked if video 2 is published yet.
 
 BILLING: not yet.
 
-OPEN NOW: Waiting on brand: review of video 1 revisions and final decision on the third video.
+OPEN NOW: We owe: further revisions for video 1 and live link plus ad code for video 2 if published.
 
 ## Links
 - [[CapCut]]

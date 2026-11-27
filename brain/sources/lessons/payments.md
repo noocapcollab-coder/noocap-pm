@@ -2,6 +2,21 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## No repeat billing-details requests if already provided or requested
+When: The brand has already provided billing details in the thread or a previous request for them is still outstanding
+Do: Check the deal's history, thread, and billing tracker to confirm if billing details were already provided or requested; only ask if you do not have them. Never send a duplicate request for billing details if the email thread or deal memory already contains them.
+Never: Send a request for billing details that you have already received or already asked for in the same thread
+Seen 1 time(s). Source: Draft rejected.
+## Instagram share and Story links are real posted links
+When: Checking posted links before an invoice goes out
+Do: Accept instagram.com/share/ and instagram.com/stories/<user>/<id> as posted links, the same as /reel/ and /p/.
+Never: Never block an invoice because a posted link is a share link or a Story link.
+Seen 1 time(s). Source: Harsh correction.
+## A payment chase never says we finished a form or step that nobody on our side confirmed
+When: Writing any payment chase or follow-up where the brand asked us to fill in a vendor form, payment platform (Trolley, Tipalti, W-9) or other onboarding step
+Do: Ask for the payment date only. Say the form is done only when our own email in the thread or Harsh said so.
+Never: Never write 'we have updated / filled out / submitted the form or details' because the deal's Next Action mentions the step.
+Seen 1 time(s). Source: System check.
 ## Deal Memory billing follows the invoice actually paid, not the split the brand first proposed
 When: A brand proposes split payments (50% upfront, 50% after posting) but the invoice that went out and got paid was for the full amount
 Do: Write in Deal Memory and Payment Terms what was invoiced and paid (amount, invoice number, date) and that no balance is due

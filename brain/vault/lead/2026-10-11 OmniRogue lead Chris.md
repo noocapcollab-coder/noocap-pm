@@ -13,6 +13,7 @@ Status: Negotiating
 Our Counters: 0
 Creator: Chris
 Type: Affiliate
+Wants UGC: true
 Brand Email: emma@omnirogue.com
 
 ## Links

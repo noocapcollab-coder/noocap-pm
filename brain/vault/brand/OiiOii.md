@@ -11,7 +11,7 @@ CONTACTS:
 Vera, vera@luminarysm.com, Luminary SM, signs as Vera or Vera Vera, must be copied.
 
 DEALS:
-OiiOii x Chris | One customized reel, 30-day ad code, 3-month usage rights (reposting, paid ads, native boosting, derivative editing), live for 12 months, profile/description/pinned comment link, payment in 15 days | Stage: Price Agreed | Rate: [amount]USD | Dates: Rate accepted Oct 15 2026.
+OiiOii x Chris | One customized reel, 30-day ad code, 3-month usage rights (reposting, paid ads, native boosting, derivative editing), live for 12 months, profile/description/pinned comment link, payment in 15 days | Stage: Price Agreed | Rate: [amount] USD | Dates: Rate accepted Oct 15 2026.
 
 HOW THEY WORK:
 Wait for OiiOii brand team approval, then Vera sends the contract and campaign brief.

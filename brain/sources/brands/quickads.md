@@ -11,7 +11,7 @@ Hi Chris,
 I lead growth & marketing at QuickAds. We're looking for creators for a
 paid Instagram reel featuring Remy, our influencer-marketing agent.
 
-Our budget is [amount]-[amount]per reel. If that works for you, please share your
+Our budget is [amount]-[amount] per reel. If that works for you, please share your
 rate, a media kit or screenshot showing your US audience share, and your
 earliest availability. Happy to share the brief.
 

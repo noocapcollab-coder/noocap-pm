@@ -2,6 +2,25 @@
 
 The final scripts of videos posted in the last 60 days, as filmed.
 
+## 2026-11-25 MCP IS DEAD
+Type: PERSONAL. Creator: [[Valeri]].
+Hook 1: Cloudflare just shrank 1.17 million tokens of MCP tools down to one thousand. MCP is done.
+    Hook 2:
+Cloudflare quietly killed MCP, and Anthropic is already baking the replacement into Claude.
+    Body:
+So MCP has your agent ping the model on every tool call.
+    Cloudflare burned 1.17 million tokens running one workflow.
+    So they built CodeMode and dropped the same job to a thousand tokens.
+    Your MCP tools turn into a TypeScript API.
+    The model writes a chain script that runs in a sandbox. Boom.
+    Anthropic calls this programmatic tool calling, which it's basically the same idea in Claude.
+    CTA:
+DM me CODE and I'll send the Cloudflare breakdown. Let's go.
+
+### Posted to TikTok + YouTube (Nov 27, 3:56 AM IST, Hook A, with cover)
+    - TikTok: https://www.tiktok.com/@valeridoesai/video/7712610111595875617
+    - YouTube: https://www.youtube.com/shorts/iNHrmnvx79k
+
 ## 2026-11-18 MAUSBOT
 Type: PERSONAL. Creator: [[Valeri]].
 Hook 1:
@@ -160,26 +179,3 @@ Hook A — Founder Flex ★ BEST:
     - Hosted version (no install): https://dev.muapi.ai/open-generative-ai
     - Higgsfield pricing page: https://higgsfield.ai/pricing
     - Coverage on MuAPI pay-per-generation and the 20K stars: https://alphasignal.ai/news/anil-matcha-s-open-generative-ai-hits-20k-stars-replacing-100-month-ai-studios
-
-## 2026-11-13 YOUTUBE - TIKTOK airLLM
-Type: PERSONAL. Creator: [[Valeri]].
-Hook A — Founder Flex :
-    We just ran a 2.8 trillion parameter model on a 4-gig GPU, and here’s the catch.
-    Hook B — Authority:
-    Someone just made the biggest open-source model on Earth run on a 4-gig graphics card.
-    Body:
-    So basically, frontier open models normally need a full server just to load.
-    The way this works is it pulls one layer onto your GPU, runs it, drops it, grabs the next.
-    DeepSeek, Llama 405B, even Kimi K3 at 2.8 trillion parameters, plus Apple silicon Macs.
-    But here’s the crazy part — it’s not minutes per answer, it’s seconds to minutes per word.
-    And you need over a terabyte of SSD, which it’s not exactly a cheap laptop.
-    For our voice agents at Vouchi, obviously useless, a caller won’t wait.
-    For overnight jobs, like sorting call transcripts privately, absolutely insane.
-    Most founders cancel their API after the headline. We use both.
-    It’s called AirLLM, completely free and open-source. Boom.
-    CTA: Comment OFFLINE and I’ll send you the setup. Let’s go.
-    Resource links
-    - AirLLM repo: https://github.com/lyogavin/airllm
-    - Speed reality check (292 s/token, community numbers): https://dev.to/arshtechpro/airllm-runs-a-70b-model-on-a-4gb-gpu-its-true-and-thats-not-the-interesting-part-hha
-    - Kimi K3 benchmarks vs Fable 5 / GPT-5.6 Sol: https://www.eesel.ai/blog/kimi-k3
-    - Kimi K3 model listing (open weights, July 16, 2026): https://epoch.ai/models/kimi-k3

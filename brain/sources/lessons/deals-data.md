@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A store's own sale or newsletter email is never a brand lead
+When: An email with prices in it (a Black Friday sale, a subscription discount, a newsletter) reaches a creator inbox and the reader says it is not a deal
+Do: Keep it skipped unless the subject says paid collab/sponsorship or the email offers the creator a fee, rate or budget for content
+Never: Never keep it as a lead 'on second look' because it has dollar prices and the word promotional
+Seen 1 time(s). Source: System check.
+## A paused or duplicate deal never emails the brand
+When: Two deals share one Gmail thread (a duplicate opened a minute apart) and one is paused or behind the other
+Do: Answer only from the live deal that holds the newest stage; leave the paused one silent
+Never: Send a fixed reply or draft from a paused deal, or acknowledge 'we'll wait for feedback' after the brand already approved on the sibling deal
+Seen 1 time(s). Source: System check.
 ## A brand is closed only once the brief, the contract or an agreed price came up
 When: A new brand's email looks like a brief but the thread never mentions sharing the brief, sending the contract, or an agreed price (or being selected for the campaign)
 Do: Keep the brand in talks: deal at Inbound, Harsh asked, no card, no script writer

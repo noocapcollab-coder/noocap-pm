@@ -9,7 +9,7 @@ WHO: Asana is a work management platform. They come to us through the agency The
 
 CONTACTS: Olivia Adams, olivia.adams@theshelf.com, agency, signs, copy Skye Flory skye.flory@theshelf.com and Alex Laskey alexlaskey@theshelf.com.
 
-DEALS: Lindsay, 1 YouTube Integration (60-90s mid-roll), [amount]USD, Paid, aired.
+DEALS: Lindsay, 1 YouTube Integration (60-90s mid-roll), [amount] USD, Paid, aired.
 
 HOW THEY WORK: Payment is handled by The Shelf through influencerpayments@theshelf.com.
 

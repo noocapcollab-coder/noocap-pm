@@ -5,28 +5,25 @@ type: brand
 
 Brand. Works with creators: [[Chris]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: Dreamina is an AI-powered creative marketing tool. They work with us through an agency called Katlas Media for some campaigns, and directly via Viral Vibe for others.
+WHO: Dreamina, an AI video and marketing tool, working through agencies Viral Vibe and Katlas Media for sponsored content with creators.
 
-CONTACTS: 
-Jenny Guo (jenny@viralvibe.llc), Business Development at Viral Vibe. CC: camila@viralvibe.llc, charlotte@viralvibe.llc, emma@viralvibe.llc.
-Kepan (outreach@katlasmedia.com), representative for Katlas Media. CC: siyu@katlasmedia.com, silvia@katlasmedia.com.
+CONTACTS:
+Jenny Guo, jenny@viralvibe.llc, BD at Viral Vibe (agency for Dreamina); signs agreements and handles communication; CC: collab@chriscordero.net, camila@viralvibe.llc, charlotte@viralvibe.llc, emma@viralvibe.llc.
+Kepan, outreach@katlasmedia.com, representative at Katlas Media (agency for Dreamina); CC: siyu@katlasmedia.com, silvia@katlasmedia.com.
 
 DEALS:
-Dreamina x Chris (Viral Vibe): 1 reel + 7-day bio link + 1-month ad code, [amount], stage Posted, dates pending final contract.
-Dreamina x Chris (Katlas): 1 video (TikTok and Instagram), [amount], stage Price Agreed, dates pending.
-Dreamina x Chris (Katlas): 1 video, [amount], stage Invoiced, due 2026-11-22.
+Dreamina x Chris | 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team) | [amount] | Posted | Net 7 after delivery and publication on Instagram
+Dreamina x Chris | 1 video posted on TikTok and Instagram (Unlimited Seedance campaign); script review first | [amount] | Price Agreed | Terms not specified yet
+Dreamina x Chris | Publish pre-made videos (7-day one link for DMChat, 60-day ad code) | [amount] | Invoiced | Bank transfer, due Nov 22, 2026
 
-HOW THEY WORK: 
-For direct deals (Viral Vibe), they require specific watermark transparency and logo usage (Dreamina Marketing Studio logo on covers). They provide UTM links for tracking. They have a formal onboarding process requiring contract and payment details (including Bank/Swift/ABA or PayPal).
-For agency deals (Katlas Media), they provide briefs via Feishu. Recent requirements involve sending a script for review before production. Invoices must be sent to Katlas Media; they require a 9-digit ACH routing number.
+HOW THEY WORK:
+Brief format via external links (e.g., Feishu wiki with password protection). Script or video review process required before publishing, depending on the campaign. Deliverables involve posting on Instagram, TikTok, or publishing pre-made videos with specific hashtags and UTM links provided by the brand. Invoices are raised by us via Stripe or bank transfer details.
 
-WATCH OUT: 
-Never use the standard Dreamina logo when the Marketing Studio logo is requested. Always ensure transparency for watermarks. If a deadline is missed for publication, they reserve the right to cancel.
+WATCH OUT:
+Do not miss UTM links and required hashtags provided by the brand. Ensure official invoices and company bank details are clearly confirmed to avoid payment delays.
 
 OPEN NOW:
-Dreamina x Chris (Viral Vibe): We owe the requested contract and payment information form to Jenny Guo to finalize the deal.
-Dreamina x Chris (Katlas - [amount]): Waiting for the brand to provide the payment receipt/transaction reference for the [amount] payment confirmed as sent on 2026-11-25.
-Dreamina x Chris (Katlas - [amount]): Waiting for Katlas Media to send the contract for the new Unlimited Seedance campaign.
+For the first deal (posted reel), we owe Jenny Guo confirmation on whether our bank account is a company bank account and confirmation that we can provide an official invoice. For the ongoing campaigns via Katlas Media, we are waiting on script approval or contract processing from Kepan, and tracking the pending [amount] payment.
 
 
 ## Links

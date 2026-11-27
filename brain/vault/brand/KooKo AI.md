@@ -5,17 +5,22 @@ type: brand
 
 Brand. Works with creators: [[Valeri]], [[Chris]], [[Lindsay]].
 ## Brand wiki (from every email with them)
-WHO: KooKo AI, an AI product/service company. They come to us directly.
+WHO: KooKo AI, an AI product/service, coming to us directly.
 
-CONTACTS: Sophia, creators@kooko.ai, representing the KOOKO AI Team. Thread CC: harshkoli201@gmail.com.
+CONTACTS:
+Sophia, creators@kooko.ai, KooKo AI Team, signs as Sophia, copy harshkoli201@gmail.com.
 
-DEALS: KooKo AI x Valeridoesai | One short video posted to Instagram Reels, TikTok, YouTube Shorts, and Facebook | [amount]USD base rate (plus [amount]USD bonus if campaign video reaches 80K views within 7 days of publishing) | Brief Received | Published within 2 weeks after deal is locked in.
+DEALS:
+Valeri | [amount] USD base rate plus [amount] USD bonus if video reaches 80K views within 7 days of publishing | 1 Instagram Reel, 1 TikTok, 1 YouTube Short, 1 Facebook post | Brief Received | All deliverables published within 2 weeks of lock-in.
 
-HOW THEY WORK: Deliverables include 1 Instagram Reel, 1 TikTok video, 1 YouTube short, and 1 Facebook video. Posting requirements include adding the KOOKO UTM link in bio for 7 days, featuring a unique discount code, using hashtags #KOOKOAI #KOOKOAgent, and granting a 30-day ad authorization. Agreement process: no need to sign the attached agreement template, simply reply "Agree with the Influencer Cooperation Rules". They also request a KOOKO account registration email to top up free credits.
+HOW THEY WORK:
+Agreement process requires either replying Agree with the Influencer Cooperation Rules or an updated contract reflecting agreed terms. They request creator to register a KOOKO account and send the registration email for free credits. Requirements include 30-day ad authorization, 7 days KOOKO UTM link in bio, unique discount code, and hashtags #KOOKOAI #KOOKOAgent.
 
-WATCH OUT: The standard agreement template cannot be amended, but terms confirmed through email exchange are treated as binding and prevail. No physical signature is required, only a written email reply agreeing to the rules.
+WATCH OUT:
+Their standard contract template does not include compensation, specifies a 60-day ad authorization instead of 30 days, and has a broad indemnification provision. Rule: we insisted that all agreed points must be explicitly mentioned in the contract before proceeding.
 
-OPEN NOW: We owe: reply agreeing with the influencer cooperation rules, sending the KOOKO account registration email, and sharing the script.
+OPEN NOW:
+Waiting on brand to provide an updated contract reflecting all agreed terms ([amount] base fee, [amount] bonus at 80K views in 7 days, 30-day ad authorization, and limited liability). Brand owes the next move.
 
 
 ## Links

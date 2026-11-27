@@ -11,6 +11,7 @@ Thread Subject: Sponsoring your next video?
 Status: Negotiating
 Creator: Chris
 Type: Affiliate
+Wants UGC: true
 Brand Email: arthur.lippert05@gmail.com
 
 ## Links

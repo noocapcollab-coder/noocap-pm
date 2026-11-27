@@ -13,6 +13,7 @@ Status: Lost
 Our Counters: 0
 Creator: Chris
 Type: Paid offer
+Wants UGC: true
 Brand Email: ushni@thebreadwinners.club
 
 ## Links

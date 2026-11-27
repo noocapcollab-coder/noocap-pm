@@ -11,6 +11,7 @@ Thread Subject: Paid Collab with ZenBusiness + AI for Entrepreneurs - Automate A
 Status: Locked
 Creator: Lindsay
 Type: Paid offer
+Wants UGC: true
 Brand Email: ronnie.choi@zenbusiness.com
 
 ## Links

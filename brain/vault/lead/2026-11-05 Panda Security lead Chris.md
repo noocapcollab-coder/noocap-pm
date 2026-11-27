@@ -12,6 +12,7 @@ Thread Subject: Paid campaign with Panda Security - thechriscordero
 Status: Waiting on brand
 Creator: Chris
 Type: Paid offer
+Wants UGC: true
 Brand Email: camila.molares@luagroup.com
 
 ## Links

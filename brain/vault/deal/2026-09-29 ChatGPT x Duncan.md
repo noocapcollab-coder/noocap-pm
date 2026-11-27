@@ -2,8 +2,8 @@
 type: deal
 ---
 Stage: Invoiced
-Last brand reply 2026-11-24, our last reply 2026-11-24.
-AGREED: rate [amount]deliverables not specified, usage rights not specified, payment terms net upon invoice submission, no agreed dates.
+Last brand reply 2026-11-24, our last reply 2026-11-27.
+AGREED: rate [amount] deliverables not specified, usage rights not specified, payment terms net upon invoice submission, no agreed dates.
 
 HISTORY:
 2026-11-05 us sent invoice INV-004 for [amount].
@@ -14,10 +14,11 @@ HISTORY:
 2026-11-22 us asked brand to send Trolley setup to noocapcollabs email.
 2026-11-24 brand provided Vendor Form link to update Trolley information and email.
 2026-11-24 us said we would share the link with Duncan for him to complete the required information.
+2026-11-27 us informed brand that Trolley information has been updated and asked about payment timing.
 
-BILLING: Brand has given billing details (company: Viral Nation, invoice email: dalves@viralnation.com). Invoice INV-004 for [amount]sent 2026-11-05, status pending payment via Trolley.
+BILLING: Brand has given billing details (company: Viral Nation, invoice email: dalves@viralnation.com). Invoice INV-004 for [amount] sent 2026-11-05, status pending payment via Trolley.
 
-OPEN NOW: Waiting on brand: Process payment once Duncan completes the Trolley form update.
+OPEN NOW: Waiting on brand: Confirm payment processing following the Trolley information update.
 
 ## Links
 - [[ChatGPT]]

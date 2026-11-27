@@ -10,6 +10,7 @@ Thread Subject: Paid collaboration：Soldy AI
 Status: Waiting on brand
 Creator: Lindsay
 Type: Paid offer
+Wants UGC: true
 Brand Email: mei@macaron-ai.com
 
 ## Links

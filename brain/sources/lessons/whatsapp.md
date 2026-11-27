@@ -2,6 +2,11 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## The question that comes with video notes is the brand's real ask, in their words
+When: A brand sends change notes and also asks for something only we have (an account email, a code, a date)
+Do: Pass the notes to the editor and send Harsh the exact ask ('Dori needs Chris's MyCo account email for the UTM') so he can answer it
+Never: Summarise the ask as praise ('Brand loves the video') or leave it out of the cut email and WhatsApp
+Seen 1 time(s). Source: System check.
 ## A file Harsh sends after answering the brand himself is for the team, not an email
 When: Harsh sends a file on WhatsApp (often the brand's own brief) for a deal where he has already answered the brand by hand
 Do: Pass the file to the team (brief to Rudraksh) and ask Harsh once if he also wants it emailed; check the thread for our newer email first

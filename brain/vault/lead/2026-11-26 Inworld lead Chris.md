@@ -1,0 +1,18 @@
+---
+type: lead
+---
+Deliverables: One dedicated video with affiliate link in description and pinned comment.
+Contact Name: Costel
+Next Step: New brand: management to reply with pricing
+Platforms: TikTok, Instagram, YouTube Shorts
+Last Our Email: 2026-11-16
+Last Brand Email: 2026-11-26
+Thread Subject: Inworld x Chris Cordero
+Status: Negotiating
+Creator: Chris
+Type: Paid offer
+Brand Email: costel.sticea@withinworld.ai
+
+## Links
+- [[Chris]]
+- [[Inworld]]

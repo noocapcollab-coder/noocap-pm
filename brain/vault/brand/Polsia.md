@@ -9,7 +9,7 @@ WHO: Polsia is an AI co-founder platform that automates business operations incl
 
 CONTACTS: Jeddi Mees (jeddi@polsia.so), founder, signs emails. Tech Hacks AI (work.techhacksai@gmail.com) was added to thread early on. Copy noocapcollab@gmail.com on all replies.
 
-DEALS: Emtech, one sponsored video script and post on Instagram/TikTok/YouTube mentioning Polsia's AI co-founder ability, market research, shipping capability, free credits on signup, no card required. [amount]total ([amount]upfront, [amount]after posting). Paid. First payment 2026-07-02, video posted 2026-09-16, second payment 2026-11-10.
+DEALS: Emtech, one sponsored video script and post on Instagram/TikTok/YouTube mentioning Polsia's AI co-founder ability, market research, shipping capability, free credits on signup, no card required. [amount] total ([amount] upfront, [amount] after posting). Paid. First payment 2026-07-02, video posted 2026-09-16, second payment 2026-11-10.
 
 HOW THEY WORK: Email-based approval process, no separate contract. Agreement documented in email thread. Script approval required before production. They requested signup on polsia.com to test features (upgraded noocaptools@gmail.com to premium). Video draft reviewed, then live links sent for confirmation. No portals or dashboards mentioned. Payment initially requested via Ramp but switched to PayPal after Emtech could not complete Ramp setup. Invoice format not specified.
 

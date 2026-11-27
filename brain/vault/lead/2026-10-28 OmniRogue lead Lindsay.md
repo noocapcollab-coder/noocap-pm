@@ -9,6 +9,7 @@ Thread Subject: Early partner invite - OmniRogue x @AutomateAIConsulting
 Status: Lost
 Creator: Lindsay
 Type: Affiliate
+Wants UGC: true
 Brand Email: emma@omnirogue.com
 
 ## Links

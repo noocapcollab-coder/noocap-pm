@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: 1 original Instagram Reel with designated tags
-Next Step: Wait for brand to confirm if [amount]rate works for their budget
+Next Step: Wait for brand to confirm if [amount] rate works for their budget
 Platforms: Instagram
 Last Our Email: 2026-10-05
 Follow-ups: 3
