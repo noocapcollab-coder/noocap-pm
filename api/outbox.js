@@ -9,9 +9,15 @@
 import { listDrafts, saveDraft, rejectDraft, approveAndSend } from '../lib/outbox.js';
 import { withRun } from '../lib/runs.js';
 import { checkAuth } from '../lib/auth.js';
+import { hookAllowed } from '../lib/hook.js';
+
+// The PM's own hook secret (held by n8n, never the dashboard password) may do the few things Harsh asks Claude to do
+// for him: send an approved draft and raise-and-send an invoice (Harsh, Nov 28: "that's your job not mine")
+const HOOK_ACTIONS = ['send', 'invoice-raise-send', 'deal-links'];
 
 export default async function handler(req, res) {
-  if (!checkAuth(req)) return res.status(401).json({ error: 'Wrong or missing password' });
+  const peek = req.method === 'POST' ? (typeof req.body === 'string' ? (() => { try { return JSON.parse(req.body || '{}'); } catch { return {}; } })() : req.body || {}) : {};
+  if (!checkAuth(req) && !(req.method === 'POST' && HOOK_ACTIONS.includes(peek.action) && hookAllowed(req))) return res.status(401).json({ error: 'Wrong or missing password' });
   res.setHeader('Cache-Control', 'no-store');
   try {
     if (req.method === 'GET' && req.query?.preview) {
