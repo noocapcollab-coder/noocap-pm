@@ -121,6 +121,12 @@ function render(d) {
   if (!d) return; last = d;
   document.title = `${d.creator} · Dashboard`;
   const c = d.content, a = d.audience, w = d.week;
+  // This week and last week come from the same video list shown below, so the totals always match it
+  if (w && d.recent && d.recent.length) {
+    const sum = (i) => d.recent.filter((v) => v.week === i).reduce((t, v) => ({ views: t.views + v.views, likes: t.likes + v.likes, comments: t.comments + v.comments, shares: t.shares + v.shares, saves: t.saves + v.saves, posts: t.posts + 1 }), { views: 0, likes: 0, comments: 0, shares: 0, saves: 0, posts: 0 });
+    w.thisWeek = sum(0); w.lastWeek = sum(1);
+    w.viewsChange = w.lastWeek.views ? Math.round(((w.thisWeek.views - w.lastWeek.views) / w.lastWeek.views) * 100) : null;
+  }
   const arrow = (v, label) => v == null ? '<small>&nbsp;</small>' : `<small class="${v >= 0 ? 'up' : 'down'}">${v >= 0 ? '▲' : '▼'} ${Math.abs(v)}% ${label}</small>`;
   // followers gained in the last 7 days, from each account's daily history
   const weekAgo = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
