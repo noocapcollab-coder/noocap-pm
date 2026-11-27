@@ -41,19 +41,20 @@ function mock(calls, page) {
   };
 }
 
-test('a draft the send guard refuses is held for Harsh once instead of being retried every heartbeat', async () => {
+test('a script the send guard refuses as already sent is retired, not held, and nothing is sent', async () => {
+  // System check, Nov 27: the held Dreamina duplicate sat in Approvals as "Needs you" for 21 hours. An unrevised script
+  // whose cards already went to the brand is retired at once (Rejected, with the guard's reason in Error).
   const { autoSend } = await import('../lib/outbox.js');
   const calls = [];
   const page = draftPage();
   mock(calls, page);
   const r = await autoSend('draft-1');
-  assert.equal(r?.held, true);
+  assert.equal(r?.retired, true);
   assert.match(r.why, /already went to the brand/);
-  const why = (page.properties.Why.rich_text || []).map((t) => t.plain_text).join('');
-  assert.match(why, /^Needs you: held from sending on its own, these scripts already went to the brand/);
-  // and nothing was sent: no Gmail/n8n/SMTP call was made (the hold card to Discord #pm is allowed)
+  const status = calls.find((c) => c.method === 'PATCH' && c.body?.properties?.Status);
+  assert.equal(status?.body.properties.Status.select.name, 'Rejected');
+  assert.match(status.body.properties.Error.rich_text[0].text.content, /^Retired: these scripts already went to the brand/);
   assert.ok(!calls.some((c) => /n8n|gmail|railway/i.test(c.url)), calls.map((c) => c.url).join(' '));
-  assert.ok(!calls.some((c) => c.method === 'PATCH' && c.body?.properties?.Status), 'status unchanged');
 });
 
 test('guardRefusal only treats pre-send refusals as holds', async () => {

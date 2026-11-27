@@ -3821,3 +3821,10 @@ test('wants UGC is read from the deal text', async () => {
   assert.ok(re.test('https://www.instagram.com/reel/DdEHh0UoENe/'));
   assert.ok(!re.test('https://www.instagram.com/thechriscordero/'));
 }
+
+test('duplicateScriptRefusal: an unrevised script that already went is retired, other refusals still hold (Dreamina x Chris, Nov 27)', async () => {
+  const { duplicateScriptRefusal } = await import('../lib/outbox.js');
+  assert.equal(duplicateScriptRefusal('these scripts already went to the brand (2026-11-19 22:26 UTC). If this is a revised script, say so in Why; otherwise reject this draft.'), true);
+  assert.equal(duplicateScriptRefusal('signed "Chris\'s Team" but this deal is now Brad\'s.'), false);
+  assert.equal(duplicateScriptRefusal(''), false);
+});
