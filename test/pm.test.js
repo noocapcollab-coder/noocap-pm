@@ -3828,3 +3828,13 @@ test('duplicateScriptRefusal: an unrevised script that already went is retired, 
   assert.equal(duplicateScriptRefusal('signed "Chris\'s Team" but this deal is now Brad\'s.'), false);
   assert.equal(duplicateScriptRefusal(''), false);
 });
+
+// Creator dashboard week by week (Harsh, Nov 27): last 7 days vs the 7 before, every post tagged with its week
+{
+  const { weekView, recentView } = await import('../lib/creatordash.js');
+  const now = new Date('2026-11-27T12:00:00Z');
+  const w = weekView([{ date: '2026-11-25', postCount: 2, metrics: { views: 300 } }, { date: '2026-11-17', postCount: 1, metrics: { views: 100 } }], now);
+  assert.equal(w.thisWeek.views, 300); assert.equal(w.lastWeek.views, 100); assert.equal(w.viewsChange, 200); assert.equal(w.days.length, 28);
+  const r = recentView([{ _id: 'a', publishedAt: '2026-11-26T10:00:00Z', analytics: { views: 5 } }, { _id: 'a', publishedAt: '2026-11-26T10:00:00Z' }, { _id: 'b', publishedAt: '2026-11-15T10:00:00Z', analytics: { views: 9 } }], now);
+  assert.equal(r.length, 2); assert.equal(r[0].week, 0); assert.equal(r[1].week, 1);
+}
