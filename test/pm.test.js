@@ -3838,3 +3838,9 @@ test('duplicateScriptRefusal: an unrevised script that already went is retired, 
   const r = recentView([{ _id: 'a', publishedAt: '2026-11-26T10:00:00Z', analytics: { views: 5 } }, { _id: 'a', publishedAt: '2026-11-26T10:00:00Z' }, { _id: 'b', publishedAt: '2026-11-15T10:00:00Z', analytics: { views: 9 } }], now);
   assert.equal(r.length, 2); assert.equal(r[0].week, 0); assert.equal(r[1].week, 1);
 }
+
+test('brand notes on cards drop payment lines in any phrasing (Dreamina x Chris, Nov 27)', async () => {
+  const { cardNoteList } = await import('../lib/briefs.js');
+  const kept = cardNoteList(['Payment will be made within 7 days after the video is delivered and published on Instagram', 'Must hashtags: #CapCutDidThat #Dreamina', 'We will send the contract tomorrow', 'Send the 60-day ad code', 'Show the Black Friday price on the end card']);
+  assert.deepEqual(kept, ['Must hashtags: #CapCutDidThat #Dreamina', 'Send the 60-day ad code', 'Show the Black Friday price on the end card']);
+});
