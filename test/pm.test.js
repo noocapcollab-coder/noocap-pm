@@ -3844,3 +3844,10 @@ test('brand notes on cards drop payment lines in any phrasing (Dreamina x Chris,
   const kept = cardNoteList(['Payment will be made within 7 days after the video is delivered and published on Instagram', 'Must hashtags: #CapCutDidThat #Dreamina', 'We will send the contract tomorrow', 'Send the 60-day ad code', 'Show the Black Friday price on the end card']);
   assert.deepEqual(kept, ['Must hashtags: #CapCutDidThat #Dreamina', 'Send the 60-day ad code', 'Show the Black Friday price on the end card']);
 });
+
+// "Share the link once it's uploaded" gets the fixed share_link_ack (Manyfast x Duncan, Nov 28)
+{
+  const U = await import('../lib/unanswered.js');
+  assert.equal(U.approvalAck('Thanks! December 3rd sounds great. Once the video is uploaded, could you please share the link with us here?'), 'share_link_ack');
+  assert.equal(U.approvalAck('Can you share the link once posted? Also what is the ad code?'), null);
+}
