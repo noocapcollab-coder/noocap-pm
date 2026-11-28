@@ -3905,3 +3905,19 @@ test('a To Post row whose approval never reached the editor gets the alert, once
   assert.equal(approvalAlertMissing({ status: 'To Post', approvedAt: '2026-11-20T09:00:00Z', alertAt: null }, now), false);
   assert.equal(approvalAlertMissing({ status: 'Posted', approvedAt: '2026-11-28T09:00:00Z', alertAt: null }, now), false);
 });
+
+test('autopilot never logs a retired duplicate script as Auto-sent (Dreamina x Chris, Nov 28)', async () => {
+  const { autopilotOutcome } = await import('../lib/heartbeat.js');
+  assert.equal(autopilotOutcome({ retired: true, why: 'these scripts already went to the brand (2026-11-27 18:45 UTC).' }), 'retired');
+  assert.equal(autopilotOutcome({ held: true, why: 'x' }), 'held');
+  assert.equal(autopilotOutcome({ ok: true }), 'sent');
+  assert.equal(autopilotOutcome(undefined), 'sent');
+});
+
+test('a company mailbox name is never the greeting (Dreamina x Chris, Nov 28)', async () => {
+  const { greetFirstName, fillTemplate } = await import('../lib/replytemplates.js');
+  assert.equal(greetFirstName('"Katlas Media" <outreach@katlasmedia.com>', ''), '');
+  assert.equal(greetFirstName('"Katlas Media" <outreach@katlasmedia.com>', 'Thanks!\n\nBest,\nKepan\n'), 'Kepan');
+  assert.equal(greetFirstName('"Su Wern" <limsuwern@topview.ai>', ''), 'Su');
+  assert.match(fillTemplate('Hi {name},\n\nThanks', { from: '"Katlas Media" <outreach@katlasmedia.com>' }), /^Hi there,/);
+});
