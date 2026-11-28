@@ -3432,7 +3432,7 @@ test('an email left with only the greeting and sign-off is rewritten or held, ne
   const fs = await import('node:fs');
   const ob = fs.readFileSync(new URL('../lib/outbox.js', import.meta.url), 'utf8');
   const fn = ob.slice(ob.indexOf('export async function writeEmail'), ob.indexOf('export const NOT_EMPTY'));
-  assert.match(fn, /if \(mail\.body && emptyBody\(mail\.body\)\)/);
+  assert.match(fn, /if \(emptyBody\(mail\.body\)\)/);
   assert.match(fn, /mail\.needsYou = mail\.needsYou \|\| EMPTY_EMAIL/);
 });
 
