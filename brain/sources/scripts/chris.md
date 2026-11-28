@@ -4,7 +4,7 @@ The final scripts of videos posted in the last 60 days, as filmed.
 
 ## 2026-11-18 Dreamina × Chris (Artist Team)
 Type: SPONSOR. Creator: [[Chris]].
-Hook: Someone just figured out how to make Claude run an entire Black Friday campaign by itself, and it replaces the [amount] agency you were about to hire.
+Hook: Someone just figured out how to make Claude run an entire Black Friday campaign by itself, and it replaces the [amount]agency you were about to hire.
     Body:
     Watch this, you give Claude one sentence asking it to research the top Black Friday ads in your niche, and it writes every prompt before handing the visuals over to Dreamina.
     Seedream 5.0 Pro makes your posters with up to ten variations per prompt, while Seedance 2.5 turns your product into video ads.
@@ -37,6 +37,7 @@ HOOK
     📋 Brand feedback on the video 2026-11-18
     📋 Brand feedback on the video 2026-11-18
     📋 Brand feedback on the video 2026-11-18
+    📌 Brand notes 2026-11-28
 
 ## 2026-11-12 TRENDING CARTOON CLAUDE
 Type: PERSONAL. Creator: [[Chris]].
@@ -61,23 +62,3 @@ HOOKS
     - Claude Animated Shorts: https://github.com/mromidev/claude-animated-shorts
     - What If Animation: https://github.com/kelano86/what-if-animation
     - Claude Code: https://claude.com/product/claude-code
-
-## 2026-11-14 Claude Video
-Type: PERSONAL. Creator: [[Chris]].
-HOOK 2: 
-    Someone just open-sourced a video model that writes its own soundtrack while it makes the video
-    HOOK 3: 
-    Forget video models. This free AI makes cinematic clips with dialogue, music, and sound effects built in.
-    BODY
-    Watch this. I open the free demo, describe the scene, and drop in a photo for the character along with a voice clip for how they should sound.
-    Then I hit generate.
-    The part that got me is the sound, because the voice, the music and the effects all come out with the picture and stay in sync.
-    And it’s fast enough that a full clip comes back in seconds.
-    The weights are open on Hugging Face too, so developers can build on top of it.
-    It’s called Pika H3 Flex.
-    Want to try it?
-    CTA
-    Comment SOUND below, and I’ll send you the link.
-    SOURCES
-    - Pika H3 Flex (demo): https://huggingface.co/spaces/Pika-Labs/pika-h3-flex
-    - Pika H3 Flex (weights): https://huggingface.co/Pika-Labs/Pika-H3-Flex

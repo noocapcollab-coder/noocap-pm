@@ -12,7 +12,7 @@ Rajeshwari Sardar, rajeshwari@jeevmedia.net, Influencer Marketing Associate at J
 Zeelot, Zeelot@superlinear.cc, brand contact for Valeri via Superlinear, signs as Zeelot, copy collab@valchy.ai.
 
 DEALS:
-Valeri | 2 videos, 30-day ad authorization per video, usage rights | [amount] USD total ([amount] per video) | Price Agreed | 2026-11-11
+Valeri | 2 videos, 30-day ad authorization per video, usage rights | [amount]USD total ([amount]per video) | Price Agreed | 2026-11-11
 Lindsay | 1 IG Reel, DM automation, 90 days boosting, usage rights, re-editing/secondary creation rights | Rate not specified | Approved | Posted Nov 2026
 
 HOW THEY WORK: Brief shared via Feishu wiki. Scripts and video drafts are reviewed via Frame.io links (f.io/rVVciC9y). Lindsay's Tripo account email is noocaptools@gmail.com and her invite code is 4KI9HH. Brand provides UTM links for posting. Ad codes are requested after the video goes live.

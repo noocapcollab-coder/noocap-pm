@@ -7,7 +7,7 @@ WHO: Bluehost is a web hosting and domain services provider. They partner with c
 
 CONTACTS: Smahi Grover (smahi@creator.co) and Erick Alvergue (Creator.co). Copy collab@chriscordero.net on all correspondence.
 
-DEALS: Chris: 1 Instagram Reel (under 60s) featuring one Bluehost AI product, [amount] USD, stage: Price Agreed, due: Dec 31, 2026.
+DEALS: Chris: 1 Instagram Reel (under 60s) featuring one Bluehost AI product, [amount]USD, stage: Price Agreed, due: Dec 31, 2026.
 
 HOW THEY WORK: All deals are processed through the Creator.co dashboard. Creators must opt-in to the campaign via a specific invitation link provided by the agency. Once opted-in, the platform handles the offer, contract, and payment (noting a 5% processing fee deducted by the platform). Drafts are due within 7 days of product access. Bluehost allows up to 2 rounds of revisions. Final publication must occur within 3 days of approval.
 
@@ -36,20 +36,20 @@ OPEN NOW: Waiting on brand: Smahi to provide an update or alternative way for Ch
 
 ## Deal with [[Chris]] (Lost, opened 2026-10-30)
 Last brand reply 2026-10-28, our last reply none.
-AGREED: [amount] for one video on one platform (Reels, TikTok, Shorts, or YouTube) featuring Bluehost AI product, delivered via Creator.co. Usage rights, payment terms, and delivery date not known yet.
+AGREED: [amount]for one video on one platform (Reels, TikTok, Shorts, or YouTube) featuring Bluehost AI product, delivered via Creator.co. Usage rights, payment terms, and delivery date not known yet.
 
 HISTORY: not known yet
 
 BILLING: not known yet
 
-OPEN NOW: Chris to opt in on Creator.co so Bluehost can approve and send the [amount] offer through the platform. We owe: Chris to complete Creator.co opt-in step.
+OPEN NOW: Chris to opt in on Creator.co so Bluehost can approve and send the [amount]offer through the platform. We owe: Chris to complete Creator.co opt-in step.
 
 ## Inbound leads
 - Contact Name: Bianca · Next Step: Replied 2026-11-23, waiting on the brand · Last Our Email: 2026-11-23 · Last Brand Email: 2026-11-23 · Thread Subject: Following Up: Bluehost AI Paid Collaboration · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: bianca@creator.co
 - Deliverables: not specified · Contact Name: Bianca · Next Step: New brand: management to reply with pricing · Platforms: Instagram, TikTok, YouTube · Last Our Email: 2026-11-23 · Last Brand Email: 2026-11-25 · Thread Subject: Following Up: Bluehost AI Paid Collaboration · Status: Negotiating · Creator: Lindsay · Type: Paid offer · Brand Email: bianca@creator.co
 - Deliverables: 1 original video on Instagram, TikTok, or YouTube featuring a Bluehost AI product. · Contact Name: Bianca · Next Step: New brand: management to reply with pricing · Platforms: Instagram, TikTok, YouTube · Last Our Email: 2026-11-18 · Last Brand Email: 2026-11-19 · Thread Subject: Bluehost AI | Paid Creator Collaboration · Status: Negotiating · Creator: Lindsay · Type: Paid offer · Brand Email: bianca@creator.co
 - Deliverables: 1 video for Instagram, TikTok, or YouTube featuring Bluehost AI tools · Contact Name: Bianca · Next Step: Replied 2026-11-20, waiting on the brand · Platforms: Instagram, TikTok, YouTube · Last Our Email: 2026-11-20 · Last Brand Email: 2026-11-20 · Thread Subject: Following Up: Bluehost AI Paid Collaboration · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: bianca@creator.co
-- Deliverables: 1 short-form video (single-platform within [amount]–[amount] USD range) · Contact Name: Bianca · Next Step: New brand: management to reply with pricing · Platforms: Instagram, TikTok, YouTube Shorts · Last Our Email: 2026-11-10 · Last Brand Email: 2026-11-13 · Thread Subject: Following Up: Bluehost AI Paid Collaboration ([amount]–[amount] USD) · Status: Negotiating · Creator: Lindsay · Type: Paid offer · Brand Email: bianca@creator.co
+- Deliverables: 1 short-form video (single-platform within [amount]–[amount]USD range) · Contact Name: Bianca · Next Step: New brand: management to reply with pricing · Platforms: Instagram, TikTok, YouTube Shorts · Last Our Email: 2026-11-10 · Last Brand Email: 2026-11-13 · Thread Subject: Following Up: Bluehost AI Paid Collaboration ([amount]–[amount] USD) · Status: Negotiating · Creator: Lindsay · Type: Paid offer · Brand Email: bianca@creator.co
 - Deliverables: One original short-form video featuring one of three Bluehost AI products (Website Builder, All-Access Pack, or Agent Hosting). · Contact Name: Erick · Next Step: Review campaign details via the Creator.co link and opt in if interested, or reply with rate confirmation. · Platforms: Instagram, TikTok, YouTube · Last Our Email: 2026-11-05 · Deal: 1 linked · Last Brand Email: 2026-11-04 · Thread Subject: Invitation by Bluehost to collaborate on "Create What’s Next with Bluehost AI: Rising Creators" · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: erick@creator.co
-- Deliverables: One original video featuring Bluehost AI Website Builder, AI All-Access Pack, or AI Agent Hosting · Contact Name: Erick · Next Step: Lost: offer [amount] is under our [amount] inimum, not answered · Platforms: Instagram, TikTok, YouTube · Last Our Email: 2026-10-23 · Last Brand Email: 2026-10-25 · Thread Subject: Following Up: Bluehost AI Paid Collaboration ([amount]–[amount] USD) · Status: Lost · Creator: Chris · Type: Paid offer · Brand Email: erick@creator.co
+- Deliverables: One original video featuring Bluehost AI Website Builder, AI All-Access Pack, or AI Agent Hosting · Contact Name: Erick · Next Step: Lost: offer [amount]is under our [amount]inimum, not answered · Platforms: Instagram, TikTok, YouTube · Last Our Email: 2026-10-23 · Last Brand Email: 2026-10-25 · Thread Subject: Following Up: Bluehost AI Paid Collaboration ([amount]–[amount] USD) · Status: Lost · Creator: Chris · Type: Paid offer · Brand Email: erick@creator.co
 - Deliverables: One original short-form video (Instagram Reel), no cross-posting or performance recap required · Contact Name: Erick · Next Step: Chris to opt in through the new Creator.co link and complete profile approval · Platforms: Instagram, TikTok, YouTube · Last Our Email: 2026-11-26 · Deal: 1 linked · Last Brand Email: 2026-11-04 · Thread Subject: Bluehost AI | Paid Creator Collaboration ([amount]–[amount] USD) · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: erick@creator.co

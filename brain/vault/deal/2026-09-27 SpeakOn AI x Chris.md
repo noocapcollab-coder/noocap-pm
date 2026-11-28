@@ -3,7 +3,7 @@ type: deal
 ---
 Stage: Script Approved
 Last brand reply 2026-11-25, our last reply 2026-11-25.
-AGREED: [amount] for one vertical short-form video (20-30s, 9:16, 1080 x 1920) for Instagram Reels; optional TikTok and YouTube Shorts; includes split-screen hero shot (0-6s) and hands-on agent demonstration (7s+). Brand receives video links, ads code, and invoice upon posting.
+AGREED: [amount]for one vertical short-form video (20-30s, 9:16, 1080 x 1920) for Instagram Reels; optional TikTok and YouTube Shorts; includes split-screen hero shot (0-6s) and hands-on agent demonstration (7s+). Brand receives video links, ads code, and invoice upon posting.
 
 HISTORY:
 2026-11-05 brand asked for review of brief, timeline for draft, and flagged communication concerns.

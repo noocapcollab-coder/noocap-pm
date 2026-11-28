@@ -1,5 +1,5 @@
 # Brad - what performs
-Content OS, videos posted since 2026-07-30: 20 posts across platforms, average 2,952 views. Creator: [[Brad]].
+Content OS, videos posted since 2026-07-31: 20 posts across platforms, average 2,952 views. Creator: [[Brad]].
 ## 2026-11-01 👇 Comment “WEBSITES” below and I'll DM you all the links!
 Instagram Short: 34,912 views, 873 likes, 743 comments, 0 shares, 0 saves.
 ## 2026-11-10 👇 Comment "WEBSITES" and I'll send the links to your DMs
@@ -27,7 +27,7 @@ YouTube Short: 268 views, 1 likes, 1 comments, 0 shares, 0 saves.
 ## 2026-10-28 🔗 Try Luma Workflows through the link in my bio!
 TikTok Short: 267 views, 5 likes, 0 comments, 2 shares, 4 saves. Brand: [[Luma AI]].
 ## 2026-11-01 🤯 10 Crazy AI Websites You Never Heard Of!
-YouTube Short: 264 views, 4 likes, 1 comments, 0 shares, 0 saves.
+YouTube Short: 266 views, 4 likes, 1 comments, 0 shares, 0 saves.
 ## 2026-11-20 These 10 CRAZY AI tools are seriously next-level! 🤯🤖
 YouTube Short: 195 views, 4 likes, 0 comments, 0 shares, 0 saves. Brand: [[AI tool (agents/workflow platform)]].
 ## 2026-11-19 Turn One Product Into CRAZY Black Friday Videos 🚀

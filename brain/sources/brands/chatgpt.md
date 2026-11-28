@@ -30,7 +30,7 @@ Waiting on brand: Confirm payment processing following the Trolley information u
 
 ## Deal with [[Duncan]] (Invoiced, opened 2026-09-29)
 Last brand reply 2026-11-24, our last reply 2026-11-27.
-AGREED: rate [amount] deliverables not specified, usage rights not specified, payment terms net upon invoice submission, no agreed dates.
+AGREED: rate [amount]deliverables not specified, usage rights not specified, payment terms net upon invoice submission, no agreed dates.
 
 HISTORY:
 2026-11-05 us sent invoice INV-004 for [amount].
@@ -43,6 +43,6 @@ HISTORY:
 2026-11-24 us said we would share the link with Duncan for him to complete the required information.
 2026-11-27 us informed brand that Trolley information has been updated and asked about payment timing.
 
-BILLING: Brand has given billing details (company: Viral Nation, invoice email: dalves@viralnation.com). Invoice INV-004 for [amount] sent 2026-11-05, status pending payment via Trolley.
+BILLING: Brand has given billing details (company: Viral Nation, invoice email: dalves@viralnation.com). Invoice INV-004 for [amount]sent 2026-11-05, status pending payment via Trolley.
 
 OPEN NOW: Waiting on brand: Confirm payment processing following the Trolley information update.

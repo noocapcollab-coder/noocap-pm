@@ -16,7 +16,7 @@ HISTORY:
 2026-11-26 brand: confirmed final approval of the video.
 2026-11-27 us: confirmed the video will be published on 2026-11-30.
 
-BILLING: Billing details on file for Slate Media Co., Ltd. Upfront [amount] paid; final [amount] draft.
+BILLING: Billing details on file for Slate Media Co., Ltd. Upfront [amount]paid; final [amount]draft.
 
 OPEN NOW: We owe: publish the video on 2026-11-30, share the link with the brand, and send the final 50% invoice after publication.
 

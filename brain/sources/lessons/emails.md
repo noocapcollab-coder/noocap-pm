@@ -2,6 +2,21 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## A brand asking us to sign an agreement always gets the fixed contract reply, even when it mentions a countersigned copy or the deal is already finished
+When: A brand emails an agreement for us to sign
+Do: File it in CONTRACTS, send it to Harsh to sign, and send contract_ack in the thread. A new agreement on a deal past delivery is the next campaign
+Never: Treat 'we will provide the countersigned copy' as a signed copy, or block the reply because the deal is at Invoiced or Paid
+Seen 1 time(s). Source: Harsh correction.
+## No duplicate posted links emails when already sent
+When: A posted links email is being drafted
+Do: Check if the live link or announcement was already sent in the thread before drafting a posted links email; drop the draft if it was already sent.
+Never: Send a posted links email when the link was already sent in that thread
+Seen 1 time(s). Source: Draft rejected.
+## A revised cut that is ready goes to the brand; the brand's other questions never hold it
+When: The editor has finished the brand's change notes and the cut email is checked, while the brand's latest email also asks something else (a live link, an ad code, a date)
+Do: Send the cut email naming the changes it carries, and send the other ask to Harsh as its own owed ask. A cut email only hands over the cut (rule 62).
+Never: Never flag or hold a cut email with 'Does not answer: <another ask>', and never claim the cut lacks changes the editor marked done (Changes Done At after the notes).
+Seen 2 time(s). Source: System check.
 ## "Shared it with the client" on a cut gets the fixed review reply
 When: The brand says our video draft is with their client or team for review, and asks nothing else
 Do: Send the draft_review_ack fixed reply (we'll wait for the feedback, the editor turns changes around in 1 to 2 working days).
@@ -36,7 +51,7 @@ Seen 1 time(s). Source: System check.
 When: A brand questions one of our own actions ('why was a script shared before the agreement?', 'why did you post early?') or asks about the creator's intent
 Do: Answer the parts the thread already settles (e.g. noting their payment terms) only if Harsh adds the rest; put the 'why' and the creator's intent to Harsh on WhatsApp and draft from his words.
 Never: Invent a motive ('to keep the momentum going'), speak for the creator's intent, or promise to wait on a brief nobody discussed.
-Seen 3 time(s). Source: System check.
+Seen 5 time(s). Source: System check.
 ## Every new brand email with notes gets its fixed acknowledgement, every round
 When: The brand sends round 2 (or later) notes on a script or video within 3 days of the round 1 acknowledgement
 Do: Send the fixed acknowledgement again; only a copy written after this brand email counts as already answered
@@ -61,7 +76,7 @@ Seen 1 time(s). Source: System check.
 When: A brand email says it is waiting for us to confirm something before it moves (once you confirm the go-live date, please confirm Chris is available on the 3rd)
 Do: Mark it as needing our info and ask Harsh once on WhatsApp for the confirmation, quoting the brand's sentence
 Never: Never treat it as a plain brief or brand reply that needs nothing from us, and never answer the date ourselves
-Seen 1 time(s). Source: System check.
+Seen 2 time(s). Source: System check.
 ## A brand's script approval always gets a reply
 When: The brand approves the script and asks us to go ahead, with nothing else to answer
 Do: Send the script_approved_ack fixed reply (thanks, moving into production, first draft within 3 to 4 working days) in the thread right after the approval is handled.
@@ -85,8 +100,8 @@ Seen 1 time(s). Source: Harsh correction.
 ## Never send an email that says nothing beyond a greeting, thanks and a sign-off
 When: A guard takes made-up details, filler or a foreign link out of a draft and little is left, or a reply is written to a brand email that only acknowledges something or asks for a fact only Harsh has
 Do: Write the email again saying what it is for and leave out only the part we have no facts for; the missing fact goes to Harsh. If the brand only acknowledged ("sounds good", "thanks for the update"), write no reply at all. If the brand asked for something only Harsh has (an account email, a date), ask Harsh instead of sending thanks.
-Never: Never save or send a draft whose body is just 'Hi X,' and 'Best, X's Team', or only 'thanks / great news / we'll keep an eye out / we look forward'
-Seen 3 time(s). Source: System check.
+Never: Never save or send a draft whose body is just 'Hi X,' and 'Best, X's Team', or only 'thanks / great news / we'll keep an eye out / we look forward / we saw your message / it was a pleasure working with you'
+Seen 4 time(s). Source: System check.
 ## A draft the last send check refuses goes to Harsh once, it is not retried forever
 When: Autopilot tries to send a waiting draft and a pre-send check refuses it ("Not sent: ...", e.g. the scripts already went, someone already replied, wrong amount)
 Do: Mark the draft Needs you with the reason the check gave and post one hold card, so Harsh decides and Approvals stops saying it will send on its own

@@ -1,7 +1,7 @@
 ---
 type: lead
 ---
-Next Step: Quote at [amount] waiting in Approvals
+Next Step: Quote at [amount]waiting in Approvals
 Platforms: YouTube
 Last Brand Email: 2026-10-25
 Thread Subject: QUIV affiliate partnership: practical AI skills for entrepreneurs

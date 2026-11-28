@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: 1 Reel with product tag, hashtag, link in bio; cross-posted to TikTok, Instagram Reels, YouTube Shorts, Facebook
-Next Step: Approve or decline [amount](our ask [amount] floor [amount])
+Next Step: Approve or decline [amount](our ask [amount]floor [amount])
 Platforms: Instagram, TikTok, YouTube Shorts, Facebook
 Last Our Email: 2026-10-15
 Follow-ups: 0

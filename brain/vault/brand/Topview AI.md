@@ -5,20 +5,20 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]], [[Chris]], [[Brad]].
 ## Brand wiki (from every email with them)
-WHO: Topview AI is an AI video creation platform and plugin (topview.ai) offering tools like Seedance 2.5, Topview T1, and MiniMax integrations. They come to us directly.
+WHO: Topview AI is an AI video creation platform and plugin. They come to us directly.
 
-CONTACTS: Lim Su Wern, limsuwern@topview.ai, Marketing Manager at Topview AI, signs agreements and handles communication; thread CC collab@automateaiconsulting.com. For Brad's deal, Freya at freya@sparkhub.media represents them or handles billing.
+CONTACTS: Lim Su Wern, limsuwern@topview.ai, Marketing Manager at Topview AI; Freya, freya@sparkhub.media, agency contact.
 
 DEALS:
-Topview AI x Lindsay | 1 short-form video/reel cross-posted to YouTube Shorts, Instagram and TikTok (Black Friday sale) | [amount] | Approved | Agreement signed Nov 23, 2026.
-Topview AI x Chris | 1 sponsored video featuring Topview | [amount] | Paid | Agreement signed Sep 18, 2026, video posted Sep 18, 2026, paid Nov 5, 2026.
-Topview AI x Brad | Deliverables not specified | Rate not specified | Paid | Paid Oct 9, 2026.
+Topview AI x Lindsay, 1 short-form video (IG + TikTok) for Black Friday sale, [amount]Invoiced, posted Nov 28 2026.
+Topview AI x Chris, 1 sponsored video featuring Topview, [amount]Paid, posted Sep 18 2026.
+Topview AI x Brad, deliverables and rate not specified, Paid, Oct 9 2026.
 
-HOW THEY WORK: They send campaign briefs via Notion or email. We send scripts for approval. Once approved, we send video drafts via Frame.io or Google Drive links. They review and provide feedback. After final approval, videos are posted. Invoices are issued with reference Topview Video Collaboration to Topview Pte. Ltd.
+HOW THEY WORK: Campaign briefs are provided via Notion links. Scripts are sent for approval before production. Video drafts are reviewed via Frame.io or Google Drive links, with revisions turned around in 1 to 2 working days. Standard links or tracking links are used as specified per campaign. Invoices must include the reference Topview Video Collaboration and be sent to Lim Su Wern.
 
-WATCH OUT: Do not miss agreed posting deadlines, as the brand considers the content irrelevant and threatens to annul collaborations if deadlines are missed and new promotional messaging updates are not turned around quickly. Ensure billing details match Topview Pte. Ltd., 20 Collyer Quay #20-03, Singapore 049319.
+WATCH OUT: Avoid delays on time-sensitive campaigns like Black Friday, as missed windows require last-minute messaging revisions and strict approval turnarounds.
 
-OPEN NOW: For Lindsay's deal, the brand requested a video revision with a new promotional message (Ultra Annual plan 500 monthly credits at [amount]/sec plus 30 days unlimited Seedance 2.5 and Topview T1) and approval before posting within 12 hours, threatening to annul the collaboration if no response is received. We owe: response and revised video.
+OPEN NOW: Lindsay's deal is invoiced and pending payment from the brand.
 
 
 ## Links

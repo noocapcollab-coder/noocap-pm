@@ -48,7 +48,7 @@ Claude killed MCP
     VARIATION 3 & 4 DIFFERENT VISUAL HOOK 
     VARIATION 5 IS HOOK 2
 
-## 2026-11-27 INSOMIA - GITHUB REPO
+## 2026-11-26 INSOMIA - GITHUB REPO
 Type: PERSONAL. Creator: [[Duncan]].
 Hook 1:
 An open-source repo is blowing up on X right now because it lets you close your MacBook while Claude Code keeps building in the background

@@ -1,7 +1,7 @@
 ---
 type: lead
 ---
-Deliverables: 1 short-form video (rate was [amount] rejected)
+Deliverables: 1 short-form video (rate was [amount]rejected)
 Contact Name: Elliott
 Next Step: None needed unless Lindsay wants to accept the free account or send stats for future budget.
 Platforms: Instagram

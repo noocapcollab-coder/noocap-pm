@@ -5,17 +5,17 @@ type: brand
 
 Brand. Works with creators: [[Duncan]], [[Lindsay]], [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: Flova AI is an AI video tool with a Skills community where creators share reusable workflows. They come to us directly.
+WHO: Flova AI is an AI video generation platform. They come to us directly.
 
-CONTACTS: Niko (谢宇晨, xieyuchen@flova.ai), brand representative at Flova.ai. Thread CC includes collab@buildroom.ai and noocapcollab@gmail.com.
+CONTACTS: Niko (xieyuchen@flova.ai) is the primary contact at Flova AI. CC noocapcollab@gmail.com and collab@buildroom.ai on all correspondence.
 
-DEALS: Flova AI x Duncan | Deliverables currently disputed (brand claims 8-15 minute YouTube video, creator/agency state short-form video); rate, usage rights, payment terms, and dates not yet confirmed | Stage: Submitted | Dates: Script sent October 22, 2026; video delivered via Frame.io on November 2, 2026.
+DEALS: Duncan: 1 short-form video, deliverable and terms currently in dispute, stage Submitted, November 2026.
 
-HOW THEY WORK: Drafts are reviewed via Frame.io.
+HOW THEY WORK: Drafts are reviewed via Frame.io. Niko prefers to be included in all email communication via Reply All. 
 
-WATCH OUT: Misunderstanding regarding deliverables, as the brand claimed the agreement was for an 8 to 15 minute YouTube video while the creator and agency confirmed it was for a short-form video.
+WATCH OUT: There is a significant conflict regarding the core deliverable. The brand claims the agreement was for an 8 to 15 minute long-form YouTube video, while the creator maintains that short-form content was the agreed scope. Do not concede on the deliverable type; refer to previous email correspondence and shared documentation.
 
-OPEN NOW: The brand has not yet provided feedback on the short-form video delivered via Frame.io on November 2, 2026, nor has it resolved the deliverable dispute. Waiting on the brand for feedback, approval, or revisions on the video, clarification on deliverables, and confirmation of the rate, usage rights, payment terms, and final delivery.
+OPEN NOW: Waiting on brand: Niko to resolve the dispute regarding the deliverable scope and to provide feedback or approval on the short-form video draft submitted via Frame.io on November 2, 2026.
 
 
 ## Links

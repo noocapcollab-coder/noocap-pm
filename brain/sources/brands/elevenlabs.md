@@ -8,10 +8,10 @@ WHO: ElevenLabs, an AI audio technology platform. They come to us through their 
 CONTACTS: Yulia Sheremeteva writes to us from Kudos Narratives at yulia@kudosnarratives.com. Invoices go to invoices@kudosnarratives.com. Collaboration thread CCs include collab@buildroom.ai, contact@valchy.ai, valeri@valchy.ai, and collab@valchy.ai.
 
 DEALS:
-ElevenLabs x Duncan: Rate [amount] USD. Deliverables 1 short video (Huedini campaign), crossposting to Instagram and TikTok. Stage Inbound.
+ElevenLabs x Duncan: Rate [amount]USD. Deliverables 1 short video (Huedini campaign), crossposting to Instagram and TikTok. Stage Inbound.
 ElevenLabs x Valeri: Stage Posted.
 ElevenLabs x Chris: Stage Brief Received.
-ElevenLabs x Duncan: Rate [amount] USD. Deliverables 1 short video (Huedini campaign), crossposting to Instagram and TikTok. Stage Invoiced. Dates: Net 1 Business Day due Nov 18, 2026.
+ElevenLabs x Duncan: Rate [amount]USD. Deliverables 1 short video (Huedini campaign), crossposting to Instagram and TikTok. Stage Invoiced. Dates: Net 1 Business Day due Nov 18, 2026.
 ElevenLabs x Duncan: Rate [amount]. Deliverables 1 short video, crossposting to Instagram and TikTok, one revision round, results report 7 days after go-live. Stage Paid. Dates: Paid 2026-11-19, invoice sent 2026-10-30.
 ElevenLabs x Valeri: Rate [amount]. Deliverables not specified. Stage Paid. Dates: Paid 2026-11-07, invoice sent 2026-10-31.
 

@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: 1 YouTube Shorts with 30-day ad rights and cross-posting
-Next Step: Wait for brand to confirm [amount] rate or counter-offer
+Next Step: Wait for brand to confirm [amount]rate or counter-offer
 Platforms: Instagram
 Last Our Email: 2026-10-06
 Follow-ups: 3

@@ -3,12 +3,12 @@ type: lead
 ---
 Deliverables: Finished video or talking-head video
 Contact Name: Jingzhao
-Next Step: New brand: management to reply with pricing
+Next Step: Replied 2026-11-27, waiting on the brand
 Platforms: Instagram
-Last Our Email: 2026-11-25
+Last Our Email: 2026-11-27
 Last Brand Email: 2026-11-27
 Thread Subject: Paid Collaboration Opportunity with CapCut
-Status: Negotiating
+Status: Waiting on brand
 Creator: Chris
 Type: Paid offer
 Brand Email: jingzhao@globeinflu.com

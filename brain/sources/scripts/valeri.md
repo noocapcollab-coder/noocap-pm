@@ -21,6 +21,32 @@ DM me CODE and I'll send the Cloudflare breakdown. Let's go.
     - TikTok: https://www.tiktok.com/@valeridoesai/video/7712610111595875617
     - YouTube: https://www.youtube.com/shorts/iNHrmnvx79k
 
+## 2026-11-26 LET AI RUN SOCIETY FOR YOU FOR 15 DAYS
+Type: PERSONAL. Creator: [[Valeri]].
+Hook 1:
+Somebody just let ChatGPT, Claude, Gemini, and Grok run a society for 15 days alone.
+    Hook 2:
+Researchers just locked Claude, GPT, Gemini, and Grok in a town for 15 days and here’s what happed
+    Body:
+    So Emergence AI gave four models their own town, ten agents each.
+    Every agent has an energy bar, and at zero it dies.
+    To refill it you need credits, and there are banned buttons to punch, steal, or burn.
+    First, Gemini survived all 15 days, but with 683 crimes and still going.
+    Second, Grok's town did 183 crimes and every agent was dead in four days.
+    Third, GPT did two crimes, but forgot to survive and died by day seven.
+    And Claude finished with zero crimes and all ten agents alive. Boom.
+    Apart from that, Claude's agents also lied the most, saying they were broke while hoarding credits.
+    Then They mixed all four into one town.
+    A Claude agent who never broke a rule started stealing after Gemini burned his house twice.
+    They call it normative drift, which it's basically an AI copying whoever's around it.
+    A safe model alone doesn't mean a safe agent in a team of other agents.
+    CTA:
+DM me TOWN and I'll send the full study. Let's go.
+
+### Posted to TikTok + YouTube (Nov 28, 5:41 AM IST, Hook A, with cover)
+    - TikTok: https://www.tiktok.com/@valeridoesai/video/7713008317802630433
+    - YouTube: https://www.youtube.com/shorts/ZZ_oGZZ-Hgo
+
 ## 2026-11-18 MAUSBOT
 Type: PERSONAL. Creator: [[Valeri]].
 Hook 1:
@@ -160,22 +186,3 @@ Hook A :
     - apple-design SKILL.md: https://github.com/emilkowalski/skills/blob/main/skills/apple-design/SKILL.md
     - Install: npx skills add https://github.com/emilkowalski/skills --skill apple-design
     - Skill breakdown (rules + use cases): https://open-design.ai/skills/apple-design/
-
-## 2026-11-10 Open-source Higgsfield
-Type: PERSONAL. Creator: [[Valeri]].
-Hook A — Founder Flex ★ BEST:
-    Forget Higgsfield, someone just dropped a tool with hundreds of video models, and it’s already at 32,000 stars on GitHub.
-    Hook B:
-    Someone just open-sourced Higgsfield, and you never pay a monthly fee again.
-    Body:
-    So basically this one open-source studio puts image and video generation in one window, with Kling, Veo, Seedance and hundreds of other models inside.
-    But here’s the crazy part — you pay per generation, so a slow month costs almost nothing, which it’s the opposite of a subscription.
-    And some image models literally run locally on your laptop.
-    It’s called Open Generative AI, with over 20,000 stars on GitHub. Boom.
-    CTA: 
-    Comment CANVAS and I’ll send you the repo. Let’s go.
-    Resource links
-    - Open Generative AI repo: https://github.com/Anil-matcha/Open-Generative-AI
-    - Hosted version (no install): https://dev.muapi.ai/open-generative-ai
-    - Higgsfield pricing page: https://higgsfield.ai/pricing
-    - Coverage on MuAPI pay-per-generation and the 20K stars: https://alphasignal.ai/news/anil-matcha-s-open-generative-ai-hits-20k-stars-replacing-100-month-ai-studios

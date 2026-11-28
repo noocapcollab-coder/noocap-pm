@@ -2,7 +2,7 @@
 type: lead
 ---
 Contact Name: arushi
-Next Step: Quote at [amount] waiting in Approvals
+Next Step: Quote at [amount]waiting in Approvals
 Platforms: Instagram
 Last Our Email: 2026-10-28
 Follow-ups: 3

@@ -1,7 +1,7 @@
 ---
 type: script
 ---
-Creator: [[Lindsay]].
+Type: SPONSOR. Creator: [[Lindsay]].
 You've got three days three days of unlimited images and videos inside Claude before it switches over to usage credits, so here are the four things I'd build before that happens.
     Number one, I gave Claude five websites I'm obsessed with and it built mine in that exact style, because web design is where Claude really shows off.
     Number two is my favorite, because I had Claude edit my own Reel with Higgsfield Shorts Studio and it cut every single word and dropped in a fresh graphic every two seconds — you just type slash shorts-studio.

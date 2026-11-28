@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_neta", "label": "Neta", "file_type": "document", "source_file": "brands/neta.md", "_origin": "semantic"}], "edges": [{"source": "brands_neta", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/neta.md", "_origin": "semantic"}], "hyperedges": []}

@@ -1,13 +1,13 @@
 ---
 type: deal
 ---
-Stage: In Production
-Last brand reply 2026-11-27, our last reply 2026-11-27.
+Stage: Submitted
+Last brand reply 2026-11-27, our last reply 2026-11-28.
 AGREED: [amount]; 1 short-form video (Instagram Reel/TikTok) with 2 months of ad rights, paid partnership label and partnership ad code.
 
 HISTORY:
 2026-10-27 brand invited Chris to a CodeRabbit campaign.
-2026-10-28 us quoted [amount] and confirmed 2 months of ad rights.
+2026-10-28 us quoted [amount]and confirmed 2 months of ad rights.
 2026-10-29 brand sent the brief and requirements.
 2026-11-17 us asked if campaign is still active past Nov 15.
 2026-11-17 brand confirmed active and asked for the script.
@@ -19,7 +19,7 @@ HISTORY:
 
 BILLING: not yet
 
-OPEN NOW: We owe: the first video draft.
+OPEN NOW: Waiting on brand: to review the first video draft.
 
 ## Links
 - [[Chris]]

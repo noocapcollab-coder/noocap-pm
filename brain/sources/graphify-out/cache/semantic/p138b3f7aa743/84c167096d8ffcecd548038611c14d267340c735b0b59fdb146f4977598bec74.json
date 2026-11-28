@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_annappt", "label": "Anna PPT App", "file_type": "document", "source_file": "brands/annappt.md", "_origin": "semantic"}], "edges": [{"source": "brands_annappt", "target": "creators_lindsay", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/annappt.md", "_origin": "semantic"}], "hyperedges": []}

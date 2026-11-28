@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: 1 dedicated Instagram Reel, 14-day link in bio, 60-day usage rights
-Next Step: Wait for brand to accept or counter the [amount] rate
+Next Step: Wait for brand to accept or counter the [amount]rate
 Platforms: Instagram
 Last Our Email: 2026-10-06
 Follow-ups: 3

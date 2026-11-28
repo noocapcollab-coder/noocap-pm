@@ -15,6 +15,7 @@ HOOK
     📋 Brand feedback on the video 2026-11-18
     📋 Brand feedback on the video 2026-11-18
     📋 Brand feedback on the video 2026-11-18
+    📌 Brand notes 2026-11-28
 
 ## Links
 - [[Chris]]

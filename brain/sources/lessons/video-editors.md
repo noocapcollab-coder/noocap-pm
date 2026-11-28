@@ -2,6 +2,16 @@
 
 Mistakes the PM made once and the rule that came out of each.
 
+## Every brand approval reaches the editor's thread, even when the video already has a thread
+When: A brand approves a cut and the PM moves the EDIT TRACKER row to To Post
+Do: Send the APPROVED alert into the editor's video thread for each new approval, with the brand's note (publish date, code, version) in it
+Never: Treat the approval time itself as proof the editor was already told
+Seen 1 time(s). Source: Harsh correction.
+## No payment or contract line ever goes into a video card's Brand Notes, however it is phrased
+When: Saving what a brand said onto the deal's video cards (Brand Notes field and the dated note inside the card)
+Do: Keep only notes about the video itself (hashtags, ad code, posting window, creative asks). Payment timing, invoices, bank details and contract terms stay on the deal and go to Harsh.
+Never: Never write lines like 'Payment will be made within 7 days after publishing' or 'Brand received the ACH routing number' on a card the writer, editors or creator can see.
+Seen 1 time(s). Source: System check.
 ## A cut the PM could not send waits for Harsh, it is never re-sent on its own every run
 When: A revised cut at Send to Brand is held by a check or blocked (no deal, no link, no brand email) and the row goes back to In Review
 Do: Leave the row at In Review with its 'Not sent' note and one alert to Harsh; resend only when Harsh switches it to Send to Brand again

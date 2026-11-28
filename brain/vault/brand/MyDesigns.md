@@ -3,7 +3,7 @@ type: brand
 ---
 # MyDesigns
 
-Brand. Works with creators: [[Lindsay]], [[Chris]].
+Brand. Works with creators: [[Chris]], [[Lindsay]].
 
 ## Links
 - [[Chris]]

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "brands_ignitersmedia", "label": "Igniters Media", "file_type": "document", "source_file": "brands/ignitersmedia.md"}], "edges": [{"source": "brands_ignitersmedia", "target": "creators_chris", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "brands/ignitersmedia.md"}], "hyperedges": []}

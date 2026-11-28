@@ -15,9 +15,7 @@ Hook 1:
     - Competitor ad data: facebook.com/ads/library
     - Ad Library only shows performance data for EU and political ads: openskillindex.com/skills/clawdbot-skills-ad-intelligence
     - Long-running ads as the “winning” signal: adspirer.com/skills/ad-library-deep-dive
-    - Sub-page: [[Claude Ads: Turn Claude Code Into a Paid Ads Machine (Free Skill + Setup)]]
 
 ## Links
-- [[Claude Ads  Turn Claude Code Into a Paid Ads Machine (Free Skill + Setup)]]
 - [[David Iya]]
 - [[David Iya - posted scripts]]

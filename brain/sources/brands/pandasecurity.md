@@ -17,7 +17,7 @@ collab@valchy.ai, creator Valeri, copy
 
 DEALS:
 Panda Security x Chris | Script Approved | deliverables not fully documented | rate not documented | stage Script Approved | dates not documented
-Panda Security x Valeri | one horizontal video, one vertical video, one cover photo | [amount] USD | stage Price Agreed | dates not documented
+Panda Security x Valeri | one horizontal video, one vertical video, one cover photo | [amount]USD | stage Price Agreed | dates not documented
 
 HOW THEY WORK: Content review and video submissions are coordinated directly through the Panda Security app. Content is UGC and not posted on creator pages.
 
@@ -44,7 +44,7 @@ OPEN NOW: Waiting on brand: client video review.
 
 ## Deal with [[Valeri]] (Price Agreed, opened 2026-10-01)
 Last brand reply 2026-11-12, our last reply 2026-11-26.
-AGREED: [amount] USD for one horizontal video, one vertical video, and one cover photo. No payment terms, invoice details, or delivery dates confirmed.
+AGREED: [amount]USD for one horizontal video, one vertical video, and one cover photo. No payment terms, invoice details, or delivery dates confirmed.
 
 HISTORY:
 2026-10-06 brand: said will present profile to client and provide feedback.
@@ -52,7 +52,7 @@ HISTORY:
 2026-10-26 us: followed up on brief.
 2026-11-04 us: asked for brief.
 2026-11-11 brand: asked for interest confirmation to include in candidate review.
-2026-11-12 us: confirmed interest and proposed [amount] USD rate.
+2026-11-12 us: confirmed interest and proposed [amount]USD rate.
 2026-11-12 brand: Francisca Vitória took over and said will provide client feedback.
 2026-11-19 us: followed up on client feedback and brief.
 2026-11-23 us: followed up on client feedback for brief.

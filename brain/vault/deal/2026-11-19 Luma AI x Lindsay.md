@@ -1,25 +1,27 @@
 ---
 type: deal
 ---
-Stage: Approved
-Last brand reply 2026-11-27, our last reply 2026-11-26.
-AGREED: Rate: Not stated. Deliverables: One video production and publication. Usage rights: Not stated. Payment terms: Not stated. Agreed dates: Completion and publication before December 30, 2026.
+Stage: Invoiced
+Last brand reply 2026-11-28, our last reply 2026-11-28.
+AGREED: Rate: [amount]. Deliverables: 1 Instagram Reel (45-90 seconds) + 1 Instagram Story. Usage rights: Not stated. Payment terms: Net 30. Agreed dates: Completion and publication before December 30, 2026.
 
 HISTORY:
-2026-11-23: brand - requested script and account email.
-2026-11-24: us - submitted script.
-2026-11-25: brand - approved script.
 2026-11-25: us - shared account email.
-2026-11-26: brand - confirmed credits added.
-2026-11-26: us - submitted first cut.
-2026-11-27: brand - approved video and provided publishing instructions.
-2026-11-27: brand - requested live links and confirmation of publishing guidelines.
+2026-11-25: brand - asked if content can be published before December 30.
+2026-11-25: us - confirmed publication before December 30 and requested Luma credits.
+2026-11-26: brand - confirmed credits added and requested video production.
+2026-11-26: us - confirmed credits and shared first cut link.
+2026-11-26: brand - stated they are reviewing the video.
+2026-11-27: brand - approved video and provided tracking link and publishing instructions.
+2026-11-27: brand - followed up for live links and confirmation.
+2026-11-28: us - shared live Reel and Story links and sent invoice.
+2026-11-28: brand - confirmed receipt of invoice and payment link, forwarded to team for Net 30 payment.
 
 BILLING:
-not yet
+On file. Invoice status: sent final [amount]invoice, waiting for payment.
 
 OPEN NOW:
-We owe: Publish the content and share live Reel link, live Story link, Story screenshot, and confirmation that DM automation is working.
+Waiting on brand: Payment of the invoice.
 
 ## Links
 - [[Lindsay]]

@@ -2,7 +2,7 @@
 type: lead
 ---
 Contact Name: ismahil
-Next Step: Quote at [amount] waiting in Approvals
+Next Step: Quote at [amount]waiting in Approvals
 Platforms: YouTube
 Last Our Email: 2026-10-26
 Follow-ups: 1

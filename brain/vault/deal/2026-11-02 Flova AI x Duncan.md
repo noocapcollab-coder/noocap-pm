@@ -2,19 +2,24 @@
 type: deal
 ---
 Stage: Submitted
-Last brand reply 2026-11-02, our last reply 2026-11-23.
-AGREED: Deliverables currently disputed. Rate, usage rights, payment terms, and dates not yet confirmed.
+Last brand reply 2026-11-02, our last reply 2026-11-28.
+AGREED: Rate, deliverables, usage rights, payment terms, and dates are currently under dispute. Brand claims long-form video, while creator maintains short-form video was confirmed in previous correspondence.
+
 HISTORY:
-2026-10-20 Duncan's team: Offered updated scripts and contract confirmation.
-2026-10-22 Duncan's team: Sent detailed script for video.
-2026-10-30 us: Followed up requesting feedback on the script.
+2026-10-20 creator: Offered updated scripts and contract confirmation.
+2026-10-22 creator: Sent detailed short-form script.
 2026-11-02 brand: Requested consolidated script and claimed agreement was for 8-15 minute YouTube video.
-2026-11-02 Duncan's team: Provided screenshots to clarify short-form video was the agreed deliverable.
+2026-11-02 creator: Provided screenshots asserting short-form video agreement.
 2026-11-02 us: Delivered short-form video via Frame.io for review.
-2026-11-05 us: Sent first follow-up requesting feedback on the video.
-2026-11-20 us: Sent multiple follow-ups, including the latest on November 23, requesting feedback on the video.
+2026-11-05 us: Sent follow-up requesting feedback.
+2026-11-10 us: Sent follow-up regarding pending review.
+2026-11-14 us: Sent follow-up regarding pending review.
+2026-11-17 us: Sent follow-up regarding pending review.
+2026-11-20 us: Sent follow-up regarding pending review.
+
 BILLING: not yet
-OPEN NOW: The brand has not yet provided feedback on the video delivered on November 2, nor has it resolved the deliverable dispute. Waiting on brand: feedback, approval, or revisions on the short-form video, and clarification on deliverables. Rate, usage rights, payment terms, and final delivery confirmation also pending.
+
+OPEN NOW: Waiting on brand: response regarding the deliverable dispute and feedback or approval on the short-form video submitted on November 2.
 
 ## Links
 - [[Duncan]]

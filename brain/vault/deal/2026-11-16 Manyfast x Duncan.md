@@ -2,12 +2,12 @@
 type: deal
 ---
 Stage: Paid
-Last brand reply 2026-11-27, our last reply 2026-11-27.
-AGREED: Rate: [amount]. Deliverables: 1 short-form video, cross-posted to Instagram, TikTok, and Facebook. Usage rights: Not specified. Payment terms: Paid in full ([amount]). Agreed dates: Target release date is December 3, 2026.
+Last brand reply 2026-11-27, our last reply 2026-11-28.
+AGREED: Rate: [amount]. Deliverables: 1 short-form video, cross-posted to Instagram, TikTok, and Facebook. Usage rights: Not specified. Payment terms: Paid in full upfront ([amount]). Agreed dates: Target release date is December 3, 2026.
 
 HISTORY:
-2026-11-20 us: Sent script for review; brand shared trial account details.
-2026-11-23 brand: Provided detailed script feedback.
+2026-11-20 us: Sent script for review.
+2026-11-23 brand: Provided script feedback.
 2026-11-23 us: Sent updated script.
 2026-11-24 brand: Approved final script and authorized production.
 2026-11-25 us: Sent video draft link for brand review.

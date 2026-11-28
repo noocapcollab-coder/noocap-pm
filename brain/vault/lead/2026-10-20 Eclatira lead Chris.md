@@ -2,7 +2,7 @@
 type: lead
 ---
 Contact Name: Moad
-Next Step: Quote at [amount] waiting in Approvals
+Next Step: Quote at [amount]waiting in Approvals
 Last Our Email: 2026-11-02
 Follow-ups: 1
 Last Brand Email: 2026-10-20

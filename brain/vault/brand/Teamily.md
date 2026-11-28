@@ -5,19 +5,29 @@ type: brand
 
 Brand. Works with creators: [[Lindsay]], [[Brad]], [[Chris]].
 ## Brand wiki (from every email with them)
-WHO: Teamily or Teamily AI is a multi-agent AI collaboration platform that allows users to build and manage multiple AI agents in one shared workspace, featuring real-time multi-user collaboration and workflow automation. They come to us through their agency, Widely.
+WHO: Teamily AI is a multi-agent AI collaboration platform. They come to us through the agency Widely (also referred to as getwidely.com).
 
-CONTACTS: Evan is Influencer Marketing Manager at Widely, emails at evan@withwidely.com and evan@getwidely.com. Alyssa Salazar is at Widely, emails at alyssa.salazar@videoplusinc.ai and alyssa@withwidely.com. Our creator emails are signed by Lindsay's team or Brad's team, with noocapcollab@gmail.com copied or replying. For Brad, the brand emails partnerships@ninjaaitools.com and copies evan@withwidely.com and alyssa@withwidely.com.
+CONTACTS:
+Evan Guang, evan@withwidely.com (also evan@getwidely.com), Influencer Marketing Manager at Widely, signs as Evan.
+Alyssa Salazar, alyssa@withwidely.com, contact at Widely, signs as Alyssa.
+Must be copied: noocapcollab@gmail.com on all threads.
 
 DEALS:
-Teamily x Lindsay: YouTube integration (45 to 60 seconds) plus community promotion, [amount] negotiating, published before December 31, 2026.
-Teamily AI x Brad: Instagram Reel, stage script approved, agreed rates and deliverables in contract.
+Teamily x Lindsay, 45 to 60 second YouTube integration, [amount]negotiating, video published in the last week of December 2026 (booked for then). Community promotion is excluded.
+Teamily AI x Brad, Instagram Reel, stage Script Approved.
 
-HOW THEY WORK: Scripts are submitted as PDFs for brand review. Feedback is provided with detailed product and sequence requirements. Finished video drafts are sent for review. For platform access to record demos, the brand does not grant direct tool access; creators must subscribe using their own account first and get reimbursed with the invoice payment afterward. For posting, captions must use correct spelling of Teamily, include disclosures, tag @Teamily, use #Teamily, and place live site links in the comments.
+HOW THEY WORK:
+For scripts, send the script PDF for review. Once feedback is provided, incorporate changes and send the revised script. After script approval, proceed to filming.
+For tool access, the brand does not provide free accounts or platform access; the standard policy is to subscribe to Teamily AI Premium using our own account first, and the brand will reimburse the subscription cost together with the invoice payment.
+When the video draft is ready, send it over for review.
+Production requirements include fixing spelling to Teamily in the disclosure line, putting the live site link in the comments and testing that it is public, and confirming real people and businesses shown are approved.
 
-WATCH OUT: Do not ask for direct tool access accounts as the brand policy requires subscribing on our own account and getting reimbursed. Ensure spelling of Teamily is correct and avoid misspellings like Teamly.
+WATCH OUT:
+DocuSign contracts can go to spam folders (sent to partnerships@ninjaaitools.com).
 
-OPEN NOW: For the Lindsay deal, the brand accepted the [amount] late December YouTube integration and community promotion package, and we need to confirm or proceed with production. For the Brad deal, we owe a reply to the brand regarding their subscription reimbursement policy and confirmation of next steps for filming after script approval.
+OPEN NOW:
+Teamily x Lindsay: Waiting on brand: Brand needs to send over the contract.
+Teamily AI x Brad: We owe: reply to the brand regarding their subscription reimbursement policy and confirm next steps for filming.
 
 
 ## Links

@@ -10,8 +10,8 @@ WHO: Higgsfield / Higgsfield.AI is an AI video platform. They come to us directl
 CONTACTS: Higgsfield IM Team, email higgsfield.ai@jeevmedia.net, role brand IM team. Thread CC: collab@automateaiconsulting.com.
 
 DEALS:
-Higgsfield x Lindsay | 1 Instagram Reel + Link in bio for 7 days | Rate: [amount] USD | Stage: Paid | Paid on 2026-10-15
-Higgsfield.AI x Lindsay | 1 Instagram Reel and DM automation | Rate: [amount] USD per campaign | Stage: Posted
+Higgsfield x Lindsay | 1 Instagram Reel + Link in bio for 7 days | Rate: [amount]USD | Stage: Paid | Paid on 2026-10-15
+Higgsfield.AI x Lindsay | 1 Instagram Reel and DM automation | Rate: [amount]USD per campaign | Stage: Posted
 Higgsfield x Chris | Short drama greenscreen video | Rate: not known yet | Stage: Posted
 Higgsfield x Lindsay | 1 video | Rate: not known yet | Stage: Posted
 Higgsfield x Chris | Deliverables not known yet | Rate: not known yet | Stage: Posted

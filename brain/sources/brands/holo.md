@@ -29,7 +29,7 @@ Valeri: We owe the brand information on where and when the unauthorized ads were
 ## Deal with [[Chris]] (Script Sent, opened 2026-11-16)
 Last brand reply 2026-11-25, our last reply 2026-11-26.
 AGREED:
-Rate: [amount] Deliverables: 1x Instagram Reel
+Rate: [amount]Deliverables: 1x Instagram Reel
 Usage rights: 30 days of Partnership Ads
 Payment terms: not yet
 Dates: none
@@ -72,7 +72,7 @@ OPEN NOW: Waiting on us: Clarify where the active ads were spotted and discuss t
 - Next Step: Wait for Anita/arch.agency to review the script and reply with feedback. · Last Our Email: 2026-11-23 · Thread Subject: Out of Office Re: Paid Collaboration with Holo AI · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: anitadundovic@arch.agency
 - Deliverables: 1x Instagram Reel + 30 days Partnership Ads usage rights + cross-post to TikTok and YouTube Shorts · Contact Name: Mateo · Next Step: Handed to noocapcollab: waiting for the brief · Platforms: Instagram, TikTok, YouTube Shorts · Last Our Email: 2026-11-25 · Last Brand Email: 2026-11-25 · Thread Subject: Paid Collaboration with Holo AI · Status: Locked · Creator: Chris · Type: Paid offer · Brand Email: mateobeljak@arch.agency
 - Deliverables: 60–90 second YouTube integration video · Contact Name: Anita · Next Step: No action needed. Brand declined due to low engagement and high CPM. · Platforms: YouTube · Last Our Email: 2026-11-02 · Follow-ups: 2 · Last Brand Email: 2026-11-02 · Thread Subject: Paid Collaboration with Holo AI · Status: Lost · Creator: Lindsay · Type: Paid offer · Brand Email: anitadundovic@arch.agency
-- Next Step: Wait for brand to confirm if [amount] rate works for their budget · Platforms: Instagram, TikTok · Last Our Email: 2026-10-05 · Follow-ups: 3 · Last Brand Email: 2026-09-23 · Thread Subject: Partnership proposal · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: milda@tryholo.ai
+- Next Step: Wait for brand to confirm if [amount]rate works for their budget · Platforms: Instagram, TikTok · Last Our Email: 2026-10-05 · Follow-ups: 3 · Last Brand Email: 2026-09-23 · Thread Subject: Partnership proposal · Status: Waiting on brand · Creator: Chris · Type: Paid offer · Brand Email: milda@tryholo.ai
 
 ## Decisions from Harsh
 - 2026-11-18: Brand asked: Provide billing details to the brand so they can generate the contract · Harsh answered: holo is signed

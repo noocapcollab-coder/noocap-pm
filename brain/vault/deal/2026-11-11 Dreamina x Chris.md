@@ -2,8 +2,8 @@
 type: deal
 ---
 Stage: Posted
-Last brand reply 2026-11-27, our last reply 2026-11-27.
-AGREED: [amount]. Deliverables: 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team). Payment terms: Net 7 after delivery and publication on Instagram, influencer covers transfer/PayPal fees. Usage rights: none stated. Agreed dates: none stated.
+Last brand reply 2026-11-27, our last reply 2026-11-28.
+AGREED: [amount]rate. Deliverables: 1 reel + 7-day bio link + 1-month ad code (Topic 2, Artist Team). Payment terms: Net 7 after delivery and publication on Instagram, influencer covers transfer/PayPal fees. Usage rights: none stated. Agreed dates: none stated.
 
 HISTORY:
 2026-11-14 brand requested edits, cover, and caption.
@@ -15,10 +15,11 @@ HISTORY:
 2026-11-24 brand requested contract and payment information form.
 2026-11-27 us provided contract details and requested brand billing details for Stripe invoice.
 2026-11-27 brand asked to confirm if bank account is a company account, and asked if we can provide an official invoice.
+2026-11-28 us confirmed we can provide an official invoice and requested brand billing details.
 
 BILLING: Brand has not given billing details. Invoice status: not yet.
 
-OPEN NOW: We owe: confirm whether our bank account is a company bank account and confirm that we provide an official invoice.
+OPEN NOW: Waiting on brand: company billing details and response regarding the bank account.
 
 ## Links
 - [[Chris]]

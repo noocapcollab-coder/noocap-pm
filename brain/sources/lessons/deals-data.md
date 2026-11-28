@@ -6,7 +6,7 @@ Mistakes the PM made once and the rule that came out of each.
 When: An email with prices in it (a Black Friday sale, a subscription discount, a newsletter) reaches a creator inbox and the reader says it is not a deal
 Do: Keep it skipped unless the subject says paid collab/sponsorship or the email offers the creator a fee, rate or budget for content
 Never: Never keep it as a lead 'on second look' because it has dollar prices and the word promotional
-Seen 1 time(s). Source: System check.
+Seen 3 time(s). Source: System check.
 ## A paused or duplicate deal never emails the brand
 When: Two deals share one Gmail thread (a duplicate opened a minute apart) and one is paused or behind the other
 Do: Answer only from the live deal that holds the newest stage; leave the paused one silent
@@ -91,7 +91,7 @@ Seen 2 time(s). Source: System check.
 When: A brand whose deal is posted, invoiced or paid invites the creator to a new campaign in the same thread, even inside an email about payment and without asking for a rate
 Do: Open a deal of its own at Inbound (same thread, Needs Check), ask Harsh on WhatsApp whether the creator joins, and keep the payment news on the old deal
 Never: Fold the invite into the finished deal's memory or Next Action, or treat it as a brief on the old deal
-Seen 3 time(s). Source: System check.
+Seen 4 time(s). Source: System check.
 ## A rate ask on a finished deal is a new inquiry
 When: A brand whose deal is already Posted, Invoiced or Paid writes in the same thread asking for our rate for something new (another video, an event, a session).
 Do: Open a separate deal at Inbound for the new ask with the thread's IDs, and put the rate question to Harsh. Leave the finished deal's memory and stage as they were.

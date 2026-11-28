@@ -7,7 +7,7 @@ WHO: ZenBusiness, offering AI Business Tools and LLC formation. They come to us 
 
 CONTACTS: Ronnie Choi, ronnie.choi@zenbusiness.com, brand. Natalie Swanson, natalie.swanson@zenbusiness.com, brand. Thread CC: collab@automateaiconsulting.com. Signed by Lindsay's Team.
 
-DEALS: Lindsay | one YouTube integration and three creative assets (9x16, 4x5, 16x9) for [amount] total | Posted | agreed 2026-07-02.
+DEALS: Lindsay | one YouTube integration and three creative assets (9x16, 4x5, 16x9) for [amount]total | Posted | agreed 2026-07-02.
 
 HOW THEY WORK: Handle campaign over email rather than kickoff calls. Brief format is provided by the brand. Scripts are reviewed and approved over email. Draft reviews are shared via Google Drive or Frame.io links. Billing details and invoices are not needed because payment runs through Awin.
 
@@ -17,10 +17,10 @@ OPEN NOW: Nothing owed to the brand by email.
 
 ## Deal with [[Lindsay]] (Posted, opened 2026-10-22)
 Last brand reply 2026-11-23, our last reply 2026-11-24.
-AGREED: [amount] for one YouTube integration and [amount] for three creative assets (9x16, 4x5, 16x9). Total: [amount]. Paid through Awin (net payment terms). Usage rights and specific deadline dates not confirmed.
+AGREED: [amount]for one YouTube integration and [amount]for three creative assets (9x16, 4x5, 16x9). Total: [amount]. Paid through Awin (net payment terms). Usage rights and specific deadline dates not confirmed.
 
 HISTORY:
-2026-07-02 brand confirmed [amount] total fee, scheduled through Awin with net payment terms.
+2026-07-02 brand confirmed [amount]total fee, scheduled through Awin with net payment terms.
 2026-07-24 brand approved dedicated video script.
 2026-10-07 us delivered three UGC videos for review.
 2026-10-22 brand provided detailed feedback on all three videos.

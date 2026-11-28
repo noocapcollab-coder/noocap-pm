@@ -3,7 +3,7 @@ type: lead
 ---
 Deliverables: Collab/Non-Collab Reel, Story or Reel + Story bundle, DM automation on Reel
 Contact Name: Oliver
-Next Step: Quote at [amount] waiting in Approvals
+Next Step: Quote at [amount]waiting in Approvals
 Platforms: Instagram
 Last Our Email: 2026-10-21
 Follow-ups: 3

@@ -1,7 +1,7 @@
 ---
 type: lead
 ---
-Next Step: Quote at [amount] waiting in Approvals
+Next Step: Quote at [amount]waiting in Approvals
 Platforms: YouTube Shorts, TikTok, Instagram
 Last Our Email: 2026-10-28
 Follow-ups: 3

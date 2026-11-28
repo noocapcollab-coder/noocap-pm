@@ -3,12 +3,12 @@ type: lead
 ---
 Deliverables: 1 video showing HubPost publishing to TikTok, Reels and Shorts at once, with link in description (affiliate commission)
 Contact Name: Arthur
-Next Step: New brand: management to reply with pricing
+Next Step: Replied 2026-11-27, waiting on the brand
 Platforms: YouTube, Instagram, TikTok, YouTube Shorts
-Last Our Email: 2026-11-23
+Last Our Email: 2026-11-27
 Last Brand Email: 2026-11-26
 Thread Subject: Sponsoring your next video?
-Status: Negotiating
+Status: Waiting on brand
 Creator: Chris
 Type: Affiliate
 Wants UGC: true

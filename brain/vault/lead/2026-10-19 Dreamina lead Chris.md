@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: 1 short-form video across TikTok, Instagram Reels, YouTube Shorts, and Facebook, including concept & script, 2 rounds of revisions, and performance recap
-Next Step: Lost: offer [amount] is under our [amount] inimum, not answered
+Next Step: Lost: offer [amount]is under our [amount]inimum, not answered
 Platforms: TikTok, Instagram, YouTube Shorts, Facebook
 Last Our Email: 2026-10-19
 Follow-ups: 1

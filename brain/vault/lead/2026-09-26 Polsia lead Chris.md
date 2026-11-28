@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: 1 Instagram Reel
-Next Step: Wait for brand to confirm if the expedited terms and pricing ([amount]+ [amount] for rush delivery) work for them
+Next Step: Wait for brand to confirm if the expedited terms and pricing ([amount]+ [amount]for rush delivery) work for them
 Platforms: Instagram
 Last Our Email: 2026-10-06
 Follow-ups: 3

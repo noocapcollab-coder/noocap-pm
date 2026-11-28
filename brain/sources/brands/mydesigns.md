@@ -1,8 +1,9 @@
 # MyDesigns
 
-Brand. Works with creators: [[Lindsay]], [[Chris]].
+Brand. Works with creators: [[Chris]], [[Lindsay]].
 
 ## Inbound leads
+- Contact Name: Curtis · Next Step: None (archived / ignore) · Last Brand Email: 2026-11-28 · Thread Subject: The seller who starts this weekend · Status: Lost · Creator: Chris · Type: Paid offer · Brand Email: curtis@mail.mydesigns.io
 - Contact Name: Curtis · Next Step: New brand: management to reply with pricing · Last Brand Email: 2026-11-27 · Thread Subject: Black Friday: pay for one year, get two · Status: Lost · Creator: Lindsay · Type: Paid offer · Brand Email: curtis@mail.mydesigns.io
 - Contact Name: Curtis · Next Step: New brand: management to reply with pricing · Last Brand Email: 2026-11-27 · Thread Subject: What is inside MyDesigns now · Status: Lost · Creator: Chris · Type: Paid offer · Brand Email: curtis@mail.mydesigns.io
 - Contact Name: Curtis · Next Step: None · Last Our Email: 2026-11-25 · Last Brand Email: 2026-11-26 · Thread Subject: Year two is free (Black Friday is open) · Status: Lost · Creator: Lindsay · Type: Paid offer · Brand Email: curtis@mail.mydesigns.io

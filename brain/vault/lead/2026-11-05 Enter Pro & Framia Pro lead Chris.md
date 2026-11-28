@@ -2,7 +2,7 @@
 type: lead
 ---
 Contact Name: Mi
-Next Step: Harsh to decide: Vera (vera@luminarysm.com) replied Nov 15 asking to confirm the full terms at Chris's [amount] quote (1 Reel, 30-day ad code, 7-day bio UTM, caption link + pinned comment, 3-month usage incl. paid ads, 12-month retention, payment net 15 after live). Then she sends the brief.
+Next Step: Harsh to decide: Vera (vera@luminarysm.com) replied Nov 15 asking to confirm the full terms at Chris's [amount]quote (1 Reel, 30-day ad code, 7-day bio UTM, caption link + pinned comment, 3-month usage incl. paid ads, 12-month retention, payment net 15 after live). Then she sends the brief.
 Platforms: Instagram
 Last Our Email: 2026-11-13
 Last Brand Email: 2026-11-05

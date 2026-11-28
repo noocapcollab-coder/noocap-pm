@@ -3,7 +3,7 @@ type: lead
 ---
 Deliverables: 1 TikTok video, 1 Instagram Reel
 Contact Name: yulia
-Next Step: Quote at [amount] waiting in Approvals
+Next Step: Quote at [amount]waiting in Approvals
 Platforms: TikTok, Instagram
 Last Our Email: 2026-10-26
 Follow-ups: 2

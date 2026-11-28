@@ -21,7 +21,7 @@ On Fri, Oct 23, 2026 10:03:15 AM Conrad Niedzielski <conrad@leadverify.info> wro
 > Interested in discussing?
 >
 > Conrad | Cofounder @ Peeker AI · Thread Subject: Paid Sponsorship <> Peeker AI · Status: Lost · Creator: Lindsay · Type: Affiliate · Brand Email: conrad@leadverify.info
-- Contact Name: Conrad · Next Step: Quote at [amount] waiting in Approvals · Platforms: YouTube · Last Brand Email: 2026-10-23 · Thread Text: From: Conrad Niedzielski <conrad@leadverify.info>
+- Contact Name: Conrad · Next Step: Quote at [amount]waiting in Approvals · Platforms: YouTube · Last Brand Email: 2026-10-23 · Thread Text: From: Conrad Niedzielski <conrad@leadverify.info>
 Date: 2026-10-23
 
 Hey there,

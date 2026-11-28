@@ -4,7 +4,7 @@ type: deal
 Stage: Script Sent
 Last brand reply 2026-11-25, our last reply 2026-11-26.
 AGREED:
-Rate: [amount] Deliverables: 1x Instagram Reel
+Rate: [amount]Deliverables: 1x Instagram Reel
 Usage rights: 30 days of Partnership Ads
 Payment terms: not yet
 Dates: none

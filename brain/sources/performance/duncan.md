@@ -1,7 +1,7 @@
 # Duncan - what performs
-Content OS, videos posted since 2026-07-30: 255 posts across platforms, average 16,397 views. Creator: [[Duncan]].
+Content OS, videos posted since 2026-07-31: 255 posts across platforms, average 16,708 views. Creator: [[Duncan]].
 ## 2026-11-15 Give Me 13 Minutes and I'll Make You Disgustingly Good With Claude
-YouTube Long: 1,096,316 views, 9,651 likes, 187 comments, 0 shares, 0 saves.
+YouTube Long: 1,155,258 views, 10,116 likes, 198 comments, 0 shares, 0 saves.
 ## 2026-08-25 Check the pinned comment below for the GitHub repo link 👇
 TikTok Short: 400,400 views, 26,000 likes, 170 comments, 2,568 shares, 19,633 saves.
 ## 2026-10-25 What if you could turn a PDF, report, or pitch deck into an animated e
@@ -9,7 +9,7 @@ TikTok Short: 163,300 views, 7,132 likes, 37 comments, 1,538 shares, 7,743 saves
 ## 2026-10-22 Claude Just Changed: The 10 Big Updates You Need to Know
 YouTube Long: 129,138 views, 1,241 likes, 42 comments, 0 shares, 0 saves.
 ## 2026-11-24 Claude Code Just Dropped Code Mode (Master it in 7 Minutes)
-YouTube Long: 100,008 views, 599 likes, 52 comments, 0 shares, 0 saves.
+YouTube Long: 108,043 views, 629 likes, 54 comments, 0 shares, 0 saves.
 ## 2026-10-21 I taught Claude how to edit videos and it's INSANE
 YouTube Long: 94,974 views, 1,302 likes, 83 comments, 0 shares, 0 saves.
 ## 2026-10-01 Comment “OPUS” and I’ll send you the full Claude.md prompt for free.

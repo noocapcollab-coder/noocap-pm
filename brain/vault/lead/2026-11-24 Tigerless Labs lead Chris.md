@@ -1,7 +1,7 @@
 ---
 type: lead
 ---
-Deliverables: Dedicated Video (under [amount] budget)
+Deliverables: Dedicated Video (under [amount]budget)
 Contact Name: Ryan
 Next Step: New brand: management to reply with pricing
 Last Our Email: 2026-11-23

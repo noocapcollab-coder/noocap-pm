@@ -2,7 +2,7 @@
 type: lead
 ---
 Deliverables: One Instagram video (30-60s), link in bio for 7 days, ad code 30 days, detailed feature introduction
-Next Step: Wait for brand to respond to [amount] counter-offer
+Next Step: Wait for brand to respond to [amount]counter-offer
 Platforms: Instagram
 Last Our Email: 2026-09-03
 Last Brand Email: 2026-09-03

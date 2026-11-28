@@ -3,7 +3,7 @@ type: deal
 ---
 Stage: Invoiced
 Last brand reply 2026-11-27, our last reply 2026-11-27.
-AGREED: [amount] rate, deliverables (Reel + Story repost), usage rights not specified, payment terms Net 30 after approved Reel and Story published and invoice received, agreed date 2026-11-21.
+AGREED: [amount]rate, deliverables (Reel + Story repost), usage rights not specified, payment terms Net 30 after approved Reel and Story published and invoice received, agreed date 2026-11-21.
 
 HISTORY:
 2026-11-13 brand Credits added to Luma account.
