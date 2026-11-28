@@ -3889,3 +3889,19 @@ test('posting calendar: run times, queues and who posts what (Harsh, Nov 28)', a
   assert.deepEqual(m.map((x) => [x.title, x.state]), [['a', 'manual'], ['c', 'posted']]);
   assert.equal(P.zernioBy({ title: 'Lindsay carousel 2026-11-28 RENDER' }), 'Lindsay daily carousel');
 });
+
+test('a To Post row whose approval never reached the editor gets the alert, once (Manyfast x Chris, Nov 28)', async () => {
+  const { approvalAlertMissing } = await import('../lib/editorthreads.js');
+  const now = Date.parse('2026-11-28T10:00:00Z');
+  // Approved Nov 26, Post Thread ID already set, no Approval Alert At: missed
+  assert.equal(approvalAlertMissing({ status: 'To Post', approvedAt: '2026-11-26T08:01:00Z', alertAt: null }, now), true);
+  // Alert went after the approval: nothing to do
+  assert.equal(approvalAlertMissing({ status: 'To Post', approvedAt: '2026-11-26T08:01:00Z', alertAt: '2026-11-26T08:03:00Z' }, now), false);
+  // Re-approved after the last alert: missed again
+  assert.equal(approvalAlertMissing({ status: 'To Post', approvedAt: '2026-11-28T09:00:00Z', alertAt: '2026-11-26T08:03:00Z' }, now), true);
+  // Under 20 minutes: the watcher still has time
+  assert.equal(approvalAlertMissing({ status: 'To Post', approvedAt: '2026-11-28T09:50:00Z', alertAt: null }, now), false);
+  // Old approvals and other statuses are left alone
+  assert.equal(approvalAlertMissing({ status: 'To Post', approvedAt: '2026-11-20T09:00:00Z', alertAt: null }, now), false);
+  assert.equal(approvalAlertMissing({ status: 'Posted', approvedAt: '2026-11-28T09:00:00Z', alertAt: null }, now), false);
+});
