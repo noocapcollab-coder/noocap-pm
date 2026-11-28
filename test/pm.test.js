@@ -3955,3 +3955,10 @@ test('a brand asking us to sign is never read as a fully signed copy (Emergent x
   assert.equal(isFullySigned('Attached is the countersigned agreement for your records.'), true);
   assert.equal(isFullySigned('Hi, here you go', [{ filename: 'Agreement - fully executed.pdf' }]), true);
 });
+
+test('a new agreement on a finished deal still gets the contract_ack (Emergent x Chris, Nov 28)', async () => {
+  const { contractAckStage } = await import('../lib/inbox.js');
+  assert.equal(contractAckStage('Invoiced'), 'Brief Received');
+  assert.equal(contractAckStage('Paid'), 'Brief Received');
+  assert.equal(contractAckStage('Negotiating'), 'Negotiating');
+});
