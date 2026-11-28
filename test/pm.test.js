@@ -3945,3 +3945,13 @@ test('posting tab shows what went out and what is overdue (Harsh, Nov 28)', asyn
   assert.deepEqual(posted.map((x) => [x.title, x.by, x.creator]), [['Visual explainer', 'Posted by hand', 'Duncan'], ['Auto', 'TikTok + YouTube auto-post', 'Duncan']]);
   assert.equal(posted[0].views, 955);
 });
+
+test('a brand asking us to sign is never read as a fully signed copy (Emergent x Chris, Nov 28)', async () => {
+  const { isFullySigned } = await import('../lib/contracttrack.js');
+  const karan = 'Hello Team,\nBefore we move forward, please review and sign the attached agreement. Once you send back the signed agreement, we will provide the countersigned copy so work can officially begin.\nPlease hold off on scripting until we have shared the countersigned agreement.\nPlease send back the signed agreement as soon as possible so we can proceed.';
+  assert.equal(isFullySigned(karan, [{ filename: 'INFLUENCER ENGAGEMENT AGREEMENT.pdf' }]), false);
+  assert.equal(isFullySigned('We will send you the fully executed copy once you sign.'), false);
+  // Real countersigned copies are still filed
+  assert.equal(isFullySigned('Attached is the countersigned agreement for your records.'), true);
+  assert.equal(isFullySigned('Hi, here you go', [{ filename: 'Agreement - fully executed.pdf' }]), true);
+});
