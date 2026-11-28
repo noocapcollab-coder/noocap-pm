@@ -3851,3 +3851,41 @@ test('brand notes on cards drop payment lines in any phrasing (Dreamina x Chris,
   assert.equal(U.approvalAck('Thanks! December 3rd sounds great. Once the video is uploaded, could you please share the link with us here?'), 'share_link_ack');
   assert.equal(U.approvalAck('Can you share the link once posted? Also what is the ad code?'), null);
 }
+
+test('posting calendar: run times, queues and who posts what (Harsh, Nov 28)', async () => {
+  const P = await import('../lib/posting.js');
+  // 5:47 AM IST on Nov 28 is 00:17 UTC; 6:31 PM New York (EST) is 23:31 UTC
+  assert.equal(new Date(P.zoned('2026-11-28', 5, 47, 'Asia/Kolkata')).toISOString(), '2026-11-28T00:17:00.000Z');
+  assert.equal(new Date(P.zoned('2026-11-28', 18, 31, 'America/New_York')).toISOString(), '2026-11-28T23:31:00.000Z');
+  const card = (o) => ({ id: o.t, url: 'u', creator: 'X', title: o.t, status: o.s, type: o.type || 'PERSONAL', date: o.d || null, created: o.c || '2026-11-01', raw: o.raw || {} });
+  const A = Object.fromEntries(P.AUTOMATIONS.map((a) => [a.id, a]));
+  // Valeri: no hook never posts, missing captions is held, oldest POST DATE goes first, one card per run
+  const full = { Hook: 'Hook A', 'TikTok Caption': 'x', 'YT Title': 'x', 'YT Description': 'x' };
+  const v = A['valeri-ttyt'].pick([
+    card({ t: 'late', s: '10- To Post', d: '2026-11-30', raw: full }),
+    card({ t: 'early', s: '11- Ready', d: '2026-11-25', raw: full }),
+    card({ t: 'nohook', s: '10- To Post', raw: { ...full, Hook: '' } }),
+    card({ t: 'nocap', s: '10- To Post', raw: { ...full, 'YT Title': '' } }),
+    card({ t: 'done', s: '12- Posted', raw: { ...full, 'TikTok + YT (Auto)': 'Posted' } }),
+  ]);
+  assert.deepEqual(v.queue.map((c) => c.title), ['early', 'late']);
+  assert.deepEqual(v.held.map((h) => h.card.title).sort(), ['nocap', 'nohook']);
+  const runs = A['valeri-ttyt'].runs(Date.parse('2026-11-28T00:30:00Z'), Date.parse('2026-11-29T00:30:00Z'));
+  assert.equal(runs.length, 3); // 6:47 PM, 9:47 PM, 5:47 AM next day
+  assert.equal(A['valeri-ttyt'].plan(v.queue, runs)[1].at, runs[1]);
+  // Lindsay: three slots per run, 7 PM New York then 7 PM and 10 PM IST
+  const lq = A['lindsay-ttyt'].pick([1, 2, 3, 4].map((i) => card({ t: 'v' + i, s: '10- To Post', d: '2026-11-2' + i })));
+  const lr = A['lindsay-ttyt'].runs(Date.parse('2026-11-28T01:00:00Z'), Date.parse('2026-11-30T01:00:00Z'));
+  const lp = A['lindsay-ttyt'].plan(lq.queue, lr);
+  assert.equal(lp.length, 4);
+  assert.deepEqual(lp.slice(0, 3).map((x) => new Date(x.at).toISOString()), ['2026-11-29T00:00:00.000Z', '2026-11-29T13:30:00.000Z', '2026-11-29T16:30:00.000Z']);
+  // Carousel: weekdays only, a card dated later waits for its day
+  const cq = A['lindsay-carousel'].pick([card({ t: 'mon', s: '1- Idea', type: 'CAROUSEL', d: '2026-11-30' }), card({ t: 'nodate', s: '1- Idea', type: 'CAROUSEL' })]);
+  const cr = A['lindsay-carousel'].runs(Date.parse('2026-11-28T00:00:00Z'), Date.parse('2026-12-02T00:00:00Z'));
+  assert.deepEqual(cr.map((t) => P.weekdayIn(t)), ['Mon', 'Tue']);
+  assert.deepEqual(A['lindsay-carousel'].plan(cq.queue, cr).map((x) => x.card.title), ['mon', 'nodate']);
+  // Editors: Instagram and Facebook by hand on the POST DATE, trial reels and carousels left to the automations
+  const m = P.manualItems([card({ t: 'a', s: '10- To Post', d: '2026-11-29' }), card({ t: 'b', s: '10- To Post', d: '2026-11-29', type: 'TRIALS' }), card({ t: 'c', s: '12- Posted', d: '2026-11-28' })], { from: '2026-11-28', to: '2026-12-04' });
+  assert.deepEqual(m.map((x) => [x.title, x.state]), [['a', 'manual'], ['c', 'posted']]);
+  assert.equal(P.zernioBy({ title: 'Lindsay carousel 2026-11-28 RENDER' }), 'Lindsay daily carousel');
+});

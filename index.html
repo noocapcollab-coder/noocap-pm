@@ -419,6 +419,44 @@
   .ocard h2 .more:hover { color: var(--text); }
   .mline { display: flex; justify-content: space-between; font-size: 13px; }
   .mline span { color: #b9bcc4; } .mline b { font-weight: 600; font-variant-numeric: tabular-nums; }
+  /* Posting calendar */
+  .ps-days { display: flex; flex-direction: column; gap: 14px; }
+  .ps-row { display: grid; grid-template-columns: 74px 92px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 9px 0; border-top: 1px solid var(--line3); }
+  .ps-row:first-of-type { border-top: 0; }
+  .ps-time { font: 500 12px 'IBM Plex Mono', monospace; color: var(--soft); }
+  .ps-time small { display: block; color: var(--dim); font-size: 10.5px; }
+  .ps-cr { font: 600 12.5px 'Space Grotesk', sans-serif; }
+  .ps-main { min-width: 0; }
+  .ps-title { font-size: 13.5px; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; }
+  .ps-title:hover { color: var(--accent); }
+  .ps-sub { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; align-items: center; }
+  .ps-chip { font: 500 11px 'IBM Plex Sans', sans-serif; padding: 2px 8px; border-radius: 999px; background: var(--panel2); border: 1px solid var(--line2); color: var(--muted); white-space: nowrap; }
+  .ps-by { color: var(--accent); background: var(--accent-soft); border-color: rgba(61,214,176,.3); }
+  .ps-by.hand { color: var(--warn); background: var(--warn-soft); border-color: rgba(242,163,58,.3); }
+  .ps-by.zern { color: #a9b8ff; background: rgba(120,140,255,.12); border-color: rgba(120,140,255,.3); }
+  .ps-st { font: 600 11px 'Space Grotesk', sans-serif; padding: 3px 9px; border-radius: 6px; white-space: nowrap; text-align: center; }
+  .ps-st.planned { color: var(--soft); background: var(--panel2); }
+  .ps-st.scheduled { color: #a9b8ff; background: rgba(120,140,255,.12); }
+  .ps-st.posted { color: var(--ok); background: var(--accent-soft); }
+  .ps-st.failed { color: var(--err); background: var(--err-soft); }
+  .ps-st.manual, .ps-st.waiting { color: var(--warn); background: var(--warn-soft); }
+  .ps-autos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .ps-a h3 { margin: 0; font: 600 15px 'Space Grotesk', sans-serif; }
+  .ps-a .when { font-size: 13px; color: var(--soft); }
+  .ps-a .rule { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .ps-a .nums { display: flex; gap: 18px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+  .ps-a .nums b { display: block; font: 600 18px 'Space Grotesk', sans-serif; color: var(--text); }
+  .ps-held { font-size: 12.5px; border-top: 1px solid var(--line3); padding-top: 8px; display: flex; flex-direction: column; gap: 5px; }
+  .ps-held a { color: var(--text); }
+  .ps-held span { color: var(--warn); }
+  @media (max-width: 900px) { .ps-autos { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) {
+    .ps-row { grid-template-columns: 62px minmax(0, 1fr) auto; }
+    .ps-cr { grid-column: 2; grid-row: 1; font-size: 12px; color: var(--muted); }
+    .ps-main { grid-column: 1 / -1; grid-row: 2; }
+    .ps-st { grid-column: 3; grid-row: 1; }
+    .ps-title { white-space: normal; }
+  }
   .ostats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
   .ostat { padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); display: flex; flex-direction: column; gap: 6px; text-align: left; color: inherit; min-width: 0; }
   button.ostat:hover { border-color: var(--line2); background: #171a1f; }
@@ -902,6 +940,7 @@
   <div class="grp">
     <div class="lbl">Agency workflow</div>
     <button data-v="hq" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Schedule &amp; team</button>
+    <button data-v="posting" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="M10 14l2 2 4-4"/></svg>Posting</button>
     <button data-v="team" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14.8c1.9.7 3.1 2.4 3.5 5.2"/></svg>Editors</button>
     <button data-v="trials" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 9.5v5l4-2.5z"/></svg>Trial reels</button>
     <button data-v="skool" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>Skool links</button>
@@ -1048,6 +1087,19 @@
   <div class="err" id="skErr" style="font-size:13px"></div>
 </div></section>
 
+<!-- ============ Posting calendar ============ -->
+<section class="view" id="posting"><div class="ov">
+  <div class="ov-head">
+    <div><div class="k" id="psWhen">Every post for the next 7 days, who posts it and when</div><h1>Posting</h1></div>
+  </div>
+  <div class="cfilter" id="psF" style="margin:0" role="group" aria-label="Pick a client"></div>
+  <section class="ostats" id="psStats" aria-label="Posting totals"><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div></section>
+  <div class="ps-days" id="psDays"><div class="skel"></div><div class="skel"></div></div>
+  <section class="ocard" style="gap:12px"><h2>Posting automations <small>what each one posts, when it runs and what it is waiting on</small></h2><div class="ps-autos" id="psAutos"><div class="skel"></div></div></section>
+  <div class="ofoot" style="font-size:12px;color:var(--muted)">Times are India time. <b>Scheduled</b> and <b>Posted</b> come straight from Zernio. <b>Planned</b> is the run that will pick the card up if nothing on the board changes, worked out from each automation's rules and the cards waiting on the board, so a card moved or edited today can shift. <b>By hand</b> is Instagram and Facebook, which editors post themselves on the card's POST DATE.</div>
+  <div class="err" id="psErr" style="font-size:13px"></div>
+</div></section>
+
 <!-- ============ Trial reels ============ -->
 <section class="view" id="trials"><div class="ov">
   <div class="ov-head">
@@ -1177,6 +1229,7 @@
   <button data-v="billing" type="button"><span class="i">🧾</span>Invoices</button>
   <button data-v="brain" type="button"><span class="i">✺</span>Brain</button>
   <button data-v="spend" type="button"><span class="i">▭</span>Tools</button>
+  <button data-v="posting" type="button"><span class="i">◷</span>Posting</button>
   <button data-v="trials" type="button"><span class="i">▶</span>Trials</button>
   <button data-v="skool" type="button"><span class="i">⛓</span>Skool</button>
   <button data-v="flow" type="button"><span class="i">⇢</span>System</button>
@@ -1224,7 +1277,7 @@
   // ---------- tabs ----------
   let view = 'overview';
   function show(v) {
-    if (!['overview', 'hq', 'team', 'billing', 'leads', 'followups', 'pricing', 'active', 'deals', 'revenue', 'outreach', 'brain', 'spend', 'trials', 'skool', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
+    if (!['overview', 'hq', 'team', 'billing', 'leads', 'followups', 'pricing', 'active', 'deals', 'revenue', 'outreach', 'brain', 'spend', 'trials', 'posting', 'skool', 'runs', 'flow', 'chat', 'approvals'].includes(v)) v = 'overview';
     if (v === 'deals') v = 'leads'; // the old Brand deals board is now Leads + Active brands
     view = v;
     document.querySelectorAll('.view').forEach((el) => el.classList.toggle('on', el.id === v));
@@ -1238,6 +1291,7 @@
     if (v === 'revenue') rv ? renderRevenue() : loadRevenue();
     if (v === 'spend') sp ? renderSpend() : loadSpend();
     if (v === 'trials') { if (tr) renderTrials(); loadTrials(); }
+    if (v === 'posting') { if (ps) renderPosting(); loadPosting(); }
     if (v === 'skool') { if (sk) renderSkool(); loadSkool(); }
     if (v === 'outreach') { if (orData) renderOutreach(); loadOutreach(); }
     if (v === 'brain') loadBrain();
@@ -1253,7 +1307,7 @@
   }
   document.querySelectorAll('[data-v]').forEach((b) => b.onclick = () => show(b.dataset.v));
   window.addEventListener('hashchange', () => show(location.hash.slice(1)));
-  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else if (view === 'spend') loadSpend(true); else if (view === 'trials') loadTrials(true); else if (view === 'skool') loadSkool(); else if (view === 'outreach') loadOutreach(); else if (view === 'followups') loadFollowups(true); else if (view === 'team') loadEditorMonth(true); else if (view === 'runs') loadRuns(); else if (view === 'pricing') loadPricing(true); else loadHQ(true); };
+  $('refresh').onclick = $('refreshM').onclick = () => { if (view === 'approvals') loadApprovals(); else if (view === 'flow') loadFlow(true); else if (view === 'revenue') loadRevenue(true); else if (view === 'spend') loadSpend(true); else if (view === 'trials') loadTrials(true); else if (view === 'posting') loadPosting(true); else if (view === 'skool') loadSkool(); else if (view === 'outreach') loadOutreach(); else if (view === 'followups') loadFollowups(true); else if (view === 'team') loadEditorMonth(true); else if (view === 'runs') loadRuns(); else if (view === 'pricing') loadPricing(true); else loadHQ(true); };
   document.querySelectorAll('.ov [data-go]').forEach((b) => b.onclick = () => show(b.dataset.go));
 
   // =====================================================================
@@ -1367,6 +1421,69 @@
   }
 
 
+  // =====================================================================
+  // Posting: for every client, what goes out on which day and which automation posts it (GET /api/hq?posting=1)
+  let ps = null, psLoading = false, psSel = 'all';
+  async function loadPosting(fresh) {
+    if (psLoading) return; psLoading = true;
+    $('psErr').textContent = '';
+    try {
+      const r = await fetch('/api/hq?posting=1' + (fresh ? '&fresh=1' : ''), { headers: headers() });
+      if (r.status === 401) { psLoading = false; return needPassword(); }
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error || 'Could not load the posting calendar');
+      ps = j; renderPosting();
+    } catch (e) { $('psErr').textContent = e.message; if (!ps) { $('psStats').innerHTML = ''; $('psDays').innerHTML = '<div class="empty">The posting calendar could not load. Hit refresh to try again.</div>'; } }
+    psLoading = false;
+  }
+  function renderPosting() {
+    if (!ps) return;
+    const IST = { timeZone: 'Asia/Kolkata' };
+    const tm = (iso) => new Date(iso).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', ...IST });
+    const dayName = (d, i) => (i === 0 ? 'Today · ' : i === 1 ? 'Tomorrow · ' : '') + new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short', timeZone: 'UTC' });
+    const all = ps.days.flatMap((d) => d.items);
+    const mine = (it) => psSel === 'all' || it.creator === psSel;
+    if (psSel !== 'all' && !ps.creators.includes(psSel)) psSel = 'all';
+    const count = (c) => all.filter((it) => c === 'all' || it.creator === c).length;
+    $('psF').innerHTML = [['all', 'All clients'], ...ps.creators.map((c) => [c, c])]
+      .map(([id, l]) => `<button type="button" class="${id === psSel ? 'on' : ''}" data-c="${esc(id)}">${esc(l)}<b>${count(id)}</b></button>`).join('');
+    $('psF').querySelectorAll('button').forEach((b) => b.onclick = () => { psSel = b.dataset.c; renderPosting(); });
+    $('psWhen').textContent = `Every post for the next 7 days, who posts it and when · updated ${since(ps.generated_at)}`;
+    const shown = all.filter(mine);
+    const autos = ps.automations.filter((a) => psSel === 'all' || a.creator === psSel);
+    const held = autos.reduce((n, a) => n + (a.held || []).length, 0);
+    const stat = (l, v, s, st = '') => `<div class="ostat"><span class="l">${l}</span><span class="v" style="${st}">${v}</span><span class="s">${s}</span></div>`;
+    const by = (f) => shown.filter(f).length;
+    const nextAuto = shown.filter((it) => it.state === 'planned' || it.state === 'scheduled').sort((a, b) => String(a.at).localeCompare(String(b.at)))[0];
+    $('psStats').innerHTML = stat('Next 7 days', shown.length, `${by((i) => i.state === 'posted')} already out`, 'color:var(--accent)')
+      + stat('By automations', by((i) => i.source !== 'manual'), `${by((i) => i.state === 'scheduled')} scheduled in Zernio, ${by((i) => i.state === 'planned')} planned`)
+      + stat('By editors', by((i) => i.source === 'manual'), 'Instagram and Facebook, posted by hand')
+      + stat('Next automatic post', nextAuto ? tm(nextAuto.at) : '—', nextAuto ? esc(nextAuto.creator + ' · ' + nextAuto.platforms.join(' + ')) : 'nothing queued')
+      + stat('Held back', held, held ? 'cards an automation will skip, see below' : 'nothing stuck', held ? 'color:var(--warn)' : '')
+      + stat('Failed', by((i) => i.state === 'failed'), 'posts Zernio could not publish', by((i) => i.state === 'failed') ? 'color:var(--err)' : '');
+    const stLabel = { planned: 'Planned', scheduled: 'Scheduled', posted: 'Posted', failed: 'Failed', manual: 'By hand', waiting: 'Not approved' };
+    const row = (it) => {
+      const cls = it.source === 'manual' ? 'hand' : it.source === 'zernio' && it.by === 'Scheduled in Zernio' ? 'zern' : '';
+      const title = it.url ? `<a class="ps-title" href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>` : `<span class="ps-title">${esc(it.title)}</span>`;
+      return `<div class="ps-row"><div class="ps-time">${it.at ? tm(it.at) : 'Any time'}${it.source === 'manual' ? '<small>POST DATE</small>' : ''}</div><div class="ps-cr">${esc(it.creator)}</div>
+        <div class="ps-main">${title}<div class="ps-sub"><span class="ps-chip ps-by ${cls}">${esc(it.by)}</span>${it.platforms.map((p) => `<span class="ps-chip">${esc(p)}</span>`).join('')}${it.sponsor ? '<span class="ps-chip">Sponsor</span>' : ''}${it.note && it.source !== 'manual' ? `<span class="ps-chip" style="border:0;background:none;padding:0">${esc(it.note)}</span>` : ''}</div></div>
+        <div class="ps-st ${esc(it.state)}">${stLabel[it.state] || esc(it.state)}</div></div>`;
+    };
+    $('psDays').innerHTML = ps.days.map((d, i) => {
+      const list = d.items.filter(mine);
+      return `<section class="ocard" style="gap:4px"><h2>${dayName(d.date, i)} <small>${list.length ? plural(list.length, 'post') : 'nothing planned'}</small></h2>${list.length ? list.map(row).join('') : '<div class="empty">Nothing is set to go out this day.</div>'}</section>`;
+    }).join('');
+    $('psAutos').innerHTML = autos.length ? autos.map((a) => `<div class="ocard ps-a" style="background:var(--panel2)">
+        <h3>${esc(a.name)}</h3>
+        <div class="ps-sub" style="margin:0">${a.platforms.map((p) => `<span class="ps-chip">${esc(p)}</span>`).join('')}</div>
+        <div class="when">${esc(a.when)}</div>
+        <div class="nums"><div><b>${a.next ? tm(a.next) : '—'}</b>next run${a.next ? ' · ' + new Date(a.next).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', ...IST }) : ''}</div><div><b>${a.queued == null ? '—' : a.queued}</b>cards waiting</div><div><b>${a.inWeek == null ? '—' : a.inWeek}</b>going out this week</div></div>
+        <div class="rule">${esc(a.rule)}</div>
+        ${a.error ? '<div class="ps-held"><span>Could not read the board just now, so its queue is missing. Hit refresh.</span></div>' : ''}
+        ${(a.held || []).length ? `<div class="ps-held"><b style="font-size:12px;color:var(--soft)">Held back (${a.held.length})</b>${a.held.map((h) => `<div>${h.url ? `<a href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.title)}</a>` : esc(h.title)} · <span>${esc(h.why)}</span></div>`).join('')}</div>` : ''}
+      </div>`).join('') : '<div class="empty">No posting automation runs for this client yet. Their posts go out by hand.</div>';
+    $('psErr').textContent = (ps.errors || []).length ? 'Some parts could not load: ' + ps.errors.join(' · ') : '';
+  }
   // =====================================================================
   // Trial reels: Instagram trial reels posted through Zernio, per creator (GET /api/trials)
   let tr = null, trLoading = false;

@@ -1,4 +1,5 @@
 // GET /api/hq?costs=1 -> AI spend this month by creator
+// GET /api/hq?posting=1 -> posting calendar for the next 7 days (&fresh=1 skips the 2 min cache)
 // GET /api/hq?editors=2026-10 -> each editor's month: videos delivered, finished, changes, and every video
 // GET /api/hq  -> live agency snapshot for the HQ tab (no AI, free to load). ?fresh=1 skips the 45s cache.
 import { buildHQ, aiCosts } from '../lib/hq.js';
@@ -12,7 +13,7 @@ export default async function handler(req, res) {
   if (viaQuery) req.headers['x-pm-key'] = req.query.k;
   if (!checkAuth(req)) return res.status(401).json({ error: 'Wrong or missing password' });
   res.setHeader('Cache-Control', 'no-store');
-  const plainLoad = !req.query?.editors && req.query?.pricing !== '1' && req.query?.costs !== '1' && req.query?.fresh !== '1' && !req.query?.invoicing && !req.query?.connect;
+  const plainLoad = !req.query?.editors && req.query?.pricing !== '1' && req.query?.costs !== '1' && req.query?.fresh !== '1' && !req.query?.invoicing && !req.query?.connect && req.query?.posting !== '1';
   // Served instantly from the edge (even when a minute or more old) while Vercel rebuilds it in the background
   if (plainLoad && (viaQuery || !process.env.PM_PASSWORD)) res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=1800');
   try {
@@ -34,6 +35,8 @@ export default async function handler(req, res) {
       const c = String(req.query.connect).slice(0, 40);
       return res.status(200).json({ creator: c, url: `https://${req.headers['x-forwarded-host'] || req.headers.host}/api/pay?c=${encodeURIComponent(connectToken(c))}` });
     }
+    // Posting calendar: what each client posts on which day, and which automation posts it (Harsh, Nov 28)
+    if (req.query?.posting === '1') { const { postingData } = await import('../lib/posting.js'); return res.status(200).json(await postingData({ fresh: req.query?.fresh === '1' })); }
     if (req.query?.costs === '1') return res.status(200).json(await aiCosts({ fresh: req.query?.fresh === '1' }));
     const data = await buildHQ({ fresh: req.query?.fresh === '1' });
     // A copy with parts missing is only kept briefly at the edge
