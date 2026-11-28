@@ -2969,6 +2969,17 @@ test('a deal paid upfront stays in the script step until its video posts, so a r
   assert.equal(upfrontScriptDeal({ ...deal, stage: 'Invoiced' }, 2), false);
   assert.equal(upfrontScriptDeal(deal, 45), false);
 });
+// Night check Nov 28 (Dreamina x Chris BD-5): an old deal whose pre-made video was approved and then paid owes no script,
+// so the new campaign's card at 5 linked to it never makes a third script email on the old thread
+test('a paid deal whose script was already approved is not an upfront script deal', async () => {
+  const { upfrontScriptDeal, scriptDoneBeforePay } = await import('../lib/heartbeat.js');
+  const bd5 = { stage: 'Paid', linkedVideo: 'https://notion.so/x', paidDate: '2026-11-28', scriptSent: null, scriptApproved: '2026-10-26', postedLinks: '' };
+  assert.equal(scriptDoneBeforePay(bd5), true);
+  assert.equal(upfrontScriptDeal(bd5, 0), false);
+  // a revised script sent after the approval still counts as owed
+  assert.equal(scriptDoneBeforePay({ ...bd5, scriptSent: '2026-11-20' }), false);
+  assert.equal(scriptDoneBeforePay({ ...bd5, scriptApproved: null }), false);
+});
 test('the script PDF starts at the newest "updated script" heading, never sending the old and new script together', async () => {
   const { scriptStart } = await import('../lib/pdf.js');
   assert.equal(scriptStart([null, 'Script', null, null, 'UPDATED SCRIPT:', null]), 4);
