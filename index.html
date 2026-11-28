@@ -440,6 +440,7 @@
   .ps-st.posted { color: var(--ok); background: var(--accent-soft); }
   .ps-st.failed { color: var(--err); background: var(--err-soft); }
   .ps-st.manual, .ps-st.waiting { color: var(--warn); background: var(--warn-soft); }
+  .ps-st.overdue { color: var(--err); background: var(--err-soft); }
   .ps-autos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   .ps-a h3 { margin: 0; font: 600 15px 'Space Grotesk', sans-serif; }
   .ps-a .when { font-size: 13px; color: var(--soft); }
@@ -1090,13 +1091,14 @@
 <!-- ============ Posting calendar ============ -->
 <section class="view" id="posting"><div class="ov">
   <div class="ov-head">
-    <div><div class="k" id="psWhen">Every post for the next 7 days, who posts it and when</div><h1>Posting</h1></div>
+    <div><div class="k" id="psWhen">What went out, what is still to post and who posts it</div><h1>Posting</h1></div>
   </div>
+  <div class="cfilter" id="psTabs" style="margin:0" role="tablist" aria-label="Posting view"><button type="button" data-t="todo" class="on">Still to post</button><button type="button" data-t="posted">Posted</button></div>
   <div class="cfilter" id="psF" style="margin:0" role="group" aria-label="Pick a client"></div>
   <section class="ostats" id="psStats" aria-label="Posting totals"><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div><div class="ostat"><div class="skel"></div></div></section>
   <div class="ps-days" id="psDays"><div class="skel"></div><div class="skel"></div></div>
   <section class="ocard" style="gap:12px"><h2>Posting automations <small>what each one posts, when it runs and what it is waiting on</small></h2><div class="ps-autos" id="psAutos"><div class="skel"></div></div></section>
-  <div class="ofoot" style="font-size:12px;color:var(--muted)">Times are India time. <b>Scheduled</b> and <b>Posted</b> come straight from Zernio. <b>Planned</b> is the run that will pick the card up if nothing on the board changes, worked out from each automation's rules and the cards waiting on the board, so a card moved or edited today can shift. <b>By hand</b> is Instagram and Facebook, which editors post themselves on the card's POST DATE.</div>
+  <div class="ofoot" style="font-size:12px;color:var(--muted)">Times are India time. <b>Scheduled</b> and <b>Posted</b> come straight from Zernio. <b>Planned</b> is the run that will pick the card up if nothing on the board changes, worked out from each automation's rules and the cards waiting on the board, so a card moved or edited today can shift. <b>Not posted yet</b> is a card editors post by hand on Instagram and Facebook on its POST DATE. It turns into <b>Posted</b> once the post shows up in Zernio, the card reaches 12- Posted or it gets a Posted URL, and it turns <b>Overdue</b> if its date passes first.</div>
   <div class="err" id="psErr" style="font-size:13px"></div>
 </div></section>
 
@@ -1423,7 +1425,7 @@
 
   // =====================================================================
   // Posting: for every client, what goes out on which day and which automation posts it (GET /api/hq?posting=1)
-  let ps = null, psLoading = false, psSel = 'all';
+  let ps = null, psLoading = false, psSel = 'all', psTab = 'todo';
   async function loadPosting(fresh) {
     if (psLoading) return; psLoading = true;
     $('psErr').textContent = '';
@@ -1440,39 +1442,64 @@
     if (!ps) return;
     const IST = { timeZone: 'Asia/Kolkata' };
     const tm = (iso) => new Date(iso).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', ...IST });
-    const dayName = (d, i) => (i === 0 ? 'Today · ' : i === 1 ? 'Tomorrow · ' : '') + new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short', timeZone: 'UTC' });
-    const all = ps.days.flatMap((d) => d.items);
-    const mine = (it) => psSel === 'all' || it.creator === psSel;
+    const dname = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short', timeZone: 'UTC' });
+    const tomorrow = (ps.days.find((x) => !x.past && !x.today) || {}).date;
+    const rel = (d) => (d === ps.today ? 'Today · ' : d === tomorrow ? 'Tomorrow · ' : '');
     if (psSel !== 'all' && !ps.creators.includes(psSel)) psSel = 'all';
-    const count = (c) => all.filter((it) => c === 'all' || it.creator === c).length;
+    const mine = (it) => psSel === 'all' || it.creator === psSel;
+    const all = ps.days.flatMap((d) => d.items.map((it) => ({ ...it, _day: d.date, _past: d.past })));
+    const isDone = (it) => it.state === 'posted';
+    // Still to post: from today on and not out yet, plus anything due before today that never went (overdue)
+    const todo = all.filter((it) => !isDone(it) && (!it._past || it.state === 'overdue' || it.state === 'failed'));
+    const done = all.filter(isDone);
+    const count = (c) => (psTab === 'posted' ? done : todo).filter((it) => c === 'all' || it.creator === c).length;
     $('psF').innerHTML = [['all', 'All clients'], ...ps.creators.map((c) => [c, c])]
       .map(([id, l]) => `<button type="button" class="${id === psSel ? 'on' : ''}" data-c="${esc(id)}">${esc(l)}<b>${count(id)}</b></button>`).join('');
     $('psF').querySelectorAll('button').forEach((b) => b.onclick = () => { psSel = b.dataset.c; renderPosting(); });
-    $('psWhen').textContent = `Every post for the next 7 days, who posts it and when · updated ${since(ps.generated_at)}`;
-    const shown = all.filter(mine);
+    $('psTabs').querySelectorAll('button').forEach((b) => { b.classList.toggle('on', b.dataset.t === psTab); b.onclick = () => { psTab = b.dataset.t; renderPosting(); }; });
+    $('psWhen').textContent = `What went out, what is still to post and who posts it · updated ${since(ps.generated_at)}`;
+    const T = todo.filter(mine), D = done.filter(mine);
+    const overdue = T.filter((i) => i.state === 'overdue' || (i.state === 'failed' && i._past));
+    const outToday = D.filter((i) => i._day === ps.today);
     const autos = ps.automations.filter((a) => psSel === 'all' || a.creator === psSel);
     const held = autos.reduce((n, a) => n + (a.held || []).length, 0);
-    const stat = (l, v, s, st = '') => `<div class="ostat"><span class="l">${l}</span><span class="v" style="${st}">${v}</span><span class="s">${s}</span></div>`;
-    const by = (f) => shown.filter(f).length;
-    const nextAuto = shown.filter((it) => it.state === 'planned' || it.state === 'scheduled').sort((a, b) => String(a.at).localeCompare(String(b.at)))[0];
-    $('psStats').innerHTML = stat('Next 7 days', shown.length, `${by((i) => i.state === 'posted')} already out`, 'color:var(--accent)')
-      + stat('By automations', by((i) => i.source !== 'manual'), `${by((i) => i.state === 'scheduled')} scheduled in Zernio, ${by((i) => i.state === 'planned')} planned`)
-      + stat('By editors', by((i) => i.source === 'manual'), 'Instagram and Facebook, posted by hand')
+    const failed = T.filter((i) => i.state === 'failed').length;
+    const nextAuto = T.filter((it) => it.state === 'planned' || it.state === 'scheduled').sort((a, b) => String(a.at).localeCompare(String(b.at)))[0];
+    const stat = (l, v, s, st = '', tab = '') => `<div class="ostat"${tab ? ` style="cursor:pointer" data-go="${tab}"` : ''}><span class="l">${l}</span><span class="v" style="${st}">${v}</span><span class="s">${s}</span></div>`;
+    $('psStats').innerHTML = stat('Posted today', outToday.length, `${D.length} in the last 7 days · tap to see them`, 'color:var(--ok)', 'posted')
+      + stat('Still to post', T.length - overdue.length, 'next 7 days, not out yet', 'color:var(--accent)', 'todo')
+      + stat('Overdue', overdue.length, overdue.length ? 'due before today and never went out' : 'nothing late', overdue.length ? 'color:var(--err)' : '', 'todo')
       + stat('Next automatic post', nextAuto ? tm(nextAuto.at) : '—', nextAuto ? esc(nextAuto.creator + ' · ' + nextAuto.platforms.join(' + ')) : 'nothing queued')
       + stat('Held back', held, held ? 'cards an automation will skip, see below' : 'nothing stuck', held ? 'color:var(--warn)' : '')
-      + stat('Failed', by((i) => i.state === 'failed'), 'posts Zernio could not publish', by((i) => i.state === 'failed') ? 'color:var(--err)' : '');
-    const stLabel = { planned: 'Planned', scheduled: 'Scheduled', posted: 'Posted', failed: 'Failed', manual: 'By hand', waiting: 'Not approved' };
-    const row = (it) => {
-      const cls = it.source === 'manual' ? 'hand' : it.source === 'zernio' && it.by === 'Scheduled in Zernio' ? 'zern' : '';
+      + stat('Failed', failed, 'posts Zernio could not publish', failed ? 'color:var(--err)' : '');
+    $('psStats').querySelectorAll('[data-go]').forEach((el) => el.onclick = () => { psTab = el.dataset.go; renderPosting(); });
+    const stLabel = { planned: 'Planned', scheduled: 'Scheduled', posted: 'Posted', failed: 'Failed', manual: 'Not posted yet', waiting: 'Not ready', overdue: 'Overdue' };
+    const row = (it, showDay) => {
+      const cls = it.by === 'Posted by hand' || it.source === 'manual' ? 'hand' : it.source === 'zernio' && /Zernio/.test(it.by) ? 'zern' : '';
       const title = it.url ? `<a class="ps-title" href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>` : `<span class="ps-title">${esc(it.title)}</span>`;
-      return `<div class="ps-row"><div class="ps-time">${it.at ? tm(it.at) : 'Any time'}${it.source === 'manual' ? '<small>POST DATE</small>' : ''}</div><div class="ps-cr">${esc(it.creator)}</div>
-        <div class="ps-main">${title}<div class="ps-sub"><span class="ps-chip ps-by ${cls}">${esc(it.by)}</span>${it.platforms.map((p) => `<span class="ps-chip">${esc(p)}</span>`).join('')}${it.sponsor ? '<span class="ps-chip">Sponsor</span>' : ''}${it.note && it.source !== 'manual' ? `<span class="ps-chip" style="border:0;background:none;padding:0">${esc(it.note)}</span>` : ''}</div></div>
+      const when = showDay ? new Date(it._day + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' }) : it.at ? tm(it.at) : 'Any time';
+      const sub = showDay ? '<small>was due</small>' : it.source === 'manual' && !it.at ? '<small>POST DATE</small>' : '';
+      const extra = [it.views ? `${Number(it.views).toLocaleString('en-US')} views` : '', it.trial ? 'Trial reel' : '', it.note && it.state !== 'posted' && it.source !== 'zernio' ? it.note : ''].filter(Boolean);
+      return `<div class="ps-row"><div class="ps-time">${when}${sub}</div><div class="ps-cr">${esc(it.creator)}</div>
+        <div class="ps-main">${title}<div class="ps-sub"><span class="ps-chip ps-by ${cls}">${esc(it.by)}</span>${it.platforms.map((p) => `<span class="ps-chip">${esc(p)}</span>`).join('')}${it.sponsor ? '<span class="ps-chip">Sponsor</span>' : ''}${extra.map((x) => `<span class="ps-chip" style="border:0;background:none;padding:0">${esc(x)}</span>`).join('')}${it.postUrl ? `<a class="ps-chip" style="color:var(--ok)" href="${esc(it.postUrl)}" target="_blank" rel="noopener">Open post ↗</a>` : ''}</div></div>
         <div class="ps-st ${esc(it.state)}">${stLabel[it.state] || esc(it.state)}</div></div>`;
     };
-    $('psDays').innerHTML = ps.days.map((d, i) => {
-      const list = d.items.filter(mine);
-      return `<section class="ocard" style="gap:4px"><h2>${dayName(d.date, i)} <small>${list.length ? plural(list.length, 'post') : 'nothing planned'}</small></h2>${list.length ? list.map(row).join('') : '<div class="empty">Nothing is set to go out this day.</div>'}</section>`;
-    }).join('');
+    const card = (head, sub, list, empty, showDay) => `<section class="ocard" style="gap:4px"><h2>${head} <small>${sub}</small></h2>${list.length ? list.map((it) => row(it, showDay)).join('') : `<div class="empty">${empty}</div>`}</section>`;
+    let html = '';
+    if (psTab === 'posted') {
+      const days = ps.days.filter((d) => d.past || d.today).reverse();
+      html = days.map((d) => { const list = D.filter((i) => i._day === d.date).sort((a, b) => String(b.at || '').localeCompare(String(a.at || ''))); return card(rel(d.date) + dname(d.date), list.length ? plural(list.length, 'post') + ' went out' : 'nothing went out', list, 'Nothing went out this day.'); }).join('');
+      const zc = (ps.zernioCreators || []).filter((c) => c !== 'Default');
+      if (zc.length) html += `<div class="ofoot" style="font-size:12px;color:var(--muted)">Posts come from Zernio for ${esc(zc.join(', '))}, including the ones editors post by hand in the apps. Other clients are not in Zernio yet, so their cards count as posted once they reach 12- Posted or get a Posted URL.</div>`;
+    } else {
+      if (overdue.length) html += card('<span style="color:var(--err)">Overdue</span>', `${plural(overdue.length, 'post')} due before today that never went out`, overdue.sort((a, b) => a._day.localeCompare(b._day)), '', true);
+      html += ps.days.filter((d) => !d.past).map((d) => {
+        const list = T.filter((i) => i._day === d.date && i.state !== 'overdue');
+        const out = d.today ? outToday.length : 0;
+        return card(rel(d.date) + dname(d.date), (list.length ? plural(list.length, 'post') + ' still to go' : 'nothing left to post') + (out ? ` · ${out} already out` : ''), list, d.today && out ? `Everything for today is out. See the Posted tab for the ${plural(out, 'post')}.` : 'Nothing is set to go out this day.');
+      }).join('');
+    }
+    $('psDays').innerHTML = html;
     $('psAutos').innerHTML = autos.length ? autos.map((a) => `<div class="ocard ps-a" style="background:var(--panel2)">
         <h3>${esc(a.name)}</h3>
         <div class="ps-sub" style="margin:0">${a.platforms.map((p) => `<span class="ps-chip">${esc(p)}</span>`).join('')}</div>

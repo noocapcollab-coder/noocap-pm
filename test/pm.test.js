@@ -3921,3 +3921,27 @@ test('a company mailbox name is never the greeting (Dreamina x Chris, Nov 28)', 
   assert.equal(greetFirstName('"Su Wern" <limsuwern@topview.ai>', ''), 'Su');
   assert.match(fillTemplate('Hi {name},\n\nThanks', { from: '"Katlas Media" <outreach@katlasmedia.com>' }), /^Hi there,/);
 });
+
+test('posting tab shows what went out and what is overdue (Harsh, Nov 28)', async () => {
+  const P = await import('../lib/posting.js');
+  const card = (o) => ({ id: o.t, url: 'u', creator: o.cr || 'Chris', title: o.t, status: o.s, type: 'PERSONAL', date: o.d, created: '2026-11-01', raw: o.raw || {} });
+  const m = P.manualItems([
+    card({ t: 'late', s: '10- To Post', d: '2026-11-26' }),
+    card({ t: 'stuck', s: '7- In Edit', d: '2026-11-27' }),
+    card({ t: 'out', s: '10- To Post', d: '2026-11-27', raw: { 'Posted URL': 'https://www.instagram.com/reel/abc/' } }),
+    card({ t: 'today', s: '11- Ready', d: '2026-11-28' }),
+    card({ t: 'future idea', s: '1- Idea Assigned', d: '2026-11-30' }),
+  ], { from: '2026-11-21', to: '2026-12-04', today: '2026-11-28' });
+  assert.deepEqual(m.map((x) => [x.title, x.state]), [['late', 'overdue'], ['stuck', 'overdue'], ['out', 'posted'], ['today', 'manual']]);
+  assert.equal(m[2].postUrl, 'https://www.instagram.com/reel/abc/');
+  // Zernio's synced list: posts made through Zernio and by hand, one per URL, inside the window only
+  const names = new Map([['p1', 'Duncan']]);
+  const posted = P.postedItems([
+    { _id: 'a', profileId: 'p1', publishedAt: '2026-11-27T12:16:00Z', platform: 'instagram', platformPostUrl: 'https://ig/1', content: 'Visual explainer\nmore', isExternal: true, analytics: { views: 955 } },
+    { _id: 'b', profileId: 'p1', publishedAt: '2026-11-27T12:16:00Z', platform: 'instagram', platformPostUrl: 'https://ig/1', content: 'dup', isExternal: true },
+    { _id: 'c', latePostId: 'z1', profileId: 'p1', publishedAt: '2026-11-28T05:00:00Z', platform: 'tiktok', platformPostUrl: 'https://tt/1', content: 'Auto' },
+    { _id: 'd', profileId: 'p1', publishedAt: '2026-11-10T05:00:00Z', platform: 'tiktok', content: 'old' },
+  ], names, { fromMs: Date.parse('2026-11-21T00:00:00Z'), toMs: Date.parse('2026-11-28T12:00:00Z'), byId: new Map([['z1', 'TikTok + YouTube auto-post']]) });
+  assert.deepEqual(posted.map((x) => [x.title, x.by, x.creator]), [['Visual explainer', 'Posted by hand', 'Duncan'], ['Auto', 'TikTok + YouTube auto-post', 'Duncan']]);
+  assert.equal(posted[0].views, 955);
+});
